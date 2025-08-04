@@ -1,0 +1,103 @@
+/* iPhone-style AI Glow Effects */
+/* Explicitly exclude services section components from AI glow effects */
+.services-section *[class*="ai-glow"],
+[class*="service-"] *[class*="ai-glow"] {
+  box-shadow: none !important;
+  animation: none !important;
+}
+
+.services-section *[class*="ai-glow"]::before,
+[class*="service-"] *[class*="ai-glow"]::before {
+  display: none !important;
+}
+.ai-glow-primary {
+  box-shadow: 0 0 15px 2px rgba(var(--color-primary-400-rgb), 0.3);
+  animation: pulse-primary 3s infinite alternate;
+}
+
+.ai-glow-primary::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    circle at center,
+    rgba(var(--color-primary-400-rgb), 0.15) 0%,
+    rgba(var(--color-primary-400-rgb), 0) 70%
+  );
+  opacity: 0;
+  animation: glow-primary 6s infinite;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.ai-glow-secondary {
+  box-shadow: 0 0 15px 2px rgba(var(--color-secondary-400-rgb), 0.3);
+  animation: pulse-secondary 3s infinite alternate;
+}
+
+.ai-glow-secondary::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    circle at center,
+    rgba(var(--color-secondary-400-rgb), 0.15) 0%,
+    rgba(var(--color-secondary-400-rgb), 0) 70%
+  );
+  opacity: 0;
+  animation: glow-secondary 6s infinite;
+  pointer-events: none;
+  z-index: -1;
+}
+
+@keyframes pulse-primary {
+  0% {
+    box-shadow: 0 0 15px 2px rgba(var(--color-primary-400-rgb), 0.3);
+  }
+  100% {
+    box-shadow: 0 0 20px 5px rgba(var(--color-primary-400-rgb), 0.5);
+  }
+}
+
+@keyframes pulse-secondary {
+  0% {
+    box-shadow: 0 0 15px 2px rgba(var(--color-secondary-400-rgb), 0.3);
+  }
+  100% {
+    box-shadow: 0 0 20px 5px rgba(var(--color-secondary-400-rgb), 0.5);
+  }
+}
+
+@keyframes glow-primary {
+  0% {
+    opacity: 0;
+    transform: scale(0.8) rotate(0deg);
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.2) rotate(360deg);
+  }
+}
+
+@keyframes glow-secondary {
+  0% {
+    opacity: 0;
+    transform: scale(0.8) rotate(0deg);
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.2) rotate(360deg);
+  }
+}

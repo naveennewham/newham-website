@@ -1,0 +1,10 @@
+/* RGB Color Variables for AI Glow Effects */
+:root {
+  /* Primary colors in RGB format */
+  --color-primary-400-rgb: 51, 159, 171;  /* #339fab */
+  --color-primary-500-rgb: 0, 135, 150;   /* #008796 */
+  
+  /* Secondary colors in RGB format */
+  --color-secondary-400-rgb: 51, 207, 231; /* #33cfe7 */
+  --color-secondary-500-rgb: 1, 172, 200;  /* #01ACC8 */
+}
