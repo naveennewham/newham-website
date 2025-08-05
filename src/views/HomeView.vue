@@ -6,6 +6,9 @@
     <!-- Features Section -->
     <FeaturesSection />
     
+    <!-- Products Section -->
+    <ProductsSection />
+    
     <!-- Tech Stack Section -->
     <TechStackSection />
     
@@ -20,6 +23,7 @@
 <script setup>
 import HeroSection from '../components/home/HeroSection.vue';
 import FeaturesSection from '../components/home/FeaturesSection.vue';
+import ProductsSection from '../components/home/ProductsSection.vue';
 import TechStackSection from '../components/home/TechStackSection.vue';
 import TestimonialsSection from '../components/home/TestimonialsSection.vue';
 import CtaSection from '../components/home/CtaSection.vue';

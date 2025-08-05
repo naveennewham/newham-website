@@ -34,3 +34,8 @@ jobs:
         local-dir: ./dist/
         server-dir: public_html/
         dangerous-clean-slate: true
+        protocol: ftp
+        port: 21
+        timeout: 120000
+        log-level: verbose
+        security: loose # Helps with some FTP servers that have issues with EPSV

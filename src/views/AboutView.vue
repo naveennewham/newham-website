@@ -6,13 +6,11 @@
     <!-- Mission, Vision, and Values Section -->
     <MissionVisionValues />
     
-    <!-- Team Section -->
-    <TeamSection />
+    <!-- Team Section removed as requested -->
   </div>
 </template>
 
 <script setup>
 import CompanyOverview from '../components/about/CompanyOverview.vue';
 import MissionVisionValues from '../components/about/MissionVisionValues.vue';
-import TeamSection from '../components/about/TeamSection.vue';
 </script>

@@ -10,6 +10,18 @@ const router = createRouter({
       meta: { title: 'Home' }
     },
     {
+      path: '/product',
+      name: 'product',
+      component: () => import('../views/ProductView.vue'),
+      meta: { title: 'Deepcost - AI-Powered Estimation' }
+    },
+    {
+      path: '/deeptrack',
+      name: 'deeptrack',
+      component: () => import('../views/DeepTrackView.vue'),
+      meta: { title: 'DeepTrack - Intelligent Project Management' }
+    },
+    {
       path: '/about',
       name: 'about',
       component: () => import('../views/AboutView.vue'),

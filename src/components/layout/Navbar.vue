@@ -67,6 +67,8 @@ const mobileMenuOpen = ref(false);
 
 const navItems = [
   { name: 'Home', path: '/' },
+  { name: 'DeepCost', path: '/product' },
+  { name: 'DeepTrack', path: '/deeptrack' },
   { name: 'About', path: '/about' },
   { name: 'Services', path: '/services' },
   { name: 'Industries', path: '/industries' },

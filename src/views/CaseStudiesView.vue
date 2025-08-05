@@ -52,6 +52,26 @@ import CaseStudiesGrid from '../components/case-studies/CaseStudiesGrid.vue';
 // Sample data for case studies
 const caseStudies = [
   {
+    id: 'acmv1',
+    title: 'ACMV System Optimization for Data Center',
+    description: 'Implementation of energy-efficient ACMV solutions for a major data center, resulting in 30% energy savings while maintaining optimal cooling performance.',
+    category: 'ACMV Solutions',
+    image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80',
+    date: 'July 2023',
+    client: 'TechCore Data Centers',
+    technologies: ['Energy Efficiency', 'Smart Controls', 'Precision Cooling']
+  },
+  {
+    id: 'fire1',
+    title: 'Integrated Fire Fighting System for High-Rise',
+    description: 'Design and implementation of comprehensive fire protection systems for a 50-story mixed-use development, exceeding SCDF compliance requirements.',
+    category: 'Fire Fighting Systems',
+    image: 'https://images.unsplash.com/photo-1599202875854-23b7cd490ff4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80',
+    date: 'June 2023',
+    client: 'Skyline Developments',
+    technologies: ['Smart Detection', 'Automated Suppression', 'Emergency Response']
+  },
+  {
     id: 'cs1',
     title: 'Modern Office Tower Construction',
     description: 'Implementing BIM and project management solutions for a 40-story office tower, reducing construction time by 15%.',
@@ -60,6 +80,26 @@ const caseStudies = [
     date: 'June 2023',
     client: 'Global Developments Inc.',
     technologies: ['BIM', 'Project Management', 'IoT Sensors']
+  },
+  {
+    id: 'elv1',
+    title: 'Enterprise-Grade ELV Infrastructure',
+    description: 'Design and implementation of comprehensive ELV systems including access control, CCTV, and structured cabling for a corporate headquarters.',
+    category: 'ELV Solutions',
+    image: 'https://images.unsplash.com/photo-1558002038-1055907df827?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80',
+    date: 'May 2023',
+    client: 'GlobalTech Corporation',
+    technologies: ['Access Control', 'CCTV', 'Structured Cabling']
+  },
+  {
+    id: 'ana1',
+    title: 'Heritage Building A&A Project',
+    description: 'Addition and alteration project for a heritage building, preserving historical elements while modernizing infrastructure and facilities.',
+    category: 'A&A Solutions',
+    image: 'https://images.unsplash.com/photo-1582650949011-13947d8266a4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80',
+    date: 'April 2023',
+    client: 'Heritage Conservation Trust',
+    technologies: ['Heritage Conservation', 'Structural Reinforcement', 'MEP Upgrades']
   },
   {
     id: 'cs2',
@@ -110,6 +150,36 @@ const caseStudies = [
     date: 'October 2022',
     client: 'Urban Retail Properties',
     technologies: ['Renovation', 'Energy Efficiency', 'Retail Construction']
+  },
+  {
+    id: 'ai1',
+    title: 'AI-Powered Predictive Maintenance System',
+    description: 'Implementation of machine learning algorithms for predictive maintenance of HVAC systems across multiple commercial buildings, reducing downtime by 45%.',
+    category: 'AI Technology',
+    image: 'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80',
+    date: 'August 2023',
+    client: 'Smart Property Management',
+    technologies: ['Machine Learning', 'IoT Sensors', 'Predictive Analytics']
+  },
+  {
+    id: 'cloud1',
+    title: 'Cloud-Based Building Management Platform',
+    description: 'Development of a comprehensive cloud platform integrating building systems, energy management, and maintenance workflows for a portfolio of 50+ properties.',
+    category: 'Cloud Technology',
+    image: 'https://images.unsplash.com/photo-1544197150-b99a580bb7a8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80',
+    date: 'July 2023',
+    client: 'Regional Property Group',
+    technologies: ['Cloud Infrastructure', 'Real-time Monitoring', 'Data Analytics']
+  },
+  {
+    id: 'uiux1',
+    title: 'User-Centered Facility Management App',
+    description: 'Design and development of an intuitive mobile application for facility management staff, reducing training time by 60% and improving task completion rates.',
+    category: 'UI/UX Design',
+    image: 'https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80',
+    date: 'June 2023',
+    client: 'Facilities Management Inc.',
+    technologies: ['User Research', 'Mobile App Design', 'Usability Testing']
   }
 ];
 
