@@ -1,5 +1,11 @@
 <template>
-  <section class="hero-section relative min-h-screen flex items-center pt-24 pb-16 overflow-hidden">
+  <!-- Mobile Hero Slider (visible on small screens) -->
+  <div class="md:hidden">
+    <HeroMobileSlider />
+  </div>
+  
+  <!-- Desktop Hero Section (hidden on small screens) -->
+  <section class="hero-section relative min-h-screen flex items-center pt-24 pb-16 overflow-hidden hidden md:flex">
     <!-- Video Background -->
     <div class="absolute inset-0 z-0">
       <div class="absolute inset-0 overflow-hidden">
@@ -42,11 +48,13 @@
 
 <script>
 import StatsWithGlow from './StatsWithGlow.vue'
+import HeroMobileSlider from './HeroMobileSlider.vue'
 
 export default {
   name: 'HeroSection',
   components: {
-    StatsWithGlow
+    StatsWithGlow,
+    HeroMobileSlider
   }
 }
 </script>
