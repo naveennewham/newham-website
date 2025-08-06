@@ -83,12 +83,23 @@ onMounted(() => {
   // Force enable scrolling with direct style
   document.body.style.overflowY = 'auto';
   document.body.style.height = 'auto';
+  document.body.style.overflow = 'auto';
   
-  // Small delay to ensure styles are applied after initial render
+  // Immediate and delayed attempts to ensure scrolling works
   setTimeout(() => {
+    document.body.classList.remove('page-transitioning');
     document.body.style.overflowY = 'auto';
     document.body.style.height = 'auto';
+    document.body.style.overflow = 'auto';
   }, 100);
+  
+  // Additional attempt after a longer delay
+  setTimeout(() => {
+    document.body.classList.remove('page-transitioning');
+    document.body.style.overflowY = 'auto';
+    document.body.style.height = 'auto';
+    document.body.style.overflow = 'auto';
+  }, 500);
 });
 
 onUnmounted(() => {
