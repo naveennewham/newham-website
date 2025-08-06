@@ -65,6 +65,9 @@ const beforeEnter = () => {
 const afterLeave = () => {
   // Remove the class after transition
   document.body.classList.remove('page-transitioning');
+  
+  // Force enable scrolling
+  document.body.style.overflow = '';
 };
 
 onMounted(() => {
@@ -73,6 +76,19 @@ onMounted(() => {
   
   // Add scroll event listener
   window.addEventListener('scroll', handleScroll);
+  
+  // Ensure scrolling is enabled on initial load
+  document.body.classList.remove('page-transitioning');
+  
+  // Force enable scrolling with direct style
+  document.body.style.overflowY = 'auto';
+  document.body.style.height = 'auto';
+  
+  // Small delay to ensure styles are applied after initial render
+  setTimeout(() => {
+    document.body.style.overflowY = 'auto';
+    document.body.style.height = 'auto';
+  }, 100);
 });
 
 onUnmounted(() => {
@@ -84,7 +100,13 @@ onUnmounted(() => {
 <style>
 /* Prevent scrolling during page transitions */
 body.page-transitioning {
-  overflow: hidden;
+  overflow: hidden !important;
+}
+
+/* Ensure body is scrollable by default */
+body {
+  overflow-y: auto !important;
+  height: auto !important;
 }
 
 /* Add some global animation classes */

@@ -1,12 +1,16 @@
 <template>
   <div class="hero-mobile-slider relative w-full h-screen overflow-hidden bg-dark-900">
-    <!-- Animated Glowing Background -->
-    <div class="absolute inset-0 z-0 bg-dark-900">
-      <!-- Animated Glow Elements -->
-      <div class="glow-orb glow-orb-1"></div>
-      <div class="glow-orb glow-orb-2"></div>
-      <div class="glow-orb glow-orb-3"></div>
-      <div class="glow-orb glow-orb-4"></div>
+    <!-- Video Background for Mobile -->
+    <div class="absolute inset-0 z-0 overflow-hidden">
+      <video 
+        autoplay 
+        loop 
+        muted 
+        playsinline 
+        class="absolute w-full h-full object-cover brightness-110 contrast-105"
+      >
+        <source src="@/assets/hero_banner_mobile.mp4" type="video/mp4">
+      </video>
       
       <!-- Gradient Overlay -->
       <div class="absolute inset-0 bg-gradient-to-br from-dark-900/80 via-dark-800/70 to-dark-900/80 z-10"></div>
