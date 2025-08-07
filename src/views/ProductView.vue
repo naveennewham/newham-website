@@ -23,8 +23,12 @@
       
       <div class="container mx-auto px-4 relative z-10">
         <div class="max-w-4xl mx-auto text-center">
+          <!-- Deepcost Logo -->
+          <div class="mb-6 flex items-center justify-center relative overflow-hidden">
+            <img src="@/assets/Deepcost_Logo.png" alt="Deepcost Logo" class="h-20 w-auto" />
+          </div>
           <h1 class="text-4xl md:text-5xl font-bold mb-4">
-            <span class="gradient-text">🧠 Deepcost</span>
+            <span class="gradient-text">Deepcost</span>
             <span class="block text-white mt-2">AI-Powered Estimation for Complex MEP Projects</span>
             <!-- Underline with geometric design -->
             <span class="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-1/2 h-1 bg-primary-500 skew-x-12"></span>

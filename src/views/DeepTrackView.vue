@@ -5,10 +5,13 @@
       <!-- Background elements will go here -->
       <div class="container mx-auto px-4 relative z-10">
         <div class="max-w-4xl mx-auto text-center">
-          <h1 class="text-4xl md:text-5xl font-bold mb-4">
-            <span class="gradient-text">📊 DeepTrack</span>
-            <span class="block text-white mt-2">Smart Project Budgeting & PO Management Platform</span>
-          </h1>
+          <div class="flex flex-col items-center justify-center mb-4">
+            <img src="@/assets/Deepcost_Logo.png" alt="Deepcost Logo" class="h-24 w-auto mb-4" />
+            <h1 class="text-4xl md:text-5xl font-bold">
+              <span class="gradient-text">DeepTrack</span>
+              <span class="block text-white mt-2">Smart Project Budgeting & PO Management Platform</span>
+            </h1>
+          </div>
           <p class="text-xl md:text-2xl mb-8 text-gray-300">
             Take control of cost, approvals, and progress — all in one dashboard.
           </p>

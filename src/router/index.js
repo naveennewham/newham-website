@@ -40,6 +40,12 @@ const router = createRouter({
       meta: { title: 'Industries' }
     },
     {
+      path: '/industries/:id',
+      name: 'industry-detail',
+      component: () => import('../views/IndustryDetailView.vue'),
+      meta: { title: 'Industry Details' }
+    },
+    {
       path: '/case-studies',
       name: 'case-studies',
       component: () => import('../views/CaseStudiesView.vue'),

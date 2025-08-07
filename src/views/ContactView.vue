@@ -118,11 +118,25 @@
                     <component :is="LocationIcon" class="w-6 h-6" />
                   </div>
                   <div>
-                    <h3 class="text-white font-semibold mb-1">Office Address</h3>
+                    <h3 class="text-white font-semibold mb-1">Singapore Office</h3>
                     <p class="text-gray-400">
-                      123 Tech Plaza, Suite 500<br>
-                      Silicon Valley, CA 94103<br>
-                      United States
+                      20, Bukit Batok Cres<br>
+                      Enterprise Centre<br>
+                      Singapore - 658080
+                    </p>
+                  </div>
+                </div>
+                
+                <div class="flex items-start">
+                  <div class="mr-4 p-2 rounded-lg bg-gradient-to-br from-primary-800 to-secondary-800 text-white">
+                    <component :is="LocationIcon" class="w-6 h-6" />
+                  </div>
+                  <div>
+                    <h3 class="text-white font-semibold mb-1">Chennai Office</h3>
+                    <p class="text-gray-400">
+                      No 5, SRG Complex, Door No 6, 1st Floor<br>
+                      5th Cross Street, Anand Nagar<br>
+                      Thoraipakkam, Chennai - 600097
                     </p>
                   </div>
                 </div>
@@ -134,8 +148,8 @@
                   <div>
                     <h3 class="text-white font-semibold mb-1">Phone</h3>
                     <p class="text-gray-400">
-                      Main: +1 (555) 123-4567<br>
-                      Support: +1 (555) 987-6543
+                      Main: +91 9894-378-375<br>
+                      Support: +91 9894-378-375
                     </p>
                   </div>
                 </div>

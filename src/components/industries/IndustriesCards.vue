@@ -62,13 +62,13 @@
             
             <!-- Card Footer -->
             <div class="pt-4 border-t border-dark-600">
-              <a 
-                href="#" 
+              <router-link 
+                :to="`/industries/${industry.id}`" 
                 class="inline-flex items-center text-secondary-400 hover:text-secondary-300 transition-colors duration-300"
               >
                 Learn More
                 <component :is="ArrowRightIcon" class="w-4 h-4 ml-1" />
-              </a>
+              </router-link>
             </div>
           </div>
         </div>
@@ -101,6 +101,7 @@ const ArrowRightIcon = (props) => h('svg', {
 // Industry data
 const industries = [
   {
+    id: 'commercial-construction',
     name: 'Commercial Construction',
     image: 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80',
     description: 'Comprehensive software solutions for commercial construction projects, from planning to completion.',
@@ -112,6 +113,7 @@ const industries = [
     ]
   },
   {
+    id: 'residential-development',
     name: 'Residential Development',
     image: 'https://images.unsplash.com/photo-1613545325278-f24b0cae1224?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80',
     description: 'Tailored solutions for residential builders and developers to streamline processes and enhance customer experience.',
@@ -123,6 +125,7 @@ const industries = [
     ]
   },
   {
+    id: 'infrastructure',
     name: 'Infrastructure',
     image: 'https://images.unsplash.com/photo-1545558014-8692077e9b5c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80',
     description: 'Advanced software for infrastructure projects including roads, bridges, and public facilities.',
@@ -134,6 +137,7 @@ const industries = [
     ]
   },
   {
+    id: 'industrial-facilities',
     name: 'Industrial Facilities',
     image: 'https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80',
     description: 'Specialized solutions for industrial construction and facility management with focus on efficiency and safety.',
@@ -145,6 +149,7 @@ const industries = [
     ]
   },
   {
+    id: 'healthcare-facilities',
     name: 'Healthcare Facilities',
     image: 'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80',
     description: 'Custom software for healthcare construction projects addressing unique regulatory and operational requirements.',
@@ -156,6 +161,7 @@ const industries = [
     ]
   },
   {
+    id: 'retail-commercial',
     name: 'Retail & Commercial',
     image: 'https://images.unsplash.com/photo-1604754742629-3e5728249d73?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80',
     description: 'Retail-focused construction and management solutions that integrate with business operations.',

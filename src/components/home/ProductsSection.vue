@@ -62,9 +62,8 @@
           <!-- Card Content -->
           <div class="relative z-10 p-8">
             <!-- Product Logo/Icon -->
-            <div class="w-16 h-16 mb-6 flex items-center justify-center bg-primary-900/50 rounded-lg relative overflow-hidden">
-              <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(var(--color-primary-400-rgb),0.3),transparent_70%)]"></div>
-              <span class="text-3xl">💰</span>
+            <div class="mb-6 flex items-center justify-center relative overflow-hidden">
+              <img src="@/assets/Deepcost_Logo.png" alt="Deepcost Logo" class="h-16 w-auto" />
             </div>
             
             <h3 class="text-2xl font-bold text-white mb-4">DeepCost</h3>
@@ -116,9 +115,8 @@
           <!-- Card Content -->
           <div class="relative z-10 p-8">
             <!-- Product Logo/Icon -->
-            <div class="w-16 h-16 mb-6 flex items-center justify-center bg-secondary-900/50 rounded-lg relative overflow-hidden">
-              <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(var(--color-secondary-400-rgb),0.3),transparent_70%)]"></div>
-              <span class="text-3xl">📊</span>
+            <div class="mb-6 flex items-center justify-center relative overflow-hidden">
+              <img src="@/assets/Deepcost_Logo.png" alt="Deepcost Logo" class="h-16 w-auto" />
             </div>
             
             <h3 class="text-2xl font-bold text-white mb-4">DeepTrack</h3>
