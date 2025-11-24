@@ -45,8 +45,7 @@
             <li><router-link to="/" class="text-gray-400 hover:text-primary-400 transition-colors">Home</router-link></li>
             <li><router-link to="/about" class="text-gray-400 hover:text-primary-400 transition-colors">About Us</router-link></li>
             <li><router-link to="/services" class="text-gray-400 hover:text-primary-400 transition-colors">Services</router-link></li>
-            <li><router-link to="/industries" class="text-gray-400 hover:text-primary-400 transition-colors">Industries</router-link></li>
-            <li><router-link to="/case-studies" class="text-gray-400 hover:text-primary-400 transition-colors">Case Studies</router-link></li>
+            <li><router-link to="/pricing" class="text-gray-400 hover:text-primary-400 transition-colors">Pricing</router-link></li>
             <li><router-link to="/contact" class="text-gray-400 hover:text-primary-400 transition-colors">Contact</router-link></li>
           </ul>
         </div>

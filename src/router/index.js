@@ -34,6 +34,12 @@ const router = createRouter({
       meta: { title: 'Services' }
     },
     {
+      path: '/pricing',
+      name: 'pricing',
+      component: () => import('../views/PricingView.vue'),
+      meta: { title: 'Pricing & Business Model' }
+    },
+    {
       path: '/industries',
       name: 'industries',
       component: () => import('../views/IndustriesView.vue'),
@@ -50,6 +56,12 @@ const router = createRouter({
       name: 'case-studies',
       component: () => import('../views/CaseStudiesView.vue'),
       meta: { title: 'Case Studies' }
+    },
+    {
+      path: '/appointment',
+      name: 'appointment',
+      component: () => import('../views/AppointmentView.vue'),
+      meta: { title: 'Schedule Appointment' }
     },
     {
       path: '/contact',

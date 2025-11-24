@@ -16,8 +16,8 @@
           :class="{ 'gradient-text font-medium': $route.path === item.path }">
           {{ item.name }}
         </router-link>
-        <router-link to="/contact" class="btn-primary text-sm">
-          Get in Touch
+        <router-link to="/appointment" class="btn-primary text-sm">
+          Schedule Appointment
         </router-link>
       </div>
       
@@ -51,8 +51,8 @@
             :class="{ 'gradient-text font-medium': $route.path === item.path }">
             {{ item.name }}
           </router-link>
-          <router-link to="/contact" @click="mobileMenuOpen = false" class="btn-primary text-center mt-2">
-            Get in Touch
+          <router-link to="/appointment" @click="mobileMenuOpen = false" class="btn-primary text-center mt-2">
+            Schedule Appointment
           </router-link>
         </div>
       </div>
@@ -71,7 +71,9 @@ const navItems = [
   { name: 'DeepTrack', path: '/deeptrack' },
   { name: 'About', path: '/about' },
   { name: 'Services', path: '/services' },
-  { name: 'Industries', path: '/industries' },
-  { name: 'Case Studies', path: '/case-studies' }
+  { name: 'Pricing', path: '/pricing' },
+  // Temporarily hiding Industries and Case Studies from navigation
+  // { name: 'Industries', path: '/industries' },
+  // { name: 'Case Studies', path: '/case-studies' }
 ];
 </script>

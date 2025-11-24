@@ -9,7 +9,7 @@
     <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       <div class="glass-panel p-8 md:p-12 rounded-2xl shadow-glass-lg relative overflow-hidden">
         <!-- Static Background -->
-        <div class="absolute inset-0 z-0 bg-[radial-gradient(circle_at_center,rgba(var(--color-primary-400-rgb),0.2),transparent_70%)] opacity-30"></div>
+        <div class="absolute inset-0 z-0 pointer-events-none bg-[radial-gradient(circle_at_center,rgba(var(--color-primary-400-rgb),0.2),transparent_70%)] opacity-30"></div>
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <!-- CTA Content -->
           <div>
@@ -23,15 +23,15 @@
             </p>
             
             <div class="flex flex-col sm:flex-row gap-4">
-              <router-link to="/contact" class="btn-primary">
-                Schedule a Consultation
-              </router-link>
-              <a href="#" class="btn-outline flex items-center justify-center">
+              <button type="button" class="btn-primary" @click="goToAppointment">
+                Schedule an Appointment
+              </button>
+              <button type="button" class="btn-outline flex items-center justify-center" @click="goToPricing">
                 <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
                 </svg>
-                Watch Demo
-              </a>
+                View Pricing
+              </button>
             </div>
             
             <!-- Benefits List -->
@@ -128,6 +128,9 @@
 
 <script setup>
 import { ref } from 'vue';
+import { useRouter } from 'vue-router';
+
+const router = useRouter();
 
 const form = ref({
   name: '',
@@ -156,6 +159,14 @@ const benefits = [
   'Rapid implementation',
   'Seamless integration'
 ];
+
+const goToAppointment = () => {
+  router.push('/appointment');
+};
+
+const goToPricing = () => {
+  router.push('/pricing');
+};
 
 const submitForm = () => {
   isSubmitting.value = true;

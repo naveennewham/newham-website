@@ -539,9 +539,12 @@
                 </ul>
                 
                 <div class="flex flex-wrap gap-4">
-                  <button class="btn-primary">🚀 Try DeepTrack today</button>
-                  <button class="btn-secondary">📞 Book a demo</button>
-                  <button class="btn-outline">📥 Request feature walkthrough</button>
+                  <router-link to="/pricing" class="btn-primary flex items-center">
+                    🚀 View DeepTrack Pricing
+                  </router-link>
+                  <button class="btn-primary flex items-center">
+                    📞 Book a demo
+                  </button>
                 </div>
               </div>
               
