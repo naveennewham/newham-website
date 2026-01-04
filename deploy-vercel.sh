@@ -12,7 +12,7 @@ fi
 
 # Step 2: Build the Vue app
 echo "📦 Building the Vue.js application..."
-npm run build
+npm run generate
 
 if [ $? -ne 0 ]; then
   echo "❌ Build failed! Please fix the errors and try again."
