@@ -9,8 +9,38 @@
       
       <!-- Desktop Navigation -->
       <div class="hidden md:flex items-center space-x-8">
-        <NuxtLink v-for="item in navItems" 
-          :key="item.path" 
+        <!-- CCorex with Dropdown -->
+        <div class="relative group">
+          <NuxtLink to="/ccorex" class="text-gray-300 hover:text-white transition-colors duration-300 flex items-center gap-1">
+            CCorex
+            <svg class="w-4 h-4 group-hover:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+            </svg>
+          </NuxtLink>
+
+          <!-- Dropdown Menu -->
+          <div class="absolute left-0 mt-0 w-48 glass-panel rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+            <NuxtLink to="/ccorex" class="block px-4 py-3 text-gray-300 hover:text-cyan-400 border-b border-gray-700/50 font-semibold">
+              CCorex Overview
+            </NuxtLink>
+            <NuxtLink to="/ccorex/deepcost" class="block px-4 py-3 text-gray-300 hover:text-cyan-400 border-b border-gray-700/50">
+              ↳ DeepCost
+            </NuxtLink>
+            <NuxtLink to="/ccorex/deeptrack" class="block px-4 py-3 text-gray-300 hover:text-cyan-400 border-b border-gray-700/50">
+              ↳ DeepTrack
+            </NuxtLink>
+            <NuxtLink to="/ccorex/deephr" class="block px-4 py-3 text-gray-300 hover:text-cyan-400 border-b border-gray-700/50">
+              ↳ DeepHR
+            </NuxtLink>
+            <NuxtLink to="/ccorex/deepplan-ai" class="block px-4 py-3 text-gray-300 hover:text-cyan-400 rounded-b-lg">
+              ↳ DeepPlanAI
+            </NuxtLink>
+          </div>
+        </div>
+
+        <!-- Other Navigation Items -->
+        <NuxtLink v-for="item in navItems"
+          :key="item.path"
           :to="item.path"
           class="text-gray-300 hover:text-white transition-colors duration-300"
           :class="{ 'gradient-text font-medium': $route.path === item.path }">
@@ -43,8 +73,30 @@
     >
       <div v-if="mobileMenuOpen" class="glass-panel mx-4 px-4 py-5 md:hidden">
         <div class="flex flex-col space-y-4">
-          <NuxtLink v-for="item in navItems" 
-            :key="item.path" 
+          <!-- CCorex Mobile Menu -->
+          <div class="border-b border-gray-700/50 pb-4">
+            <NuxtLink to="/ccorex" @click="mobileMenuOpen = false" class="text-gray-300 hover:text-cyan-400 py-2 font-semibold block">
+              CCorex Overview
+            </NuxtLink>
+            <div class="ml-4 space-y-2 mt-2">
+              <NuxtLink to="/ccorex/deepcost" @click="mobileMenuOpen = false" class="text-gray-300 hover:text-cyan-400 py-2 block text-sm">
+                ↳ DeepCost
+              </NuxtLink>
+              <NuxtLink to="/ccorex/deeptrack" @click="mobileMenuOpen = false" class="text-gray-300 hover:text-cyan-400 py-2 block text-sm">
+                ↳ DeepTrack
+              </NuxtLink>
+              <NuxtLink to="/ccorex/deephr" @click="mobileMenuOpen = false" class="text-gray-300 hover:text-cyan-400 py-2 block text-sm">
+                ↳ DeepHR
+              </NuxtLink>
+              <NuxtLink to="/ccorex/deepplan-ai" @click="mobileMenuOpen = false" class="text-gray-300 hover:text-cyan-400 py-2 block text-sm">
+                ↳ DeepPlanAI
+              </NuxtLink>
+            </div>
+          </div>
+
+          <!-- Other Navigation Items -->
+          <NuxtLink v-for="item in navItems"
+            :key="item.path"
             :to="item.path"
             @click="mobileMenuOpen = false"
             class="text-gray-300 hover:text-white py-2 transition-colors duration-300"
@@ -67,8 +119,6 @@ const mobileMenuOpen = ref(false);
 
 const navItems = [
   { name: 'Home', path: '/' },
-  { name: 'DeepCost', path: '/product' },
-  { name: 'DeepTrack', path: '/deeptrack' },
   { name: 'About', path: '/about' },
   { name: 'Services', path: '/services' },
   { name: 'Pricing', path: '/pricing' },
