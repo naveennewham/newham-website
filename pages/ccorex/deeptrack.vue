@@ -31,7 +31,7 @@
         </p>
 
         <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cyan-500/10 border border-cyan-500/30 mb-8">
-          <img src="~/assets/CCorex_Logo.svg" alt="CCorex" class="h-5 w-auto" />
+          <img src="~/assets/ccorex/Corex_logo.png" alt="CCorex" class="h-5 w-auto brightness-0 invert" />
           <span class="text-cyan-400 font-semibold">Part of CCorex</span>
         </div>
 
@@ -220,7 +220,7 @@
             to="/ccorex"
             class="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-cyan-500/10 border border-cyan-500/40 text-cyan-400 hover:bg-cyan-500/20 transition-all"
           >
-            <img src="~/assets/CCorex_Logo.svg" alt="CCorex" class="h-4 w-auto" />
+            <img src="~/assets/ccorex/Corex_logo.png" alt="CCorex" class="h-4 w-auto brightness-0 invert" />
             Back to CCorex
           </NuxtLink>
         </div>

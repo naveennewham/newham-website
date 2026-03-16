@@ -30,7 +30,7 @@
             <!-- Content -->
             <div class="relative z-10 flex flex-col md:flex-row items-center gap-8">
               <div class="md:w-1/3 text-center md:text-left">
-                <img src="~/assets/CCorex_Logo.svg" alt="CCorex" class="h-10 md:h-14 w-auto mx-auto md:mx-0 mb-4" />
+                <img src="~/assets/ccorex/Corex_logo.png" alt="CCorex" class="h-10 md:h-14 w-auto mx-auto md:mx-0 mb-4 brightness-0 invert" />
                 <p class="text-gray-300 mb-4">
                   The complete construction management solution. Four integrated apps, one unified platform.
                 </p>

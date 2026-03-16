@@ -12,14 +12,57 @@
     <!-- Hero Section -->
     <CCorexHero />
 
+    <!-- Suite Strip: quick summary of apps -->
+    <SuiteStrip />
+
+    <section id="overview" class="relative w-full py-16 md:py-24 bg-gradient-to-b from-slate-900 to-slate-800">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-10 items-center">
+        <div class="md:col-span-2">
+          <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">One suite for your entire construction lifecycle</h2>
+          <p class="text-gray-300 text-lg mb-6">CCorex unifies takeoffs, estimating, budgeting, and workforce into a connected system. Data flows seamlessly across <span class="text-cyan-400 font-semibold">DeepPlanAI</span>, <span class="text-cyan-400 font-semibold">DeepCost</span>, <span class="text-cyan-400 font-semibold">DeepTrack</span>, and <span class="text-cyan-400 font-semibold">DeepHR</span>.</p>
+          <div class="flex flex-wrap gap-3">
+            <NuxtLink to="/appointment" class="px-6 py-3 rounded-lg bg-gradient-to-r from-cyan-500 to-cyan-400 text-slate-900 font-semibold hover:shadow-lg hover:shadow-cyan-500/40 transition-all">Request a demo</NuxtLink>
+            <NuxtLink to="/pricing" class="px-6 py-3 rounded-lg border border-cyan-500 text-cyan-400 font-semibold hover:bg-cyan-500 hover:text-slate-900 transition-all">View pricing</NuxtLink>
+          </div>
+        </div>
+        <div class="grid grid-cols-2 gap-4">
+          <div class="p-4 rounded-xl border border-cyan-500/20 bg-slate-900/50 text-center">
+            <div class="text-3xl font-bold text-cyan-400 mb-1">95%+</div>
+            <div class="text-gray-400 text-sm">Estimate accuracy</div>
+          </div>
+          <div class="p-4 rounded-xl border border-cyan-500/20 bg-slate-900/50 text-center">
+            <div class="text-3xl font-bold text-cyan-400 mb-1">40%</div>
+            <div class="text-gray-400 text-sm">Faster takeoffs</div>
+          </div>
+          <div class="p-4 rounded-xl border border-cyan-500/20 bg-slate-900/50 text-center">
+            <div class="text-3xl font-bold text-cyan-400 mb-1">100%</div>
+            <div class="text-gray-400 text-sm">Data sync</div>
+          </div>
+          <div class="p-4 rounded-xl border border-cyan-500/20 bg-slate-900/50 text-center">
+            <div class="text-3xl font-bold text-cyan-400 mb-1">2-3 wks</div>
+            <div class="text-gray-400 text-sm">Implementation</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Apps Showcase -->
-    <AppsShowcase />
+    <div id="apps">
+      <AppsShowcase />
+    </div>
 
     <!-- Integration Flow -->
-    <IntegrationFlow />
+    <div id="integration">
+      <IntegrationFlow />
+    </div>
+
+    <!-- Alternating Benefits matching suite narrative -->
+    <BenefitsAlternating />
 
     <!-- Unified Platform Benefits -->
-    <UnifiedPlatformBenefits />
+    <div id="benefits">
+      <UnifiedPlatformBenefits />
+    </div>
 
     <!-- ROI Metrics -->
     <RoiMetrics />
@@ -85,8 +128,11 @@
       </div>
     </section>
 
+    <!-- Pricing Preview -->
+    <PricingPreview />
+
     <!-- FAQ Section -->
-    <section class="relative w-full py-20 md:py-32 overflow-hidden bg-gradient-to-b from-slate-800 to-slate-900">
+    <section id="faq" class="relative w-full py-20 md:py-32 overflow-hidden bg-gradient-to-b from-slate-800 to-slate-900">
       <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16">
           <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
@@ -154,6 +200,9 @@ import UnifiedPlatformBenefits from '~/components/ccorex/UnifiedPlatformBenefits
 import RoiMetrics from '~/components/ccorex/RoiMetrics.vue'
 import IntegrationFlow from '~/components/ccorex/IntegrationFlow.vue'
 import CtaSection from '~/components/ccorex/CtaSection.vue'
+import SuiteStrip from '~/components/ccorex/SuiteStrip.vue'
+import BenefitsAlternating from '~/components/ccorex/BenefitsAlternating.vue'
+import PricingPreview from '~/components/ccorex/PricingPreview.vue'
 
 useHead({
   title: 'CCorex - Unified Construction Management Platform'

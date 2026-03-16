@@ -12,7 +12,7 @@
       <!-- Main Heading -->
       <div class="text-center mb-12">
         <div class="flex justify-center mb-6">
-          <img src="~/assets/CCorex_Logo.svg" alt="CCorex" class="h-10 md:h-12 w-auto opacity-80" />
+          <img src="~/assets/ccorex/Corex_logo.png" alt="CCorex" class="h-10 md:h-12 w-auto brightness-0 invert opacity-80" />
         </div>
         <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
           Ready to Transform Your

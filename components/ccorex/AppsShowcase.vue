@@ -11,7 +11,7 @@
       <!-- Section Header -->
       <div class="text-center mb-16 md:mb-20">
         <div class="flex justify-center mb-6">
-          <img src="~/assets/CCorex_Logo.svg" alt="CCorex" class="h-10 md:h-14 w-auto opacity-80" />
+          <img src="~/assets/ccorex/Corex_logo.png" alt="CCorex" class="h-10 md:h-14 w-auto brightness-0 invert opacity-80" />
         </div>
         <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
           <span class="bg-gradient-to-r from-cyan-400 to-cyan-300 bg-clip-text text-transparent">

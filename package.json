@@ -5,6 +5,8 @@
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
+    "dev:main": "NUXT_CLI_FORKS=0 NUXT_TELEMETRY_DISABLED=1 NODE_NO_WARNINGS=1 npx nuxi dev --no-fork --host 127.0.0.1 --port 3005",
+    "dev:all": "npm run dev:host --prefix apps/ccorex-site & CCOREX_BASE_URL=http://127.0.0.1:3100 npm run dev:main",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare"

@@ -7,6 +7,12 @@ export default defineNuxtConfig({
     '~/assets/main.css',
     'animate.css/animate.min.css'
   ],
+  runtimeConfig: {
+    public: {
+      // Base URL for the standalone CCorex site. Defaults to local dev.
+      ccorexBaseUrl: process.env.CCOREX_BASE_URL || 'http://localhost:3000'
+    }
+  },
   app: {
     pageTransition: {
       enterActiveClass: 'transition-all duration-300 ease-out',

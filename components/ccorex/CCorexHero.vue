@@ -30,7 +30,7 @@
     <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
       <!-- CCorex Logo -->
       <div class="mb-8 flex justify-center animate-fade-in">
-        <img src="~/assets/CCorex_Logo.svg" alt="CCorex" class="h-14 md:h-20 w-auto drop-shadow-lg" />
+        <img src="~/assets/ccorex/Corex_logo.png" alt="CCorex" class="h-14 md:h-20 w-auto brightness-0 invert drop-shadow-lg" />
       </div>
 
       <!-- Main Heading -->
@@ -52,13 +52,13 @@
 
       <!-- CTA Buttons -->
       <div class="flex flex-col sm:flex-row gap-4 justify-center mb-16 animate-fade-in" style="animation-delay: 0.6s">
-        <NuxtLink
-          to="/ccorex#apps"
+        <button
+          @click="openCCorexSite"
           class="group px-8 py-4 bg-gradient-to-r from-cyan-500 to-cyan-400 text-slate-900 font-bold rounded-lg hover:shadow-lg hover:shadow-cyan-500/50 transition-all duration-300 transform hover:scale-105"
         >
-          Explore Apps
-          <span class="inline-block transform group-hover:translate-x-1 transition-transform">→</span>
-        </NuxtLink>
+          Explore CCorex Site
+          <span class="inline-block transform group-hover:translate-x-1 transition-transform">↗</span>
+        </button>
 
         <a
           href="#cta"
@@ -99,7 +99,12 @@
 </template>
 
 <script setup>
-// Animation will be handled by Tailwind classes and CSS animations
+const config = useRuntimeConfig()
+
+const openCCorexSite = () => {
+  const baseUrl = config.public.ccorexBaseUrl || 'http://127.0.0.1:3100'
+  window.open(baseUrl, '_blank', 'noopener')
+}
 </script>
 
 <style scoped>

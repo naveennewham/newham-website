@@ -3,27 +3,28 @@
     <!-- Background -->
     <div class="absolute inset-0">
       <div class="absolute inset-0 bg-gradient-to-r from-cyan-500/5 to-teal-500/5"></div>
-      <div class="absolute top-1/4 right-1/4 w-96 h-96 bg-cyan-500 opacity-3 rounded-full blur-3xl"></div>
-      <div class="absolute bottom-1/4 left-1/4 w-96 h-96 bg-teal-500 opacity-3 rounded-full blur-3xl"></div>
+      <div class="absolute top-0 right-1/3 w-80 h-80 bg-cyan-500 opacity-20 rounded-full blur-2xl"></div>
+      <div class="absolute bottom-0 left-1/3 w-80 h-80 bg-teal-500 opacity-20 rounded-full blur-2xl"></div>
     </div>
 
     <!-- Content -->
     <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <!-- Section Header -->
-      <div class="text-center mb-16 md:mb-20">
+      <div class="text-center mb-12 md:mb-16">
         <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
           <span class="bg-gradient-to-r from-cyan-400 to-teal-400 bg-clip-text text-transparent">
             Seamless Integration
           </span>
         </h2>
-        <p class="text-xl text-gray-300 max-w-2xl mx-auto">
+        <p class="text-xl text-gray-200 max-w-2xl mx-auto">
           See how CCorex apps work together to streamline your entire project lifecycle
         </p>
       </div>
 
       <!-- Workflow Visualization -->
       <div class="overflow-x-auto pb-8">
-        <div class="flex gap-4 md:gap-6 min-w-max md:min-w-full justify-center">
+        <div class="relative mx-auto max-w-5xl rounded-3xl bg-slate-900/60 backdrop-blur-sm ring-1 ring-white/10 shadow-2xl px-6 py-10 md:px-10 md:py-12">
+          <div class="flex gap-4 md:gap-6 min-w-max md:min-w-full justify-center">
           <!-- Step 1: DeepPlanAI -->
           <div class="flex flex-col items-center animate-fade-in" style="animation-delay: 0.1s">
             <div
@@ -94,6 +95,7 @@
             </div>
             <h3 class="text-lg md:text-xl font-bold text-cyan-400 mb-2 text-center">DeepHR</h3>
             <p class="text-sm text-gray-400 text-center max-w-xs">Workforce<br/>Management</p>
+          </div>
           </div>
         </div>
       </div>
