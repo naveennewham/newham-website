@@ -14,11 +14,11 @@
         <!-- Page Title -->
         <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
           <span class="gradient-text">Our Services</span>
-          <span class="block text-white mt-2">Technology Solutions for Construction</span>
+          <span class="block text-white mt-2">Three pillars for construction delivery</span>
         </h1>
         
         <p class="text-gray-300 text-lg md:text-xl mb-10 max-w-3xl mx-auto">
-          We provide innovative technology solutions tailored to the unique challenges of the construction industry, helping companies streamline operations and drive growth.
+          Software, domain-trained teams, and engineering back-office support — built for Singapore M&E contractors and construction teams.
         </p>
         
         <!-- CTA Buttons -->
@@ -27,7 +27,7 @@
             Explore Our Services
           </a>
           <NuxtLink to="/contact" class="btn-outline">
-            Request a Consultation
+            Book a Discovery Call
           </NuxtLink>
         </div>
         
@@ -91,20 +91,16 @@ const ConsultingIcon = (props) => h('svg', {
 
 const serviceCategories = [
   {
-    name: 'Software Solutions',
+    name: 'CCorex Suite',
     icon: SoftwareIcon
   },
   {
-    name: 'Mobile Applications',
+    name: 'Talent Outsourcing',
     icon: MobileIcon
   },
   {
-    name: 'Cloud Services',
+    name: 'Engineering Services',
     icon: CloudIcon
-  },
-  {
-    name: 'Tech Consulting',
-    icon: ConsultingIcon
   }
 ];
 </script>

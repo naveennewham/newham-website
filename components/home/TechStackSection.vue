@@ -3,53 +3,69 @@
     <!-- Background Elements -->
     <div class="absolute inset-0 z-0">
       <div class="absolute inset-0 bg-dark-800"></div>
-      <div class="absolute inset-0 bg-[radial-gradient(circle_at_20%_50%,rgba(168,85,247,0.1),transparent_30%)]"></div>
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_15%_30%,rgba(0,135,150,0.18),transparent_35%)]"></div>
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_80%_70%,rgba(1,172,200,0.12),transparent_40%)]"></div>
     </div>
     
     <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       <!-- Section Header -->
       <div class="text-center mb-16">
         <h2 class="text-3xl md:text-4xl font-bold mb-4">
-          <span class="gradient-text">Powered by</span>
-          <span class="block text-white mt-2">Cutting-Edge Technology</span>
+          <span class="gradient-text">How CCorex works</span>
+          <span class="block text-white mt-2">from drawing to delivery</span>
         </h2>
         <p class="text-gray-400 max-w-3xl mx-auto">
-          We leverage the latest technologies to deliver robust, scalable, and future-proof solutions for our clients.
+          A Zoho-One-style suite for construction: each app is focused, but everything stays connected.
         </p>
       </div>
-      
-      <!-- Tech Categories -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-        <div v-for="(category, index) in techCategories" :key="index" 
-             class="glass-panel p-6 rounded-xl text-center relative overflow-hidden"
-             :class="index % 2 === 0 ? 'ai-glow-primary' : 'ai-glow-secondary'">
-          <!-- AI Glow Effect -->
-          <div class="absolute inset-0 z-0" :class="index % 2 === 0 ? 'ai-glow-radial-primary' : 'ai-glow-radial-secondary'"></div>
-          <div class="w-16 h-16 mx-auto mb-6 rounded-full flex items-center justify-center"
-               :class="category.bgClass">
-            <component :is="category.icon" class="w-8 h-8" />
-          </div>
-          <h3 class="text-xl font-semibold text-white mb-3">{{ category.title }}</h3>
-          <p class="text-gray-400 mb-4">{{ category.description }}</p>
-        </div>
-      </div>
-      
-      <!-- Tech Stack Grid -->
-      <div class="glass-panel p-8 rounded-xl relative overflow-hidden">
-        <!-- Static Glow Effect (No Animation) -->
-        <div class="absolute inset-0 z-0 bg-[radial-gradient(circle_at_center,rgba(var(--color-primary-400-rgb),0.2),transparent_70%)] opacity-40"></div>
-        <h3 class="text-2xl font-semibold text-white mb-8 text-center">Technologies We Work With</h3>
-        
-        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
-          <div v-for="(tech, index) in techStack" :key="index" 
-               class="tech-item p-4 rounded-lg bg-dark-700/50 hover:bg-dark-600/50 transition-colors duration-300 flex flex-col items-center justify-center group relative overflow-hidden">
-            <!-- Static Glow Effect (No Animation) -->
-            <div class="absolute inset-0 z-0 opacity-0 group-hover:opacity-30 transition-opacity duration-300" 
-                 :class="index % 3 === 0 ? 'bg-[radial-gradient(circle_at_center,rgba(var(--color-primary-400-rgb),0.2),transparent_70%)]' : index % 3 === 1 ? 'bg-[radial-gradient(circle_at_center,rgba(var(--color-secondary-400-rgb),0.2),transparent_70%)]' : 'bg-[radial-gradient(circle_at_center,rgba(var(--color-primary-400-rgb),0.2),transparent_70%)]'"></div>
-            <div class="w-12 h-12 mb-3 flex items-center justify-center text-gray-400 group-hover:text-white transition-colors">
-              <img :src="tech.logo" :alt="tech.name" class="max-w-full max-h-full object-contain" />
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+        <div class="glass-panel p-8 rounded-2xl relative overflow-hidden">
+          <div class="absolute inset-0 z-0 ai-glow-radial-primary opacity-25"></div>
+          <div class="relative z-10">
+            <h3 class="text-2xl font-semibold text-white">A simple 4-step flow</h3>
+            <p class="text-gray-400 mt-2">CCorex connects your core construction processes—without forcing your teams into complex workflows.</p>
+
+            <div class="mt-8 space-y-4">
+              <div v-for="(step, index) in steps" :key="index" class="flex items-start gap-4 rounded-xl border border-white/10 bg-white/5 px-5 py-4">
+                <div class="w-9 h-9 rounded-full flex items-center justify-center text-sm font-bold"
+                     :class="index % 2 === 0 ? 'bg-primary-900/50 text-primary-200 border border-primary-500/20' : 'bg-secondary-900/50 text-secondary-200 border border-secondary-500/20'">
+                  {{ index + 1 }}
+                </div>
+                <div>
+                  <div class="text-white font-semibold">{{ step.title }}</div>
+                  <div class="text-gray-400 text-sm mt-1">{{ step.description }}</div>
+                </div>
+              </div>
             </div>
-            <span class="text-sm text-gray-400 group-hover:text-white transition-colors">{{ tech.name }}</span>
+          </div>
+        </div>
+
+        <div class="glass-panel p-8 rounded-2xl relative overflow-hidden">
+          <div class="absolute inset-0 z-0 ai-glow-radial-secondary opacity-25"></div>
+          <div class="relative z-10">
+            <h3 class="text-2xl font-semibold text-white">Designed to fit your process</h3>
+            <p class="text-gray-400 mt-2">Export, share, and report with formats your teams already use—while maintaining control.</p>
+
+            <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div v-for="(capability, index) in capabilities" :key="index" class="rounded-xl border border-white/10 bg-white/5 px-5 py-4">
+                <div class="flex items-start gap-3">
+                  <div class="w-10 h-10 rounded-xl flex items-center justify-center"
+                       :class="index % 2 === 0 ? 'bg-primary-900/50 text-primary-200' : 'bg-secondary-900/50 text-secondary-200'">
+                    <component :is="capability.icon" class="w-5 h-5" />
+                  </div>
+                  <div>
+                    <div class="text-white font-semibold">{{ capability.title }}</div>
+                    <div class="text-gray-400 text-sm mt-1">{{ capability.description }}</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-8 flex flex-col sm:flex-row gap-4">
+              <NuxtLink to="/ccorex" class="btn-primary text-center">Explore the suite</NuxtLink>
+              <NuxtLink to="/pricing" class="btn-outline text-center">View pricing</NuxtLink>
+            </div>
           </div>
         </div>
       </div>
@@ -85,40 +101,45 @@ const CloudIcon = (props) => h('svg', {
   innerHTML: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"></path>'
 });
 
-const techCategories = [
+const steps = [
   {
-    title: 'Frontend Development',
-    description: 'Modern, responsive interfaces with the latest JavaScript frameworks and libraries.',
-    icon: FrontendIcon,
-    bgClass: 'bg-primary-900/50 text-primary-400'
+    title: 'Extract quantities',
+    description: 'Turn drawings into measurable quantities with DeepPlanAI.'
   },
   {
-    title: 'Backend Development',
-    description: 'Robust, scalable server-side solutions with secure API architecture.',
-    icon: BackendIcon,
-    bgClass: 'bg-secondary-900/50 text-secondary-400'
+    title: 'Estimate accurately',
+    description: 'Build BOQs and estimates with DeepCost using consistent templates.'
   },
   {
-    title: 'Cloud & Infrastructure',
-    description: 'Scalable cloud solutions with automated deployment and monitoring.',
-    icon: CloudIcon,
-    bgClass: 'bg-primary-900/50 text-primary-400'
+    title: 'Control budgets',
+    description: 'Track commitments, costs, and variances using DeepTrack.'
+  },
+  {
+    title: 'Manage workforce',
+    description: 'Monitor attendance and labor costs across sites with DeepHR.'
   }
-];
+]
 
-// Placeholder tech stack - in a real app, you'd use actual logos
-const techStack = [
-  { name: 'React', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg' },
-  { name: 'Vue.js', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg' },
-  { name: 'Angular', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg' },
-  { name: 'Node.js', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg' },
-  { name: 'Python', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg' },
-  { name: 'Java', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg' },
-  { name: 'AWS', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg' },
-  { name: 'Azure', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg' },
-  { name: 'Docker', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg' },
-  { name: 'Kubernetes', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg' },
-  { name: 'MongoDB', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg' },
-  { name: 'PostgreSQL', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg' }
-];
+const capabilities = [
+  {
+    title: 'Reports & exports',
+    description: 'Generate clear outputs for stakeholders and approvals.',
+    icon: BackendIcon
+  },
+  {
+    title: 'Role-based access',
+    description: 'Keep commercial data secure with controlled permissions.',
+    icon: FrontendIcon
+  },
+  {
+    title: 'Cloud-ready',
+    description: 'Modern infrastructure for scale and reliability.',
+    icon: CloudIcon
+  },
+  {
+    title: 'Implementation support',
+    description: 'Onboarding, templates, and process standardization.',
+    icon: BackendIcon
+  }
+]
 </script>

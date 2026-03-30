@@ -74,7 +74,7 @@
               </svg>
               <span class="flex flex-col">
                 <span class="font-semibold text-white text-sm mb-1">Singapore:</span>
-                20, Bukit Batok Cres, Enterprise Centre, Singapore - 658080
+                160 Robinson Rd, #14-04 SBF Center, Singapore 0689
               </span>
             </p>
             <p class="text-gray-400 flex items-start">
@@ -84,7 +84,7 @@
               </svg>
               <span class="flex flex-col">
                 <span class="font-semibold text-white text-sm mb-1">Chennai:</span>
-                No 5, SRG Complex, Door No 6, 1st Floor, 5th Cross Street, Anand Nagar, Thoraipakkam, Chennai - 600097
+                3rd Floor, Plot no. 21, Electrical, Electronics & Instruments Industries, Perungudi, Sholinganallur, Seevaram, OMR, Chennai, Tamil Nadu 600096
               </span>
             </p>
             <p class="text-gray-400 flex items-center">

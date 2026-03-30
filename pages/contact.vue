@@ -124,9 +124,8 @@
                   <div>
                     <h3 class="text-white font-semibold mb-1">Singapore Office</h3>
                     <p class="text-gray-400">
-                      20, Bukit Batok Cres<br>
-                      Enterprise Centre<br>
-                      Singapore - 658080
+                      160 Robinson Rd, #14-04 SBF Center<br>
+                      Singapore 0689
                     </p>
                   </div>
                 </div>
@@ -138,9 +137,9 @@
                   <div>
                     <h3 class="text-white font-semibold mb-1">Chennai Office</h3>
                     <p class="text-gray-400">
-                      No 5, SRG Complex, Door No 6, 1st Floor<br>
-                      5th Cross Street, Anand Nagar<br>
-                      Thoraipakkam, Chennai - 600097
+                      3rd Floor, Plot no. 21, Electrical, Electronics & Instruments Industries<br>
+                      Perungudi, Sholinganallur, Seevaram, OMR<br>
+                      Chennai, Tamil Nadu 600096
                     </p>
                   </div>
                 </div>

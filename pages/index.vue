@@ -2,6 +2,9 @@
   <div class="home-page">
     <!-- Hero Section -->
     <HeroSection />
+
+    <!-- Pillars Section -->
+    <PillarsSection />
     
     <!-- Features Section -->
     <FeaturesSection />
@@ -25,6 +28,7 @@ useHead({
   title: 'Home'
 })
 import HeroSection from '~/components/home/HeroSection.vue';
+import PillarsSection from '~/components/home/PillarsSection.vue';
 import FeaturesSection from '~/components/home/FeaturesSection.vue';
 import ProductsSection from '~/components/home/ProductsSection.vue';
 import TechStackSection from '~/components/home/TechStackSection.vue';

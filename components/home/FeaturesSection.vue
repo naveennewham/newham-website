@@ -21,108 +21,67 @@
     
     <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       <!-- Section Header with Geometric Design -->
-      <div class="text-center mb-16 relative">
+      <div class="text-center mb-14 relative">
         <!-- Geometric accent elements -->
         <div class="absolute -top-10 left-1/2 transform -translate-x-1/2 w-20 h-1 bg-primary-500 skew-x-12"></div>
         <div class="absolute -top-10 left-1/2 transform -translate-x-1/2 translate-x-12 w-10 h-1 bg-secondary-500 -skew-x-12"></div>
         
         <h2 class="text-3xl md:text-4xl font-bold mb-4 relative inline-block">
-          <span class="gradient-text">Innovative Solutions</span>
-          <span class="block text-white mt-2">For Modern Construction</span>
+          <span class="gradient-text">Everything connected</span>
+          <span class="block text-white mt-2">for your construction workflow</span>
           <!-- Underline with geometric design -->
           <span class="absolute -bottom-2 left-0 w-1/2 h-1 bg-primary-500 transform skew-x-12"></span>
           <span class="absolute -bottom-2 right-0 w-1/3 h-1 bg-secondary-500 transform -skew-x-12"></span>
         </h2>
         
         <p class="text-gray-400 max-w-3xl mx-auto mt-6">
-          Our comprehensive suite of software solutions and services designed specifically for the construction industry and beyond.
+          Instead of disconnected tools, CCorex keeps takeoffs, estimation, budget control, and workforce data in one place—so every team works from the same numbers.
         </p>
       </div>
-      
-      <!-- Features Grid with Geometric Design -->
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-        <div v-for="(feature, index) in features" :key="index" 
-             class="relative bg-dark-800/50 backdrop-blur-sm p-6 transition-all duration-300 overflow-hidden"
-             :class="{'ai-glow-primary': index % 2 === 0, 'ai-glow-secondary': index % 2 !== 0}"
-             :style="{'clip-path': 'polygon(0 0, 100% 0, 95% 100%, 5% 100%)'}">
-          
-          <!-- AI Glow Effect -->
-          <div class="absolute inset-0 z-0" :class="index % 2 === 0 ? 'ai-glow-radial-primary' : 'ai-glow-radial-secondary'"></div>
-          
-          <!-- Geometric Accents -->
-          <div class="absolute top-0 left-0 w-full h-full border-t-2 border-l-2 z-10" 
-               :class="index % 2 === 0 ? 'border-primary-500/30' : 'border-secondary-500/30'"></div>
-          <div class="absolute bottom-0 right-0 w-full h-full border-b-2 border-r-2 z-10" 
-               :class="index % 2 === 0 ? 'border-primary-500/30' : 'border-secondary-500/30'"></div>
-          
-          <!-- Icon with geometric background -->
-          <div class="w-14 h-14 mb-6 flex items-center justify-center transform rotate-45 relative">
-            <div class="absolute inset-0" :class="feature.bgClass"></div>
-            <div class="transform -rotate-45 relative z-10">
-              <component :is="feature.icon" class="w-7 h-7" />
-            </div>
-          </div>
-          
-          <h3 class="text-xl font-semibold text-white mb-3">{{ feature.title }}</h3>
-          <p class="text-gray-400 mb-4">{{ feature.description }}</p>
-          
-          <!-- Geometric button -->
-          <NuxtLink :to="feature.link" 
-                      class="inline-block relative px-4 py-2 overflow-hidden group"
-                      :class="index % 2 === 0 ? 'text-primary-400' : 'text-secondary-400'">
-            <span class="absolute top-0 left-0 w-full h-full border"
-                  :class="index % 2 === 0 ? 'border-primary-500/30' : 'border-secondary-500/30'"></span>
-            <span class="absolute top-0 left-0 w-0 h-full transition-all duration-300 group-hover:w-full"
-                  :class="index % 2 === 0 ? 'bg-primary-500/10' : 'bg-secondary-500/10'"></span>
-            <span class="relative flex items-center">
-              Learn more
-              <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-              </svg>
-            </span>
-          </NuxtLink>
-        </div>
-      </div>
-      
-      <!-- Additional Feature List with Geometric Design -->
-      <div class="mt-16 relative bg-dark-800/50 backdrop-blur-sm p-8 border-t-4 border-r-4 border-primary-500/20 ai-glow-primary overflow-hidden">
-        <!-- AI Glow Effect -->
-        <div class="absolute inset-0 z-0 ai-glow-radial-primary opacity-50"></div>
-        <!-- Geometric corner accent -->
-        <div class="absolute -top-3 -right-3 w-12 h-12 bg-primary-500/20 transform rotate-45 translate-x-1/2 -translate-y-1/2"></div>
-        
-        <h3 class="text-2xl font-semibold text-white mb-6 relative inline-block">
-          Why Choose Our Solutions
-          <span class="absolute -bottom-2 left-0 w-1/3 h-1 bg-secondary-500 transform skew-x-12"></span>
-        </h3>
-        
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <div v-for="(item, index) in additionalFeatures" :key="index" 
-               class="flex items-start group hover:bg-dark-700/30 p-3 transition-colors duration-300 relative overflow-hidden"
-               :class="index % 3 === 0 ? 'ai-glow-primary-subtle' : index % 3 === 1 ? 'ai-glow-secondary-subtle' : 'ai-glow-primary-subtle'"
-               :style="{'clip-path': index % 2 === 0 ? 'polygon(0 0, 100% 0, 95% 100%, 5% 100%)' : 'polygon(5% 0, 95% 0, 100% 100%, 0% 100%)'}">
-            
-            <!-- Geometric icon container -->
-            <div class="flex-shrink-0 w-10 h-10 transform rotate-45 bg-dark-900 flex items-center justify-center mr-4 relative overflow-hidden"
-                 :class="index % 3 === 0 ? 'border-t-2 border-l-2 border-primary-500/40' : 
-                         index % 3 === 1 ? 'border-t-2 border-r-2 border-secondary-500/40' : 
-                                          'border-b-2 border-l-2 border-primary-500/40'">
-              <div class="transform -rotate-45">
-                <svg class="w-5 h-5" :class="index % 3 === 0 ? 'text-primary-400' : 
-                                             index % 3 === 1 ? 'text-secondary-400' : 
-                                                              'text-primary-400'" 
-                     fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                </svg>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div class="lg:col-span-2">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div v-for="(benefit, index) in suiteBenefits" :key="index" class="glass-panel p-6 rounded-2xl relative overflow-hidden">
+              <div class="absolute inset-0 z-0" :class="index % 2 === 0 ? 'ai-glow-radial-primary opacity-30' : 'ai-glow-radial-secondary opacity-30'"></div>
+              <div class="relative z-10">
+                <div class="flex items-start gap-3">
+                  <div class="w-10 h-10 rounded-xl flex items-center justify-center"
+                       :class="index % 2 === 0 ? 'bg-primary-900/50 text-primary-300' : 'bg-secondary-900/50 text-secondary-300'">
+                    <component :is="benefit.icon" class="w-5 h-5" />
+                  </div>
+                  <div>
+                    <h3 class="text-white font-semibold">{{ benefit.title }}</h3>
+                    <p class="text-gray-400 text-sm mt-1">{{ benefit.description }}</p>
+                  </div>
+                </div>
               </div>
             </div>
-            
-            <div>
-              <h4 class="text-lg font-medium text-white mb-1 relative inline-block">
-                {{ item.title }}
-                <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary-500 group-hover:w-full transition-all duration-300"></span>
-              </h4>
-              <p class="text-gray-400">{{ item.description }}</p>
+          </div>
+        </div>
+
+        <div class="glass-panel p-6 rounded-2xl relative overflow-hidden">
+          <div class="absolute inset-0 z-0 ai-glow-radial-primary opacity-25"></div>
+          <div class="relative z-10">
+            <h3 class="text-white text-xl font-semibold">Built for every role</h3>
+            <p class="text-gray-400 text-sm mt-2">From office to site—each role gets the right view and the same source of truth.</p>
+
+            <div class="mt-6 space-y-3">
+              <div v-for="(role, index) in roles" :key="index" class="flex items-start gap-3 rounded-xl border border-white/10 bg-white/5 px-4 py-3">
+                <span class="inline-flex h-9 w-9 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-xs font-semibold text-white">
+                  {{ role.badge }}
+                </span>
+                <div>
+                  <div class="text-white font-semibold text-sm">{{ role.title }}</div>
+                  <div class="text-gray-400 text-xs mt-0.5">{{ role.description }}</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-6">
+              <NuxtLink to="/ccorex" class="btn-primary w-full text-center">
+                See CCorex Suite
+              </NuxtLink>
             </div>
           </div>
         </div>
@@ -167,61 +126,33 @@ const CloudIcon = (props) => h('svg', {
   innerHTML: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"></path>'
 });
 
-const features = [
+const suiteBenefits = [
   {
-    title: 'Construction Tech Tools',
-    description: 'Project management, field applications, and compliance solutions tailored for construction companies.',
-    icon: ProjectManagementIcon,
-    bgClass: 'bg-primary-900/50 text-primary-400',
-    link: '/services'
+    title: 'One source of truth',
+    description: 'Quantities, costs, budgets, and workforce data stay connected across the suite.',
+    icon: ProjectManagementIcon
   },
   {
-    title: 'Custom Software Development',
-    description: 'Bespoke software solutions designed to address your specific business challenges.',
-    icon: SoftwareIcon,
-    bgClass: 'bg-secondary-900/50 text-secondary-400',
-    link: '/services'
+    title: 'Faster pre-construction',
+    description: 'Reduce turnaround time from drawings to takeoffs and detailed BOQs.',
+    icon: SoftwareIcon
   },
   {
-    title: 'Mobile & Web Apps',
-    description: 'Cross-platform applications that work seamlessly across all devices and browsers.',
-    icon: MobileIcon,
-    bgClass: 'bg-primary-900/50 text-primary-400',
-    link: '/services'
+    title: 'Site-to-office visibility',
+    description: 'Track progress and costs with clear, role-based dashboards and reports.',
+    icon: MobileIcon
   },
   {
-    title: 'Cloud & DevOps',
-    description: 'Scalable cloud infrastructure and continuous integration/deployment pipelines.',
-    icon: CloudIcon,
-    bgClass: 'bg-secondary-900/50 text-secondary-400',
-    link: '/services'
+    title: 'Scales with your projects',
+    description: 'Standardize processes across teams, packages, and regions without losing control.',
+    icon: CloudIcon
   }
-];
+]
 
-const additionalFeatures = [
-  {
-    title: 'Real-time Collaboration',
-    description: 'Enable teams to work together seamlessly from anywhere.'
-  },
-  {
-    title: 'Data-Driven Insights',
-    description: 'Make informed decisions with powerful analytics and reporting.'
-  },
-  {
-    title: 'Regulatory Compliance',
-    description: 'Stay compliant with industry standards and regulations.'
-  },
-  {
-    title: 'Scalable Architecture',
-    description: 'Solutions that grow with your business needs.'
-  },
-  {
-    title: 'Mobile-First Design',
-    description: 'Access critical information from any device, anywhere.'
-  },
-  {
-    title: '24/7 Support',
-    description: 'Dedicated support team available around the clock.'
-  }
-];
+const roles = [
+  { badge: 'QS', title: 'QS & Estimation', description: 'Takeoffs, BOQs, rate build-up, and revisions.' },
+  { badge: 'PM', title: 'Project & Site teams', description: 'Work packages, reporting, and coordination.' },
+  { badge: 'CM', title: 'Commercial & Finance', description: 'Commitments, budget control, and variance tracking.' },
+  { badge: 'HR', title: 'HR & Compliance', description: 'Workforce attendance and labor cost visibility.' }
+]
 </script>

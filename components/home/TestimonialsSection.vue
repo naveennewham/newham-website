@@ -1,20 +1,21 @@
 <template>
-  <section class="testimonials-section section-padding relative overflow-hidden">
+  <section id="testimonials" class="testimonials-section section-padding relative overflow-hidden">
     <!-- Background Elements -->
     <div class="absolute inset-0 z-0">
       <div class="absolute inset-0 bg-dark-900"></div>
-      <div class="absolute inset-0 bg-[radial-gradient(circle_at_30%_70%,rgba(120,120,255,0.1),transparent_30%)]"></div>
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_25%_35%,rgba(0,135,150,0.16),transparent_35%)]"></div>
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_80%_70%,rgba(1,172,200,0.12),transparent_40%)]"></div>
     </div>
     
     <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       <!-- Section Header -->
       <div class="text-center mb-16">
         <h2 class="text-3xl md:text-4xl font-bold mb-4">
-          <span class="gradient-text">Client Success Stories</span>
-          <span class="block text-white mt-2">What Our Clients Say</span>
+          <span class="gradient-text">Construction teams run better</span>
+          <span class="block text-white mt-2">with CCorex</span>
         </h2>
         <p class="text-gray-400 max-w-3xl mx-auto">
-          Hear from our clients about how our solutions have transformed their businesses and workflows.
+          See how estimators, project teams, and commercial managers reduce rework and make decisions faster when everything is connected.
         </p>
       </div>
       
@@ -37,11 +38,11 @@
         <div class="overflow-hidden">
           <div class="flex transition-transform duration-500 ease-in-out" :style="{ transform: `translateX(-${currentSlide * 100}%)` }">
             <div v-for="(testimonial, index) in testimonials" :key="index" class="w-full flex-shrink-0 px-4">
-              <div class="glass-panel p-8 rounded-xl relative overflow-hidden ai-glow-primary">
+              <div class="glass-panel p-8 rounded-xl relative overflow-hidden" :class="index % 2 === 0 ? 'ai-glow-primary' : 'ai-glow-secondary'">
                 <!-- AI Glow Effect -->
-                <div class="absolute inset-0 z-0 ai-glow-radial-primary opacity-40"></div>
+                <div class="absolute inset-0 z-0" :class="index % 2 === 0 ? 'ai-glow-radial-primary opacity-35' : 'ai-glow-radial-secondary opacity-35'"></div>
                 <!-- Quote Icon -->
-                <div class="mb-6 text-primary-400">
+                <div class="mb-6" :class="index % 2 === 0 ? 'text-primary-300' : 'text-secondary-300'">
                   <svg class="w-10 h-10 opacity-50" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
                   </svg>
@@ -77,7 +78,7 @@
       
       <!-- Client Logos -->
       <div class="mt-20">
-        <h3 class="text-xl font-semibold text-white text-center mb-8">Trusted by Industry Leaders</h3>
+        <h3 class="text-xl font-semibold text-white text-center mb-8">Trusted by construction and MEP teams</h3>
         <div class="flex flex-wrap justify-center items-center gap-8 md:gap-12">
           <div v-for="(client, index) in clients" :key="index" 
                class="w-24 h-16 md:w-32 md:h-20 flex items-center justify-center grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300 relative overflow-hidden"
@@ -129,30 +130,30 @@ onUnmounted(() => {
 
 const testimonials = [
   {
-    content: "Newham's construction management software has revolutionized how we track and manage our projects. The real-time collaboration features have improved our team's efficiency by at least 40%.",
+    content: "With CCorex, our estimator-to-project handover is finally consistent. Takeoffs and BOQs stay connected, so we reduced rework and version confusion across teams.",
     name: "Sarah Johnson",
-    position: "Operations Director",
+    position: "Commercial Lead",
     company: "BuildTech Construction",
     avatar: "https://randomuser.me/api/portraits/women/45.jpg"
   },
   {
-    content: "The mobile field apps developed by Newham have transformed our on-site operations. Our inspectors can now document issues, complete checklists, and file reports in real-time, saving us countless hours.",
+    content: "DeepCost helped us standardize our estimates across packages. We can explain rates and revisions to stakeholders quickly, and the audit trail is a big win.",
     name: "Michael Chen",
-    position: "CTO",
+    position: "Pre-Construction Manager",
     company: "Horizon Builders",
     avatar: "https://randomuser.me/api/portraits/men/32.jpg"
   },
   {
-    content: "We approached Newham to modernize our legacy systems, and they delivered beyond our expectations. The new cloud-based platform has improved data accessibility and reduced our IT maintenance costs by 60%.",
+    content: "DeepTrack gives us instant visibility into commitments and variances. Our commercial team can spot overruns earlier and take action while there’s still time.",
     name: "Jessica Rodriguez",
-    position: "IT Director",
+    position: "Commercial Manager",
     company: "Metropolitan Construction",
     avatar: "https://randomuser.me/api/portraits/women/68.jpg"
   },
   {
-    content: "The custom compliance solution from Newham has been a game-changer for our regulatory reporting. What used to take days now happens automatically, and we've eliminated compliance-related delays entirely.",
+    content: "DeepHR made our site attendance and labor cost reporting much clearer. We spend less time chasing updates and more time managing productivity.",
     name: "Robert Williams",
-    position: "Compliance Manager",
+    position: "Operations Manager",
     company: "Pinnacle Development",
     avatar: "https://randomuser.me/api/portraits/men/75.jpg"
   }

@@ -9,10 +9,18 @@
       
       <!-- Desktop Navigation -->
       <div class="hidden md:flex items-center space-x-8">
+        <NuxtLink
+          to="/"
+          class="text-gray-300 hover:text-white transition-colors duration-300"
+          :class="{ 'gradient-text font-medium': $route.path === '/' }"
+        >
+          Home
+        </NuxtLink>
+
         <!-- CCorex with Dropdown -->
         <div class="relative" ref="suiteRef">
           <button type="button" @click="dropdownOpen = !dropdownOpen" class="text-gray-300 hover:text-white transition-colors duration-300 flex items-center gap-1">
-            CCorex Suite
+            Corex
             <svg class="w-4 h-4 group-hover:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
             </svg>
@@ -78,6 +86,83 @@
           </div>
         </div>
 
+        <!-- Services with Dropdown -->
+        <div class="relative" ref="servicesRef">
+          <button type="button" @click="servicesDropdownOpen = !servicesDropdownOpen" class="text-gray-300 hover:text-white transition-colors duration-300 flex items-center gap-1">
+            Services
+            <svg class="w-4 h-4 group-hover:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+            </svg>
+          </button>
+
+          <div v-show="servicesDropdownOpen" class="fixed inset-0 z-40" @click="servicesDropdownOpen = false"></div>
+          <div
+            v-show="servicesDropdownOpen"
+            class="fixed top-16 left-1/2 -translate-x-1/2 w-[56rem] max-w-[95vw] rounded-2xl shadow-2xl z-50 p-6 bg-white text-slate-800 ring-1 ring-slate-200/60 transition-transform duration-150"
+            style="width: min(95vw, 56rem);"
+          >
+            <div class="flex items-center justify-between pb-4">
+              <div>
+                <div class="font-semibold text-slate-900">Services</div>
+                <div class="text-sm text-slate-500">Three pillars for construction delivery</div>
+              </div>
+              <span class="inline-flex items-center rounded-full bg-slate-100 text-slate-700 text-xs font-semibold px-3 py-1">3 Pillars</span>
+            </div>
+
+            <div class="grid grid-cols-3 gap-6">
+              <div class="col-span-2">
+                <div class="rounded-xl ring-1 ring-slate-200/70 overflow-hidden bg-white">
+                  <div class="grid grid-cols-2 divide-x divide-y divide-slate-200/80">
+                    <NuxtLink to="/services" class="flex items-start gap-3 p-5 hover:bg-slate-50" @click="servicesDropdownOpen = false">
+                      <span class="inline-flex h-8 w-8 items-center justify-center rounded-full bg-slate-100 text-slate-600 text-base">▦</span>
+                      <div>
+                        <div class="font-semibold leading-tight">Services Overview</div>
+                        <div class="text-sm text-slate-500">Software, talent, and engineering support</div>
+                      </div>
+                    </NuxtLink>
+
+                    <NuxtLink to="/ccorex" class="flex items-start gap-3 p-5 hover:bg-slate-50" @click="servicesDropdownOpen = false">
+                      <span class="inline-flex h-8 w-8 items-center justify-center rounded-full bg-cyan-100 text-cyan-600 text-base">CC</span>
+                      <div>
+                        <div class="font-semibold leading-tight">CCorex Suite</div>
+                        <div class="text-sm text-slate-500">Construction software platform</div>
+                      </div>
+                    </NuxtLink>
+
+                    <NuxtLink to="/talent-outsourcing" class="flex items-start gap-3 p-5 hover:bg-slate-50" @click="servicesDropdownOpen = false">
+                      <span class="inline-flex h-8 w-8 items-center justify-center rounded-full bg-indigo-100 text-indigo-700 text-base">TO</span>
+                      <div>
+                        <div class="font-semibold leading-tight">Talent Outsourcing</div>
+                        <div class="text-sm text-slate-500">Domain-trained engineering teams</div>
+                      </div>
+                    </NuxtLink>
+
+                    <NuxtLink to="/engineering-services" class="flex items-start gap-3 p-5 hover:bg-slate-50" @click="servicesDropdownOpen = false">
+                      <span class="inline-flex h-8 w-8 items-center justify-center rounded-full bg-emerald-100 text-emerald-700 text-base">ES</span>
+                      <div>
+                        <div class="font-semibold leading-tight">Engineering Services</div>
+                        <div class="text-sm text-slate-500">FP design + commercial support</div>
+                      </div>
+                    </NuxtLink>
+                  </div>
+                </div>
+              </div>
+
+              <div class="flex">
+                <div class="rounded-2xl ring-1 ring-slate-200/70 bg-slate-50 p-6 flex flex-col justify-between w-full">
+                  <div>
+                    <div class="font-semibold text-slate-900">Not sure which pillar fits?</div>
+                    <p class="text-sm text-slate-600 mt-2">Book a 30-minute discovery call and we’ll recommend the right mix for your pipeline.</p>
+                  </div>
+                  <NuxtLink to="/contact" class="mt-4 inline-flex items-center justify-center rounded-lg bg-slate-900 text-white px-4 py-2 font-semibold hover:bg-slate-800" @click="servicesDropdownOpen = false">
+                    Book a Discovery Call
+                  </NuxtLink>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <!-- Other Navigation Items -->
         <NuxtLink v-for="item in navItems"
           :key="item.path"
@@ -113,6 +198,28 @@
     >
       <div v-if="mobileMenuOpen" class="glass-panel mx-4 px-4 py-5 md:hidden">
         <div class="flex flex-col space-y-4">
+          <NuxtLink to="/" @click="mobileMenuOpen = false" class="text-gray-300 hover:text-white py-2 transition-colors duration-300 font-semibold">
+            Home
+          </NuxtLink>
+
+          <!-- Services Mobile Menu -->
+          <div class="border-b border-gray-700/50 pb-4">
+            <NuxtLink to="/services" @click="mobileMenuOpen = false" class="text-gray-300 hover:text-white py-2 font-semibold block">
+              Services
+            </NuxtLink>
+            <div class="ml-4 space-y-2 mt-2">
+              <NuxtLink to="/ccorex" @click="mobileMenuOpen = false" class="text-gray-300 hover:text-white py-2 block text-sm">
+                ↳ CCorex Suite
+              </NuxtLink>
+              <NuxtLink to="/talent-outsourcing" @click="mobileMenuOpen = false" class="text-gray-300 hover:text-white py-2 block text-sm">
+                ↳ Engineering Talent Outsourcing
+              </NuxtLink>
+              <NuxtLink to="/engineering-services" @click="mobileMenuOpen = false" class="text-gray-300 hover:text-white py-2 block text-sm">
+                ↳ Construction Engineering Services
+              </NuxtLink>
+            </div>
+          </div>
+
           <!-- CCorex Mobile Menu -->
           <div class="border-b border-gray-700/50 pb-4">
             <NuxtLink to="/ccorex" @click="mobileMenuOpen = false" class="text-gray-300 hover:text-cyan-400 py-2 font-semibold block">
@@ -156,18 +263,20 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onBeforeUnmount } from 'vue';
+import { ref, onMounted, onBeforeUnmount, watch } from 'vue';
 const config = useRuntimeConfig()
 
 const mobileMenuOpen = ref(false);
 const dropdownOpen = ref(false)
 const suiteRef = ref(null)
+const servicesDropdownOpen = ref(false)
+const servicesRef = ref(null)
 
 const navItems = [
-  { name: 'Home', path: '/' },
   { name: 'About', path: '/about' },
-  { name: 'Services', path: '/services' },
-  { name: 'Pricing', path: '/pricing' },
+  { name: 'Blog', path: '/case-studies' },
+  { name: 'Testimonials', path: '/#testimonials' },
+  { name: 'Contact', path: '/contact' },
   // Temporarily hiding Industries and Case Studies from navigation
   // { name: 'Industries', path: '/industries' },
   // { name: 'Case Studies', path: '/case-studies' }
@@ -211,12 +320,17 @@ const appCols = [apps.slice(0, Math.ceil(apps.length / 2)), apps.slice(Math.ceil
 
 // Close dropdown on outside click or ESC
 const onDocClick = (e) => {
-  if (!dropdownOpen.value) return
-  const el = suiteRef.value
-  if (el && !el.contains(e.target)) dropdownOpen.value = false
+  const suiteEl = suiteRef.value
+  if (dropdownOpen.value && suiteEl && !suiteEl.contains(e.target)) dropdownOpen.value = false
+
+  const servicesEl = servicesRef.value
+  if (servicesDropdownOpen.value && servicesEl && !servicesEl.contains(e.target)) servicesDropdownOpen.value = false
 }
 const onKey = (e) => {
-  if (e.key === 'Escape') dropdownOpen.value = false
+  if (e.key === 'Escape') {
+    dropdownOpen.value = false
+    servicesDropdownOpen.value = false
+  }
 }
 onMounted(() => {
   document.addEventListener('click', onDocClick)
@@ -225,5 +339,12 @@ onMounted(() => {
 onBeforeUnmount(() => {
   document.removeEventListener('click', onDocClick)
   document.removeEventListener('keydown', onKey)
+})
+
+watch(dropdownOpen, (open) => {
+  if (open) servicesDropdownOpen.value = false
+})
+watch(servicesDropdownOpen, (open) => {
+  if (open) dropdownOpen.value = false
 })
 </script>
