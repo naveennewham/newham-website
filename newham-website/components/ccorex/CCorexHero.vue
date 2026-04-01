@@ -102,7 +102,7 @@
 const config = useRuntimeConfig()
 
 const openCCorexSite = () => {
-  const baseUrl = config.public.ccorexBaseUrl || 'http://127.0.0.1:3100'
+  const baseUrl = config.public.ccorexBaseUrl || 'https://ccorex.com'
   window.open(baseUrl, '_blank', 'noopener')
 }
 </script>

@@ -110,19 +110,21 @@
               </tr>
             </thead>
             <tbody>
-              <tr v-for="(category, catIndex) in featureComparison" :key="catIndex">
-                <td colspan="4" class="py-4 px-6 bg-white/5">
-                  <h3 class="text-lg font-bold text-white">{{ category.category }}</h3>
-                </td>
-              </tr>
-              <tr v-for="feature in category.features" :key="feature.name" class="border-b border-white/10 hover:bg-white/5">
-                <td class="py-4 px-6 text-gray-300">{{ feature.name }}</td>
-                <td v-for="plan in pricingPlans" :key="plan.name" class="text-center py-4 px-6">
-                  <span v-if="feature.availability[plan.key] === true" class="text-primary-400 text-2xl">✓</span>
-                  <span v-else-if="feature.availability[plan.key]" class="text-gray-400 text-sm">{{ feature.availability[plan.key] }}</span>
-                  <span v-else class="text-gray-600 text-2xl">—</span>
-                </td>
-              </tr>
+              <template v-for="(category, catIndex) in featureComparison" :key="catIndex">
+                <tr>
+                  <td colspan="4" class="py-4 px-6 bg-white/5">
+                    <h3 class="text-lg font-bold text-white">{{ category.category }}</h3>
+                  </td>
+                </tr>
+                <tr v-for="feature in category.features" :key="feature.name" class="border-b border-white/10 hover:bg-white/5">
+                  <td class="py-4 px-6 text-gray-300">{{ feature.name }}</td>
+                  <td v-for="plan in pricingPlans" :key="plan.name" class="text-center py-4 px-6">
+                    <span v-if="feature.availability[plan.key] === true" class="text-primary-400 text-2xl">✓</span>
+                    <span v-else-if="feature.availability[plan.key]" class="text-gray-400 text-sm">{{ feature.availability[plan.key] }}</span>
+                    <span v-else class="text-gray-600 text-2xl">—</span>
+                  </td>
+                </tr>
+              </template>
             </tbody>
           </table>
         </div>

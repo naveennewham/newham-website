@@ -283,7 +283,7 @@ const navItems = [
 ];
 
 const openExternal = () => {
-  const base = config.public.ccorexBaseUrl || 'http://localhost:3000'
+  const base = config.public.ccorexBaseUrl || 'https://ccorex.com'
   window.open(base, '_blank', 'noopener')
 }
 

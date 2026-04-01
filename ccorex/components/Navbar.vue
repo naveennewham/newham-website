@@ -16,7 +16,7 @@
         <li><NuxtLink to="/about" class="hover:text-white">About</NuxtLink></li>
       </ul>
       <div class="hidden md:flex items-center gap-3">
-        <a href="/login" class="text-gray-300 hover:text-white">Login</a>
+        <a href="/contact" class="text-gray-300 hover:text-white">Login</a>
         <a href="/contact" class="px-4 py-2 rounded-lg bg-primary-500 text-slate-900 font-semibold hover:bg-primary-400 transition-all">Get Demo</a>
       </div>
       <button class="md:hidden" @click="open = !open" aria-label="toggle">
@@ -33,7 +33,7 @@
         <li><NuxtLink to="/resources" @click="open=false">Resources</NuxtLink></li>
         <li><NuxtLink to="/pricing" @click="open=false">Pricing</NuxtLink></li>
         <li><NuxtLink to="/about" @click="open=false">About</NuxtLink></li>
-        <li><a href="/login" @click="open=false" class="text-gray-300">Login</a></li>
+        <li><a href="/contact" @click="open=false" class="text-gray-300">Login</a></li>
         <li><a href="/contact" @click="open=false" class="px-4 py-2 rounded-lg bg-primary-500 text-slate-900 font-semibold inline-block">Get Demo</a></li>
       </ul>
     </div>

@@ -10,7 +10,7 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       // Base URL for the standalone CCorex site. Defaults to local dev.
-      ccorexBaseUrl: process.env.CCOREX_BASE_URL || 'http://localhost:3000'
+      ccorexBaseUrl: process.env.CCOREX_BASE_URL || 'https://ccorex.com'
     }
   },
   app: {

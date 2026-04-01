@@ -139,7 +139,7 @@
                 </li>
               </ul>
             </div>
-            <a href="/resources/case-studies" class="inline-flex items-center gap-2 text-primary-400 font-semibold hover:gap-3 transition-all">
+            <a href="/resources" class="inline-flex items-center gap-2 text-primary-400 font-semibold hover:gap-3 transition-all">
               Read Full Story
               <span>→</span>
             </a>
@@ -161,7 +161,7 @@
           <a href="/contact" class="px-8 py-4 rounded-lg bg-primary-500 text-slate-900 font-bold hover:bg-primary-400 transition-all">
             Schedule Industry Demo
           </a>
-          <NuxtLink to="/resources/case-studies" class="px-8 py-4 rounded-lg border-2 border-primary-500 text-primary-400 font-bold hover:bg-primary-500 hover:text-slate-900 transition-all">
+          <NuxtLink to="/resources" class="px-8 py-4 rounded-lg border-2 border-primary-500 text-primary-400 font-bold hover:bg-primary-500 hover:text-slate-900 transition-all">
             View Case Studies
           </NuxtLink>
         </div>

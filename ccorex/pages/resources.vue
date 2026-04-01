@@ -210,25 +210,25 @@ const resourceCategories = [
     name: 'Blog',
     icon: '📝',
     description: 'Latest insights, trends, and best practices in construction technology.',
-    link: '/resources/blog'
+    link: '/resources'
   },
   {
     name: 'Guides',
     icon: '📚',
     description: 'Comprehensive guides and whitepapers for construction professionals.',
-    link: '/resources/guides'
+    link: '/resources'
   },
   {
     name: 'Case Studies',
     icon: '📊',
     description: 'Real success stories from construction firms using CCorex.',
-    link: '/resources/case-studies'
+    link: '/resources'
   },
   {
     name: 'Documentation',
     icon: '📖',
     description: 'Complete technical documentation and API references.',
-    link: '/resources/documentation'
+    link: '/resources'
   }
 ]
 
