@@ -58,19 +58,19 @@
           
           <ul class="grid md:grid-cols-2 gap-6 mb-12">
             <li class="flex items-center p-6 bg-dark-800/50 backdrop-blur-sm rounded-lg border-t-2 border-l-2 border-primary-500/30 ai-glow-primary transform hover:scale-105 transition-all duration-300">
-              <span class="text-4xl mr-4">📑</span>
+              <span class="text-4xl mr-4"><i class="fa-solid fa-file-lines"></i></span>
               <span class="text-lg text-white">Client Purchase Orders (POs)</span>
             </li>
             <li class="flex items-center p-6 bg-dark-800/50 backdrop-blur-sm rounded-lg border-t-2 border-l-2 border-primary-500/30 ai-glow-primary transform hover:scale-105 transition-all duration-300">
-              <span class="text-4xl mr-4">💰</span>
+              <span class="text-4xl mr-4"><i class="fa-solid fa-coins"></i></span>
               <span class="text-lg text-white">Project Budgets & Cost Controls</span>
             </li>
             <li class="flex items-center p-6 bg-dark-800/50 backdrop-blur-sm rounded-lg border-t-2 border-l-2 border-secondary-500/30 ai-glow-secondary transform hover:scale-105 transition-all duration-300">
-              <span class="text-4xl mr-4">🧾</span>
+              <span class="text-4xl mr-4"><i class="fa-solid fa-receipt"></i></span>
               <span class="text-lg text-white">Purchase Requests & Multi-Level Approvals</span>
             </li>
             <li class="flex items-center p-6 bg-dark-800/50 backdrop-blur-sm rounded-lg border-t-2 border-l-2 border-secondary-500/30 ai-glow-secondary transform hover:scale-105 transition-all duration-300">
-              <span class="text-4xl mr-4">📈</span>
+              <span class="text-4xl mr-4"><i class="fa-solid fa-chart-line"></i></span>
               <span class="text-lg text-white">Live Project Revenue & Status Monitoring</span>
             </li>
           </ul>
@@ -136,9 +136,9 @@
               <!-- Icon with geometric background -->
               <div class="w-14 h-14 mb-6 flex items-center justify-center transform rotate-45 relative">
                 <div class="absolute inset-0 bg-primary-900/50 text-primary-400"></div>
-                <div class="transform -rotate-45 relative z-10 text-3xl">🧠</div>
+                <div class="transform -rotate-45 relative z-10 text-3xl"><i class="fa-solid fa-brain"></i></div>
               </div>
-              
+
               <h3 class="text-xl font-semibold text-white mb-3">AI-Powered Workflow Automation</h3>
               <p class="text-gray-400">Automate the entire lifecycle — from PO creation to budget consumption — and get smart alerts when thresholds are reached.</p>
             </div>
@@ -157,9 +157,9 @@
               <!-- Icon with geometric background -->
               <div class="w-14 h-14 mb-6 flex items-center justify-center transform rotate-45 relative">
                 <div class="absolute inset-0 bg-secondary-900/50 text-secondary-400"></div>
-                <div class="transform -rotate-45 relative z-10 text-3xl">💸</div>
+                <div class="transform -rotate-45 relative z-10 text-3xl"><i class="fa-solid fa-money-bill-transfer"></i></div>
               </div>
-              
+
               <h3 class="text-xl font-semibold text-white mb-3">Budget-Linked Purchase Requests</h3>
               <p class="text-gray-400">Ensure every request is tied to a project budget, preventing overruns and enhancing accountability.</p>
             </div>
@@ -178,9 +178,9 @@
               <!-- Icon with geometric background -->
               <div class="w-14 h-14 mb-6 flex items-center justify-center transform rotate-45 relative">
                 <div class="absolute inset-0 bg-primary-900/50 text-primary-400"></div>
-                <div class="transform -rotate-45 relative z-10 text-3xl">🔁</div>
+                <div class="transform -rotate-45 relative z-10 text-3xl"><i class="fa-solid fa-arrows-rotate"></i></div>
               </div>
-              
+
               <h3 class="text-xl font-semibold text-white mb-3">Approval Flow Management</h3>
               <p class="text-gray-400">Customizable multi-level approvals for PRs, budgets, and claims — aligned with your internal policies.</p>
             </div>
@@ -199,9 +199,9 @@
               <!-- Icon with geometric background -->
               <div class="w-14 h-14 mb-6 flex items-center justify-center transform rotate-45 relative">
                 <div class="absolute inset-0 bg-secondary-900/50 text-secondary-400"></div>
-                <div class="transform -rotate-45 relative z-10 text-3xl">📊</div>
+                <div class="transform -rotate-45 relative z-10 text-3xl"><i class="fa-solid fa-chart-bar"></i></div>
               </div>
-              
+
               <h3 class="text-xl font-semibold text-white mb-3">Project Dashboard with Real-Time Insights</h3>
               <p class="text-gray-400">Track live status, revenue recognition, cost balance, and performance across all active projects.</p>
             </div>
@@ -220,9 +220,9 @@
               <!-- Icon with geometric background -->
               <div class="w-14 h-14 mb-6 flex items-center justify-center transform rotate-45 relative">
                 <div class="absolute inset-0 bg-primary-900/50 text-primary-400"></div>
-                <div class="transform -rotate-45 relative z-10 text-3xl">📁</div>
+                <div class="transform -rotate-45 relative z-10 text-3xl"><i class="fa-solid fa-folder-open"></i></div>
               </div>
-              
+
               <h3 class="text-xl font-semibold text-white mb-3">Centralized Data for Auditing & Analysis</h3>
               <p class="text-gray-400">Every action is logged and categorized, making audits, reporting, and variance tracking seamless.</p>
             </div>
@@ -241,9 +241,9 @@
               <!-- Icon with geometric background -->
               <div class="w-14 h-14 mb-6 flex items-center justify-center transform rotate-45 relative">
                 <div class="absolute inset-0 bg-secondary-900/50 text-secondary-400"></div>
-                <div class="transform -rotate-45 relative z-10 text-3xl">📅</div>
+                <div class="transform -rotate-45 relative z-10 text-3xl"><i class="fa-solid fa-calendar"></i></div>
               </div>
-              
+
               <h3 class="text-xl font-semibold text-white mb-3">Monthly Reports & Forecasting</h3>
               <p class="text-gray-400">Generate periodical project revenue reports, budget usage summaries, and cost forecasts in one click.</p>
             </div>
@@ -262,9 +262,9 @@
               <!-- Icon with geometric background -->
               <div class="w-14 h-14 mb-6 flex items-center justify-center transform rotate-45 relative">
                 <div class="absolute inset-0 bg-primary-900/50 text-primary-400"></div>
-                <div class="transform -rotate-45 relative z-10 text-3xl">🔒</div>
+                <div class="transform -rotate-45 relative z-10 text-3xl"><i class="fa-solid fa-lock"></i></div>
               </div>
-              
+
               <h3 class="text-xl font-semibold text-white mb-3">Enterprise-Grade Security</h3>
               <p class="text-gray-400">Advanced encryption, role-based access controls, and comprehensive audit logs ensure your sensitive financial data remains protected.</p>
             </div>
@@ -283,9 +283,9 @@
               <!-- Icon with geometric background -->
               <div class="w-14 h-14 mb-6 flex items-center justify-center transform rotate-45 relative">
                 <div class="absolute inset-0 bg-secondary-900/50 text-secondary-400"></div>
-                <div class="transform -rotate-45 relative z-10 text-3xl">🌐</div>
+                <div class="transform -rotate-45 relative z-10 text-3xl"><i class="fa-solid fa-globe"></i></div>
               </div>
-              
+
               <h3 class="text-xl font-semibold text-white mb-3">Accessible Anywhere, Anytime</h3>
               <p class="text-gray-400">Built as a cloud platform, DeepTrack ensures your team can work and monitor from the office, site, or remotely.</p>
             </div>
@@ -332,37 +332,37 @@
           <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mb-16">
             <!-- Budget Control -->
             <div class="p-6 bg-dark-800/50 backdrop-blur-sm rounded-lg border-t-2 border-l-2 border-primary-500/30 flex flex-col items-center text-center transform hover:scale-105 transition-all duration-300">
-              <span class="text-4xl mb-3">✅</span>
+              <span class="text-4xl mb-3"><i class="fa-solid fa-circle-check"></i></span>
               <h3 class="text-lg font-bold">Budget Control</h3>
             </div>
             
             <!-- Approval Workflow -->
             <div class="p-6 bg-dark-800/50 backdrop-blur-sm rounded-lg border-t-2 border-l-2 border-secondary-500/30 flex flex-col items-center text-center transform hover:scale-105 transition-all duration-300">
-              <span class="text-4xl mb-3">🔄</span>
+              <span class="text-4xl mb-3"><i class="fa-solid fa-arrows-rotate"></i></span>
               <h3 class="text-lg font-bold">Approval Workflow</h3>
             </div>
             
             <!-- Project Tracker -->
             <div class="p-6 bg-dark-800/50 backdrop-blur-sm rounded-lg border-t-2 border-l-2 border-primary-500/30 flex flex-col items-center text-center transform hover:scale-105 transition-all duration-300">
-              <span class="text-4xl mb-3">🏗</span>
+              <span class="text-4xl mb-3"><i class="fa-solid fa-helmet-safety"></i></span>
               <h3 class="text-lg font-bold">Project Tracker</h3>
             </div>
             
             <!-- Cost Management -->
             <div class="p-6 bg-dark-800/50 backdrop-blur-sm rounded-lg border-t-2 border-l-2 border-secondary-500/30 flex flex-col items-center text-center transform hover:scale-105 transition-all duration-300">
-              <span class="text-4xl mb-3">📉</span>
+              <span class="text-4xl mb-3"><i class="fa-solid fa-chart-line"></i></span>
               <h3 class="text-lg font-bold">Cost Management</h3>
             </div>
             
             <!-- Smart Alerts -->
             <div class="p-6 bg-dark-800/50 backdrop-blur-sm rounded-lg border-t-2 border-l-2 border-primary-500/30 flex flex-col items-center text-center transform hover:scale-105 transition-all duration-300">
-              <span class="text-4xl mb-3">🔔</span>
+              <span class="text-4xl mb-3"><i class="fa-solid fa-bell"></i></span>
               <h3 class="text-lg font-bold">Smart Alerts</h3>
             </div>
             
             <!-- Procurement Tracker -->
             <div class="p-6 bg-dark-800/50 backdrop-blur-sm rounded-lg border-t-2 border-l-2 border-secondary-500/30 flex flex-col items-center text-center transform hover:scale-105 transition-all duration-300">
-              <span class="text-4xl mb-3">📦</span>
+              <span class="text-4xl mb-3"><i class="fa-solid fa-box"></i></span>
               <h3 class="text-lg font-bold">Procurement Tracker</h3>
             </div>
           </div>
@@ -376,7 +376,7 @@
               <div class="text-center">
                 <div class="text-4xl font-bold gradient-text mb-2">30%</div>
                 <div class="flex items-center justify-center">
-                  <span class="text-3xl mr-2">📉</span>
+                  <i class="fa-solid fa-chart-line text-3xl mr-2"></i>
                   <p class="text-gray-300">reduction in budget overruns</p>
                 </div>
               </div>
@@ -385,7 +385,7 @@
               <div class="text-center">
                 <div class="text-4xl font-bold gradient-text mb-2">60%</div>
                 <div class="flex items-center justify-center">
-                  <span class="text-3xl mr-2">⏱️</span>
+                  <i class="fa-solid fa-stopwatch text-3xl mr-2"></i>
                   <p class="text-gray-300">faster purchase approval turnaround</p>
                 </div>
               </div>
@@ -394,7 +394,7 @@
               <div class="text-center">
                 <div class="text-4xl font-bold gradient-text mb-2">100%</div>
                 <div class="flex items-center justify-center">
-                  <span class="text-3xl mr-2">🧾</span>
+                  <i class="fa-solid fa-receipt text-3xl mr-2"></i>
                   <p class="text-gray-300">visibility across all client POs and projects</p>
                 </div>
               </div>
@@ -429,7 +429,7 @@
           <div class="absolute -top-10 left-1/2 transform -translate-x-1/2 translate-x-12 w-10 h-1 bg-secondary-500 -skew-x-12"></div>
           
           <h2 class="text-3xl md:text-4xl font-bold mb-4 relative inline-block">
-            <span class="gradient-text">🇸🇬 Singapore</span>
+            <span class="gradient-text"><i class="fa-solid fa-flag"></i> Singapore</span>
             <span class="block text-white mt-2">Regulatory Compliance</span>
             <!-- Underline with geometric design -->
             <span class="absolute -bottom-2 left-0 w-1/2 h-1 bg-primary-500 transform skew-x-12"></span>
@@ -449,51 +449,51 @@
               <!-- Glow effect on hover -->
               <div class="absolute inset-0 bg-primary-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               <div class="w-16 h-16 flex items-center justify-center mb-3 bg-primary-900/30 rounded-full">
-                <span class="text-2xl">🏢</span>
+                <i class="fa-solid fa-building text-2xl"></i>
               </div>
               <h4 class="text-white font-semibold mb-1">BCA</h4>
               <p class="text-xs text-gray-400 text-center">Building & Construction Authority</p>
             </div>
-            
+
             <!-- IMDA Badge -->
             <div class="flex flex-col items-center p-4 bg-dark-800/70 backdrop-blur-sm rounded-lg border border-secondary-500/30 transform hover:scale-105 transition-all duration-300 relative overflow-hidden group">
               <!-- Glow effect on hover -->
               <div class="absolute inset-0 bg-secondary-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               <div class="w-16 h-16 flex items-center justify-center mb-3 bg-secondary-900/30 rounded-full">
-                <span class="text-2xl">💻</span>
+                <i class="fa-solid fa-laptop text-2xl"></i>
               </div>
               <h4 class="text-white font-semibold mb-1">IMDA</h4>
               <p class="text-xs text-gray-400 text-center">Infocomm Media Development Authority</p>
             </div>
-            
+
             <!-- LTA Badge -->
             <div class="flex flex-col items-center p-4 bg-dark-800/70 backdrop-blur-sm rounded-lg border border-primary-500/30 transform hover:scale-105 transition-all duration-300 relative overflow-hidden group">
               <!-- Glow effect on hover -->
               <div class="absolute inset-0 bg-primary-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               <div class="w-16 h-16 flex items-center justify-center mb-3 bg-primary-900/30 rounded-full">
-                <span class="text-2xl">🚆</span>
+                <i class="fa-solid fa-train text-2xl"></i>
               </div>
               <h4 class="text-white font-semibold mb-1">LTA</h4>
               <p class="text-xs text-gray-400 text-center">Land Transport Authority</p>
             </div>
-            
+
             <!-- PUB Badge -->
             <div class="flex flex-col items-center p-4 bg-dark-800/70 backdrop-blur-sm rounded-lg border border-secondary-500/30 transform hover:scale-105 transition-all duration-300 relative overflow-hidden group">
               <!-- Glow effect on hover -->
               <div class="absolute inset-0 bg-secondary-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               <div class="w-16 h-16 flex items-center justify-center mb-3 bg-secondary-900/30 rounded-full">
-                <span class="text-2xl">💧</span>
+                <i class="fa-solid fa-droplet text-2xl"></i>
               </div>
               <h4 class="text-white font-semibold mb-1">PUB</h4>
               <p class="text-xs text-gray-400 text-center">Public Utilities Board</p>
             </div>
-            
+
             <!-- SCDF Badge -->
             <div class="flex flex-col items-center p-4 bg-dark-800/70 backdrop-blur-sm rounded-lg border border-primary-500/30 transform hover:scale-105 transition-all duration-300 relative overflow-hidden group">
               <!-- Glow effect on hover -->
               <div class="absolute inset-0 bg-primary-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               <div class="w-16 h-16 flex items-center justify-center mb-3 bg-primary-900/30 rounded-full">
-                <span class="text-2xl">🔥</span>
+                <i class="fa-solid fa-fire-flame-curved text-2xl"></i>
               </div>
               <h4 class="text-white font-semibold mb-1">SCDF</h4>
               <p class="text-xs text-gray-400 text-center">Singapore Civil Defence Force</p>
@@ -533,17 +533,17 @@
                 
                 <ul class="mb-8 space-y-3">
                   <li v-for="(benefit, index) in benefits" :key="index" class="flex items-start">
-                    <span class="text-secondary-500 mr-3">✓</span>
+                    <i class="fa-solid fa-check text-secondary-500 mr-3"></i>
                     <span class="text-gray-300">{{ benefit }}</span>
                   </li>
                 </ul>
                 
                 <div class="flex flex-wrap gap-4">
                   <NuxtLink to="/pricing" class="btn-primary flex items-center">
-                    🚀 View DeepTrack Pricing
+                    <i class="fa-solid fa-rocket"></i> View DeepTrack Pricing
                   </NuxtLink>
                   <button class="btn-primary flex items-center">
-                    📞 Book a demo
+                    <i class="fa-solid fa-phone"></i> Book a demo
                   </button>
                 </div>
               </div>
@@ -591,10 +591,7 @@
                     class="w-full btn-primary flex items-center justify-center relative overflow-hidden"
                     :disabled="isSubmitting"
                   >
-                    <svg v-if="isSubmitting" class="animate-spin -ml-1 mr-2 h-4 w-4 text-white" fill="none" viewBox="0 0 24 24">
-                      <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-                      <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                    </svg>
+                    <i v-if="isSubmitting" class="fa-solid fa-spinner fa-spin -ml-1 mr-2 text-white"></i>
                     {{ isSubmitting ? 'Submitting...' : 'Request Demo' }}
                   </button>
                   

@@ -31,7 +31,7 @@
               class="w-24 h-24 md:w-32 md:h-32 rounded-2xl flex items-center justify-center text-4xl md:text-5xl mb-4 transform hover:scale-110 transition-transform duration-300"
               style="background: linear-gradient(135deg, #06B6D4 0%, #14B8A6 100%); opacity: 0.2; border: 2px solid #06B6D4;"
             >
-              🧠
+              <i class="fa-solid fa-brain text-cyan-400"></i>
             </div>
             <h3 class="text-lg md:text-xl font-bold text-cyan-400 mb-2 text-center">DeepPlanAI</h3>
             <p class="text-sm text-gray-400 text-center max-w-xs">Digital Takeoffs<br/>& Planning</p>
@@ -39,10 +39,7 @@
 
           <!-- Arrow 1 -->
           <div class="flex items-center animate-fade-in" style="animation-delay: 0.2s">
-            <svg class="w-12 h-12 md:w-16 md:h-16 text-cyan-400" fill="none" stroke="currentColor"
-              viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-            </svg>
+            <i class="fa-solid fa-chevron-right text-cyan-400 text-3xl md:text-4xl"></i>
           </div>
 
           <!-- Step 2: DeepCost -->
@@ -51,7 +48,7 @@
               class="w-24 h-24 md:w-32 md:h-32 rounded-2xl flex items-center justify-center text-4xl md:text-5xl mb-4 transform hover:scale-110 transition-transform duration-300"
               style="background: linear-gradient(135deg, #06B6D4 0%, #14B8A6 100%); opacity: 0.2; border: 2px solid #06B6D4;"
             >
-              💰
+              <i class="fa-solid fa-coins text-cyan-400"></i>
             </div>
             <h3 class="text-lg md:text-xl font-bold text-cyan-400 mb-2 text-center">DeepCost</h3>
             <p class="text-sm text-gray-400 text-center max-w-xs">AI-Powered<br/>Cost Estimation</p>
@@ -59,10 +56,7 @@
 
           <!-- Arrow 2 -->
           <div class="flex items-center animate-fade-in" style="animation-delay: 0.4s">
-            <svg class="w-12 h-12 md:w-16 md:h-16 text-cyan-400" fill="none" stroke="currentColor"
-              viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-            </svg>
+            <i class="fa-solid fa-chevron-right text-cyan-400 text-3xl md:text-4xl"></i>
           </div>
 
           <!-- Step 3: DeepTrack -->
@@ -71,7 +65,7 @@
               class="w-24 h-24 md:w-32 md:h-32 rounded-2xl flex items-center justify-center text-4xl md:text-5xl mb-4 transform hover:scale-110 transition-transform duration-300"
               style="background: linear-gradient(135deg, #06B6D4 0%, #14B8A6 100%); opacity: 0.2; border: 2px solid #06B6D4;"
             >
-              📊
+              <i class="fa-solid fa-chart-line text-cyan-400"></i>
             </div>
             <h3 class="text-lg md:text-xl font-bold text-cyan-400 mb-2 text-center">DeepTrack</h3>
             <p class="text-sm text-gray-400 text-center max-w-xs">Budget & PO<br/>Management</p>
@@ -79,10 +73,7 @@
 
           <!-- Arrow 3 -->
           <div class="flex items-center animate-fade-in" style="animation-delay: 0.6s">
-            <svg class="w-12 h-12 md:w-16 md:h-16 text-cyan-400" fill="none" stroke="currentColor"
-              viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-            </svg>
+            <i class="fa-solid fa-chevron-right text-cyan-400 text-3xl md:text-4xl"></i>
           </div>
 
           <!-- Step 4: DeepHR -->
@@ -91,7 +82,7 @@
               class="w-24 h-24 md:w-32 md:h-32 rounded-2xl flex items-center justify-center text-4xl md:text-5xl mb-4 transform hover:scale-110 transition-transform duration-300"
               style="background: linear-gradient(135deg, #06B6D4 0%, #14B8A6 100%); opacity: 0.2; border: 2px solid #06B6D4;"
             >
-              👥
+              <i class="fa-solid fa-users text-cyan-400"></i>
             </div>
             <h3 class="text-lg md:text-xl font-bold text-cyan-400 mb-2 text-center">DeepHR</h3>
             <p class="text-sm text-gray-400 text-center max-w-xs">Workforce<br/>Management</p>

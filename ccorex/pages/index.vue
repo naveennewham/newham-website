@@ -81,7 +81,7 @@
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
           <div v-for="point in platformPoints" :key="point.title" class="p-6 rounded-xl border border-white/10 bg-white/5">
-            <div class="text-3xl mb-3">{{ point.icon }}</div>
+            <div class="text-3xl mb-3"><i :class="point.icon"></i></div>
             <h3 class="text-xl font-bold text-white mb-2">{{ point.title }}</h3>
             <p class="text-gray-400">{{ point.description }}</p>
           </div>
@@ -108,7 +108,7 @@
           <div v-for="(app, index) in products" :key="app.name" class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
             <div :class="index % 2 === 0 ? 'lg:order-1' : 'lg:order-2'">
               <div class="flex items-center gap-3 mb-4">
-                <div class="text-5xl">{{ app.icon }}</div>
+                <div class="text-5xl"><i :class="app.icon"></i></div>
                 <div>
                   <h3 class="text-3xl font-bold text-white">{{ app.name }}</h3>
                   <p class="text-primary-400 font-semibold text-lg">{{ app.subtitle }}</p>
@@ -117,13 +117,13 @@
               <p class="text-xl text-gray-300 mb-6">{{ app.description }}</p>
               <ul class="space-y-3 mb-6">
                 <li v-for="feature in app.features" :key="feature" class="flex items-start gap-3 text-gray-300">
-                  <span class="text-primary-400 text-xl mt-1">✓</span>
+                  <i class="fa-solid fa-check text-primary-400 text-lg mt-1"></i>
                   <span>{{ feature }}</span>
                 </li>
               </ul>
               <NuxtLink :to="app.link" class="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-primary-500/10 border border-primary-500 text-primary-400 font-semibold hover:bg-primary-500 hover:text-slate-900 transition-all">
                 Learn More
-                <span>→</span>
+                <i class="fa-solid fa-arrow-right"></i>
               </NuxtLink>
             </div>
             <div :class="index % 2 === 0 ? 'lg:order-2' : 'lg:order-1'">
@@ -131,9 +131,7 @@
               <div class="p-8 rounded-2xl border-2 border-dashed border-primary-500/30 bg-slate-800/50">
                 <div class="aspect-video flex items-center justify-center text-gray-400">
                   <div class="text-center">
-                    <svg class="w-16 h-16 mx-auto mb-4 text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
-                    </svg>
+                    <i class="fa-regular fa-image text-7xl text-primary-400"></i>
                     <p class="font-semibold">[SCREENSHOT – {{ app.name }} interface]</p>
                   </div>
                 </div>
@@ -169,9 +167,7 @@
         <!-- WORKFLOW DIAGRAM PLACEHOLDER -->
         <div class="p-12 rounded-2xl border-2 border-dashed border-primary-500/30 bg-slate-800/50">
           <div class="text-center text-gray-400">
-            <svg class="w-16 h-16 mx-auto mb-4 text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/>
-            </svg>
+            <i class="fa-regular fa-image text-7xl text-primary-400"></i>
             <p class="text-lg font-semibold">[IMAGE PLACEHOLDER – Workflow diagram with icons and arrows]</p>
           </div>
         </div>
@@ -192,7 +188,7 @@
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           <div v-for="feature in keyFeatures" :key="feature.title" class="p-6 rounded-xl border border-white/10 bg-white/5 hover:border-primary-500/50 transition-all">
-            <div class="text-3xl mb-3">{{ feature.icon }}</div>
+            <div class="text-3xl mb-3"><i :class="feature.icon"></i></div>
             <h3 class="text-lg font-bold text-white mb-2">{{ feature.title }}</h3>
             <p class="text-sm text-gray-400">{{ feature.description }}</p>
           </div>
@@ -216,12 +212,12 @@
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           <div v-for="industry in industries" :key="industry.name" class="p-6 rounded-xl border border-white/10 bg-white/5 hover:border-primary-500/50 hover:bg-white/10 transition-all group">
-            <div class="text-4xl mb-4">{{ industry.icon }}</div>
+            <div class="text-4xl mb-4"><i :class="industry.icon"></i></div>
             <h3 class="text-xl font-bold text-white mb-2">{{ industry.name }}</h3>
             <p class="text-gray-400 mb-4">{{ industry.description }}</p>
             <NuxtLink to="/industries" class="inline-flex items-center gap-2 text-primary-400 font-semibold group-hover:gap-3 transition-all">
               Learn more
-              <span>→</span>
+              <i class="fa-solid fa-arrow-right"></i>
             </NuxtLink>
           </div>
         </div>
@@ -251,9 +247,7 @@
         <!-- DASHBOARD PLACEHOLDER -->
         <div class="p-12 rounded-2xl border-2 border-dashed border-primary-500/30 bg-slate-800/50">
           <div class="text-center text-gray-400">
-            <svg class="w-16 h-16 mx-auto mb-4 text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
-            </svg>
+            <i class="fa-regular fa-image text-7xl text-primary-400"></i>
             <p class="text-lg font-semibold">[IMAGE PLACEHOLDER – Construction site digital dashboard on tablet]</p>
           </div>
         </div>
@@ -278,7 +272,7 @@
             <div class="space-y-4 mb-8">
               <div v-for="capability in aiCapabilities" :key="capability.title" class="flex items-start gap-3">
                 <div class="w-6 h-6 rounded-full bg-primary-500/20 flex items-center justify-center flex-shrink-0 mt-1">
-                  <span class="text-primary-400 text-sm">✓</span>
+                  <i class="fa-solid fa-check text-primary-400 text-sm"></i>
                 </div>
                 <div>
                   <h4 class="font-semibold text-white mb-1">{{ capability.title }}</h4>
@@ -304,10 +298,7 @@
             <div class="p-8 rounded-2xl border-2 border-dashed border-primary-500/30 bg-slate-900/50">
               <div class="aspect-video flex items-center justify-center text-gray-400">
                 <div class="text-center">
-                  <svg class="w-20 h-20 mx-auto mb-4 text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"/>
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                  </svg>
+                  <i class="fa-solid fa-play text-7xl text-primary-400"></i>
                   <p class="text-lg font-semibold">[VIDEO PLACEHOLDER – AI takeoff demo]</p>
                   <p class="text-sm mt-2">Showing automatic detection and measurement</p>
                 </div>
@@ -344,9 +335,7 @@
         <!-- INTEGRATION DIAGRAM PLACEHOLDER -->
         <div class="p-12 rounded-2xl border-2 border-dashed border-primary-500/30 bg-slate-800/50 mb-8">
           <div class="text-center text-gray-400">
-            <svg class="w-16 h-16 mx-auto mb-4 text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
-            </svg>
+            <i class="fa-regular fa-image text-7xl text-primary-400"></i>
             <p class="text-lg font-semibold">[IMAGE PLACEHOLDER – Integration ecosystem diagram]</p>
           </div>
         </div>
@@ -354,7 +343,7 @@
         <div class="text-center">
           <NuxtLink to="/integrations" class="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-primary-500 text-primary-400 font-semibold hover:bg-primary-500 hover:text-slate-900 transition-all">
             View All Integrations
-            <span>→</span>
+            <i class="fa-solid fa-arrow-right"></i>
           </NuxtLink>
         </div>
       </div>
@@ -375,7 +364,7 @@
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div v-for="testimonial in testimonials" :key="testimonial.name" class="p-8 rounded-xl border border-white/10 bg-white/5">
             <div class="flex items-center gap-1 mb-4">
-              <span v-for="i in 5" :key="i" class="text-yellow-400 text-xl">★</span>
+              <i v-for="i in 5" :key="i" class="fa-solid fa-star text-yellow-400 text-xl"></i>
             </div>
             <p class="text-gray-300 mb-6 italic">"{{ testimonial.quote }}"</p>
             <div class="flex items-center gap-4">
@@ -429,7 +418,7 @@
         <!-- Trust Indicators -->
         <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl mx-auto">
           <div v-for="trust in trustIndicators" :key="trust.label" class="p-4 rounded-lg bg-white/5 border border-white/10">
-            <div class="text-2xl mb-2">{{ trust.icon }}</div>
+            <div class="text-2xl mb-2"><i :class="trust.icon"></i></div>
             <div class="text-sm font-semibold text-white">{{ trust.label }}</div>
           </div>
         </div>
@@ -448,22 +437,22 @@ const kpis = [
 
 const platformPoints = [
   {
-    icon: '🔗',
+    icon: 'fa-solid fa-link',
     title: 'Unified Data Across All Apps',
     description: 'Data flows seamlessly between DeepPlanAI, DeepCost, DeepTrack, and DeepHR. No manual re-entry.'
   },
   {
-    icon: '⚡',
+    icon: 'fa-solid fa-bolt',
     title: 'Real-Time Synchronization',
     description: 'Changes in one app instantly reflect across the platform. Everyone works with the latest data.'
   },
   {
-    icon: '🎯',
+    icon: 'fa-solid fa-bullseye',
     title: 'Single Source of Truth',
     description: 'One centralized database eliminates version conflicts and ensures data accuracy.'
   },
   {
-    icon: '☁️',
+    icon: 'fa-solid fa-cloud',
     title: 'Cloud-Based Accessibility',
     description: 'Access your projects from anywhere, on any device. Desktop, tablet, or mobile.'
   }
@@ -473,7 +462,7 @@ const products = [
   {
     name: 'DeepCost',
     subtitle: 'Construction Estimation & Tender Management',
-    icon: '💰',
+    icon: 'fa-solid fa-coins',
     description: 'Achieve 95%+ accuracy in MEP cost estimation with AI-driven libraries. Generate professional BOQs and tender documents in minutes, not days.',
     features: [
       'Comprehensive MEP libraries (ACMV, Fire, ELV, A&A)',
@@ -487,7 +476,7 @@ const products = [
   {
     name: 'DeepTrack',
     subtitle: 'Project Execution & Site Management',
-    icon: '📊',
+    icon: 'fa-solid fa-chart-bar',
     description: 'Maintain complete control over project budgets, purchase orders, and site activities. Track variance, manage approvals, and ensure spend visibility.',
     features: [
       'Real-time budget vs actuals',
@@ -501,7 +490,7 @@ const products = [
   {
     name: 'DeepHR',
     subtitle: 'Workforce & Labour Management',
-    icon: '👥',
+    icon: 'fa-solid fa-users',
     description: 'Unify your workforce operations from planning to payroll. Mobile-enabled time tracking, compliance management, and resource optimization.',
     features: [
       'Workforce planning & rostering',
@@ -515,7 +504,7 @@ const products = [
   {
     name: 'DeepPlan AI',
     subtitle: 'AI-Powered Drawing Takeoff & Quantity Extraction',
-    icon: '📏',
+    icon: 'mdi mdi-ruler',
     description: 'Transform your takeoff process with AI-powered measurement and quantity extraction. Reduce manual work by 40% while increasing accuracy.',
     features: [
       'Automated area & perimeter measurement',
@@ -557,42 +546,42 @@ const workflowSteps = [
 
 const keyFeatures = [
   {
-    icon: '📚',
+    icon: 'fa-solid fa-book',
     title: 'Centralized Cost Database',
     description: 'Pre-loaded libraries for MEP systems. Customize rates and maintain your own cost database.'
   },
   {
-    icon: '🤖',
+    icon: 'fa-solid fa-robot',
     title: 'AI Quantity Takeoff',
     description: 'Let AI handle tedious measurement work. Review, adjust, and export quantities in minutes.'
   },
   {
-    icon: '📅',
+    icon: 'fa-solid fa-calendar-days',
     title: 'Construction Scheduling',
     description: 'Gantt charts, critical path analysis, and resource leveling built for construction.'
   },
   {
-    icon: '📈',
+    icon: 'fa-solid fa-chart-line',
     title: 'Productivity Tracking',
     description: 'Monitor labor hours, productivity rates, and resource utilization across all sites.'
   },
   {
-    icon: '🛒',
+    icon: 'fa-solid fa-cart-shopping',
     title: 'Procurement Integration',
     description: 'Connect with suppliers, manage RFQs, compare quotes, and track deliveries.'
   },
   {
-    icon: '📁',
+    icon: 'fa-solid fa-folder',
     title: 'Document Management',
     description: 'Centralized repository for drawings, contracts, submittals, and RFIs.'
   },
   {
-    icon: '📱',
+    icon: 'fa-solid fa-mobile-screen',
     title: 'Site Reporting',
     description: 'Daily progress reports, safety logs, and quality inspections from mobile devices.'
   },
   {
-    icon: '💹',
+    icon: 'fa-solid fa-chart-line',
     title: 'Budget vs Actual',
     description: 'Real-time variance analysis with automated alerts when costs exceed thresholds.'
   }
@@ -601,32 +590,32 @@ const keyFeatures = [
 const industries = [
   {
     name: 'General Contractors',
-    icon: '🏗️',
+    icon: 'fa-solid fa-helmet-safety',
     description: 'End-to-end project management for commercial and residential construction.'
   },
   {
     name: 'Infrastructure Projects',
-    icon: '🌉',
+    icon: 'fa-solid fa-bridge',
     description: 'Manage large-scale civil works, roads, bridges, and utilities.'
   },
   {
     name: 'Commercial Buildings',
-    icon: '🏢',
+    icon: 'fa-solid fa-building',
     description: 'Office towers, retail centers, and mixed-use developments.'
   },
   {
     name: 'Industrial Plants',
-    icon: '🏭',
+    icon: 'fa-solid fa-industry',
     description: 'Manufacturing facilities, warehouses, and processing plants.'
   },
   {
     name: 'MEP Contractors',
-    icon: '⚡',
+    icon: 'fa-solid fa-bolt',
     description: 'Specialized estimation and project management for mechanical, electrical, and plumbing.'
   },
   {
     name: 'Developers',
-    icon: '🏘️',
+    icon: 'fa-solid fa-house-chimney',
     description: 'Portfolio management, cost control, and financial tracking across multiple projects.'
   }
 ]
@@ -731,9 +720,9 @@ const testimonials = [
 ]
 
 const trustIndicators = [
-  { icon: '🔒', label: 'SOC 2 Type II Certified' },
-  { icon: '🛡️', label: 'GDPR Compliant' },
-  { icon: '⚡', label: '99.9% Uptime SLA' },
-  { icon: '🤝', label: '24/7 Support' }
+  { icon: 'fa-solid fa-lock', label: 'SOC 2 Type II Certified' },
+  { icon: 'fa-solid fa-shield-halved', label: 'GDPR Compliant' },
+  { icon: 'fa-solid fa-bolt', label: '99.9% Uptime SLA' },
+  { icon: 'fa-solid fa-handshake', label: '24/7 Support' }
 ]
 </script>

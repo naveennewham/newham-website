@@ -44,9 +44,7 @@
         <!-- Architecture Diagram Placeholder -->
         <div class="mb-16 p-12 rounded-2xl border-2 border-dashed border-primary-500/30 bg-slate-900/50">
           <div class="text-center text-gray-400">
-            <svg class="w-20 h-20 mx-auto mb-4 text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/>
-            </svg>
+            <i class="mdi mdi-view-dashboard text-7xl text-primary-400"></i>
             <p class="text-lg font-semibold">[DIAGRAM PLACEHOLDER – Platform Architecture]</p>
             <p class="text-sm mt-2">Showing unified database, API layer, and application modules</p>
           </div>
@@ -54,7 +52,7 @@
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div v-for="layer in architectureLayers" :key="layer.title" class="p-6 rounded-xl border border-white/10 bg-white/5">
-            <div class="text-3xl mb-4">{{ layer.icon }}</div>
+            <div class="text-3xl mb-4"><i :class="layer.icon"></i></div>
             <h3 class="text-xl font-bold text-white mb-3">{{ layer.title }}</h3>
             <p class="text-gray-400 mb-4">{{ layer.description }}</p>
             <ul class="space-y-2">
@@ -102,9 +100,7 @@
             <div class="p-8 rounded-2xl border-2 border-dashed border-primary-500/30 bg-slate-800/50">
               <div class="aspect-square flex items-center justify-center text-gray-400">
                 <div class="text-center">
-                  <svg class="w-20 h-20 mx-auto mb-4 text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
-                  </svg>
+                  <i class="fa-solid fa-bolt text-7xl text-primary-400"></i>
                   <p class="text-lg font-semibold">[ANIMATION PLACEHOLDER]</p>
                   <p class="text-sm mt-2">Data flow visualization</p>
                 </div>
@@ -129,7 +125,7 @@
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           <div v-for="capability in platformCapabilities" :key="capability.title" class="p-6 rounded-xl border border-white/10 bg-white/5 hover:border-primary-500/50 transition-all">
-            <div class="text-3xl mb-4">{{ capability.icon }}</div>
+            <div class="text-3xl mb-4"><i :class="capability.icon"></i></div>
             <h3 class="text-xl font-bold text-white mb-3">{{ capability.title }}</h3>
             <p class="text-gray-400">{{ capability.description }}</p>
           </div>
@@ -153,13 +149,13 @@
             </p>
             <ul class="space-y-4 mb-8">
               <li v-for="feature in apiFeatures" :key="feature" class="flex items-start gap-3 text-gray-300">
-                <span class="text-primary-400 text-xl mt-1">✓</span>
+                <i class="fa-solid fa-check text-primary-400 text-lg mt-1"></i>
                 <span>{{ feature }}</span>
               </li>
             </ul>
             <NuxtLink to="/integrations" class="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-primary-500 text-primary-400 font-semibold hover:bg-primary-500 hover:text-slate-900 transition-all">
               View Integrations
-              <span>→</span>
+              <i class="fa-solid fa-arrow-right"></i>
             </NuxtLink>
           </div>
           <div>
@@ -204,7 +200,7 @@ POST /api/v1/projects
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
           <div v-for="cert in certifications" :key="cert.title" class="p-6 rounded-xl border border-white/10 bg-white/5 text-center">
-            <div class="text-4xl mb-3">{{ cert.icon }}</div>
+            <div class="text-4xl mb-3"><i :class="cert.icon"></i></div>
             <h3 class="text-lg font-bold text-white mb-2">{{ cert.title }}</h3>
             <p class="text-sm text-gray-400">{{ cert.description }}</p>
           </div>
@@ -249,7 +245,7 @@ POST /api/v1/projects
 <script setup lang="ts">
 const architectureLayers = [
   {
-    icon: '🗄️',
+    icon: 'fa-solid fa-database',
     title: 'Unified Database',
     description: 'Single source of truth for all construction data.',
     features: [
@@ -260,7 +256,7 @@ const architectureLayers = [
     ]
   },
   {
-    icon: '⚙️',
+    icon: 'fa-solid fa-gear',
     title: 'Business Logic Layer',
     description: 'Core construction workflows and automation.',
     features: [
@@ -271,7 +267,7 @@ const architectureLayers = [
     ]
   },
   {
-    icon: '📱',
+    icon: 'fa-solid fa-mobile-screen',
     title: 'Application Layer',
     description: 'Four specialized apps built on shared foundation.',
     features: [
@@ -308,32 +304,32 @@ const dataFlowSteps = [
 
 const platformCapabilities = [
   {
-    icon: '☁️',
+    icon: 'fa-solid fa-cloud',
     title: 'Cloud-Native',
     description: 'Built for the cloud with automatic scaling, 99.9% uptime, and global availability.'
   },
   {
-    icon: '📱',
+    icon: 'fa-solid fa-mobile-screen',
     title: 'Mobile-First',
     description: 'Native iOS and Android apps with offline capabilities for field teams.'
   },
   {
-    icon: '🔄',
+    icon: 'fa-solid fa-arrows-rotate',
     title: 'Real-Time Sync',
     description: 'Changes sync instantly across all devices and users. No refresh needed.'
   },
   {
-    icon: '🎯',
+    icon: 'fa-solid fa-bullseye',
     title: 'Role-Based Access',
     description: 'Granular permissions control who can view, edit, and approve data.'
   },
   {
-    icon: '📊',
+    icon: 'fa-solid fa-chart-bar',
     title: 'Advanced Analytics',
     description: 'Built-in dashboards and reports with custom visualization options.'
   },
   {
-    icon: '🔍',
+    icon: 'fa-solid fa-magnifying-glass',
     title: 'Audit Logging',
     description: 'Complete audit trail of all changes with user, timestamp, and reason.'
   }
@@ -350,22 +346,22 @@ const apiFeatures = [
 
 const certifications = [
   {
-    icon: '🔒',
+    icon: 'fa-solid fa-lock',
     title: 'SOC 2 Type II',
     description: 'Certified for security and availability'
   },
   {
-    icon: '🛡️',
+    icon: 'fa-solid fa-shield-halved',
     title: 'GDPR Compliant',
     description: 'Full compliance with data protection regulations'
   },
   {
-    icon: '🏢',
+    icon: 'fa-solid fa-building',
     title: 'ISO 27001',
     description: 'Information security management certified'
   },
   {
-    icon: '✓',
+    icon: 'fa-solid fa-circle-check',
     title: '99.9% Uptime',
     description: 'SLA-backed availability guarantee'
   }

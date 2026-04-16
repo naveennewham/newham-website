@@ -32,7 +32,7 @@
               <div class="flex items-start">
                 <div class="solution-icon mr-4 p-3 rounded-lg bg-gradient-to-br" 
                      :class="activeSolution === index ? 'from-primary-800 to-secondary-800' : 'from-dark-700 to-dark-600'">
-                  <component :is="solution.icon" class="w-6 h-6" :class="activeSolution === index ? 'text-secondary-400' : 'text-gray-400'" />
+                  <i :class="[solution.icon, activeSolution === index ? 'text-secondary-400' : 'text-gray-400']" style="font-size: 1.25rem;"></i>
                 </div>
                 <div>
                   <h3 class="text-xl font-semibold text-white mb-2">{{ solution.title }}</h3>
@@ -59,7 +59,7 @@
                     class="flex items-start"
                   >
                     <span class="text-primary-500 mr-2 mt-1">
-                      <component :is="CheckCircleIcon" class="w-5 h-5" />
+                      <i class="fa-solid fa-circle-check"></i>
                     </span>
                     <span class="text-gray-400">{{ feature }}</span>
                   </li>
@@ -79,54 +79,13 @@
 </template>
 
 <script setup>
-import { h, ref } from 'vue';
-
-// SVG Icons as render functions
-const ProjectIcon = (props) => h('svg', {
-  ...props,
-  fill: 'none',
-  stroke: 'currentColor',
-  viewBox: '0 0 24 24',
-  innerHTML: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path>'
-});
-
-const BimIcon = (props) => h('svg', {
-  ...props,
-  fill: 'none',
-  stroke: 'currentColor',
-  viewBox: '0 0 24 24',
-  innerHTML: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>'
-});
-
-const IoTIcon = (props) => h('svg', {
-  ...props,
-  fill: 'none',
-  stroke: 'currentColor',
-  viewBox: '0 0 24 24',
-  innerHTML: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"></path>'
-});
-
-const AnalyticsIcon = (props) => h('svg', {
-  ...props,
-  fill: 'none',
-  stroke: 'currentColor',
-  viewBox: '0 0 24 24',
-  innerHTML: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>'
-});
-
-const CheckCircleIcon = (props) => h('svg', {
-  ...props,
-  fill: 'none',
-  stroke: 'currentColor',
-  viewBox: '0 0 24 24',
-  innerHTML: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>'
-});
+import { ref } from 'vue';
 
 // Industry Solutions
 const solutions = [
   {
     title: 'Project Management',
-    icon: ProjectIcon,
+    icon: 'mdi mdi-clipboard-check-outline',
     shortDesc: 'Streamline construction projects from planning to completion',
     description: 'Our industry-specific project management solutions integrate all aspects of construction projects, providing real-time visibility and control over schedules, resources, and budgets.',
     features: [
@@ -140,7 +99,7 @@ const solutions = [
   },
   {
     title: 'BIM Integration',
-    icon: BimIcon,
+    icon: 'mdi mdi-cube-outline',
     shortDesc: 'Seamless Building Information Modeling integration',
     description: 'Connect your BIM models with project management, estimation, and field operations for a truly integrated construction technology ecosystem.',
     features: [
@@ -154,7 +113,7 @@ const solutions = [
   },
   {
     title: 'IoT & Sensors',
-    icon: IoTIcon,
+    icon: 'mdi mdi-access-point',
     shortDesc: 'Smart construction sites with IoT technology',
     description: 'Transform your construction sites with IoT sensors and connected devices that monitor conditions, equipment, and safety in real-time.',
     features: [
@@ -168,7 +127,7 @@ const solutions = [
   },
   {
     title: 'Analytics & Insights',
-    icon: AnalyticsIcon,
+    icon: 'fa-solid fa-chart-line',
     shortDesc: 'Data-driven decision making for construction',
     description: 'Leverage advanced analytics and AI to gain actionable insights from your construction data, improving productivity and profitability.',
     features: [

@@ -22,7 +22,7 @@
       <div v-for="category in faqCategories" :key="category.name" class="mb-16">
         <div class="mb-8">
           <div class="flex items-center gap-3 mb-3">
-            <div class="text-3xl">{{ category.icon }}</div>
+            <div class="text-3xl"><i :class="category.icon"></i></div>
             <h2 class="text-3xl font-bold text-white">{{ category.name }}</h2>
           </div>
         </div>
@@ -31,7 +31,7 @@
           <details v-for="faq in category.questions" :key="faq.q" class="group p-6 rounded-xl border border-white/10 bg-white/5 hover:border-primary-500/30 transition-all">
             <summary class="cursor-pointer font-semibold text-lg text-white flex items-center justify-between">
               <span>{{ faq.q }}</span>
-              <span class="text-primary-400 group-open:rotate-180 transition-transform">▼</span>
+              <i class="fa-solid fa-chevron-down text-primary-400 group-open:rotate-180 transition-transform"></i>
             </summary>
             <p class="text-gray-300 mt-4 leading-relaxed">{{ faq.a }}</p>
           </details>
@@ -65,7 +65,7 @@
 const faqCategories = [
   {
     name: 'General',
-    icon: '❓',
+    icon: 'fa-solid fa-circle-question',
     questions: [
       {
         q: 'What is CCorex?',
@@ -87,7 +87,7 @@ const faqCategories = [
   },
   {
     name: 'Implementation & Training',
-    icon: '🚀',
+    icon: 'fa-solid fa-rocket',
     questions: [
       {
         q: 'How long does implementation take?',
@@ -109,7 +109,7 @@ const faqCategories = [
   },
   {
     name: 'Pricing & Plans',
-    icon: '💰',
+    icon: 'fa-solid fa-coins',
     questions: [
       {
         q: 'How is CCorex priced?',
@@ -131,7 +131,7 @@ const faqCategories = [
   },
   {
     name: 'Security & Compliance',
-    icon: '🔐',
+    icon: 'fa-solid fa-lock',
     questions: [
       {
         q: 'Is my data secure?',
@@ -153,7 +153,7 @@ const faqCategories = [
   },
   {
     name: 'Integrations',
-    icon: '🔗',
+    icon: 'fa-solid fa-link',
     questions: [
       {
         q: 'What integrations are available?',

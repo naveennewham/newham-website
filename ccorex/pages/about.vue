@@ -25,14 +25,14 @@
       <div class="max-w-7xl mx-auto px-4">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
           <div class="p-8 rounded-2xl border border-white/10 bg-white/5">
-            <div class="text-4xl mb-4">🎯</div>
+            <div class="text-4xl mb-4"><i class="fa-solid fa-bullseye"></i></div>
             <h2 class="text-3xl font-bold text-white mb-4">Our Mission</h2>
             <p class="text-lg text-gray-300">
               To empower construction professionals with integrated technology that eliminates inefficiency, reduces costs, and enables data-driven decision making across the entire project lifecycle.
             </p>
           </div>
           <div class="p-8 rounded-2xl border border-white/10 bg-white/5">
-            <div class="text-4xl mb-4">🔮</div>
+            <div class="text-4xl mb-4"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
             <h2 class="text-3xl font-bold text-white mb-4">Our Vision</h2>
             <p class="text-lg text-gray-300">
               A construction industry where every project is delivered on time, on budget, and with complete transparency—powered by intelligent, integrated software that works as hard as the teams using it.
@@ -83,7 +83,7 @@
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           <div v-for="value in values" :key="value.title" class="p-6 rounded-xl border border-white/10 bg-white/5">
-            <div class="text-4xl mb-4">{{ value.icon }}</div>
+            <div class="text-4xl mb-4"><i :class="value.icon"></i></div>
             <h3 class="text-xl font-bold text-white mb-3">{{ value.title }}</h3>
             <p class="text-gray-400">{{ value.description }}</p>
           </div>
@@ -138,7 +138,7 @@
     <!-- Careers -->
     <section class="py-20 bg-slate-900">
       <div class="max-w-4xl mx-auto px-4 text-center">
-        <div class="text-4xl mb-6">🚀</div>
+        <div class="text-4xl mb-6"><i class="fa-solid fa-rocket"></i></div>
         <h2 class="text-4xl md:text-5xl font-bold mb-6 text-white">
           Join Our Team
         </h2>
@@ -194,32 +194,32 @@ const milestones = [
 
 const values = [
   {
-    icon: '🎯',
+    icon: 'fa-solid fa-bullseye',
     title: 'Customer First',
     description: 'Every decision we make starts with understanding our customers\' needs and challenges.'
   },
   {
-    icon: '🚀',
+    icon: 'fa-solid fa-rocket',
     title: 'Innovation',
     description: 'We constantly push boundaries with AI and technology to solve real construction problems.'
   },
   {
-    icon: '🤝',
+    icon: 'fa-solid fa-handshake',
     title: 'Integrity',
     description: 'We build trust through transparency, honesty, and doing what we say we\'ll do.'
   },
   {
-    icon: '⚡',
+    icon: 'fa-solid fa-bolt',
     title: 'Excellence',
     description: 'We set high standards and continuously improve to deliver exceptional quality.'
   },
   {
-    icon: '🌱',
+    icon: 'fa-solid fa-seedling',
     title: 'Growth',
     description: 'We invest in our team\'s development and embrace continuous learning.'
   },
   {
-    icon: '🌍',
+    icon: 'fa-solid fa-earth-americas',
     title: 'Impact',
     description: 'We measure success by the positive impact we create for our customers and industry.'
   }

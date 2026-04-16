@@ -52,7 +52,7 @@
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div v-for="app in apps" :key="app.name" class="group p-8 rounded-2xl border border-white/10 bg-white/5 hover:border-primary-500/50 hover:bg-white/10 transition-all">
             <div class="flex items-start gap-4 mb-4">
-              <div class="text-5xl">{{ app.icon }}</div>
+              <div class="text-5xl"><i :class="app.icon"></i></div>
               <div>
                 <h3 class="text-2xl font-bold text-white mb-1">{{ app.name }}</h3>
                 <p class="text-primary-400 font-semibold">{{ app.subtitle }}</p>
@@ -61,13 +61,13 @@
             <p class="text-gray-300 mb-6">{{ app.description }}</p>
             <ul class="space-y-2 mb-6">
               <li v-for="feature in app.features" :key="feature" class="flex items-center gap-2 text-gray-400">
-                <span class="text-primary-400">✓</span>
+                <i class="fa-solid fa-circle-check text-primary-400"></i>
                 <span>{{ feature }}</span>
               </li>
             </ul>
             <NuxtLink :to="app.link" class="inline-flex items-center gap-2 text-primary-400 font-semibold group-hover:gap-3 transition-all">
               Learn more
-              <span>→</span>
+              <i class="fa-solid fa-arrow-right"></i>
             </NuxtLink>
           </div>
         </div>
@@ -88,7 +88,7 @@
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div v-for="benefit in benefits" :key="benefit.title" class="p-6 rounded-xl border border-white/10 bg-white/5">
-            <div class="text-4xl mb-4">{{ benefit.icon }}</div>
+            <div class="text-4xl mb-4"><i :class="benefit.icon"></i></div>
             <h3 class="text-xl font-bold text-white mb-3">{{ benefit.title }}</h3>
             <p class="text-gray-400">{{ benefit.description }}</p>
           </div>
@@ -119,7 +119,7 @@
         <div class="text-center mt-12">
           <NuxtLink to="/integrations" class="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-primary-500 text-primary-400 font-semibold hover:bg-primary-500 hover:text-slate-900 transition-all">
             View All Integrations
-            <span>→</span>
+            <i class="fa-solid fa-arrow-right"></i>
           </NuxtLink>
         </div>
       </div>
@@ -162,7 +162,7 @@ const apps = [
   {
     name: 'DeepPlanAI',
     subtitle: 'AI-Powered Digital Takeoffs',
-    icon: '📏',
+    icon: 'mdi mdi-ruler',
     description: 'Transform your takeoff process with AI-powered measurement and quantity extraction. Reduce manual work by 40% while increasing accuracy.',
     features: [
       'Automated area & perimeter measurement',
@@ -175,7 +175,7 @@ const apps = [
   {
     name: 'DeepCost',
     subtitle: 'AI Cost Estimation',
-    icon: '💰',
+    icon: 'fa-solid fa-coins',
     description: 'Achieve 95%+ accuracy in MEP cost estimation with AI-driven libraries and intelligent mapping. Generate professional BOQs in minutes.',
     features: [
       'Comprehensive MEP libraries',
@@ -188,7 +188,7 @@ const apps = [
   {
     name: 'DeepTrack',
     subtitle: 'Budget & PO Management',
-    icon: '📊',
+    icon: 'fa-solid fa-chart-bar',
     description: 'Maintain complete control over project budgets and purchase orders. Track variance, manage approvals, and ensure spend visibility.',
     features: [
       'Real-time budget vs actuals',
@@ -201,7 +201,7 @@ const apps = [
   {
     name: 'DeepHR',
     subtitle: 'Workforce Management',
-    icon: '👥',
+    icon: 'fa-solid fa-users',
     description: 'Unify your workforce operations from planning to payroll. Mobile-enabled time tracking, compliance management, and resource optimization.',
     features: [
       'Workforce planning & rostering',
@@ -215,32 +215,32 @@ const apps = [
 
 const benefits = [
   {
-    icon: '🔗',
+    icon: 'fa-solid fa-link',
     title: 'Unified Data Flow',
     description: 'Data flows seamlessly between apps. Takeoffs from DeepPlanAI automatically populate DeepCost. Estimates feed into DeepTrack budgets. No manual re-entry.'
   },
   {
-    icon: '⚡',
+    icon: 'fa-solid fa-bolt',
     title: 'Lightning Fast',
     description: 'AI-powered automation reduces manual work by up to 40%. Complete takeoffs in hours, not days. Generate estimates in minutes, not weeks.'
   },
   {
-    icon: '🎯',
+    icon: 'fa-solid fa-bullseye',
     title: 'Exceptional Accuracy',
     description: 'Achieve 95%+ accuracy in cost estimation with AI-driven libraries. Reduce errors, minimize rework, and win more profitable projects.'
   },
   {
-    icon: '🔐',
+    icon: 'fa-solid fa-lock',
     title: 'Enterprise Security',
     description: 'Bank-level encryption, SOC 2 Type II certified, GDPR compliant. Your data is protected with the highest security standards.'
   },
   {
-    icon: '📱',
+    icon: 'fa-solid fa-mobile-screen',
     title: 'Mobile Ready',
     description: 'Access your projects anywhere, anytime. Native mobile apps for iOS and Android keep your team connected on the go.'
   },
   {
-    icon: '🤝',
+    icon: 'fa-solid fa-handshake',
     title: 'Expert Support',
     description: '24/7 customer support, dedicated account managers, and comprehensive training. We ensure your success every step of the way.'
   }

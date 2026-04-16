@@ -47,10 +47,10 @@
 
           <!-- Icon -->
           <div
-            class="w-20 h-20 rounded-full flex items-center justify-center text-5xl mb-6 transform group-hover:scale-110 group-hover:rotate-12 transition-all duration-300"
+            class="w-20 h-20 rounded-full flex items-center justify-center mb-6 transform group-hover:scale-110 group-hover:rotate-12 transition-all duration-300"
             :style="`background: ${metric.color}; opacity: 0.15;`"
           >
-            {{ metric.icon }}
+            <i :class="metric.icon" class="text-3xl" :style="`color: ${metric.color};`"></i>
           </div>
 
           <!-- Value -->
@@ -121,7 +121,7 @@ const isVisible = ref(false)
 
 const metrics = ref([
   {
-    icon: '⚡',
+    icon: 'fa-solid fa-rocket',
     value: 40,
     suffix: '%',
     title: 'Faster Takeoffs',
@@ -129,7 +129,7 @@ const metrics = ref([
     color: '#06B6D4'
   },
   {
-    icon: '🎯',
+    icon: 'fa-solid fa-bullseye',
     value: 95,
     suffix: '%',
     title: 'Accuracy Rate',
@@ -137,7 +137,7 @@ const metrics = ref([
     color: '#14B8A6'
   },
   {
-    icon: '💰',
+    icon: 'fa-solid fa-coins',
     value: 35,
     suffix: '%',
     title: 'Cost Savings',
@@ -145,7 +145,7 @@ const metrics = ref([
     color: '#06B6D4'
   },
   {
-    icon: '⏰',
+    icon: 'fa-solid fa-clock',
     value: 30,
     suffix: '+hrs',
     title: 'Time Saved Monthly',

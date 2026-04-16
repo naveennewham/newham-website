@@ -54,7 +54,7 @@
                 class="flex items-start text-sm"
               >
                 <span class="text-secondary-500 mr-2 mt-1">
-                  <component :is="CheckIcon" class="w-4 h-4" />
+                  <i class="fa-solid fa-check"></i>
                 </span>
                 <span class="text-gray-400">{{ feature }}</span>
               </li>
@@ -67,7 +67,7 @@
                 class="inline-flex items-center text-secondary-400 hover:text-secondary-300 transition-colors duration-300"
               >
                 Learn More
-                <component :is="ArrowRightIcon" class="w-4 h-4 ml-1" />
+                <i class="fa-solid fa-arrow-right ml-1"></i>
               </NuxtLink>
             </div>
           </div>
@@ -78,25 +78,7 @@
 </template>
 
 <script setup>
-import { h } from 'vue';
 import { staggeredDelay } from '../../utils/transitions';
-
-// SVG Icons as render functions
-const CheckIcon = (props) => h('svg', {
-  ...props,
-  fill: 'none',
-  stroke: 'currentColor',
-  viewBox: '0 0 24 24',
-  innerHTML: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>'
-});
-
-const ArrowRightIcon = (props) => h('svg', {
-  ...props,
-  fill: 'none',
-  stroke: 'currentColor',
-  viewBox: '0 0 24 24',
-  innerHTML: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>'
-});
 
 // Industry data
 const industries = [

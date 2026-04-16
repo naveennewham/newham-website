@@ -83,7 +83,7 @@
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           <div v-for="useCase in useCases" :key="useCase.title" class="p-8 rounded-xl border border-cyan-500/20 hover:border-cyan-500/40 transition-all glass-panel hover:shadow-lg hover:shadow-cyan-500/10">
-            <div class="text-5xl mb-4">{{ useCase.icon }}</div>
+            <div class="text-5xl mb-4"><i :class="useCase.icon"></i></div>
             <h3 class="text-xl font-bold text-white mb-3">{{ useCase.title }}</h3>
             <p class="text-gray-400 text-sm">{{ useCase.description }}</p>
           </div>
@@ -102,7 +102,7 @@
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div v-for="feature in features" :key="feature.title" class="p-8 rounded-xl border border-cyan-500/20 hover:border-cyan-500/40 transition-all glass-panel">
-            <div class="text-4xl mb-4">{{ feature.icon }}</div>
+            <div class="text-4xl mb-4"><i :class="feature.icon"></i></div>
             <h3 class="text-2xl font-bold text-white mb-3">{{ feature.title }}</h3>
             <p class="text-gray-400">{{ feature.description }}</p>
           </div>
@@ -121,7 +121,7 @@
 
         <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
           <div v-for="compliance in complianceBadges" :key="compliance" class="p-6 rounded-xl border border-cyan-500/20 text-center glass-panel">
-            <div class="text-3xl mb-3">✓</div>
+            <div class="text-3xl mb-3"><i class="fa-solid fa-circle-check"></i></div>
             <p class="text-cyan-400 font-semibold">{{ compliance }}</p>
           </div>
         </div>
@@ -139,17 +139,17 @@
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div class="p-8 rounded-xl border border-cyan-500/30 text-center glass-panel">
-            <div class="text-5xl mb-4">📐</div>
+            <div class="text-5xl mb-4"><i class="mdi mdi-ruler-square"></i></div>
             <h3 class="text-xl font-bold text-cyan-400 mb-2">From DeepPlanAI</h3>
             <p class="text-gray-400">Automatic cost estimation from takeoff data</p>
           </div>
           <div class="p-8 rounded-xl border border-cyan-500/30 text-center glass-panel">
-            <div class="text-5xl mb-4">📊</div>
+            <div class="text-5xl mb-4"><i class="fa-solid fa-chart-bar"></i></div>
             <h3 class="text-xl font-bold text-cyan-400 mb-2">To DeepTrack</h3>
             <p class="text-gray-400">Budget creation and tracking integration</p>
           </div>
           <div class="p-8 rounded-xl border border-cyan-500/30 text-center glass-panel">
-            <div class="text-5xl mb-4">👥</div>
+            <div class="text-5xl mb-4"><i class="fa-solid fa-users"></i></div>
             <h3 class="text-xl font-bold text-cyan-400 mb-2">With DeepHR</h3>
             <p class="text-gray-400">Labor cost allocation and planning</p>
           </div>
@@ -168,7 +168,7 @@
 
         <div class="space-y-6">
           <div v-for="(benefit, index) in benefits" :key="index" class="flex gap-6 p-6 rounded-xl border border-cyan-500/20 hover:border-cyan-500/40 transition-all glass-panel">
-            <div class="text-4xl flex-shrink-0">{{ benefit.icon }}</div>
+            <div class="text-4xl flex-shrink-0"><i :class="benefit.icon"></i></div>
             <div>
               <h3 class="text-xl font-bold text-white mb-2">{{ benefit.title }}</h3>
               <p class="text-gray-400">{{ benefit.description }}</p>
@@ -250,22 +250,22 @@ useHead({
 
 const useCases = ref([
   {
-    icon: '❄️',
+    icon: 'fa-solid fa-snowflake',
     title: 'ACMV',
     description: 'Air-Conditioning & Mechanical Ventilation systems'
   },
   {
-    icon: '🔥',
+    icon: 'fa-solid fa-fire-flame-curved',
     title: 'Fire Fighting',
     description: 'Fire suppression and safety systems'
   },
   {
-    icon: '🔌',
+    icon: 'fa-solid fa-plug',
     title: 'ELV',
     description: 'Extra Low Voltage and electrical solutions'
   },
   {
-    icon: '🧱',
+    icon: 'fa-solid fa-cubes',
     title: 'A&A',
     description: 'Additions & Alterations projects'
   }
@@ -273,32 +273,32 @@ const useCases = ref([
 
 const features = ref([
   {
-    icon: '🤖',
+    icon: 'fa-solid fa-robot',
     title: 'AI-Powered Accuracy',
     description: '95%+ accuracy in cost estimation using machine learning and industry data'
   },
   {
-    icon: '⚡',
+    icon: 'fa-solid fa-bolt',
     title: 'Lightning-Fast',
     description: 'Generate estimates in minutes instead of hours or days'
   },
   {
-    icon: '📊',
+    icon: 'fa-solid fa-chart-bar',
     title: 'Comprehensive Database',
     description: '40M+ items in our construction cost database'
   },
   {
-    icon: '🎯',
+    icon: 'fa-solid fa-bullseye',
     title: 'Discipline-Specific',
     description: 'Specialized algorithms for ACMV, Fire, ELV, and A&A systems'
   },
   {
-    icon: '🔄',
+    icon: 'fa-solid fa-arrows-rotate',
     title: 'Real-Time Updates',
     description: 'Cost database updated daily with market rates'
   },
   {
-    icon: '📈',
+    icon: 'fa-solid fa-chart-line',
     title: 'Collaboration Tools',
     description: 'Share estimates and collaborate with team members in real-time'
   }
@@ -308,32 +308,32 @@ const complianceBadges = ref(['BCA', 'IMDA', 'LTA', 'PUB', 'SCDF', 'ISO 27001'])
 
 const benefits = ref([
   {
-    icon: '💪',
+    icon: 'fa-solid fa-hand-fist',
     title: 'Win More Bids',
     description: 'Competitive and accurate quotes help you win more projects'
   },
   {
-    icon: '⏰',
+    icon: 'fa-solid fa-clock',
     title: 'Save Time',
     description: 'Reduce estimation time from days to hours'
   },
   {
-    icon: '💰',
+    icon: 'fa-solid fa-coins',
     title: 'Better Margins',
     description: 'Accurate estimates lead to better profit margins'
   },
   {
-    icon: '🎓',
+    icon: 'fa-solid fa-graduation-cap',
     title: 'Learn & Improve',
     description: 'AI insights help you understand cost drivers'
   },
   {
-    icon: '🔐',
+    icon: 'fa-solid fa-lock',
     title: 'Secure & Reliable',
     description: 'Enterprise-grade security and 99.9% uptime'
   },
   {
-    icon: '🌍',
+    icon: 'fa-solid fa-globe',
     title: 'Global Coverage',
     description: 'Supports multiple regions and building standards'
   }

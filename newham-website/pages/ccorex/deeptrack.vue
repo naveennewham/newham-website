@@ -83,7 +83,7 @@
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div v-for="area in managementAreas" :key="area.title" class="p-8 rounded-xl border border-cyan-500/20 hover:border-cyan-500/40 transition-all glass-panel hover:shadow-lg hover:shadow-cyan-500/10">
-            <div class="text-5xl mb-4">{{ area.icon }}</div>
+            <div class="text-5xl mb-4"><i :class="area.icon"></i></div>
             <h3 class="text-2xl font-bold text-white mb-3">{{ area.title }}</h3>
             <p class="text-gray-400 mb-4">{{ area.description }}</p>
             <ul class="space-y-2">
@@ -108,7 +108,7 @@
 
         <div class="space-y-6">
           <div v-for="(benefit, index) in benefits" :key="index" class="flex gap-6 p-6 rounded-xl border border-cyan-500/20 hover:border-cyan-500/40 transition-all glass-panel">
-            <div class="text-4xl flex-shrink-0">{{ benefit.icon }}</div>
+            <div class="text-4xl flex-shrink-0"><i :class="benefit.icon"></i></div>
             <div>
               <h3 class="text-xl font-bold text-white mb-2">{{ benefit.title }}</h3>
               <p class="text-gray-400">{{ benefit.description }}</p>
@@ -129,7 +129,7 @@
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div v-for="feature in features" :key="feature.title" class="p-8 rounded-xl border border-cyan-500/20 hover:border-cyan-500/40 transition-all glass-panel">
-            <div class="text-4xl mb-4">{{ feature.icon }}</div>
+            <div class="text-4xl mb-4"><i :class="feature.icon"></i></div>
             <h3 class="text-2xl font-bold text-white mb-3">{{ feature.title }}</h3>
             <p class="text-gray-400">{{ feature.description }}</p>
           </div>
@@ -148,17 +148,17 @@
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div class="p-8 rounded-xl border border-cyan-500/30 text-center glass-panel">
-            <div class="text-5xl mb-4">💰</div>
+            <div class="text-5xl mb-4"><i class="fa-solid fa-coins"></i></div>
             <h3 class="text-xl font-bold text-cyan-400 mb-2">From DeepCost</h3>
             <p class="text-gray-400">Auto-create budgets from cost estimates</p>
           </div>
           <div class="p-8 rounded-xl border border-cyan-500/30 text-center glass-panel">
-            <div class="text-5xl mb-4">👥</div>
+            <div class="text-5xl mb-4"><i class="fa-solid fa-users"></i></div>
             <h3 class="text-xl font-bold text-cyan-400 mb-2">With DeepHR</h3>
             <p class="text-gray-400">Labor cost integration and tracking</p>
           </div>
           <div class="p-8 rounded-xl border border-cyan-500/30 text-center glass-panel">
-            <div class="text-5xl mb-4">📐</div>
+            <div class="text-5xl mb-4"><i class="mdi mdi-ruler-square"></i></div>
             <h3 class="text-xl font-bold text-cyan-400 mb-2">From DeepPlanAI</h3>
             <p class="text-gray-400">Schedule-based budget allocation</p>
           </div>
@@ -238,25 +238,25 @@ useHead({
 
 const managementAreas = ref([
   {
-    icon: '💰',
+    icon: 'fa-solid fa-coins',
     title: 'Budget Control',
     description: 'Create and manage project budgets with real-time tracking',
     points: ['Set budget limits', 'Track actual vs. forecast', 'Alert on overruns', 'Multi-level approval']
   },
   {
-    icon: '📋',
+    icon: 'fa-solid fa-clipboard-list',
     title: 'PO Management',
     description: 'Streamline purchase order creation and tracking',
     points: ['Create POs from estimates', 'Vendor management', 'Invoice matching', 'Payment tracking']
   },
   {
-    icon: '📊',
+    icon: 'fa-solid fa-chart-bar',
     title: 'Spend Tracking',
     description: 'Monitor and analyze project spending in detail',
     points: ['Real-time dashboards', 'Cost reports', 'Variance analysis', 'Trend insights']
   },
   {
-    icon: '📈',
+    icon: 'fa-solid fa-chart-line',
     title: 'Reporting',
     description: 'Comprehensive financial reporting and analytics',
     points: ['Cost summaries', 'Profitability analysis', 'Custom reports', 'Export capabilities']
@@ -265,32 +265,32 @@ const managementAreas = ref([
 
 const benefits = ref([
   {
-    icon: '🎯',
+    icon: 'fa-solid fa-bullseye',
     title: 'Total Cost Control',
     description: 'Know exactly where every dollar is being spent and forecast costs accurately'
   },
   {
-    icon: '⏱️',
+    icon: 'fa-solid fa-stopwatch',
     title: 'Catch Problems Early',
     description: 'Real-time alerts notify you of budget overruns before they become big issues'
   },
   {
-    icon: '💡',
+    icon: 'fa-solid fa-lightbulb',
     title: 'Better Decision Making',
     description: 'Data-driven insights help you make smarter financial decisions'
   },
   {
-    icon: '🚀',
+    icon: 'fa-solid fa-rocket',
     title: 'Faster Approvals',
     description: 'Streamlined workflows speed up purchase order and invoice approvals'
   },
   {
-    icon: '📱',
+    icon: 'fa-solid fa-mobile-screen',
     title: 'Mobile Access',
     description: 'Monitor budgets and approve transactions on-the-go from any device'
   },
   {
-    icon: '🔗',
+    icon: 'fa-solid fa-link',
     title: 'Seamless Integration',
     description: 'Works perfectly with DeepCost for automatic budget creation'
   }
@@ -298,32 +298,32 @@ const benefits = ref([
 
 const features = ref([
   {
-    icon: '📊',
+    icon: 'fa-solid fa-chart-bar',
     title: 'Live Dashboards',
     description: 'Real-time visual dashboards showing budget status and spending trends'
   },
   {
-    icon: '⚠️',
+    icon: 'fa-solid fa-triangle-exclamation',
     title: 'Smart Alerts',
     description: 'Automatic notifications for budget warnings and overruns'
   },
   {
-    icon: '📄',
+    icon: 'fa-solid fa-file-invoice',
     title: 'Invoice Management',
     description: 'Match invoices to POs automatically with AI-powered validation'
   },
   {
-    icon: '💳',
+    icon: 'fa-solid fa-credit-card',
     title: 'Payment Tracking',
     description: 'Track payment status and cash flow impact on your projects'
   },
   {
-    icon: '🤝',
+    icon: 'fa-solid fa-handshake',
     title: 'Multi-User Approval',
     description: 'Configurable approval workflows with role-based permissions'
   },
   {
-    icon: '📊',
+    icon: 'fa-solid fa-chart-pie',
     title: 'Custom Reports',
     description: 'Create tailored reports for stakeholders and project teams'
   }

@@ -25,7 +25,7 @@
       <div class="max-w-7xl mx-auto px-4">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
           <div v-for="option in contactOptions" :key="option.title" class="p-8 rounded-xl border border-white/10 bg-white/5 text-center">
-            <div class="text-4xl mb-4">{{ option.icon }}</div>
+            <div class="text-4xl mb-4"><i :class="option.icon"></i></div>
             <h3 class="text-xl font-bold text-white mb-3">{{ option.title }}</h3>
             <p class="text-gray-400 mb-4">{{ option.description }}</p>
             <a :href="option.link" class="text-primary-400 font-semibold hover:text-primary-300 transition-colors">
@@ -215,7 +215,7 @@
             </form>
 
             <div v-if="submitSuccess" class="mt-6 p-4 rounded-lg bg-green-500/10 border border-green-500/30">
-              <p class="text-green-400 text-center">✓ Thank you! We'll be in touch within 24 hours.</p>
+              <p class="text-green-400 text-center"><i class="fa-solid fa-circle-check"></i> Thank you! We'll be in touch within 24 hours.</p>
             </div>
           </div>
         </div>
@@ -247,21 +247,21 @@ import { ref } from 'vue'
 
 const contactOptions = [
   {
-    icon: '💬',
+    icon: 'fa-solid fa-comments',
     title: 'Live Chat',
     description: 'Chat with our team in real-time.',
     cta: 'Start Chat',
     link: '#'
   },
   {
-    icon: '📧',
+    icon: 'fa-solid fa-envelope',
     title: 'Email Us',
     description: 'Send us your questions anytime.',
     cta: 'sales@ccorex.com',
     link: 'mailto:sales@ccorex.com'
   },
   {
-    icon: '📞',
+    icon: 'fa-solid fa-phone',
     title: 'Call Us',
     description: 'Speak with a product specialist.',
     cta: '+1 (800) 123-4567',

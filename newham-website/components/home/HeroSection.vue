@@ -165,9 +165,7 @@
                 @click="prev"
                 aria-label="Previous"
               >
-                <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
-                </svg>
+                <i class="fa-solid fa-chevron-left text-sm"></i>
               </button>
               <button
                 type="button"
@@ -175,9 +173,7 @@
                 @click="next"
                 aria-label="Next"
               >
-                <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                </svg>
+                <i class="fa-solid fa-chevron-right text-sm"></i>
               </button>
             </div>
           </div>

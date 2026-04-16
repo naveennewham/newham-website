@@ -40,7 +40,7 @@
             <div
               class="flex-shrink-0 text-2xl"
             >
-              {{ benefit.icon }}
+              <i :class="benefit.icon" class="text-cyan-400"></i>
             </div>
             <h3 class="text-base font-bold text-white group-hover:text-cyan-400 transition-colors">
               {{ benefit.title }}
@@ -75,30 +75,21 @@
               <p class="text-sm text-gray-400">Takeoffs</p>
             </div>
 
-            <svg class="w-6 h-6 text-cyan-400 rotate-90 md:rotate-0" fill="none" stroke="currentColor"
-              viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-            </svg>
+            <i class="fa-solid fa-chevron-right text-cyan-400 rotate-90 md:rotate-0"></i>
 
             <div class="flex-1 p-4 rounded-lg bg-gradient-to-r from-cyan-500/10 to-cyan-500/5 border border-cyan-500/30">
               <p class="font-semibold text-cyan-400">DeepCost</p>
               <p class="text-sm text-gray-400">Estimation</p>
             </div>
 
-            <svg class="w-6 h-6 text-cyan-400 rotate-90 md:rotate-0" fill="none" stroke="currentColor"
-              viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-            </svg>
+            <i class="fa-solid fa-chevron-right text-cyan-400 rotate-90 md:rotate-0"></i>
 
             <div class="flex-1 p-4 rounded-lg bg-gradient-to-r from-cyan-500/10 to-cyan-500/5 border border-cyan-500/30">
               <p class="font-semibold text-cyan-400">DeepTrack</p>
               <p class="text-sm text-gray-400">Budgeting</p>
             </div>
 
-            <svg class="w-6 h-6 text-cyan-400 rotate-90 md:rotate-0" fill="none" stroke="currentColor"
-              viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-            </svg>
+            <i class="fa-solid fa-chevron-right text-cyan-400 rotate-90 md:rotate-0"></i>
 
             <div class="flex-1 p-4 rounded-lg bg-gradient-to-r from-cyan-500/10 to-cyan-500/5 border border-cyan-500/30">
               <p class="font-semibold text-cyan-400">DeepHR</p>
@@ -116,37 +107,37 @@ import { ref } from 'vue'
 
 const benefits = ref([
   {
-    icon: '🔗',
+    icon: 'fa-solid fa-link',
     title: 'Seamless Integration',
     description: 'All tools are built to work together. Data flows automatically without manual entry or complex integrations.',
     color: '#06B6D4'
   },
   {
-    icon: '⚡',
+    icon: 'fa-solid fa-bolt',
     title: 'Real-Time Sync',
     description: 'Changes in one app instantly reflect across all others. Your entire team stays in sync in real-time.',
     color: '#14B8A6'
   },
   {
-    icon: '📊',
+    icon: 'fa-solid fa-chart-line',
     title: 'Unified Reporting',
     description: 'Single dashboard for all metrics. Track costs, schedules, resources, and performance in one place.',
     color: '#06B6D4'
   },
   {
-    icon: '🔐',
+    icon: 'fa-solid fa-shield-halved',
     title: 'Single Sign-On',
     description: 'One login, access to all tools. Simplified authentication with enterprise-grade security.',
     color: '#14B8A6'
   },
   {
-    icon: '⏱️',
+    icon: 'fa-solid fa-clock',
     title: 'Save Hours',
     description: 'Eliminate redundant data entry. Automate workflows. Boost team productivity by up to 40%.',
     color: '#06B6D4'
   },
   {
-    icon: '🚀',
+    icon: 'fa-solid fa-rocket',
     title: 'Scale Easily',
     description: 'Add new teams and projects instantly. CCorex grows with your business without complexity.',
     color: '#14B8A6'

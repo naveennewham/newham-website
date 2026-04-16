@@ -23,7 +23,7 @@
             <div class="space-y-6 mb-10">
               <div v-for="(benefit, index) in benefits" :key="index" class="flex items-start">
                 <div class="flex-shrink-0 w-10 h-10 rounded-full bg-gradient-to-br from-primary-500/30 to-secondary-500/30 flex items-center justify-center mr-4">
-                  <component :is="benefit.icon" class="w-5 h-5 text-white" />
+                  <i :class="benefit.icon" class="text-white"></i>
                 </div>
                 <div>
                   <h4 class="text-lg font-semibold text-white mb-1">{{ benefit.title }}</h4>
@@ -37,9 +37,7 @@
                 Schedule an Appointment
               </NuxtLink>
               <NuxtLink to="/pricing" class="btn-outline flex items-center justify-center">
-                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
-                </svg>
+                <i class="fa-solid fa-plus mr-2"></i>
                 View Pricing
               </NuxtLink>
             </div>
@@ -147,10 +145,7 @@
                   class="w-full py-3 px-6 text-white font-medium rounded-lg bg-gradient-to-r from-primary-600 to-secondary-600 hover:from-primary-500 hover:to-secondary-500 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 focus:ring-offset-dark-900 transition-all duration-300 flex items-center justify-center"
                   :disabled="isSubmitting"
                 >
-                  <svg v-if="isSubmitting" class="animate-spin -ml-1 mr-2 h-4 w-4 text-white" fill="none" viewBox="0 0 24 24">
-                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                  </svg>
+                  <i v-if="isSubmitting" class="fa-solid fa-spinner fa-spin -ml-1 mr-2 text-white"></i>
                   {{ isSubmitting ? 'Submitting...' : 'Submit Request' }}
                 </button>
               </div>
@@ -169,48 +164,23 @@
 </template>
 
 <script setup>
-import { ref, h } from 'vue';
-
-// SVG Icons as render functions
-const EfficiencyIcon = (props) => h('svg', {
-  ...props,
-  fill: 'none',
-  stroke: 'currentColor',
-  viewBox: '0 0 24 24',
-  innerHTML: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>'
-});
-
-const InsightIcon = (props) => h('svg', {
-  ...props,
-  fill: 'none',
-  stroke: 'currentColor',
-  viewBox: '0 0 24 24',
-  innerHTML: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>'
-});
-
-const CollaborationIcon = (props) => h('svg', {
-  ...props,
-  fill: 'none',
-  stroke: 'currentColor',
-  viewBox: '0 0 24 24',
-  innerHTML: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>'
-});
+import { ref } from 'vue';
 
 const benefits = [
   {
     title: 'Increased Efficiency',
     description: 'Streamline operations and reduce manual work with automated workflows and digital tools.',
-    icon: EfficiencyIcon
+    icon: 'fa-solid fa-rocket'
   },
   {
     title: 'Data-Driven Insights',
     description: 'Make informed decisions with real-time analytics and comprehensive reporting.',
-    icon: InsightIcon
+    icon: 'fa-solid fa-chart-line'
   },
   {
     title: 'Enhanced Collaboration',
     description: 'Improve communication and coordination across teams, sites, and stakeholders.',
-    icon: CollaborationIcon
+    icon: 'fa-solid fa-users'
   }
 ];
 

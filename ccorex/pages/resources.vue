@@ -30,12 +30,12 @@
             :to="category.link"
             class="group p-8 rounded-2xl border border-white/10 bg-white/5 hover:border-primary-500/50 hover:bg-white/10 transition-all text-center"
           >
-            <div class="text-5xl mb-4">{{ category.icon }}</div>
+            <div class="text-5xl mb-4"><i :class="category.icon"></i></div>
             <h2 class="text-2xl font-bold text-white mb-3 group-hover:text-primary-400 transition-colors">{{ category.name }}</h2>
             <p class="text-gray-400 mb-4">{{ category.description }}</p>
             <span class="inline-flex items-center gap-2 text-primary-400 font-semibold group-hover:gap-3 transition-all">
               Explore
-              <span>→</span>
+              <i class="fa-solid fa-arrow-right"></i>
             </span>
           </NuxtLink>
         </div>
@@ -64,7 +64,7 @@
             <p class="text-gray-400 mb-4">{{ resource.description }}</p>
             <a :href="resource.link" class="inline-flex items-center gap-2 text-primary-400 font-semibold group-hover:gap-3 transition-all">
               Read More
-              <span>→</span>
+              <i class="fa-solid fa-arrow-right"></i>
             </a>
           </div>
         </div>
@@ -87,7 +87,7 @@
           <div v-for="guide in guides" :key="guide.title" class="p-8 rounded-2xl border border-white/10 bg-white/5">
             <div class="flex items-start gap-6">
               <div class="flex-shrink-0 w-24 h-32 rounded-lg bg-gradient-to-br from-primary-500/20 to-secondary-500/20 border border-primary-500/30 flex items-center justify-center">
-                <span class="text-4xl">{{ guide.icon }}</span>
+                <span class="text-4xl"><i :class="guide.icon"></i></span>
               </div>
               <div class="flex-1">
                 <h3 class="text-2xl font-bold text-white mb-3">{{ guide.title }}</h3>
@@ -100,7 +100,7 @@
                 </ul>
                 <a href="#" class="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-primary-500/10 border border-primary-500 text-primary-400 font-semibold hover:bg-primary-500 hover:text-slate-900 transition-all">
                   Download Guide
-                  <span>↓</span>
+                  <i class="fa-solid fa-arrow-down"></i>
                 </a>
               </div>
             </div>
@@ -126,10 +126,7 @@
             <!-- Video Thumbnail Placeholder -->
             <div class="aspect-video bg-slate-900 flex items-center justify-center border-b border-white/10">
               <div class="text-center">
-                <svg class="w-16 h-16 mx-auto mb-2 text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"/>
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                </svg>
+                <i class="fa-solid fa-play text-7xl text-primary-400"></i>
                 <p class="text-xs text-gray-500">{{ video.duration }}</p>
               </div>
             </div>
@@ -138,7 +135,7 @@
               <p class="text-sm text-gray-400 mb-4">{{ video.description }}</p>
               <button class="inline-flex items-center gap-2 text-primary-400 font-semibold group-hover:gap-3 transition-all">
                 Watch Now
-                <span>→</span>
+                <i class="fa-solid fa-arrow-right"></i>
               </button>
             </div>
           </div>
@@ -160,7 +157,7 @@
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           <div v-for="doc in documentation" :key="doc.app" class="p-6 rounded-xl border border-white/10 bg-white/5 hover:border-primary-500/50 transition-all">
-            <div class="text-4xl mb-4">{{ doc.icon }}</div>
+            <div class="text-4xl mb-4"><i :class="doc.icon"></i></div>
             <h3 class="text-xl font-bold text-white mb-3">{{ doc.app }}</h3>
             <ul class="space-y-2 mb-6">
               <li v-for="section in doc.sections" :key="section" class="text-sm text-gray-400">
@@ -169,7 +166,7 @@
             </ul>
             <a href="#" class="inline-flex items-center gap-2 text-primary-400 font-semibold hover:gap-3 transition-all">
               View Docs
-              <span>→</span>
+              <i class="fa-solid fa-arrow-right"></i>
             </a>
           </div>
         </div>
@@ -190,12 +187,12 @@
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div v-for="support in supportOptions" :key="support.title" class="p-8 rounded-xl border border-white/10 bg-white/5 text-center">
-            <div class="text-4xl mb-4">{{ support.icon }}</div>
+            <div class="text-4xl mb-4"><i :class="support.icon"></i></div>
             <h3 class="text-xl font-bold text-white mb-3">{{ support.title }}</h3>
             <p class="text-gray-400 mb-6">{{ support.description }}</p>
             <a :href="support.link" class="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-primary-500 text-primary-400 font-semibold hover:bg-primary-500 hover:text-slate-900 transition-all">
               {{ support.cta }}
-              <span>→</span>
+              <i class="fa-solid fa-arrow-right"></i>
             </a>
           </div>
         </div>
@@ -208,25 +205,25 @@
 const resourceCategories = [
   {
     name: 'Blog',
-    icon: '📝',
+    icon: 'fa-solid fa-pen-to-square',
     description: 'Latest insights, trends, and best practices in construction technology.',
     link: '/resources'
   },
   {
     name: 'Guides',
-    icon: '📚',
+    icon: 'fa-solid fa-book',
     description: 'Comprehensive guides and whitepapers for construction professionals.',
     link: '/resources'
   },
   {
     name: 'Case Studies',
-    icon: '📊',
+    icon: 'fa-solid fa-chart-bar',
     description: 'Real success stories from construction firms using CCorex.',
     link: '/resources'
   },
   {
     name: 'Documentation',
-    icon: '📖',
+    icon: 'fa-solid fa-book-open',
     description: 'Complete technical documentation and API references.',
     link: '/resources'
   }
@@ -259,7 +256,7 @@ const featuredResources = [
 const guides = [
   {
     title: 'Digital Transformation Roadmap',
-    icon: '🚀',
+    icon: 'fa-solid fa-rocket',
     description: 'Step-by-step guide to digitizing your construction operations.',
     topics: [
       'Assessment and planning',
@@ -271,7 +268,7 @@ const guides = [
   },
   {
     title: 'Cost Control Best Practices',
-    icon: '💰',
+    icon: 'fa-solid fa-coins',
     description: 'Proven strategies for maintaining budget control on construction projects.',
     topics: [
       'Budget planning',
@@ -283,7 +280,7 @@ const guides = [
   },
   {
     title: 'AI Takeoff Implementation',
-    icon: '🤖',
+    icon: 'fa-solid fa-robot',
     description: 'How to successfully implement AI-powered takeoff in your workflow.',
     topics: [
       'Getting started with AI',
@@ -295,7 +292,7 @@ const guides = [
   },
   {
     title: 'Workforce Optimization',
-    icon: '👥',
+    icon: 'fa-solid fa-users',
     description: 'Maximize productivity with effective workforce management.',
     topics: [
       'Resource planning',
@@ -343,7 +340,7 @@ const videoTutorials = [
 const documentation = [
   {
     app: 'DeepPlan AI',
-    icon: '📏',
+    icon: 'mdi mdi-ruler',
     sections: [
       'Getting Started',
       'Drawing Upload',
@@ -355,7 +352,7 @@ const documentation = [
   },
   {
     app: 'DeepCost',
-    icon: '💰',
+    icon: 'fa-solid fa-coins',
     sections: [
       'User Guide',
       'Cost Libraries',
@@ -367,7 +364,7 @@ const documentation = [
   },
   {
     app: 'DeepTrack',
-    icon: '📊',
+    icon: 'fa-solid fa-chart-bar',
     sections: [
       'Project Setup',
       'Budget Management',
@@ -379,7 +376,7 @@ const documentation = [
   },
   {
     app: 'DeepHR',
-    icon: '👥',
+    icon: 'fa-solid fa-users',
     sections: [
       'Workforce Planning',
       'Time Tracking',
@@ -393,21 +390,21 @@ const documentation = [
 
 const supportOptions = [
   {
-    icon: '💬',
+    icon: 'fa-solid fa-comments',
     title: 'Live Chat',
     description: 'Get instant help from our support team.',
     cta: 'Start Chat',
     link: '#'
   },
   {
-    icon: '📧',
+    icon: 'fa-solid fa-envelope',
     title: 'Email Support',
     description: 'Send us your questions and get detailed responses.',
     cta: 'Contact Us',
     link: '/contact'
   },
   {
-    icon: '🎓',
+    icon: 'fa-solid fa-graduation-cap',
     title: 'Training',
     description: 'Schedule personalized training sessions for your team.',
     cta: 'Book Training',

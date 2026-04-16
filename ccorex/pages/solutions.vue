@@ -38,7 +38,7 @@
                 <h3 class="text-lg font-semibold text-white mb-4">Key Challenges We Solve:</h3>
                 <ul class="space-y-3">
                   <li v-for="challenge in solution.challenges" :key="challenge" class="flex items-start gap-3 text-gray-300">
-                    <span class="text-secondary-400 text-xl mt-1">✗</span>
+                    <i class="fa-solid fa-xmark text-secondary-400 text-lg mt-1"></i>
                     <span>{{ challenge }}</span>
                   </li>
                 </ul>
@@ -48,7 +48,7 @@
                 <h3 class="text-lg font-semibold text-white mb-4">How CCorex Helps:</h3>
                 <ul class="space-y-3">
                   <li v-for="benefit in solution.benefits" :key="benefit" class="flex items-start gap-3 text-gray-300">
-                    <span class="text-primary-400 text-xl mt-1">✓</span>
+                    <i class="fa-solid fa-check text-primary-400 text-lg mt-1"></i>
                     <span>{{ benefit }}</span>
                   </li>
                 </ul>
@@ -70,7 +70,7 @@
                 <div class="space-y-4">
                   <div v-for="app in solution.apps" :key="app.name" class="p-4 rounded-lg bg-slate-900/50 border border-white/10 hover:border-primary-500/50 transition-all">
                     <div class="flex items-center gap-3 mb-2">
-                      <span class="text-3xl">{{ app.icon }}</span>
+                      <span class="text-3xl"><i :class="app.icon"></i></span>
                       <div>
                         <h4 class="font-semibold text-white">{{ app.name }}</h4>
                         <p class="text-sm text-gray-400">{{ app.purpose }}</p>
@@ -99,7 +99,7 @@
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           <div v-for="useCase in useCases" :key="useCase.title" class="p-6 rounded-xl border border-white/10 bg-white/5">
-            <div class="text-3xl mb-4">{{ useCase.icon }}</div>
+            <div class="text-3xl mb-4"><i :class="useCase.icon"></i></div>
             <h3 class="text-xl font-bold text-white mb-3">{{ useCase.title }}</h3>
             <p class="text-gray-400 mb-4">{{ useCase.scenario }}</p>
             <div class="p-4 rounded-lg bg-primary-500/10 border border-primary-500/30">
@@ -126,7 +126,7 @@
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
           <div class="p-8 rounded-2xl border border-red-500/30 bg-red-500/5">
             <div class="flex items-center gap-3 mb-6">
-              <span class="text-3xl">❌</span>
+              <i class="fa-solid fa-circle-xmark text-3xl text-red-400"></i>
               <h3 class="text-2xl font-bold text-white">Without CCorex</h3>
             </div>
             <ul class="space-y-4">
@@ -139,7 +139,7 @@
 
           <div class="p-8 rounded-2xl border border-primary-500/30 bg-primary-500/5">
             <div class="flex items-center gap-3 mb-6">
-              <span class="text-3xl">✅</span>
+              <i class="fa-solid fa-circle-check text-3xl text-primary-400"></i>
               <h3 class="text-2xl font-bold text-white">With CCorex</h3>
             </div>
             <ul class="space-y-4">
@@ -194,9 +194,9 @@ const solutions = [
       'Integrated scheduling and resource planning'
     ],
     apps: [
-      { name: 'DeepCost', icon: '💰', purpose: 'Accurate tender estimation' },
-      { name: 'DeepTrack', icon: '📊', purpose: 'Project & budget control' },
-      { name: 'DeepHR', icon: '👥', purpose: 'Workforce management' }
+      { name: 'DeepCost', icon: 'fa-solid fa-coins', purpose: 'Accurate tender estimation' },
+      { name: 'DeepTrack', icon: 'fa-solid fa-chart-bar', purpose: 'Project & budget control' },
+      { name: 'DeepHR', icon: 'fa-solid fa-users', purpose: 'Workforce management' }
     ]
   },
   {
@@ -216,9 +216,9 @@ const solutions = [
       'Resource allocation across projects'
     ],
     apps: [
-      { name: 'DeepCost', icon: '💰', purpose: 'Trade-specific estimation' },
-      { name: 'DeepPlan AI', icon: '📏', purpose: 'Quick takeoffs' },
-      { name: 'DeepHR', icon: '👥', purpose: 'Labor tracking' }
+      { name: 'DeepCost', icon: 'fa-solid fa-coins', purpose: 'Trade-specific estimation' },
+      { name: 'DeepPlan AI', icon: 'mdi mdi-ruler', purpose: 'Quick takeoffs' },
+      { name: 'DeepHR', icon: 'fa-solid fa-users', purpose: 'Labor tracking' }
     ]
   },
   {
@@ -238,9 +238,9 @@ const solutions = [
       'Early warning system for budget overruns'
     ],
     apps: [
-      { name: 'DeepTrack', icon: '📊', purpose: 'Portfolio management' },
-      { name: 'DeepCost', icon: '💰', purpose: 'Budget planning' },
-      { name: 'DeepPlan AI', icon: '📏', purpose: 'Design validation' }
+      { name: 'DeepTrack', icon: 'fa-solid fa-chart-bar', purpose: 'Portfolio management' },
+      { name: 'DeepCost', icon: 'fa-solid fa-coins', purpose: 'Budget planning' },
+      { name: 'DeepPlan AI', icon: 'mdi mdi-ruler', purpose: 'Design validation' }
     ]
   },
   {
@@ -260,46 +260,46 @@ const solutions = [
       'Centralized knowledge repository'
     ],
     apps: [
-      { name: 'DeepCost', icon: '💰', purpose: 'Cost consulting' },
-      { name: 'DeepPlan AI', icon: '📏', purpose: 'Quantity surveying' },
-      { name: 'DeepTrack', icon: '📊', purpose: 'Project monitoring' }
+      { name: 'DeepCost', icon: 'fa-solid fa-coins', purpose: 'Cost consulting' },
+      { name: 'DeepPlan AI', icon: 'mdi mdi-ruler', purpose: 'Quantity surveying' },
+      { name: 'DeepTrack', icon: 'fa-solid fa-chart-bar', purpose: 'Project monitoring' }
     ]
   }
 ]
 
 const useCases = [
   {
-    icon: '🏗️',
+    icon: 'fa-solid fa-helmet-safety',
     title: 'Multi-Trade Coordination',
     scenario: 'GC managing 15 subcontractors on a commercial tower project.',
     solution: 'DeepTrack provides unified dashboard showing all trade progress, budgets, and schedules in real-time.'
   },
   {
-    icon: '⚡',
+    icon: 'fa-solid fa-bolt',
     title: 'Fast Bid Turnaround',
     scenario: 'MEP contractor needs to submit tender in 48 hours.',
     solution: 'DeepPlan AI extracts quantities in hours, DeepCost maps to libraries for instant estimate.'
   },
   {
-    icon: '💼',
+    icon: 'fa-solid fa-briefcase',
     title: 'Portfolio Oversight',
     scenario: 'Developer tracking 8 projects across 3 cities.',
     solution: 'Executive dashboard shows financial health, risks, and milestones for entire portfolio.'
   },
   {
-    icon: '📱',
+    icon: 'fa-solid fa-mobile-screen',
     title: 'Field Labor Tracking',
     scenario: 'Contractor with 200+ workers across multiple sites.',
     solution: 'DeepHR mobile app with geofencing ensures accurate time tracking and attendance.'
   },
   {
-    icon: '📊',
+    icon: 'fa-solid fa-chart-bar',
     title: 'Budget Control',
     scenario: 'Project 15% over budget with no early warning.',
     solution: 'DeepTrack variance alerts catch overruns early, allowing corrective action.'
   },
   {
-    icon: '🤝',
+    icon: 'fa-solid fa-handshake',
     title: 'Client Reporting',
     scenario: 'Consultant needs monthly cost reports for 5 clients.',
     solution: 'Automated report generation with client-specific branding and data.'

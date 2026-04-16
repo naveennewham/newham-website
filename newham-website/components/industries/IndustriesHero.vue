@@ -49,19 +49,19 @@
           
           <!-- Floating Industry Icons -->
           <div class="absolute -top-6 -left-6 w-16 h-16 glass-panel-light rounded-xl flex items-center justify-center transform rotate-12 animate-float-slow">
-            <component :is="BuildingIcon" class="w-8 h-8 text-primary-400" />
+            <i class="fa-solid fa-building text-2xl text-primary-400"></i>
           </div>
-          
+
           <div class="absolute top-1/4 -right-4 w-14 h-14 glass-panel-light rounded-xl flex items-center justify-center transform -rotate-6 animate-float">
-            <component :is="BridgeIcon" class="w-7 h-7 text-secondary-400" />
+            <i class="mdi mdi-bridge text-xl text-secondary-400"></i>
           </div>
-          
+
           <div class="absolute bottom-1/4 -left-8 w-20 h-20 glass-panel-light rounded-xl flex items-center justify-center transform rotate-6 animate-float-slow">
-            <component :is="InfrastructureIcon" class="w-10 h-10 text-primary-400" />
+            <i class="fa-solid fa-road text-3xl text-primary-400"></i>
           </div>
-          
+
           <div class="absolute -bottom-4 right-12 w-16 h-16 glass-panel-light rounded-xl flex items-center justify-center transform -rotate-12 animate-float">
-            <component :is="HomeIcon" class="w-8 h-8 text-secondary-400" />
+            <i class="fa-solid fa-house text-2xl text-secondary-400"></i>
           </div>
           
           <!-- Decorative Elements -->
@@ -74,41 +74,6 @@
 </template>
 
 <script setup>
-import { h } from 'vue';
-
-// SVG Icons as render functions
-const BuildingIcon = (props) => h('svg', {
-  ...props,
-  fill: 'none',
-  stroke: 'currentColor',
-  viewBox: '0 0 24 24',
-  innerHTML: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>'
-});
-
-const BridgeIcon = (props) => h('svg', {
-  ...props,
-  fill: 'none',
-  stroke: 'currentColor',
-  viewBox: '0 0 24 24',
-  innerHTML: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9h18m-18 0a2 2 0 00-2 2v6a2 2 0 002 2h18a2 2 0 002-2v-6a2 2 0 00-2-2m-18 0v-3a2 2 0 012-2h14a2 2 0 012 2v3m-9-3v12"></path>'
-});
-
-const InfrastructureIcon = (props) => h('svg', {
-  ...props,
-  fill: 'none',
-  stroke: 'currentColor',
-  viewBox: '0 0 24 24',
-  innerHTML: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 3h1m-1 4h1m4-4h1m-1 4h1m4 0h1m-1 4h1m-1 4h1m-1 4h1m-7-1v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>'
-});
-
-const HomeIcon = (props) => h('svg', {
-  ...props,
-  fill: 'none',
-  stroke: 'currentColor',
-  viewBox: '0 0 24 24',
-  innerHTML: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>'
-});
-
 const industryStats = [
   { value: '10+', label: 'Industries Served' },
   { value: '200+', label: 'Projects Completed' },

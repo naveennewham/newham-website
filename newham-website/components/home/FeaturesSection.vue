@@ -48,7 +48,7 @@
                 <div class="flex items-start gap-3">
                   <div class="w-10 h-10 rounded-xl flex items-center justify-center"
                        :class="index % 2 === 0 ? 'bg-primary-900/50 text-primary-300' : 'bg-secondary-900/50 text-secondary-300'">
-                    <component :is="benefit.icon" class="w-5 h-5" />
+                    <i :class="benefit.icon"></i>
                   </div>
                   <div>
                     <h3 class="text-white font-semibold">{{ benefit.title }}</h3>
@@ -91,61 +91,26 @@
 </template>
 
 <script setup>
-import { h } from 'vue';
-
-// SVG Icons as render functions
-const ProjectManagementIcon = (props) => h('svg', {
-  ...props,
-  fill: 'none',
-  stroke: 'currentColor',
-  viewBox: '0 0 24 24',
-  innerHTML: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path>'
-});
-
-const SoftwareIcon = (props) => h('svg', {
-  ...props,
-  fill: 'none',
-  stroke: 'currentColor',
-  viewBox: '0 0 24 24',
-  innerHTML: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>'
-});
-
-const MobileIcon = (props) => h('svg', {
-  ...props,
-  fill: 'none',
-  stroke: 'currentColor',
-  viewBox: '0 0 24 24',
-  innerHTML: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path>'
-});
-
-const CloudIcon = (props) => h('svg', {
-  ...props,
-  fill: 'none',
-  stroke: 'currentColor',
-  viewBox: '0 0 24 24',
-  innerHTML: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"></path>'
-});
-
 const suiteBenefits = [
   {
     title: 'One source of truth',
     description: 'Quantities, costs, budgets, and workforce data stay connected across the suite.',
-    icon: ProjectManagementIcon
+    icon: 'mdi mdi-clipboard-check-outline'
   },
   {
     title: 'Faster pre-construction',
     description: 'Reduce turnaround time from drawings to takeoffs and detailed BOQs.',
-    icon: SoftwareIcon
+    icon: 'fa-solid fa-code'
   },
   {
     title: 'Site-to-office visibility',
     description: 'Track progress and costs with clear, role-based dashboards and reports.',
-    icon: MobileIcon
+    icon: 'fa-solid fa-mobile-screen-button'
   },
   {
     title: 'Scales with your projects',
     description: 'Standardize processes across teams, packages, and regions without losing control.',
-    icon: CloudIcon
+    icon: 'fa-solid fa-cloud'
   }
 ]
 

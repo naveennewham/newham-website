@@ -10,7 +10,7 @@
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
             <div class="flex items-center gap-3 mb-6">
-              <div class="text-6xl">📊</div>
+              <div class="text-6xl"><i class="fa-solid fa-chart-bar"></i></div>
               <div>
                 <h1 class="text-5xl md:text-6xl font-bold text-white">DeepTrack</h1>
                 <p class="text-xl text-primary-400 font-semibold">Project Execution & Budget Control</p>
@@ -39,9 +39,7 @@
             <div class="p-8 rounded-2xl border-2 border-dashed border-primary-500/30 bg-slate-800/50">
               <div class="aspect-video flex items-center justify-center text-gray-400">
                 <div class="text-center">
-                  <svg class="w-20 h-20 mx-auto mb-4 text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
-                  </svg>
+                  <i class="fa-regular fa-image text-7xl text-primary-400"></i>
                   <p class="text-lg font-semibold">[SCREENSHOT – DeepTrack Dashboard]</p>
                   <p class="text-sm mt-2">Budget vs actual with variance tracking</p>
                 </div>
@@ -66,7 +64,7 @@
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div v-for="benefit in overviewBenefits" :key="benefit.title" class="p-6 rounded-xl border border-white/10 bg-white/5 text-center">
-            <div class="text-4xl mb-4">{{ benefit.icon }}</div>
+            <div class="text-4xl mb-4"><i :class="benefit.icon"></i></div>
             <h3 class="text-xl font-bold text-white mb-3">{{ benefit.title }}</h3>
             <p class="text-gray-400">{{ benefit.description }}</p>
           </div>
@@ -93,7 +91,7 @@
               <p class="text-xl text-gray-300 mb-6">{{ feature.description }}</p>
               <ul class="space-y-3">
                 <li v-for="point in feature.points" :key="point" class="flex items-start gap-3 text-gray-300">
-                  <span class="text-primary-400 text-xl mt-1">✓</span>
+                  <i class="fa-solid fa-check text-primary-400 text-lg mt-1"></i>
                   <span>{{ point }}</span>
                 </li>
               </ul>
@@ -103,9 +101,7 @@
               <div class="p-8 rounded-2xl border-2 border-dashed border-primary-500/30 bg-slate-800/50">
                 <div class="aspect-video flex items-center justify-center text-gray-400">
                   <div class="text-center">
-                    <svg class="w-16 h-16 mx-auto mb-4 text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
-                    </svg>
+                    <i class="fa-regular fa-image text-7xl text-primary-400"></i>
                     <p class="font-semibold">[SCREENSHOT – {{ feature.title }}]</p>
                   </div>
                 </div>
@@ -130,7 +126,7 @@
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           <div v-for="widget in dashboardWidgets" :key="widget.name" class="p-6 rounded-xl border border-white/10 bg-white/5">
-            <div class="text-3xl mb-3">{{ widget.icon }}</div>
+            <div class="text-3xl mb-3"><i :class="widget.icon"></i></div>
             <h3 class="text-lg font-bold text-white mb-2">{{ widget.name }}</h3>
             <p class="text-sm text-gray-400">{{ widget.description }}</p>
           </div>
@@ -155,7 +151,7 @@
             <div class="absolute -top-4 -left-4 w-12 h-12 rounded-full bg-primary-500 text-slate-900 font-bold flex items-center justify-center text-xl">
               {{ index + 1 }}
             </div>
-            <div class="text-3xl mb-4 mt-2">{{ step.icon }}</div>
+            <div class="text-3xl mb-4 mt-2"><i :class="step.icon"></i></div>
             <h3 class="text-lg font-bold text-white mb-2">{{ step.title }}</h3>
             <p class="text-sm text-gray-400">{{ step.description }}</p>
           </div>
@@ -176,7 +172,7 @@
             </p>
             <div class="space-y-4">
               <div v-for="level in approvalLevels" :key="level.name" class="flex items-start gap-4 p-4 rounded-lg bg-white/5 border border-white/10">
-                <div class="text-3xl">{{ level.icon }}</div>
+                <div class="text-3xl"><i :class="level.icon"></i></div>
                 <div>
                   <h4 class="font-semibold text-white mb-1">{{ level.name }}</h4>
                   <p class="text-sm text-gray-400">{{ level.description }}</p>
@@ -189,9 +185,7 @@
             <div class="p-8 rounded-2xl border-2 border-dashed border-primary-500/30 bg-slate-800/50">
               <div class="aspect-square flex items-center justify-center text-gray-400">
                 <div class="text-center">
-                  <svg class="w-20 h-20 mx-auto mb-4 text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                  </svg>
+                  <i class="fa-regular fa-image text-7xl text-primary-400"></i>
                   <p class="text-lg font-semibold">[DIAGRAM – Approval Flow]</p>
                 </div>
               </div>
@@ -212,7 +206,7 @@
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div v-for="useCase in useCases" :key="useCase.role" class="p-8 rounded-2xl border border-white/10 bg-white/5">
-            <div class="text-4xl mb-4">{{ useCase.icon }}</div>
+            <div class="text-4xl mb-4"><i :class="useCase.icon"></i></div>
             <h3 class="text-2xl font-bold text-white mb-3">{{ useCase.role }}</h3>
             <p class="text-gray-400 mb-6">{{ useCase.description }}</p>
             <div class="space-y-2">
@@ -235,9 +229,7 @@
             <div class="p-8 rounded-2xl border-2 border-dashed border-primary-500/30 bg-slate-900/50">
               <div class="aspect-[9/16] max-w-sm mx-auto flex items-center justify-center text-gray-400">
                 <div class="text-center">
-                  <svg class="w-16 h-16 mx-auto mb-4 text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/>
-                  </svg>
+                  <i class="fa-regular fa-image text-7xl text-primary-400"></i>
                   <p class="font-semibold">[SCREENSHOT – Mobile App]</p>
                 </div>
               </div>
@@ -255,16 +247,16 @@
             </p>
             <ul class="space-y-4 mb-8">
               <li v-for="feature in mobileFeatures" :key="feature" class="flex items-start gap-3 text-gray-300">
-                <span class="text-primary-400 text-xl mt-1">✓</span>
+                <i class="fa-solid fa-check text-primary-400 text-lg mt-1"></i>
                 <span>{{ feature }}</span>
               </li>
             </ul>
             <div class="flex gap-4">
               <a href="#" class="px-6 py-3 rounded-lg bg-slate-900 border border-white/10 text-white font-semibold hover:border-primary-500/50 transition-all">
-                📱 App Store
+                <i class="fa-brands fa-apple"></i> App Store
               </a>
               <a href="#" class="px-6 py-3 rounded-lg bg-slate-900 border border-white/10 text-white font-semibold hover:border-primary-500/50 transition-all">
-                🤖 Google Play
+                <i class="fa-brands fa-google-play"></i> Google Play
               </a>
             </div>
           </div>
@@ -286,7 +278,7 @@
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           <div v-for="integration in integrations" :key="integration.name" class="p-6 rounded-xl border border-white/10 bg-white/5 hover:border-primary-500/50 transition-all">
-            <div class="text-3xl mb-3">{{ integration.icon }}</div>
+            <div class="text-3xl mb-3"><i :class="integration.icon"></i></div>
             <h3 class="text-lg font-bold text-white mb-2">{{ integration.name }}</h3>
             <p class="text-sm text-gray-400">{{ integration.description }}</p>
           </div>
@@ -325,17 +317,17 @@ const heroStats = [
 
 const overviewBenefits = [
   {
-    icon: '💰',
+    icon: 'fa-solid fa-coins',
     title: 'Budget Control',
     description: 'Track every dollar with real-time budget vs actual reporting and variance alerts.'
   },
   {
-    icon: '📋',
+    icon: 'fa-solid fa-clipboard-list',
     title: 'PO Management',
     description: 'Streamline purchase order workflows with multi-level approvals and tracking.'
   },
   {
-    icon: '📊',
+    icon: 'fa-solid fa-chart-bar',
     title: 'Live Dashboards',
     description: 'Monitor project health with customizable dashboards and automated reporting.'
   }
@@ -398,42 +390,42 @@ const keyFeatures = [
 
 const dashboardWidgets = [
   {
-    icon: '💰',
+    icon: 'fa-solid fa-coins',
     name: 'Budget Overview',
     description: 'Total budget, spent, committed, and remaining'
   },
   {
-    icon: '📈',
+    icon: 'fa-solid fa-chart-line',
     name: 'Variance Trends',
     description: 'Track variance over time by category'
   },
   {
-    icon: '📋',
+    icon: 'fa-solid fa-clipboard-list',
     name: 'PO Status',
     description: 'Pending, approved, and completed POs'
   },
   {
-    icon: '⏱️',
+    icon: 'fa-solid fa-stopwatch',
     name: 'Schedule Health',
     description: 'On-time vs delayed milestones'
   },
   {
-    icon: '👥',
+    icon: 'fa-solid fa-users',
     name: 'Resource Utilization',
     description: 'Labor and equipment allocation'
   },
   {
-    icon: '⚠️',
+    icon: 'fa-solid fa-triangle-exclamation',
     name: 'Risk Indicators',
     description: 'Budget risks and alerts'
   },
   {
-    icon: '📊',
+    icon: 'fa-solid fa-chart-bar',
     name: 'Cash Flow',
     description: 'Projected vs actual cash flow'
   },
   {
-    icon: '✅',
+    icon: 'fa-solid fa-circle-check',
     name: 'Completion %',
     description: 'Overall project progress'
   }
@@ -441,27 +433,27 @@ const dashboardWidgets = [
 
 const workflow = [
   {
-    icon: '📋',
+    icon: 'fa-solid fa-clipboard-list',
     title: 'Setup Budget',
     description: 'Import from DeepCost or create manually'
   },
   {
-    icon: '🛒',
+    icon: 'fa-solid fa-cart-shopping',
     title: 'Create POs',
     description: 'Generate purchase orders against budget'
   },
   {
-    icon: '✅',
+    icon: 'fa-solid fa-circle-check',
     title: 'Approvals',
     description: 'Route through approval hierarchy'
   },
   {
-    icon: '📊',
+    icon: 'fa-solid fa-chart-bar',
     title: 'Track Spend',
     description: 'Monitor actual vs budget in real-time'
   },
   {
-    icon: '📈',
+    icon: 'fa-solid fa-chart-line',
     title: 'Report',
     description: 'Generate reports for stakeholders'
   }
@@ -469,17 +461,17 @@ const workflow = [
 
 const approvalLevels = [
   {
-    icon: '👤',
+    icon: 'fa-solid fa-user',
     name: 'Project Manager',
     description: 'First level approval for POs under $10K'
   },
   {
-    icon: '👔',
+    icon: 'fa-solid fa-user-tie',
     name: 'Director',
     description: 'Second level approval for POs $10K-$50K'
   },
   {
-    icon: '🏢',
+    icon: 'fa-solid fa-building',
     name: 'Executive',
     description: 'Final approval for POs over $50K'
   }
@@ -488,7 +480,7 @@ const approvalLevels = [
 const useCases = [
   {
     role: 'Project Managers',
-    icon: '👷',
+    icon: 'fa-solid fa-helmet-safety',
     description: 'Complete visibility and control over project execution.',
     benefits: [
       'Real-time budget tracking',
@@ -499,7 +491,7 @@ const useCases = [
   },
   {
     role: 'Finance Teams',
-    icon: '💼',
+    icon: 'fa-solid fa-briefcase',
     description: 'Accurate financial tracking and forecasting.',
     benefits: [
       'Cash flow management',
@@ -510,7 +502,7 @@ const useCases = [
   },
   {
     role: 'Executives',
-    icon: '📊',
+    icon: 'fa-solid fa-chart-bar',
     description: 'High-level portfolio visibility and decision support.',
     benefits: [
       'Portfolio dashboards',
@@ -532,22 +524,22 @@ const mobileFeatures = [
 
 const integrations = [
   {
-    icon: '💰',
+    icon: 'fa-solid fa-coins',
     name: 'DeepCost',
     description: 'Import budgets from estimates'
   },
   {
-    icon: '👥',
+    icon: 'fa-solid fa-users',
     name: 'DeepHR',
     description: 'Sync labor costs automatically'
   },
   {
-    icon: '💳',
+    icon: 'fa-solid fa-credit-card',
     name: 'Accounting',
     description: 'QuickBooks, Xero, SAP integration'
   },
   {
-    icon: '📁',
+    icon: 'fa-solid fa-folder',
     name: 'Document Mgmt',
     description: 'Connect with Dropbox, Drive, OneDrive'
   }

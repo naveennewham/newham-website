@@ -42,7 +42,7 @@
           <tr v-for="row in matrix" :key="row.label" class="hover:bg-white/5">
             <td class="py-3 px-4 text-gray-300 border-b border-white/10 sticky left-0 bg-slate-900/60 backdrop-blur">{{ row.label }}</td>
             <td v-for="p in plans" :key="p.name + row.label" class="py-3 px-4 text-center border-b border-white/10">
-              <span v-if="row.checks[p.key]" class="text-primary-400">✓</span>
+              <i v-if="row.checks[p.key]" class="fa-solid fa-circle-check text-primary-400"></i>
               <span v-else class="text-gray-600">—</span>
             </td>
           </tr>

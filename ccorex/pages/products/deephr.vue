@@ -10,7 +10,7 @@
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
             <div class="flex items-center gap-3 mb-6">
-              <div class="text-6xl">👥</div>
+              <div class="text-6xl"><i class="fa-solid fa-users"></i></div>
               <div>
                 <h1 class="text-5xl md:text-6xl font-bold text-white">DeepHR</h1>
                 <p class="text-xl text-primary-400 font-semibold">Workforce & Labour Management</p>
@@ -39,9 +39,7 @@
             <div class="p-8 rounded-2xl border-2 border-dashed border-primary-500/30 bg-slate-800/50">
               <div class="aspect-video flex items-center justify-center text-gray-400">
                 <div class="text-center">
-                  <svg class="w-20 h-20 mx-auto mb-4 text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/>
-                  </svg>
+                  <i class="fa-regular fa-image text-7xl text-primary-400"></i>
                   <p class="text-lg font-semibold">[SCREENSHOT – DeepHR Dashboard]</p>
                   <p class="text-sm mt-2">Workforce overview with attendance tracking</p>
                 </div>
@@ -66,7 +64,7 @@
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div v-for="benefit in overviewBenefits" :key="benefit.title" class="p-6 rounded-xl border border-white/10 bg-white/5 text-center">
-            <div class="text-4xl mb-4">{{ benefit.icon }}</div>
+            <div class="text-4xl mb-4"><i :class="benefit.icon"></i></div>
             <h3 class="text-xl font-bold text-white mb-3">{{ benefit.title }}</h3>
             <p class="text-gray-400">{{ benefit.description }}</p>
           </div>
@@ -93,7 +91,7 @@
               <p class="text-xl text-gray-300 mb-6">{{ feature.description }}</p>
               <ul class="space-y-3">
                 <li v-for="point in feature.points" :key="point" class="flex items-start gap-3 text-gray-300">
-                  <span class="text-primary-400 text-xl mt-1">✓</span>
+                  <i class="fa-solid fa-check text-primary-400 text-lg mt-1"></i>
                   <span>{{ point }}</span>
                 </li>
               </ul>
@@ -103,9 +101,7 @@
               <div class="p-8 rounded-2xl border-2 border-dashed border-primary-500/30 bg-slate-800/50">
                 <div class="aspect-video flex items-center justify-center text-gray-400">
                   <div class="text-center">
-                    <svg class="w-16 h-16 mx-auto mb-4 text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                    </svg>
+                    <i class="fa-regular fa-image text-7xl text-primary-400"></i>
                     <p class="font-semibold">[SCREENSHOT – {{ feature.title }}]</p>
                   </div>
                 </div>
@@ -125,9 +121,7 @@
             <div class="p-8 rounded-2xl border-2 border-dashed border-primary-500/30 bg-slate-800/50">
               <div class="aspect-[9/16] max-w-sm mx-auto flex items-center justify-center text-gray-400">
                 <div class="text-center">
-                  <svg class="w-16 h-16 mx-auto mb-4 text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/>
-                  </svg>
+                  <i class="fa-regular fa-image text-7xl text-primary-400"></i>
                   <p class="font-semibold">[SCREENSHOT – Mobile Time Clock]</p>
                 </div>
               </div>
@@ -145,16 +139,16 @@
             </p>
             <ul class="space-y-4 mb-8">
               <li v-for="feature in mobileFeatures" :key="feature" class="flex items-start gap-3 text-gray-300">
-                <span class="text-primary-400 text-xl mt-1">✓</span>
+                <i class="fa-solid fa-check text-primary-400 text-lg mt-1"></i>
                 <span>{{ feature }}</span>
               </li>
             </ul>
             <div class="flex gap-4">
               <a href="#" class="px-6 py-3 rounded-lg bg-slate-900 border border-white/10 text-white font-semibold hover:border-primary-500/50 transition-all">
-                📱 App Store
+                <i class="fa-brands fa-apple"></i> App Store
               </a>
               <a href="#" class="px-6 py-3 rounded-lg bg-slate-900 border border-white/10 text-white font-semibold hover:border-primary-500/50 transition-all">
-                🤖 Google Play
+                <i class="fa-brands fa-google-play"></i> Google Play
               </a>
             </div>
           </div>
@@ -176,7 +170,7 @@
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           <div v-for="compliance in complianceFeatures" :key="compliance.name" class="p-6 rounded-xl border border-white/10 bg-white/5">
-            <div class="text-3xl mb-3">{{ compliance.icon }}</div>
+            <div class="text-3xl mb-3"><i :class="compliance.icon"></i></div>
             <h3 class="text-lg font-bold text-white mb-2">{{ compliance.name }}</h3>
             <p class="text-sm text-gray-400">{{ compliance.description }}</p>
           </div>
@@ -198,7 +192,7 @@
             <div class="absolute -top-4 -left-4 w-12 h-12 rounded-full bg-primary-500 text-slate-900 font-bold flex items-center justify-center text-xl">
               {{ index + 1 }}
             </div>
-            <div class="text-3xl mb-4 mt-2">{{ step.icon }}</div>
+            <div class="text-3xl mb-4 mt-2"><i :class="step.icon"></i></div>
             <h3 class="text-lg font-bold text-white mb-2">{{ step.title }}</h3>
             <p class="text-sm text-gray-400">{{ step.description }}</p>
           </div>
@@ -219,7 +213,7 @@
             </p>
             <div class="space-y-4">
               <div v-for="feature in schedulingFeatures" :key="feature.name" class="flex items-start gap-4 p-4 rounded-lg bg-white/5 border border-white/10">
-                <div class="text-3xl">{{ feature.icon }}</div>
+                <div class="text-3xl"><i :class="feature.icon"></i></div>
                 <div>
                   <h4 class="font-semibold text-white mb-1">{{ feature.name }}</h4>
                   <p class="text-sm text-gray-400">{{ feature.description }}</p>
@@ -232,9 +226,7 @@
             <div class="p-8 rounded-2xl border-2 border-dashed border-primary-500/30 bg-slate-800/50">
               <div class="aspect-video flex items-center justify-center text-gray-400">
                 <div class="text-center">
-                  <svg class="w-20 h-20 mx-auto mb-4 text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
-                  </svg>
+                  <i class="fa-regular fa-image text-7xl text-primary-400"></i>
                   <p class="text-lg font-semibold">[SCREENSHOT – Workforce Schedule]</p>
                 </div>
               </div>
@@ -255,7 +247,7 @@
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div v-for="useCase in useCases" :key="useCase.role" class="p-8 rounded-2xl border border-white/10 bg-white/5">
-            <div class="text-4xl mb-4">{{ useCase.icon }}</div>
+            <div class="text-4xl mb-4"><i :class="useCase.icon"></i></div>
             <h3 class="text-2xl font-bold text-white mb-3">{{ useCase.role }}</h3>
             <p class="text-gray-400 mb-6">{{ useCase.description }}</p>
             <div class="space-y-2">
@@ -283,7 +275,7 @@
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           <div v-for="integration in integrations" :key="integration.name" class="p-6 rounded-xl border border-white/10 bg-white/5 text-center hover:border-primary-500/50 transition-all">
-            <div class="text-3xl mb-3">{{ integration.icon }}</div>
+            <div class="text-3xl mb-3"><i :class="integration.icon"></i></div>
             <h3 class="text-lg font-bold text-white mb-2">{{ integration.name }}</h3>
             <p class="text-sm text-gray-400">{{ integration.description }}</p>
           </div>
@@ -322,17 +314,17 @@ const heroStats = [
 
 const overviewBenefits = [
   {
-    icon: '📱',
+    icon: 'fa-solid fa-mobile-screen',
     title: 'Mobile Time Tracking',
     description: 'Workers clock in/out from their phones with GPS verification and geofencing.'
   },
   {
-    icon: '✅',
+    icon: 'fa-solid fa-circle-check',
     title: 'Compliance Tracking',
     description: 'Manage certifications, licenses, and safety training with automated alerts.'
   },
   {
-    icon: '📊',
+    icon: 'fa-solid fa-chart-bar',
     title: 'Resource Optimization',
     description: 'Optimize labor allocation across projects with intelligent scheduling.'
   }
@@ -404,22 +396,22 @@ const mobileFeatures = [
 
 const complianceFeatures = [
   {
-    icon: '📜',
+    icon: 'fa-solid fa-scroll',
     name: 'Certifications',
     description: 'Track trade certifications and licenses'
   },
   {
-    icon: '🛡️',
+    icon: 'fa-solid fa-shield-halved',
     name: 'Safety Training',
     description: 'Monitor OSHA and safety course completion'
   },
   {
-    icon: '🚗',
+    icon: 'fa-solid fa-car',
     name: 'Driver Licenses',
     description: 'Track commercial driver licenses'
   },
   {
-    icon: '⚠️',
+    icon: 'fa-solid fa-triangle-exclamation',
     name: 'Expiration Alerts',
     description: 'Automated reminders before expiry'
   }
@@ -427,27 +419,27 @@ const complianceFeatures = [
 
 const workflow = [
   {
-    icon: '👤',
+    icon: 'fa-solid fa-user',
     title: 'Onboarding',
     description: 'Add workers and upload documents'
   },
   {
-    icon: '📅',
+    icon: 'fa-solid fa-calendar-days',
     title: 'Scheduling',
     description: 'Assign workers to projects and shifts'
   },
   {
-    icon: '⏱️',
+    icon: 'fa-solid fa-stopwatch',
     title: 'Time Tracking',
     description: 'Workers clock in/out via mobile'
   },
   {
-    icon: '✅',
+    icon: 'fa-solid fa-circle-check',
     title: 'Approval',
     description: 'Review and approve timesheets'
   },
   {
-    icon: '💰',
+    icon: 'fa-solid fa-coins',
     title: 'Payroll',
     description: 'Export to payroll system'
   }
@@ -455,17 +447,17 @@ const workflow = [
 
 const schedulingFeatures = [
   {
-    icon: '🎯',
+    icon: 'fa-solid fa-bullseye',
     name: 'Skill Matching',
     description: 'Match workers to tasks based on skills and certifications'
   },
   {
-    icon: '📊',
+    icon: 'fa-solid fa-chart-bar',
     name: 'Capacity Planning',
     description: 'Optimize resource allocation across projects'
   },
   {
-    icon: '🔄',
+    icon: 'fa-solid fa-arrows-rotate',
     name: 'Shift Swapping',
     description: 'Allow workers to swap shifts with approval'
   }
@@ -474,7 +466,7 @@ const schedulingFeatures = [
 const useCases = [
   {
     role: 'General Contractors',
-    icon: '🏗️',
+    icon: 'fa-solid fa-helmet-safety',
     description: 'Manage large workforces across multiple sites.',
     benefits: [
       'Multi-site scheduling',
@@ -485,7 +477,7 @@ const useCases = [
   },
   {
     role: 'Subcontractors',
-    icon: '⚡',
+    icon: 'fa-solid fa-bolt',
     description: 'Track labor costs and productivity by project.',
     benefits: [
       'Project-based tracking',
@@ -496,7 +488,7 @@ const useCases = [
   },
   {
     role: 'HR Managers',
-    icon: '💼',
+    icon: 'fa-solid fa-briefcase',
     description: 'Centralize workforce data and compliance.',
     benefits: [
       'Employee database',
@@ -509,22 +501,22 @@ const useCases = [
 
 const integrations = [
   {
-    icon: '💰',
+    icon: 'fa-solid fa-coins',
     name: 'QuickBooks',
     description: 'Direct payroll sync'
   },
   {
-    icon: '📊',
+    icon: 'fa-solid fa-chart-bar',
     name: 'ADP',
     description: 'Time & attendance export'
   },
   {
-    icon: '🏢',
+    icon: 'fa-solid fa-building',
     name: 'Paychex',
     description: 'Payroll integration'
   },
   {
-    icon: '📁',
+    icon: 'fa-solid fa-folder',
     name: 'Custom Export',
     description: 'CSV/Excel formats'
   }

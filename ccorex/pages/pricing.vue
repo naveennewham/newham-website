@@ -65,7 +65,7 @@
 
             <ul class="space-y-4 mb-8">
               <li v-for="feature in plan.features" :key="feature" class="flex items-start gap-3 text-gray-300">
-                <span class="text-primary-400 text-xl mt-0.5">✓</span>
+                <i class="fa-solid fa-check text-primary-400 text-lg mt-0.5"></i>
                 <span>{{ feature }}</span>
               </li>
             </ul>
@@ -119,7 +119,7 @@
                 <tr v-for="feature in category.features" :key="feature.name" class="border-b border-white/10 hover:bg-white/5">
                   <td class="py-4 px-6 text-gray-300">{{ feature.name }}</td>
                   <td v-for="plan in pricingPlans" :key="plan.name" class="text-center py-4 px-6">
-                    <span v-if="feature.availability[plan.key] === true" class="text-primary-400 text-2xl">✓</span>
+                    <i v-if="feature.availability[plan.key] === true" class="fa-solid fa-circle-check text-primary-400 text-2xl"></i>
                     <span v-else-if="feature.availability[plan.key]" class="text-gray-400 text-sm">{{ feature.availability[plan.key] }}</span>
                     <span v-else class="text-gray-600 text-2xl">—</span>
                   </td>
@@ -145,13 +145,13 @@
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           <div v-for="addon in addons" :key="addon.name" class="p-6 rounded-xl border border-white/10 bg-white/5">
-            <div class="text-3xl mb-4">{{ addon.icon }}</div>
+            <div class="text-3xl mb-4"><i :class="addon.icon"></i></div>
             <h3 class="text-xl font-bold text-white mb-2">{{ addon.name }}</h3>
             <p class="text-gray-400 mb-4">{{ addon.description }}</p>
             <div class="text-2xl font-bold text-primary-400 mb-4">{{ addon.price }}</div>
             <a href="/contact" class="inline-flex items-center gap-2 text-primary-400 font-semibold hover:gap-3 transition-all">
               Add to Plan
-              <span>→</span>
+              <i class="fa-solid fa-arrow-right"></i>
             </a>
           </div>
         </div>
@@ -329,25 +329,25 @@ const featureComparison = [
 const addons = [
   {
     name: 'Additional Storage',
-    icon: '💾',
+    icon: 'fa-solid fa-hard-drive',
     description: 'Extra storage for drawings and documents',
     price: '$50/100GB'
   },
   {
     name: 'Advanced Analytics',
-    icon: '📊',
+    icon: 'fa-solid fa-chart-bar',
     description: 'Custom dashboards and BI tools',
     price: '$199/month'
   },
   {
     name: 'Custom Training',
-    icon: '🎓',
+    icon: 'fa-solid fa-graduation-cap',
     description: 'Personalized training sessions',
     price: '$500/session'
   },
   {
     name: 'Implementation',
-    icon: '🚀',
+    icon: 'fa-solid fa-rocket',
     description: 'Dedicated implementation support',
     price: 'Custom'
   }
