@@ -31,7 +31,7 @@
             class="group p-8 rounded-2xl border border-white/10 bg-white/5 hover:border-primary-500/50 hover:bg-white/10 transition-all"
           >
             <div class="flex items-start gap-4 mb-6">
-              <div class="text-6xl">{{ product.icon }}</div>
+              <div class="text-6xl"><i :class="product.icon"></i></div>
               <div class="flex-1">
                 <h2 class="text-3xl font-bold text-white mb-2 group-hover:text-primary-400 transition-colors">{{ product.name }}</h2>
                 <p class="text-xl text-primary-400 font-semibold">{{ product.subtitle }}</p>
@@ -44,7 +44,7 @@
               <h3 class="text-sm font-semibold text-gray-400 uppercase mb-3">Key Features</h3>
               <ul class="grid grid-cols-1 md:grid-cols-2 gap-2">
                 <li v-for="feature in product.features" :key="feature" class="flex items-start gap-2 text-gray-400">
-                  <span class="text-primary-400 mt-1">✓</span>
+                  <i class="fa-solid fa-check text-primary-400 mt-1"></i>
                   <span class="text-sm">{{ feature }}</span>
                 </li>
               </ul>
@@ -53,7 +53,7 @@
             <div class="flex items-center justify-between">
               <span class="inline-flex items-center gap-2 text-primary-400 font-semibold group-hover:gap-3 transition-all">
                 Learn More
-                <span>→</span>
+                <i class="fa-solid fa-arrow-right"></i>
               </span>
               <div class="flex gap-2">
                 <span v-for="tag in product.tags" :key="tag" class="px-3 py-1 rounded-full bg-primary-500/10 text-primary-400 text-xs font-semibold">
@@ -91,7 +91,7 @@
               <p class="text-gray-400 mb-4">{{ flow.description }}</p>
               <div class="flex items-center gap-2 text-sm">
                 <span class="px-2 py-1 rounded bg-primary-500/10 text-primary-400">{{ flow.from }}</span>
-                <span class="text-gray-500">→</span>
+                <span class="text-gray-500"><i class="fa-solid fa-arrow-right"></i></span>
                 <span class="px-2 py-1 rounded bg-secondary-500/10 text-secondary-400">{{ flow.to }}</span>
               </div>
             </div>
@@ -118,7 +118,7 @@
               <tr class="border-b border-white/10">
                 <th class="text-left p-4 text-white font-semibold">Feature</th>
                 <th v-for="product in products" :key="product.name" class="p-4 text-center">
-                  <div class="text-3xl mb-2">{{ product.icon }}</div>
+                  <div class="text-3xl mb-2"><i :class="product.icon"></i></div>
                   <div class="text-sm font-semibold text-white">{{ product.name }}</div>
                 </th>
               </tr>
@@ -127,7 +127,7 @@
               <tr v-for="feature in comparisonFeatures" :key="feature.name" class="border-b border-white/10 hover:bg-white/5">
                 <td class="p-4 text-gray-300">{{ feature.name }}</td>
                 <td v-for="available in feature.availability" :key="available" class="p-4 text-center">
-                  <span v-if="available" class="text-primary-400 text-2xl">✓</span>
+                  <i v-if="available" class="fa-solid fa-circle-check text-primary-400 text-2xl"></i>
                   <span v-else class="text-gray-600 text-2xl">—</span>
                 </td>
               </tr>
@@ -164,7 +164,7 @@ const products = [
   {
     name: 'DeepPlanAI',
     subtitle: 'AI-Powered Digital Takeoffs',
-    icon: '📏',
+    icon: 'mdi mdi-ruler',
     description: 'Transform your takeoff process with AI-powered measurement and quantity extraction. Reduce manual work by 40% while increasing accuracy to 95%+.',
     features: [
       'Automated measurements',
@@ -180,7 +180,7 @@ const products = [
   {
     name: 'DeepCost',
     subtitle: 'Construction Estimation & Tendering',
-    icon: '💰',
+    icon: 'fa-solid fa-coins',
     description: 'Achieve 95%+ accuracy in MEP cost estimation with AI-driven libraries. Generate professional BOQs and tender documents in minutes.',
     features: [
       'MEP cost libraries',
@@ -196,7 +196,7 @@ const products = [
   {
     name: 'DeepTrack',
     subtitle: 'Project Execution & Budget Control',
-    icon: '📊',
+    icon: 'fa-solid fa-chart-bar',
     description: 'Maintain complete control over project budgets, purchase orders, and site activities. Real-time variance tracking and approval workflows.',
     features: [
       'Budget vs actual',
@@ -212,7 +212,7 @@ const products = [
   {
     name: 'DeepHR',
     subtitle: 'Workforce & Labour Management',
-    icon: '👥',
+    icon: 'fa-solid fa-users',
     description: 'Unify workforce operations from planning to payroll. Mobile time tracking, compliance management, and resource optimization.',
     features: [
       'Workforce planning',

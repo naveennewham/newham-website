@@ -80,19 +80,19 @@
           
           <ul class="grid md:grid-cols-2 gap-6 mb-12">
             <li class="flex items-center p-6 bg-dark-800/50 backdrop-blur-sm rounded-lg border-t-2 border-l-2 border-primary-500/30 ai-glow-primary transform hover:scale-105 transition-all duration-300">
-              <span class="text-4xl mr-4">❄️</span>
+              <span class="text-4xl mr-4"><i class="fa-solid fa-snowflake"></i></span>
               <span class="text-lg text-white">ACMV (Air-Conditioning and Mechanical Ventilation)</span>
             </li>
             <li class="flex items-center p-6 bg-dark-800/50 backdrop-blur-sm rounded-lg border-t-2 border-l-2 border-secondary-500/30 ai-glow-secondary transform hover:scale-105 transition-all duration-300">
-              <span class="text-4xl mr-4">🔥</span>
+              <span class="text-4xl mr-4"><i class="fa-solid fa-fire-flame-curved"></i></span>
               <span class="text-lg text-white">Fire Fighting Systems</span>
             </li>
             <li class="flex items-center p-6 bg-dark-800/50 backdrop-blur-sm rounded-lg border-t-2 border-l-2 border-primary-500/30 ai-glow-primary transform hover:scale-105 transition-all duration-300">
-              <span class="text-4xl mr-4">🔌</span>
+              <span class="text-4xl mr-4"><i class="fa-solid fa-plug"></i></span>
               <span class="text-lg text-white">ELV (Extra Low Voltage) Solutions</span>
             </li>
             <li class="flex items-center p-6 bg-dark-800/50 backdrop-blur-sm rounded-lg border-t-2 border-l-2 border-secondary-500/30 ai-glow-secondary transform hover:scale-105 transition-all duration-300">
-              <span class="text-4xl mr-4">🧱</span>
+              <span class="text-4xl mr-4"><i class="fa-solid fa-cubes"></i></span>
               <span class="text-lg text-white">Additions & Alterations (A&A)</span>
             </li>
           </ul>
@@ -134,7 +134,7 @@
             <div class="absolute -top-10 left-1/2 transform -translate-x-1/2 translate-x-12 w-10 h-1 bg-secondary-500 -skew-x-12"></div>
             
             <h2 class="text-3xl md:text-4xl font-bold mb-4 relative inline-block">
-              <span class="gradient-text">🌟 What Makes Deepcost</span>
+              <span class="gradient-text"><i class="fa-solid fa-star"></i> What Makes Deepcost</span>
               <span class="block text-white mt-2">Exceptional?</span>
               <!-- Underline with geometric design -->
               <span class="absolute -bottom-2 left-0 w-1/2 h-1 bg-primary-500 transform skew-x-12"></span>
@@ -157,9 +157,9 @@
               <!-- Icon with geometric background -->
               <div class="w-14 h-14 mb-6 flex items-center justify-center transform rotate-45 relative">
                 <div class="absolute inset-0 bg-primary-900/50 text-primary-400"></div>
-                <div class="transform -rotate-45 relative z-10 text-3xl">🧠</div>
+                <div class="transform -rotate-45 relative z-10 text-3xl"><i class="fa-solid fa-brain"></i></div>
               </div>
-              
+
               <h3 class="text-xl font-semibold text-white mb-3">AI-Augmented Estimation Engine</h3>
               <p class="text-gray-400">Smart algorithms assist your engineers in generating fast, consistent, and competitive estimates — no more guesswork.</p>
             </div>
@@ -177,9 +177,9 @@
               <!-- Icon with geometric background -->
               <div class="w-14 h-14 mb-6 flex items-center justify-center transform rotate-45 relative">
                 <div class="absolute inset-0 bg-secondary-900/50 text-secondary-400"></div>
-                <div class="transform -rotate-45 relative z-10 text-3xl">📊</div>
+                <div class="transform -rotate-45 relative z-10 text-3xl"><i class="fa-solid fa-chart-bar"></i></div>
               </div>
-              
+
               <h3 class="text-xl font-semibold text-white mb-3">Systematic Workflow</h3>
               <p class="text-gray-400">Move seamlessly from Master Data Setup → Quantity Calculation → Exportable Estimates in structured steps.</p>
             </div>
@@ -197,9 +197,9 @@
               <!-- Icon with geometric background -->
               <div class="w-14 h-14 mb-6 flex items-center justify-center transform rotate-45 relative">
                 <div class="absolute inset-0 bg-primary-900/50 text-primary-400"></div>
-                <div class="transform -rotate-45 relative z-10 text-3xl">⚡</div>
+                <div class="transform -rotate-45 relative z-10 text-3xl"><i class="fa-solid fa-bolt"></i></div>
               </div>
-              
+
               <h3 class="text-xl font-semibold text-white mb-3">Lightning-Fast Turnaround</h3>
               <p class="text-gray-400">Cut estimation timelines from days to just hours — delivering faster proposals and winning tenders ahead of the competition.</p>
             </div>
@@ -217,9 +217,9 @@
               <!-- Icon with geometric background -->
               <div class="w-14 h-14 mb-6 flex items-center justify-center transform rotate-45 relative">
                 <div class="absolute inset-0 bg-secondary-900/50 text-secondary-400"></div>
-                <div class="transform -rotate-45 relative z-10 text-3xl">🎯</div>
+                <div class="transform -rotate-45 relative z-10 text-3xl"><i class="fa-solid fa-bullseye"></i></div>
               </div>
-              
+
               <h3 class="text-xl font-semibold text-white mb-3">Accuracy That Wins Bids</h3>
               <p class="text-gray-400">Minimize human errors and ensure pricing accuracy across all disciplines — ACMV, ELV, Fire, and A&A.</p>
             </div>
@@ -237,9 +237,9 @@
               <!-- Icon with geometric background -->
               <div class="w-14 h-14 mb-6 flex items-center justify-center transform rotate-45 relative">
                 <div class="absolute inset-0 bg-primary-900/50 text-primary-400"></div>
-                <div class="transform -rotate-45 relative z-10 text-3xl">🌐</div>
+                <div class="transform -rotate-45 relative z-10 text-3xl"><i class="fa-solid fa-globe"></i></div>
               </div>
-              
+
               <h3 class="text-xl font-semibold text-white mb-3">Web-Based & Accessible Anywhere</h3>
               <p class="text-gray-400">Access your estimations and project data securely from office or site — all in real time.</p>
             </div>
@@ -257,9 +257,9 @@
               <!-- Icon with geometric background -->
               <div class="w-14 h-14 mb-6 flex items-center justify-center transform rotate-45 relative">
                 <div class="absolute inset-0 bg-secondary-900/50 text-secondary-400"></div>
-                <div class="transform -rotate-45 relative z-10 text-3xl">🔄</div>
+                <div class="transform -rotate-45 relative z-10 text-3xl"><i class="fa-solid fa-arrows-rotate"></i></div>
               </div>
-              
+
               <h3 class="text-xl font-semibold text-white mb-3">Reusable Templates & Centralized Costs</h3>
               <p class="text-gray-400">Standardize your pricing logic and update cost changes across multiple projects in one click.</p>
             </div>
@@ -277,9 +277,9 @@
               <!-- Icon with geometric background -->
               <div class="w-14 h-14 mb-6 flex items-center justify-center transform rotate-45 relative">
                 <div class="absolute inset-0 bg-secondary-900/50 text-secondary-400"></div>
-                <div class="transform -rotate-45 relative z-10 text-3xl">🔒</div>
+                <div class="transform -rotate-45 relative z-10 text-3xl"><i class="fa-solid fa-lock"></i></div>
               </div>
-              
+
               <h3 class="text-xl font-semibold text-white mb-3">Enterprise-Grade Security</h3>
               <p class="text-gray-400">Bank-level encryption, role-based access controls, and secure data storage ensure your sensitive project information remains protected.</p>
             </div>
@@ -297,9 +297,9 @@
               <!-- Icon with geometric background -->
               <div class="w-14 h-14 mb-6 flex items-center justify-center transform rotate-45 relative">
                 <div class="absolute inset-0 bg-primary-900/50 text-primary-400"></div>
-                <div class="transform -rotate-45 relative z-10 text-3xl">📁</div>
+                <div class="transform -rotate-45 relative z-10 text-3xl"><i class="fa-solid fa-folder-open"></i></div>
               </div>
-              
+
               <h3 class="text-xl font-semibold text-white mb-3">Instant Export to Excel & Tender Formats</h3>
               <p class="text-gray-400">Output your final BOQ, Summary of Tender (SOT), and Format of Tender (FOT) in clean, editable formats.</p>
             </div>
@@ -333,7 +333,7 @@
           <div class="absolute -top-10 left-1/2 transform -translate-x-1/2 translate-x-12 w-10 h-1 bg-secondary-500 -skew-x-12"></div>
           
           <h2 class="text-3xl md:text-4xl font-bold mb-4 relative inline-block">
-            <span class="gradient-text">🇬🇸 Singapore</span>
+            <span class="gradient-text"><i class="fa-solid fa-flag"></i> Singapore</span>
             <span class="block text-white mt-2">Regulatory Compliance</span>
             <!-- Underline with geometric design -->
             <span class="absolute -bottom-2 left-0 w-1/2 h-1 bg-primary-500 transform skew-x-12"></span>
@@ -431,14 +431,14 @@
           <div class="absolute -top-10 left-1/2 transform -translate-x-1/2 translate-x-12 w-10 h-1 bg-secondary-500 -skew-x-12"></div>
           
           <h2 class="text-3xl md:text-4xl font-bold mb-4 relative inline-block">
-            <span class="gradient-text">🇸🇬 Singapore</span>
+            <span class="gradient-text"><i class="fa-solid fa-flag"></i> Singapore</span>
             <span class="block text-white mt-2">Regulatory Compliance</span>
             <!-- Underline with geometric design -->
             <span class="absolute -bottom-2 left-0 w-1/2 h-1 bg-primary-500 transform skew-x-12"></span>
             <span class="absolute -bottom-2 right-0 w-1/3 h-1 bg-secondary-500 transform -skew-x-12"></span>
           </h2>
         </div>
-        
+
         <div class="max-w-4xl mx-auto">
           <p class="text-lg text-center text-gray-300 mb-10">
             DeepCost is fully compliant with Singapore's leading regulatory authorities, ensuring your project estimations meet the highest industry standards.
@@ -451,51 +451,51 @@
               <!-- Glow effect on hover -->
               <div class="absolute inset-0 bg-primary-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               <div class="w-16 h-16 flex items-center justify-center mb-3 bg-primary-900/30 rounded-full">
-                <span class="text-2xl">🏢</span>
+                <i class="fa-solid fa-building text-2xl"></i>
               </div>
               <h4 class="text-white font-semibold mb-1">BCA</h4>
               <p class="text-xs text-gray-400 text-center">Building & Construction Authority</p>
             </div>
-            
+
             <!-- IMDA Badge -->
             <div class="flex flex-col items-center p-4 bg-dark-800/70 backdrop-blur-sm rounded-lg border border-secondary-500/30 transform hover:scale-105 transition-all duration-300 relative overflow-hidden">
               <!-- Glow effect on hover -->
               <div class="absolute inset-0 bg-secondary-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               <div class="w-16 h-16 flex items-center justify-center mb-3 bg-secondary-900/30 rounded-full">
-                <span class="text-2xl">💻</span>
+                <i class="fa-solid fa-laptop text-2xl"></i>
               </div>
               <h4 class="text-white font-semibold mb-1">IMDA</h4>
               <p class="text-xs text-gray-400 text-center">Infocomm Media Development Authority</p>
             </div>
-            
+
             <!-- LTA Badge -->
             <div class="flex flex-col items-center p-4 bg-dark-800/70 backdrop-blur-sm rounded-lg border border-primary-500/30 transform hover:scale-105 transition-all duration-300 relative overflow-hidden">
               <!-- Glow effect on hover -->
               <div class="absolute inset-0 bg-primary-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               <div class="w-16 h-16 flex items-center justify-center mb-3 bg-primary-900/30 rounded-full">
-                <span class="text-2xl">🚆</span>
+                <i class="fa-solid fa-train text-2xl"></i>
               </div>
               <h4 class="text-white font-semibold mb-1">LTA</h4>
               <p class="text-xs text-gray-400 text-center">Land Transport Authority</p>
             </div>
-            
+
             <!-- PUB Badge -->
             <div class="flex flex-col items-center p-4 bg-dark-800/70 backdrop-blur-sm rounded-lg border border-secondary-500/30 transform hover:scale-105 transition-all duration-300 relative overflow-hidden">
               <!-- Glow effect on hover -->
               <div class="absolute inset-0 bg-secondary-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               <div class="w-16 h-16 flex items-center justify-center mb-3 bg-secondary-900/30 rounded-full">
-                <span class="text-2xl">💧</span>
+                <i class="fa-solid fa-droplet text-2xl"></i>
               </div>
               <h4 class="text-white font-semibold mb-1">PUB</h4>
               <p class="text-xs text-gray-400 text-center">Public Utilities Board</p>
             </div>
-            
+
             <!-- SCDF Badge -->
             <div class="flex flex-col items-center p-4 bg-dark-800/70 backdrop-blur-sm rounded-lg border border-primary-500/30 transform hover:scale-105 transition-all duration-300 relative overflow-hidden">
               <!-- Glow effect on hover -->
               <div class="absolute inset-0 bg-primary-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               <div class="w-16 h-16 flex items-center justify-center mb-3 bg-primary-900/30 rounded-full">
-                <span class="text-2xl">🔥</span>
+                <i class="fa-solid fa-fire-flame-curved text-2xl"></i>
               </div>
               <h4 class="text-white font-semibold mb-1">SCDF</h4>
               <p class="text-xs text-gray-400 text-center">Singapore Civil Defence Force</p>
@@ -540,9 +540,7 @@
                   View Deepcost Pricing
                 </NuxtLink>
                 <a href="#" class="btn-outline flex items-center justify-center">
-                  <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
-                  </svg>
+                  <i class="fa-solid fa-video mr-2"></i>
                   Watch Demo
                 </a>
               </div>
@@ -550,9 +548,7 @@
               <!-- Benefits List -->
               <div class="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div v-for="(benefit, index) in benefits" :key="index" class="flex items-center relative overflow-hidden p-1 rounded-md">
-                  <svg class="w-5 h-5 text-primary-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                  </svg>
+                  <i class="fa-solid fa-check text-primary-400 mr-2"></i>
                   <span class="text-gray-300">{{ benefit }}</span>
                 </div>
               </div>
@@ -605,10 +601,7 @@
                   class="w-full btn-primary flex items-center justify-center relative overflow-hidden"
                   :disabled="isSubmitting"
                 >
-                  <svg v-if="isSubmitting" class="animate-spin -ml-1 mr-2 h-4 w-4 text-white" fill="none" viewBox="0 0 24 24">
-                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                  </svg>
+                  <i v-if="isSubmitting" class="fa-solid fa-spinner fa-spin -ml-1 mr-2 text-white"></i>
                   {{ isSubmitting ? 'Submitting...' : 'Request Demo' }}
                 </button>
                 

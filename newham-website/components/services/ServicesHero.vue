@@ -35,8 +35,8 @@
         <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
           <div v-for="(category, index) in serviceCategories" :key="index" 
                class="glass-panel-light p-4 rounded-xl text-center transform transition-all duration-300 hover:-translate-y-1">
-            <div class="w-12 h-12 mx-auto mb-3 text-primary-400">
-              <component :is="category.icon" class="w-full h-full" />
+            <div class="w-12 h-12 mx-auto mb-3 text-primary-400 flex items-center justify-center">
+              <i :class="category.icon" class="text-2xl"></i>
             </div>
             <h3 class="text-white font-medium">{{ category.name }}</h3>
           </div>
@@ -54,53 +54,18 @@
 </template>
 
 <script setup>
-import { h } from 'vue';
-
-// SVG Icons as render functions
-const SoftwareIcon = (props) => h('svg', {
-  ...props,
-  fill: 'none',
-  stroke: 'currentColor',
-  viewBox: '0 0 24 24',
-  innerHTML: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>'
-});
-
-const MobileIcon = (props) => h('svg', {
-  ...props,
-  fill: 'none',
-  stroke: 'currentColor',
-  viewBox: '0 0 24 24',
-  innerHTML: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path>'
-});
-
-const CloudIcon = (props) => h('svg', {
-  ...props,
-  fill: 'none',
-  stroke: 'currentColor',
-  viewBox: '0 0 24 24',
-  innerHTML: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"></path>'
-});
-
-const ConsultingIcon = (props) => h('svg', {
-  ...props,
-  fill: 'none',
-  stroke: 'currentColor',
-  viewBox: '0 0 24 24',
-  innerHTML: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>'
-});
-
 const serviceCategories = [
   {
     name: 'CCorex Suite',
-    icon: SoftwareIcon
+    icon: 'fa-solid fa-code'
   },
   {
     name: 'Talent Outsourcing',
-    icon: MobileIcon
+    icon: 'fa-solid fa-users'
   },
   {
     name: 'Engineering Services',
-    icon: CloudIcon
+    icon: 'fa-solid fa-helmet-safety'
   }
 ];
 </script>

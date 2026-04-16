@@ -26,7 +26,7 @@
           :class="{ 'opacity-50 cursor-not-allowed': currentIndex === 0 }"
           :disabled="currentIndex === 0"
         >
-          <component :is="ChevronLeftIcon" class="w-5 h-5" />
+          <i class="fa-solid fa-chevron-left"></i>
         </button>
         
         <button 
@@ -35,7 +35,7 @@
           :class="{ 'opacity-50 cursor-not-allowed': currentIndex === testimonials.length - 1 }"
           :disabled="currentIndex === testimonials.length - 1"
         >
-          <component :is="ChevronRightIcon" class="w-5 h-5" />
+          <i class="fa-solid fa-chevron-right"></i>
         </button>
         
         <!-- Testimonial Cards -->
@@ -52,7 +52,7 @@
               <div class="glass-panel rounded-xl p-8 md:p-10 relative">
                 <!-- Quote Icon -->
                 <div class="absolute top-6 right-6 opacity-20">
-                  <component :is="QuoteIcon" class="w-12 h-12 text-secondary-500" />
+                  <i class="fa-solid fa-quote-left text-4xl text-secondary-500"></i>
                 </div>
                 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
@@ -67,7 +67,7 @@
                         />
                       </div>
                       <div class="absolute -bottom-2 -right-2 bg-primary-800 text-white p-1 rounded-full">
-                        <component :is="testimonial.industryIcon" class="w-5 h-5" />
+                        <i :class="testimonial.industryIcon" class="text-sm"></i>
                       </div>
                     </div>
                     
@@ -76,8 +76,8 @@
                     <p class="text-secondary-500 text-sm mt-1">{{ testimonial.company }}</p>
                     
                     <div class="flex items-center justify-center md:justify-start mt-3">
-                      <div v-for="i in 5" :key="i" class="text-secondary-500">
-                        <component :is="StarIcon" class="w-4 h-4" :class="i <= testimonial.rating ? 'text-secondary-500' : 'text-gray-600'" />
+                      <div v-for="i in 5" :key="i">
+                        <i class="fa-solid fa-star text-sm" :class="i <= testimonial.rating ? 'text-secondary-500' : 'text-gray-600'"></i>
                       </div>
                     </div>
                   </div>
@@ -97,7 +97,7 @@
                           class="flex items-start"
                         >
                           <span class="text-primary-500 mr-2 mt-1">
-                            <component :is="CheckIcon" class="w-4 h-4" />
+                            <i class="fa-solid fa-check"></i>
                           </span>
                           <span class="text-gray-400 text-sm">{{ highlight }}</span>
                         </li>
@@ -137,70 +137,7 @@
 </template>
 
 <script setup>
-import { h, ref } from 'vue';
-
-// SVG Icons as render functions
-const ChevronLeftIcon = (props) => h('svg', {
-  ...props,
-  fill: 'none',
-  stroke: 'currentColor',
-  viewBox: '0 0 24 24',
-  innerHTML: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>'
-});
-
-const ChevronRightIcon = (props) => h('svg', {
-  ...props,
-  fill: 'none',
-  stroke: 'currentColor',
-  viewBox: '0 0 24 24',
-  innerHTML: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>'
-});
-
-const QuoteIcon = (props) => h('svg', {
-  ...props,
-  fill: 'currentColor',
-  viewBox: '0 0 24 24',
-  innerHTML: '<path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"></path>'
-});
-
-const StarIcon = (props) => h('svg', {
-  ...props,
-  fill: 'currentColor',
-  viewBox: '0 0 24 24',
-  innerHTML: '<path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path>'
-});
-
-const CheckIcon = (props) => h('svg', {
-  ...props,
-  fill: 'none',
-  stroke: 'currentColor',
-  viewBox: '0 0 24 24',
-  innerHTML: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>'
-});
-
-const BuildingIcon = (props) => h('svg', {
-  ...props,
-  fill: 'none',
-  stroke: 'currentColor',
-  viewBox: '0 0 24 24',
-  innerHTML: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>'
-});
-
-const HomeIcon = (props) => h('svg', {
-  ...props,
-  fill: 'none',
-  stroke: 'currentColor',
-  viewBox: '0 0 24 24',
-  innerHTML: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>'
-});
-
-const BridgeIcon = (props) => h('svg', {
-  ...props,
-  fill: 'none',
-  stroke: 'currentColor',
-  viewBox: '0 0 24 24',
-  innerHTML: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9h18m-18 0a2 2 0 00-2 2v6a2 2 0 002 2h18a2 2 0 002-2v-6a2 2 0 00-2-2m-18 0v-3a2 2 0 012-2h14a2 2 0 012 2v3m-9-3v12"></path>'
-});
+import { ref } from 'vue';
 
 // Testimonial data
 const testimonials = [
@@ -211,7 +148,7 @@ const testimonials = [
     image: "https://randomuser.me/api/portraits/men/32.jpg",
     rating: 5,
     industry: "Commercial Construction",
-    industryIcon: BuildingIcon,
+    industryIcon: 'fa-solid fa-building',
     solution: "Project Management Suite",
     quote: "Implementing Newham's project management solution transformed how we handle large-scale commercial projects. The real-time dashboards and integrated workflows have reduced our administrative overhead by 40% while improving on-time delivery rates.",
     highlights: [
@@ -227,7 +164,7 @@ const testimonials = [
     image: "https://randomuser.me/api/portraits/women/44.jpg",
     rating: 5,
     industry: "Residential Development",
-    industryIcon: HomeIcon,
+    industryIcon: 'fa-solid fa-house',
     solution: "Customer & Project Portal",
     quote: "The customer portal has revolutionized how we interact with homebuyers. Being able to offer virtual design selections and real-time construction updates has set us apart from competitors and significantly improved customer satisfaction.",
     highlights: [
@@ -243,7 +180,7 @@ const testimonials = [
     image: "https://randomuser.me/api/portraits/men/64.jpg",
     rating: 5,
     industry: "Infrastructure",
-    industryIcon: BridgeIcon,
+    industryIcon: 'mdi mdi-bridge',
     solution: "Asset Management System",
     quote: "For our complex infrastructure projects, Newham's asset management system has been invaluable. The ability to track components from design through installation and into maintenance has provided unprecedented visibility and control.",
     highlights: [

@@ -22,7 +22,7 @@
       <div v-for="category in categories" :key="category.name" class="mb-16">
         <div class="mb-8">
           <div class="flex items-center gap-3 mb-3">
-            <div class="text-4xl">{{ category.icon }}</div>
+            <div class="text-4xl"><i :class="category.icon"></i></div>
             <h2 class="text-3xl font-bold text-white">{{ category.name }}</h2>
           </div>
           <p class="text-gray-400 text-lg">{{ category.description }}</p>
@@ -31,7 +31,7 @@
         <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
           <div v-for="integration in category.integrations" :key="integration.name" class="group p-6 rounded-xl border border-white/10 bg-white/5 hover:border-primary-500/50 hover:bg-white/10 transition-all">
             <div class="text-center">
-              <div class="text-3xl mb-3">{{ integration.icon }}</div>
+              <div class="text-3xl mb-3"><i :class="integration.icon"></i></div>
               <h3 class="text-lg font-bold text-white mb-2">{{ integration.name }}</h3>
               <p class="text-sm text-gray-400 mb-3">{{ integration.description }}</p>
               <span class="inline-block px-3 py-1 rounded-full bg-primary-500/10 text-primary-400 text-xs font-semibold">
@@ -48,7 +48,7 @@
       <div class="max-w-7xl mx-auto px-4">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
-            <div class="text-5xl mb-4">🔌</div>
+            <div class="text-5xl mb-4"><i class="fa-solid fa-plug"></i></div>
             <h2 class="text-4xl font-bold text-white mb-4">
               Powerful REST API
             </h2>
@@ -57,7 +57,7 @@
             </p>
             <ul class="space-y-3 mb-8">
               <li v-for="feature in apiFeatures" :key="feature" class="flex items-center gap-3">
-                <span class="text-primary-400">✓</span>
+                <i class="fa-solid fa-check text-primary-400"></i>
                 <span class="text-gray-300">{{ feature }}</span>
               </li>
             </ul>
@@ -92,7 +92,7 @@
     <section class="py-20 bg-slate-800">
       <div class="max-w-7xl mx-auto px-4">
         <div class="text-center mb-12">
-          <div class="text-5xl mb-4">⚡</div>
+          <div class="text-5xl mb-4"><i class="fa-solid fa-bolt"></i></div>
           <h2 class="text-4xl font-bold text-white mb-4">
             Real-Time Webhooks
           </h2>
@@ -136,46 +136,46 @@
 const categories = [
   {
     name: 'Project Management',
-    icon: '📋',
+    icon: 'fa-solid fa-clipboard-list',
     description: 'Sync projects, tasks, and schedules with leading construction management platforms.',
     integrations: [
-      { name: 'Procore', icon: '🏗️', description: 'Bi-directional sync', status: 'Available' },
-      { name: 'Autodesk BIM 360', icon: '🏢', description: 'Model integration', status: 'Available' },
-      { name: 'PlanGrid', icon: '📐', description: 'Drawing sync', status: 'Available' },
-      { name: 'Primavera P6', icon: '📊', description: 'Schedule sync', status: 'Available' }
+      { name: 'Procore', icon: 'fa-solid fa-helmet-safety', description: 'Bi-directional sync', status: 'Available' },
+      { name: 'Autodesk BIM 360', icon: 'fa-solid fa-building', description: 'Model integration', status: 'Available' },
+      { name: 'PlanGrid', icon: 'fa-solid fa-drafting-compass', description: 'Drawing sync', status: 'Available' },
+      { name: 'Primavera P6', icon: 'fa-solid fa-chart-bar', description: 'Schedule sync', status: 'Available' }
     ]
   },
   {
     name: 'Accounting & Finance',
-    icon: '💼',
+    icon: 'fa-solid fa-briefcase',
     description: 'Connect with your accounting systems for seamless financial management.',
     integrations: [
-      { name: 'QuickBooks', icon: '📗', description: 'Invoice & expense sync', status: 'Available' },
-      { name: 'Xero', icon: '📘', description: 'Accounting integration', status: 'Available' },
-      { name: 'SAP', icon: '🏦', description: 'ERP integration', status: 'Available' },
-      { name: 'NetSuite', icon: '💰', description: 'Financial sync', status: 'Coming Soon' }
+      { name: 'QuickBooks', icon: 'fa-solid fa-book', description: 'Invoice & expense sync', status: 'Available' },
+      { name: 'Xero', icon: 'fa-solid fa-book', description: 'Accounting integration', status: 'Available' },
+      { name: 'SAP', icon: 'fa-solid fa-building-columns', description: 'ERP integration', status: 'Available' },
+      { name: 'NetSuite', icon: 'fa-solid fa-coins', description: 'Financial sync', status: 'Coming Soon' }
     ]
   },
   {
     name: 'Collaboration',
-    icon: '💬',
+    icon: 'fa-solid fa-comments',
     description: 'Stay connected with your team through integrated communication tools.',
     integrations: [
-      { name: 'Slack', icon: '💬', description: 'Notifications & alerts', status: 'Available' },
-      { name: 'Microsoft Teams', icon: '👥', description: 'Team collaboration', status: 'Available' },
-      { name: 'Google Workspace', icon: '📧', description: 'Email & calendar', status: 'Available' },
-      { name: 'Zoom', icon: '📹', description: 'Video meetings', status: 'Available' }
+      { name: 'Slack', icon: 'fa-solid fa-comments', description: 'Notifications & alerts', status: 'Available' },
+      { name: 'Microsoft Teams', icon: 'fa-solid fa-users', description: 'Team collaboration', status: 'Available' },
+      { name: 'Google Workspace', icon: 'fa-solid fa-envelope', description: 'Email & calendar', status: 'Available' },
+      { name: 'Zoom', icon: 'fa-solid fa-video', description: 'Video meetings', status: 'Available' }
     ]
   },
   {
     name: 'Storage & Documents',
-    icon: '📁',
+    icon: 'fa-solid fa-folder',
     description: 'Access and manage your documents from cloud storage platforms.',
     integrations: [
-      { name: 'Dropbox', icon: '📦', description: 'File storage', status: 'Available' },
-      { name: 'Google Drive', icon: '☁️', description: 'Cloud storage', status: 'Available' },
-      { name: 'OneDrive', icon: '📂', description: 'Microsoft storage', status: 'Available' },
-      { name: 'Box', icon: '📤', description: 'Enterprise storage', status: 'Available' }
+      { name: 'Dropbox', icon: 'fa-solid fa-box', description: 'File storage', status: 'Available' },
+      { name: 'Google Drive', icon: 'fa-solid fa-cloud', description: 'Cloud storage', status: 'Available' },
+      { name: 'OneDrive', icon: 'fa-solid fa-folder-open', description: 'Microsoft storage', status: 'Available' },
+      { name: 'Box', icon: 'fa-solid fa-upload', description: 'Enterprise storage', status: 'Available' }
     ]
   }
 ]

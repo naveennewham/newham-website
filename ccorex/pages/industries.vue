@@ -25,7 +25,7 @@
       <div class="max-w-7xl mx-auto px-4">
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           <div v-for="industry in industries" :key="industry.name" class="group p-8 rounded-2xl border border-white/10 bg-white/5 hover:border-primary-500/50 hover:bg-white/10 transition-all">
-            <div class="text-5xl mb-4">{{ industry.icon }}</div>
+            <div class="text-5xl mb-4"><i :class="industry.icon"></i></div>
             <h2 class="text-2xl font-bold text-white mb-3 group-hover:text-primary-400 transition-colors">{{ industry.name }}</h2>
             <p class="text-gray-400 mb-6">{{ industry.description }}</p>
             
@@ -43,7 +43,7 @@
               <h3 class="text-sm font-semibold text-gray-400 uppercase mb-3">How CCorex Helps</h3>
               <ul class="space-y-2">
                 <li v-for="solution in industry.solutions" :key="solution" class="flex items-start gap-2 text-sm text-gray-300">
-                  <span class="text-primary-400 mt-1">✓</span>
+                  <i class="fa-solid fa-check text-primary-400 mt-1"></i>
                   <span>{{ solution }}</span>
                 </li>
               </ul>
@@ -95,12 +95,12 @@
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div v-for="compliance in complianceAreas" :key="compliance.title" class="p-6 rounded-xl border border-white/10 bg-white/5">
-            <div class="text-3xl mb-4">{{ compliance.icon }}</div>
+            <div class="text-3xl mb-4"><i :class="compliance.icon"></i></div>
             <h3 class="text-xl font-bold text-white mb-3">{{ compliance.title }}</h3>
             <p class="text-gray-400 mb-4">{{ compliance.description }}</p>
             <ul class="space-y-2">
               <li v-for="standard in compliance.standards" :key="standard" class="flex items-start gap-2 text-sm text-gray-400">
-                <span class="text-primary-400 mt-1">✓</span>
+                <i class="fa-solid fa-check text-primary-400 mt-1"></i>
                 <span>{{ standard }}</span>
               </li>
             </ul>
@@ -124,7 +124,7 @@
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div v-for="caseStudy in caseStudies" :key="caseStudy.company" class="p-8 rounded-2xl border border-white/10 bg-white/5">
             <div class="flex items-center gap-4 mb-6">
-              <div class="text-4xl">{{ caseStudy.icon }}</div>
+              <div class="text-4xl"><i :class="caseStudy.icon"></i></div>
               <div>
                 <h3 class="text-xl font-bold text-white">{{ caseStudy.company }}</h3>
                 <p class="text-sm text-gray-400">{{ caseStudy.industry }}</p>
@@ -141,7 +141,7 @@
             </div>
             <a href="/resources" class="inline-flex items-center gap-2 text-primary-400 font-semibold hover:gap-3 transition-all">
               Read Full Story
-              <span>→</span>
+              <i class="fa-solid fa-arrow-right"></i>
             </a>
           </div>
         </div>
@@ -174,7 +174,7 @@
 const industries = [
   {
     name: 'General Contractors',
-    icon: '🏗️',
+    icon: 'fa-solid fa-helmet-safety',
     description: 'End-to-end project management for commercial and residential construction projects.',
     challenges: [
       'Managing multiple trades',
@@ -192,7 +192,7 @@ const industries = [
   },
   {
     name: 'Infrastructure Projects',
-    icon: '🌉',
+    icon: 'fa-solid fa-bridge',
     description: 'Large-scale civil works including roads, bridges, tunnels, and utilities.',
     challenges: [
       'Complex stakeholder management',
@@ -210,7 +210,7 @@ const industries = [
   },
   {
     name: 'Commercial Buildings',
-    icon: '🏢',
+    icon: 'fa-solid fa-building',
     description: 'Office towers, retail centers, hotels, and mixed-use developments.',
     challenges: [
       'Fast-track schedules',
@@ -228,7 +228,7 @@ const industries = [
   },
   {
     name: 'Industrial Plants',
-    icon: '🏭',
+    icon: 'fa-solid fa-industry',
     description: 'Manufacturing facilities, warehouses, processing plants, and distribution centers.',
     challenges: [
       'Specialized equipment',
@@ -246,7 +246,7 @@ const industries = [
   },
   {
     name: 'MEP Contractors',
-    icon: '⚡',
+    icon: 'fa-solid fa-bolt',
     description: 'Specialized mechanical, electrical, and plumbing contractors.',
     challenges: [
       'Accurate bid preparation',
@@ -264,7 +264,7 @@ const industries = [
   },
   {
     name: 'Developers',
-    icon: '🏘️',
+    icon: 'fa-solid fa-house-chimney',
     description: 'Real estate developers managing multiple projects and portfolios.',
     challenges: [
       'Portfolio oversight',
@@ -295,7 +295,7 @@ const industryStats = [
 
 const complianceAreas = [
   {
-    icon: '🔒',
+    icon: 'fa-solid fa-lock',
     title: 'Safety & Compliance',
     description: 'Meet OSHA and local safety requirements with built-in compliance tracking.',
     standards: [
@@ -306,7 +306,7 @@ const complianceAreas = [
     ]
   },
   {
-    icon: '📋',
+    icon: 'fa-solid fa-clipboard-list',
     title: 'Quality Standards',
     description: 'Maintain ISO and industry quality standards throughout project lifecycle.',
     standards: [
@@ -317,7 +317,7 @@ const complianceAreas = [
     ]
   },
   {
-    icon: '💼',
+    icon: 'fa-solid fa-briefcase',
     title: 'Financial Regulations',
     description: 'Stay compliant with accounting standards and tax regulations.',
     standards: [
@@ -333,7 +333,7 @@ const caseStudies = [
   {
     company: 'Metro Construction',
     industry: 'General Contractor',
-    icon: '🏗️',
+    icon: 'fa-solid fa-helmet-safety',
     challenge: 'Managing 12 concurrent projects with limited visibility into costs and schedules.',
     results: [
       'Reduced estimation time by 65%',
@@ -345,7 +345,7 @@ const caseStudies = [
   {
     company: 'PowerTech MEP',
     industry: 'MEP Contractor',
-    icon: '⚡',
+    icon: 'fa-solid fa-bolt',
     challenge: 'Needed faster bid turnaround while maintaining accuracy for competitive tenders.',
     results: [
       'Cut bid preparation from 3 days to 6 hours',
@@ -357,7 +357,7 @@ const caseStudies = [
   {
     company: 'Skyline Developers',
     industry: 'Property Developer',
-    icon: '🏘️',
+    icon: 'fa-solid fa-house-chimney',
     challenge: 'Tracking 8 projects across 3 cities with no unified reporting system.',
     results: [
       'Complete portfolio visibility',
@@ -369,7 +369,7 @@ const caseStudies = [
   {
     company: 'Bridge Works Inc',
     industry: 'Infrastructure',
-    icon: '🌉',
+    icon: 'fa-solid fa-bridge',
     challenge: 'Complex multi-year project with hundreds of stakeholders and strict compliance.',
     results: [
       'Streamlined stakeholder communication',

@@ -57,7 +57,7 @@
           class="group px-8 py-4 bg-gradient-to-r from-cyan-500 to-cyan-400 text-slate-900 font-bold rounded-lg hover:shadow-lg hover:shadow-cyan-500/50 transition-all duration-300 transform hover:scale-105"
         >
           Explore CCorex Site
-          <span class="inline-block transform group-hover:translate-x-1 transition-transform">↗</span>
+          <i class="fa-solid fa-arrow-up-right-from-square ml-1 inline-block transform group-hover:translate-x-1 transition-transform"></i>
         </button>
 
         <a
@@ -91,9 +91,7 @@
 
     <!-- Scroll Indicator -->
     <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20 animate-bounce">
-      <svg class="w-6 h-6 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-      </svg>
+      <i class="fa-solid fa-arrow-down text-cyan-400 text-xl"></i>
     </div>
   </section>
 </template>

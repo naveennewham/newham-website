@@ -23,15 +23,11 @@
       <div class="testimonials-slider relative">
         <!-- Navigation Buttons -->
         <button @click="prevSlide" class="absolute top-1/2 -left-4 md:-left-8 z-10 transform -translate-y-1/2 w-10 h-10 rounded-full bg-dark-700/80 text-white flex items-center justify-center hover:bg-primary-900/80 transition-colors ai-glow-primary-subtle">
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
-          </svg>
+          <i class="fa-solid fa-chevron-left"></i>
         </button>
-        
+
         <button @click="nextSlide" class="absolute top-1/2 -right-4 md:-right-8 z-10 transform -translate-y-1/2 w-10 h-10 rounded-full bg-dark-700/80 text-white flex items-center justify-center hover:bg-primary-900/80 transition-colors ai-glow-secondary-subtle">
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-          </svg>
+          <i class="fa-solid fa-chevron-right"></i>
         </button>
         
         <!-- Slides Container -->
@@ -43,9 +39,7 @@
                 <div class="absolute inset-0 z-0" :class="index % 2 === 0 ? 'ai-glow-radial-primary opacity-35' : 'ai-glow-radial-secondary opacity-35'"></div>
                 <!-- Quote Icon -->
                 <div class="mb-6" :class="index % 2 === 0 ? 'text-primary-300' : 'text-secondary-300'">
-                  <svg class="w-10 h-10 opacity-50" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
-                  </svg>
+                  <i class="fa-solid fa-quote-left text-4xl opacity-50"></i>
                 </div>
                 
                 <!-- Testimonial Content -->

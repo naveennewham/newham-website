@@ -199,15 +199,15 @@
               </p>
               <ul class="space-y-2 text-sm text-gray-300 mb-6">
                 <li class="flex items-start">
-                  <span class="text-primary-400 mr-2 mt-0.5">✓</span>
+                  <i class="fa-solid fa-check text-primary-400 mr-2 mt-0.5"></i>
                   <span>Side‑by‑side comparison of Freemium vs. Subscription vs. Transactional.</span>
                 </li>
                 <li class="flex items-start">
-                  <span class="text-primary-400 mr-2 mt-0.5">✓</span>
+                  <i class="fa-solid fa-check text-primary-400 mr-2 mt-0.5"></i>
                   <span>Custom quote for your region and regulatory requirements.</span>
                 </li>
                 <li class="flex items-start">
-                  <span class="text-primary-400 mr-2 mt-0.5">✓</span>
+                  <i class="fa-solid fa-check text-primary-400 mr-2 mt-0.5"></i>
                   <span>Guidance on rollout, change management and adoption.</span>
                 </li>
               </ul>

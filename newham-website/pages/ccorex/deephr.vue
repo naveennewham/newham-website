@@ -83,7 +83,7 @@
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div v-for="feature in features" :key="feature.title" class="p-8 rounded-xl border border-cyan-500/20 hover:border-cyan-500/40 transition-all glass-panel">
-            <div class="text-4xl mb-4">{{ feature.icon }}</div>
+            <div class="text-4xl mb-4"><i :class="feature.icon"></i></div>
             <h3 class="text-2xl font-bold text-white mb-3">{{ feature.title }}</h3>
             <p class="text-gray-400">{{ feature.description }}</p>
           </div>
@@ -102,7 +102,7 @@
 
         <div class="space-y-6">
           <div v-for="(benefit, index) in benefits" :key="index" class="flex gap-6 p-6 rounded-xl border border-cyan-500/20 hover:border-cyan-500/40 transition-all glass-panel">
-            <div class="text-4xl flex-shrink-0">{{ benefit.icon }}</div>
+            <div class="text-4xl flex-shrink-0"><i :class="benefit.icon"></i></div>
             <div>
               <h3 class="text-xl font-bold text-white mb-2">{{ benefit.title }}</h3>
               <p class="text-gray-400">{{ benefit.description }}</p>
@@ -123,17 +123,17 @@
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
           <div class="p-8 rounded-xl border border-cyan-500/30 text-center glass-panel">
-            <div class="text-5xl mb-4">💰</div>
+            <div class="text-5xl mb-4"><i class="fa-solid fa-coins"></i></div>
             <h3 class="text-xl font-bold text-cyan-400 mb-2">With DeepCost</h3>
             <p class="text-gray-400">Labor cost allocation and budget tracking</p>
           </div>
           <div class="p-8 rounded-xl border border-cyan-500/30 text-center glass-panel">
-            <div class="text-5xl mb-4">📊</div>
+            <div class="text-5xl mb-4"><i class="fa-solid fa-chart-bar"></i></div>
             <h3 class="text-xl font-bold text-cyan-400 mb-2">With DeepTrack</h3>
             <p class="text-gray-400">Project schedule and resource planning</p>
           </div>
           <div class="p-8 rounded-xl border border-cyan-500/30 text-center glass-panel">
-            <div class="text-5xl mb-4">📐</div>
+            <div class="text-5xl mb-4"><i class="mdi mdi-ruler-square"></i></div>
             <h3 class="text-xl font-bold text-cyan-400 mb-2">With DeepPlanAI</h3>
             <p class="text-gray-400">Workforce requirements based on takeoffs</p>
           </div>
@@ -152,7 +152,7 @@
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div v-for="useCase in useCases" :key="useCase" class="p-8 rounded-xl border border-cyan-500/20 glass-panel">
-            <p class="text-gray-300">{{ useCase }}</p>
+            <p class="text-gray-300"><i class="fa-solid fa-check text-cyan-400 mr-2"></i>{{ useCase }}</p>
           </div>
         </div>
       </div>
@@ -230,32 +230,32 @@ useHead({
 
 const features = ref([
   {
-    icon: '👥',
+    icon: 'fa-solid fa-users',
     title: 'Workforce Planning',
     description: 'Plan and allocate resources across multiple projects and sites with real-time visibility.'
   },
   {
-    icon: '⏰',
+    icon: 'fa-solid fa-clock',
     title: 'Attendance & Time Tracking',
     description: 'Mobile-enabled time tracking with biometric support and geolocation verification.'
   },
   {
-    icon: '📋',
+    icon: 'fa-solid fa-clipboard-list',
     title: 'Compliance Management',
     description: 'Ensure compliance with labor laws, certifications, and safety requirements.'
   },
   {
-    icon: '💼',
+    icon: 'fa-solid fa-briefcase',
     title: 'Payroll Integration',
     description: 'Seamless integration with payroll systems for accurate wage calculations.'
   },
   {
-    icon: '📊',
+    icon: 'fa-solid fa-chart-bar',
     title: 'Performance Tracking',
     description: 'Track productivity metrics and performance across teams and projects.'
   },
   {
-    icon: '🎓',
+    icon: 'fa-solid fa-graduation-cap',
     title: 'Training & Certifications',
     description: 'Manage training records, certifications, and skill development programs.'
   }
@@ -263,44 +263,44 @@ const features = ref([
 
 const benefits = ref([
   {
-    icon: '⏱️',
+    icon: 'fa-solid fa-stopwatch',
     title: '50% Less HR Admin Work',
     description: 'Automate routine HR tasks and free up time for strategic planning.'
   },
   {
-    icon: '✅',
+    icon: 'fa-solid fa-circle-check',
     title: 'Full Regulatory Compliance',
     description: 'Stay compliant with all local labor laws and safety regulations.'
   },
   {
-    icon: '💡',
+    icon: 'fa-solid fa-lightbulb',
     title: 'Better Team Visibility',
     description: 'Real-time dashboards show workforce availability and allocation.'
   },
   {
-    icon: '📈',
+    icon: 'fa-solid fa-chart-line',
     title: 'Improved Productivity',
     description: 'Data-driven insights help optimize team performance and efficiency.'
   },
   {
-    icon: '🛡️',
+    icon: 'fa-solid fa-shield-halved',
     title: 'Risk Mitigation',
     description: 'Reduce compliance risks and labor disputes with proper documentation.'
   },
   {
-    icon: '💰',
+    icon: 'fa-solid fa-coins',
     title: 'Cost Optimization',
     description: 'Better labor cost control and resource utilization across projects.'
   }
 ])
 
 const useCases = ref([
-  '✓ Multi-site workforce management across regions',
-  '✓ Subcontractor and labor crew scheduling',
-  '✓ Training and certification compliance tracking',
-  '✓ Real-time labor cost tracking and forecasting',
-  '✓ Equipment and crew allocation optimization',
-  '✓ Safety compliance and incident reporting'
+  'Multi-site workforce management across regions',
+  'Subcontractor and labor crew scheduling',
+  'Training and certification compliance tracking',
+  'Real-time labor cost tracking and forecasting',
+  'Equipment and crew allocation optimization',
+  'Safety compliance and incident reporting'
 ])
 </script>
 

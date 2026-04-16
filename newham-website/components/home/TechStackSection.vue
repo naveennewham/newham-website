@@ -52,7 +52,7 @@
                 <div class="flex items-start gap-3">
                   <div class="w-10 h-10 rounded-xl flex items-center justify-center"
                        :class="index % 2 === 0 ? 'bg-primary-900/50 text-primary-200' : 'bg-secondary-900/50 text-secondary-200'">
-                    <component :is="capability.icon" class="w-5 h-5" />
+                    <i :class="capability.icon"></i>
                   </div>
                   <div>
                     <div class="text-white font-semibold">{{ capability.title }}</div>
@@ -74,33 +74,6 @@
 </template>
 
 <script setup>
-import { h } from 'vue';
-
-// SVG Icons as render functions
-const FrontendIcon = (props) => h('svg', {
-  ...props,
-  fill: 'none',
-  stroke: 'currentColor',
-  viewBox: '0 0 24 24',
-  innerHTML: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>'
-});
-
-const BackendIcon = (props) => h('svg', {
-  ...props,
-  fill: 'none',
-  stroke: 'currentColor',
-  viewBox: '0 0 24 24',
-  innerHTML: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01"></path>'
-});
-
-const CloudIcon = (props) => h('svg', {
-  ...props,
-  fill: 'none',
-  stroke: 'currentColor',
-  viewBox: '0 0 24 24',
-  innerHTML: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"></path>'
-});
-
 const steps = [
   {
     title: 'Extract quantities',
@@ -124,22 +97,22 @@ const capabilities = [
   {
     title: 'Reports & exports',
     description: 'Generate clear outputs for stakeholders and approvals.',
-    icon: BackendIcon
+    icon: 'fa-solid fa-server'
   },
   {
     title: 'Role-based access',
     description: 'Keep commercial data secure with controlled permissions.',
-    icon: FrontendIcon
+    icon: 'fa-solid fa-shield-halved'
   },
   {
     title: 'Cloud-ready',
     description: 'Modern infrastructure for scale and reliability.',
-    icon: CloudIcon
+    icon: 'fa-solid fa-cloud'
   },
   {
     title: 'Implementation support',
     description: 'Onboarding, templates, and process standardization.',
-    icon: BackendIcon
+    icon: 'fa-solid fa-gear'
   }
 ]
 </script>

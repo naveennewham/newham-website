@@ -39,15 +39,13 @@
           <p class="text-gray-300 text-center mb-6 line-clamp-2">{{ description }}</p>
           <div class="space-y-3 mb-8">
             <div v-for="(feature, index) in features" :key="index" class="flex items-start gap-3 text-sm text-gray-300">
-              <span class="text-cyan-400 font-bold mt-1">✓</span>
+              <i class="fa-solid fa-check text-cyan-400 mt-1"></i>
               <span>{{ feature }}</span>
             </div>
           </div>
           <div class="flex items-center justify-between pt-6 border-t border-cyan-500/20 group-hover:border-cyan-500/40 transition-colors">
             <span class="text-cyan-400 font-semibold">Learn More</span>
-            <svg class="w-5 h-5 text-cyan-400 transform group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-            </svg>
+            <i class="fa-solid fa-chevron-right text-cyan-400 transform group-hover:translate-x-2 transition-transform"></i>
           </div>
         </div>
       </div>
@@ -115,7 +113,7 @@
             :key="index"
             class="flex items-start gap-3 text-sm text-gray-300"
           >
-            <span class="text-cyan-400 font-bold mt-1">✓</span>
+            <i class="fa-solid fa-check text-cyan-400 mt-1"></i>
             <span>{{ feature }}</span>
           </div>
         </div>
@@ -123,14 +121,7 @@
         <!-- Learn More Button -->
         <div class="flex items-center justify-between pt-6 border-t border-cyan-500/20 group-hover:border-cyan-500/40 transition-colors">
           <span class="text-cyan-400 font-semibold">Learn More</span>
-          <svg
-            class="w-5 h-5 text-cyan-400 transform group-hover:translate-x-2 transition-transform"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-          </svg>
+          <i class="fa-solid fa-chevron-right text-cyan-400 transform group-hover:translate-x-2 transition-transform"></i>
         </div>
       </div>
     </div>

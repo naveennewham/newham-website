@@ -10,7 +10,7 @@
             <div class="font-semibold text-white">{{ app.name }}</div>
             <div class="text-xs text-gray-400">{{ app.tagline }}</div>
           </div>
-          <NuxtLink :to="app.link" class="ml-auto text-cyan-400 text-sm hover:underline">Learn more →</NuxtLink>
+          <NuxtLink :to="app.link" class="ml-auto text-cyan-400 text-sm hover:underline">Learn more <i class="fa-solid fa-arrow-right ml-1"></i></NuxtLink>
         </div>
       </div>
     </div>

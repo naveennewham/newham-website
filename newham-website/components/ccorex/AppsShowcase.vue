@@ -106,7 +106,7 @@
             <p class="text-gray-300">Data Synchronization</p>
           </div>
           <div class="p-6">
-            <div class="text-4xl font-bold text-cyan-400 mb-2">∞</div>
+            <div class="text-4xl font-bold text-cyan-400 mb-2"><i class="fa-solid fa-infinity"></i></div>
             <p class="text-gray-300">Scalable Growth</p>
           </div>
         </div>

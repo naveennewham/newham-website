@@ -10,7 +10,7 @@
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
             <div class="flex items-center gap-3 mb-6">
-              <div class="text-6xl">📏</div>
+              <div class="text-6xl"><i class="mdi mdi-ruler"></i></div>
               <div>
                 <h1 class="text-5xl md:text-6xl font-bold text-white">DeepPlan AI</h1>
                 <p class="text-xl text-primary-400 font-semibold">AI-Powered Drawing Takeoff & Quantity Extraction</p>
@@ -39,9 +39,7 @@
             <div class="p-8 rounded-2xl border-2 border-dashed border-primary-500/30 bg-slate-800/50">
               <div class="aspect-video flex items-center justify-center text-gray-400">
                 <div class="text-center">
-                  <svg class="w-20 h-20 mx-auto mb-4 text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"/>
-                  </svg>
+                  <i class="fa-regular fa-image text-7xl text-primary-400"></i>
                   <p class="text-lg font-semibold">[SCREENSHOT – DeepPlan AI Interface]</p>
                   <p class="text-sm mt-2">AI-powered takeoff with automatic detection</p>
                 </div>
@@ -66,7 +64,7 @@
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div v-for="benefit in overviewBenefits" :key="benefit.title" class="p-6 rounded-xl border border-white/10 bg-white/5 text-center">
-            <div class="text-4xl mb-4">{{ benefit.icon }}</div>
+            <div class="text-4xl mb-4"><i :class="benefit.icon"></i></div>
             <h3 class="text-xl font-bold text-white mb-3">{{ benefit.title }}</h3>
             <p class="text-gray-400">{{ benefit.description }}</p>
           </div>
@@ -91,7 +89,7 @@
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           <div v-for="capability in aiCapabilities" :key="capability.title" class="p-6 rounded-xl border border-white/10 bg-white/5 hover:border-primary-500/50 transition-all">
-            <div class="text-4xl mb-4">{{ capability.icon }}</div>
+            <div class="text-4xl mb-4"><i :class="capability.icon"></i></div>
             <h3 class="text-xl font-bold text-white mb-3">{{ capability.title }}</h3>
             <p class="text-gray-400 mb-4">{{ capability.description }}</p>
             <div class="text-sm text-primary-400 font-semibold">{{ capability.accuracy }}</div>
@@ -119,7 +117,7 @@
               <p class="text-xl text-gray-300 mb-6">{{ feature.description }}</p>
               <ul class="space-y-3">
                 <li v-for="point in feature.points" :key="point" class="flex items-start gap-3 text-gray-300">
-                  <span class="text-primary-400 text-xl mt-1">✓</span>
+                  <i class="fa-solid fa-check text-primary-400 text-lg mt-1"></i>
                   <span>{{ point }}</span>
                 </li>
               </ul>
@@ -129,9 +127,7 @@
               <div class="p-8 rounded-2xl border-2 border-dashed border-primary-500/30 bg-slate-800/50">
                 <div class="aspect-video flex items-center justify-center text-gray-400">
                   <div class="text-center">
-                    <svg class="w-16 h-16 mx-auto mb-4 text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"/>
-                    </svg>
+                    <i class="fa-regular fa-image text-7xl text-primary-400"></i>
                     <p class="font-semibold">[SCREENSHOT – {{ feature.title }}]</p>
                   </div>
                 </div>
@@ -159,7 +155,7 @@
             <div class="absolute -top-4 -left-4 w-12 h-12 rounded-full bg-primary-500 text-slate-900 font-bold flex items-center justify-center text-xl">
               {{ index + 1 }}
             </div>
-            <div class="text-3xl mb-4 mt-2">{{ step.icon }}</div>
+            <div class="text-3xl mb-4 mt-2"><i :class="step.icon"></i></div>
             <h3 class="text-lg font-bold text-white mb-2">{{ step.title }}</h3>
             <p class="text-sm text-gray-400">{{ step.description }}</p>
           </div>
@@ -181,7 +177,7 @@
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           <div v-for="tool in measurementTools" :key="tool.name" class="p-6 rounded-xl border border-white/10 bg-white/5">
-            <div class="text-3xl mb-3">{{ tool.icon }}</div>
+            <div class="text-3xl mb-3"><i :class="tool.icon"></i></div>
             <h3 class="text-lg font-bold text-white mb-2">{{ tool.name }}</h3>
             <p class="text-sm text-gray-400 mb-3">{{ tool.description }}</p>
             <div class="text-xs text-primary-400 font-semibold">{{ tool.type }}</div>
@@ -203,7 +199,7 @@
             </p>
             <ul class="space-y-4 mb-8">
               <li v-for="feature in collaborationFeatures" :key="feature" class="flex items-start gap-3 text-gray-300">
-                <span class="text-primary-400 text-xl mt-1">✓</span>
+                <i class="fa-solid fa-check text-primary-400 text-lg mt-1"></i>
                 <span>{{ feature }}</span>
               </li>
             </ul>
@@ -213,9 +209,7 @@
             <div class="p-8 rounded-2xl border-2 border-dashed border-primary-500/30 bg-slate-800/50">
               <div class="aspect-video flex items-center justify-center text-gray-400">
                 <div class="text-center">
-                  <svg class="w-20 h-20 mx-auto mb-4 text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
-                  </svg>
+                  <i class="fa-regular fa-image text-7xl text-primary-400"></i>
                   <p class="text-lg font-semibold">[SCREENSHOT – Team Collaboration]</p>
                 </div>
               </div>
@@ -239,7 +233,7 @@
 
         <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
           <div v-for="format in fileFormats" :key="format.name" class="p-6 rounded-xl border border-white/10 bg-white/5 text-center hover:border-primary-500/50 transition-all">
-            <div class="text-3xl mb-2">{{ format.icon }}</div>
+            <div class="text-3xl mb-2"><i :class="format.icon"></i></div>
             <div class="text-sm font-semibold text-white">{{ format.name }}</div>
           </div>
         </div>
@@ -255,9 +249,7 @@
             <div class="p-8 rounded-2xl border-2 border-dashed border-primary-500/30 bg-slate-900/50">
               <div class="aspect-square flex items-center justify-center text-gray-400">
                 <div class="text-center">
-                  <svg class="w-20 h-20 mx-auto mb-4 text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
-                  </svg>
+                  <i class="fa-regular fa-image text-7xl text-primary-400"></i>
                   <p class="text-lg font-semibold">[DIAGRAM – Integration Flow]</p>
                 </div>
               </div>
@@ -272,7 +264,7 @@
             </p>
             <div class="space-y-4">
               <div v-for="integration in integrations" :key="integration.name" class="flex items-start gap-4 p-4 rounded-lg bg-white/5 border border-white/10">
-                <div class="text-3xl">{{ integration.icon }}</div>
+                <div class="text-3xl"><i :class="integration.icon"></i></div>
                 <div>
                   <h4 class="font-semibold text-white mb-1">{{ integration.name }}</h4>
                   <p class="text-sm text-gray-400">{{ integration.description }}</p>
@@ -295,7 +287,7 @@
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div v-for="useCase in useCases" :key="useCase.role" class="p-8 rounded-2xl border border-white/10 bg-white/5">
-            <div class="text-4xl mb-4">{{ useCase.icon }}</div>
+            <div class="text-4xl mb-4"><i :class="useCase.icon"></i></div>
             <h3 class="text-2xl font-bold text-white mb-3">{{ useCase.role }}</h3>
             <p class="text-gray-400 mb-6">{{ useCase.description }}</p>
             <div class="space-y-2">
@@ -340,17 +332,17 @@ const heroStats = [
 
 const overviewBenefits = [
   {
-    icon: '🤖',
+    icon: 'fa-solid fa-robot',
     title: 'AI Automation',
     description: 'Let AI handle tedious measurements while you focus on reviewing and adjusting.'
   },
   {
-    icon: '⚡',
+    icon: 'fa-solid fa-bolt',
     title: '40% Faster',
     description: 'Complete takeoffs in hours instead of days with automated detection and measurement.'
   },
   {
-    icon: '🎯',
+    icon: 'fa-solid fa-bullseye',
     title: '95%+ Accurate',
     description: 'AI-powered measurements are more consistent and accurate than manual takeoffs.'
   }
@@ -358,37 +350,37 @@ const overviewBenefits = [
 
 const aiCapabilities = [
   {
-    icon: '🏠',
+    icon: 'fa-solid fa-house',
     title: 'Wall Detection',
     description: 'Automatically identify and measure walls, including thickness and height',
     accuracy: '96% accuracy'
   },
   {
-    icon: '🚪',
+    icon: 'fa-solid fa-door-open',
     title: 'Door & Window Detection',
     description: 'Recognize and count doors, windows, and openings across all floors',
     accuracy: '94% accuracy'
   },
   {
-    icon: '📐',
+    icon: 'fa-solid fa-drafting-compass',
     title: 'Area Calculation',
     description: 'Calculate floor areas, room sizes, and surface areas automatically',
     accuracy: '98% accuracy'
   },
   {
-    icon: '📏',
+    icon: 'mdi mdi-ruler',
     title: 'Perimeter Measurement',
     description: 'Measure perimeters, lengths, and linear elements with precision',
     accuracy: '97% accuracy'
   },
   {
-    icon: '🔢',
+    icon: 'fa-solid fa-hashtag',
     title: 'Count Detection',
     description: 'Automatically count fixtures, outlets, equipment, and repeated elements',
     accuracy: '93% accuracy'
   },
   {
-    icon: '🎨',
+    icon: 'fa-solid fa-palette',
     title: 'Layer Analysis',
     description: 'Process multi-layer drawings and separate elements by discipline',
     accuracy: '95% accuracy'
@@ -452,22 +444,22 @@ const keyFeatures = [
 
 const workflow = [
   {
-    icon: '📤',
+    icon: 'fa-solid fa-upload',
     title: 'Upload Drawing',
     description: 'Upload PDF, DWG, or image files'
   },
   {
-    icon: '🤖',
+    icon: 'fa-solid fa-robot',
     title: 'AI Processing',
     description: 'AI detects and measures elements'
   },
   {
-    icon: '✏️',
+    icon: 'fa-solid fa-pen',
     title: 'Review & Adjust',
     description: 'Review AI results and make corrections'
   },
   {
-    icon: '📊',
+    icon: 'fa-solid fa-chart-bar',
     title: 'Export',
     description: 'Export to DeepCost or other formats'
   }
@@ -475,49 +467,49 @@ const workflow = [
 
 const measurementTools = [
   {
-    icon: '📏',
+    icon: 'mdi mdi-ruler',
     name: 'Linear',
     description: 'Measure lengths and distances',
     type: 'Manual & AI'
   },
   {
-    icon: '📐',
+    icon: 'fa-solid fa-drafting-compass',
     name: 'Area',
     description: 'Calculate areas and surfaces',
     type: 'Manual & AI'
   },
   {
-    icon: '🔢',
+    icon: 'fa-solid fa-hashtag',
     name: 'Count',
     description: 'Count elements and fixtures',
     type: 'Manual & AI'
   },
   {
-    icon: '📊',
+    icon: 'fa-solid fa-chart-bar',
     name: 'Volume',
     description: 'Calculate volumes',
     type: 'Manual'
   },
   {
-    icon: '∠',
+    icon: 'fa-solid fa-ruler-combined',
     name: 'Angle',
     description: 'Measure angles',
     type: 'Manual'
   },
   {
-    icon: '⭕',
+    icon: 'fa-regular fa-circle',
     name: 'Perimeter',
     description: 'Measure perimeters',
     type: 'Manual & AI'
   },
   {
-    icon: '📍',
+    icon: 'fa-solid fa-location-dot',
     name: 'Point',
     description: 'Mark specific points',
     type: 'Manual'
   },
   {
-    icon: '✏️',
+    icon: 'fa-solid fa-pen',
     name: 'Annotation',
     description: 'Add notes and labels',
     type: 'Manual'
@@ -534,32 +526,32 @@ const collaborationFeatures = [
 ]
 
 const fileFormats = [
-  { name: 'PDF', icon: '📄' },
-  { name: 'DWG', icon: '📐' },
-  { name: 'DXF', icon: '📋' },
-  { name: 'PNG', icon: '🖼️' },
-  { name: 'JPG', icon: '📷' },
-  { name: 'TIFF', icon: '🗂️' }
+  { name: 'PDF', icon: 'fa-regular fa-file-lines' },
+  { name: 'DWG', icon: 'fa-solid fa-drafting-compass' },
+  { name: 'DXF', icon: 'fa-solid fa-clipboard-list' },
+  { name: 'PNG', icon: 'fa-regular fa-image' },
+  { name: 'JPG', icon: 'fa-solid fa-camera' },
+  { name: 'TIFF', icon: 'fa-solid fa-layer-group' }
 ]
 
 const integrations = [
   {
-    icon: '💰',
+    icon: 'fa-solid fa-coins',
     name: 'DeepCost',
     description: 'Quantities flow directly to cost estimation'
   },
   {
-    icon: '📊',
+    icon: 'fa-solid fa-chart-bar',
     name: 'Excel Export',
     description: 'Export to spreadsheets for further analysis'
   },
   {
-    icon: '📄',
+    icon: 'fa-regular fa-file-lines',
     name: 'PDF Reports',
     description: 'Generate professional takeoff reports'
   },
   {
-    icon: '🔌',
+    icon: 'fa-solid fa-plug',
     name: 'API Access',
     description: 'Integrate with custom workflows'
   }
@@ -568,7 +560,7 @@ const integrations = [
 const useCases = [
   {
     role: 'Estimators',
-    icon: '💼',
+    icon: 'fa-solid fa-briefcase',
     description: 'Fast, accurate takeoffs for competitive bidding.',
     benefits: [
       'Reduce takeoff time by 40%',
@@ -579,7 +571,7 @@ const useCases = [
   },
   {
     role: 'Quantity Surveyors',
-    icon: '📊',
+    icon: 'fa-solid fa-chart-bar',
     description: 'Professional quantity surveying services.',
     benefits: [
       'Detailed measurements',
@@ -590,7 +582,7 @@ const useCases = [
   },
   {
     role: 'Project Managers',
-    icon: '👷',
+    icon: 'fa-solid fa-helmet-safety',
     description: 'Verify contractor quantities and track changes.',
     benefits: [
       'Validate estimates',

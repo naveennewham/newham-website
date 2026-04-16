@@ -33,12 +33,12 @@
           @click="isDemoFormOpen = true"
         >
           <div class="flex items-start gap-4">
-            <div class="text-4xl">📅</div>
+            <div class="text-4xl"><i class="fa-solid fa-calendar-check text-cyan-400"></i></div>
             <div>
               <h3 class="text-2xl font-bold text-white mb-2">Schedule a Demo</h3>
               <p class="text-gray-400 mb-4">See CCorex in action with our team</p>
               <p class="text-cyan-400 font-semibold group-hover:translate-x-1 transition-transform">
-                Request Demo →
+                Request Demo <i class="fa-solid fa-arrow-right ml-1"></i>
               </p>
             </div>
           </div>
@@ -50,12 +50,12 @@
           class="group relative p-10 rounded-2xl border border-cyan-500/30 hover:border-cyan-500/60 transition-all duration-300 glass-panel hover:shadow-lg hover:shadow-cyan-500/20"
         >
           <div class="flex items-start gap-4">
-            <div class="text-4xl">💳</div>
+            <div class="text-4xl"><i class="fa-solid fa-coins text-cyan-400"></i></div>
             <div>
               <h3 class="text-2xl font-bold text-white mb-2">View Pricing</h3>
               <p class="text-gray-400 mb-4">Transparent pricing for all team sizes</p>
               <p class="text-cyan-400 font-semibold group-hover:translate-x-1 transition-transform">
-                See Plans →
+                See Plans <i class="fa-solid fa-arrow-right ml-1"></i>
               </p>
             </div>
           </div>

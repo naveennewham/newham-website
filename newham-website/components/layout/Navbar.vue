@@ -21,9 +21,7 @@
         <div class="relative" ref="suiteRef">
           <button type="button" @click="dropdownOpen = !dropdownOpen" class="text-gray-300 hover:text-white transition-colors duration-300 flex items-center gap-1">
             Corex
-            <svg class="w-4 h-4 group-hover:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-            </svg>
+            <i class="fa-solid fa-chevron-down text-sm transition-transform"></i>
           </button>
 
           <!-- Dropdown Menu: unified CCorex Suite canvas -->
@@ -90,9 +88,7 @@
         <div class="relative" ref="servicesRef">
           <button type="button" @click="servicesDropdownOpen = !servicesDropdownOpen" class="text-gray-300 hover:text-white transition-colors duration-300 flex items-center gap-1">
             Services
-            <svg class="w-4 h-4 group-hover:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-            </svg>
+            <i class="fa-solid fa-chevron-down text-sm transition-transform"></i>
           </button>
 
           <div v-show="servicesDropdownOpen" class="fixed inset-0 z-40" @click="servicesDropdownOpen = false"></div>
@@ -178,12 +174,8 @@
       
       <!-- Mobile Menu Button -->
       <button @click="mobileMenuOpen = !mobileMenuOpen" class="md:hidden text-gray-300 focus:outline-none">
-        <svg v-if="!mobileMenuOpen" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-        </svg>
-        <svg v-else xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-        </svg>
+        <i v-if="!mobileMenuOpen" class="fa-solid fa-bars text-2xl"></i>
+        <i v-else class="fa-solid fa-xmark text-2xl"></i>
       </button>
     </nav>
     

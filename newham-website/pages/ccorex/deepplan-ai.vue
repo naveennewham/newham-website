@@ -83,7 +83,7 @@
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div v-for="feature in features" :key="feature.title" class="p-8 rounded-xl border border-cyan-500/20 hover:border-cyan-500/40 transition-all glass-panel">
-            <div class="text-4xl mb-4">{{ feature.icon }}</div>
+            <div class="text-4xl mb-4"><i :class="feature.icon"></i></div>
             <h3 class="text-2xl font-bold text-white mb-3">{{ feature.title }}</h3>
             <p class="text-gray-400">{{ feature.description }}</p>
           </div>
@@ -102,7 +102,7 @@
 
         <div class="space-y-6">
           <div v-for="(benefit, index) in benefits" :key="index" class="flex gap-6 p-6 rounded-xl border border-cyan-500/20 hover:border-cyan-500/40 transition-all glass-panel">
-            <div class="text-4xl flex-shrink-0">{{ benefit.icon }}</div>
+            <div class="text-4xl flex-shrink-0"><i :class="benefit.icon"></i></div>
             <div>
               <h3 class="text-xl font-bold text-white mb-2">{{ benefit.title }}</h3>
               <p class="text-gray-400">{{ benefit.description }}</p>
@@ -123,17 +123,17 @@
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
           <div class="p-8 rounded-xl border border-cyan-500/30 text-center glass-panel">
-            <div class="text-5xl mb-4">📐</div>
+            <div class="text-5xl mb-4"><i class="mdi mdi-ruler-square"></i></div>
             <h3 class="text-xl font-bold text-cyan-400 mb-2">To DeepCost</h3>
             <p class="text-gray-400">Automatic cost estimation from your takeoff data</p>
           </div>
           <div class="p-8 rounded-xl border border-cyan-500/30 text-center glass-panel">
-            <div class="text-5xl mb-4">📊</div>
+            <div class="text-5xl mb-4"><i class="fa-solid fa-chart-bar"></i></div>
             <h3 class="text-xl font-bold text-cyan-400 mb-2">To DeepTrack</h3>
             <p class="text-gray-400">Budget planning and PO management integration</p>
           </div>
           <div class="p-8 rounded-xl border border-cyan-500/30 text-center glass-panel">
-            <div class="text-5xl mb-4">👥</div>
+            <div class="text-5xl mb-4"><i class="fa-solid fa-users"></i></div>
             <h3 class="text-xl font-bold text-cyan-400 mb-2">To DeepHR</h3>
             <p class="text-gray-400">Workforce planning based on project schedule</p>
           </div>
@@ -213,32 +213,32 @@ useHead({
 
 const features = ref([
   {
-    icon: '📏',
+    icon: 'mdi mdi-ruler',
     title: 'Fast Area & Perimeter Measurement',
     description: 'Measure areas and perimeters instantly with AI-powered precision. No more manual calculations.'
   },
   {
-    icon: '📊',
+    icon: 'fa-solid fa-chart-bar',
     title: 'Automated Quantity Takeoff',
     description: 'Automatically extract quantities for materials, labor, and equipment based on your drawings.'
   },
   {
-    icon: '📅',
+    icon: 'fa-solid fa-calendar',
     title: 'Schedule Extraction',
     description: 'Extract critical path information and create project schedules from construction drawings.'
   },
   {
-    icon: '⚡',
+    icon: 'fa-solid fa-bolt',
     title: 'Lightning-Fast Processing',
     description: 'Process drawings in minutes instead of hours. Handle complex multi-page PDFs effortlessly.'
   },
   {
-    icon: '🎯',
+    icon: 'fa-solid fa-bullseye',
     title: '99% Accuracy',
     description: 'Industry-leading accuracy with AI validation and quality checks.'
   },
   {
-    icon: '🔄',
+    icon: 'fa-solid fa-arrows-rotate',
     title: 'DeepCost Integration',
     description: 'Send takeoffs directly to DeepCost for instant cost estimation.'
   }
@@ -246,32 +246,32 @@ const features = ref([
 
 const benefits = ref([
   {
-    icon: '⏰',
+    icon: 'fa-solid fa-clock',
     title: '40% Faster Takeoffs',
     description: 'Reduce estimation time from days to hours. Generate accurate quotes in minutes.'
   },
   {
-    icon: '💰',
+    icon: 'fa-solid fa-coins',
     title: 'Higher Profit Margins',
     description: 'Accurate takeoffs mean more competitive bids and better project profitability.'
   },
   {
-    icon: '📈',
+    icon: 'fa-solid fa-chart-line',
     title: 'Competitive Advantage',
     description: 'Win more bids by providing faster quotes without sacrificing accuracy.'
   },
   {
-    icon: '🤖',
+    icon: 'fa-solid fa-robot',
     title: 'AI Learning',
     description: 'Our AI improves with every takeoff, learning your specific requirements and preferences.'
   },
   {
-    icon: '🔒',
+    icon: 'fa-solid fa-lock',
     title: 'Secure & Compliant',
     description: 'Enterprise-grade security with compliance certifications and data privacy protection.'
   },
   {
-    icon: '🌍',
+    icon: 'fa-solid fa-globe',
     title: 'Global Support',
     description: 'Support for multiple regions, currencies, and building standards.'
   }

@@ -27,9 +27,7 @@
                 Schedule an Appointment
               </button>
               <button type="button" class="btn-outline flex items-center justify-center" @click="goToPricing">
-                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
-                </svg>
+                <i class="fa-solid fa-plus mr-2"></i>
                 View Pricing
               </button>
             </div>
@@ -37,9 +35,7 @@
             <!-- Benefits List -->
             <div class="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div v-for="(benefit, index) in benefits" :key="index" class="flex items-center relative overflow-hidden p-1 rounded-md">
-                <svg class="w-5 h-5 text-primary-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                </svg>
+                <i class="fa-solid fa-check text-primary-400 mr-2"></i>
                 <span class="text-gray-300">{{ benefit }}</span>
               </div>
             </div>
@@ -106,10 +102,7 @@
                 class="w-full btn-primary flex items-center justify-center relative overflow-hidden"
                 :disabled="isSubmitting"
               >
-                <svg v-if="isSubmitting" class="animate-spin -ml-1 mr-2 h-4 w-4 text-white" fill="none" viewBox="0 0 24 24">
-                  <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-                  <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                </svg>
+                <i v-if="isSubmitting" class="fa-solid fa-spinner fa-spin -ml-1 mr-2 text-white"></i>
                 {{ isSubmitting ? 'Submitting...' : 'Request Consultation' }}
               </button>
               

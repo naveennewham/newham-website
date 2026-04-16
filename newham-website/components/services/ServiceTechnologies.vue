@@ -61,7 +61,7 @@
             <div class="space-y-6">
               <div v-for="(approach, index) in techApproaches" :key="index" class="flex">
                 <div class="flex-shrink-0 w-12 h-12 rounded-full bg-gradient-to-br from-primary-500/30 to-secondary-500/30 flex items-center justify-center mr-4">
-                  <component :is="approach.icon" class="w-6 h-6 text-white" />
+                  <i :class="approach.icon" class="text-lg text-white"></i>
                 </div>
                 <div>
                   <h4 class="text-lg font-semibold text-white mb-2">{{ approach.title }}</h4>
@@ -91,40 +91,7 @@
 </template>
 
 <script setup>
-import { ref, computed, h } from 'vue';
-
-// SVG Icons as render functions
-const ScalableIcon = (props) => h('svg', {
-  ...props,
-  fill: 'none',
-  stroke: 'currentColor',
-  viewBox: '0 0 24 24',
-  innerHTML: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"></path>'
-});
-
-const SecureIcon = (props) => h('svg', {
-  ...props,
-  fill: 'none',
-  stroke: 'currentColor',
-  viewBox: '0 0 24 24',
-  innerHTML: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>'
-});
-
-const IntegrateIcon = (props) => h('svg', {
-  ...props,
-  fill: 'none',
-  stroke: 'currentColor',
-  viewBox: '0 0 24 24',
-  innerHTML: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"></path>'
-});
-
-const CloudIcon = (props) => h('svg', {
-  ...props,
-  fill: 'none',
-  stroke: 'currentColor',
-  viewBox: '0 0 24 24',
-  innerHTML: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"></path>'
-});
+import { ref, computed } from 'vue';
 
 const activeCategory = ref('all');
 
@@ -175,22 +142,22 @@ const techApproaches = [
   {
     title: 'Scalable Architecture',
     description: 'We design solutions that can grow with your business, handling increased loads and expanding functionality without requiring a complete rebuild.',
-    icon: ScalableIcon
+    icon: 'fa-solid fa-magnifying-glass'
   },
   {
     title: 'Security-First Development',
     description: 'Security is built into our development process from the ground up, not added as an afterthought, ensuring your data and systems are protected.',
-    icon: SecureIcon
+    icon: 'fa-solid fa-shield-halved'
   },
   {
     title: 'Seamless Integration',
     description: 'Our solutions are designed to work with your existing systems and workflows, minimizing disruption and maximizing value.',
-    icon: IntegrateIcon
+    icon: 'fa-solid fa-link'
   },
   {
     title: 'Cloud-Native Solutions',
     description: 'We leverage cloud technologies to provide flexible, resilient, and cost-effective solutions that can be accessed from anywhere.',
-    icon: CloudIcon
+    icon: 'fa-solid fa-cloud'
   }
 ];
 </script>

@@ -6,9 +6,7 @@
            <!-- Navigation -->
            <div class="mb-8">
             <NuxtLink to="/case-studies" class="inline-flex items-center text-primary-400 hover:text-primary-300 transition-colors">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
-              </svg>
+              <i class="fa-solid fa-arrow-left mr-2"></i>
               Back to Case Studies
             </NuxtLink>
           </div>

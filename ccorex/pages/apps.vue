@@ -23,7 +23,7 @@
         <div v-for="(app, index) in apps" :key="app.name" class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div :class="index % 2 === 0 ? 'lg:order-1' : 'lg:order-2'">
             <div class="flex items-center gap-3 mb-4">
-              <div class="text-5xl">{{ app.icon }}</div>
+              <div class="text-5xl"><i :class="app.icon"></i></div>
               <div>
                 <h2 class="text-3xl font-bold text-white">{{ app.name }}</h2>
                 <p class="text-primary-400 font-semibold">{{ app.subtitle }}</p>
@@ -35,7 +35,7 @@
               <h3 class="text-lg font-bold text-white mb-4">Key Features</h3>
               <ul class="space-y-3">
                 <li v-for="feature in app.features" :key="feature" class="flex items-start gap-3">
-                  <span class="text-primary-400 mt-1">✓</span>
+                  <i class="fa-solid fa-check text-primary-400 mt-1"></i>
                   <span class="text-gray-300">{{ feature }}</span>
                 </li>
               </ul>
@@ -64,7 +64,7 @@
             <div class="p-8 rounded-2xl border border-white/10 bg-white/5 backdrop-blur">
               <div class="aspect-video rounded-lg bg-gradient-to-br from-primary-500/20 to-secondary-500/20 flex items-center justify-center">
                 <div class="text-center">
-                  <div class="text-6xl mb-4">{{ app.icon }}</div>
+                  <div class="text-6xl mb-4"><i :class="app.icon"></i></div>
                   <p class="text-gray-400">App Screenshot</p>
                 </div>
               </div>
@@ -95,12 +95,12 @@
         <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
           <div v-for="(step, index) in integrationFlow" :key="step.app" class="relative">
             <div class="p-6 rounded-xl border border-primary-500/30 bg-white/5 text-center">
-              <div class="text-4xl mb-3">{{ step.icon }}</div>
+              <div class="text-4xl mb-3"><i :class="step.icon"></i></div>
               <h3 class="text-lg font-bold text-white mb-2">{{ step.app }}</h3>
               <p class="text-sm text-gray-400">{{ step.action }}</p>
             </div>
             <div v-if="index < integrationFlow.length - 1" class="hidden md:block absolute top-1/2 -right-3 transform -translate-y-1/2 text-primary-400 text-2xl">
-              →
+              <i class="fa-solid fa-arrow-right"></i>
             </div>
           </div>
         </div>
@@ -134,7 +134,7 @@ const apps = [
   {
     name: 'DeepPlanAI',
     subtitle: 'AI-Powered Digital Takeoffs',
-    icon: '📏',
+    icon: 'mdi mdi-ruler',
     description: 'Transform your takeoff process with AI-powered measurement and quantity extraction. Reduce manual work by 40% while increasing accuracy and speed.',
     features: [
       'Automated area, perimeter, and volume measurement from drawings',
@@ -154,7 +154,7 @@ const apps = [
   {
     name: 'DeepCost',
     subtitle: 'AI Cost Estimation',
-    icon: '💰',
+    icon: 'fa-solid fa-coins',
     description: 'Achieve 95%+ accuracy in MEP cost estimation with AI-driven libraries and intelligent mapping. Generate professional BOQs and proposals in minutes.',
     features: [
       'Comprehensive MEP libraries for ACMV, Fire Fighting, ELV, and A&A',
@@ -174,7 +174,7 @@ const apps = [
   {
     name: 'DeepTrack',
     subtitle: 'Budget & PO Management',
-    icon: '📊',
+    icon: 'fa-solid fa-chart-bar',
     description: 'Maintain complete control over project budgets and purchase orders. Track variance, manage approvals, and ensure spend visibility across all projects.',
     features: [
       'Real-time budget vs actuals tracking with variance analysis',
@@ -194,7 +194,7 @@ const apps = [
   {
     name: 'DeepHR',
     subtitle: 'Workforce Management',
-    icon: '👥',
+    icon: 'fa-solid fa-users',
     description: 'Unify your workforce operations from planning to payroll. Mobile-enabled time tracking, compliance management, and resource optimization.',
     features: [
       'Workforce planning and rostering with skill-based allocation',
@@ -214,9 +214,9 @@ const apps = [
 ]
 
 const integrationFlow = [
-  { app: 'DeepPlanAI', icon: '📏', action: 'Create takeoffs' },
-  { app: 'DeepCost', icon: '💰', action: 'Generate estimates' },
-  { app: 'DeepTrack', icon: '📊', action: 'Track budgets' },
-  { app: 'DeepHR', icon: '👥', action: 'Manage workforce' }
+  { app: 'DeepPlanAI', icon: 'mdi mdi-ruler', action: 'Create takeoffs' },
+  { app: 'DeepCost', icon: 'fa-solid fa-coins', action: 'Generate estimates' },
+  { app: 'DeepTrack', icon: 'fa-solid fa-chart-bar', action: 'Track budgets' },
+  { app: 'DeepHR', icon: 'fa-solid fa-users', action: 'Manage workforce' }
 ]
 </script>

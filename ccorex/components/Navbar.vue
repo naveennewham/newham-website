@@ -20,7 +20,7 @@
         <a href="/contact" class="px-4 py-2 rounded-lg bg-primary-500 text-slate-900 font-semibold hover:bg-primary-400 transition-all">Get Demo</a>
       </div>
       <button class="md:hidden" @click="open = !open" aria-label="toggle">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-6 h-6"><path fill="currentColor" d="M3 6h18M3 12h18M3 18h18"/></svg>
+        <i class="fa-solid fa-bars text-xl"></i>
       </button>
     </nav>
     <div v-if="open" class="glass mx-4 px-4 py-3 md:hidden rounded-xl">

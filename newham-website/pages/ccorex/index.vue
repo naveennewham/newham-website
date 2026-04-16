@@ -95,32 +95,32 @@
               <tr class="border-b border-cyan-500/10 hover:bg-cyan-500/5">
                 <td class="py-4 px-4 text-left text-gray-300">Data Integration</td>
                 <td class="py-4 px-4">Manual Integration</td>
-                <td class="py-4 px-4 text-cyan-400 font-semibold">✓ Seamless</td>
+                <td class="py-4 px-4 text-cyan-400 font-semibold"><i class="fa-solid fa-check"></i> Seamless</td>
               </tr>
               <tr class="border-b border-cyan-500/10 hover:bg-cyan-500/5">
                 <td class="py-4 px-4 text-left text-gray-300">Real-Time Sync</td>
-                <td class="py-4 px-4">❌ Not Available</td>
-                <td class="py-4 px-4 text-cyan-400 font-semibold">✓ Full Sync</td>
+                <td class="py-4 px-4"><i class="fa-solid fa-xmark"></i> Not Available</td>
+                <td class="py-4 px-4 text-cyan-400 font-semibold"><i class="fa-solid fa-check"></i> Full Sync</td>
               </tr>
               <tr class="border-b border-cyan-500/10 hover:bg-cyan-500/5">
                 <td class="py-4 px-4 text-left text-gray-300">Single Dashboard</td>
-                <td class="py-4 px-4">❌ Multiple Systems</td>
-                <td class="py-4 px-4 text-cyan-400 font-semibold">✓ Unified</td>
+                <td class="py-4 px-4"><i class="fa-solid fa-xmark"></i> Multiple Systems</td>
+                <td class="py-4 px-4 text-cyan-400 font-semibold"><i class="fa-solid fa-check"></i> Unified</td>
               </tr>
               <tr class="border-b border-cyan-500/10 hover:bg-cyan-500/5">
                 <td class="py-4 px-4 text-left text-gray-300">Authentication</td>
                 <td class="py-4 px-4">Separate Logins</td>
-                <td class="py-4 px-4 text-cyan-400 font-semibold">✓ Single Sign-On</td>
+                <td class="py-4 px-4 text-cyan-400 font-semibold"><i class="fa-solid fa-check"></i> Single Sign-On</td>
               </tr>
               <tr class="border-b border-cyan-500/10 hover:bg-cyan-500/5">
                 <td class="py-4 px-4 text-left text-gray-300">Support & Training</td>
                 <td class="py-4 px-4">Fragmented</td>
-                <td class="py-4 px-4 text-cyan-400 font-semibold">✓ Unified Support</td>
+                <td class="py-4 px-4 text-cyan-400 font-semibold"><i class="fa-solid fa-check"></i> Unified Support</td>
               </tr>
               <tr class="hover:bg-cyan-500/5">
                 <td class="py-4 px-4 text-left text-gray-300">Implementation Time</td>
                 <td class="py-4 px-4">4-8 weeks per tool</td>
-                <td class="py-4 px-4 text-cyan-400 font-semibold">✓ 2-3 weeks</td>
+                <td class="py-4 px-4 text-cyan-400 font-semibold"><i class="fa-solid fa-check"></i> 2-3 weeks</td>
               </tr>
             </tbody>
           </table>
@@ -155,7 +155,7 @@
                 class="text-cyan-400 text-2xl transform transition-transform"
                 :style="{ transform: activeFaq === index ? 'rotate(180deg)' : 'rotate(0deg)' }"
               >
-                ▼
+                <i class="fa-solid fa-chevron-down"></i>
               </span>
             </div>
             <p v-if="activeFaq === index" class="mt-4 text-gray-400">{{ faq.answer }}</p>

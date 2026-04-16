@@ -28,15 +28,13 @@
                 <p class="text-gray-400 mt-2">Construction software platform for planning, estimation, budget tracking, and workforce management.</p>
               </div>
               <div class="w-11 h-11 rounded-xl bg-primary-900/40 border border-primary-500/20 text-primary-200 flex items-center justify-center">
-                <component :is="SoftwareIcon" class="w-6 h-6" />
+                <i class="fa-solid fa-code"></i>
               </div>
             </div>
 
             <ul class="mt-6 space-y-3">
               <li v-for="(item, idx) in pillars.ccorex.points" :key="idx" class="flex items-start gap-2">
-                <svg class="w-5 h-5 text-primary-400 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                </svg>
+                <i class="fa-solid fa-check text-primary-400 mt-0.5"></i>
                 <span class="text-gray-300 text-sm">{{ item }}</span>
               </li>
             </ul>
@@ -55,15 +53,13 @@
                 <p class="text-gray-400 mt-2">Dedicated, domain-trained engineering professionals for Singapore M&E contractors — not generic offshore staff.</p>
               </div>
               <div class="w-11 h-11 rounded-xl bg-secondary-900/40 border border-secondary-500/20 text-secondary-200 flex items-center justify-center">
-                <component :is="MobileIcon" class="w-6 h-6" />
+                <i class="fa-solid fa-users"></i>
               </div>
             </div>
 
             <ul class="mt-6 space-y-3">
               <li v-for="(item, idx) in pillars.talent.points" :key="idx" class="flex items-start gap-2">
-                <svg class="w-5 h-5 text-secondary-400 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                </svg>
+                <i class="fa-solid fa-check text-secondary-400 mt-0.5"></i>
                 <span class="text-gray-300 text-sm">{{ item }}</span>
               </li>
             </ul>
@@ -82,15 +78,13 @@
                 <p class="text-gray-400 mt-2">Fire protection design capability and commercial project support — Singapore-code compliant, delivered fast.</p>
               </div>
               <div class="w-11 h-11 rounded-xl bg-primary-900/40 border border-primary-500/20 text-primary-200 flex items-center justify-center">
-                <component :is="CloudIcon" class="w-6 h-6" />
+                <i class="fa-solid fa-helmet-safety"></i>
               </div>
             </div>
 
             <ul class="mt-6 space-y-3">
               <li v-for="(item, idx) in pillars.engineering.points" :key="idx" class="flex items-start gap-2">
-                <svg class="w-5 h-5 text-primary-400 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                </svg>
+                <i class="fa-solid fa-check text-primary-400 mt-0.5"></i>
                 <span class="text-gray-300 text-sm">{{ item }}</span>
               </li>
             </ul>
@@ -113,17 +107,13 @@
               </p>
               <ul class="space-y-3 mb-8">
                 <li v-for="(point, index) in customSolutionPoints" :key="index" class="flex items-start">
-                  <svg class="w-5 h-5 text-primary-400 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                  </svg>
+                  <i class="fa-solid fa-check text-primary-400 mr-2 mt-0.5"></i>
                   <span class="text-gray-300">{{ point }}</span>
                 </li>
               </ul>
               <NuxtLink to="/contact" class="btn-primary inline-flex items-center">
                 Discuss Your Project
-                <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-                </svg>
+                <i class="fa-solid fa-arrow-right ml-2"></i>
               </NuxtLink>
             </div>
             <div class="relative">
@@ -146,56 +136,7 @@
 </template>
 
 <script setup>
-import { h } from 'vue';
-
-// SVG Icons as render functions
-const ProjectManagementIcon = (props) => h('svg', {
-  ...props,
-  fill: 'none',
-  stroke: 'currentColor',
-  viewBox: '0 0 24 24',
-  innerHTML: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path>'
-});
-
-const FieldAppIcon = (props) => h('svg', {
-  ...props,
-  fill: 'none',
-  stroke: 'currentColor',
-  viewBox: '0 0 24 24',
-  innerHTML: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path>'
-});
-
-const ComplianceIcon = (props) => h('svg', {
-  ...props,
-  fill: 'none',
-  stroke: 'currentColor',
-  viewBox: '0 0 24 24',
-  innerHTML: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>'
-});
-
-const BimIcon = (props) => h('svg', {
-  ...props,
-  fill: 'none',
-  stroke: 'currentColor',
-  viewBox: '0 0 24 24',
-  innerHTML: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>'
-});
-
-const CloudIcon = (props) => h('svg', {
-  ...props,
-  fill: 'none',
-  stroke: 'currentColor',
-  viewBox: '0 0 24 24',
-  innerHTML: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"></path>'
-});
-
-const AnalyticsIcon = (props) => h('svg', {
-  ...props,
-  fill: 'none',
-  stroke: 'currentColor',
-  viewBox: '0 0 24 24',
-  innerHTML: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>'
-});
+// Icon classes used directly in template
 
 const pillars = {
   ccorex: {

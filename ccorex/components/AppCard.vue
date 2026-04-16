@@ -5,7 +5,7 @@
         <h3 class="text-2xl font-semibold text-white">{{ name }}</h3>
         <p class="text-sm text-primary-400 font-semibold">{{ subtitle }}</p>
       </div>
-      <svg class="w-6 h-6 text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+      <i class="fa-solid fa-chevron-right text-primary-400"></i>
     </div>
     <p class="text-gray-300 mt-4">{{ description }}</p>
     <ul class="mt-4 space-y-1 text-sm text-gray-400">
