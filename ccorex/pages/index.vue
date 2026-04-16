@@ -127,13 +127,16 @@
               </NuxtLink>
             </div>
             <div :class="index % 2 === 0 ? 'lg:order-2' : 'lg:order-1'">
-              <!-- SCREENSHOT PLACEHOLDER -->
-              <div class="p-8 rounded-2xl border-2 border-dashed border-primary-500/30 bg-slate-800/50">
-                <div class="aspect-video flex items-center justify-center text-gray-400">
-                  <div class="text-center">
-                    <i class="fa-regular fa-image text-7xl text-primary-400"></i>
-                    <p class="font-semibold">[SCREENSHOT – {{ app.name }} interface]</p>
-                  </div>
+              <div class="p-1 rounded-2xl border border-white/10 bg-white/5 backdrop-blur">
+                <div class="relative aspect-video overflow-hidden rounded-xl">
+                  <img
+                    :src="app.image"
+                    :alt="`${app.name} screen`"
+                    class="w-full h-full object-cover"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <div class="absolute inset-0 bg-gradient-to-t from-slate-900/10 to-transparent pointer-events-none"></div>
                 </div>
               </div>
             </div>
@@ -463,6 +466,7 @@ const products = [
     name: 'DeepCost',
     subtitle: 'Construction Estimation & Tender Management',
     icon: 'fa-solid fa-coins',
+    image: '/screens/DeepCost_screen.png',
     description: 'Achieve 95%+ accuracy in MEP cost estimation with AI-driven libraries. Generate professional BOQs and tender documents in minutes, not days.',
     features: [
       'Comprehensive MEP libraries (ACMV, Fire, ELV, A&A)',
@@ -477,6 +481,7 @@ const products = [
     name: 'DeepTrack',
     subtitle: 'Project Execution & Site Management',
     icon: 'fa-solid fa-chart-bar',
+    image: '/screens/Deeptrack_Screen.png',
     description: 'Maintain complete control over project budgets, purchase orders, and site activities. Track variance, manage approvals, and ensure spend visibility.',
     features: [
       'Real-time budget vs actuals',
@@ -491,6 +496,7 @@ const products = [
     name: 'DeepHR',
     subtitle: 'Workforce & Labour Management',
     icon: 'fa-solid fa-users',
+    image: '/screens/DeepHR_screen.png',
     description: 'Unify your workforce operations from planning to payroll. Mobile-enabled time tracking, compliance management, and resource optimization.',
     features: [
       'Workforce planning & rostering',
@@ -505,6 +511,7 @@ const products = [
     name: 'DeepPlan AI',
     subtitle: 'AI-Powered Drawing Takeoff & Quantity Extraction',
     icon: 'mdi mdi-ruler',
+    image: '/screens/DeepPlan_Screen.png',
     description: 'Transform your takeoff process with AI-powered measurement and quantity extraction. Reduce manual work by 40% while increasing accuracy.',
     features: [
       'Automated area & perimeter measurement',
