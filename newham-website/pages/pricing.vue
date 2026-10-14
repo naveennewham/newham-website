@@ -1,254 +1,82 @@
 <template>
-  <div class="product-page">
-    <!-- Hero Section -->
-    <section class="hero-section relative min-h-[50vh] flex items-center pt-24 pb-16 overflow-hidden">
-      <div class="absolute inset-0 z-0">
-        <div class="absolute inset-0 bg-dark-900"></div>
-        <div class="absolute inset-0 opacity-5">
-          <div class="h-full w-full bg-[repeating-linear-gradient(45deg,#005D6C,#005D6C_1px,transparent_1px,transparent_10px)]"></div>
-        </div>
-        <div class="absolute top-20 right-20 w-40 h-40 border-2 border-primary-500/10 transform rotate-45"></div>
-        <div class="absolute bottom-32 left-16 w-64 h-64 border-2 border-secondary-500/10 transform -rotate-12"></div>
+  <div>
+    <section class="relative overflow-hidden bg-hero text-white">
+      <div class="bg-grid pointer-events-none absolute inset-0 opacity-50" aria-hidden="true"></div>
+      <div class="container-site relative py-20 lg:py-24">
+        <p class="eyebrow-dark">Pricing</p>
+        <h1 class="h-display mt-4 max-w-3xl text-white">How we price our work</h1>
+        <p class="lead-dark mt-6 max-w-2xl">Every engagement is quoted for your scope. Here is how each pillar is charged, so you know what to expect before the discovery call.</p>
       </div>
+    </section>
 
-      <div class="container mx-auto px-4 relative z-10">
-        <div class="max-w-4xl mx-auto text-center">
-          <h1 class="text-4xl md:text-5xl font-bold mb-4 relative inline-block">
-            <span class="gradient-text">Pricing & Business Model</span>
-            <span class="block text-white mt-2">Choose the right way to get started with Deepcost</span>
-            <span class="absolute -bottom-2 left-0 w-1/2 h-1 bg-primary-500 transform skew-x-12"></span>
-            <span class="absolute -bottom-2 right-0 w-1/3 h-1 bg-secondary-500 transform -skew-x-12"></span>
-          </h1>
-          <p class="text-lg md:text-xl mt-8 text-gray-300 max-w-2xl mx-auto">
-            Flexible options across Freemium, Subscription and Transactional usage so you can adopt AI estimation at your own pace.
-          </p>
+    <section class="section">
+      <div class="container-site grid gap-6 lg:grid-cols-3">
+        <div v-for="m in models" :key="m.title" class="card flex flex-col p-7">
+          <span class="icon-tile"><i :class="m.icon" aria-hidden="true"></i></span>
+          <h2 class="mt-5 text-xl font-bold">{{ m.title }}</h2>
+          <p class="mt-2 text-sm leading-relaxed text-ink-600">{{ m.text }}</p>
+          <ul class="mt-5 flex-1 space-y-2.5 text-sm">
+            <li v-for="b in m.bullets" :key="b" class="flex gap-2.5 text-ink-700"><i class="fa-solid fa-check mt-1 text-brand-600" aria-hidden="true"></i>{{ b }}</li>
+          </ul>
+          <a v-if="m.external" :href="m.to" target="_blank" rel="noopener" class="btn-secondary mt-7">{{ m.cta }} <i class="fa-solid fa-arrow-up-right-from-square text-xs" aria-hidden="true"></i></a>
+          <NuxtLink v-else :to="m.to" class="btn-secondary mt-7">{{ m.cta }}</NuxtLink>
         </div>
       </div>
     </section>
 
-    <!-- Plans Section -->
-    <section class="section-padding relative overflow-hidden">
-      <div class="absolute inset-0 z-0">
-        <div class="absolute inset-0 bg-dark-900"></div>
-        <div class="absolute inset-0 opacity-5">
-          <div class="h-full w-full bg-[repeating-linear-gradient(135deg,#005D6C,#005D6C_1px,transparent_1px,transparent_12px)]"></div>
-        </div>
-        <div class="absolute top-16 left-10 w-32 h-32 border-2 border-primary-500/10 transform rotate-12"></div>
-        <div class="absolute bottom-16 right-10 w-52 h-52 border-2 border-secondary-500/10 transform -rotate-12"></div>
-      </div>
-
-      <div class="container mx-auto px-4 relative z-10">
-        <div class="text-center mb-12 relative">
-          <div class="absolute -top-10 left-1/2 transform -translate-x-1/2 w-20 h-1 bg-primary-500 skew-x-12"></div>
-          <div class="absolute -top-10 left-1/2 transform -translate-x-1/2 translate-x-12 w-10 h-1 bg-secondary-500 -skew-x-12"></div>
-          <h2 class="text-3xl md:text-4xl font-bold mb-4 inline-block relative">
-            <span class="gradient-text">Business Model</span>
-            <span class="block text-white mt-2">Designed to grow with your team</span>
-            <span class="absolute -bottom-2 left-0 w-1/2 h-1 bg-primary-500 transform skew-x-12"></span>
-            <span class="absolute -bottom-2 right-0 w-1/3 h-1 bg-secondary-500 transform -skew-x-12"></span>
-          </h2>
-          <p class="text-gray-300 max-w-3xl mx-auto mt-6">
-            Deepcost combines subscription (seats + project packs) with transactional AI usage and services. Start free, upgrade to team-wide subscriptions, and add transactional usage as you scale.
-          </p>
-        </div>
-
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
-          <!-- Freemium -->
-          <div class="relative bg-dark-800/60 backdrop-blur-sm p-8 rounded-2xl border border-primary-500/30 ai-glow-primary flex flex-col">
-            <div class="mb-4 inline-flex items-center px-3 py-1 rounded-full bg-primary-900/40 border border-primary-500/40 text-primary-200 text-xs uppercase tracking-wide">
-              Freemium · Promotional
-            </div>
-            <h3 class="text-2xl font-semibold text-white mb-3">Freemium</h3>
-            <p class="text-sm text-gray-400 mb-6">
-              Perfect for trying Deepcost on a live project with a small team.
-            </p>
-            <ul class="space-y-3 text-sm text-gray-300 flex-1">
-              <li class="flex items-start">
-                <span class="text-primary-400 mr-2 mt-0.5">•</span>
-                <span>
-                  <span class="font-semibold">What&apos;s free:</span>
-                  1 project, 2 seats, limited AI, community templates (watermarked export).
-                </span>
-              </li>
-              <li class="flex items-start">
-                <span class="text-primary-400 mr-2 mt-0.5">•</span>
-                <span>
-                  <span class="font-semibold">Upgrade triggers:</span>
-                  approvals/CRM, custom rules, BIM import, FOT export and advanced reporting.
-                </span>
-              </li>
-              <li class="flex items-start">
-                <span class="text-primary-400 mr-2 mt-0.5">•</span>
-                <span>
-                  <span class="font-semibold">Goal:</span>
-                  convert 10–20% of users within 60 days via in-app prompts.
-                </span>
-              </li>
-            </ul>
-            <div class="mt-8">
-              <a :href="deepcostLink" class="btn-outline w-full text-center" target="_blank" rel="noopener noreferrer">
-                Try now
-              </a>
-            </div>
-          </div>
-
-          <!-- Subscription -->
-          <div class="relative bg-gradient-to-b from-primary-900/60 via-dark-900 to-dark-900/90 backdrop-blur-md p-8 rounded-2xl border-2 border-primary-500/70 shadow-glass-lg flex flex-col">
-            <div class="absolute -top-3 right-6 px-3 py-1 rounded-full bg-secondary-600 text-xs font-semibold text-white tracking-wide">
-              Most Popular
-            </div>
-            <div class="mb-4 inline-flex items-center px-3 py-1 rounded-full bg-primary-900/40 border border-primary-500/40 text-primary-200 text-xs uppercase tracking-wide">
-              Subscription · Primary
-            </div>
-            <h3 class="text-2xl font-semibold text-white mb-3">Subscription</h3>
-            <p class="text-sm text-gray-300 mb-6">
-              Core revenue model with seat-based pricing and annual commitments.
-            </p>
-            <p class="text-xs uppercase tracking-wide text-primary-300 mb-4">Packaging</p>
-            <p class="text-gray-200 text-sm mb-4">Seats / Month (paid annually)</p>
-
-            <p class="text-xs uppercase tracking-wide text-primary-300 mb-3">Who it's for</p>
-            <ul class="space-y-3 text-sm text-gray-200 flex-1">
-              <li>
-                <span class="font-semibold">Growing teams</span> that need predictable, always‑on access for estimators and project leaders.
-              </li>
-              <li>
-                <span class="font-semibold">Centralised governance</span> with role‑based access, approvals and audit trails across projects.
-              </li>
-              <li>
-                <span class="font-semibold">Multi‑project usage</span> with shared master data, templates and reporting across your portfolio.
-              </li>
-            </ul>
-
-            <div class="mt-8 flex flex-col gap-3">
-              <NuxtLink to="/contact" class="btn-primary w-full text-center">
-                Talk to us about subscriptions
-              </NuxtLink>
-              <NuxtLink to="/case-studies" class="btn-outline w-full text-center">
-                See how customers use Deepcost
-              </NuxtLink>
-            </div>
-          </div>
-
-          <!-- Transactional -->
-          <div class="relative bg-dark-800/60 backdrop-blur-sm p-8 rounded-2xl border border-secondary-500/40 ai-glow-secondary flex flex-col">
-            <div class="mb-4 inline-flex items-center px-3 py-1 rounded-full bg-secondary-900/40 border border-secondary-500/40 text-secondary-200 text-xs uppercase tracking-wide">
-              Transactional · Secondary
-            </div>
-            <h3 class="text-2xl font-semibold text-white mb-3">Transactional</h3>
-            <p class="text-sm text-gray-400 mb-6">
-              Pay-as-you-go usage and professional services to complement subscriptions.
-            </p>
-            <ul class="space-y-3 text-sm text-gray-300 flex-1">
-              <li class="flex items-start">
-                <span class="text-secondary-400 mr-2 mt-0.5">•</span>
-                <span>
-                  <span class="font-semibold">AI Usage Credits:</span>
-                  FOT generations, drawing/Q&amp;A tokens, OCR pages (monthly pool + overage).
-                </span>
-              </li>
-              <li class="flex items-start">
-                <span class="text-secondary-400 mr-2 mt-0.5">•</span>
-                <span>
-                  <span class="font-semibold">Storage / API overage:</span>
-                  versioned master data and integrations.
-                </span>
-              </li>
-              <li class="flex items-start">
-                <span class="text-secondary-400 mr-2 mt-0.5">•</span>
-                <span>
-                  <span class="font-semibold">Professional services:</span>
-                  onboarding, ruleset build (NFPA/SS/FI), BIM/ERP integrations (fixed-fee).
-                </span>
-              </li>
-              <li class="flex items-start">
-                <span class="text-secondary-400 mr-2 mt-0.5">•</span>
-                <span>
-                  <span class="font-semibold">Partner revenue:</span>
-                  OEM component libraries &amp; marketplaces (rev-share).
-                </span>
-              </li>
-            </ul>
-            <div class="mt-8">
-              <NuxtLink to="/contact" class="btn-outline w-full text-center">
-                Discuss transactional model
-              </NuxtLink>
-            </div>
-          </div>
-        </div>
+    <section class="section-tight bg-ink-50">
+      <div class="container-site grid gap-10 lg:grid-cols-[1fr_1.6fr]">
+        <UiSectionHeader eyebrow="Principles" title="What applies to every quote" />
+        <ul class="grid gap-4 sm:grid-cols-2">
+          <li v-for="p in principles" :key="p.title" class="card p-5">
+            <p class="font-semibold text-ink-900">{{ p.title }}</p>
+            <p class="mt-1 text-sm text-ink-600">{{ p.text }}</p>
+          </li>
+        </ul>
       </div>
     </section>
 
-    <!-- CTA Section: Drive to Contact / Demo -->
-    <section class="cta-section section-padding relative overflow-hidden">
-      <div class="absolute inset-0 z-0 bg-gradient-to-br from-primary-900/90 via-dark-900 to-secondary-900/90"></div>
-      <div class="absolute inset-0 z-0 opacity-10">
-        <div class="h-full w-full bg-[repeating-linear-gradient(45deg,#ffffff,#ffffff_1px,transparent_1px,transparent_12px)]"></div>
-      </div>
-
-      <div class="container mx-auto px-4 relative z-10">
-        <div class="glass-panel p-8 md:p-12 rounded-2xl shadow-glass-lg max-w-5xl mx-auto">
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-            <div>
-              <h2 class="text-3xl md:text-4xl font-bold mb-4">
-                <span class="gradient-text">Need help choosing</span>
-                <span class="block text-white mt-2">the right plan?</span>
-              </h2>
-              <p class="text-gray-300 mb-6">
-                Share your project pipeline, team size and workflows — we&apos;ll recommend a mix of seats, AI credits and services that fits your budget.
-              </p>
-              <ul class="space-y-2 text-sm text-gray-300 mb-6">
-                <li class="flex items-start">
-                  <i class="fa-solid fa-check text-primary-400 mr-2 mt-0.5"></i>
-                  <span>Side‑by‑side comparison of Freemium vs. Subscription vs. Transactional.</span>
-                </li>
-                <li class="flex items-start">
-                  <i class="fa-solid fa-check text-primary-400 mr-2 mt-0.5"></i>
-                  <span>Custom quote for your region and regulatory requirements.</span>
-                </li>
-                <li class="flex items-start">
-                  <i class="fa-solid fa-check text-primary-400 mr-2 mt-0.5"></i>
-                  <span>Guidance on rollout, change management and adoption.</span>
-                </li>
-              </ul>
-              <NuxtLink to="/contact" class="btn-primary inline-flex items-center">
-                Talk to our team
-              </NuxtLink>
-            </div>
-
-            <div class="glass-panel-light p-6 rounded-xl">
-              <h3 class="text-xl font-semibold text-white mb-4">Get a tailored pricing overview</h3>
-              <p class="text-gray-300 text-sm mb-4">
-                We&apos;ll respond within 1 business day with next steps.
-              </p>
-              <NuxtLink to="/contact" class="btn-outline w-full text-center">
-                Share my requirements
-              </NuxtLink>
-              <p class="text-xs text-gray-500 mt-4">
-                No spam. No obligation. Just a clear view of how Deepcost can work for your business.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    <UiCtaBand title="Get a quote for your scope" lead="Tell us about your pipeline and team on a 30-minute discovery call. We will follow up with a written proposal." />
   </div>
 </template>
 
-<script setup>
-import { computed } from 'vue';
-import { useRoute } from 'vue-router';
-
-useHead({
-  title: 'Pricing & Business Model'
+<script setup lang="ts">
+import { CCOREX_URL } from '~/data/ccorex'
+const siteUrl = useRuntimeConfig().public.siteUrl as string
+useSeoMeta({
+  title: 'Pricing for software, talent and engineering',
+  description: 'How Newham prices CCorex software, monthly dedicated M&E engineers and fire protection or commercial engineering services: retainer, project or hybrid.',
+  ogTitle: 'How Newham prices its work',
+  ogDescription: 'CCorex subscriptions, monthly dedicated engineers, and retainer or project-based engineering services.',
+  ogUrl: siteUrl + '/pricing'
 })
+useHead({ link: [{ rel: 'canonical', href: siteUrl + '/pricing' }] })
 
-const route = useRoute();
+const models = [
+  {
+    icon: 'fa-solid fa-laptop-code', title: 'CCorex software',
+    text: 'Per-user subscription to the CCorex apps your business needs. Plans and pricing are on ccorex.com.',
+    bullets: ['Start with one app and add more', 'One sign-in across the suite', 'Onboarding planned with you'],
+    to: CCOREX_URL + '/pricing', cta: 'CCorex plans', external: true
+  },
+  {
+    icon: 'fa-solid fa-user-group', title: 'Talent outsourcing',
+    text: 'A monthly fee per dedicated professional, based on role, seniority and hours.',
+    bullets: ['Single specialist, project team or managed capacity', 'No recruitment fees', 'Scale up or down month to month'],
+    to: '/talent-outsourcing', cta: 'Talent outsourcing'
+  },
+  {
+    icon: 'fa-solid fa-fire-flame-curved', title: 'Engineering services',
+    text: 'Retainer, project-based or a hybrid of both, for fire protection design and commercial support.',
+    bullets: ['Retainer for a steady pipeline', 'Fixed price per deliverable', 'Hybrid: retainer plus project top-ups'],
+    to: '/engineering-services', cta: 'Engineering services'
+  }
+]
 
-const deepcostLink = computed(() => {
-  const baseUrl = 'https://deepcost.io';
-  const query = route.query;
-  const queryString = new URLSearchParams(query).toString();
-  return queryString ? `${baseUrl}?${queryString}` : baseUrl;
-});
+const principles = [
+  { title: 'Scope in writing', text: 'Deliverables, team, timelines and price are agreed before work starts.' },
+  { title: 'Priced in SGD', text: 'Services are billed monthly in Singapore dollars.' },
+  { title: 'No setup fees', text: 'No recruitment or setup fees for talent or engineering services.' },
+  { title: 'Third-party costs shown separately', text: 'PE endorsement and other third-party fees are quoted separately.' }
+]
 </script>

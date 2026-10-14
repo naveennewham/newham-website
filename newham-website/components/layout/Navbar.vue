@@ -1,342 +1,102 @@
 <template>
-  <header class="fixed top-0 left-0 right-0 z-50">
-    <nav class="glass-panel mx-4 my-4 md:mx-8 px-4 py-3 flex items-center justify-between">
-      <div class="flex items-center">
-        <NuxtLink to="/" class="flex items-center">
-          <img src="~/assets/Newham_Logo_white.png" alt="Newham Logo" class="h-10 w-auto mr-2" />
-        </NuxtLink>
-      </div>
-      
-      <!-- Desktop Navigation -->
-      <div class="hidden md:flex items-center space-x-8">
-        <NuxtLink
-          to="/"
-          class="text-gray-300 hover:text-white transition-colors duration-300"
-          :class="{ 'gradient-text font-medium': $route.path === '/' }"
-        >
-          Home
-        </NuxtLink>
+  <header class="sticky top-0 z-50 border-b border-ink-100 bg-white/90 backdrop-blur supports-[backdrop-filter]:bg-white/75">
+    <nav class="container-site flex h-16 items-center justify-between gap-6" aria-label="Main">
+      <NuxtLink to="/" class="flex shrink-0 items-center" aria-label="Newham Technological Solutions home">
+        <img src="/newham-logo.png" alt="Newham" class="h-7 w-auto" width="110" height="28" />
+      </NuxtLink>
 
-        <!-- CCorex with Dropdown -->
-        <div class="relative" ref="suiteRef">
-          <button type="button" @click="dropdownOpen = !dropdownOpen" class="text-gray-300 hover:text-white transition-colors duration-300 flex items-center gap-1">
-            Corex
-            <i class="fa-solid fa-chevron-down text-sm transition-transform"></i>
-          </button>
-
-          <!-- Dropdown Menu: unified CCorex Suite canvas -->
-          <!-- Backdrop -->
-          <div v-show="dropdownOpen" class="fixed inset-0 z-40" @click="dropdownOpen = false"></div>
-          <div v-show="dropdownOpen" class="fixed top-16 left-1/2 -translate-x-1/2 w-[72rem] max-w-[95vw] rounded-2xl shadow-2xl z-50 p-6 bg-white text-slate-800 ring-1 ring-slate-200/60 transition-transform duration-150"
-               style="width: min(95vw, 72rem);">
-            <!-- Suite header -->
-            <div class="flex items-center justify-between pb-4">
-              <div class="flex items-center gap-3">
-                <img src="~/assets/ccorex/Corex_logo.png" alt="CCorex" class="h-7 w-auto" />
-                <div>
-                  <div class="font-semibold text-slate-900">CCorex Suite</div>
-                  <div class="text-sm text-slate-500">One integrated platform with four focused apps</div>
-                </div>
-              </div>
-              <span class="inline-flex items-center rounded-full bg-cyan-100 text-cyan-700 text-xs font-semibold px-3 py-1">Part of CCorex</span>
-            </div>
-
-            <div class="grid grid-cols-3 gap-6">
-              <!-- Cols 1-2: Connected app grid (includes overview) -->
-              <div class="col-span-2">
-                <div class="rounded-xl ring-1 ring-slate-200/70 overflow-hidden bg-white">
-                  <div class="grid grid-cols-2 divide-x divide-y divide-slate-200/80">
-                    <!-- Overview tile -->
-                    <NuxtLink to="/ccorex" class="flex items-start gap-3 p-5 hover:bg-slate-50">
-                      <span class="inline-flex h-8 w-8 items-center justify-center rounded-full bg-cyan-100 text-cyan-600 text-base">🏠</span>
-                      <div>
-                        <div class="font-semibold leading-tight">CCorex Overview</div>
-                        <div class="text-sm text-slate-500">Unified platform for construction teams</div>
-                      </div>
-                    </NuxtLink>
-                    <!-- Apps tiles -->
-                    <template v-for="app in apps" :key="app.path">
-                      <NuxtLink :to="app.path" class="flex items-start gap-3 p-5 hover:bg-slate-50">
-                        <span class="inline-flex h-8 w-8 items-center justify-center rounded-full bg-cyan-100 text-cyan-600 text-base">{{ app.icon }}</span>
-                        <div>
-                          <div class="font-semibold leading-tight">{{ app.title }}</div>
-                          <div class="text-sm text-slate-500">{{ app.subtitle }}</div>
-                        </div>
-                      </NuxtLink>
-                    </template>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Col 3: CTA card integrated with suite styling -->
-              <div class="flex">
-                <div class="rounded-2xl ring-1 ring-slate-200/70 bg-slate-50 p-6 flex flex-col justify-between w-full">
-                  <div>
-                    <div class="font-semibold text-slate-900">Explore the full suite</div>
-                    <p class="text-sm text-slate-600 mt-2">See demos, pricing and customer stories on our dedicated site.</p>
-                  </div>
-                  <button @click="openExternal()" class="mt-4 inline-flex items-center justify-center rounded-lg bg-cyan-500 text-white px-4 py-2 font-semibold hover:bg-cyan-600">
-                    Open CCorex Site ↗
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Services with Dropdown -->
-        <div class="relative" ref="servicesRef">
-          <button type="button" @click="servicesDropdownOpen = !servicesDropdownOpen" class="text-gray-300 hover:text-white transition-colors duration-300 flex items-center gap-1">
-            Services
-            <i class="fa-solid fa-chevron-down text-sm transition-transform"></i>
-          </button>
-
-          <div v-show="servicesDropdownOpen" class="fixed inset-0 z-40" @click="servicesDropdownOpen = false"></div>
-          <div
-            v-show="servicesDropdownOpen"
-            class="fixed top-16 left-1/2 -translate-x-1/2 w-[56rem] max-w-[95vw] rounded-2xl shadow-2xl z-50 p-6 bg-white text-slate-800 ring-1 ring-slate-200/60 transition-transform duration-150"
-            style="width: min(95vw, 56rem);"
+      <ul class="hidden items-center gap-1 lg:flex">
+        <li ref="menuRef" class="relative" @mouseenter="menu = true" @mouseleave="menu = false">
+          <button
+            type="button"
+            class="flex items-center gap-1.5 rounded-lg px-3 py-2 text-sm font-medium text-ink-700 hover:text-ink-900"
+            :aria-expanded="menu"
+            aria-controls="ccorex-menu"
+            @click="menu = !menu"
           >
-            <div class="flex items-center justify-between pb-4">
-              <div>
-                <div class="font-semibold text-slate-900">Services</div>
-                <div class="text-sm text-slate-500">Three pillars for construction delivery</div>
-              </div>
-              <span class="inline-flex items-center rounded-full bg-slate-100 text-slate-700 text-xs font-semibold px-3 py-1">3 Pillars</span>
-            </div>
-
-            <div class="grid grid-cols-3 gap-6">
-              <div class="col-span-2">
-                <div class="rounded-xl ring-1 ring-slate-200/70 overflow-hidden bg-white">
-                  <div class="grid grid-cols-2 divide-x divide-y divide-slate-200/80">
-                    <NuxtLink to="/services" class="flex items-start gap-3 p-5 hover:bg-slate-50" @click="servicesDropdownOpen = false">
-                      <span class="inline-flex h-8 w-8 items-center justify-center rounded-full bg-slate-100 text-slate-600 text-base">▦</span>
-                      <div>
-                        <div class="font-semibold leading-tight">Services Overview</div>
-                        <div class="text-sm text-slate-500">Software, talent, and engineering support</div>
-                      </div>
-                    </NuxtLink>
-
-                    <NuxtLink to="/ccorex" class="flex items-start gap-3 p-5 hover:bg-slate-50" @click="servicesDropdownOpen = false">
-                      <span class="inline-flex h-8 w-8 items-center justify-center rounded-full bg-cyan-100 text-cyan-600 text-base">CC</span>
-                      <div>
-                        <div class="font-semibold leading-tight">CCorex Suite</div>
-                        <div class="text-sm text-slate-500">Construction software platform</div>
-                      </div>
-                    </NuxtLink>
-
-                    <NuxtLink to="/talent-outsourcing" class="flex items-start gap-3 p-5 hover:bg-slate-50" @click="servicesDropdownOpen = false">
-                      <span class="inline-flex h-8 w-8 items-center justify-center rounded-full bg-indigo-100 text-indigo-700 text-base">TO</span>
-                      <div>
-                        <div class="font-semibold leading-tight">Talent Outsourcing</div>
-                        <div class="text-sm text-slate-500">Domain-trained engineering teams</div>
-                      </div>
-                    </NuxtLink>
-
-                    <NuxtLink to="/engineering-services" class="flex items-start gap-3 p-5 hover:bg-slate-50" @click="servicesDropdownOpen = false">
-                      <span class="inline-flex h-8 w-8 items-center justify-center rounded-full bg-emerald-100 text-emerald-700 text-base">ES</span>
-                      <div>
-                        <div class="font-semibold leading-tight">Engineering Services</div>
-                        <div class="text-sm text-slate-500">FP design + commercial support</div>
-                      </div>
-                    </NuxtLink>
-                  </div>
+            CCorex software <i class="fa-solid fa-chevron-down text-[10px] transition-transform" :class="menu ? 'rotate-180' : ''" aria-hidden="true"></i>
+          </button>
+          <div v-show="menu" id="ccorex-menu" class="absolute left-0 top-full w-[680px] pt-2">
+            <div class="grid grid-cols-[1fr_230px] overflow-hidden rounded-2xl border border-ink-100 bg-white shadow-lift">
+              <ul class="grid grid-cols-2 gap-1 p-3">
+                <li v-for="a in ccorexApps" :key="a.slug">
+                  <a :href="ccorexAppUrl(a.slug)" target="_blank" rel="noopener" class="flex gap-3 rounded-xl p-3 hover:bg-ink-50" @click="menu = false">
+                    <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg" :class="a.color"><i :class="a.icon" aria-hidden="true"></i></span>
+                    <span>
+                      <span class="flex items-center gap-2 text-sm font-semibold text-ink-900">{{ a.name }}<span v-if="a.ai" class="chip-ai px-2 py-0 text-[10px]">AI</span><span v-else-if="a.status" class="chip px-2 py-0 text-[10px]">Early access</span></span>
+                      <span class="block text-xs leading-snug text-ink-500">{{ a.category }}</span>
+                    </span>
+                  </a>
+                </li>
+              </ul>
+              <div class="flex flex-col justify-between bg-brand-950 p-5 text-white">
+                <div>
+                  <p class="eyebrow-dark">CCorex</p>
+                  <p class="mt-2 text-sm leading-relaxed text-ink-200">Our AI-powered construction software suite. Estimating, project delivery and HR &amp; payroll on one login.</p>
                 </div>
-              </div>
-
-              <div class="flex">
-                <div class="rounded-2xl ring-1 ring-slate-200/70 bg-slate-50 p-6 flex flex-col justify-between w-full">
-                  <div>
-                    <div class="font-semibold text-slate-900">Not sure which pillar fits?</div>
-                    <p class="text-sm text-slate-600 mt-2">Book a 30-minute discovery call and we’ll recommend the right mix for your pipeline.</p>
-                  </div>
-                  <NuxtLink to="/contact" class="mt-4 inline-flex items-center justify-center rounded-lg bg-slate-900 text-white px-4 py-2 font-semibold hover:bg-slate-800" @click="servicesDropdownOpen = false">
-                    Book a Discovery Call
-                  </NuxtLink>
+                <div class="mt-4 space-y-2">
+                  <a :href="CCOREX_URL" target="_blank" rel="noopener" class="block text-sm font-semibold text-cyan-400 hover:text-white" @click="menu = false">Visit ccorex.com <i class="fa-solid fa-arrow-up-right-from-square ml-1 text-[11px]" aria-hidden="true"></i><span class="sr-only"> (opens in a new tab)</span></a>
+                  <a :href="CCOREX_SIGNIN_URL" class="block text-sm text-ink-200 hover:text-white" @click="menu = false">Sign in to CCorex</a>
                 </div>
               </div>
             </div>
           </div>
-        </div>
+        </li>
+        <li v-for="l in links" :key="l.to">
+          <NuxtLink :to="l.to" class="rounded-lg px-3 py-2 text-sm font-medium text-ink-700 hover:text-ink-900" active-class="!text-brand-700">{{ l.label }}</NuxtLink>
+        </li>
+      </ul>
 
-        <!-- Other Navigation Items -->
-        <NuxtLink v-for="item in navItems"
-          :key="item.path"
-          :to="item.path"
-          class="text-gray-300 hover:text-white transition-colors duration-300"
-          :class="{ 'gradient-text font-medium': $route.path === item.path }">
-          {{ item.name }}
-        </NuxtLink>
-        <NuxtLink to="/appointment" class="btn-primary text-sm">
-          Schedule Appointment
-        </NuxtLink>
+      <div class="hidden items-center gap-2 lg:flex">
+        <UiThemeToggle class="mr-1" />
+        <NuxtLink to="/contact" class="rounded-lg px-3 py-2 text-sm font-medium text-ink-700 hover:text-ink-900">Contact</NuxtLink>
+        <NuxtLink to="/appointment" class="btn-primary py-2.5">Book a discovery call</NuxtLink>
       </div>
-      
-      <!-- Mobile Menu Button -->
-      <button @click="mobileMenuOpen = !mobileMenuOpen" class="md:hidden text-gray-300 focus:outline-none">
-        <i v-if="!mobileMenuOpen" class="fa-solid fa-bars text-2xl"></i>
-        <i v-else class="fa-solid fa-xmark text-2xl"></i>
+
+      <button type="button" class="rounded-lg p-2 text-ink-900 lg:hidden" :aria-expanded="open" aria-controls="mobile-menu" :aria-label="open ? 'Close menu' : 'Open menu'" @click="open = !open">
+        <i :class="open ? 'fa-solid fa-xmark' : 'fa-solid fa-bars'" class="text-xl" aria-hidden="true"></i>
       </button>
     </nav>
-    
-    <!-- Mobile Menu -->
-    <transition
-      enter-active-class="transition duration-300 ease-out"
-      enter-from-class="transform -translate-y-8 opacity-0"
-      enter-to-class="transform translate-y-0 opacity-100"
-      leave-active-class="transition duration-200 ease-in"
-      leave-from-class="transform translate-y-0 opacity-100"
-      leave-to-class="transform -translate-y-8 opacity-0"
-    >
-      <div v-if="mobileMenuOpen" class="glass-panel mx-4 px-4 py-5 md:hidden">
-        <div class="flex flex-col space-y-4">
-          <NuxtLink to="/" @click="mobileMenuOpen = false" class="text-gray-300 hover:text-white py-2 transition-colors duration-300 font-semibold">
-            Home
-          </NuxtLink>
 
-          <!-- Services Mobile Menu -->
-          <div class="border-b border-gray-700/50 pb-4">
-            <NuxtLink to="/services" @click="mobileMenuOpen = false" class="text-gray-300 hover:text-white py-2 font-semibold block">
-              Services
-            </NuxtLink>
-            <div class="ml-4 space-y-2 mt-2">
-              <NuxtLink to="/ccorex" @click="mobileMenuOpen = false" class="text-gray-300 hover:text-white py-2 block text-sm">
-                ↳ CCorex Suite
-              </NuxtLink>
-              <NuxtLink to="/talent-outsourcing" @click="mobileMenuOpen = false" class="text-gray-300 hover:text-white py-2 block text-sm">
-                ↳ Engineering Talent Outsourcing
-              </NuxtLink>
-              <NuxtLink to="/engineering-services" @click="mobileMenuOpen = false" class="text-gray-300 hover:text-white py-2 block text-sm">
-                ↳ Construction Engineering Services
-              </NuxtLink>
-            </div>
-          </div>
-
-          <!-- CCorex Mobile Menu -->
-          <div class="border-b border-gray-700/50 pb-4">
-            <NuxtLink to="/ccorex" @click="mobileMenuOpen = false" class="text-gray-300 hover:text-cyan-400 py-2 font-semibold block">
-              CCorex Overview
-            </NuxtLink>
-            <button @click="openExternal(); mobileMenuOpen = false" class="text-left w-full text-gray-300 hover:text-cyan-400 py-2 font-semibold block">
-              Open CCorex Site ↗
-            </button>
-            <div class="ml-4 space-y-2 mt-2">
-              <NuxtLink to="/ccorex/deepcost" @click="mobileMenuOpen = false" class="text-gray-300 hover:text-cyan-400 py-2 block text-sm">
-                ↳ DeepCost
-              </NuxtLink>
-              <NuxtLink to="/ccorex/deeptrack" @click="mobileMenuOpen = false" class="text-gray-300 hover:text-cyan-400 py-2 block text-sm">
-                ↳ DeepTrack
-              </NuxtLink>
-              <NuxtLink to="/ccorex/deephr" @click="mobileMenuOpen = false" class="text-gray-300 hover:text-cyan-400 py-2 block text-sm">
-                ↳ DeepHR
-              </NuxtLink>
-              <NuxtLink to="/ccorex/deepplan-ai" @click="mobileMenuOpen = false" class="text-gray-300 hover:text-cyan-400 py-2 block text-sm">
-                ↳ DeepPlanAI
-              </NuxtLink>
-            </div>
-          </div>
-
-          <!-- Other Navigation Items -->
-          <NuxtLink v-for="item in navItems"
-            :key="item.path"
-            :to="item.path"
-            @click="mobileMenuOpen = false"
-            class="text-gray-300 hover:text-white py-2 transition-colors duration-300"
-            :class="{ 'gradient-text font-medium': $route.path === item.path }">
-            {{ item.name }}
-          </NuxtLink>
-          <NuxtLink to="/appointment" @click="mobileMenuOpen = false" class="btn-primary text-center mt-2">
-            Schedule Appointment
-          </NuxtLink>
-        </div>
+    <div v-show="open" id="mobile-menu" class="border-t border-ink-100 bg-white lg:hidden">
+      <div class="container-site max-h-[80vh] overflow-y-auto py-4">
+        <ul class="flex flex-col">
+          <li v-for="l in links" :key="l.to"><NuxtLink :to="l.to" class="block rounded-lg px-2 py-2.5 text-sm font-medium text-ink-800 hover:bg-ink-50">{{ l.label }}</NuxtLink></li>
+          <li><NuxtLink to="/contact" class="block rounded-lg px-2 py-2.5 text-sm font-medium text-ink-800 hover:bg-ink-50">Contact</NuxtLink></li>
+        </ul>
+        <p class="eyebrow mb-2 mt-4 border-t border-ink-100 pt-4">CCorex software</p>
+        <ul class="grid grid-cols-2 gap-1">
+          <li v-for="a in ccorexApps" :key="a.slug">
+            <a :href="ccorexAppUrl(a.slug)" target="_blank" rel="noopener" class="block rounded-lg px-2 py-2 text-sm font-medium text-ink-800 hover:bg-ink-50">{{ a.name }}</a>
+          </li>
+          <li><a :href="CCOREX_URL" target="_blank" rel="noopener" class="block rounded-lg px-2 py-2 text-sm font-semibold text-brand-700 hover:bg-ink-50">ccorex.com <i class="fa-solid fa-arrow-up-right-from-square text-[10px]" aria-hidden="true"></i></a></li>
+        </ul>
+        <div class="mt-4 flex items-center justify-between border-t border-ink-100 pt-4"><span class="text-sm font-medium text-ink-700">Theme</span><UiThemeToggle /></div>
+        <NuxtLink to="/appointment" class="btn-primary mt-4 w-full">Book a discovery call</NuxtLink>
       </div>
-    </transition>
+    </div>
   </header>
 </template>
 
-<script setup>
-import { ref, onMounted, onBeforeUnmount, watch } from 'vue';
-const config = useRuntimeConfig()
+<script setup lang="ts">
+import { ccorexApps, ccorexAppUrl, CCOREX_URL, CCOREX_SIGNIN_URL } from '~/data/ccorex'
 
-const mobileMenuOpen = ref(false);
-const dropdownOpen = ref(false)
-const suiteRef = ref(null)
-const servicesDropdownOpen = ref(false)
-const servicesRef = ref(null)
+const open = ref(false)
+const menu = ref(false)
+const menuRef = ref<HTMLElement | null>(null)
+const route = useRoute()
+watch(() => route.fullPath, () => { open.value = false; menu.value = false })
 
-const navItems = [
-  { name: 'About', path: '/about' },
-  { name: 'Blog', path: '/case-studies' },
-  { name: 'Testimonials', path: '/#testimonials' },
-  { name: 'Contact', path: '/contact' },
-  // Temporarily hiding Industries and Case Studies from navigation
-  // { name: 'Industries', path: '/industries' },
-  // { name: 'Case Studies', path: '/case-studies' }
-];
-
-const openExternal = () => {
-  const base = config.public.ccorexBaseUrl || 'https://ccorex.com'
-  window.open(base, '_blank', 'noopener')
-}
-
-// Apps data for submenu tiles
-const apps = [
-  {
-    title: 'DeepPlanAI',
-    subtitle: 'AI-powered digital takeoffs',
-    description: 'Automate takeoffs and quantity extraction from drawings in minutes.',
-    path: '/ccorex/deepplan-ai'
-  },
-  {
-    title: 'DeepCost',
-    subtitle: 'Accurate cost estimation',
-    description: 'Build precise BOQs and estimates for ACMV, Fire Fighting, ELV and more.',
-    path: '/ccorex/deepcost'
-  },
-  {
-    title: 'DeepTrack',
-    subtitle: 'Budget control & tracking',
-    description: 'Track budgets, commitments and variances with real-time visibility.',
-    path: '/ccorex/deeptrack'
-  },
-  {
-    title: 'DeepHR',
-    subtitle: 'Workforce management',
-    description: 'Manage attendance, compliance and labor costs across your sites.',
-    path: '/ccorex/deephr'
-  }
+const links = [
+  { to: '/talent-outsourcing', label: 'Talent outsourcing' },
+  { to: '/engineering-services', label: 'Engineering services' },
+  { to: '/industries', label: 'Industries' },
+  { to: '/about', label: 'About' }
 ]
 
-// Split apps into two nearly-equal columns for the mega menu
-const appCols = [apps.slice(0, Math.ceil(apps.length / 2)), apps.slice(Math.ceil(apps.length / 2))]
-
-// Close dropdown on outside click or ESC
-const onDocClick = (e) => {
-  const suiteEl = suiteRef.value
-  if (dropdownOpen.value && suiteEl && !suiteEl.contains(e.target)) dropdownOpen.value = false
-
-  const servicesEl = servicesRef.value
-  if (servicesDropdownOpen.value && servicesEl && !servicesEl.contains(e.target)) servicesDropdownOpen.value = false
-}
-const onKey = (e) => {
-  if (e.key === 'Escape') {
-    dropdownOpen.value = false
-    servicesDropdownOpen.value = false
-  }
-}
-onMounted(() => {
-  document.addEventListener('click', onDocClick)
-  document.addEventListener('keydown', onKey)
-})
-onBeforeUnmount(() => {
-  document.removeEventListener('click', onDocClick)
-  document.removeEventListener('keydown', onKey)
-})
-
-watch(dropdownOpen, (open) => {
-  if (open) servicesDropdownOpen.value = false
-})
-watch(servicesDropdownOpen, (open) => {
-  if (open) dropdownOpen.value = false
-})
+// Close the CCorex menu on Escape or outside click.
+const onKey = (e: KeyboardEvent) => { if (e.key === 'Escape') { menu.value = false; open.value = false } }
+const onDocClick = (e: MouseEvent) => { if (menu.value && menuRef.value && !menuRef.value.contains(e.target as Node)) menu.value = false }
+onMounted(() => { document.addEventListener('keydown', onKey); document.addEventListener('click', onDocClick) })
+onBeforeUnmount(() => { document.removeEventListener('keydown', onKey); document.removeEventListener('click', onDocClick) })
 </script>

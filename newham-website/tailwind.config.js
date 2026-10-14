@@ -1,67 +1,44 @@
 /** @type {import('tailwindcss').Config} */
+// Newham design tokens — shared with the CCorex site (see ../DESIGN_SYSTEM.md).
+// Brand teal comes from the logo (#005D6C) and the secondary cyan (#01ACC8).
+// "ai" is reserved for AI features (ARIVU, DeepPlan AI) only.
 export default {
   content: [
-    "./components/**/*.{js,vue,ts}",
-    "./layouts/**/*.vue",
-    "./pages/**/*.vue",
-    "./plugins/**/*.{js,ts}",
-    "./app.vue",
-    "./error.vue"
+    './components/**/*.{js,vue,ts}',
+    './layouts/**/*.vue',
+    './pages/**/*.vue',
+    './data/**/*.{js,ts}',
+    './app.vue',
+    './error.vue'
   ],
-  darkMode: 'class', // or 'media' for system preference
+  darkMode: 'class',
   theme: {
     extend: {
-      colors: {
-        primary: {
-          50: '#e6f3f4',
-          100: '#cce7ea',
-          200: '#99cfd5',
-          300: '#66b7c0',
-          400: '#339fab',
-          500: '#008796',
-          600: '#007a87',
-          700: '#006c78',
-          800: '#005D6C', // Brand primary color
-          900: '#004f5c',
-          950: '#00333c',
-        },
-        secondary: {
-          50: '#e6f9fc',
-          100: '#ccf3f9',
-          200: '#99e7f3',
-          300: '#66dbed',
-          400: '#33cfe7',
-          500: '#01ACC8', // Brand secondary color
-          600: '#009ab3',
-          700: '#00889e',
-          800: '#00778a',
-          900: '#006575',
-          950: '#00434d',
-        },
-        dark: {
-          100: '#d1d5db',
-          200: '#9ca3af',
-          300: '#6b7280',
-          400: '#4b5563',
-          500: '#374151',
-          600: '#334155',
-          700: '#1f2937',
-          800: '#111827',
-          900: '#0f172a',
-        }
-      },
       fontFamily: {
-        'sans': ['Inter', 'Poppins', 'sans-serif'],
+        sans: ['Inter', 'system-ui', 'sans-serif'],
+        display: ['"Inter Tight"', 'Inter', 'system-ui', 'sans-serif']
       },
-      backdropBlur: {
-        'xs': '2px',
+      colors: {
+        brand: {
+          50: 'rgb(var(--brand-50) / <alpha-value>)', 100: 'rgb(var(--brand-100) / <alpha-value>)', 200: 'rgb(var(--brand-200) / <alpha-value>)', 300: '#62bfcb', 400: '#2aa3b3',
+          500: '#0b8798', 600: '#006f7f', 700: '#005d6c', 800: '#064c58', 900: '#083f49', 950: '#062a33'
+        },
+        cyan: { 400: '#33cfe7', 500: '#01acc8', 600: '#009ab3' },
+        ink: Object.fromEntries([50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 950].map((k) => [k, `rgb(var(--ink-${k}) / <alpha-value>)`])),
+        ai: { 50: '#f3f1ff', 100: '#e9e5ff', 400: '#9b8afb', 500: '#7a5af8', 600: '#6938ef', 700: '#5925dc' },
+        mep: { mech: '#2563eb', elec: '#d97706', plumb: '#0891b2', fire: '#dc2626' }
       },
+      maxWidth: { site: '1240px' },
       boxShadow: {
-        'glass': '0 4px 30px rgba(0, 0, 0, 0.1)',
-        'glass-sm': '0 2px 15px rgba(0, 0, 0, 0.05)',
-        'glass-lg': '0 8px 40px rgba(0, 0, 0, 0.15)',
+        card: '0 1px 2px rgba(16,24,40,.05), 0 1px 3px rgba(16,24,40,.08)',
+        lift: '0 12px 32px -8px rgba(16,24,40,.18), 0 4px 8px -4px rgba(16,24,40,.08)',
+        frame: '0 30px 60px -20px rgba(6,42,51,.35), 0 18px 36px -18px rgba(0,0,0,.3)'
       },
-    },
+      backgroundImage: {
+        'hero-grid': 'linear-gradient(rgba(255,255,255,.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.05) 1px, transparent 1px)',
+        'ai-gradient': 'linear-gradient(135deg, #01acc8 0%, #7a5af8 100%)'
+      }
+    }
   },
-  plugins: [],
+  plugins: []
 }

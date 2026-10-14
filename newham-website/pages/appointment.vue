@@ -1,189 +1,108 @@
 <template>
-  <div class="product-page">
-    <section class="hero-section relative min-h-[40vh] flex items-center pt-24 pb-12 overflow-hidden">
-      <div class="absolute inset-0 z-0">
-        <div class="absolute inset-0 bg-dark-900"></div>
-        <div class="absolute inset-0 opacity-5">
-          <div class="h-full w-full bg-[repeating-linear-gradient(45deg,#005D6C,#005D6C_1px,transparent_1px,transparent_10px)]"></div>
-        </div>
-        <div class="absolute top-20 right-20 w-40 h-40 border-2 border-primary-500/10 transform rotate-45"></div>
-        <div class="absolute bottom-24 left-16 w-64 h-64 border-2 border-secondary-500/10 transform -rotate-12"></div>
-      </div>
-
-      <div class="container mx-auto px-4 relative z-10">
-        <div class="max-w-3xl mx-auto text-center">
-          <h1 class="text-4xl md:text-5xl font-bold mb-4 relative inline-block">
-            <span class="gradient-text">Schedule an Appointment</span>
-            <span class="block text-white mt-2">Book a call with the Newham team</span>
-            <span class="absolute -bottom-2 left-0 w-1/2 h-1 bg-primary-500 transform skew-x-12"></span>
-            <span class="absolute -bottom-2 right-0 w-1/3 h-1 bg-secondary-500 transform -skew-x-12"></span>
-          </h1>
-          <p class="text-lg text-gray-300 mt-6">
-            Pick a date and time that works for you and well send a confirmation email with meeting details.
-          </p>
-        </div>
+  <div>
+    <section class="relative overflow-hidden bg-hero text-white">
+      <div class="bg-grid pointer-events-none absolute inset-0 opacity-50" aria-hidden="true"></div>
+      <div class="container-site relative py-16 lg:py-20">
+        <p class="eyebrow-dark">Discovery call</p>
+        <h1 class="h-display mt-4 max-w-3xl text-white">Book a discovery call</h1>
+        <p class="lead-dark mt-6 max-w-2xl">Thirty minutes on your project pipeline, systems and team. We will suggest the right mix of CCorex software, dedicated engineers and engineering services — no obligation.</p>
       </div>
     </section>
 
-    <section class="section-padding relative overflow-hidden">
-      <div class="absolute inset-0 z-0">
-        <div class="absolute inset-0 bg-dark-900"></div>
-        <div class="absolute inset-0 opacity-5">
-          <div class="h-full w-full bg-[repeating-linear-gradient(135deg,#005D6C,#005D6C_1px,transparent_1px,transparent_12px)]"></div>
-        </div>
-      </div>
-
-      <div class="container mx-auto px-4 relative z-10">
-        <div class="max-w-3xl mx-auto glass-panel p-8 md:p-10 rounded-2xl shadow-glass-lg">
-          <h2 class="text-2xl md:text-3xl font-semibold text-white mb-6">Tell us a few details</h2>
-
-          <form @submit.prevent="submitAppointment" class="space-y-6">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <section class="section">
+      <div class="container-site grid gap-12 lg:grid-cols-[1.4fr_1fr]">
+        <div class="card p-6 sm:p-8">
+          <h2 class="text-2xl font-bold">Pick a time</h2>
+          <form class="mt-6 space-y-5" @submit.prevent="submitAppointment">
+            <div class="grid gap-5 sm:grid-cols-2">
               <div>
-                <label for="name" class="block text-sm font-medium text-gray-300 mb-1">Full name</label>
-                <input
-                  id="name"
-                  v-model="form.name"
-                  type="text"
-                  required
-                  class="w-full px-4 py-2 rounded-lg bg-dark-800/80 border border-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
-                  placeholder="Jane Doe"
-                />
+                <label for="name" class="field-label">Full name</label>
+                <input id="name" v-model="form.name" type="text" required autocomplete="name" class="field" />
               </div>
               <div>
-                <label for="email" class="block text-sm font-medium text-gray-300 mb-1">Work email</label>
-                <input
-                  id="email"
-                  v-model="form.email"
-                  type="email"
-                  required
-                  class="w-full px-4 py-2 rounded-lg bg-dark-800/80 border border-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
-                  placeholder="you@company.com"
-                />
+                <label for="email" class="field-label">Work email</label>
+                <input id="email" v-model="form.email" type="email" required autocomplete="email" class="field" />
               </div>
             </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="grid gap-5 sm:grid-cols-2">
               <div>
-                <label for="date" class="block text-sm font-medium text-gray-300 mb-1">Preferred date</label>
-                <input
-                  id="date"
-                  ref="dateInput"
-                  v-model="form.date"
-                  type="date"
-                  required
-                  @focus="openDatePicker"
-                  class="w-full px-4 py-2 rounded-lg bg-dark-800/80 border border-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
-                />
+                <label for="date" class="field-label">Preferred date</label>
+                <input id="date" ref="dateInput" v-model="form.date" type="date" :min="today" required class="field" @focus="openDatePicker" />
               </div>
               <div>
-                <label for="time" class="block text-sm font-medium text-gray-300 mb-1">Preferred time</label>
-                <select
-                  id="time"
-                  v-model="form.time"
-                  required
-                  class="w-full px-4 py-2 rounded-lg bg-dark-800/80 border border-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
-                >
+                <label for="time" class="field-label">Preferred time</label>
+                <select id="time" v-model="form.time" required class="field">
                   <option value="" disabled>Select a time slot</option>
-                  <option v-for="slot in timeOptions" :key="slot" :value="slot">
-                    {{ slot }}
-                  </option>
+                  <option v-for="slot in timeOptions" :key="slot" :value="slot">{{ slot }}</option>
                 </select>
               </div>
             </div>
-
             <div>
-              <label for="timezone" class="block text-sm font-medium text-gray-300 mb-1">Timezone</label>
-              <select
-                id="timezone"
-                v-model="form.timezone"
-                class="w-full px-4 py-2 rounded-lg bg-dark-800/80 border border-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
-              >
+              <label for="timezone" class="field-label">Timezone</label>
+              <select id="timezone" v-model="form.timezone" class="field">
                 <option value="" disabled>Select your timezone</option>
-                <option v-for="tz in timezoneOptions" :key="tz" :value="tz">
-                  {{ tz }}
-                </option>
+                <option v-for="tz in timezoneOptions" :key="tz" :value="tz">{{ tz }}</option>
               </select>
             </div>
-
             <div>
-              <label for="context" class="block text-sm font-medium text-gray-300 mb-1">What would you like to discuss?</label>
-              <textarea
-                id="context"
-                v-model="form.context"
-                rows="4"
-                class="w-full px-4 py-2 rounded-lg bg-dark-800/80 border border-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
-                placeholder="Share a bit about your projects, tools you use today, and your goals."
-              ></textarea>
+              <label for="context" class="field-label">What would you like to discuss?</label>
+              <textarea id="context" v-model="form.context" rows="4" class="field" placeholder="Your projects, the tools you use today, and what you need help with."></textarea>
             </div>
-
-            <button
-              type="submit"
-              class="w-full btn-primary flex items-center justify-center relative overflow-hidden"
-              :disabled="isSubmitting"
-            >
-              <i v-if="isSubmitting" class="fa-solid fa-spinner fa-spin -ml-1 mr-2 text-white"></i>
-              {{ isSubmitting ? 'Scheduling...' : 'Schedule appointment' }}
+            <label class="flex items-start gap-3 text-sm text-ink-600">
+              <input v-model="form.consent" type="checkbox" required class="mt-0.5 h-4 w-4 rounded border-ink-300 text-brand-700 focus:ring-brand-500" />
+              <span>I agree that Newham may contact me to arrange this call. If I accepted marketing cookies, Newham also records how I found the site. See the <NuxtLink to="/privacy" class="font-semibold text-brand-700 underline">privacy policy</NuxtLink>.</span>
+            </label>
+            <input v-model="form.website_url" type="text" name="website_url" tabindex="-1" autocomplete="off" class="hidden" aria-hidden="true" />
+            <button type="submit" class="btn-primary w-full sm:w-auto" :disabled="isSubmitting">
+              <i v-if="isSubmitting" class="fa-solid fa-spinner fa-spin" aria-hidden="true"></i>
+              {{ isSubmitting ? 'Sending…' : 'Request this time' }}
             </button>
-
-            <div v-if="submitSuccess" class="text-center p-3 rounded-lg bg-green-900/50 border border-green-700 text-green-100 text-sm">
-              Appointment request sent successfully! We will contact you shortly to confirm.
-            </div>
-
-            <div v-if="submitError" class="text-center p-3 rounded-lg bg-red-900/50 border border-red-700 text-red-100 text-sm">
-              {{ submitError }}
-            </div>
-
-            <p class="text-xs text-gray-400 text-center mt-3">
-              We'll send a confirmation email with meeting details after we review your request.
-            </p>
+            <p v-if="submitSuccess" role="status" class="rounded-lg border border-emerald-200 bg-emerald-50 px-4 py-3 text-sm text-emerald-800">Request sent. We will email you to confirm the meeting details.</p>
+            <p v-if="submitError" role="alert" class="rounded-lg border border-rose-200 bg-rose-50 px-4 py-3 text-sm text-rose-800">{{ submitError }}</p>
           </form>
         </div>
+
+        <aside class="space-y-6">
+          <div class="card">
+            <h2 class="text-lg font-bold">What we will cover</h2>
+            <ul class="mt-4 space-y-3 text-sm">
+              <li v-for="c in agenda" :key="c" class="flex gap-2.5 text-ink-700"><i class="fa-solid fa-check mt-1 text-brand-600" aria-hidden="true"></i>{{ c }}</li>
+            </ul>
+          </div>
+          <div class="card bg-ink-50">
+            <h2 class="text-base font-semibold">Have a live tender?</h2>
+            <p class="mt-2 text-sm text-ink-600">Mention it above. We can talk through how a take-off, BOQ or fire protection design would be scoped for it.</p>
+          </div>
+          <p class="text-sm text-ink-600">Prefer email? <a href="mailto:admin@newhamtech.com" class="font-semibold text-brand-700 hover:text-brand-900">admin@newhamtech.com</a></p>
+        </aside>
       </div>
     </section>
+
+    <UiCtaBand title="Questions before you book?" lead="Send us a message and we will reply by email, or read more about what we do." primary-label="Contact us" primary-to="/contact" secondary-label="Our services" secondary-to="/services" />
   </div>
 </template>
 
-<script setup>
-import { reactive, ref } from 'vue';
-
-useHead({
-  title: 'Schedule Appointment'
+<script setup lang="ts">
+const siteUrl = useRuntimeConfig().public.siteUrl as string
+useSeoMeta({
+  title: 'Book a discovery call',
+  description: 'Book a 30-minute discovery call with Newham about CCorex software, dedicated M&E engineers or fire protection and commercial engineering services.',
+  ogTitle: 'Book a discovery call with Newham',
+  ogDescription: 'Thirty minutes on your pipeline and team, with no obligation.',
+  ogUrl: siteUrl + '/appointment'
 })
+useHead({ link: [{ rel: 'canonical', href: siteUrl + '/appointment' }] })
 
-const form = reactive({
-  name: '',
-  email: '',
-  date: '',
-  time: '',
-  timezone: '',
-  context: ''
-});
+// The notification webhook still receives { name, email, date, time, timezone, context, consent }.
+const form = reactive({ name: '', email: '', date: '', time: '', timezone: 'GMT+8 – Singapore, Hong Kong', context: '', consent: false, website_url: '' })
+const { $track } = useNuxtApp()
+const isSubmitting = ref(false)
+const submitSuccess = ref(false)
+const submitError = ref('')
+const dateInput = ref<HTMLInputElement | null>(null)
+const today = new Date().toISOString().slice(0, 10)
 
-const isSubmitting = ref(false);
-const submitSuccess = ref(false);
-const submitError = ref('');
-
-const dateInput = ref(null);
-
-const timeOptions = [
-  '09:00',
-  '09:30',
-  '10:00',
-  '10:30',
-  '11:00',
-  '11:30',
-  '12:00',
-  '14:00',
-  '14:30',
-  '15:00',
-  '15:30',
-  '16:00',
-  '16:30',
-  '17:00',
-  '17:30'
-];
-
+const timeOptions = ['09:00', '09:30', '10:00', '10:30', '11:00', '11:30', '12:00', '14:00', '14:30', '15:00', '15:30', '16:00', '16:30', '17:00', '17:30']
 const timezoneOptions = [
   'GMT+8 – Singapore, Hong Kong',
   'IST (GMT+5:30) – India',
@@ -192,47 +111,29 @@ const timezoneOptions = [
   'EST (GMT-5) – US East Coast',
   'PST (GMT-8) – US West Coast',
   'AEST (GMT+10) – Sydney, Melbourne'
-];
+]
+const agenda = ['Your project pipeline and current workload', 'The tools and systems you use today', 'Where software, people or services would help most', 'Next steps and a written proposal if it fits']
 
 const openDatePicker = () => {
-  if (dateInput.value && typeof dateInput.value.showPicker === 'function') {
-    dateInput.value.showPicker();
-  }
-};
+  const el = dateInput.value as (HTMLInputElement & { showPicker?: () => void }) | null
+  try { el?.showPicker?.() } catch { /* not supported */ }
+}
 
 const submitAppointment = async () => {
-  if (!form.name || !form.email || !form.date || !form.time) {
-    return;
-  }
-
-  isSubmitting.value = true;
-  submitError.value = '';
-  submitSuccess.value = false;
-
+  if (!form.name || !form.email || !form.date || !form.time || !form.consent) return
+  isSubmitting.value = true
+  submitError.value = ''
+  submitSuccess.value = false
   try {
-    const response = await fetch('https://firefabx.com/webhook/newham-appointment', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(form),
-    });
-
-    if (response.ok) {
-      submitSuccess.value = true;
-      form.name = '';
-      form.email = '';
-      form.date = '';
-      form.time = '';
-      form.timezone = '';
-      form.context = '';
-    } else {
-      submitError.value = 'Failed to schedule appointment. Please try again.';
-    }
-  } catch (e) {
-    submitError.value = 'An error occurred. Please try again later.';
+    // Our server route stores the request in the CRM and still notifies the team as before.
+    await $fetch('/api/lead', { method: 'POST', body: { ...form, form: 'discovery_call', pagesViewed: $track.pagesViewed() } })
+    $track.lead('discovery_call')
+    submitSuccess.value = true
+    Object.assign(form, { name: '', email: '', date: '', time: '', context: '', consent: false })
+  } catch {
+    submitError.value = 'Your request could not be sent. Please try again or email admin@newhamtech.com.'
   } finally {
-    isSubmitting.value = false;
+    isSubmitting.value = false
   }
-};
+}
 </script>

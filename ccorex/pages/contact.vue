@@ -1,241 +1,127 @@
 <template>
   <div>
-    <!-- Hero Section -->
-    <section class="relative w-full min-h-[50vh] flex items-center justify-center overflow-hidden">
-      <div class="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900"></div>
-      <div class="absolute top-0 right-0 w-96 h-96 bg-primary-500/10 rounded-full blur-3xl"></div>
-      <div class="absolute bottom-0 left-0 w-96 h-96 bg-secondary-500/10 rounded-full blur-3xl"></div>
-
-      <div class="relative z-10 max-w-7xl mx-auto px-4 text-center pt-32 pb-20">
-        <h1 class="text-5xl md:text-7xl font-bold mb-6">
-          <span class="text-white">Let's Transform Your</span>
-          <br/>
-          <span class="bg-gradient-to-r from-primary-400 to-secondary-400 bg-clip-text text-transparent">
-            Construction Operations
-          </span>
-        </h1>
-        <p class="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto">
-          Schedule a personalized demo and see how CCorex can work for your team.
-        </p>
+    <!-- Hero -->
+    <section class="relative overflow-hidden bg-hero text-white">
+      <div class="bg-grid pointer-events-none absolute inset-0 opacity-50" aria-hidden="true"></div>
+      <div class="container-site relative pb-32 pt-16 lg:pt-20">
+        <div class="max-w-3xl">
+          <p class="eyebrow-dark">Book a live demo</p>
+          <h1 class="h-display mt-5 text-white">See CCorex run your business.</h1>
+          <p class="lead-dark mt-6 max-w-2xl">A 30-minute live demo on your own estimating, project or payroll workflow — not a generic slide deck. Tell us a little about your team and we will set it up.</p>
+        </div>
       </div>
     </section>
 
-    <!-- Contact Options -->
-    <section class="py-20 bg-slate-800">
-      <div class="max-w-7xl mx-auto px-4">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-          <div v-for="option in contactOptions" :key="option.title" class="p-8 rounded-xl border border-white/10 bg-white/5 text-center">
-            <div class="text-4xl mb-4"><i :class="option.icon"></i></div>
-            <h3 class="text-xl font-bold text-white mb-3">{{ option.title }}</h3>
-            <p class="text-gray-400 mb-4">{{ option.description }}</p>
-            <a :href="option.link" class="text-primary-400 font-semibold hover:text-primary-300 transition-colors">
-              {{ option.cta }}
-            </a>
+    <section class="relative -mt-20 pb-20">
+      <div class="container-site grid gap-8 lg:grid-cols-[1.5fr_1fr] lg:items-start">
+        <!-- Form -->
+        <div class="card p-6 shadow-lift sm:p-8">
+          <h2 class="text-2xl font-bold">Request a demo</h2>
+          <p class="mt-1 text-sm text-ink-600">Fields marked <span class="text-rose-600" aria-hidden="true">*</span><span class="sr-only">with an asterisk</span> are required.</p>
+
+          <div v-if="submitted" class="mt-6 rounded-xl border border-brand-200 bg-brand-50 p-5" role="status">
+            <p class="flex items-center gap-2 font-semibold text-brand-800"><i class="fa-solid fa-circle-check" aria-hidden="true"></i>{{ viaEmail ? 'Almost done — please send the email' : 'Request received' }}</p>
+            <p v-if="!viaEmail" class="mt-2 text-sm text-ink-700">Thank you. We have your request and will reply by email to arrange your demo. If it's urgent, write to <a href="mailto:admin@newhamtech.com" class="font-semibold text-brand-700 underline">admin@newhamtech.com</a>.</p>
+            <p v-else class="mt-2 text-sm text-ink-700">Your email app should have opened with your request addressed to <a href="mailto:admin@newhamtech.com" class="font-semibold text-brand-700 underline">admin@newhamtech.com</a>. Press send and we will reply to arrange your demo. If nothing opened, email us directly at that address.</p>
+            <button type="button" class="btn-secondary mt-4" @click="submitted = false">Edit my request</button>
           </div>
-        </div>
 
-        <!-- Demo Request Form -->
-        <div class="max-w-4xl mx-auto">
-          <div class="p-8 md:p-12 rounded-2xl border border-white/10 bg-white/5">
-            <div class="text-center mb-8">
-              <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
-                Request a Demo
-              </h2>
-              <p class="text-lg text-gray-300">
-                Fill out the form below and our team will reach out within 24 hours.
-              </p>
+          <form v-else class="mt-6 grid gap-5 sm:grid-cols-2" novalidate @submit.prevent="handleSubmit">
+            <!-- Honeypot for bots: hidden from people and screen readers. -->
+            <input v-model="form.website_url" type="text" name="website_url" tabindex="-1" autocomplete="off" class="hidden" aria-hidden="true" />
+            <div>
+              <label for="name" class="label">Full name <span class="text-rose-600" aria-hidden="true">*</span></label>
+              <input id="name" v-model.trim="form.name" type="text" autocomplete="name" required class="input" :aria-invalid="!!errors.name" aria-describedby="name-err" />
+              <p v-if="errors.name" id="name-err" class="err">{{ errors.name }}</p>
             </div>
-
-            <form @submit.prevent="handleSubmit" class="space-y-6">
-              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                  <label for="firstName" class="block text-sm font-semibold text-white mb-2">First Name *</label>
-                  <input
-                    id="firstName"
-                    v-model="form.firstName"
-                    type="text"
-                    required
-                    class="w-full px-4 py-3 rounded-lg bg-slate-900 border border-white/10 text-white placeholder-gray-500 focus:border-primary-500 focus:outline-none transition-colors"
-                    placeholder="John"
-                  />
-                </div>
-                <div>
-                  <label for="lastName" class="block text-sm font-semibold text-white mb-2">Last Name *</label>
-                  <input
-                    id="lastName"
-                    v-model="form.lastName"
-                    type="text"
-                    required
-                    class="w-full px-4 py-3 rounded-lg bg-slate-900 border border-white/10 text-white placeholder-gray-500 focus:border-primary-500 focus:outline-none transition-colors"
-                    placeholder="Smith"
-                  />
-                </div>
-              </div>
-
-              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                  <label for="email" class="block text-sm font-semibold text-white mb-2">Work Email *</label>
-                  <input
-                    id="email"
-                    v-model="form.email"
-                    type="email"
-                    required
-                    class="w-full px-4 py-3 rounded-lg bg-slate-900 border border-white/10 text-white placeholder-gray-500 focus:border-primary-500 focus:outline-none transition-colors"
-                    placeholder="john@company.com"
-                  />
-                </div>
-                <div>
-                  <label for="phone" class="block text-sm font-semibold text-white mb-2">Phone Number</label>
-                  <input
-                    id="phone"
-                    v-model="form.phone"
-                    type="tel"
-                    class="w-full px-4 py-3 rounded-lg bg-slate-900 border border-white/10 text-white placeholder-gray-500 focus:border-primary-500 focus:outline-none transition-colors"
-                    placeholder="+1 (555) 123-4567"
-                  />
-                </div>
-              </div>
-
-              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                  <label for="company" class="block text-sm font-semibold text-white mb-2">Company Name *</label>
-                  <input
-                    id="company"
-                    v-model="form.company"
-                    type="text"
-                    required
-                    class="w-full px-4 py-3 rounded-lg bg-slate-900 border border-white/10 text-white placeholder-gray-500 focus:border-primary-500 focus:outline-none transition-colors"
-                    placeholder="ABC Construction"
-                  />
-                </div>
-                <div>
-                  <label for="role" class="block text-sm font-semibold text-white mb-2">Your Role *</label>
-                  <select
-                    id="role"
-                    v-model="form.role"
-                    required
-                    class="w-full px-4 py-3 rounded-lg bg-slate-900 border border-white/10 text-white focus:border-primary-500 focus:outline-none transition-colors"
-                  >
-                    <option value="">Select your role</option>
-                    <option value="owner">Owner/CEO</option>
-                    <option value="director">Director/VP</option>
-                    <option value="manager">Project Manager</option>
-                    <option value="estimator">Estimator</option>
-                    <option value="engineer">Engineer</option>
-                    <option value="other">Other</option>
-                  </select>
-                </div>
-              </div>
-
-              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                  <label for="companyType" class="block text-sm font-semibold text-white mb-2">Company Type *</label>
-                  <select
-                    id="companyType"
-                    v-model="form.companyType"
-                    required
-                    class="w-full px-4 py-3 rounded-lg bg-slate-900 border border-white/10 text-white focus:border-primary-500 focus:outline-none transition-colors"
-                  >
-                    <option value="">Select type</option>
-                    <option value="gc">General Contractor</option>
-                    <option value="subcontractor">Subcontractor</option>
-                    <option value="developer">Developer</option>
-                    <option value="consultant">Consultant</option>
-                    <option value="other">Other</option>
-                  </select>
-                </div>
-                <div>
-                  <label for="teamSize" class="block text-sm font-semibold text-white mb-2">Team Size *</label>
-                  <select
-                    id="teamSize"
-                    v-model="form.teamSize"
-                    required
-                    class="w-full px-4 py-3 rounded-lg bg-slate-900 border border-white/10 text-white focus:border-primary-500 focus:outline-none transition-colors"
-                  >
-                    <option value="">Select size</option>
-                    <option value="1-10">1-10 employees</option>
-                    <option value="11-50">11-50 employees</option>
-                    <option value="51-200">51-200 employees</option>
-                    <option value="201-500">201-500 employees</option>
-                    <option value="500+">500+ employees</option>
-                  </select>
-                </div>
-              </div>
-
-              <div>
-                <label for="interestedApps" class="block text-sm font-semibold text-white mb-2">Interested Apps</label>
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                  <label v-for="app in apps" :key="app.value" class="flex items-center gap-2 cursor-pointer">
-                    <input
-                      type="checkbox"
-                      :value="app.value"
-                      v-model="form.interestedApps"
-                      class="w-4 h-4 rounded border-white/10 bg-slate-900 text-primary-500 focus:ring-primary-500"
-                    />
-                    <span class="text-sm text-gray-300">{{ app.label }}</span>
-                  </label>
-                </div>
-              </div>
-
-              <div>
-                <label for="message" class="block text-sm font-semibold text-white mb-2">Message</label>
-                <textarea
-                  id="message"
-                  v-model="form.message"
-                  rows="4"
-                  class="w-full px-4 py-3 rounded-lg bg-slate-900 border border-white/10 text-white placeholder-gray-500 focus:border-primary-500 focus:outline-none transition-colors resize-none"
-                  placeholder="Tell us about your needs and challenges..."
-                ></textarea>
-              </div>
-
-              <div class="flex items-start gap-3">
-                <input
-                  id="consent"
-                  v-model="form.consent"
-                  type="checkbox"
-                  required
-                  class="w-4 h-4 mt-1 rounded border-white/10 bg-slate-900 text-primary-500 focus:ring-primary-500"
-                />
-                <label for="consent" class="text-sm text-gray-400">
-                  I agree to receive communications from CCorex about products and services. I understand I can unsubscribe at any time. *
+            <div>
+              <label for="email" class="label">Work email <span class="text-rose-600" aria-hidden="true">*</span></label>
+              <input id="email" v-model.trim="form.email" type="email" autocomplete="email" required class="input" :aria-invalid="!!errors.email" aria-describedby="email-err" />
+              <p v-if="errors.email" id="email-err" class="err">{{ errors.email }}</p>
+            </div>
+            <div>
+              <label for="company" class="label">Company <span class="text-rose-600" aria-hidden="true">*</span></label>
+              <input id="company" v-model.trim="form.company" type="text" autocomplete="organization" required class="input" :aria-invalid="!!errors.company" aria-describedby="company-err" />
+              <p v-if="errors.company" id="company-err" class="err">{{ errors.company }}</p>
+            </div>
+            <div>
+              <label for="role" class="label">Your role</label>
+              <select id="role" v-model="form.role" class="input">
+                <option value="">Select your role</option>
+                <option v-for="r in roles" :key="r" :value="r">{{ r }}</option>
+              </select>
+            </div>
+            <div>
+              <label for="phone" class="label">Phone <span class="font-normal text-ink-500">(optional)</span></label>
+              <input id="phone" v-model.trim="form.phone" type="tel" autocomplete="tel" class="input" />
+            </div>
+            <div>
+              <label for="size" class="label">Company size</label>
+              <select id="size" v-model="form.size" class="input">
+                <option value="">Select company size</option>
+                <option v-for="s in sizes" :key="s" :value="s">{{ s }}</option>
+              </select>
+            </div>
+            <fieldset class="sm:col-span-2">
+              <legend class="label">Apps you are interested in</legend>
+              <div class="mt-1 grid gap-2 sm:grid-cols-2">
+                <label v-for="a in appOptions" :key="a" class="flex cursor-pointer items-center gap-3 rounded-lg border border-ink-200 px-3 py-2.5 text-sm text-ink-800 hover:border-brand-300 has-[:checked]:border-brand-600 has-[:checked]:bg-brand-50">
+                  <input v-model="form.apps" type="checkbox" :value="a" class="h-4 w-4 rounded border-ink-300 text-brand-700 accent-brand-700" />{{ a }}
                 </label>
               </div>
-
-              <button
-                type="submit"
-                :disabled="isSubmitting"
-                class="w-full px-8 py-4 rounded-lg bg-primary-500 text-slate-900 font-bold hover:bg-primary-400 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
-              >
-                {{ isSubmitting ? 'Submitting...' : 'Request Demo' }}
-              </button>
-
-              <p class="text-center text-sm text-gray-500">
-                By submitting this form, you agree to our <a href="#" class="text-primary-400 hover:underline">Privacy Policy</a> and <a href="#" class="text-primary-400 hover:underline">Terms of Service</a>.
-              </p>
-            </form>
-
-            <div v-if="submitSuccess" class="mt-6 p-4 rounded-lg bg-green-500/10 border border-green-500/30">
-              <p class="text-green-400 text-center"><i class="fa-solid fa-circle-check"></i> Thank you! We'll be in touch within 24 hours.</p>
+            </fieldset>
+            <div class="sm:col-span-2">
+              <label for="message" class="label">What would you like to see?</label>
+              <textarea id="message" v-model.trim="form.message" rows="4" class="input" placeholder="For example: how we would price an ACMV tender, or run payroll for site workers."></textarea>
             </div>
-          </div>
+            <div class="sm:col-span-2">
+              <label class="flex gap-3 text-sm leading-relaxed text-ink-700">
+                <input v-model="form.consent" type="checkbox" required class="mt-1 h-4 w-4 shrink-0 accent-brand-700" :aria-invalid="!!errors.consent" aria-describedby="consent-err" />
+                <span>I agree that Newham Technological Solutions may use the details above to contact me about a CCorex demo. We only use them to respond to this request and handle them in line with Singapore’s Personal Data Protection Act (PDPA). If you accepted marketing cookies, we also record how you found us. See our <NuxtLink to="/privacy" class="font-semibold text-brand-700 underline">privacy policy</NuxtLink>. You can ask us to delete your details at any time by emailing admin@newhamtech.com. <span class="text-rose-600" aria-hidden="true">*</span></span>
+              </label>
+              <p v-if="errors.consent" id="consent-err" class="err">{{ errors.consent }}</p>
+            </div>
+            <div class="sm:col-span-2">
+              <button type="submit" class="btn-primary w-full sm:w-auto" :disabled="sending">{{ sending ? 'Sending…' : 'Request my demo' }} <i class="fa-solid fa-arrow-right text-xs" aria-hidden="true"></i></button>
+              <p class="mt-3 text-xs text-ink-500">Submitting opens your email app with your request addressed to admin@newhamtech.com.</p>
+            </div>
+          </form>
         </div>
+
+        <!-- Side -->
+        <aside class="space-y-6">
+          <div class="card p-6 shadow-lift">
+            <h2 class="text-lg font-bold">What happens next</h2>
+            <ol class="mt-5 space-y-5">
+              <li v-for="(s, i) in nextSteps" :key="s.title" class="flex gap-4">
+                <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-brand-700 text-sm font-bold text-white">{{ i + 1 }}</span>
+                <div><p class="font-semibold text-ink-900">{{ s.title }}</p><p class="mt-0.5 text-sm text-ink-600">{{ s.text }}</p></div>
+              </li>
+            </ol>
+          </div>
+          <div class="card p-6">
+            <h2 class="text-lg font-bold">Prefer email?</h2>
+            <p class="mt-2 text-sm text-ink-600">Write to us about demos, pricing or support.</p>
+            <a href="mailto:admin@newhamtech.com" class="mt-4 inline-flex items-center gap-2 font-semibold text-brand-700 hover:text-brand-900"><i class="fa-solid fa-envelope" aria-hidden="true"></i>admin@newhamtech.com</a>
+          </div>
+          <div class="rounded-2xl bg-brand-950 p-6 text-white">
+            <p class="eyebrow-dark">In your demo</p>
+            <ul class="mt-4 space-y-2.5 text-sm text-ink-200">
+              <li v-for="d in demoPoints" :key="d" class="flex gap-2.5"><i class="fa-solid fa-check mt-1 text-cyan-400" aria-hidden="true"></i>{{ d }}</li>
+            </ul>
+            <p class="mt-5 text-xs text-ink-300">CCorex is delivered by Newham Technological Solutions, Singapore.</p>
+          </div>
+        </aside>
       </div>
     </section>
 
     <!-- FAQ -->
-    <section class="py-20 bg-gradient-to-b from-slate-800 to-slate-900">
-      <div class="max-w-4xl mx-auto px-4">
-        <div class="text-center mb-16">
-          <h2 class="text-4xl md:text-5xl font-bold mb-6 text-white">
-            Common Questions
-          </h2>
-        </div>
-
-        <div class="space-y-4">
-          <details v-for="faq in faqs" :key="faq.question" class="p-6 rounded-xl border border-white/10 bg-white/5">
-            <summary class="text-lg font-semibold text-white cursor-pointer">{{ faq.question }}</summary>
-            <p class="mt-4 text-gray-400">{{ faq.answer }}</p>
-          </details>
+    <section class="section-tight bg-ink-50">
+      <div class="container-site grid gap-10 lg:grid-cols-[1fr_1.6fr]">
+        <UiSectionHeader eyebrow="Before you book" title="Common questions" lead="More answers on our FAQ page." />
+        <div>
+          <UiFaqList :items="faqs" />
+          <NuxtLink to="/faq" class="mt-6 inline-flex font-semibold text-brand-700 hover:text-brand-900">Read the full FAQ <i class="fa-solid fa-arrow-right ml-2 mt-1 text-xs" aria-hidden="true"></i></NuxtLink>
         </div>
       </div>
     </section>
@@ -243,106 +129,81 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
-
-const contactOptions = [
-  {
-    icon: 'fa-solid fa-comments',
-    title: 'Live Chat',
-    description: 'Chat with our team in real-time.',
-    cta: 'Start Chat',
-    link: '#'
-  },
-  {
-    icon: 'fa-solid fa-envelope',
-    title: 'Email Us',
-    description: 'Send us your questions anytime.',
-    cta: 'sales@ccorex.com',
-    link: 'mailto:sales@ccorex.com'
-  },
-  {
-    icon: 'fa-solid fa-phone',
-    title: 'Call Us',
-    description: 'Speak with a product specialist.',
-    cta: '+1 (800) 123-4567',
-    link: 'tel:+18001234567'
-  }
-]
-
-const apps = [
-  { label: 'DeepPlan AI', value: 'deepplanai' },
-  { label: 'DeepCost', value: 'deepcost' },
-  { label: 'DeepTrack', value: 'deeptrack' },
-  { label: 'DeepHR', value: 'deephr' }
-]
-
-const form = ref({
-  firstName: '',
-  lastName: '',
-  email: '',
-  phone: '',
-  company: '',
-  role: '',
-  companyType: '',
-  teamSize: '',
-  interestedApps: [],
-  message: '',
-  consent: false
+const config = useRuntimeConfig()
+useSeoMeta({
+  title: 'Book a demo',
+  description: 'Book a 30-minute live demo of CCorex on your own estimating, project or payroll workflow. Tell us about your team, or email us at admin@newhamtech.com.',
+  ogTitle: 'Book a CCorex demo',
+  ogDescription: 'See DeepCost, DeepTrack, DeepHR and ARIVU AI on your own workflow in a 30-minute live demo.'
 })
+useHead({ link: [{ rel: 'canonical', href: config.public.siteUrl + '/contact' }] })
 
-const isSubmitting = ref(false)
-const submitSuccess = ref(false)
+const roles = ['Owner / Managing Director', 'General Manager', 'Estimation / QS', 'Project Manager', 'Procurement / Finance', 'HR / Admin', 'Site Engineer / Supervisor', 'IT', 'Other']
+const sizes = ['1–20 employees', '21–50 employees', '51–200 employees', '201–500 employees', '500+ employees']
+const appOptions = ['DeepCost — tender estimation', 'DeepTrack — project delivery', 'DeepHR — HR & payroll', 'DeepPlan AI — drawing take-off', 'ARIVU AI — AI assistant', 'Deep Drive & PDF Editor (coming soon)', 'Not sure yet — the whole suite']
+const nextSteps = [
+  { title: 'We reply to you', text: 'Our team replies by email to understand your workflow and agree a time.' },
+  { title: 'Live demo on your workflow', text: '30 minutes on the apps you chose, using examples close to your work.' },
+  { title: 'Plan and tailored quote', text: 'A recommended plan, onboarding approach and per-user quote.' }
+]
+const demoPoints = ['Your estimating, project or payroll workflow', 'ARIVU AI answering from your data across apps', 'One sign-in, shared users, roles per app', 'Plans and onboarding for your team']
 
-const handleSubmit = async () => {
-  isSubmitting.value = true
-  
-  // Simulate API call
-  await new Promise(resolve => setTimeout(resolve, 1500))
-  
-  console.log('Form submitted:', form.value)
-  
-  isSubmitting.value = false
-  submitSuccess.value = true
-  
-  // Reset form
-  setTimeout(() => {
-    form.value = {
-      firstName: '',
-      lastName: '',
-      email: '',
-      phone: '',
-      company: '',
-      role: '',
-      companyType: '',
-      teamSize: '',
-      interestedApps: [],
-      message: '',
-      consent: false
-    }
-    submitSuccess.value = false
-  }, 3000)
+const blank = () => ({ name: '', email: '', company: '', role: '', phone: '', size: '', apps: [] as string[], message: '', consent: false, website_url: '' })
+const form = ref(blank())
+const errors = ref<Record<string, string>>({})
+const submitted = ref(false)
+const sending = ref(false)
+const viaEmail = ref(false)
+const { $track } = useNuxtApp()
+
+function validate() {
+  const e: Record<string, string> = {}
+  if (!form.value.name) e.name = 'Please enter your name.'
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.value.email)) e.email = 'Please enter a valid work email.'
+  if (!form.value.company) e.company = 'Please enter your company.'
+  if (!form.value.consent) e.consent = 'Please agree so we can contact you.'
+  errors.value = e
+  return Object.keys(e).length === 0
+}
+
+// Sends the request to our CRM. If that isn't reachable, falls back to a prefilled email.
+async function handleSubmit() {
+  if (!validate()) return
+  sending.value = true
+  try {
+    await $fetch('/api/lead', { method: 'POST', body: { ...form.value, form: 'demo_request', pagesViewed: $track.pagesViewed() } })
+    $track.lead('demo_request')
+    viaEmail.value = false
+    submitted.value = true
+    return
+  } catch {
+    // fall through to email
+  } finally {
+    sending.value = false
+  }
+  const f = form.value
+  const body = [
+    `Name: ${f.name}`, `Work email: ${f.email}`, `Company: ${f.company}`, `Role: ${f.role || '-'}`,
+    `Phone: ${f.phone || '-'}`, `Company size: ${f.size || '-'}`, `Apps of interest: ${f.apps.join(', ') || '-'}`,
+    '', 'Message:', f.message || '-', '', 'PDPA consent given: yes'
+  ].join('\n')
+  const href = `mailto:admin@newhamtech.com?subject=${encodeURIComponent(`CCorex demo request — ${f.company}`)}&body=${encodeURIComponent(body)}`
+  window.location.href = href
+  viaEmail.value = true
+  submitted.value = true
 }
 
 const faqs = [
-  {
-    question: 'How long does the demo take?',
-    answer: 'Our personalized demos typically last 30-45 minutes. We tailor the demo to your specific needs and use cases.'
-  },
-  {
-    question: 'Is there a free trial available?',
-    answer: 'Yes! We offer a 14-day free trial with full access to all features. No credit card required.'
-  },
-  {
-    question: 'How long does implementation take?',
-    answer: 'Most customers are up and running in 2-3 weeks. We provide dedicated onboarding support and training.'
-  },
-  {
-    question: 'Can I integrate with my existing tools?',
-    answer: 'Absolutely. CCorex integrates with popular accounting, project management, and BIM tools. We also offer a REST API for custom integrations.'
-  },
-  {
-    question: 'What kind of support do you provide?',
-    answer: 'We offer 24/7 email and chat support, plus dedicated account managers for enterprise customers. Training and onboarding are included.'
-  }
+  { q: 'How long is the demo?', a: 'About 30 minutes. We focus on the apps and workflows you tell us about in the form.' },
+  { q: 'Do we have to buy the whole suite?', a: 'No. You can start with one flagship app — DeepCost, DeepTrack or DeepHR — and add apps later on the same sign-in.' },
+  { q: 'How do we get pricing?', a: 'Pricing is shared on request. Email admin@newhamtech.com or use this form and we will prepare a quote.' },
+  { q: 'Do you help import our data?', a: 'Yes. Onboarding includes configuring your organisation and roles and importing data such as your price library, customers, users and employees.' }
 ]
 </script>
+
+<style scoped>
+.label { @apply mb-1.5 block text-sm font-semibold text-ink-900; }
+.input { @apply block w-full rounded-lg border border-ink-200 bg-white px-3.5 py-2.5 text-sm text-ink-900 placeholder:text-ink-400 focus:border-brand-600 focus:outline-none focus:ring-2 focus:ring-brand-100; }
+.input[aria-invalid='true'] { @apply border-rose-400; }
+.err { @apply mt-1.5 text-xs font-medium text-rose-600; }
+</style>

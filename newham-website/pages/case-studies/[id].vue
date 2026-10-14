@@ -1,109 +1,63 @@
 <template>
-  <div class="case-study-detail-page">
-    <div v-if="project" class="pt-24 pb-16">
-      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="max-w-4xl mx-auto">
-           <!-- Navigation -->
-           <div class="mb-8">
-            <NuxtLink to="/case-studies" class="inline-flex items-center text-primary-400 hover:text-primary-300 transition-colors">
-              <i class="fa-solid fa-arrow-left mr-2"></i>
-              Back to Case Studies
-            </NuxtLink>
-          </div>
-
-          <!-- Hero Image -->
-          <div class="relative h-64 md:h-96 w-full rounded-2xl overflow-hidden mb-8 shadow-glass-lg">
-            <img :src="project.image" :alt="project.title" class="w-full h-full object-cover" />
-            <div class="absolute inset-0 bg-gradient-to-t from-dark-900 to-transparent opacity-60"></div>
-            <div class="absolute bottom-6 left-6 md:bottom-10 md:left-10">
-              <span class="px-3 py-1 text-sm font-medium rounded-full bg-primary-600/90 text-white mb-4 inline-block">
-                {{ project.category }}
-              </span>
-              <h1 class="text-3xl md:text-5xl font-bold text-white">{{ project.title }}</h1>
-            </div>
-          </div>
-
-          <!-- Content -->
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div class="md:col-span-2 space-y-8">
-              <div class="glass-panel p-8 rounded-xl">
-                <h2 class="text-2xl font-bold text-white mb-4">Project Overview</h2>
-                <p class="text-gray-300 text-lg leading-relaxed">{{ project.description }}</p>
-                <p class="text-gray-300 mt-4">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                </p>
-              </div>
-              
-              <div class="glass-panel p-8 rounded-xl">
-                <h2 class="text-2xl font-bold text-white mb-4">The Challenge</h2>
-                <p class="text-gray-300">
-                  Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                </p>
-              </div>
-
-              <div class="glass-panel p-8 rounded-xl">
-                <h2 class="text-2xl font-bold text-white mb-4">The Solution</h2>
-                <p class="text-gray-300">
-                  Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
-                </p>
-              </div>
-            </div>
-
-            <div class="space-y-6">
-              <div class="glass-panel p-6 rounded-xl">
-                <h3 class="text-lg font-semibold text-white mb-4 border-b border-gray-700 pb-2">Project Details</h3>
-                <ul class="space-y-4">
-                  <li>
-                    <span class="block text-gray-500 text-xs uppercase tracking-wider">Client</span>
-                    <span class="text-white font-medium">{{ project.client }}</span>
-                  </li>
-                  <li>
-                    <span class="block text-gray-500 text-xs uppercase tracking-wider">Date</span>
-                    <span class="text-white font-medium">{{ project.date }}</span>
-                  </li>
-                  <li>
-                    <span class="block text-gray-500 text-xs uppercase tracking-wider">Category</span>
-                    <span class="text-white font-medium">{{ project.category }}</span>
-                  </li>
-                </ul>
-              </div>
-
-              <div class="glass-panel p-6 rounded-xl">
-                <h3 class="text-lg font-semibold text-white mb-4 border-b border-gray-700 pb-2">Technologies</h3>
-                <div class="flex flex-wrap gap-2">
-                  <span 
-                    v-for="tech in project.technologies" 
-                    :key="tech"
-                    class="px-3 py-1 bg-dark-700 text-primary-300 text-xs rounded-lg border border-dark-600"
-                  >
-                    {{ tech }}
-                  </span>
-                </div>
-              </div>
-            </div>
-          </div>
+  <div v-if="t">
+    <section class="relative overflow-hidden bg-hero text-white">
+      <div class="bg-grid pointer-events-none absolute inset-0 opacity-50" aria-hidden="true"></div>
+      <div class="container-site relative py-20 lg:py-24">
+        <NuxtLink to="/case-studies" class="text-sm font-medium text-ink-300 hover:text-white"><i class="fa-solid fa-arrow-left mr-1 text-xs" aria-hidden="true"></i> All trades</NuxtLink>
+        <div class="mt-6 flex items-center gap-4">
+          <span class="flex h-12 w-12 items-center justify-center rounded-xl bg-white/10 text-cyan-400"><i :class="t.icon" class="text-lg" aria-hidden="true"></i></span>
+          <p class="eyebrow-dark">Project experience</p>
         </div>
+        <h1 class="h-display mt-4 max-w-3xl text-white">{{ t.name }}</h1>
+        <p class="lead-dark mt-6 max-w-2xl">{{ t.summary }}</p>
       </div>
-    </div>
-    <div v-else class="min-h-screen flex items-center justify-center">
-      <div class="text-center">
-        <h1 class="text-4xl font-bold text-white mb-4">Case Study Not Found</h1>
-        <NuxtLink to="/case-studies" class="btn-primary">Back to Case Studies</NuxtLink>
+    </section>
+
+    <section class="section">
+      <div class="container-site grid gap-12 lg:grid-cols-[1.4fr_1fr]">
+        <div>
+          <h2 class="h-section">Typical deliverables</h2>
+          <ul class="mt-8 grid gap-3 sm:grid-cols-2">
+            <li v-for="d in t.deliverables" :key="d" class="flex gap-3 rounded-xl border border-ink-100 bg-white p-4 shadow-card">
+              <i class="fa-solid fa-circle-check mt-0.5 text-brand-600" aria-hidden="true"></i><span class="text-sm text-ink-800">{{ d }}</span>
+            </li>
+          </ul>
+        </div>
+        <aside class="space-y-6">
+          <div class="card">
+            <h2 class="text-base font-semibold">Standards &amp; formats</h2>
+            <ul class="mt-3 flex flex-wrap gap-2"><li v-for="s in t.standards" :key="s" class="chip">{{ s }}</li></ul>
+          </div>
+          <div class="card">
+            <h2 class="text-base font-semibold">Roles involved</h2>
+            <ul class="mt-3 flex flex-wrap gap-2"><li v-for="r in t.roles" :key="r" class="chip">{{ r }}</li></ul>
+          </div>
+          <div class="card bg-ink-50">
+            <h2 class="text-base font-semibold">Ways to engage</h2>
+            <p class="mt-2 text-sm text-ink-600">Dedicated people through <NuxtLink to="/talent-outsourcing" class="font-semibold text-brand-700">talent outsourcing</NuxtLink>, or scoped deliverables through <NuxtLink to="/engineering-services" class="font-semibold text-brand-700">engineering services</NuxtLink>.</p>
+          </div>
+        </aside>
       </div>
-    </div>
+    </section>
+
+    <UiCtaBand :title="`Discuss your ${t.name.toLowerCase()} work`" />
   </div>
 </template>
 
-<script setup>
-import { computed } from 'vue';
-import { useRoute } from 'vue-router';
-import { caseStudies } from '~/utils/caseStudiesData';
+<script setup lang="ts">
+import { tradeById } from '~/data/experience'
+const route = useRoute()
+const id = String(route.params.id)
+const t = tradeById(id)
+if (!t) throw createError({ statusCode: 404, statusMessage: 'Page not found', fatal: true })
 
-const route = useRoute();
-const projectId = route.params.id;
-const project = caseStudies.find(p => p.id === projectId);
-
-useHead({
-  title: project ? project.title : 'Case Study Not Found'
-});
+const siteUrl = useRuntimeConfig().public.siteUrl as string
+useSeoMeta({
+  title: `${t!.name}: M&E project experience`,
+  description: `${t!.summary}`.slice(0, 160),
+  ogTitle: `${t!.name} — Newham project experience`,
+  ogDescription: t!.summary,
+  ogUrl: `${siteUrl}/case-studies/${id}`
+})
+useHead({ link: [{ rel: 'canonical', href: `${siteUrl}/case-studies/${id}` }] })
 </script>

@@ -1,390 +1,231 @@
 <template>
   <div>
-    <!-- Hero Section -->
-    <section class="relative w-full min-h-[70vh] flex items-center justify-center overflow-hidden">
-      <div class="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900"></div>
-      <div class="absolute top-0 right-0 w-96 h-96 bg-primary-500/10 rounded-full blur-3xl"></div>
-      <div class="absolute bottom-0 left-0 w-96 h-96 bg-secondary-500/10 rounded-full blur-3xl"></div>
-
-      <div class="relative z-10 max-w-7xl mx-auto px-4 text-center pt-32 pb-20">
-        <h1 class="text-5xl md:text-7xl font-bold mb-6">
-          <span class="text-white">Simple, Transparent</span>
-          <br/>
-          <span class="bg-gradient-to-r from-primary-400 to-secondary-400 bg-clip-text text-transparent">
-            Pricing
-          </span>
-        </h1>
-        <p class="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto mb-8">
-          Choose the plan that fits your team. All plans include 24/7 support and free updates.
-        </p>
-        
-        <!-- Billing Toggle -->
-        <div class="flex items-center justify-center gap-4 mb-4">
-          <span :class="billingCycle === 'monthly' ? 'text-white font-semibold' : 'text-gray-400'">Monthly</span>
-          <button 
-            @click="billingCycle = billingCycle === 'monthly' ? 'annual' : 'monthly'"
-            class="relative w-14 h-7 rounded-full bg-slate-700 transition-colors"
-            :class="billingCycle === 'annual' ? 'bg-primary-500' : ''"
-          >
-            <span class="absolute top-1 left-1 w-5 h-5 rounded-full bg-white transition-transform"
-              :class="billingCycle === 'annual' ? 'translate-x-7' : ''"
-            ></span>
-          </button>
-          <span :class="billingCycle === 'annual' ? 'text-white font-semibold' : 'text-gray-400'">
-            Annual
-            <span class="ml-2 px-2 py-1 rounded-full bg-green-500/10 text-green-400 text-xs font-semibold">Save 20%</span>
-          </span>
+    <!-- Hero -->
+    <section class="relative overflow-hidden bg-hero text-white">
+      <div class="bg-grid pointer-events-none absolute inset-0 opacity-50" aria-hidden="true"></div>
+      <div class="container-site relative pb-28 pt-16 text-center lg:pt-24">
+        <p class="eyebrow-dark">Plans &amp; packages</p>
+        <h1 class="h-display mx-auto mt-5 max-w-4xl text-white">Subscribe to the suite. Scale as you grow.</h1>
+        <p class="lead-dark mx-auto mt-6 max-w-2xl">Flexible per-user pricing — bundle the apps that fit your business and get a tailored quote. Start with one workflow and add apps when you are ready.</p>
+        <div class="mt-8 flex flex-wrap justify-center gap-3">
+          <NuxtLink to="/contact" class="btn-accent">Get a tailored quote <i class="fa-solid fa-arrow-right text-xs" aria-hidden="true"></i></NuxtLink>
+          <a href="#compare" class="btn-ghost-dark">Compare plans</a>
         </div>
       </div>
     </section>
 
-    <!-- Pricing Tiers -->
-    <section class="py-20 bg-slate-800">
-      <div class="max-w-7xl mx-auto px-4">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div v-for="plan in pricingPlans" :key="plan.name" 
-            class="relative p-8 rounded-2xl border transition-all"
-            :class="plan.popular ? 'border-primary-500 bg-primary-500/5 shadow-xl shadow-primary-500/10 scale-105' : 'border-white/10 bg-white/5'"
-          >
-            <div v-if="plan.popular" class="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-primary-500 text-slate-900 text-sm font-bold">
-              Most Popular
-            </div>
-
-            <h3 class="text-2xl font-bold text-white mb-2">{{ plan.name }}</h3>
-            <p class="text-gray-400 mb-6">{{ plan.description }}</p>
-
-            <div class="mb-6">
-              <div class="flex items-baseline gap-2">
-                <span class="text-5xl font-bold text-white">
-                  {{ billingCycle === 'monthly' ? plan.priceMonthly : plan.priceAnnual }}
-                </span>
-                <span class="text-gray-400">/month</span>
-              </div>
-              <p class="text-sm text-gray-500 mt-2">{{ plan.billing }}</p>
-            </div>
-
-            <ul class="space-y-4 mb-8">
-              <li v-for="feature in plan.features" :key="feature" class="flex items-start gap-3 text-gray-300">
-                <i class="fa-solid fa-check text-primary-400 text-lg mt-0.5"></i>
-                <span>{{ feature }}</span>
-              </li>
+    <!-- Plans -->
+    <section class="relative -mt-16 pb-20">
+      <div class="container-site">
+        <div class="grid gap-5 lg:grid-cols-3">
+          <div v-for="p in plans" :key="p.name" class="card relative flex flex-col p-7" :class="p.popular ? 'border-brand-600 ring-1 ring-brand-600 shadow-lift' : 'shadow-lift'">
+            <span v-if="p.popular" class="absolute -top-3 left-7 rounded-full bg-brand-700 px-3 py-1 text-xs font-semibold text-white">Most popular</span>
+            <span class="icon-tile"><i :class="p.icon" aria-hidden="true"></i></span>
+            <h2 class="mt-5 text-2xl font-bold">{{ p.name }}</h2>
+            <p class="mt-1 text-sm text-ink-600">{{ p.for }}</p>
+            <p class="mt-5 border-y border-ink-100 py-4 text-sm font-semibold text-ink-900">Per-user pricing · <span class="font-normal text-ink-600">tailored quote</span></p>
+            <ul class="mt-5 flex-1 space-y-3 text-sm">
+              <li v-for="f in p.features" :key="f" class="flex gap-2.5"><i class="fa-solid fa-check mt-1 text-brand-600" aria-hidden="true"></i>{{ f }}</li>
             </ul>
-
-            <a :href="plan.cta.link" 
-              class="block text-center px-6 py-4 rounded-lg font-bold transition-all"
-              :class="plan.popular 
-                ? 'bg-primary-500 text-slate-900 hover:bg-primary-400' 
-                : 'border-2 border-primary-500 text-primary-400 hover:bg-primary-500 hover:text-slate-900'"
-            >
-              {{ plan.cta.text }}
-            </a>
+            <NuxtLink to="/contact" class="mt-8" :class="p.popular ? 'btn-primary' : 'btn-secondary'">Get a tailored quote</NuxtLink>
           </div>
         </div>
-
-        <p class="text-center text-gray-400 mt-12">
-          All plans include free onboarding, training, and 24/7 support. No setup fees.
-        </p>
+        <p class="mt-8 text-center text-sm text-ink-600">Pricing is shared on request — email <a href="mailto:admin@newhamtech.com" class="font-semibold text-brand-700 hover:text-brand-900">admin@newhamtech.com</a> or <NuxtLink to="/contact" class="font-semibold text-brand-700 hover:text-brand-900">book a demo</NuxtLink>.</p>
       </div>
     </section>
 
-    <!-- Feature Comparison -->
-    <section class="py-20 bg-gradient-to-b from-slate-800 to-slate-900">
-      <div class="max-w-7xl mx-auto px-4">
-        <div class="text-center mb-16">
-          <h2 class="text-4xl md:text-5xl font-bold mb-6 text-white">
-            Compare Plans
-          </h2>
-          <p class="text-xl text-gray-300 max-w-3xl mx-auto">
-            See what's included in each plan.
-          </p>
-        </div>
+    <!-- Included in every plan -->
+    <section class="section bg-ink-50">
+      <div class="container-site">
+        <UiSectionHeader center eyebrow="In every plan" title="What every CCorex plan includes" lead="Whichever plan you choose, your apps run on the same secure platform." />
+        <ul class="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <li v-for="f in included" :key="f.title" class="flex gap-4 rounded-2xl border border-ink-100 bg-white p-5 shadow-card">
+            <span class="icon-tile h-10 w-10 shrink-0" :class="f.ai ? 'bg-ai-50 text-ai-700' : ''"><i :class="f.icon" aria-hidden="true"></i></span>
+            <div><p class="font-semibold text-ink-900">{{ f.title }}</p><p class="mt-1 text-sm text-ink-600">{{ f.text }}</p></div>
+          </li>
+        </ul>
+      </div>
+    </section>
 
-        <div class="overflow-x-auto">
-          <table class="w-full min-w-[800px]">
+    <!-- Comparison -->
+    <section id="compare" class="section scroll-mt-20">
+      <div class="container-site">
+        <UiSectionHeader center eyebrow="Compare" title="Suite plans side by side" />
+        <div class="mt-12 overflow-x-auto rounded-2xl border border-ink-100 bg-white shadow-card">
+          <table class="w-full min-w-[720px] text-sm">
+            <caption class="sr-only">Comparison of Essentials, Business and Enterprise plans</caption>
             <thead>
-              <tr class="border-b border-white/10">
-                <th class="text-left py-4 px-6 text-white font-semibold">Feature</th>
-                <th v-for="plan in pricingPlans" :key="plan.name" class="text-center py-4 px-6">
-                  <div class="text-white font-semibold">{{ plan.name }}</div>
-                </th>
+              <tr class="border-b border-ink-100 bg-ink-50">
+                <th scope="col" class="w-[40%] px-5 py-4 text-left text-xs font-semibold uppercase tracking-wider text-ink-500">Feature</th>
+                <th v-for="p in plans" :key="p.name" scope="col" class="px-4 py-4 text-center font-display text-base font-bold text-ink-900">{{ p.name }}</th>
               </tr>
             </thead>
             <tbody>
-              <template v-for="(category, catIndex) in featureComparison" :key="catIndex">
-                <tr>
-                  <td colspan="4" class="py-4 px-6 bg-white/5">
-                    <h3 class="text-lg font-bold text-white">{{ category.category }}</h3>
-                  </td>
-                </tr>
-                <tr v-for="feature in category.features" :key="feature.name" class="border-b border-white/10 hover:bg-white/5">
-                  <td class="py-4 px-6 text-gray-300">{{ feature.name }}</td>
-                  <td v-for="plan in pricingPlans" :key="plan.name" class="text-center py-4 px-6">
-                    <i v-if="feature.availability[plan.key] === true" class="fa-solid fa-circle-check text-primary-400 text-2xl"></i>
-                    <span v-else-if="feature.availability[plan.key]" class="text-gray-400 text-sm">{{ feature.availability[plan.key] }}</span>
-                    <span v-else class="text-gray-600 text-2xl">—</span>
+              <template v-for="g in comparison" :key="g.group">
+                <tr class="bg-white"><th colspan="4" scope="colgroup" class="px-5 pb-2 pt-6 text-left text-xs font-semibold uppercase tracking-wider text-brand-700">{{ g.group }}</th></tr>
+                <tr v-for="r in g.rows" :key="r.label" class="border-t border-ink-100">
+                  <th scope="row" class="px-5 py-3.5 text-left font-medium text-ink-800">{{ r.label }}</th>
+                  <td v-for="(v, i) in r.values" :key="i" class="px-4 py-3.5 text-center">
+                    <template v-if="v === true"><i class="fa-solid fa-circle-check text-brand-600" aria-hidden="true"></i><span class="sr-only">Included</span></template>
+                    <template v-else-if="v === false"><span class="text-ink-300" aria-hidden="true">–</span><span class="sr-only">Not included</span></template>
+                    <span v-else class="text-ink-700">{{ v }}</span>
                   </td>
                 </tr>
               </template>
             </tbody>
           </table>
         </div>
+        <p class="mt-4 text-center text-xs text-ink-500">Exact user limits and modules are confirmed in your quote.</p>
       </div>
     </section>
 
-    <!-- Add-ons -->
-    <section class="py-20 bg-slate-900">
-      <div class="max-w-7xl mx-auto px-4">
-        <div class="text-center mb-16">
-          <h2 class="text-4xl md:text-5xl font-bold mb-6 text-white">
-            Optional Add-ons
-          </h2>
-          <p class="text-xl text-gray-300 max-w-3xl mx-auto">
-            Enhance your plan with additional features and services.
-          </p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          <div v-for="addon in addons" :key="addon.name" class="p-6 rounded-xl border border-white/10 bg-white/5">
-            <div class="text-3xl mb-4"><i :class="addon.icon"></i></div>
-            <h3 class="text-xl font-bold text-white mb-2">{{ addon.name }}</h3>
-            <p class="text-gray-400 mb-4">{{ addon.description }}</p>
-            <div class="text-2xl font-bold text-primary-400 mb-4">{{ addon.price }}</div>
-            <a href="/contact" class="inline-flex items-center gap-2 text-primary-400 font-semibold hover:gap-3 transition-all">
-              Add to Plan
-              <i class="fa-solid fa-arrow-right"></i>
-            </a>
+    <!-- Per-app tiers -->
+    <section class="section bg-ink-50">
+      <div class="container-site">
+        <UiSectionHeader center eyebrow="Buying a single app?" title="Per-app tiers" lead="Each flagship app is also available in Starter, Growth and Enterprise tiers, priced per user (per employee for DeepHR)." />
+        <div class="mt-12 grid gap-5 lg:grid-cols-3">
+          <div v-for="a in appTiers" :key="a.name" class="card flex flex-col">
+            <div class="flex items-center gap-3">
+              <span class="icon-tile" :class="a.color"><i :class="a.icon" aria-hidden="true"></i></span>
+              <div>
+                <h3 class="text-lg font-bold">{{ a.name }}</h3>
+                <p class="text-xs text-ink-500">{{ a.tagline }}</p>
+              </div>
+            </div>
+            <div class="mt-5 flex-1 space-y-4">
+              <div v-for="t in a.tiers" :key="t.name" class="rounded-xl border border-ink-100 p-4" :class="t.popular ? 'border-brand-200 bg-brand-50/50' : ''">
+                <p class="flex items-center justify-between gap-2 text-sm font-semibold text-ink-900">{{ t.name }}<span class="text-xs font-normal text-ink-500">{{ t.for }}</span></p>
+                <ul class="mt-2 space-y-1 text-sm text-ink-600">
+                  <li v-for="f in t.features" :key="f" class="flex gap-2"><i class="fa-solid fa-check mt-1 text-[10px] text-brand-600" aria-hidden="true"></i>{{ f }}</li>
+                </ul>
+              </div>
+            </div>
+            <NuxtLink :to="`/products/${a.slug}`" class="mt-6 text-sm font-semibold text-brand-700 hover:text-brand-900">Explore {{ a.name }} <i class="fa-solid fa-arrow-right ml-1 text-xs" aria-hidden="true"></i></NuxtLink>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- How quoting works -->
+    <section class="section">
+      <div class="container-site">
+        <UiSectionHeader eyebrow="How quoting works" title="A quote that matches how you work" />
+        <div class="mt-10"><UiStepFlow :steps="quoteSteps" /></div>
+      </div>
+    </section>
+
     <!-- FAQ -->
-    <section class="py-20 bg-slate-800">
-      <div class="max-w-4xl mx-auto px-4">
-        <div class="text-center mb-16">
-          <h2 class="text-4xl md:text-5xl font-bold mb-6 text-white">
-            Pricing FAQs
-          </h2>
-        </div>
-
-        <div class="space-y-4">
-          <details v-for="faq in pricingFaqs" :key="faq.question" class="p-6 rounded-xl border border-white/10 bg-white/5">
-            <summary class="text-lg font-semibold text-white cursor-pointer">{{ faq.question }}</summary>
-            <p class="mt-4 text-gray-400">{{ faq.answer }}</p>
-          </details>
-        </div>
+    <section class="section-tight bg-ink-50">
+      <div class="container-site grid gap-10 lg:grid-cols-[1fr_1.6fr]">
+        <UiSectionHeader eyebrow="Pricing FAQ" title="Questions about plans" lead="Anything else? Email admin@newhamtech.com." />
+        <UiFaqList :items="faqs" />
       </div>
     </section>
 
-    <!-- CTA -->
-    <section class="py-20 bg-gradient-to-b from-slate-800 to-slate-900">
-      <div class="max-w-4xl mx-auto px-4 text-center">
-        <h2 class="text-4xl md:text-5xl font-bold mb-6 text-white">
-          Ready to Get Started?
-        </h2>
-        <p class="text-xl text-gray-300 mb-10">
-          Start your 14-day free trial. No credit card required.
-        </p>
-        <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <a href="/contact" class="px-8 py-4 rounded-lg bg-primary-500 text-slate-900 font-bold hover:bg-primary-400 transition-all">
-            Start Free Trial
-          </a>
-          <a href="/contact" class="px-8 py-4 rounded-lg border-2 border-primary-500 text-primary-400 font-bold hover:bg-primary-500 hover:text-slate-900 transition-all">
-            Schedule Demo
-          </a>
-        </div>
-      </div>
-    </section>
+    <UiCtaBand title="Get a quote for your team" lead="Tell us which apps you need and roughly how many users. We will come back with a plan and a tailored per-user quote." primary-label="Get a tailored quote" secondary-label="See the platform" secondary-to="/platform" />
   </div>
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+const config = useRuntimeConfig()
+useSeoMeta({
+  title: 'Pricing & plans',
+  description: 'CCorex plans: Essentials, Business and Enterprise. Per-user pricing for estimating, project delivery and HR & payroll apps — get a tailored quote.',
+  ogTitle: 'CCorex pricing — Essentials, Business and Enterprise plans',
+  ogDescription: 'Flexible per-user pricing for DeepCost, DeepTrack and DeepHR. Bundle the apps that fit your business and get a tailored quote.'
+})
+useHead({ link: [{ rel: 'canonical', href: config.public.siteUrl + '/pricing' }] })
 
-const billingCycle = ref<'monthly' | 'annual'>('monthly')
-
-const pricingPlans = [
-  {
-    name: 'Starter',
-    key: 'starter',
-    description: 'Perfect for small teams getting started',
-    priceMonthly: '$299',
-    priceAnnual: '$239',
-    billing: 'per month, billed monthly',
-    features: [
-      '5 users included',
-      '10 active projects',
-      'DeepCost + DeepTrack',
-      'Email support',
-      '10GB storage',
-      'Mobile apps',
-      'Basic reporting'
-    ],
-    cta: {
-      text: 'Start Free Trial',
-      link: '/contact'
-    }
-  },
-  {
-    name: 'Professional',
-    key: 'professional',
-    description: 'For growing teams that need more power',
-    priceMonthly: '$799',
-    priceAnnual: '$639',
-    billing: 'per month, billed monthly',
-    popular: true,
-    features: [
-      '25 users included',
-      'Unlimited projects',
-      'All 4 apps included',
-      'Priority support',
-      '100GB storage',
-      'API access',
-      'Advanced analytics',
-      'Custom integrations',
-      'SSO (Single Sign-On)'
-    ],
-    cta: {
-      text: 'Start Free Trial',
-      link: '/contact'
-    }
-  },
-  {
-    name: 'Enterprise',
-    key: 'enterprise',
-    description: 'For large organizations with custom needs',
-    priceMonthly: 'Custom',
-    priceAnnual: 'Custom',
-    billing: 'Contact sales for pricing',
-    features: [
-      'Unlimited users',
-      'Unlimited projects',
-      'All 4 apps included',
-      'Dedicated account manager',
-      'Unlimited storage',
-      'Custom integrations',
-      'SLA guarantee',
-      'On-premise option',
-      'Advanced security',
-      'Custom training'
-    ],
-    cta: {
-      text: 'Contact Sales',
-      link: '/contact'
-    }
-  }
+const plans = [
+  { name: 'Essentials', icon: 'fa-solid fa-seedling', for: 'Start with one workflow', features: ['Choose 1 flagship app', 'Core modules & dashboard', 'ARIVU AI assistant', 'SSO & user management', 'Deep Drive & PDF Editor (coming soon)'] },
+  { name: 'Business', icon: 'fa-solid fa-building', for: 'Run the business end to end', popular: true, features: ['DeepCost + DeepTrack + DeepHR', 'Shared user base & roles', 'ARIVU across all apps', 'Singapore & India payroll', 'Higher user limits'] },
+  { name: 'Enterprise', icon: 'fa-solid fa-city', for: 'Multiple organisations & scale', features: ['Full suite incl. DeepPlan AI', 'Multi-organisation management', 'Advanced roles & audit', 'Priority CRM-integration access', 'Priority support & onboarding'] }
 ]
-
-const featureComparison = [
+const included = [
+  { icon: 'fa-solid fa-key', title: 'Single sign-on', text: 'One CCorex login across every app you subscribe to.' },
+  { icon: 'fa-solid fa-users-gear', title: 'User & role management', text: 'One shared user base with centrally managed roles.' },
+  { icon: 'fa-solid fa-wand-magic-sparkles', title: 'ARIVU AI assistant', text: 'Answers, charts and exports from your own data, in every app you subscribe to.', ai: true },
+  { icon: 'fa-solid fa-bolt', title: 'Automatic provisioning', text: 'Subscribe and your apps are activated automatically.' },
+  { icon: 'fa-solid fa-user-shield', title: 'Encryption & access control', text: 'Personal and configuration fields encrypted, roles per app, and audit logs for finance, HR changes and period unlocks.' },
+  { icon: 'fa-solid fa-folder-open', title: 'Deep Drive & PDF Editor', text: 'Included with every active subscription when they launch. Coming soon.' },
+  { icon: 'fa-solid fa-cloud', title: 'Cloud-based', text: 'No servers to run and no hardware to buy.' }
+]
+const comparison = [
   {
-    category: 'Apps Included',
-    features: [
-      { name: 'DeepPlan AI (Takeoffs)', availability: { starter: false, professional: true, enterprise: true } },
-      { name: 'DeepCost (Estimation)', availability: { starter: true, professional: true, enterprise: true } },
-      { name: 'DeepTrack (Project Management)', availability: { starter: true, professional: true, enterprise: true } },
-      { name: 'DeepHR (Workforce)', availability: { starter: false, professional: true, enterprise: true } }
+    group: 'Apps',
+    rows: [
+      { label: 'Flagship apps', values: ['1 of DeepCost, DeepTrack or DeepHR', 'DeepCost + DeepTrack + DeepHR', 'Full suite'] },
+      { label: 'DeepPlan AI', values: [false, false, true] },
+      { label: 'Deep Drive & PDF Editor (coming soon)', values: [true, true, true] },
+      { label: 'Core modules & dashboard', values: [true, true, true] }
     ]
   },
   {
-    category: 'Users & Projects',
-    features: [
-      { name: 'Number of Users', availability: { starter: '5 users', professional: '25 users', enterprise: 'Unlimited' } },
-      { name: 'Active Projects', availability: { starter: '10 projects', professional: 'Unlimited', enterprise: 'Unlimited' } },
-      { name: 'Storage', availability: { starter: '10GB', professional: '100GB', enterprise: 'Unlimited' } }
+    group: 'Platform',
+    rows: [
+      { label: 'SSO & user management', values: [true, true, true] },
+      { label: 'Shared user base & roles across apps', values: ['Single app', true, true] },
+      { label: 'Multi-organisation management', values: [false, false, true] },
+      { label: 'Advanced roles & audit', values: [false, false, true] },
+      { label: 'User limits', values: ['Standard', 'Higher', 'Tailored'] }
     ]
   },
   {
-    category: 'Features',
-    features: [
-      { name: 'Mobile Apps', availability: { starter: true, professional: true, enterprise: true } },
-      { name: 'Real-time Sync', availability: { starter: true, professional: true, enterprise: true } },
-      { name: 'API Access', availability: { starter: false, professional: true, enterprise: true } },
-      { name: 'Custom Integrations', availability: { starter: false, professional: true, enterprise: true } },
-      { name: 'Advanced Analytics', availability: { starter: false, professional: true, enterprise: true } },
-      { name: 'White Labeling', availability: { starter: false, professional: false, enterprise: true } }
+    group: 'AI & HR',
+    rows: [
+      { label: 'ARIVU AI assistant', values: ['In your app', 'Across all apps', 'Across all apps'] },
+      { label: 'Face-recognition attendance', values: ['With DeepHR', true, true] },
+      { label: 'Singapore & India payroll', values: ['With DeepHR', true, true] }
     ]
   },
   {
-    category: 'Security & Compliance',
-    features: [
-      { name: 'SSO (Single Sign-On)', availability: { starter: false, professional: true, enterprise: true } },
-      { name: 'Role-based Access', availability: { starter: true, professional: true, enterprise: true } },
-      { name: 'Audit Logs', availability: { starter: false, professional: true, enterprise: true } },
-      { name: 'SLA Guarantee', availability: { starter: false, professional: false, enterprise: true } },
-      { name: 'On-premise Deployment', availability: { starter: false, professional: false, enterprise: true } }
-    ]
-  },
-  {
-    category: 'Support',
-    features: [
-      { name: 'Email Support', availability: { starter: true, professional: true, enterprise: true } },
-      { name: 'Priority Support', availability: { starter: false, professional: true, enterprise: true } },
-      { name: 'Dedicated Account Manager', availability: { starter: false, professional: false, enterprise: true } },
-      { name: 'Custom Training', availability: { starter: false, professional: false, enterprise: true } },
-      { name: 'Implementation Support', availability: { starter: 'Basic', professional: 'Standard', enterprise: 'Premium' } }
+    group: 'Support',
+    rows: [
+      { label: 'Onboarding & support', values: ['Standard', 'Standard', 'Priority'] },
+      { label: 'Priority CRM-integration access (roadmap)', values: [false, false, true] },
+      { label: 'Priority support', values: [false, false, true] }
     ]
   }
 ]
-
-const addons = [
+const appTiers = [
   {
-    name: 'Additional Storage',
-    icon: 'fa-solid fa-hard-drive',
-    description: 'Extra storage for drawings and documents',
-    price: '$50/100GB'
+    name: 'DeepCost', slug: 'deepcost', tagline: 'MEP estimation', icon: 'fa-solid fa-calculator', color: 'bg-sky-50 text-sky-700',
+    tiers: [
+      { name: 'Starter', for: 'Small estimating teams', features: ['Opportunities, area schedules & MTO', 'Price library & area, component and FOT reviews'] },
+      { name: 'Growth', for: 'Growing contractors', popular: true, features: ['Checklist approvals at every stage', 'Order revisions, validation & price history'] },
+      { name: 'Enterprise', for: 'Multi-team estimating', features: ['Custom roles, per-trade assignment & master-data upload', 'Email notifications & priority support'] }
+    ]
   },
   {
-    name: 'Advanced Analytics',
-    icon: 'fa-solid fa-chart-bar',
-    description: 'Custom dashboards and BI tools',
-    price: '$199/month'
+    name: 'DeepTrack', slug: 'deeptrack', tagline: 'Project delivery & cost control', icon: 'fa-solid fa-diagram-project', color: 'bg-amber-50 text-amber-700',
+    tiers: [
+      { name: 'Starter', for: 'Single projects', features: ['Projects, customer POs & contract value', 'Budgets, variance & standard approvals'] },
+      { name: 'Growth', for: 'Scaling project businesses', popular: true, features: ['Procurement (PR → PO → invoice), client claims', 'Manpower, timesheets & scheduled reports'] },
+      { name: 'Enterprise', for: 'Multi-entity contractors', features: ['Month-end cost allocation & Zoho Books link', 'Screen-by-role matrix, budget templates & audit log'] }
+    ]
   },
   {
-    name: 'Custom Training',
-    icon: 'fa-solid fa-graduation-cap',
-    description: 'Personalized training sessions',
-    price: '$500/session'
-  },
-  {
-    name: 'Implementation',
-    icon: 'fa-solid fa-rocket',
-    description: 'Dedicated implementation support',
-    price: 'Custom'
+    name: 'DeepHR', slug: 'deephr', tagline: 'HR & payroll (Singapore, India)', icon: 'fa-solid fa-user-group', color: 'bg-emerald-50 text-emerald-700',
+    tiers: [
+      { name: 'Starter', for: 'Small teams', features: ['Self-service, leave & holidays', 'Face + GPS attendance, documents'] },
+      { name: 'Growth', for: 'Scaling companies', popular: true, features: ['Claims, timesheets & payroll', 'Multi-level approvals & analytics'] },
+      { name: 'Enterprise', for: 'Multi-site organisations', features: ['Statutory filings, scheduled reports & tasks', 'Custom approval chains & priority support'] }
+    ]
   }
 ]
-
-const pricingFaqs = [
-  {
-    question: 'Can I change plans later?',
-    answer: 'Yes! You can upgrade or downgrade your plan at any time. Changes take effect immediately, and we\'ll prorate any charges.'
-  },
-  {
-    question: 'What payment methods do you accept?',
-    answer: 'We accept all major credit cards (Visa, MasterCard, American Express) and ACH transfers for annual plans.'
-  },
-  {
-    question: 'Is there a free trial?',
-    answer: 'Yes! We offer a 14-day free trial with full access to all features. No credit card required to start.'
-  },
-  {
-    question: 'What happens after the trial ends?',
-    answer: 'After your trial, you can choose a paid plan to continue using CCorex. Your data is preserved for 30 days if you don\'t upgrade.'
-  },
-  {
-    question: 'Do you offer discounts for annual billing?',
-    answer: 'Yes! Annual billing saves you 20% compared to monthly billing. We also offer volume discounts for large teams.'
-  },
-  {
-    question: 'Can I cancel anytime?',
-    answer: 'Yes, you can cancel your subscription at any time. There are no cancellation fees or long-term contracts.'
-  },
-  {
-    question: 'What\'s included in support?',
-    answer: 'All plans include email and chat support. Professional and Enterprise plans get priority support with faster response times.'
-  },
-  {
-    question: 'Do you offer custom enterprise pricing?',
-    answer: 'Yes! For teams with 50+ users or custom requirements, contact our sales team for tailored pricing and features.'
-  }
+const quoteSteps = [
+  { title: 'Tell us your scope', text: 'Which apps, how many users or employees, and how many organisations.' },
+  { title: 'See it live', text: 'A 30-minute demo on your own estimating, project or payroll workflow.' },
+  { title: 'Get your quote', text: 'A plan and per-user quote that fits your team — bundle apps as needed.' },
+  { title: 'Onboard', text: 'We configure your organisation, import your data and train your team.' }
+]
+const faqs = [
+  { q: 'Why don’t you publish prices?', a: 'CCorex is priced per user (per employee for DeepHR) and depends on the apps and plan you choose. We give every customer a tailored quote rather than a one-size price list.' },
+  { q: 'Can we start with one app and add more later?', a: 'Yes. Essentials starts with one flagship app — DeepCost, DeepTrack or DeepHR. You can move to Business or Enterprise as you add apps, and every app shares the same sign-in and users.' },
+  { q: 'Is ARIVU AI an extra cost?', a: 'No. The ARIVU AI assistant is included in every suite plan, with usage budgets per organisation. On Business and Enterprise it answers across all your apps.' },
+  { q: 'Are Deep Drive and PDF Editor included?', a: 'Yes. Deep Drive (document storage) and PDF Editor (mark-up and signing) are included with every active subscription. Both are in development and coming soon.' },
+  { q: 'What is the difference between Business and Enterprise?', a: 'Business bundles DeepCost, DeepTrack and DeepHR with a shared user base. Enterprise adds DeepPlan AI, multi-organisation management, advanced roles and audit, priority access to CRM integrations as they arrive, and priority support and onboarding.' },
+  { q: 'How do we get pricing?', a: 'Pricing is shared on request. Email admin@newhamtech.com with the apps and number of users you need, or book a demo and we will prepare a quote.' },
+  { q: 'Do we need to buy hardware for attendance?', a: 'No. Face-recognition attendance runs on each employee\'s own phone, with a face match and a GPS check against the site radius. There is no kiosk or shared device to buy.' }
 ]
 </script>

@@ -1,250 +1,73 @@
 <template>
-  <div class="min-h-screen bg-slate-900">
-    <!-- Meta Tags -->
-    <Head>
-      <Title>CCorex - Unified Construction Management Platform</Title>
-      <Meta
-        name="description"
-        content="CCorex: Unified construction management platform integrating DeepCost, DeepTrack, DeepHR, and DeepPlanAI. Streamline costs, budgets, scheduling, and workforce management."
-      />
-    </Head>
-
-    <!-- Hero Section -->
-    <CCorexHero />
-
-    <!-- Suite Strip: quick summary of apps -->
-    <SuiteStrip />
-
-    <section id="overview" class="relative w-full py-16 md:py-24 bg-gradient-to-b from-slate-900 to-slate-800">
-      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-10 items-center">
-        <div class="md:col-span-2">
-          <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">One suite for your entire construction lifecycle</h2>
-          <p class="text-gray-300 text-lg mb-6">CCorex unifies takeoffs, estimating, budgeting, and workforce into a connected system. Data flows seamlessly across <span class="text-cyan-400 font-semibold">DeepPlanAI</span>, <span class="text-cyan-400 font-semibold">DeepCost</span>, <span class="text-cyan-400 font-semibold">DeepTrack</span>, and <span class="text-cyan-400 font-semibold">DeepHR</span>.</p>
-          <div class="flex flex-wrap gap-3">
-            <NuxtLink to="/appointment" class="px-6 py-3 rounded-lg bg-gradient-to-r from-cyan-500 to-cyan-400 text-slate-900 font-semibold hover:shadow-lg hover:shadow-cyan-500/40 transition-all">Request a demo</NuxtLink>
-            <NuxtLink to="/pricing" class="px-6 py-3 rounded-lg border border-cyan-500 text-cyan-400 font-semibold hover:bg-cyan-500 hover:text-slate-900 transition-all">View pricing</NuxtLink>
+  <div>
+    <section class="relative overflow-hidden bg-hero text-white">
+      <div class="bg-grid pointer-events-none absolute inset-0 opacity-50" aria-hidden="true"></div>
+      <div class="container-site relative grid gap-12 pb-20 pt-16 lg:grid-cols-[1fr_1.1fr] lg:items-center lg:pt-20">
+        <div>
+          <p class="eyebrow-dark">Pillar 1 · Software</p>
+          <h1 class="h-display mt-4 text-white">CCorex, our construction software suite</h1>
+          <p class="lead-dark mt-6 max-w-xl">CCorex covers winning work, delivering it, and running the people and money behind it — estimating, project control and HR &amp; payroll on one sign-in, with AI where it saves the most time.</p>
+          <div class="mt-8 flex flex-wrap gap-3">
+            <a :href="CCOREX_URL" target="_blank" rel="noopener" class="btn-accent">Visit ccorex.com <i class="fa-solid fa-arrow-up-right-from-square text-xs" aria-hidden="true"></i></a>
+            <a :href="CCOREX_SIGNIN_URL" class="btn-ghost-dark">Sign in</a>
           </div>
         </div>
-        <div class="grid grid-cols-2 gap-4">
-          <div class="p-4 rounded-xl border border-cyan-500/20 bg-slate-900/50 text-center">
-            <div class="text-3xl font-bold text-cyan-400 mb-1">95%+</div>
-            <div class="text-gray-400 text-sm">Estimate accuracy</div>
-          </div>
-          <div class="p-4 rounded-xl border border-cyan-500/20 bg-slate-900/50 text-center">
-            <div class="text-3xl font-bold text-cyan-400 mb-1">40%</div>
-            <div class="text-gray-400 text-sm">Faster takeoffs</div>
-          </div>
-          <div class="p-4 rounded-xl border border-cyan-500/20 bg-slate-900/50 text-center">
-            <div class="text-3xl font-bold text-cyan-400 mb-1">100%</div>
-            <div class="text-gray-400 text-sm">Data sync</div>
-          </div>
-          <div class="p-4 rounded-xl border border-cyan-500/20 bg-slate-900/50 text-center">
-            <div class="text-3xl font-bold text-cyan-400 mb-1">2-3 wks</div>
-            <div class="text-gray-400 text-sm">Implementation</div>
-          </div>
-        </div>
+        <UiBrowserFrame src="/images/product/ccorex-launcher.webp" alt="CCorex dashboard with the suite's apps under one login" url="ccorex.app / dashboard" :width="1618" :height="812" dark eager />
       </div>
     </section>
 
-    <!-- Apps Showcase -->
-    <div id="apps">
-      <AppsShowcase />
-    </div>
-
-    <!-- Integration Flow -->
-    <div id="integration">
-      <IntegrationFlow />
-    </div>
-
-    <!-- Alternating Benefits matching suite narrative -->
-    <BenefitsAlternating />
-
-    <!-- Unified Platform Benefits -->
-    <div id="benefits">
-      <UnifiedPlatformBenefits />
-    </div>
-
-    <!-- ROI Metrics -->
-    <RoiMetrics />
-
-    <!-- CTA Section -->
-    <CtaSection />
-
-    <!-- Comparison Section -->
-    <section class="relative w-full py-20 md:py-32 overflow-hidden bg-gradient-to-b from-slate-900 to-slate-800">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-16">
-          <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
-            <span class="bg-gradient-to-r from-cyan-400 to-cyan-300 bg-clip-text text-transparent">
-              CCorex vs Individual Tools
-            </span>
-          </h2>
-        </div>
-
-        <!-- Comparison Table -->
-        <div class="overflow-x-auto">
-          <table class="w-full text-center">
-            <thead>
-              <tr class="border-b border-cyan-500/20">
-                <th class="py-4 px-4 text-left text-gray-400 font-semibold">Feature</th>
-                <th class="py-4 px-4 text-cyan-400 font-bold">Individual Tools</th>
-                <th class="py-4 px-4 text-cyan-400 font-bold">CCorex Suite</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr class="border-b border-cyan-500/10 hover:bg-cyan-500/5">
-                <td class="py-4 px-4 text-left text-gray-300">Data Integration</td>
-                <td class="py-4 px-4">Manual Integration</td>
-                <td class="py-4 px-4 text-cyan-400 font-semibold"><i class="fa-solid fa-check"></i> Seamless</td>
-              </tr>
-              <tr class="border-b border-cyan-500/10 hover:bg-cyan-500/5">
-                <td class="py-4 px-4 text-left text-gray-300">Real-Time Sync</td>
-                <td class="py-4 px-4"><i class="fa-solid fa-xmark"></i> Not Available</td>
-                <td class="py-4 px-4 text-cyan-400 font-semibold"><i class="fa-solid fa-check"></i> Full Sync</td>
-              </tr>
-              <tr class="border-b border-cyan-500/10 hover:bg-cyan-500/5">
-                <td class="py-4 px-4 text-left text-gray-300">Single Dashboard</td>
-                <td class="py-4 px-4"><i class="fa-solid fa-xmark"></i> Multiple Systems</td>
-                <td class="py-4 px-4 text-cyan-400 font-semibold"><i class="fa-solid fa-check"></i> Unified</td>
-              </tr>
-              <tr class="border-b border-cyan-500/10 hover:bg-cyan-500/5">
-                <td class="py-4 px-4 text-left text-gray-300">Authentication</td>
-                <td class="py-4 px-4">Separate Logins</td>
-                <td class="py-4 px-4 text-cyan-400 font-semibold"><i class="fa-solid fa-check"></i> Single Sign-On</td>
-              </tr>
-              <tr class="border-b border-cyan-500/10 hover:bg-cyan-500/5">
-                <td class="py-4 px-4 text-left text-gray-300">Support & Training</td>
-                <td class="py-4 px-4">Fragmented</td>
-                <td class="py-4 px-4 text-cyan-400 font-semibold"><i class="fa-solid fa-check"></i> Unified Support</td>
-              </tr>
-              <tr class="hover:bg-cyan-500/5">
-                <td class="py-4 px-4 text-left text-gray-300">Implementation Time</td>
-                <td class="py-4 px-4">4-8 weeks per tool</td>
-                <td class="py-4 px-4 text-cyan-400 font-semibold"><i class="fa-solid fa-check"></i> 2-3 weeks</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </section>
-
-    <!-- Pricing Preview -->
-    <PricingPreview />
-
-    <!-- FAQ Section -->
-    <section id="faq" class="relative w-full py-20 md:py-32 overflow-hidden bg-gradient-to-b from-slate-800 to-slate-900">
-      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-16">
-          <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
-            <span class="bg-gradient-to-r from-cyan-400 to-cyan-300 bg-clip-text text-transparent">
-              Frequently Asked Questions
-            </span>
-          </h2>
-        </div>
-
-        <div class="space-y-4">
-          <div
-            v-for="(faq, index) in faqs"
-            :key="index"
-            class="p-6 rounded-xl border border-cyan-500/20 hover:border-cyan-500/40 transition-all cursor-pointer glass-panel"
-            @click="toggleFaq(index)"
-          >
-            <div class="flex items-center justify-between">
-              <h3 class="text-lg font-bold text-white">{{ faq.question }}</h3>
-              <span
-                class="text-cyan-400 text-2xl transform transition-transform"
-                :style="{ transform: activeFaq === index ? 'rotate(180deg)' : 'rotate(0deg)' }"
-              >
-                <i class="fa-solid fa-chevron-down"></i>
+    <section class="section">
+      <div class="container-site">
+        <UiSectionHeader center eyebrow="The apps" title="One sign-in, one app per job" lead="A short overview. Each app has its full page on ccorex.com." />
+        <ul class="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <li v-for="a in apps" :key="a.slug">
+            <component :is="a.local ? NuxtLink : 'a'" v-bind="a.local ? { to: a.local } : { href: ccorexAppUrl(a.slug), target: '_blank', rel: 'noopener' }" class="card-hover group flex h-full flex-col">
+              <span class="flex h-11 w-11 items-center justify-center rounded-xl" :class="a.color"><i :class="a.icon" aria-hidden="true"></i></span>
+              <span class="mt-5 flex items-center gap-2 text-lg font-semibold text-ink-900">{{ a.name }}
+                <span v-if="a.ai" class="chip-ai px-2 py-0 text-[10px]">AI</span>
+                <span v-else-if="a.status" class="chip px-2 py-0 text-[10px]">{{ a.status }}</span>
               </span>
-            </div>
-            <p v-if="activeFaq === index" class="mt-4 text-gray-400">{{ faq.answer }}</p>
-          </div>
+              <span class="text-sm text-ink-500">{{ a.category }}</span>
+              <span class="mt-3 flex-1 text-sm leading-relaxed text-ink-600">{{ a.summary }}</span>
+              <span class="mt-4 text-sm font-semibold text-brand-700 group-hover:text-brand-900">Learn more <i class="fa-solid fa-arrow-right text-xs" aria-hidden="true"></i></span>
+            </component>
+          </li>
+        </ul>
+        <p class="mt-6 text-center text-sm text-ink-500">Deep Drive (document storage) and PDF Editor are coming soon.</p>
+      </div>
+    </section>
+
+    <section class="section-tight bg-ink-50">
+      <div class="container-site grid gap-8 lg:grid-cols-[1.4fr_1fr] lg:items-center">
+        <div>
+          <p class="eyebrow">Software + specialists</p>
+          <h2 class="mt-2 text-2xl font-bold sm:text-3xl">Buy the software, or let our engineers run it for you</h2>
+          <p class="lead mt-3">Newham’s estimators, QS and BIM engineers can work in CCorex for you, or alongside your own team.</p>
+        </div>
+        <div class="flex flex-wrap gap-3 lg:justify-end">
+          <NuxtLink to="/talent-outsourcing" class="btn-primary">Talent outsourcing</NuxtLink>
+          <NuxtLink to="/engineering-services" class="btn-secondary">Engineering services</NuxtLink>
         </div>
       </div>
     </section>
 
-    <!-- Final CTA -->
-    <section class="relative w-full py-20 overflow-hidden bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900">
-      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">
-          Transform Your Construction Operations Today
-        </h2>
-        <p class="text-xl text-gray-300 mb-8">
-          Join hundreds of construction firms already using CCorex
-        </p>
-        <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <a
-            href="#cta"
-            class="px-8 py-4 bg-gradient-to-r from-cyan-500 to-cyan-400 text-slate-900 font-bold rounded-lg hover:shadow-lg hover:shadow-cyan-500/50 transition-all duration-300 transform hover:scale-105"
-          >
-            Get Started Now
-          </a>
-          <NuxtLink
-            to="/contact"
-            class="px-8 py-4 border-2 border-cyan-500 text-cyan-400 font-bold rounded-lg hover:bg-cyan-500 hover:text-slate-900 transition-all duration-300"
-          >
-            Contact Sales
-          </NuxtLink>
-        </div>
-      </div>
-    </section>
+    <UiCtaBand title="See CCorex on your own workflow" secondary-label="Visit ccorex.com" :secondary-to="CCOREX_URL" />
   </div>
 </template>
 
-<script setup>
-import { ref } from 'vue'
-import CCorexHero from '~/components/ccorex/CCorexHero.vue'
-import AppsShowcase from '~/components/ccorex/AppsShowcase.vue'
-import UnifiedPlatformBenefits from '~/components/ccorex/UnifiedPlatformBenefits.vue'
-import RoiMetrics from '~/components/ccorex/RoiMetrics.vue'
-import IntegrationFlow from '~/components/ccorex/IntegrationFlow.vue'
-import CtaSection from '~/components/ccorex/CtaSection.vue'
-import SuiteStrip from '~/components/ccorex/SuiteStrip.vue'
-import BenefitsAlternating from '~/components/ccorex/BenefitsAlternating.vue'
-import PricingPreview from '~/components/ccorex/PricingPreview.vue'
+<script setup lang="ts">
+import { NuxtLink } from '#components'
+import { ccorexApps, ccorexAppUrl, CCOREX_URL, CCOREX_SIGNIN_URL } from '~/data/ccorex'
 
-useHead({
-  title: 'CCorex - Unified Construction Management Platform'
+useSeoMeta({
+  title: 'CCorex construction software suite',
+  description: 'CCorex by Newham: DeepCost tender estimation, DeepTrack project control, DeepHR HR & payroll, DeepPlan take-off and the ARIVU AI assistant on one sign-in.',
+  ogTitle: 'CCorex — construction software by Newham',
+  ogDescription: 'Estimating, project control and HR & payroll on one sign-in. Full details on ccorex.com.'
 })
+// Canonical product site is ccorex.com.
+useHead({ link: [{ rel: 'canonical', href: CCOREX_URL + '/' }] })
 
-const activeFaq = ref(null)
-
-const faqs = ref([
-  {
-    question: 'What is CCorex?',
-    answer: 'CCorex is a unified construction management platform that combines four powerful tools: DeepCost (AI cost estimation), DeepTrack (budget & PO management), DeepHR (workforce management), and DeepPlanAI (digital takeoffs). These tools work together seamlessly to manage your entire project lifecycle.'
-  },
-  {
-    question: 'Can I use individual apps from CCorex?',
-    answer: 'Yes! Each app can be used independently, but you unlock the full potential of CCorex when you use them together. The integrated approach eliminates manual data entry and ensures your entire team has real-time access to accurate information.'
-  },
-  {
-    question: 'How long does implementation take?',
-    answer: 'CCorex implementations typically take 2-3 weeks from start to full deployment. Our dedicated implementation team will work with you to ensure a smooth transition and provide comprehensive training for your entire team.'
-  },
-  {
-    question: 'What integrations are available?',
-    answer: 'CCorex integrates with leading construction software including project management tools, accounting software, and payment platforms. Our API allows for custom integrations to match your specific workflow requirements.'
-  },
-  {
-    question: 'Is my data secure?',
-    answer: 'Yes. CCorex uses enterprise-grade security with 256-bit encryption, regular security audits, and compliance with industry standards including ISO 27001, GDPR, and SOC 2 Type II certification.'
-  },
-  {
-    question: 'What kind of support is available?',
-    answer: 'We offer 24/7 customer support via phone, email, and chat. Premium plans include dedicated account managers, regular training sessions, and priority support for any issues.'
-  }
-])
-
-const toggleFaq = (index) => {
-  activeFaq.value = activeFaq.value === index ? null : index
-}
+const localPages: Record<string, string> = { deepcost: '/ccorex/deepcost', deeptrack: '/ccorex/deeptrack', deephr: '/ccorex/deephr', 'deepplan-ai': '/ccorex/deepplan-ai' }
+const apps = ccorexApps.map((a) => ({ ...a, local: localPages[a.slug] }))
 </script>
-
-<style scoped>
-.glass-panel {
-  background: rgba(15, 23, 42, 0.6);
-  backdrop-filter: blur(10px);
-}
-</style>

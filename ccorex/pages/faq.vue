@@ -1,173 +1,131 @@
 <template>
   <div>
-    <!-- Hero Section -->
-    <section class="max-w-7xl mx-auto px-4 pt-32 pb-16 text-center">
-      <div class="mb-6">
-        <span class="px-4 py-2 rounded-full bg-primary-500/10 border border-primary-500/30 text-primary-400 text-sm font-semibold">
-          Help Center
-        </span>
+    <!-- Hero -->
+    <section class="relative overflow-hidden bg-hero text-white">
+      <div class="bg-grid pointer-events-none absolute inset-0 opacity-50" aria-hidden="true"></div>
+      <div class="container-site relative pb-20 pt-16 lg:pt-24">
+        <div class="max-w-3xl">
+          <p class="eyebrow-dark">FAQ</p>
+          <h1 class="h-display mt-5 text-white">Questions buyers ask about CCorex.</h1>
+          <p class="lead-dark mt-6">Straight answers about the platform, the apps, ARIVU AI, security and how pricing and onboarding work.</p>
+        </div>
+        <nav aria-label="FAQ topics" class="mt-10">
+          <ul class="flex flex-wrap gap-2">
+            <li v-for="g in groups" :key="g.id">
+              <a :href="`#${g.id}`" class="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-2 text-sm font-medium text-ink-100 hover:bg-white/10"><i :class="g.icon" class="text-cyan-400" aria-hidden="true"></i>{{ g.title }}</a>
+            </li>
+          </ul>
+        </nav>
       </div>
-      <h1 class="text-4xl md:text-6xl font-bold mb-6">
-        <span class="bg-gradient-to-r from-primary-400 to-secondary-400 bg-clip-text text-transparent">
-          Frequently Asked Questions
-        </span>
-      </h1>
-      <p class="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
-        Find answers to common questions about CCorex, our apps, pricing, and implementation.
-      </p>
     </section>
 
-    <!-- FAQ Categories -->
-    <section class="max-w-5xl mx-auto px-4 pb-20">
-      <div v-for="category in faqCategories" :key="category.name" class="mb-16">
-        <div class="mb-8">
-          <div class="flex items-center gap-3 mb-3">
-            <div class="text-3xl"><i :class="category.icon"></i></div>
-            <h2 class="text-3xl font-bold text-white">{{ category.name }}</h2>
+    <section class="section">
+      <div class="container-site space-y-16">
+        <div v-for="g in groups" :id="g.id" :key="g.id" class="grid scroll-mt-24 gap-8 lg:grid-cols-[1fr_2fr]">
+          <div>
+            <span class="icon-tile" :class="g.ai ? 'bg-ai-50 text-ai-700' : ''"><i :class="g.icon" aria-hidden="true"></i></span>
+            <h2 class="mt-4 text-2xl font-bold">{{ g.title }}</h2>
+            <p class="mt-2 text-sm text-ink-600">{{ g.text }}</p>
+            <NuxtLink v-if="g.link" :to="g.link.to" class="mt-4 inline-flex text-sm font-semibold text-brand-700 hover:text-brand-900">{{ g.link.label }} <i class="fa-solid fa-arrow-right ml-2 mt-1 text-xs" aria-hidden="true"></i></NuxtLink>
           </div>
-        </div>
-
-        <div class="space-y-4">
-          <details v-for="faq in category.questions" :key="faq.q" class="group p-6 rounded-xl border border-white/10 bg-white/5 hover:border-primary-500/30 transition-all">
-            <summary class="cursor-pointer font-semibold text-lg text-white flex items-center justify-between">
-              <span>{{ faq.q }}</span>
-              <i class="fa-solid fa-chevron-down text-primary-400 group-open:rotate-180 transition-transform"></i>
-            </summary>
-            <p class="text-gray-300 mt-4 leading-relaxed">{{ faq.a }}</p>
-          </details>
+          <UiFaqList :items="g.items" :schema="false" />
         </div>
       </div>
     </section>
 
-    <!-- Still Have Questions -->
-    <section class="py-20 bg-gradient-to-b from-slate-900 to-slate-800">
-      <div class="max-w-4xl mx-auto px-4 text-center">
-        <h2 class="text-4xl md:text-5xl font-bold mb-6 text-white">
-          Still Have Questions?
-        </h2>
-        <p class="text-xl text-gray-300 mb-10">
-          Our team is here to help. Get in touch and we'll answer any questions you have about CCorex.
-        </p>
-        <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <a href="/contact" class="px-8 py-4 rounded-lg bg-primary-500 text-slate-900 font-bold hover:bg-primary-400 transition-all">
-            Contact Support
-          </a>
-          <a href="#" class="px-8 py-4 rounded-lg border-2 border-primary-500 text-primary-400 font-bold hover:bg-primary-500 hover:text-slate-900 transition-all">
-            Schedule a Demo
-          </a>
+    <section class="section-tight bg-ink-50">
+      <div class="container-site"><div class="grid gap-6 rounded-3xl border border-ink-100 bg-white p-8 shadow-card lg:grid-cols-[1.4fr_1fr] lg:items-center">
+        <div>
+          <h2 class="text-2xl font-bold">Still have a question?</h2>
+          <p class="mt-2 text-ink-600">Email <a href="mailto:admin@newhamtech.com" class="font-semibold text-brand-700 hover:text-brand-900">admin@newhamtech.com</a> or ask us during a live demo.</p>
+        </div>
+        <div class="flex flex-wrap gap-3 lg:justify-end">
+          <NuxtLink to="/contact" class="btn-primary">Book a demo</NuxtLink>
+          <NuxtLink to="/resources" class="btn-secondary">Resources</NuxtLink>
         </div>
       </div>
+      </div>
     </section>
+
+    <UiCtaBand />
   </div>
 </template>
 
 <script setup lang="ts">
-const faqCategories = [
+const config = useRuntimeConfig()
+useSeoMeta({
+  title: 'FAQ: platform, apps, AI, security & pricing',
+  description: 'Answers about CCorex: one sign-in across apps, DeepCost, DeepTrack and DeepHR, ARIVU AI, data security, Singapore and India payroll, pricing and onboarding.',
+  ogTitle: 'CCorex FAQ',
+  ogDescription: 'Straight answers about the CCorex platform, apps, ARIVU AI, security, pricing and onboarding.'
+})
+useHead({ link: [{ rel: 'canonical', href: config.public.siteUrl + '/faq' }] })
+
+const groups = [
   {
-    name: 'General',
-    icon: 'fa-solid fa-circle-question',
-    questions: [
-      {
-        q: 'What is CCorex?',
-        a: 'CCorex is a unified construction management platform that combines four powerful applications: DeepPlanAI (digital takeoffs), DeepCost (AI cost estimation), DeepTrack (budget & PO management), and DeepHR (workforce management). These apps work together seamlessly to manage your entire construction lifecycle.'
-      },
-      {
-        q: 'Can I use individual apps or do I need the full suite?',
-        a: 'You can start with any individual app based on your needs. Each app works independently and delivers value on its own. However, you unlock the full potential of CCorex when you use multiple apps together, as data flows seamlessly between them without manual re-entry.'
-      },
-      {
-        q: 'What types of construction projects is CCorex suitable for?',
-        a: 'CCorex is designed for commercial construction projects of all sizes, with a focus on MEP (Mechanical, Electrical, and Plumbing) contractors. Our platform is used by general contractors, MEP contractors, quantity surveyors, and project managers across residential, commercial, and industrial projects.'
-      },
-      {
-        q: 'Is CCorex cloud-based or on-premise?',
-        a: 'CCorex is primarily a cloud-based SaaS platform, accessible from anywhere with an internet connection. We also offer on-premise deployment options for enterprise customers with specific security or compliance requirements. Contact our sales team to discuss your deployment needs.'
-      }
+    id: 'platform', title: 'Platform', icon: 'fa-solid fa-layer-group', text: 'How the apps fit together.', link: { label: 'How the platform works', to: '/platform' },
+    items: [
+      { q: 'What is CCorex?', a: 'CCorex is a multi-tenant business suite for engineering and construction contractors, mainly MEP and fire-protection firms in Singapore and India. One portal signs users in to DeepCost (tender estimating), DeepTrack (project and financial control), DeepHR (HR and payroll), DeepPlan (drawing take-off) and the ARIVU AI assistant. Deep Drive and PDF Editor are coming soon.' },
+      { q: 'Do all the apps share one sign-in?', a: 'Yes. Users sign in once at dash.ccorex.com, see a tile for each app they are entitled to, and open any app without signing in again. Your organisation admin adds users once — or bulk-uploads them from Excel — and they are created in each assigned app.' },
+      { q: 'How do we get started?', a: 'Self sign-up creates your organisation and its first admin user. The admin then manages the organisation profile, users, roles per app and app settings, including connectors such as Zoho Books.' },
+      { q: 'Can we manage more than one company?', a: 'Each organisation is its own tenant with its own users and settings. A group with entities in Singapore and India, for example, uses one organisation per entity. Multi-organisation management is part of the Enterprise plan.' },
+      { q: 'Is data shared between apps today?', a: 'The apps share sign-in and users today, and ARIVU can answer questions across all of them. Passing records from one app to the next — such as a won tender becoming a DeepTrack project without re-entry — is on the roadmap.' },
+      { q: 'Is CCorex cloud-based?', a: 'Yes. CCorex runs in the cloud, so there are no servers to install and no hardware to buy.' }
     ]
   },
   {
-    name: 'Implementation & Training',
-    icon: 'fa-solid fa-rocket',
-    questions: [
-      {
-        q: 'How long does implementation take?',
-        a: 'Typical CCorex implementations take 2-3 weeks from kickoff to full deployment. This includes system configuration, data migration, team training, and go-live support. The timeline may vary based on the number of apps, users, and complexity of your requirements.'
-      },
-      {
-        q: 'What training and support do you provide?',
-        a: 'We provide comprehensive onboarding including live training sessions, video tutorials, documentation, and hands-on workshops. After go-live, you get 24/7 customer support via phone, email, and chat. Enterprise customers also receive dedicated account managers and regular check-ins.'
-      },
-      {
-        q: 'Can you help migrate data from our existing systems?',
-        a: 'Yes! Our implementation team will help you migrate data from your existing systems including project data, cost libraries, supplier information, and employee records. We support imports from Excel, CSV, and direct integrations with popular construction software.'
-      },
-      {
-        q: 'Do you offer ongoing training for new team members?',
-        a: 'Absolutely. We provide ongoing training resources including on-demand video tutorials, webinars, and documentation. Enterprise customers can schedule additional training sessions for new team members at no extra cost.'
-      }
+    id: 'apps', title: 'Apps', icon: 'fa-solid fa-grip', text: 'What each app does.', link: { label: 'Explore all apps', to: '/products' },
+    items: [
+      { q: 'What does DeepCost do?', a: 'DeepCost takes an MEP or building-services contractor from a tender received to a priced tender submission: customer and opportunity, tender documents with an AI tender summary, area schedule, an order per trade, material take-off per area, and the priced Form of Tender (FOT) — line by line or with FOT AI on the client’s BOQ PDF. Seeded trades are Fire Protection, ACMV, A&A and ELV, priced in SGD.' },
+      { q: 'What is a Form of Tender (FOT)?', a: 'The priced schedule submitted with a tender. In DeepCost, the FOT goes through the same submit, approve and complete steps as the area schedule and MTO, and its export serves as the quotation.' },
+      { q: 'What does DeepTrack do?', a: 'DeepTrack runs a contractor’s projects from contract to profit: budgets, client progress claims, manpower and timesheets, procurement from purchase request to purchase order, delivery and invoice, accounts payable with invoice matching, and month-end cost allocation. It works in SGD with 9% GST and can link to Zoho Books.' },
+      { q: 'What does DeepHR do?', a: 'DeepHR is the HR system of record: people and organisation structure, an approvals engine, leave, face and GPS attendance, claims, payroll with Singapore or India statutory rules, payslips filed to Documents, reports with schedules, policies, a helpdesk and an optional tasks module. Employees can install it on a phone as an app.' },
+      { q: 'Does face-recognition attendance need special devices?', a: 'No. Employees check in and out on their own phone: the face must match, the phone’s GPS must be inside the site radius, and the record is marked on time or late. There is no kiosk mode. Offline punches are queued and re-verified when the phone reconnects.' },
+      { q: 'Which payroll rules does DeepHR support?', a: 'Singapore: CPF (including graduated rates for new PRs), SDL, self-help group funds (CDAC, SINDA, MBMF, ECF), MOM proration and overtime rules. India: EPF, ESI, Professional Tax, TDS and statutory filings such as EPF ECR, ESIC, PT return, 24Q and Form 16 Part B. A Singapore bank payment file is not available yet.' },
+      { q: 'What are Deep Drive and PDF Editor?', a: 'Deep Drive is your organisation’s document store (folders, uploads, inline viewing, storage tracking), and PDF Editor marks up and signs PDFs (text, signatures, images, overlays, split and merge). Both are in development and coming soon, and will be included with every active subscription.' }
     ]
   },
   {
-    name: 'Pricing & Plans',
-    icon: 'fa-solid fa-coins',
-    questions: [
-      {
-        q: 'How is CCorex priced?',
-        a: 'CCorex is priced per user per month, with different tiers based on which apps you need. You can start with a single app like DeepCost ($149/user/month), upgrade to Project Control with DeepCost + DeepTrack ($249/user/month), or get the complete suite with custom enterprise pricing. Volume discounts are available for larger teams.'
-      },
-      {
-        q: 'Is there a free trial available?',
-        a: 'Yes! We offer a 14-day free trial with full access to all features. No credit card required to start. Our team will provide personalized onboarding to help you get the most out of your trial period.'
-      },
-      {
-        q: 'What payment methods do you accept?',
-        a: 'We accept all major credit cards (Visa, Mastercard, American Express), bank transfers, and purchase orders for enterprise customers. Annual subscriptions can be paid via invoice with net-30 payment terms.'
-      },
-      {
-        q: 'Can I cancel my subscription anytime?',
-        a: 'Yes, you can cancel your subscription at any time. Monthly subscriptions can be cancelled with 30 days notice. Annual subscriptions are non-refundable but you retain access until the end of your billing period. We also offer data export upon cancellation.'
-      }
+    id: 'ai', title: 'AI', icon: 'fa-solid fa-wand-magic-sparkles', ai: true, text: 'ARIVU AI, DeepCost AI and DeepPlan AI.', link: { label: 'Meet ARIVU AI', to: '/products/arivu-ai' },
+    items: [
+      { q: 'What is ARIVU?', a: 'ARIVU — Tamil for “intelligence” — is the AI assistant in every CCorex app. It answers questions from your own organisation’s data across DeepCost, DeepTrack, DeepHR, DeepPlan and Deep Drive, produces charts and PDF or Excel exports, searches and summarises documents, and reads attachments such as drawings and scanned PDFs.' },
+      { q: 'Can ARIVU change our data?', a: 'No. ARIVU is read-only. It looks things up, summarises and exports; it never creates, edits or approves records. Every lookup is limited to your own organisation, and chat messages are encrypted at rest.' },
+      { q: 'What AI is in DeepCost?', a: 'An AI tender summary that reads the uploaded tender documents and fills a predefined set of fields, and FOT AI, which finds the quantity and amount columns on the client’s BOQ PDF and overlays editable figures. Both outputs can be edited and exported.' },
+      { q: 'Is DeepPlan’s AI take-off live?', a: 'Not in production yet. DeepPlan’s drawing upload, scale calibration, room and measurement editor, rate library and BOQ generation are live. AI room take-off and symbol detection (23 electrical and fire symbol classes) are in early access while they are rebuilt.' },
+      { q: 'Which AI models does CCorex use?', a: 'ARIVU runs on enterprise-grade large language models, set up so it answers only from your own organisation’s CCorex data and never changes your records. DeepPlan’s take-off uses its own room-segmentation, OCR and symbol-detection models.' },
+      { q: 'Is ARIVU included in our plan?', a: 'Yes. ARIVU is included in every suite plan, with usage budgets per organisation. On Business and Enterprise it answers across all your apps.' }
     ]
   },
   {
-    name: 'Security & Compliance',
-    icon: 'fa-solid fa-lock',
-    questions: [
-      {
-        q: 'Is my data secure?',
-        a: 'Yes. CCorex uses bank-level 256-bit encryption for data at rest and in transit. We are SOC 2 Type II certified, GDPR compliant, and ISO 27001 certified. Our infrastructure is hosted on AWS with automatic backups, disaster recovery, and 99.9% uptime SLA.'
-      },
-      {
-        q: 'Where is my data stored?',
-        a: 'Data is stored in secure AWS data centers with multiple redundancy and backup systems. You can choose your preferred data region (US, EU, or Asia-Pacific) based on your compliance requirements. All data is encrypted and backed up daily.'
-      },
-      {
-        q: 'Do you support Single Sign-On (SSO)?',
-        a: 'Yes, CCorex supports SSO via SAML 2.0, OAuth 2.0, and integrations with popular identity providers including Okta, Azure AD, Google Workspace, and OneLogin. SSO is available on Project Control and Enterprise plans.'
-      },
-      {
-        q: 'Can I control user permissions and access?',
-        a: 'Yes, CCorex includes comprehensive role-based access control (RBAC). You can create custom roles, set granular permissions, and control what each user can view or edit. Audit logs track all user activities for compliance and security monitoring.'
-      }
+    id: 'security', title: 'Security & data', icon: 'fa-solid fa-shield-halved', text: 'How your data is protected.', link: { label: 'Security on the platform page', to: '/platform' },
+    items: [
+      { q: 'How is our data protected?', a: 'Personal and configuration fields — names, emails, phone numbers, bank and identity details, connector credentials and chat messages — are encrypted in the database, and passwords are hashed. DeepTrack finance actions, DeepHR changes and period unlocks are written to audit logs.' },
+      { q: 'Is our data separated from other customers?', a: 'Yes. Every record belongs to one organisation, and users only ever see their own organisation’s data. DeepCost also enforces this in the database itself.' },
+      { q: 'Can we control what each person sees?', a: 'Yes. The portal decides which apps a user may open, and each app decides what they may do inside it through its own roles and permissions — for example, DeepTrack’s screen-by-role matrix, or DeepCost’s permissions per screen, stage and AI feature.' },
+      { q: 'What happens when someone leaves?', a: 'Disable them once in the portal and they are disabled in the apps too.' },
+      { q: 'How do you handle personal data?', a: 'We use personal data only for the purpose it was given and handle it in line with Singapore’s Personal Data Protection Act (PDPA). Email admin@newhamtech.com with any data request.' }
     ]
   },
   {
-    name: 'Integrations',
-    icon: 'fa-solid fa-link',
-    questions: [
-      {
-        q: 'What integrations are available?',
-        a: 'CCorex integrates with leading construction and business software including Procore, Autodesk BIM 360, PlanGrid, QuickBooks, Xero, SAP, Microsoft Project, Primavera P6, Slack, Microsoft Teams, and more. We also provide a REST API for custom integrations.'
-      },
-      {
-        q: 'Do you have an API for custom integrations?',
-        a: 'Yes! CCorex provides a comprehensive REST API with full documentation, SDKs, and sandbox environment for testing. API access is available on all paid plans. Enterprise customers get dedicated API support and higher rate limits.'
-      },
-      {
-        q: 'Can CCorex integrate with our accounting system?',
-        a: 'Yes, CCorex integrates with QuickBooks, Xero, SAP, and other major accounting systems. You can sync invoices, expenses, purchase orders, and financial data bi-directionally. Our team can help set up custom integrations for other accounting systems.'
-      }
+    id: 'pricing', title: 'Pricing & onboarding', icon: 'fa-solid fa-tags', text: 'Plans, quotes and getting started.', link: { label: 'See plans', to: '/pricing' },
+    items: [
+      { q: 'How is CCorex priced?', a: 'Per-user pricing (per employee for DeepHR). Choose Essentials, Business or Enterprise, or a single app tier, and we send a tailored quote.' },
+      { q: 'Do we have to buy the whole suite?', a: 'No. Essentials starts with one flagship app — DeepCost, DeepTrack or DeepHR — and you can add apps as you grow.' },
+      { q: 'How do we get pricing?', a: 'Pricing is shared on request. Email admin@newhamtech.com or book a demo and we will prepare a quote for your team.' },
+      { q: 'What does onboarding involve?', a: 'Discovery of how you work today, configuration of your organisation, roles and approvals, import of data such as your price library, users and employees from Excel templates, role-based training, and ongoing support.' },
+      { q: 'Who provides support?', a: 'CCorex is built and supported by Newham Technological Solutions in Singapore. Every app has a support contact form. Enterprise plans include priority support and onboarding.' }
     ]
   }
 ]
+
+useHead({
+  script: [{
+    type: 'application/ld+json',
+    innerHTML: JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: groups.flatMap((g) => g.items.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })))
+    })
+  }]
+})
 </script>

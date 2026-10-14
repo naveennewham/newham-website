@@ -1,297 +1,114 @@
 <template>
-  <div class="contact-page">
-    <section class="contact-hero-section relative overflow-hidden py-20">
-      <!-- Background Elements -->
-      <div class="absolute inset-0 z-0">
-        <div class="absolute inset-0 bg-dark-900"></div>
-        <div class="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,rgba(0,93,108,0.15),transparent_50%)]"></div>
-        <div class="absolute inset-0 bg-[radial-gradient(circle_at_70%_70%,rgba(1,172,200,0.1),transparent_30%)]"></div>
+  <div>
+    <section class="relative overflow-hidden bg-hero text-white">
+      <div class="bg-grid pointer-events-none absolute inset-0 opacity-50" aria-hidden="true"></div>
+      <div class="container-site relative py-16 lg:py-20">
+        <p class="eyebrow-dark">Contact</p>
+        <h1 class="h-display mt-4 max-w-3xl text-white">Talk to Newham</h1>
+        <p class="lead-dark mt-6 max-w-2xl">Questions about CCorex, dedicated engineers or an engineering package? Send us a message, or book a discovery call directly.</p>
       </div>
-      
-      <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div class="text-center mb-16">
-          <h1 class="text-4xl md:text-5xl font-bold mb-6">
-            <span class="text-white">Get in </span>
-            <span class="bg-gradient-to-r from-primary-500 to-secondary-500 bg-clip-text text-transparent">Touch</span>
-          </h1>
-          <p class="text-gray-300 max-w-2xl mx-auto">
-            Have questions about our services or want to discuss your project? We're here to help.
-            Reach out to us using any of the methods below.
-          </p>
-        </div>
-        
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          <!-- Contact Form -->
-          <div class="glass-panel p-8 rounded-xl">
-            <h2 class="text-2xl font-bold text-white mb-6">Send Us a Message</h2>
-            
-            <form @submit.prevent="submitForm" class="space-y-6">
-              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div class="form-group">
-                  <label for="name" class="block text-gray-300 mb-2">Your Name</label>
-                  <input 
-                    type="text" 
-                    id="name" 
-                    v-model="formData.name"
-                    class="w-full bg-dark-700 border border-dark-600 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-primary-500"
-                    placeholder="Enter your full name"
-                    required
-                  />
-                </div>
-                
-                <div class="form-group">
-                  <label for="email" class="block text-gray-300 mb-2">Email Address</label>
-                  <input 
-                    type="email" 
-                    id="email" 
-                    v-model="formData.email"
-                    class="w-full bg-dark-700 border border-dark-600 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-primary-500"
-                    placeholder="Enter your email"
-                    required
-                  />
-                </div>
-              </div>
-              
-              <div class="form-group">
-                <label for="subject" class="block text-gray-300 mb-2">Subject</label>
-                <input 
-                  type="text" 
-                  id="subject" 
-                  v-model="formData.subject"
-                  class="w-full bg-dark-700 border border-dark-600 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-primary-500"
-                  placeholder="What is this regarding?"
-                  required
-                />
-              </div>
-              
-              <div class="form-group">
-                <label for="message" class="block text-gray-300 mb-2">Your Message</label>
-                <textarea 
-                  id="message" 
-                  v-model="formData.message"
-                  rows="5"
-                  class="w-full bg-dark-700 border border-dark-600 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-primary-500"
-                  placeholder="Please provide details about your inquiry"
-                  required
-                ></textarea>
-              </div>
-              
-              <div class="form-group">
-                <label class="flex items-center">
-                  <input 
-                    type="checkbox" 
-                    v-model="formData.consent"
-                    class="rounded bg-dark-700 border-dark-600 text-primary-500 focus:ring-primary-500"
-                    required
-                  />
-                  <span class="ml-2 text-gray-400 text-sm">
-                    I consent to Newham processing my data to respond to my inquiry
-                  </span>
-                </label>
-              </div>
-              
-              <button 
-                type="submit" 
-                class="w-full py-3 px-6 bg-gradient-to-r from-primary-600 to-secondary-600 text-white font-semibold rounded-lg hover:from-primary-500 hover:to-secondary-500 transition-all duration-300 flex items-center justify-center"
-                :disabled="isSubmitting"
-              >
-                <span v-if="isSubmitting" class="mr-2">
-                  <i class="fa-solid fa-spinner fa-spin"></i>
-                </span>
-                {{ isSubmitting ? 'Sending...' : 'Send Message' }}
-              </button>
-              
-              <div v-if="formSubmitted" class="text-center p-4 rounded-lg bg-primary-900/50 border border-primary-700 text-white">
-                Thank you! Your message has been sent. We'll respond to you shortly.
-              </div>
+    </section>
 
-              <div v-if="submitError" class="text-center p-4 rounded-lg bg-red-900/50 border border-red-700 text-red-100">
-                {{ submitError }}
+    <section class="section">
+      <div class="container-site grid gap-12 lg:grid-cols-[1.4fr_1fr]">
+        <div class="card p-6 sm:p-8">
+          <h2 class="text-2xl font-bold">Send a message</h2>
+          <form class="mt-6 space-y-5" @submit.prevent="submitForm">
+            <input v-model="formData.website_url" type="text" name="website_url" tabindex="-1" autocomplete="off" class="hidden" aria-hidden="true" />
+            <div class="grid gap-5 sm:grid-cols-2">
+              <div>
+                <label for="name" class="field-label">Your name</label>
+                <input id="name" v-model="formData.name" type="text" required autocomplete="name" class="field" />
               </div>
-            </form>
-          </div>
-          
-          <!-- Contact Information -->
-          <div>
-            <div class="glass-panel p-8 rounded-xl mb-8">
-              <h2 class="text-2xl font-bold text-white mb-6">Contact Information</h2>
-              
-              <div class="space-y-6">
-                <div class="flex items-start">
-                  <div class="mr-4 p-2 rounded-lg bg-gradient-to-br from-primary-800 to-secondary-800 text-white">
-                    <i class="fa-solid fa-location-dot text-xl"></i>
-                  </div>
-                  <div>
-                    <h3 class="text-white font-semibold mb-1">Singapore Office</h3>
-                    <p class="text-gray-400">
-                      160 Robinson Rd, #14-04 SBF Center<br>
-                      Singapore 0689
-                    </p>
-                  </div>
-                </div>
-                
-                <div class="flex items-start">
-                  <div class="mr-4 p-2 rounded-lg bg-gradient-to-br from-primary-800 to-secondary-800 text-white">
-                    <i class="fa-solid fa-location-dot text-xl"></i>
-                  </div>
-                  <div>
-                    <h3 class="text-white font-semibold mb-1">Chennai Office</h3>
-                    <p class="text-gray-400">
-                      3rd Floor, Plot no. 21, Electrical, Electronics & Instruments Industries<br>
-                      Perungudi, Sholinganallur, Seevaram, OMR<br>
-                      Chennai, Tamil Nadu 600096
-                    </p>
-                  </div>
-                </div>
-                
-                <div class="flex items-start">
-                  <div class="mr-4 p-2 rounded-lg bg-gradient-to-br from-primary-800 to-secondary-800 text-white">
-                    <i class="fa-solid fa-phone text-xl"></i>
-                  </div>
-                  <div>
-                    <h3 class="text-white font-semibold mb-1">Phone</h3>
-                    <p class="text-gray-400">
-                      Main: +91 9894-378-375<br>
-                      Support: +91 9894-378-375
-                    </p>
-                  </div>
-                </div>
-                
-                <div class="flex items-start">
-                  <div class="mr-4 p-2 rounded-lg bg-gradient-to-br from-primary-800 to-secondary-800 text-white">
-                    <i class="fa-solid fa-envelope text-xl"></i>
-                  </div>
-                  <div>
-                    <h3 class="text-white font-semibold mb-1">Email</h3>
-                    <p class="text-gray-400">
-                      General: info@newham.com<br>
-                      Support: support@newham.com<br>
-                      Sales: sales@newham.com
-                    </p>
-                  </div>
-                </div>
-                
-                <div class="flex items-start">
-                  <div class="mr-4 p-2 rounded-lg bg-gradient-to-br from-primary-800 to-secondary-800 text-white">
-                    <i class="fa-solid fa-clock text-xl"></i>
-                  </div>
-                  <div>
-                    <h3 class="text-white font-semibold mb-1">Business Hours</h3>
-                    <p class="text-gray-400">
-                      Monday - Friday: 9:00 AM - 6:00 PM<br>
-                      Saturday: 10:00 AM - 2:00 PM<br>
-                      Sunday: Closed
-                    </p>
-                  </div>
-                </div>
+              <div>
+                <label for="email" class="field-label">Work email</label>
+                <input id="email" v-model="formData.email" type="email" required autocomplete="email" class="field" />
               </div>
             </div>
-            
-            <!-- Social Media Links -->
-            <div class="glass-panel p-8 rounded-xl">
-              <h2 class="text-2xl font-bold text-white mb-6">Connect With Us</h2>
-              
-              <div class="flex space-x-4">
-                <a 
-                  v-for="(social, index) in socialLinks" 
-                  :key="index"
-                  :href="social.url"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="p-3 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors duration-300"
-                >
-                  <i :class="social.icon" class="text-xl text-white"></i>
-                </a>
-              </div>
+            <div>
+              <label for="subject" class="field-label">What is it about?</label>
+              <select id="subject" v-model="formData.subject" required class="field">
+                <option value="" disabled>Select a topic</option>
+                <option v-for="t in topics" :key="t" :value="t">{{ t }}</option>
+              </select>
             </div>
-          </div>
+            <div>
+              <label for="message" class="field-label">Message</label>
+              <textarea id="message" v-model="formData.message" rows="5" required class="field" placeholder="Tell us about your projects, team and what you need."></textarea>
+            </div>
+            <label class="flex items-start gap-3 text-sm text-ink-600">
+              <input v-model="formData.consent" type="checkbox" required class="mt-0.5 h-4 w-4 rounded border-ink-300 text-brand-700 focus:ring-brand-500" />
+              <span>I agree that Newham may contact me about this enquiry. If I accepted marketing cookies, Newham also records how I found the site. See the <NuxtLink to="/privacy" class="font-semibold text-brand-700 underline">privacy policy</NuxtLink>.</span>
+            </label>
+            <button type="submit" class="btn-primary w-full sm:w-auto" :disabled="isSubmitting">
+              <i v-if="isSubmitting" class="fa-solid fa-spinner fa-spin" aria-hidden="true"></i>
+              {{ isSubmitting ? 'Sending…' : 'Send message' }}
+            </button>
+            <p v-if="formSubmitted" role="status" class="rounded-lg border border-emerald-200 bg-emerald-50 px-4 py-3 text-sm text-emerald-800">Thank you. Your message has been sent and we will reply by email.</p>
+            <p v-if="submitError" role="alert" class="rounded-lg border border-rose-200 bg-rose-50 px-4 py-3 text-sm text-rose-800">{{ submitError }}</p>
+          </form>
         </div>
+
+        <aside class="space-y-6">
+          <div class="card bg-brand-950 text-white">
+            <p class="eyebrow-dark">Prefer a call?</p>
+            <h2 class="mt-2 text-xl font-bold text-white">Book a 30-minute discovery call</h2>
+            <p class="mt-2 text-sm text-ink-200">Pick a date and time; we confirm by email.</p>
+            <NuxtLink to="/appointment" class="btn-accent mt-5">Book a discovery call</NuxtLink>
+          </div>
+          <div class="card">
+            <h2 class="text-base font-semibold">Email</h2>
+            <p class="mt-2 text-sm"><a href="mailto:admin@newhamtech.com" class="font-semibold text-brand-700 hover:text-brand-900">admin@newhamtech.com</a></p>
+            <h2 class="mt-6 text-base font-semibold">Offices</h2>
+            <p class="mt-2 text-sm text-ink-600"><span class="font-semibold text-ink-900">Singapore</span><br />160 Robinson Road, #14-04 SBF Center, Singapore</p>
+            <p class="mt-3 text-sm text-ink-600"><span class="font-semibold text-ink-900">Chennai, India</span><br />3rd Floor, Plot no. 21, Perungudi, OMR, Chennai, Tamil Nadu 600096</p>
+            <h2 class="mt-6 text-base font-semibold">CCorex users</h2>
+            <p class="mt-2 text-sm text-ink-600">Sign in at <a :href="CCOREX_SIGNIN_URL" class="font-semibold text-brand-700 hover:text-brand-900">dash.ccorex.com</a>.</p>
+          </div>
+        </aside>
       </div>
     </section>
-    
-    <!-- Map Section -->
-    <section class="py-16 relative overflow-hidden">
-      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 class="text-3xl font-bold text-white mb-8 text-center">Find Us</h2>
-        
-        <div class="glass-panel p-2 rounded-xl overflow-hidden">
-          <!-- Placeholder for Google Maps -->
-          <div class="w-full h-96 bg-dark-700 rounded-lg flex items-center justify-center">
-            <div class="text-center">
-              <i class="fa-solid fa-map-location-dot text-5xl text-gray-500 mx-auto mb-4"></i>
-              <p class="text-gray-400">Interactive map will be embedded here</p>
-              <p class="text-gray-500 text-sm mt-2">Google Maps API integration required</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+
+    <UiCtaBand title="Not sure where to start?" lead="A discovery call is the quickest way to find the right mix of software, people and services for your pipeline." secondary-label="Our services" secondary-to="/services" />
   </div>
 </template>
 
-<script setup>
-import { ref } from 'vue';
+<script setup lang="ts">
+import { CCOREX_SIGNIN_URL } from '~/data/ccorex'
 
-useHead({
-  title: 'Contact Us'
+const siteUrl = useRuntimeConfig().public.siteUrl as string
+useSeoMeta({
+  title: 'Contact Newham',
+  description: 'Contact Newham Technological Solutions about CCorex construction software, dedicated M&E engineers or fire protection and commercial engineering services.',
+  ogTitle: 'Contact Newham',
+  ogDescription: 'Send us a message or book a 30-minute discovery call.',
+  ogUrl: siteUrl + '/contact'
 })
+useHead({ link: [{ rel: 'canonical', href: siteUrl + '/contact' }] })
 
-// Social media links
-const socialLinks = [
-  { name: 'Facebook', url: 'https://facebook.com', icon: 'fa-brands fa-facebook-f' },
-  { name: 'Twitter', url: 'https://twitter.com', icon: 'fa-brands fa-x-twitter' },
-  { name: 'LinkedIn', url: 'https://linkedin.com', icon: 'fa-brands fa-linkedin-in' },
-  { name: 'Instagram', url: 'https://instagram.com', icon: 'fa-brands fa-instagram' }
-];
+const topics = ['CCorex software', 'Engineering talent outsourcing', 'Construction engineering services', 'Partnership', 'Something else']
 
-// Form data
-const formData = ref({
-  name: '',
-  email: '',
-  subject: '',
-  message: '',
-  consent: false
-});
+// Same payload as before: { name, email, subject, message, consent }.
+const emptyForm = () => ({ name: '', email: '', subject: '', message: '', consent: false, website_url: '' })
+const formData = ref(emptyForm())
+const isSubmitting = ref(false)
+const formSubmitted = ref(false)
+const submitError = ref('')
+const { $track } = useNuxtApp()
 
-const isSubmitting = ref(false);
-const formSubmitted = ref(false);
-const submitError = ref('');
-
-// Form submission
 const submitForm = async () => {
-  isSubmitting.value = true;
-  submitError.value = '';
-  
+  isSubmitting.value = true
+  submitError.value = ''
   try {
-    const response = await fetch('https://firefabx.com/webhook/newham-contact', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(formData.value),
-    });
-
-    if (response.ok) {
-      formSubmitted.value = true;
-      formData.value = {
-        name: '',
-        email: '',
-        subject: '',
-        message: '',
-        consent: false
-      };
-      
-      // Hide success message after 5 seconds
-      setTimeout(() => {
-        formSubmitted.value = false;
-      }, 5000);
-    } else {
-      submitError.value = 'Failed to send message. Please try again.';
-    }
-  } catch (error) {
-    submitError.value = 'An error occurred. Please try again later.';
+    // Our server route stores the enquiry in the CRM and still notifies the team as before.
+    await $fetch('/api/lead', { method: 'POST', body: { ...formData.value, form: 'contact', pagesViewed: $track.pagesViewed() } })
+    $track.lead('contact')
+    formSubmitted.value = true
+    formData.value = emptyForm()
+  } catch {
+    submitError.value = 'Your message could not be sent. Please try again or email admin@newhamtech.com.'
   } finally {
-    isSubmitting.value = false;
+    isSubmitting.value = false
   }
-};
+}
 </script>

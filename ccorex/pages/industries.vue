@@ -1,382 +1,195 @@
 <template>
   <div>
-    <!-- Hero Section -->
-    <section class="relative w-full min-h-[70vh] flex items-center justify-center overflow-hidden">
-      <div class="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900"></div>
-      <div class="absolute top-0 right-0 w-96 h-96 bg-primary-500/10 rounded-full blur-3xl"></div>
-      <div class="absolute bottom-0 left-0 w-96 h-96 bg-secondary-500/10 rounded-full blur-3xl"></div>
-
-      <div class="relative z-10 max-w-7xl mx-auto px-4 text-center pt-32 pb-20">
-        <h1 class="text-5xl md:text-7xl font-bold mb-6">
-          <span class="bg-gradient-to-r from-primary-400 to-secondary-400 bg-clip-text text-transparent">
-            Trusted Across
-          </span>
-          <br/>
-          <span class="text-white">Construction Sectors</span>
-        </h1>
-        <p class="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto">
-          From commercial buildings to infrastructure projects, CCorex serves the entire construction industry with specialized solutions.
-        </p>
-      </div>
-    </section>
-
-    <!-- Industries Grid -->
-    <section class="py-20 bg-slate-800">
-      <div class="max-w-7xl mx-auto px-4">
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <div v-for="industry in industries" :key="industry.name" class="group p-8 rounded-2xl border border-white/10 bg-white/5 hover:border-primary-500/50 hover:bg-white/10 transition-all">
-            <div class="text-5xl mb-4"><i :class="industry.icon"></i></div>
-            <h2 class="text-2xl font-bold text-white mb-3 group-hover:text-primary-400 transition-colors">{{ industry.name }}</h2>
-            <p class="text-gray-400 mb-6">{{ industry.description }}</p>
-            
-            <div class="mb-6">
-              <h3 class="text-sm font-semibold text-gray-400 uppercase mb-3">Common Challenges</h3>
-              <ul class="space-y-2">
-                <li v-for="challenge in industry.challenges" :key="challenge" class="flex items-start gap-2 text-sm text-gray-400">
-                  <span class="text-secondary-400 mt-1">•</span>
-                  <span>{{ challenge }}</span>
-                </li>
-              </ul>
-            </div>
-
-            <div class="mb-6">
-              <h3 class="text-sm font-semibold text-gray-400 uppercase mb-3">How CCorex Helps</h3>
-              <ul class="space-y-2">
-                <li v-for="solution in industry.solutions" :key="solution" class="flex items-start gap-2 text-sm text-gray-300">
-                  <i class="fa-solid fa-check text-primary-400 mt-1"></i>
-                  <span>{{ solution }}</span>
-                </li>
-              </ul>
-            </div>
-
-            <div class="flex flex-wrap gap-2">
-              <span v-for="app in industry.recommendedApps" :key="app" class="px-3 py-1 rounded-full bg-primary-500/10 text-primary-400 text-xs font-semibold">
-                {{ app }}
-              </span>
-            </div>
+    <!-- Hero -->
+    <section class="relative overflow-hidden bg-hero text-white">
+      <div class="bg-grid pointer-events-none absolute inset-0 opacity-50" aria-hidden="true"></div>
+      <div class="container-site relative grid gap-14 pb-24 pt-16 lg:grid-cols-[1fr_1.05fr] lg:items-center lg:pt-24">
+        <div>
+          <p class="eyebrow-dark">Industries</p>
+          <h1 class="h-display mt-5 text-white">Built for the businesses that build.</h1>
+          <p class="lead-dark mt-6 max-w-xl">CCorex is made for engineering and construction contractors — mainly MEP and fire-protection firms in Singapore and India — that win work by pricing it accurately and keep margin by controlling it on site.</p>
+          <div class="mt-8 flex flex-wrap gap-3">
+            <NuxtLink to="/contact" class="btn-accent">Book a live demo <i class="fa-solid fa-arrow-right text-xs" aria-hidden="true"></i></NuxtLink>
+            <a href="#mep" class="btn-ghost-dark">MEP trades</a>
           </div>
         </div>
-      </div>
-    </section>
-
-    <!-- Industry Stats -->
-    <section class="py-20 bg-gradient-to-b from-slate-800 to-slate-900">
-      <div class="max-w-7xl mx-auto px-4">
-        <div class="text-center mb-16">
-          <h2 class="text-4xl md:text-5xl font-bold mb-6 text-white">
-            Industry Impact
-          </h2>
-          <p class="text-xl text-gray-300 max-w-3xl mx-auto">
-            Real results from construction firms across different sectors.
-          </p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          <div v-for="stat in industryStats" :key="stat.label" class="p-6 rounded-xl border border-white/10 bg-white/5 text-center">
-            <div class="text-4xl font-bold text-primary-400 mb-2">{{ stat.value }}</div>
-            <div class="text-sm text-gray-400 mb-2">{{ stat.label }}</div>
-            <div class="text-xs text-gray-500">{{ stat.sector }}</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Compliance & Standards -->
-    <section class="py-20 bg-slate-900">
-      <div class="max-w-7xl mx-auto px-4">
-        <div class="text-center mb-16">
-          <h2 class="text-4xl md:text-5xl font-bold mb-6 text-white">
-            Industry Compliance & Standards
-          </h2>
-          <p class="text-xl text-gray-300 max-w-3xl mx-auto">
-            CCorex helps you meet industry-specific regulatory requirements.
-          </p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div v-for="compliance in complianceAreas" :key="compliance.title" class="p-6 rounded-xl border border-white/10 bg-white/5">
-            <div class="text-3xl mb-4"><i :class="compliance.icon"></i></div>
-            <h3 class="text-xl font-bold text-white mb-3">{{ compliance.title }}</h3>
-            <p class="text-gray-400 mb-4">{{ compliance.description }}</p>
-            <ul class="space-y-2">
-              <li v-for="standard in compliance.standards" :key="standard" class="flex items-start gap-2 text-sm text-gray-400">
-                <i class="fa-solid fa-check text-primary-400 mt-1"></i>
-                <span>{{ standard }}</span>
-              </li>
+        <div class="relative lg:-mr-24">
+          <img src="/images/photos/mep-model-laptop.webp" alt="Engineer reviewing a 3D MEP services model on a laptop" width="2000" height="1055" class="aspect-[16/10] w-full rounded-2xl border border-white/10 object-cover shadow-frame" loading="eager" />
+          <div class="absolute -bottom-8 left-6 right-6 hidden rounded-2xl border border-white/10 bg-ink-950/90 p-4 shadow-frame backdrop-blur sm:block lg:right-auto lg:w-80">
+            <p class="text-xs font-semibold uppercase tracking-wider text-cyan-400">Purpose-built for</p>
+            <ul class="mt-2 grid grid-cols-2 gap-x-4 gap-y-1.5 text-xs text-ink-100">
+              <li v-for="s in segments" :key="s.id" class="flex items-center gap-2"><i :class="s.icon" class="text-cyan-400" aria-hidden="true"></i>{{ s.short }}</li>
             </ul>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Case Studies -->
-    <section class="py-20 bg-slate-800">
-      <div class="max-w-7xl mx-auto px-4">
-        <div class="text-center mb-16">
-          <h2 class="text-4xl md:text-5xl font-bold mb-6 text-white">
-            Success Stories by Industry
-          </h2>
-          <p class="text-xl text-gray-300 max-w-3xl mx-auto">
-            See how companies in your sector are using CCorex.
-          </p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div v-for="caseStudy in caseStudies" :key="caseStudy.company" class="p-8 rounded-2xl border border-white/10 bg-white/5">
-            <div class="flex items-center gap-4 mb-6">
-              <div class="text-4xl"><i :class="caseStudy.icon"></i></div>
-              <div>
-                <h3 class="text-xl font-bold text-white">{{ caseStudy.company }}</h3>
-                <p class="text-sm text-gray-400">{{ caseStudy.industry }}</p>
+    <!-- Segment overview -->
+    <section class="section">
+      <div class="container-site">
+        <UiSectionHeader center eyebrow="Who we build for" title="Four kinds of construction business, one platform" lead="Different trades, the same pressures: tender deadlines, thin margins, approvals and a mixed office and site workforce." />
+        <ul class="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          <li v-for="s in segments" :key="s.id">
+            <a :href="`#${s.id}`" class="card-hover group flex h-full flex-col overflow-hidden p-0">
+              <img :src="s.photo" :alt="s.photoAlt" width="2000" height="1100" class="aspect-[16/10] w-full object-cover" :class="s.photoPos" loading="lazy" />
+              <div class="flex flex-1 flex-col p-5">
+                <i :class="s.icon" class="text-brand-600" aria-hidden="true"></i>
+                <h3 class="mt-3 text-lg font-semibold">{{ s.name }}</h3>
+                <p class="mt-1.5 flex-1 text-sm leading-relaxed text-ink-600">{{ s.summary }}</p>
+                <span class="mt-4 text-sm font-semibold text-brand-700 group-hover:text-brand-900">How CCorex helps <i class="fa-solid fa-arrow-down ml-1 text-xs" aria-hidden="true"></i></span>
               </div>
+            </a>
+          </li>
+        </ul>
+        <p class="mt-6 text-center text-xs text-ink-500">Photos are illustrative stock images.</p>
+      </div>
+    </section>
+
+    <!-- MEP trades -->
+    <section id="mep" class="section scroll-mt-20 bg-ink-50">
+      <div class="container-site">
+        <div class="grid gap-12 lg:grid-cols-[1fr_1.15fr] lg:items-center">
+          <div>
+            <UiSectionHeader eyebrow="MEP contractors" title="Estimate every M&E trade in one system" lead="DeepCost comes seeded with Fire Protection, ACMV, A&amp;A and ELV, priced in SGD. Each trade has its own item groups, components, templates and validation rules; add your own trades and take off by building, floor and room." />
+            <ul class="mt-8 space-y-3">
+              <li v-for="b in mepPoints" :key="b" class="flex gap-3 text-ink-700"><i class="fa-solid fa-circle-check mt-1 text-brand-600" aria-hidden="true"></i>{{ b }}</li>
+            </ul>
+            <div class="mt-8 flex flex-wrap gap-3">
+              <NuxtLink to="/products/deepcost" class="btn-primary">Explore DeepCost</NuxtLink>
+              <NuxtLink to="/products/deepplan-ai" class="btn-secondary"><i class="fa-solid fa-wand-magic-sparkles text-xs text-ai-600" aria-hidden="true"></i>Drawing take-off with DeepPlan</NuxtLink>
             </div>
-            <p class="text-gray-300 mb-6">{{ caseStudy.challenge }}</p>
-            <div class="p-4 rounded-lg bg-primary-500/10 border border-primary-500/30 mb-6">
-              <p class="text-sm text-primary-400 font-semibold mb-2">Results:</p>
-              <ul class="space-y-1">
-                <li v-for="result in caseStudy.results" :key="result" class="text-sm text-gray-300">
-                  • {{ result }}
-                </li>
+          </div>
+          <UiBrowserFrame src="/images/product/deepcost-area-schedule.webp" alt="DeepCost area schedule organising a project by building, floor and room" url="deepcost.app / area schedule" />
+        </div>
+        <ul class="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+          <li v-for="t in trades" :key="t.name" class="card h-full">
+            <span class="icon-tile" :class="t.tone"><i :class="t.icon" aria-hidden="true"></i></span>
+            <h3 class="mt-4 text-base font-semibold">{{ t.name }}</h3>
+            <p class="mt-1.5 text-sm leading-relaxed text-ink-600">{{ t.text }}</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Other segments -->
+    <section v-for="(s, i) in detail" :id="s.id" :key="s.id" class="section scroll-mt-20" :class="i % 2 ? 'bg-ink-50' : 'bg-white'">
+      <div class="container-site grid gap-12 lg:grid-cols-2 lg:items-center">
+        <div :class="i % 2 ? 'lg:order-2' : ''">
+          <p class="eyebrow"><i :class="s.icon" aria-hidden="true"></i>{{ s.name }}</p>
+          <h2 class="h-section mt-3">{{ s.title }}</h2>
+          <p class="lead mt-4">{{ s.lead }}</p>
+          <div class="mt-8 grid gap-6 sm:grid-cols-2">
+            <div>
+              <p class="text-xs font-semibold uppercase tracking-wider text-rose-700">Common challenges</p>
+              <ul class="mt-3 space-y-2 text-sm text-ink-700">
+                <li v-for="c in s.challenges" :key="c" class="flex gap-2"><i class="fa-solid fa-xmark mt-1 text-xs text-rose-500" aria-hidden="true"></i>{{ c }}</li>
               </ul>
             </div>
-            <a href="/resources" class="inline-flex items-center gap-2 text-primary-400 font-semibold hover:gap-3 transition-all">
-              Read Full Story
-              <i class="fa-solid fa-arrow-right"></i>
-            </a>
+            <div>
+              <p class="text-xs font-semibold uppercase tracking-wider text-brand-700">How CCorex helps</p>
+              <ul class="mt-3 space-y-2 text-sm text-ink-700">
+                <li v-for="h in s.helps" :key="h" class="flex gap-2"><i class="fa-solid fa-check mt-1 text-xs text-brand-600" aria-hidden="true"></i>{{ h }}</li>
+              </ul>
+            </div>
+          </div>
+          <div class="mt-8 flex flex-wrap items-center gap-2">
+            <span class="text-sm font-semibold text-ink-900">Key apps:</span>
+            <NuxtLink v-for="a in s.apps" :key="a.slug" :to="`/products/${a.slug}`" class="chip hover:border-brand-300 hover:text-brand-800">{{ a.name }}</NuxtLink>
           </div>
         </div>
+        <UiBrowserFrame :src="s.src" :alt="s.alt" :url="s.url" />
       </div>
     </section>
 
-    <!-- CTA Section -->
-    <section class="py-20 bg-gradient-to-b from-slate-800 to-slate-900">
-      <div class="max-w-4xl mx-auto px-4 text-center">
-        <h2 class="text-4xl md:text-5xl font-bold mb-6 text-white">
-          Ready to Transform Your Sector?
-        </h2>
-        <p class="text-xl text-gray-300 mb-10">
-          Join leading construction firms in your industry already using CCorex.
-        </p>
-        <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <a href="/contact" class="px-8 py-4 rounded-lg bg-primary-500 text-slate-900 font-bold hover:bg-primary-400 transition-all">
-            Schedule Industry Demo
-          </a>
-          <NuxtLink to="/resources" class="px-8 py-4 rounded-lg border-2 border-primary-500 text-primary-400 font-bold hover:bg-primary-500 hover:text-slate-900 transition-all">
-            View Case Studies
-          </NuxtLink>
-        </div>
+    <!-- Singapore -->
+    <section class="section relative overflow-hidden bg-hero text-white">
+      <div class="bg-grid pointer-events-none absolute inset-0 opacity-40" aria-hidden="true"></div>
+      <div class="container-site relative">
+        <UiSectionHeader dark center eyebrow="Built for Singapore and India" title="Local rules for an office and site workforce" lead="DeepTrack works in SGD with 9% GST and BCA workheads. DeepHR runs payroll for Singapore or India, with each organisation set to one jurisdiction." />
+        <ul class="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <li v-for="c in singapore" :key="c.title" class="rounded-2xl border border-white/10 bg-white/5 p-5">
+            <i :class="c.icon" class="text-cyan-400" aria-hidden="true"></i>
+            <p class="mt-3 font-semibold text-white">{{ c.title }}</p>
+            <p class="mt-1 text-sm leading-relaxed text-ink-300">{{ c.text }}</p>
+          </li>
+        </ul>
+        <p class="mt-10 text-center"><NuxtLink to="/products/deephr" class="btn-accent">Explore DeepHR</NuxtLink></p>
       </div>
     </section>
+
+    <UiCtaBand title="Tell us what you build" lead="Show us a recent tender or project and we will walk through how CCorex would handle it, trade by trade." secondary-label="Solutions by role" secondary-to="/solutions" />
   </div>
 </template>
 
 <script setup lang="ts">
-const industries = [
+const config = useRuntimeConfig()
+useSeoMeta({
+  title: 'Industries: MEP, main contractors & EPC',
+  description: 'CCorex for MEP and fire-protection contractors in Singapore and India (Fire Protection, ACMV, A&A, ELV), main contractors, EPC firms and tender-based specialists.',
+  ogTitle: 'CCorex for MEP contractors, main contractors and EPC companies',
+  ogDescription: 'Tender estimating, project cost control and Singapore or India HR & payroll for MEP, fire-protection, main contractor and EPC businesses.'
+})
+useHead({ link: [{ rel: 'canonical', href: config.public.siteUrl + '/industries' }] })
+
+const segments = [
+  { id: 'mep', short: 'MEP contractors', name: 'MEP contractors', icon: 'fa-solid fa-bolt', photo: '/images/photos/bim-mep-building.webp', photoAlt: 'Cutaway building model showing MEP services', photoPos: 'object-center', summary: 'Fire protection, ACMV, A&A, ELV and your own trades — priced from one library.' },
+  { id: 'main-contractors', short: 'Main contractors', name: 'Main contractors', icon: 'fa-solid fa-helmet-safety', photo: '/images/photos/bim-team-review.webp', photoAlt: 'Project team reviewing a building model on large screens', photoPos: 'object-center', summary: 'Many projects, many subcontractors — one view of budgets, procurement and claims.' },
+  { id: 'epc', short: 'EPC companies', name: 'EPC companies', icon: 'fa-solid fa-industry', photo: '/images/photos/hero-building-digital.webp', photoAlt: 'Illustration of a digital building model with engineers', photoPos: 'object-right', summary: 'Engineering, procurement and construction under one approval-driven project spine.' },
+  { id: 'specialists', short: 'Specialists', name: 'Tender-based specialists', icon: 'fa-solid fa-file-signature', photo: '/images/photos/bim-engineer-workstation.webp', photoAlt: 'Engineer working on drawings and a 3D model at a workstation', photoPos: 'object-center', summary: 'Specialist subcontractors who win work by pricing tenders fast and accurately.' }
+]
+const mepPoints = [
+  'Area schedules by building, floor and area, with hazard class and dimensions',
+  'Components priced by material and installation, with dated price history',
+  'Item-group templates per trade; one order per trade per tender',
+  'Validation rules — e.g. hazard class decides which sprinkler type is allowed',
+  'Checklist approvals for area schedule, MTO and Form of Tender'
+]
+const trades = [
+  { name: 'Fire protection', icon: 'fa-solid fa-fire-extinguisher', tone: 'bg-red-50 text-mep-fire', text: 'Sprinkler, hydrant and alarm components, with validation rules by hazard class. Seeded.' },
+  { name: 'ACMV', icon: 'fa-solid fa-fan', tone: 'bg-blue-50 text-mep-mech', text: 'Ductwork, equipment and accessories grouped and priced from your library. Seeded.' },
+  { name: 'ELV', icon: 'fa-solid fa-network-wired', tone: 'bg-indigo-50 text-indigo-700', text: 'Extra-low-voltage systems with their own item groups and templates. Seeded.' },
+  { name: 'A&A', icon: 'fa-solid fa-hammer', tone: 'bg-amber-50 text-mep-elec', text: 'Addition and alteration works set up as their own trade. Seeded.' },
+  { name: 'Your own trades', icon: 'fa-solid fa-plus', tone: 'bg-cyan-50 text-mep-plumb', text: 'Add electrical, plumbing or any other trade, and bulk-import its library from Excel.' }
+]
+const DC = { name: 'DeepCost', slug: 'deepcost' }
+const DT = { name: 'DeepTrack', slug: 'deeptrack' }
+const HR = { name: 'DeepHR', slug: 'deephr' }
+const DP = { name: 'DeepPlan AI', slug: 'deepplan-ai' }
+const DD = { name: 'Deep Drive (soon)', slug: 'deep-drive' }
+const detail = [
   {
-    name: 'General Contractors',
-    icon: 'fa-solid fa-helmet-safety',
-    description: 'End-to-end project management for commercial and residential construction projects.',
-    challenges: [
-      'Managing multiple trades',
-      'Budget control',
-      'Schedule coordination',
-      'Change order management'
-    ],
-    solutions: [
-      'Unified project dashboard',
-      'Real-time budget tracking',
-      'Integrated scheduling',
-      'Automated workflows'
-    ],
-    recommendedApps: ['DeepCost', 'DeepTrack', 'DeepHR']
+    id: 'main-contractors', name: 'Main contractors', icon: 'fa-solid fa-helmet-safety',
+    title: 'Control many projects from one place',
+    lead: 'Budgets, procurement, invoice matching, client claims and manpower for every project — with approvals and thresholds that match your organisation.',
+    challenges: ['Margin visible only at project close', 'Purchases committed outside the budget', 'Subcontractor invoices paid without a match'],
+    helps: ['Projects with contract value, retention and payment terms', 'Purchase requests raised against an approved budget', 'Invoices matched against PO and delivery', 'Approval thresholds and a screen-by-role matrix per tenant'],
+    apps: [DT, HR, DD],
+    src: '/images/product/deeptrack-claims.webp', alt: 'DeepTrack client claims list with claim number, amount and status', url: 'deeptrack.app / claims'
   },
   {
-    name: 'Infrastructure Projects',
-    icon: 'fa-solid fa-bridge',
-    description: 'Large-scale civil works including roads, bridges, tunnels, and utilities.',
-    challenges: [
-      'Complex stakeholder management',
-      'Long project timelines',
-      'Regulatory compliance',
-      'Resource allocation'
-    ],
-    solutions: [
-      'Portfolio management',
-      'Milestone tracking',
-      'Compliance reporting',
-      'Resource optimization'
-    ],
-    recommendedApps: ['DeepTrack', 'DeepHR', 'DeepCost']
+    id: 'epc', name: 'EPC companies', icon: 'fa-solid fa-industry',
+    title: 'One platform from tender to final claim',
+    lead: 'Win the job in DeepCost, deliver it in DeepTrack and staff it with DeepHR — the same sign-in and users across engineering, procurement and construction.',
+    challenges: ['Estimates, procurement and site cost in separate systems', 'Approvals across several managers and directors', 'Labour cost missing from project cost'],
+    helps: ['Tender → area schedule → MTO → priced Form of Tender', 'PR → PO → delivery → invoice → payment, tracked', 'Month-end allocates labour and overhead to projects', 'ARIVU answers across all three apps'],
+    apps: [DC, DT, HR],
+    src: '/images/product/deeptrack-overview.webp', alt: 'DeepTrack project overview with contract value, budgets and procurement status', url: 'deeptrack.app / overview'
   },
   {
-    name: 'Commercial Buildings',
-    icon: 'fa-solid fa-building',
-    description: 'Office towers, retail centers, hotels, and mixed-use developments.',
-    challenges: [
-      'Fast-track schedules',
-      'MEP coordination',
-      'Quality control',
-      'Tenant fit-outs'
-    ],
-    solutions: [
-      'Accelerated estimation',
-      'Trade coordination',
-      'Quality tracking',
-      'Change management'
-    ],
-    recommendedApps: ['DeepPlan AI', 'DeepCost', 'DeepTrack']
-  },
-  {
-    name: 'Industrial Plants',
-    icon: 'fa-solid fa-industry',
-    description: 'Manufacturing facilities, warehouses, processing plants, and distribution centers.',
-    challenges: [
-      'Specialized equipment',
-      'Safety requirements',
-      'Process integration',
-      'Commissioning'
-    ],
-    solutions: [
-      'Equipment tracking',
-      'Safety compliance',
-      'System integration',
-      'Handover management'
-    ],
-    recommendedApps: ['DeepCost', 'DeepTrack', 'DeepHR']
-  },
-  {
-    name: 'MEP Contractors',
-    icon: 'fa-solid fa-bolt',
-    description: 'Specialized mechanical, electrical, and plumbing contractors.',
-    challenges: [
-      'Accurate bid preparation',
-      'Material procurement',
-      'Labor productivity',
-      'Coordination with GC'
-    ],
-    solutions: [
-      'MEP-specific libraries',
-      'Procurement tracking',
-      'Time tracking',
-      'Integration with GC systems'
-    ],
-    recommendedApps: ['DeepCost', 'DeepPlan AI', 'DeepHR']
-  },
-  {
-    name: 'Developers',
-    icon: 'fa-solid fa-house-chimney',
-    description: 'Real estate developers managing multiple projects and portfolios.',
-    challenges: [
-      'Portfolio oversight',
-      'Financial control',
-      'Stakeholder reporting',
-      'Risk management'
-    ],
-    solutions: [
-      'Executive dashboards',
-      'Financial analytics',
-      'Automated reporting',
-      'Risk alerts'
-    ],
-    recommendedApps: ['DeepTrack', 'DeepCost', 'DeepPlan AI']
+    id: 'specialists', name: 'Tender-based specialists', icon: 'fa-solid fa-file-signature',
+    title: 'Turn tenders around without cutting corners',
+    lead: 'When your business runs on bids, estimating speed and pricing consistency decide what you win and what you keep.',
+    challenges: ['Tender documents read by hand, bid after bid', 'Rates drift between estimators', 'Priced figures re-typed into the client’s BOQ'],
+    helps: ['AI tender summary of the tender documents', 'One priced library behind every number', 'FOT AI overlays your figures on the client’s BOQ PDF', 'Drawings measured in DeepPlan (AI take-off in early access)'],
+    apps: [DC, DP],
+    src: '/images/product/deepcost-opportunity.webp', alt: 'DeepCost opportunity pipeline with tenders, customers and status', url: 'deepcost.app / opportunities'
   }
 ]
-
-const industryStats = [
-  { value: '70%', label: 'Faster Estimation', sector: 'MEP Contractors' },
-  { value: '15%', label: 'Cost Savings', sector: 'General Contractors' },
-  { value: '40%', label: 'Time Reduction', sector: 'Infrastructure' },
-  { value: '95%+', label: 'Accuracy Rate', sector: 'Commercial' },
-  { value: '100%', label: 'Data Visibility', sector: 'Developers' },
-  { value: '30%', label: 'Productivity Gain', sector: 'Industrial' },
-  { value: '2-3 wks', label: 'Implementation', sector: 'All Sectors' },
-  { value: '24/7', label: 'Support', sector: 'All Sectors' }
-]
-
-const complianceAreas = [
-  {
-    icon: 'fa-solid fa-lock',
-    title: 'Safety & Compliance',
-    description: 'Meet OSHA and local safety requirements with built-in compliance tracking.',
-    standards: [
-      'OSHA safety reporting',
-      'Incident tracking',
-      'Safety certifications',
-      'Audit trails'
-    ]
-  },
-  {
-    icon: 'fa-solid fa-clipboard-list',
-    title: 'Quality Standards',
-    description: 'Maintain ISO and industry quality standards throughout project lifecycle.',
-    standards: [
-      'ISO 9001 compliance',
-      'Quality checklists',
-      'Inspection records',
-      'Non-conformance tracking'
-    ]
-  },
-  {
-    icon: 'fa-solid fa-briefcase',
-    title: 'Financial Regulations',
-    description: 'Stay compliant with accounting standards and tax regulations.',
-    standards: [
-      'GAAP compliance',
-      'Tax documentation',
-      'Audit support',
-      'Financial reporting'
-    ]
-  }
-]
-
-const caseStudies = [
-  {
-    company: 'Metro Construction',
-    industry: 'General Contractor',
-    icon: 'fa-solid fa-helmet-safety',
-    challenge: 'Managing 12 concurrent projects with limited visibility into costs and schedules.',
-    results: [
-      'Reduced estimation time by 65%',
-      'Improved project margins by 12%',
-      'Real-time visibility across all projects',
-      'Eliminated spreadsheet errors'
-    ]
-  },
-  {
-    company: 'PowerTech MEP',
-    industry: 'MEP Contractor',
-    icon: 'fa-solid fa-bolt',
-    challenge: 'Needed faster bid turnaround while maintaining accuracy for competitive tenders.',
-    results: [
-      'Cut bid preparation from 3 days to 6 hours',
-      'Achieved 95%+ estimation accuracy',
-      'Won 25% more projects',
-      'Reduced rework by 40%'
-    ]
-  },
-  {
-    company: 'Skyline Developers',
-    industry: 'Property Developer',
-    icon: 'fa-solid fa-house-chimney',
-    challenge: 'Tracking 8 projects across 3 cities with no unified reporting system.',
-    results: [
-      'Complete portfolio visibility',
-      'Reduced budget overruns by 80%',
-      'Automated stakeholder reporting',
-      'Improved decision-making speed'
-    ]
-  },
-  {
-    company: 'Bridge Works Inc',
-    industry: 'Infrastructure',
-    icon: 'fa-solid fa-bridge',
-    challenge: 'Complex multi-year project with hundreds of stakeholders and strict compliance.',
-    results: [
-      'Streamlined stakeholder communication',
-      'Automated compliance reporting',
-      'Reduced administrative time by 50%',
-      'On-time, on-budget delivery'
-    ]
-  }
+const singapore = [
+  { icon: 'fa-solid fa-landmark', title: 'Singapore payroll', text: 'CPF (incl. graduated rates for new PRs), SDL and SHG funds: CDAC, SINDA, MBMF, ECF.' },
+  { icon: 'fa-solid fa-indian-rupee-sign', title: 'India payroll', text: 'EPF, ESI, Professional Tax and TDS, with ECR, ESIC, PT, 24Q and Form 16 Part B.' },
+  { icon: 'fa-solid fa-business-time', title: 'MOM overtime & proration', text: 'MOM proration and OT rate rules; warnings above 72 OT hours a month.' },
+  { icon: 'fa-solid fa-location-crosshairs', title: 'Site attendance', text: 'Face and GPS check-in on the employee’s own phone — no hardware to buy.' }
 ]
 </script>

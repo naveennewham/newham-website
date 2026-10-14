@@ -1,23 +1,11 @@
 <template>
-  <div class="min-h-screen gradient-bg text-white">
+  <div class="flex min-h-screen flex-col bg-white">
+    <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:rounded-lg focus:bg-white focus:px-4 focus:py-2">Skip to content</a>
     <Navbar />
-    <main class="pt-20">
+    <main id="main" class="flex-1">
       <slot />
     </main>
     <Footer />
+    <UiConsentBanner site="ccorex.com" />
   </div>
 </template>
-
-<script setup lang="ts">
-import Navbar from '~/components/Navbar.vue'
-import Footer from '~/components/Footer.vue'
-if (process.client) document.documentElement.classList.add('dark')
-</script>
-
-<style scoped>
-.gradient-bg {
-  background: radial-gradient(1200px 600px at 50% 0%, rgba(34,211,238,0.06), transparent),
-              radial-gradient(1200px 600px at 80% 40%, rgba(45,212,191,0.06), transparent),
-              linear-gradient(to bottom, #0f172a, #0b1220 40%, #0f172a);
-}
-</style>

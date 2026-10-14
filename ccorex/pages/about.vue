@@ -1,265 +1,128 @@
 <template>
   <div>
-    <!-- Hero Section -->
-    <section class="relative w-full min-h-[70vh] flex items-center justify-center overflow-hidden">
-      <div class="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900"></div>
-      <div class="absolute top-0 right-0 w-96 h-96 bg-primary-500/10 rounded-full blur-3xl"></div>
-      <div class="absolute bottom-0 left-0 w-96 h-96 bg-secondary-500/10 rounded-full blur-3xl"></div>
-
-      <div class="relative z-10 max-w-7xl mx-auto px-4 text-center pt-32 pb-20">
-        <h1 class="text-5xl md:text-7xl font-bold mb-6">
-          <span class="text-white">Building the Future of</span>
-          <br/>
-          <span class="bg-gradient-to-r from-primary-400 to-secondary-400 bg-clip-text text-transparent">
-            Construction Technology
-          </span>
-        </h1>
-        <p class="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto">
-          CCorex is on a mission to transform construction operations through integrated technology and AI-powered automation.
-        </p>
+    <!-- Hero -->
+    <section class="relative overflow-hidden bg-hero text-white">
+      <div class="bg-grid pointer-events-none absolute inset-0 opacity-50" aria-hidden="true"></div>
+      <div class="container-site relative grid gap-14 pb-24 pt-16 lg:grid-cols-[1fr_1fr] lg:items-center lg:pt-24">
+        <div>
+          <p class="eyebrow-dark">About CCorex</p>
+          <h1 class="h-display mt-5 text-white">Software built by people who know construction.</h1>
+          <p class="lead-dark mt-6 max-w-xl">CCorex is built and delivered by Newham Technological Solutions in Singapore — a team that combines software engineering with specialist M&amp;E engineering experience. It serves engineering and construction contractors, mainly MEP and fire-protection firms in Singapore and India.</p>
+          <div class="mt-8 flex flex-wrap gap-3">
+            <NuxtLink to="/contact" class="btn-accent">Talk to our team <i class="fa-solid fa-arrow-right text-xs" aria-hidden="true"></i></NuxtLink>
+            <a :href="config.public.newhamUrl" class="btn-ghost-dark">Visit Newham <i class="fa-solid fa-arrow-up-right-from-square text-xs" aria-hidden="true"></i></a>
+          </div>
+        </div>
+        <div class="lg:-mr-16">
+          <img src="/images/photos/hero-ccorex-suite.webp" alt="Illustration of the CCorex suite with DeepCost, DeepTrack, DeepHR and DeepPlan AI connected around the CCorex platform" width="2000" height="1116" class="aspect-[16/9] w-full rounded-2xl border border-white/10 object-cover shadow-frame" loading="eager" />
+        </div>
       </div>
     </section>
 
-    <!-- Mission & Vision -->
-    <section class="py-20 bg-slate-800">
-      <div class="max-w-7xl mx-auto px-4">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-          <div class="p-8 rounded-2xl border border-white/10 bg-white/5">
-            <div class="text-4xl mb-4"><i class="fa-solid fa-bullseye"></i></div>
-            <h2 class="text-3xl font-bold text-white mb-4">Our Mission</h2>
-            <p class="text-lg text-gray-300">
-              To empower construction professionals with integrated technology that eliminates inefficiency, reduces costs, and enables data-driven decision making across the entire project lifecycle.
-            </p>
-          </div>
-          <div class="p-8 rounded-2xl border border-white/10 bg-white/5">
-            <div class="text-4xl mb-4"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
-            <h2 class="text-3xl font-bold text-white mb-4">Our Vision</h2>
-            <p class="text-lg text-gray-300">
-              A construction industry where every project is delivered on time, on budget, and with complete transparency—powered by intelligent, integrated software that works as hard as the teams using it.
-            </p>
+    <!-- Mission -->
+    <section class="section">
+      <div class="container-site grid gap-12 lg:grid-cols-[1.1fr_1fr] lg:items-start">
+        <UiSectionHeader eyebrow="Our mission" title="Give construction businesses one platform that fits the way they work." lead="Construction firms run on estimates, budgets, purchase orders, claims, timesheets and payroll — usually spread across spreadsheets and generic tools. We build software that brings that work together on one sign-in, with the controls and approvals the industry needs." />
+        <div class="grid gap-4">
+          <div v-for="m in mission" :key="m.title" class="card flex gap-4">
+            <span class="icon-tile shrink-0"><i :class="m.icon" aria-hidden="true"></i></span>
+            <div><h3 class="text-base font-semibold">{{ m.title }}</h3><p class="mt-1 text-sm leading-relaxed text-ink-600">{{ m.text }}</p></div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Story -->
-    <section class="py-20 bg-gradient-to-b from-slate-800 to-slate-900">
-      <div class="max-w-7xl mx-auto px-4">
-        <div class="max-w-4xl mx-auto text-center mb-16">
-          <h2 class="text-4xl md:text-5xl font-bold mb-6 text-white">
-            Our Story
-          </h2>
-          <p class="text-xl text-gray-300">
-            Born from real construction challenges, built for real construction teams.
-          </p>
-        </div>
-
-        <div class="max-w-5xl mx-auto space-y-12">
-          <div v-for="milestone in milestones" :key="milestone.year" class="flex gap-8">
-            <div class="flex-shrink-0 w-32 text-right">
-              <div class="text-3xl font-bold text-primary-400">{{ milestone.year }}</div>
-            </div>
-            <div class="flex-1 pb-12 border-l-2 border-primary-500/30 pl-8 relative">
-              <div class="absolute -left-3 top-0 w-6 h-6 rounded-full bg-primary-500 border-4 border-slate-900"></div>
-              <h3 class="text-2xl font-bold text-white mb-3">{{ milestone.title }}</h3>
-              <p class="text-gray-300">{{ milestone.description }}</p>
-            </div>
-          </div>
+    <!-- Newham -->
+    <section class="section bg-ink-50">
+      <div class="container-site grid gap-12 lg:grid-cols-2 lg:items-center">
+        <img src="/images/photos/bim-team-review.webp" alt="Engineers reviewing an MEP model together on large monitors" width="2000" height="1086" class="aspect-[16/10] w-full rounded-2xl object-cover shadow-frame" loading="lazy" />
+        <div>
+          <UiSectionHeader eyebrow="Delivered by Newham" title="Software plus specialists" lead="Newham Technological Solutions builds CCorex and also provides specialist M&E engineering services. That combination shapes the product." />
+          <ul class="mt-8 space-y-5">
+            <li v-for="n in newham" :key="n.title" class="flex gap-4">
+              <i :class="n.icon" class="mt-1 w-5 text-brand-600" aria-hidden="true"></i>
+              <div><p class="font-semibold text-ink-900">{{ n.title }}</p><p class="text-sm text-ink-600">{{ n.text }}</p></div>
+            </li>
+          </ul>
+          <a :href="config.public.newhamUrl" class="mt-8 inline-flex font-semibold text-brand-700 hover:text-brand-900">About Newham Technological Solutions <i class="fa-solid fa-arrow-up-right-from-square ml-2 mt-1 text-xs" aria-hidden="true"></i></a>
         </div>
       </div>
     </section>
 
-    <!-- Values -->
-    <section class="py-20 bg-slate-900">
-      <div class="max-w-7xl mx-auto px-4">
-        <div class="text-center mb-16">
-          <h2 class="text-4xl md:text-5xl font-bold mb-6 text-white">
-            Our Values
-          </h2>
-          <p class="text-xl text-gray-300 max-w-3xl mx-auto">
-            The principles that guide everything we do.
-          </p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <div v-for="value in values" :key="value.title" class="p-6 rounded-xl border border-white/10 bg-white/5">
-            <div class="text-4xl mb-4"><i :class="value.icon"></i></div>
-            <h3 class="text-xl font-bold text-white mb-3">{{ value.title }}</h3>
-            <p class="text-gray-400">{{ value.description }}</p>
-          </div>
+    <!-- Why construction -->
+    <section class="section">
+      <div class="container-site">
+        <UiSectionHeader center eyebrow="Why construction" title="Generic software misses the work that matters" lead="Off-the-shelf suites weren’t built for construction. The gaps between tools are where time is lost and margin leaks out." />
+        <div class="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <UiFeatureCard v-for="w in why" :key="w.title" :icon="w.icon" :title="w.title" :text="w.text" />
         </div>
       </div>
     </section>
 
-    <!-- Team -->
-    <section class="py-20 bg-slate-800">
-      <div class="max-w-7xl mx-auto px-4">
-        <div class="text-center mb-16">
-          <h2 class="text-4xl md:text-5xl font-bold mb-6 text-white">
-            Leadership Team
-          </h2>
-          <p class="text-xl text-gray-300 max-w-3xl mx-auto">
-            Experienced professionals from construction and technology.
-          </p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          <div v-for="member in team" :key="member.name" class="text-center">
-            <!-- Photo Placeholder -->
-            <div class="w-48 h-48 mx-auto mb-4 rounded-full bg-gradient-to-br from-primary-500/20 to-secondary-500/20 border-2 border-primary-500/30 flex items-center justify-center">
-              <span class="text-5xl">{{ member.initials }}</span>
-            </div>
-            <h3 class="text-xl font-bold text-white mb-1">{{ member.name }}</h3>
-            <p class="text-primary-400 font-semibold mb-2">{{ member.role }}</p>
-            <p class="text-sm text-gray-400">{{ member.bio }}</p>
-          </div>
-        </div>
+    <!-- How we work -->
+    <section class="section relative overflow-hidden bg-hero text-white">
+      <div class="bg-grid pointer-events-none absolute inset-0 opacity-40" aria-hidden="true"></div>
+      <div class="container-site relative">
+        <UiSectionHeader dark eyebrow="How we work with customers" title="From first call to go-live, with the same team" lead="We set CCorex up around your organisation, your data and your approval rules — then stay with you after go-live." />
+        <div class="mt-12"><UiStepFlow :steps="process" dark /></div>
       </div>
     </section>
 
-    <!-- Stats -->
-    <section class="py-20 bg-gradient-to-b from-slate-800 to-slate-900">
-      <div class="max-w-7xl mx-auto px-4">
-        <div class="text-center mb-16">
-          <h2 class="text-4xl md:text-5xl font-bold mb-6 text-white">
-            CCorex by the Numbers
-          </h2>
-        </div>
-
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-          <div v-for="stat in stats" :key="stat.label" class="p-6 rounded-xl border border-white/10 bg-white/5 text-center">
-            <div class="text-4xl font-bold text-primary-400 mb-2">{{ stat.value }}</div>
-            <div class="text-sm text-gray-400">{{ stat.label }}</div>
-          </div>
-        </div>
+    <!-- Principles -->
+    <section class="section bg-ink-50">
+      <div class="container-site">
+        <UiSectionHeader center eyebrow="What we stand for" title="How we build and sell CCorex" />
+        <ol class="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <li v-for="(p, i) in principles" :key="p.title" class="card">
+            <p class="font-display text-sm font-bold text-brand-600">{{ String(i + 1).padStart(2, '0') }}</p>
+            <h3 class="mt-3 text-lg font-semibold">{{ p.title }}</h3>
+            <p class="mt-2 text-sm leading-relaxed text-ink-600">{{ p.text }}</p>
+          </li>
+        </ol>
       </div>
     </section>
 
-    <!-- Careers -->
-    <section class="py-20 bg-slate-900">
-      <div class="max-w-4xl mx-auto px-4 text-center">
-        <div class="text-4xl mb-6"><i class="fa-solid fa-rocket"></i></div>
-        <h2 class="text-4xl md:text-5xl font-bold mb-6 text-white">
-          Join Our Team
-        </h2>
-        <p class="text-xl text-gray-300 mb-10">
-          We're always looking for talented people who are passionate about transforming construction through technology.
-        </p>
-        <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <a href="/contact" class="px-8 py-4 rounded-lg bg-primary-500 text-slate-900 font-bold hover:bg-primary-400 transition-all">
-            View Open Positions
-          </a>
-          <a href="/contact" class="px-8 py-4 rounded-lg border-2 border-primary-500 text-primary-400 font-bold hover:bg-primary-500 hover:text-slate-900 transition-all">
-            Contact Us
-          </a>
-        </div>
-      </div>
-    </section>
+    <UiCtaBand title="Meet the team behind CCorex" lead="Book a demo with the people who build and support the platform. Or email admin@newhamtech.com." />
   </div>
 </template>
 
 <script setup lang="ts">
-const milestones = [
-  {
-    year: '2020',
-    title: 'The Beginning',
-    description: 'Founded by construction professionals frustrated with disconnected tools and manual processes. Started building the first version of DeepCost.'
-  },
-  {
-    year: '2021',
-    title: 'First Product Launch',
-    description: 'DeepCost launched with MEP estimation capabilities. First 50 customers onboarded, achieving 95%+ estimation accuracy.'
-  },
-  {
-    year: '2022',
-    title: 'AI Innovation',
-    description: 'Introduced DeepPlan AI with computer vision for automated takeoffs. Reduced manual measurement time by 40%.'
-  },
-  {
-    year: '2023',
-    title: 'Platform Expansion',
-    description: 'Launched DeepTrack and DeepHR, completing the integrated suite. Reached 500+ construction firms across 15 countries.'
-  },
-  {
-    year: '2024',
-    title: 'Enterprise Growth',
-    description: 'Achieved SOC 2 Type II certification. Serving Fortune 500 contractors and managing $5B+ in construction projects.'
-  },
-  {
-    year: 'Today',
-    title: 'Leading the Industry',
-    description: 'Trusted by 1,000+ construction firms worldwide. Continuously innovating with AI and automation to transform the industry.'
-  }
-]
+const config = useRuntimeConfig()
+useSeoMeta({
+  title: 'About CCorex & Newham Technological Solutions',
+  description: 'CCorex is built by Newham Technological Solutions in Singapore for MEP and fire-protection contractors in Singapore and India, backed by M&E engineering experience.',
+  ogTitle: 'About CCorex — construction software delivered by Newham',
+  ogDescription: 'Built in Singapore by a team that combines software engineering with specialist M&E engineering experience.'
+})
+useHead({ link: [{ rel: 'canonical', href: config.public.siteUrl + '/about' }] })
 
-const values = [
-  {
-    icon: 'fa-solid fa-bullseye',
-    title: 'Customer First',
-    description: 'Every decision we make starts with understanding our customers\' needs and challenges.'
-  },
-  {
-    icon: 'fa-solid fa-rocket',
-    title: 'Innovation',
-    description: 'We constantly push boundaries with AI and technology to solve real construction problems.'
-  },
-  {
-    icon: 'fa-solid fa-handshake',
-    title: 'Integrity',
-    description: 'We build trust through transparency, honesty, and doing what we say we\'ll do.'
-  },
-  {
-    icon: 'fa-solid fa-bolt',
-    title: 'Excellence',
-    description: 'We set high standards and continuously improve to deliver exceptional quality.'
-  },
-  {
-    icon: 'fa-solid fa-seedling',
-    title: 'Growth',
-    description: 'We invest in our team\'s development and embrace continuous learning.'
-  },
-  {
-    icon: 'fa-solid fa-earth-americas',
-    title: 'Impact',
-    description: 'We measure success by the positive impact we create for our customers and industry.'
-  }
+const mission = [
+  { icon: 'fa-solid fa-helmet-safety', title: 'Built for construction', text: 'Area schedules, MTOs, Forms of Tender, progress claims, retention and site attendance are core features, not add-ons.' },
+  { icon: 'fa-solid fa-key', title: 'One platform, one login', text: 'Estimating, project delivery and HR share one sign-in and one user base, with roles per app.' },
+  { icon: 'fa-solid fa-wand-magic-sparkles', title: 'AI where it helps', text: 'An AI tender summary and FOT AI in DeepCost, and ARIVU answering questions from your own data in every app. AI take-off in DeepPlan is in early access.' }
 ]
-
-const team = [
-  {
-    name: 'John Smith',
-    role: 'CEO & Co-Founder',
-    initials: 'JS',
-    bio: '20+ years in construction, former project director at major GC.'
-  },
-  {
-    name: 'Sarah Chen',
-    role: 'CTO & Co-Founder',
-    initials: 'SC',
-    bio: 'AI/ML expert, previously led engineering at construction tech startup.'
-  },
-  {
-    name: 'Michael Brown',
-    role: 'VP of Product',
-    initials: 'MB',
-    bio: 'Product leader with deep construction software experience.'
-  },
-  {
-    name: 'Emily Davis',
-    role: 'VP of Customer Success',
-    initials: 'ED',
-    bio: 'Dedicated to ensuring customer success and satisfaction.'
-  }
+const newham = [
+  { icon: 'fa-solid fa-code', title: 'A software team', text: 'Designs, builds and supports the CCorex platform and every app in the suite.' },
+  { icon: 'fa-solid fa-gears', title: 'A specialist M&E engineering team', text: 'Brings day-to-day knowledge of MEP estimating, take-off and project work into the product.' },
+  { icon: 'fa-solid fa-location-dot', title: 'Based in Singapore, serving India too', text: 'Built for local requirements: CPF, SDL and MOM rules for Singapore, and EPF, ESI, PT and TDS for India, in DeepHR.' }
 ]
-
-const stats = [
-  { value: '1,000+', label: 'Construction Firms' },
-  { value: '$5B+', label: 'Projects Managed' },
-  { value: '15', label: 'Countries' },
-  { value: '99.9%', label: 'Uptime' },
-  { value: '95%+', label: 'Accuracy Rate' },
-  { value: '24/7', label: 'Support' },
-  { value: '50+', label: 'Team Members' },
-  { value: '4.9/5', label: 'Customer Rating' }
+const why = [
+  { icon: 'fa-solid fa-table-cells', title: 'Spreadsheet estimating', text: 'Take-offs and rates drift between files and estimators.' },
+  { icon: 'fa-solid fa-envelope-open-text', title: 'Approvals in inboxes', text: 'Budgets and purchases signed off over email, with no trail.' },
+  { icon: 'fa-solid fa-link-slash', title: 'Re-keyed data', text: 'Priced figures typed again into the client’s BOQ; invoices keyed again into accounts.' },
+  { icon: 'fa-solid fa-person-digging', title: 'Office and site', text: 'Field crews need attendance and requests that work on a phone.' }
+]
+const process = [
+  { title: 'Discovery', text: 'We learn how you estimate, run projects and pay people today.' },
+  { title: 'Configuration', text: 'Organisation, users, roles, approval thresholds and apps set up for you.' },
+  { title: 'Data import', text: 'Your price library, customers, users and employees brought in from Excel templates.' },
+  { title: 'Training', text: 'Role-based sessions for estimators, managers, HR and site teams.' },
+  { title: 'Support', text: 'Ongoing help from the team that builds the product.' }
+]
+const principles = [
+  { title: 'Describe, don’t exaggerate', text: 'We show you the product working on your own workflow, not a slide of promises.' },
+  { title: 'Label the roadmap', text: 'What is available today and what is planned are always kept separate.' },
+  { title: 'Start small', text: 'Begin with one app and one workflow, then add apps as the value is proven.' },
+  { title: 'Your data stays yours', text: 'Each organisation’s data is kept separate, personal fields are encrypted, and ARIVU only reads your own organisation’s data.' }
 ]
 </script>

@@ -1,0 +1,74 @@
+/*
+  Light / dark theme. The neutral `ink` scale and the light `brand` tints are
+  CSS variables (see tailwind.config). `.dark` on <html> inverts them, so
+  existing classes (bg-white, bg-ink-50, text-ink-900, border-ink-100 …) flip
+  without per-page changes. Sections that are dark in both themes reset the
+  variables so their text and chips keep the original colours.
+*/
+:root {
+  --ink-50: 246 247 249; --ink-100: 236 238 242; --ink-200: 214 218 226; --ink-300: 179 186 199;
+  --ink-400: 138 147 166; --ink-500: 102 112 133; --ink-600: 75 85 101; --ink-700: 54 65 82;
+  --ink-800: 32 41 57; --ink-900: 18 25 38; --ink-950: 11 17 28;
+  --brand-50: 232 246 248; --brand-100: 205 235 239; --brand-200: 159 216 224;
+  --page: 255 255 255; color-scheme: light;
+}
+
+html.dark {
+  --ink-50: 13 25 30; --ink-100: 30 44 51; --ink-200: 44 60 68; --ink-300: 66 84 93;
+  --ink-400: 109 126 135; --ink-500: 141 156 164; --ink-600: 170 183 189; --ink-700: 196 207 212;
+  --ink-800: 220 228 231; --ink-900: 238 243 245; --ink-950: 247 250 251;
+  --brand-50: 8 52 60; --brand-100: 10 68 78; --brand-200: 14 90 102;
+  --page: 7 17 21; color-scheme: dark;
+}
+
+/* Always-dark surfaces keep the light-theme neutrals for their own content. */
+html.dark .bg-hero, html.dark .bg-brand-950, html.dark .bg-brand-900, html.dark .bg-ink-900, html.dark .bg-ink-950,
+html.dark [class*="bg-[#03191f]"], html.dark .theme-keep {
+  --ink-50: 246 247 249; --ink-100: 236 238 242; --ink-200: 214 218 226; --ink-300: 179 186 199;
+  --ink-400: 138 147 166; --ink-500: 102 112 133; --ink-600: 75 85 101; --ink-700: 54 65 82;
+  --ink-800: 32 41 57; --ink-900: 18 25 38; --ink-950: 11 17 28;
+  --brand-50: 232 246 248; --brand-100: 205 235 239; --brand-200: 159 216 224;
+}
+html.dark .bg-ink-900 { background-color: #121926; }
+html.dark .bg-ink-950 { background-color: #0b111c; }
+
+/* Page and card surfaces */
+html.dark body { background-color: rgb(var(--page)); color: rgb(var(--ink-700)); }
+html.dark .bg-white { background-color: #0b171b; }
+html.dark .bg-white\/95 { background-color: rgb(11 23 27 / .95); }
+html.dark .bg-white\/90 { background-color: rgb(11 23 27 / .9); }
+html.dark .bg-white\/80 { background-color: rgb(11 23 27 / .8); }
+html.dark .bg-white\/75, html.dark .supports-\[backdrop-filter\]\:bg-white\/75 { background-color: rgb(11 23 27 / .78); }
+html.dark .bg-white\/70 { background-color: rgb(11 23 27 / .7); }
+html.dark [class*="bg-[#f6fbfb]"] { background-color: #06151a; }
+html.dark .shadow-card { box-shadow: 0 1px 2px rgba(0,0,0,.4), 0 0 0 1px rgba(255,255,255,.03); }
+html.dark .shadow-lift { box-shadow: 0 16px 40px -12px rgba(0,0,0,.7); }
+
+/* Brand text that is too dark on dark surfaces */
+html.dark .text-brand-600, html.dark .text-brand-700, html.dark .text-brand-800, html.dark .text-brand-900 { color: #33cfe7; }
+html.dark .eyebrow { color: #33cfe7; }
+html.dark .hover\:text-brand-900:hover, html.dark .hover\:text-brand-800:hover { color: #9fe8f3; }
+html.dark .ring-white { --tw-ring-color: #0b171b; }
+
+/* Light accent tints become translucent glows */
+html.dark .bg-sky-50 { background-color: rgb(56 189 248 / .12); }
+html.dark .bg-amber-50 { background-color: rgb(251 191 36 / .12); }
+html.dark .bg-emerald-50 { background-color: rgb(52 211 153 / .12); }
+html.dark .bg-violet-50 { background-color: rgb(167 139 250 / .14); }
+html.dark .bg-indigo-50 { background-color: rgb(129 140 248 / .14); }
+html.dark .bg-rose-50 { background-color: rgb(251 113 133 / .12); }
+html.dark .bg-ai-50 { background-color: rgb(155 138 251 / .16); }
+html.dark .bg-ai-100 { background-color: rgb(155 138 251 / .2); }
+html.dark .text-sky-700 { color: #7dd3fc; } html.dark .text-amber-700, html.dark .text-amber-800 { color: #fcd34d; }
+html.dark .text-emerald-700 { color: #6ee7b7; } html.dark .text-violet-700 { color: #c4b5fd; }
+html.dark .text-indigo-700 { color: #a5b4fc; } html.dark .text-rose-600, html.dark .text-rose-700 { color: #fda4af; }
+html.dark .text-ai-600, html.dark .text-ai-700 { color: #c4b5fd; }
+html.dark .border-amber-200 { border-color: rgb(251 191 36 / .3); }
+html.dark .border-brand-200, html.dark .border-brand-100 { border-color: rgb(51 207 231 / .3); }
+
+/* Theme switch animation */
+html.theme-anim, html.theme-anim * { transition: background-color .35s ease, border-color .35s ease, color .35s ease !important; }
+
+/* Component classes that bundle bg-white via @apply */
+html.dark .card, html.dark .card-hover, html.dark .chip, html.dark .btn-secondary, html.dark .field { background-color: #0b171b; }
+html.dark .btn-secondary:hover { background-color: #12242a; }

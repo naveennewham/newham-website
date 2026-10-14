@@ -1,735 +1,272 @@
 <template>
   <div>
-    <!-- SECTION 1: HERO -->
-    <section class="relative w-full min-h-screen flex items-center justify-center overflow-hidden">
-      <div class="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900"></div>
-      <div class="absolute top-0 right-0 w-96 h-96 bg-primary-500/10 rounded-full blur-3xl"></div>
-      <div class="absolute bottom-0 left-0 w-96 h-96 bg-secondary-500/10 rounded-full blur-3xl"></div>
+    <HomeHero />
 
-      <div class="relative z-10 max-w-7xl mx-auto px-4 text-center pt-20">
-        <div class="mb-6">
-          <span class="px-4 py-2 rounded-full bg-primary-500/10 border border-primary-500/30 text-primary-400 text-sm font-semibold">
-            The Complete Construction Management Suite
-          </span>
+    <!-- Who it's for -->
+    <section class="border-b border-ink-100 bg-white" aria-label="Who CCorex is for">
+      <div class="container-site flex flex-col gap-4 py-8 lg:flex-row lg:items-center lg:justify-between">
+        <p class="text-sm font-semibold text-ink-900">Purpose-built for</p>
+        <ul class="flex flex-wrap gap-x-8 gap-y-3 text-sm text-ink-600">
+          <li v-for="s in segments" :key="s.label" class="flex items-center gap-2"><i :class="s.icon" class="text-brand-600" aria-hidden="true"></i>{{ s.label }}</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Capability marquee -->
+    <section class="border-b border-ink-100 bg-ink-50 py-6" aria-label="What CCorex covers">
+      <UiMarquee :items="capabilities" label="CCorex capabilities" />
+    </section>
+
+    <!-- Problem -->
+    <section class="section">
+      <div class="container-site grid gap-12 lg:grid-cols-[1fr_1.2fr] lg:items-center">
+        <div>
+          <UiSectionHeader eyebrow="The problem" title="Construction runs on scattered tools." lead="Estimates in spreadsheets, budgets in another file, procurement over email, attendance on paper. Off-the-shelf suites weren't built for construction — so the margin leaks out in the gaps." />
+          <p class="mt-6 inline-flex items-center gap-3 rounded-xl bg-rose-50 px-4 py-3 font-display text-lg font-bold text-rose-700">5 tools · 5 logins · 0 connection</p>
         </div>
-        <h1 class="text-5xl md:text-7xl font-bold mb-6">
-          <span class="text-white">The Operating System for</span>
-          <br/>
-          <span class="bg-gradient-to-r from-primary-400 to-secondary-400 bg-clip-text text-transparent">Modern Construction</span>
-        </h1>
-        <p class="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto mb-10">
-          Manage estimating, projects, workforce, and drawing takeoffs in one unified platform built for contractors.
-        </p>
-        <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-          <a href="/contact" class="px-8 py-4 rounded-lg bg-primary-500 text-slate-900 font-bold hover:bg-primary-400 transition-all">Request Demo</a>
-          <button class="px-8 py-4 rounded-lg border-2 border-primary-500 text-primary-400 font-bold hover:bg-primary-500/10 transition-all">
-            Watch Overview
-          </button>
-        </div>
+        <UiReveal class="grid gap-4 sm:grid-cols-2">
+          <UiFeatureCard v-for="p in problems" :key="p.title" :icon="p.icon" :title="p.title" :text="p.text" tone="bg-rose-50 text-rose-600" />
+        </UiReveal>
+      </div>
+    </section>
 
-        <!-- VIDEO -->
-        <div class="max-w-5xl mx-auto mb-12">
-          <div class="relative rounded-2xl overflow-hidden border border-white/10 bg-white/5 backdrop-blur-sm shadow-2xl">
-            <div class="relative aspect-video">
-              <video
-                class="w-full h-full object-cover"
-                autoplay
-                loop
-                muted
-                playsinline
-                preload="metadata"
-                poster="/ccorex-logo.png"
-              >
-                <source src="/CCorex_main.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-              </video>
+    <HomeTeamHub />
 
-              <!-- Overlay -->
-              <div class="absolute inset-0 bg-gradient-to-t from-slate-900/30 to-transparent pointer-events-none"></div>
+    <HomeVideoGallery />
+
+    <HomeBento />
+
+    <!-- Win, deliver, staff -->
+    <section class="section">
+      <div class="container-site">
+        <UiSectionHeader eyebrow="How it fits together" title="Win it in DeepCost. Deliver it in DeepTrack. Staff it with DeepHR." lead="A tender arrives in DeepCost, drawings are measured in DeepPlan and the priced bid goes out from DeepCost. A won job runs in DeepTrack, and the people on it are managed and paid in DeepHR." />
+        <UiReveal class="mt-10 rounded-3xl border border-ink-100 bg-ink-50 p-5 sm:p-8">
+          <div class="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
+            <div>
+              <p class="eyebrow">Business flow across apps</p>
+              <h3 class="mt-2 text-xl font-bold">One job, from tender to payroll</h3>
             </div>
-
-            <!-- Decorative Glows -->
-            <div class="absolute -top-4 -right-4 w-24 h-24 bg-primary-500/20 rounded-full blur-2xl"></div>
-            <div class="absolute -bottom-4 -left-4 w-32 h-32 bg-secondary-500/20 rounded-full blur-2xl"></div>
+            <p class="max-w-md text-sm text-ink-600">Each app keeps its own records under one sign-in and one user base. Passing records automatically from one app to the next is on the roadmap.</p>
           </div>
-        </div>
-
-        <!-- KPI Stats -->
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto">
-          <div v-for="kpi in kpis" :key="kpi.label" class="p-6 rounded-xl border border-white/10 bg-white/5 backdrop-blur">
-            <div class="text-4xl font-bold text-primary-400 mb-2">{{ kpi.value }}</div>
-            <div class="text-sm text-gray-400">{{ kpi.label }}</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION 2: PLATFORM OVERVIEW -->
-    <section class="py-20 bg-slate-800">
-      <div class="max-w-7xl mx-auto px-4">
-        <div class="text-center mb-16">
-          <h2 class="text-4xl md:text-5xl font-bold mb-6 text-white">
-            One Platform. Complete Construction Control.
-          </h2>
-          <p class="text-xl text-gray-300 max-w-3xl mx-auto mb-4">
-            CCorex connects every phase of your construction workflow—from initial takeoff to final closeout.
+          <div class="mt-6"><UiFlowPipeline :steps="businessFlow" :interval="2000" /></div>
+          <p class="mt-4 flex flex-wrap items-center gap-3 rounded-2xl border border-ai-100 bg-white px-4 py-3 text-sm text-ink-700">
+            <span class="chip-ai"><i class="fa-solid fa-wand-magic-sparkles text-[10px]" aria-hidden="true"></i>ARIVU</span>
+            Across every step, ARIVU answers questions from your data in each app — read-only.
           </p>
-          <p class="text-lg text-gray-400 max-w-3xl mx-auto">
-            No more juggling disconnected tools, spreadsheets, or manual data entry.
-          </p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-          <div v-for="point in platformPoints" :key="point.title" class="p-6 rounded-xl border border-white/10 bg-white/5">
-            <div class="text-3xl mb-3"><i :class="point.icon"></i></div>
-            <h3 class="text-xl font-bold text-white mb-2">{{ point.title }}</h3>
-            <p class="text-gray-400">{{ point.description }}</p>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- SECTION 3: PRODUCT ECOSYSTEM -->
-    <section id="products" class="py-20 bg-gradient-to-b from-slate-800 to-slate-900">
-      <div class="max-w-7xl mx-auto px-4">
-        <div class="text-center mb-16">
-          <h2 class="text-4xl md:text-5xl font-bold mb-4">
-            <span class="bg-gradient-to-r from-primary-400 to-secondary-400 bg-clip-text text-transparent">
-              Four Apps. One Ecosystem.
-            </span>
-          </h2>
-          <p class="text-xl text-gray-300 max-w-3xl mx-auto">
-            Each app is powerful on its own. Together, they transform your construction operations.
-          </p>
-        </div>
-
-        <div class="space-y-12">
-          <div v-for="(app, index) in products" :key="app.name" class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-            <div :class="index % 2 === 0 ? 'lg:order-1' : 'lg:order-2'">
-              <div class="flex items-center gap-3 mb-4">
-                <div class="text-5xl"><i :class="app.icon"></i></div>
-                <div>
-                  <h3 class="text-3xl font-bold text-white">{{ app.name }}</h3>
-                  <p class="text-primary-400 font-semibold text-lg">{{ app.subtitle }}</p>
-                </div>
-              </div>
-              <p class="text-xl text-gray-300 mb-6">{{ app.description }}</p>
-              <ul class="space-y-3 mb-6">
-                <li v-for="feature in app.features" :key="feature" class="flex items-start gap-3 text-gray-300">
-                  <i class="fa-solid fa-check text-primary-400 text-lg mt-1"></i>
-                  <span>{{ feature }}</span>
-                </li>
+        </UiReveal>
+        <div class="mt-16 space-y-20">
+          <UiReveal v-for="(f, i) in flow" :key="f.app" class="grid gap-10 lg:grid-cols-2 lg:items-center">
+            <div :class="i % 2 ? 'lg:order-2' : ''">
+              <p class="eyebrow">{{ f.step }}</p>
+              <h3 class="mt-3 text-2xl font-bold sm:text-3xl">{{ f.title }}</h3>
+              <p class="lead mt-4">{{ f.text }}</p>
+              <ul class="mt-6 space-y-3">
+                <li v-for="b in f.bullets" :key="b" class="flex gap-3 text-ink-700"><i class="fa-solid fa-circle-check mt-1 text-brand-600" aria-hidden="true"></i>{{ b }}</li>
               </ul>
-              <NuxtLink :to="app.link" class="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-primary-500/10 border border-primary-500 text-primary-400 font-semibold hover:bg-primary-500 hover:text-slate-900 transition-all">
-                Learn More
-                <i class="fa-solid fa-arrow-right"></i>
-              </NuxtLink>
+              <NuxtLink :to="`/products/${f.slug}`" class="mt-7 inline-flex font-semibold text-brand-700 hover:text-brand-900">Explore {{ f.app }} <i class="fa-solid fa-arrow-right ml-2 mt-1 text-xs" aria-hidden="true"></i></NuxtLink>
             </div>
-            <div :class="index % 2 === 0 ? 'lg:order-2' : 'lg:order-1'">
-              <div class="p-1 rounded-2xl border border-white/10 bg-white/5 backdrop-blur">
-                <div class="relative aspect-video overflow-hidden rounded-xl">
-                  <img
-                    :src="app.image"
-                    :alt="`${app.name} screen`"
-                    class="w-full h-full object-cover"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                  <div class="absolute inset-0 bg-gradient-to-t from-slate-900/10 to-transparent pointer-events-none"></div>
-                </div>
-              </div>
-            </div>
+            <UiBrowserFrame :src="f.src" :alt="f.alt" :url="f.url" />
+          </UiReveal>
+        </div>
+      </div>
+    </section>
+
+    <!-- AI -->
+    <section class="relative overflow-hidden bg-[#03191f] py-24 text-white">
+      <FxAurora palette="ai" />
+      <div class="bg-grid pointer-events-none absolute inset-0 opacity-40" aria-hidden="true"></div>
+      <div class="container-site relative grid gap-14 lg:grid-cols-2 lg:items-center">
+        <div>
+          <UiSectionHeader dark eyebrow="AI built in, not bolted on" lead="ARIVU — Tamil for “intelligence” — sits in every CCorex app. Your team asks in plain language and gets answers from your own organisation’s data across DeepCost, DeepTrack, DeepHR, DeepPlan and Deep Drive. It reads; it never changes your data.">
+            <template #title>Meet <span class="text-ai-gradient">ARIVU</span>, your AI assistant in every app</template>
+          </UiSectionHeader>
+          <ul class="mt-8 grid gap-4 sm:grid-cols-2">
+            <li v-for="a in aiPoints" :key="a.title" class="rounded-2xl border border-white/10 bg-white/5 p-5">
+              <i :class="a.icon" class="text-cyan-400" aria-hidden="true"></i>
+              <p class="mt-3 font-semibold text-white">{{ a.title }}</p>
+              <p class="mt-1 text-sm leading-relaxed text-ink-300">{{ a.text }}</p>
+            </li>
+          </ul>
+          <div class="mt-8 flex flex-wrap gap-3">
+            <NuxtLink to="/products/arivu-ai" class="btn-accent">Explore ARIVU AI</NuxtLink>
+            <NuxtLink to="/products/deepcost" class="btn-ghost-dark">AI in DeepCost</NuxtLink>
+          </div>
+        </div>
+        <UiReveal><UiArivuChat /></UiReveal>
+      </div>
+    </section>
+
+    <!-- Platform -->
+    <section class="section">
+      <div class="container-site grid gap-14 lg:grid-cols-[1.1fr_1fr] lg:items-center">
+        <div class="order-2 rounded-3xl bg-brand-950 px-6 py-14 lg:order-1">
+          <UiPlatformDiagram />
+        </div>
+        <div class="order-1 lg:order-2">
+          <UiSectionHeader eyebrow="The platform underneath" title="One secure control plane for every app" lead="Your organisation admin manages users, roles and app settings once, in the portal at dash.ccorex.com. Add a user once and they are created in each assigned app; disable them once and they are disabled in the apps too." />
+          <ul class="mt-8 grid gap-x-6 gap-y-5 sm:grid-cols-2">
+            <li v-for="c in platform" :key="c.title" class="flex gap-3">
+              <span class="icon-tile h-9 w-9 shrink-0 text-sm"><i :class="c.icon" aria-hidden="true"></i></span>
+              <div><p class="font-semibold text-ink-900">{{ c.title }}</p><p class="text-sm text-ink-600">{{ c.text }}</p></div>
+            </li>
+          </ul>
+          <NuxtLink to="/platform" class="mt-8 inline-flex font-semibold text-brand-700 hover:text-brand-900">How the platform works <i class="fa-solid fa-arrow-right ml-2 mt-1 text-xs" aria-hidden="true"></i></NuxtLink>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why -->
+    <section class="section bg-ink-50">
+      <div class="container-site">
+        <UiSectionHeader center eyebrow="Why CCorex" title="Six reasons construction teams switch" />
+        <ol class="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <UiReveal v-for="(r, i) in reasons" :key="r.title" as="li" class="card" :delay="(i % 3) * 80">
+            <p class="font-display text-sm font-bold text-brand-600">{{ String(i + 1).padStart(2, '0') }}</p>
+            <h3 class="mt-3 text-lg font-semibold">{{ r.title }}</h3>
+            <p class="mt-2 text-sm leading-relaxed text-ink-600">{{ r.text }}</p>
+          </UiReveal>
+        </ol>
+      </div>
+    </section>
+
+    <UiTrustStrip />
+
+    <!-- Plans -->
+    <section class="section">
+      <div class="container-site">
+        <UiSectionHeader center eyebrow="Plans" title="Start with one workflow. Scale to the whole business." lead="Per-user pricing — bundle the apps that fit your business." />
+        <div class="mt-12 grid gap-4 lg:grid-cols-3">
+          <div v-for="p in plans" :key="p.name" class="card relative flex flex-col" :class="p.popular ? 'border-brand-600 ring-1 ring-brand-600' : ''">
+            <span v-if="p.popular" class="absolute -top-3 left-6 rounded-full bg-brand-700 px-3 py-1 text-xs font-semibold text-white">Most popular</span>
+            <h3 class="text-xl font-bold">{{ p.name }}</h3>
+            <p class="mt-1 text-sm text-ink-500">{{ p.for }}</p>
+            <ul class="mt-6 flex-1 space-y-2.5 text-sm">
+              <li v-for="f in p.features" :key="f" class="flex gap-2.5"><i class="fa-solid fa-check mt-1 text-brand-600" aria-hidden="true"></i>{{ f }}</li>
+            </ul>
+            <NuxtLink to="/contact" class="mt-8" :class="p.popular ? 'btn-primary' : 'btn-secondary'">Get a tailored quote</NuxtLink>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- SECTION 4: HOW CCOREX WORKS -->
-    <section class="py-20 bg-slate-900">
-      <div class="max-w-7xl mx-auto px-4">
-        <div class="text-center mb-16">
-          <h2 class="text-4xl md:text-5xl font-bold mb-4 text-white">
-            Your Complete Construction Workflow
-          </h2>
-          <p class="text-xl text-gray-300 max-w-3xl mx-auto">
-            From tender to closeout, CCorex manages every step of your construction process.
-          </p>
-        </div>
+    <HomeGetStarted />
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-          <div v-for="(step, index) in workflowSteps" :key="step.title" class="relative p-6 rounded-xl border border-white/10 bg-white/5">
-            <div class="absolute -top-4 -left-4 w-12 h-12 rounded-full bg-primary-500 text-slate-900 font-bold flex items-center justify-center text-xl">
-              {{ index + 1 }}
-            </div>
-            <h3 class="text-xl font-bold text-white mb-3 mt-2">{{ step.title }}</h3>
-            <p class="text-gray-400">{{ step.description }}</p>
-          </div>
-        </div>
-
-        <!-- WORKFLOW DIAGRAM PLACEHOLDER -->
-        <div class="p-12 rounded-2xl border-2 border-dashed border-primary-500/30 bg-slate-800/50">
-          <div class="text-center text-gray-400">
-            <i class="fa-regular fa-image text-7xl text-primary-400"></i>
-            <p class="text-lg font-semibold">[IMAGE PLACEHOLDER – Workflow diagram with icons and arrows]</p>
-          </div>
-        </div>
+    <!-- FAQ -->
+    <section class="section-tight">
+      <div class="container-site grid gap-10 lg:grid-cols-[1fr_1.6fr]">
+        <UiSectionHeader eyebrow="FAQ" title="Questions buyers ask us" lead="Can't find your answer? Email admin@newhamtech.com." />
+        <UiFaqList :items="faqs" />
       </div>
     </section>
 
-    <!-- SECTION 5: KEY FEATURES -->
-    <section class="py-20 bg-slate-800">
-      <div class="max-w-7xl mx-auto px-4">
-        <div class="text-center mb-16">
-          <h2 class="text-4xl md:text-5xl font-bold mb-4 text-white">
-            Built for Construction Teams
-          </h2>
-          <p class="text-xl text-gray-300 max-w-3xl mx-auto">
-            Everything you need to manage construction projects from start to finish.
-          </p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          <div v-for="feature in keyFeatures" :key="feature.title" class="p-6 rounded-xl border border-white/10 bg-white/5 hover:border-primary-500/50 transition-all">
-            <div class="text-3xl mb-3"><i :class="feature.icon"></i></div>
-            <h3 class="text-lg font-bold text-white mb-2">{{ feature.title }}</h3>
-            <p class="text-sm text-gray-400">{{ feature.description }}</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION 6: INDUSTRIES -->
-    <section class="py-20 bg-gradient-to-b from-slate-800 to-slate-900">
-      <div class="max-w-7xl mx-auto px-4">
-        <div class="text-center mb-16">
-          <h2 class="text-4xl md:text-5xl font-bold mb-4">
-            <span class="bg-gradient-to-r from-primary-400 to-secondary-400 bg-clip-text text-transparent">
-              Trusted Across Construction Sectors
-            </span>
-          </h2>
-          <p class="text-xl text-gray-300 max-w-3xl mx-auto">
-            From general contractors to specialized trades, CCorex serves the entire construction industry.
-          </p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <div v-for="industry in industries" :key="industry.name" class="p-6 rounded-xl border border-white/10 bg-white/5 hover:border-primary-500/50 hover:bg-white/10 transition-all group">
-            <div class="text-4xl mb-4"><i :class="industry.icon"></i></div>
-            <h3 class="text-xl font-bold text-white mb-2">{{ industry.name }}</h3>
-            <p class="text-gray-400 mb-4">{{ industry.description }}</p>
-            <NuxtLink to="/industries" class="inline-flex items-center gap-2 text-primary-400 font-semibold group-hover:gap-3 transition-all">
-              Learn more
-              <i class="fa-solid fa-arrow-right"></i>
-            </NuxtLink>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION 7: CUSTOMER VALUE -->
-    <section class="py-20 bg-slate-900">
-      <div class="max-w-7xl mx-auto px-4">
-        <div class="text-center mb-16">
-          <h2 class="text-4xl md:text-5xl font-bold mb-4 text-white">
-            Transform Your Construction Operations
-          </h2>
-          <p class="text-xl text-gray-300 max-w-3xl mx-auto">
-            Real results from construction teams using CCorex.
-          </p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-          <div v-for="benefit in customerBenefits" :key="benefit.title" class="text-center p-8 rounded-xl border border-white/10 bg-white/5">
-            <div class="text-5xl font-bold text-primary-400 mb-3">{{ benefit.stat }}</div>
-            <h3 class="text-xl font-bold text-white mb-3">{{ benefit.title }}</h3>
-            <p class="text-gray-400">{{ benefit.description }}</p>
-          </div>
-        </div>
-
-        <!-- DASHBOARD PLACEHOLDER -->
-        <div class="p-12 rounded-2xl border-2 border-dashed border-primary-500/30 bg-slate-800/50">
-          <div class="text-center text-gray-400">
-            <i class="fa-regular fa-image text-7xl text-primary-400"></i>
-            <p class="text-lg font-semibold">[IMAGE PLACEHOLDER – Construction site digital dashboard on tablet]</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION 8: AI IN CONSTRUCTION -->
-    <section class="py-20 bg-slate-800">
-      <div class="max-w-7xl mx-auto px-4">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div>
-            <div class="inline-block px-4 py-2 rounded-full bg-primary-500/10 border border-primary-500/30 text-primary-400 text-sm font-semibold mb-6">
-              Powered by AI
-            </div>
-            <h2 class="text-4xl md:text-5xl font-bold mb-6 text-white">
-              DeepPlan AI: The Future of Takeoffs
-            </h2>
-            <p class="text-xl text-gray-300 mb-6">
-              Traditional takeoffs are slow, manual, and error-prone. DeepPlan AI uses computer vision and machine learning to automatically detect and measure elements in your drawings.
-            </p>
-            
-            <div class="space-y-4 mb-8">
-              <div v-for="capability in aiCapabilities" :key="capability.title" class="flex items-start gap-3">
-                <div class="w-6 h-6 rounded-full bg-primary-500/20 flex items-center justify-center flex-shrink-0 mt-1">
-                  <i class="fa-solid fa-check text-primary-400 text-sm"></i>
-                </div>
-                <div>
-                  <h4 class="font-semibold text-white mb-1">{{ capability.title }}</h4>
-                  <p class="text-gray-400 text-sm">{{ capability.description }}</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="grid grid-cols-2 gap-4">
-              <div class="p-4 rounded-lg bg-white/5 border border-white/10">
-                <div class="text-3xl font-bold text-primary-400 mb-1">40%</div>
-                <div class="text-sm text-gray-400">Faster than manual</div>
-              </div>
-              <div class="p-4 rounded-lg bg-white/5 border border-white/10">
-                <div class="text-3xl font-bold text-primary-400 mb-1">95%+</div>
-                <div class="text-sm text-gray-400">Accuracy rate</div>
-              </div>
-            </div>
-          </div>
-
-          <div>
-            <!-- AI DEMO VIDEO PLACEHOLDER -->
-            <div class="p-8 rounded-2xl border-2 border-dashed border-primary-500/30 bg-slate-900/50">
-              <div class="aspect-video flex items-center justify-center text-gray-400">
-                <div class="text-center">
-                  <i class="fa-solid fa-play text-7xl text-primary-400"></i>
-                  <p class="text-lg font-semibold">[VIDEO PLACEHOLDER – AI takeoff demo]</p>
-                  <p class="text-sm mt-2">Showing automatic detection and measurement</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION 9: INTEGRATIONS -->
-    <section class="py-20 bg-gradient-to-b from-slate-800 to-slate-900">
-      <div class="max-w-7xl mx-auto px-4">
-        <div class="text-center mb-16">
-          <h2 class="text-4xl md:text-5xl font-bold mb-4">
-            <span class="bg-gradient-to-r from-primary-400 to-secondary-400 bg-clip-text text-transparent">
-              Connect Your Construction Stack
-            </span>
-          </h2>
-          <p class="text-xl text-gray-300 max-w-3xl mx-auto">
-            CCorex integrates with the tools you already use. Sync data with accounting software, ERP systems, document management, and BIM platforms.
-          </p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
-          <div v-for="category in integrationCategories" :key="category.name" class="space-y-4">
-            <h3 class="text-lg font-bold text-white mb-4">{{ category.name }}</h3>
-            <div v-for="integration in category.tools" :key="integration" class="p-4 rounded-lg border border-white/10 bg-white/5 text-center hover:border-primary-500/50 transition-all">
-              <div class="font-semibold text-gray-300">{{ integration }}</div>
-            </div>
-          </div>
-        </div>
-
-        <!-- INTEGRATION DIAGRAM PLACEHOLDER -->
-        <div class="p-12 rounded-2xl border-2 border-dashed border-primary-500/30 bg-slate-800/50 mb-8">
-          <div class="text-center text-gray-400">
-            <i class="fa-regular fa-image text-7xl text-primary-400"></i>
-            <p class="text-lg font-semibold">[IMAGE PLACEHOLDER – Integration ecosystem diagram]</p>
-          </div>
-        </div>
-
-        <div class="text-center">
-          <NuxtLink to="/integrations" class="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-primary-500 text-primary-400 font-semibold hover:bg-primary-500 hover:text-slate-900 transition-all">
-            View All Integrations
-            <i class="fa-solid fa-arrow-right"></i>
-          </NuxtLink>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION 10: TESTIMONIALS -->
-    <section class="py-20 bg-slate-900">
-      <div class="max-w-7xl mx-auto px-4">
-        <div class="text-center mb-16">
-          <h2 class="text-4xl md:text-5xl font-bold mb-4 text-white">
-            Trusted by Leading Construction Firms
-          </h2>
-          <p class="text-xl text-gray-300 max-w-3xl mx-auto">
-            See what construction professionals are saying about CCorex.
-          </p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div v-for="testimonial in testimonials" :key="testimonial.name" class="p-8 rounded-xl border border-white/10 bg-white/5">
-            <div class="flex items-center gap-1 mb-4">
-              <i v-for="i in 5" :key="i" class="fa-solid fa-star text-yellow-400 text-xl"></i>
-            </div>
-            <p class="text-gray-300 mb-6 italic">"{{ testimonial.quote }}"</p>
-            <div class="flex items-center gap-4">
-              <!-- PHOTO PLACEHOLDER -->
-              <div class="w-12 h-12 rounded-full bg-primary-500/20 border border-primary-500/30 flex items-center justify-center">
-                <span class="text-primary-400 font-bold">{{ testimonial.initials }}</span>
-              </div>
-              <div>
-                <div class="font-semibold text-white">{{ testimonial.name }}</div>
-                <div class="text-sm text-gray-400">{{ testimonial.role }}</div>
-                <div class="text-sm text-gray-500">{{ testimonial.company }}</div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- CLIENT LOGOS PLACEHOLDER -->
-        <div class="mt-16 p-8 rounded-xl border border-white/10 bg-white/5">
-          <p class="text-center text-gray-400 mb-6">Trusted by leading construction companies</p>
-          <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
-            <div v-for="i in 8" :key="i" class="aspect-video rounded-lg border border-dashed border-primary-500/30 bg-slate-800/50 flex items-center justify-center">
-              <span class="text-xs text-gray-500">[Client Logo]</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION 11: FINAL CTA -->
-    <section class="py-20 bg-gradient-to-b from-slate-900 to-slate-800">
-      <div class="max-w-4xl mx-auto px-4 text-center">
-        <h2 class="text-4xl md:text-6xl font-bold mb-6 text-white">
-          Run Your Entire Construction Business on One Platform
-        </h2>
-        <p class="text-xl text-gray-300 mb-10">
-          Join hundreds of construction firms already using CCorex to streamline estimating, project management, and workforce operations.
-        </p>
-        
-        <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-          <a href="/contact" class="px-8 py-4 rounded-lg bg-primary-500 text-slate-900 font-bold hover:bg-primary-400 transition-all text-lg">
-            Request Demo
-          </a>
-          <a href="/pricing" class="px-8 py-4 rounded-lg border-2 border-primary-500 text-primary-400 font-bold hover:bg-primary-500 hover:text-slate-900 transition-all text-lg">
-            Start Free Trial
-          </a>
-          <NuxtLink to="/pricing" class="px-8 py-4 rounded-lg border border-white/20 text-gray-300 font-semibold hover:border-white/40 hover:text-white transition-all text-lg">
-            View Pricing
-          </NuxtLink>
-        </div>
-
-        <!-- Trust Indicators -->
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl mx-auto">
-          <div v-for="trust in trustIndicators" :key="trust.label" class="p-4 rounded-lg bg-white/5 border border-white/10">
-            <div class="text-2xl mb-2"><i :class="trust.icon"></i></div>
-            <div class="text-sm font-semibold text-white">{{ trust.label }}</div>
-          </div>
-        </div>
-      </div>
-    </section>
+    <UiCtaBand />
   </div>
 </template>
 
 <script setup lang="ts">
-const kpis = [
-  { value: '95%+', label: 'Estimate accuracy' },
-  { value: '40%', label: 'Faster takeoffs' },
-  { value: '100%', label: 'Data sync' },
-  { value: '2–3 wks', label: 'Implementation' }
-]
+const config = useRuntimeConfig()
+useSeoMeta({
+  title: 'Construction software for estimating, projects & payroll',
+  description: 'CCorex unifies MEP tender estimation (DeepCost), project cost control (DeepTrack) and HR & payroll (DeepHR) on one sign-in, with ARIVU AI in every app.',
+  ogTitle: 'CCorex — run your construction business on one AI-powered platform',
+  ogDescription: 'MEP estimation, project delivery and HR & payroll on one login, with ARIVU AI in every app.'
+})
+useHead({
+  link: [{ rel: 'canonical', href: config.public.siteUrl + '/' }],
+  script: [{
+    type: 'application/ld+json',
+    innerHTML: JSON.stringify({
+      '@context': 'https://schema.org',
+      '@graph': [
+        { '@type': 'Organization', name: 'CCorex', url: 'https://ccorex.com', logo: 'https://ccorex.com/ccorex-logo.png', email: 'admin@newhamtech.com', parentOrganization: { '@type': 'Organization', name: 'Newham Technological Solutions', url: 'https://newhamtech.com' } },
+        { '@type': 'SoftwareApplication', name: 'CCorex', applicationCategory: 'BusinessApplication', operatingSystem: 'Web', description: 'Construction management platform for MEP estimation, project delivery and HR & payroll, with an AI assistant in every app.', offers: { '@type': 'Offer', availability: 'https://schema.org/InStock' } }
+      ]
+    })
+  }]
+})
 
-const platformPoints = [
+const capabilities = [
+  { icon: 'fa-solid fa-file-lines', text: 'AI tender summary' }, { icon: 'fa-solid fa-table', text: 'FOT AI on the client’s BOQ' },
+  { icon: 'fa-solid fa-ruler-combined', text: 'Area schedules & MTO' }, { icon: 'fa-solid fa-tags', text: 'Price library & validation rules' },
+  { icon: 'fa-solid fa-compass-drafting', text: 'Drawing take-off' }, { icon: 'fa-solid fa-wallet', text: 'Budgets & purchase approvals' },
+  { icon: 'fa-solid fa-file-invoice-dollar', text: 'Invoice matching' }, { icon: 'fa-solid fa-hand-holding-dollar', text: 'Client claims' },
+  { icon: 'fa-solid fa-face-smile', text: 'Face + GPS attendance' }, { icon: 'fa-solid fa-money-check', text: 'CPF, SDL & SHG payroll' },
+  { icon: 'fa-solid fa-indian-rupee-sign', text: 'India payroll: EPF, ESI, PT, TDS' }, { icon: 'fa-solid fa-wand-magic-sparkles', text: 'ARIVU charts & exports' },
+  { icon: 'fa-solid fa-key', text: 'One sign-in for every app' }, { icon: 'fa-solid fa-user-shield', text: 'Roles per app' }
+]
+const segments = [
+  { icon: 'fa-solid fa-bolt', label: 'MEP contractors' },
+  { icon: 'fa-solid fa-helmet-safety', label: 'Main contractors' },
+  { icon: 'fa-solid fa-industry', label: 'EPC companies' },
+  { icon: 'fa-solid fa-file-signature', label: 'Tender-based businesses' },
+  { icon: 'fa-solid fa-ruler-combined', label: 'QS & estimating teams' }
+]
+const problems = [
+  { icon: 'fa-solid fa-table-cells', title: 'Spreadsheet chaos', text: 'Take-offs and budgets live in files that drift between versions and people.' },
+  { icon: 'fa-solid fa-key', title: 'A login for everything', text: 'Separate tools for estimating, projects and HR — each with its own users.' },
+  { icon: 'fa-solid fa-link-slash', title: 'Data stuck in silos', text: 'Tender figures re-typed into the client’s BOQ, invoices paid without a match, attendance re-keyed into payroll.' },
+  { icon: 'fa-solid fa-puzzle-piece', title: 'Generic, not construction', text: 'Off-the-shelf suites ignore MTOs, Forms of Tender, progress claims, retention and site attendance.' }
+]
+const flow = [
   {
-    icon: 'fa-solid fa-link',
-    title: 'Unified Data Across All Apps',
-    description: 'Data flows seamlessly between DeepPlanAI, DeepCost, DeepTrack, and DeepHR. No manual re-entry.'
+    step: '01 · Estimate', app: 'DeepCost', slug: 'deepcost', url: 'deepcost.app / mto',
+    title: 'Price every tender with confidence', src: '/images/product/deepcost-mto.webp', alt: 'DeepCost material take-off by building, floor and room with item groups and prices',
+    text: 'From tender received to a priced Form of Tender: an AI summary of the tender documents, area-based material take-off, one priced library, and FOT AI that overlays your figures on the client’s BOQ PDF.',
+    bullets: ['AI tender summary you can edit and export', 'Take off by building, floor and room — priced as quantity × (material + installation)', 'Area schedule, MTO and FOT each submitted, checked and approved']
   },
   {
-    icon: 'fa-solid fa-bolt',
-    title: 'Real-Time Synchronization',
-    description: 'Changes in one app instantly reflect across the platform. Everyone works with the latest data.'
+    step: '02 · Deliver', app: 'DeepTrack', slug: 'deeptrack', url: 'deeptrack.app / procurement',
+    title: 'Protect margin on every project', src: '/images/product/deeptrack-procurement.webp', alt: 'DeepTrack purchase requests with budget, status and approvals by project manager, general manager and director',
+    text: 'Budgets, client claims, manpower and timesheets, procurement, accounts payable with invoice matching, and month-end cost allocation — in SGD with 9% GST.',
+    bullets: ['Every purchase request raised against an approved budget and routed through your configured approvals', 'PR → PO → delivery → invoice, matched before payment', 'Progress claims with retention, GST and a PDF certificate']
   },
   {
-    icon: 'fa-solid fa-bullseye',
-    title: 'Single Source of Truth',
-    description: 'One centralized database eliminates version conflicts and ensures data accuracy.'
-  },
-  {
-    icon: 'fa-solid fa-cloud',
-    title: 'Cloud-Based Accessibility',
-    description: 'Access your projects from anywhere, on any device. Desktop, tablet, or mobile.'
+    step: '03 · Staff & pay', app: 'DeepHR', slug: 'deephr', url: 'deephr.app / payroll',
+    title: 'Run Singapore or India payroll', src: '/images/product/deephr-payroll.webp', alt: 'DeepHR payroll run selecting employees, pay items and pay period',
+    text: 'Face and GPS attendance on each employee’s phone, reviewed by HR, flows with approved leave into payroll — with Singapore or India statutory rules.',
+    bullets: ['Face-recognition attendance with no hardware to buy, even offline', 'Singapore: CPF, SDL and SHG funds. India: EPF, ESI, PT and TDS', 'Leave, claims, timesheets and one approvals engine']
   }
 ]
-
-const products = [
-  {
-    name: 'DeepCost',
-    subtitle: 'Construction Estimation & Tender Management',
-    icon: 'fa-solid fa-coins',
-    image: '/screens/DeepCost_screen.png',
-    description: 'Achieve 95%+ accuracy in MEP cost estimation with AI-driven libraries. Generate professional BOQs and tender documents in minutes, not days.',
-    features: [
-      'Comprehensive MEP libraries (ACMV, Fire, ELV, A&A)',
-      'AI quantity-to-cost mapping',
-      'Automated BOQ generation',
-      'Multi-currency & tax support',
-      'Tender comparison & analysis'
-    ],
-    link: '/products/deepcost'
-  },
-  {
-    name: 'DeepTrack',
-    subtitle: 'Project Execution & Site Management',
-    icon: 'fa-solid fa-chart-bar',
-    image: '/screens/Deeptrack_Screen.png',
-    description: 'Maintain complete control over project budgets, purchase orders, and site activities. Track variance, manage approvals, and ensure spend visibility.',
-    features: [
-      'Real-time budget vs actuals',
-      'Multi-level PO approval workflow',
-      'Variance analysis & alerts',
-      'Supplier & subcontractor management',
-      'Site progress tracking'
-    ],
-    link: '/products/deeptrack'
-  },
-  {
-    name: 'DeepHR',
-    subtitle: 'Workforce & Labour Management',
-    icon: 'fa-solid fa-users',
-    image: '/screens/DeepHR_screen.png',
-    description: 'Unify your workforce operations from planning to payroll. Mobile-enabled time tracking, compliance management, and resource optimization.',
-    features: [
-      'Workforce planning & rostering',
-      'Mobile time tracking with geolocation',
-      'Leave & attendance management',
-      'Compliance & certification tracking',
-      'Payroll integration'
-    ],
-    link: '/products/deephr'
-  },
-  {
-    name: 'DeepPlan AI',
-    subtitle: 'AI-Powered Drawing Takeoff & Quantity Extraction',
-    icon: 'mdi mdi-ruler',
-    image: '/screens/DeepPlan_Screen.png',
-    description: 'Transform your takeoff process with AI-powered measurement and quantity extraction. Reduce manual work by 40% while increasing accuracy.',
-    features: [
-      'Automated area & perimeter measurement',
-      'AI-powered quantity extraction',
-      'Real-time collaboration on drawings',
-      'Direct integration with DeepCost',
-      'Support for all drawing formats'
-    ],
-    link: '/products/deepplanai'
-  }
+const businessFlow = [
+  { title: 'Tender arrives', text: 'Opportunity and tender documents in DeepCost.', icon: 'fa-solid fa-inbox' },
+  { title: 'Drawings measured', text: 'Quantities taken off in DeepPlan.', icon: 'fa-solid fa-compass-drafting' },
+  { title: 'Priced bid out', text: 'MTO and Form of Tender priced and approved in DeepCost.', icon: 'fa-solid fa-file-signature' },
+  { title: 'Won job → project', text: 'Budgets, purchasing and client claims in DeepTrack.', icon: 'fa-solid fa-diagram-project' },
+  { title: 'People managed & paid', text: 'Attendance, leave and payroll in DeepHR.', icon: 'fa-solid fa-user-group' }
 ]
-
-const workflowSteps = [
-  {
-    title: 'Tender Estimation',
-    description: 'Upload drawings → AI extracts quantities → Generate accurate estimates'
-  },
-  {
-    title: 'Drawing Takeoff',
-    description: 'Measure & annotate → Collaborate in real-time → Export to estimation'
-  },
-  {
-    title: 'Project Planning',
-    description: 'Convert estimate to budget → Set milestones → Assign resources'
-  },
-  {
-    title: 'Site Execution',
-    description: 'Track progress → Manage POs → Monitor spend vs budget'
-  },
-  {
-    title: 'Workforce Management',
-    description: 'Plan shifts → Track time → Manage compliance'
-  },
-  {
-    title: 'Cost Tracking',
-    description: 'Real-time variance → Automated alerts → Financial reporting'
-  }
+const aiPoints = [
+  { icon: 'fa-regular fa-comments', title: 'Ask in plain language', text: '“Which purchase requests are pending?” — answered from your data across your apps.' },
+  { icon: 'fa-solid fa-chart-column', title: 'Charts & exports', text: 'Turn answers into charts, PDF or Excel.' },
+  { icon: 'fa-solid fa-file-lines', title: 'AI tender summary & FOT AI', text: 'DeepCost reads tender documents and overlays your prices on the client’s BOQ PDF.' },
+  { icon: 'fa-solid fa-magnifying-glass', title: 'Document search', text: 'Search and summarise tender documents and attachments, including scanned PDFs.' }
 ]
-
-const keyFeatures = [
-  {
-    icon: 'fa-solid fa-book',
-    title: 'Centralized Cost Database',
-    description: 'Pre-loaded libraries for MEP systems. Customize rates and maintain your own cost database.'
-  },
-  {
-    icon: 'fa-solid fa-robot',
-    title: 'AI Quantity Takeoff',
-    description: 'Let AI handle tedious measurement work. Review, adjust, and export quantities in minutes.'
-  },
-  {
-    icon: 'fa-solid fa-calendar-days',
-    title: 'Construction Scheduling',
-    description: 'Gantt charts, critical path analysis, and resource leveling built for construction.'
-  },
-  {
-    icon: 'fa-solid fa-chart-line',
-    title: 'Productivity Tracking',
-    description: 'Monitor labor hours, productivity rates, and resource utilization across all sites.'
-  },
-  {
-    icon: 'fa-solid fa-cart-shopping',
-    title: 'Procurement Integration',
-    description: 'Connect with suppliers, manage RFQs, compare quotes, and track deliveries.'
-  },
-  {
-    icon: 'fa-solid fa-folder',
-    title: 'Document Management',
-    description: 'Centralized repository for drawings, contracts, submittals, and RFIs.'
-  },
-  {
-    icon: 'fa-solid fa-mobile-screen',
-    title: 'Site Reporting',
-    description: 'Daily progress reports, safety logs, and quality inspections from mobile devices.'
-  },
-  {
-    icon: 'fa-solid fa-chart-line',
-    title: 'Budget vs Actual',
-    description: 'Real-time variance analysis with automated alerts when costs exceed thresholds.'
-  }
+const platform = [
+  { icon: 'fa-solid fa-key', title: 'Single sign-on', text: 'One sign-in, a tile for each app.' },
+  { icon: 'fa-solid fa-users-gear', title: 'Users & roles', text: 'Add once or bulk-upload; roles per app.' },
+  { icon: 'fa-solid fa-bolt', title: 'Provisioning', text: 'Users created in each assigned app.' },
+  { icon: 'fa-solid fa-sitemap', title: 'Tenancy', text: 'Each organisation sees only its own data.' },
+  { icon: 'fa-solid fa-user-shield', title: 'Encryption', text: 'Personal and config fields encrypted.' },
+  { icon: 'fa-solid fa-clipboard-list', title: 'Audit logs', text: 'Finance actions, HR changes, period unlocks.' }
 ]
-
-const industries = [
-  {
-    name: 'General Contractors',
-    icon: 'fa-solid fa-helmet-safety',
-    description: 'End-to-end project management for commercial and residential construction.'
-  },
-  {
-    name: 'Infrastructure Projects',
-    icon: 'fa-solid fa-bridge',
-    description: 'Manage large-scale civil works, roads, bridges, and utilities.'
-  },
-  {
-    name: 'Commercial Buildings',
-    icon: 'fa-solid fa-building',
-    description: 'Office towers, retail centers, and mixed-use developments.'
-  },
-  {
-    name: 'Industrial Plants',
-    icon: 'fa-solid fa-industry',
-    description: 'Manufacturing facilities, warehouses, and processing plants.'
-  },
-  {
-    name: 'MEP Contractors',
-    icon: 'fa-solid fa-bolt',
-    description: 'Specialized estimation and project management for mechanical, electrical, and plumbing.'
-  },
-  {
-    name: 'Developers',
-    icon: 'fa-solid fa-house-chimney',
-    description: 'Portfolio management, cost control, and financial tracking across multiple projects.'
-  }
+const reasons = [
+  { title: 'Built for construction', text: 'Area schedules, MTOs, Forms of Tender, progress claims, retention, BCA workheads and site attendance — not a generic suite with construction bolted on.' },
+  { title: 'Tender estimating with AI', text: 'DeepCost reads the tender, prices the take-off from one library and overlays your figures on the client’s BOQ — seeded for Fire Protection, ACMV, A&A and ELV.' },
+  { title: 'One sign-in, all apps', text: 'One user base managed by your organisation admin, with roles per app.' },
+  { title: 'AI in every app', text: 'ARIVU answers questions from your own data, charts results and searches your documents — read-only.' },
+  { title: 'Face attendance, zero hardware', text: 'Face and GPS attendance on each employee’s own phone, with offline punches re-verified later.' },
+  { title: 'Singapore and India payroll', text: 'CPF, SDL and SHG funds in Singapore; EPF, ESI, PT, TDS and statutory filings in India.' }
 ]
-
-const customerBenefits = [
-  {
-    stat: '70%',
-    title: 'Reduce Estimation Time',
-    description: 'AI-powered takeoffs and automated BOQ generation eliminate manual calculations.'
-  },
-  {
-    stat: '100%',
-    title: 'Improve Project Visibility',
-    description: 'Real-time dashboards show exactly where every project stands—budget, schedule, resources.'
-  },
-  {
-    stat: '15%',
-    title: 'Control Project Costs',
-    description: 'Catch budget overruns before they happen with automated variance alerts.'
-  },
-  {
-    stat: '0',
-    title: 'Eliminate Spreadsheet Chaos',
-    description: 'Replace error-prone spreadsheets with a unified platform everyone can access.'
-  },
-  {
-    stat: '40%',
-    title: 'Improve Workforce Productivity',
-    description: 'Mobile time tracking and resource optimization ensure your team works efficiently.'
-  },
-  {
-    stat: '95%+',
-    title: 'Exceptional Accuracy',
-    description: 'AI-driven libraries and intelligent mapping deliver industry-leading estimation accuracy.'
-  }
+const plans = [
+  { name: 'Essentials', for: 'Start with one workflow', features: ['Choose 1 flagship app', 'Core modules & dashboard', 'ARIVU AI assistant', 'SSO & user management', 'Deep Drive & PDF Editor (coming soon)'] },
+  { name: 'Business', for: 'Run the business end to end', popular: true, features: ['DeepCost + DeepTrack + DeepHR', 'Shared user base & roles', 'ARIVU across all apps', 'Singapore & India payroll', 'Higher user limits'] },
+  { name: 'Enterprise', for: 'Multiple companies & scale', features: ['Full suite incl. DeepPlan AI', 'Multi-organisation management', 'Advanced roles & audit', 'Priority integration access', 'Priority support & onboarding'] }
 ]
-
-const aiCapabilities = [
-  {
-    title: 'Automatic Detection',
-    description: 'AI identifies walls, doors, windows, and other elements automatically'
-  },
-  {
-    title: 'Area & Perimeter Calculation',
-    description: 'Instant measurements with pixel-perfect accuracy'
-  },
-  {
-    title: 'Count Detection',
-    description: 'Automatically count fixtures, outlets, and equipment'
-  },
-  {
-    title: 'Multi-Layer Analysis',
-    description: 'Process complex drawings with multiple layers and annotations'
-  },
-  {
-    title: 'Learning from Corrections',
-    description: 'AI improves over time based on your feedback and adjustments'
-  }
-]
-
-const integrationCategories = [
-  {
-    name: 'Accounting & Finance',
-    tools: ['QuickBooks', 'Xero', 'SAP', 'NetSuite']
-  },
-  {
-    name: 'Project Management',
-    tools: ['Procore', 'BIM 360', 'PlanGrid', 'Primavera P6']
-  },
-  {
-    name: 'Document Management',
-    tools: ['Dropbox', 'Google Drive', 'OneDrive', 'Box']
-  },
-  {
-    name: 'Communication',
-    tools: ['Slack', 'MS Teams', 'Email', 'SMS']
-  }
-]
-
-const testimonials = [
-  {
-    quote: 'CCorex reduced our estimation time from 3 days to 6 hours. The AI takeoff is incredibly accurate.',
-    name: 'John Smith',
-    role: 'Chief Estimator',
-    company: 'ABC Construction',
-    initials: 'JS'
-  },
-  {
-    quote: 'We\'ve improved our project margins by 15% thanks to better cost control and real-time tracking.',
-    name: 'Sarah Johnson',
-    role: 'Project Director',
-    company: 'XYZ Contractors',
-    initials: 'SJ'
-  },
-  {
-    quote: 'The unified platform eliminated our spreadsheet chaos. Everyone has access to the same data.',
-    name: 'Mike Chen',
-    role: 'Operations Manager',
-    company: 'BuildCo',
-    initials: 'MC'
-  }
-]
-
-const trustIndicators = [
-  { icon: 'fa-solid fa-lock', label: 'SOC 2 Type II Certified' },
-  { icon: 'fa-solid fa-shield-halved', label: 'GDPR Compliant' },
-  { icon: 'fa-solid fa-bolt', label: '99.9% Uptime SLA' },
-  { icon: 'fa-solid fa-handshake', label: '24/7 Support' }
+const faqs = [
+  { q: 'Do we have to buy the whole suite?', a: 'No. Start with one flagship app — DeepCost, DeepTrack or DeepHR — and add apps as you grow. Every app shares the same sign-in and users.' },
+  { q: 'Who is CCorex built for?', a: 'Engineering and construction contractors — mainly MEP and fire-protection firms in Singapore and India. DeepTrack works in SGD with 9% GST, and DeepHR runs Singapore or India payroll. The platform is delivered and supported by Newham in Singapore.' },
+  { q: 'What does ARIVU AI do?', a: 'ARIVU is a read-only AI assistant in every CCorex app. It answers questions from your own organisation’s data across DeepCost, DeepTrack, DeepHR, DeepPlan and Deep Drive, produces charts and PDF or Excel exports, and searches and summarises documents. It never changes your data.' },
+  { q: 'Is DeepPlan’s AI take-off live?', a: 'DeepPlan’s drawing upload, scale calibration, room measurement, rate library and BOQ generation are live. AI room take-off and symbol detection are in early access while they are rebuilt.' },
+  { q: 'Do we need to install servers or buy hardware?', a: 'No. CCorex is cloud-based. Face-recognition attendance runs on each employee’s own phone, so there are no biometric devices or kiosks to buy.' },
+  { q: 'How long does onboarding take?', a: 'It depends on the apps and data you bring. We plan onboarding with you in the demo — including importing your price library, customers and employees from Excel.' }
 ]
 </script>

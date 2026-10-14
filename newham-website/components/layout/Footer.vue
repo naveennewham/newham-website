@@ -1,101 +1,54 @@
 <template>
-  <footer class="bg-dark-800 border-t border-gray-800">
-    <div class="container mx-auto py-12 px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-        <!-- Company Info -->
-        <div>
-          <div class="mb-4">
-            <img src="~/assets/Newham_Logo_white.png" alt="Newham Logo" class="h-10 w-auto" />
-          </div>
-          <p class="text-gray-400 mb-4">
-            Innovative construction technology and software solutions for the modern world.
-          </p>
-          <!-- Products -->
-          <div class="flex items-center space-x-4 mb-4">
-            <img src="~/assets/Deepcost_Logo.png" alt="Deepcost Logo" class="h-8 w-auto" />
-          </div>
-          <div class="flex space-x-4">
-            <a href="#" class="text-gray-400 hover:text-primary-400 transition-colors">
-              <i class="fa-brands fa-facebook-f text-2xl" aria-hidden="true"></i>
-            </a>
-            <a href="#" class="text-gray-400 hover:text-primary-400 transition-colors">
-              <i class="fa-brands fa-x-twitter text-2xl" aria-hidden="true"></i>
-            </a>
-            <a href="#" class="text-gray-400 hover:text-primary-400 transition-colors">
-              <i class="fa-brands fa-instagram text-2xl" aria-hidden="true"></i>
-            </a>
-            <a href="#" class="text-gray-400 hover:text-primary-400 transition-colors">
-              <i class="fa-brands fa-github text-2xl" aria-hidden="true"></i>
-            </a>
-          </div>
-        </div>
-        
-        <!-- Quick Links -->
-        <div>
-          <h4 class="text-lg font-semibold text-white mb-4">Quick Links</h4>
-          <ul class="space-y-2">
-            <li><NuxtLink to="/" class="text-gray-400 hover:text-primary-400 transition-colors">Home</NuxtLink></li>
-            <li><NuxtLink to="/about" class="text-gray-400 hover:text-primary-400 transition-colors">About Us</NuxtLink></li>
-            <li><NuxtLink to="/services" class="text-gray-400 hover:text-primary-400 transition-colors">Services</NuxtLink></li>
-            <li><NuxtLink to="/pricing" class="text-gray-400 hover:text-primary-400 transition-colors">Pricing</NuxtLink></li>
-            <li><NuxtLink to="/contact" class="text-gray-400 hover:text-primary-400 transition-colors">Contact</NuxtLink></li>
-          </ul>
-        </div>
-        
-        <!-- Services -->
-        <div>
-          <h4 class="text-lg font-semibold text-white mb-4">Services</h4>
-          <ul class="space-y-2">
-            <li><a href="#" class="text-gray-400 hover:text-primary-400 transition-colors">Custom Software Development</a></li>
-            <li><a href="#" class="text-gray-400 hover:text-primary-400 transition-colors">API Integration</a></li>
-            <li><a href="#" class="text-gray-400 hover:text-primary-400 transition-colors">Legacy Modernization</a></li>
-            <li><a href="#" class="text-gray-400 hover:text-primary-400 transition-colors">QA & Automation</a></li>
-            <li><a href="#" class="text-gray-400 hover:text-primary-400 transition-colors">Cloud Infrastructure</a></li>
-            <li><a href="#" class="text-gray-400 hover:text-primary-400 transition-colors">Mobile App Development</a></li>
-          </ul>
-        </div>
-        
-        <!-- Contact -->
-        <div>
-          <h4 class="text-lg font-semibold text-white mb-4">Contact Us</h4>
-          <div class="space-y-3">
-            <p class="text-gray-400 flex items-start">
-              <i class="fa-solid fa-location-dot text-lg mr-2 mt-1 text-primary-400" aria-hidden="true"></i>
-              <span class="flex flex-col">
-                <span class="font-semibold text-white text-sm mb-1">Singapore:</span>
-                160 Robinson Rd, #14-04 SBF Center, Singapore 0689
-              </span>
-            </p>
-            <p class="text-gray-400 flex items-start">
-              <i class="fa-solid fa-location-dot text-lg mr-2 mt-1 text-primary-400" aria-hidden="true"></i>
-              <span class="flex flex-col">
-                <span class="font-semibold text-white text-sm mb-1">Chennai:</span>
-                3rd Floor, Plot no. 21, Electrical, Electronics & Instruments Industries, Perungudi, Sholinganallur, Seevaram, OMR, Chennai, Tamil Nadu 600096
-              </span>
-            </p>
-            <p class="text-gray-400 flex items-center">
-              <i class="fa-solid fa-envelope text-lg mr-2 text-primary-400" aria-hidden="true"></i>
-              info@newham.tech
-            </p>
-            <p class="text-gray-400 flex items-center">
-              <i class="fa-solid fa-phone text-lg mr-2 text-primary-400" aria-hidden="true"></i>
-              +91 9894-378-375
-            </p>
-          </div>
-        </div>
+  <footer class="bg-brand-950 text-ink-300">
+    <div class="container-site grid gap-10 py-16 md:grid-cols-2 lg:grid-cols-[1.5fr_repeat(3,1fr)]">
+      <div class="max-w-xs">
+        <img src="~/assets/Newham_Logo_white.png" alt="Newham" class="h-7 w-auto" width="110" height="28" loading="lazy" />
+        <p class="mt-4 text-sm leading-relaxed">Newham Technological Solutions builds CCorex construction software and provides specialist M&amp;E engineers and engineering services to construction businesses in Singapore and India.</p>
+        <p class="mt-4 text-sm"><a :href="`mailto:${email}`" class="font-semibold text-white hover:text-cyan-400">{{ email }}</a></p>
       </div>
-      
-      <!-- Copyright -->
-      <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
-        <p class="text-gray-500 text-sm">© {{ new Date().getFullYear() }} Newham Technologies. All rights reserved.</p>
-        <div class="mt-4 md:mt-0">
-          <ul class="flex space-x-6">
-            <li><a href="#" class="text-gray-500 hover:text-primary-400 text-sm">Privacy Policy</a></li>
-            <li><a href="#" class="text-gray-500 hover:text-primary-400 text-sm">Terms of Service</a></li>
-            <li><a href="#" class="text-gray-500 hover:text-primary-400 text-sm">Cookies</a></li>
-          </ul>
-        </div>
+      <div>
+        <h2 class="text-sm font-semibold text-white">CCorex software</h2>
+        <ul class="mt-4 space-y-2.5 text-sm">
+          <li v-for="a in ccorexApps" :key="a.slug"><a :href="ccorexAppUrl(a.slug)" target="_blank" rel="noopener" class="hover:text-white">{{ a.name }}</a></li>
+          <li><a :href="CCOREX_SIGNIN_URL" class="hover:text-white">Sign in to CCorex</a></li>
+          <li><a :href="CCOREX_URL" target="_blank" rel="noopener" class="hover:text-white">ccorex.com <i class="fa-solid fa-arrow-up-right-from-square text-[10px]" aria-hidden="true"></i></a></li>
+        </ul>
+      </div>
+      <div>
+        <h2 class="text-sm font-semibold text-white">Services</h2>
+        <ul class="mt-4 space-y-2.5 text-sm">
+          <li><NuxtLink to="/talent-outsourcing" class="hover:text-white">Engineering talent outsourcing</NuxtLink></li>
+          <li><NuxtLink to="/engineering-services" class="hover:text-white">Construction engineering services</NuxtLink></li>
+          <li><NuxtLink to="/industries" class="hover:text-white">Industries</NuxtLink></li>
+        </ul>
+      </div>
+      <div>
+        <h2 class="text-sm font-semibold text-white">Company</h2>
+        <ul class="mt-4 space-y-2.5 text-sm">
+          <li><NuxtLink to="/about" class="hover:text-white">About Newham</NuxtLink></li>
+          <li><NuxtLink to="/contact" class="hover:text-white">Contact</NuxtLink></li>
+          <li><NuxtLink to="/appointment" class="hover:text-white">Book a discovery call</NuxtLink></li>
+        </ul>
+        <p class="mt-6 text-sm leading-relaxed"><span class="font-semibold text-white">Singapore</span><br />160 Robinson Road, #14-04 SBF Center</p>
+        <p class="mt-3 text-sm leading-relaxed"><span class="font-semibold text-white">Chennai, India</span><br />Perungudi, OMR</p>
+      </div>
+    </div>
+    <div class="border-t border-white/10">
+      <div class="container-site flex flex-col gap-2 py-6 text-xs text-ink-400 sm:flex-row sm:items-center sm:justify-between">
+        <p>© {{ year }} Newham Technological Solutions. CCorex is a product of Newham.</p>
+        <p class="flex flex-wrap items-center gap-x-4 gap-y-1">
+          <NuxtLink to="/privacy" class="hover:text-white">Privacy</NuxtLink>
+          <button type="button" class="hover:text-white" @click="openSettings">Cookie settings</button>
+          <span>Software and specialist engineers for construction in Singapore and India.</span>
+        </p>
       </div>
     </div>
   </footer>
 </template>
+
+<script setup lang="ts">
+import { ccorexApps, ccorexAppUrl, CCOREX_URL, CCOREX_SIGNIN_URL } from '~/data/ccorex'
+const email = 'admin@newhamtech.com'
+const year = new Date().getFullYear()
+const { openSettings } = useConsent()
+</script>

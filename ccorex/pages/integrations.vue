@@ -1,200 +1,135 @@
 <template>
   <div>
-    <!-- Hero Section -->
-    <section class="max-w-7xl mx-auto px-4 pt-32 pb-16 text-center">
-      <div class="mb-6">
-        <span class="px-4 py-2 rounded-full bg-primary-500/10 border border-primary-500/30 text-primary-400 text-sm font-semibold">
-          Integrations & Ecosystem
-        </span>
+    <!-- Hero -->
+    <section class="relative overflow-hidden bg-hero text-white">
+      <div class="bg-grid pointer-events-none absolute inset-0 opacity-50" aria-hidden="true"></div>
+      <div class="container-site relative grid gap-14 pb-24 pt-16 lg:grid-cols-[1fr_1fr] lg:items-center lg:pt-24">
+        <div>
+          <p class="eyebrow-dark">Integrations</p>
+          <h1 class="h-display mt-5 text-white">Connected where it counts today. More on the way.</h1>
+          <p class="lead-dark mt-6 max-w-xl">Every CCorex app already shares one sign-in and one user base, and ARIVU answers across them. DeepTrack links to Zoho Books for vendors and purchase orders, and every app imports and exports Excel. Passing records between apps is on the roadmap — and labelled that way.</p>
+          <div class="mt-8 flex flex-wrap gap-3">
+            <NuxtLink to="/contact" class="btn-accent">Ask about your systems <i class="fa-solid fa-arrow-right text-xs" aria-hidden="true"></i></NuxtLink>
+            <a href="#roadmap" class="btn-ghost-dark">See the roadmap</a>
+          </div>
+        </div>
+        <div class="rounded-3xl border border-white/10 bg-brand-950/60 px-6 py-12">
+          <UiPlatformDiagram />
+        </div>
       </div>
-      <h1 class="text-4xl md:text-6xl font-bold mb-6">
-        <span class="bg-gradient-to-r from-primary-400 to-secondary-400 bg-clip-text text-transparent">
-          Connect Your Entire Stack
-        </span>
-      </h1>
-      <p class="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
-        CCorex integrates seamlessly with the tools you already use. Connect your project management, accounting, and collaboration platforms for a unified workflow.
-      </p>
     </section>
 
-    <!-- Integration Categories -->
-    <section class="max-w-7xl mx-auto px-4 pb-20">
-      <div v-for="category in categories" :key="category.name" class="mb-16">
-        <div class="mb-8">
-          <div class="flex items-center gap-3 mb-3">
-            <div class="text-4xl"><i :class="category.icon"></i></div>
-            <h2 class="text-3xl font-bold text-white">{{ category.name }}</h2>
-          </div>
-          <p class="text-gray-400 text-lg">{{ category.description }}</p>
-        </div>
-
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-          <div v-for="integration in category.integrations" :key="integration.name" class="group p-6 rounded-xl border border-white/10 bg-white/5 hover:border-primary-500/50 hover:bg-white/10 transition-all">
-            <div class="text-center">
-              <div class="text-3xl mb-3"><i :class="integration.icon"></i></div>
-              <h3 class="text-lg font-bold text-white mb-2">{{ integration.name }}</h3>
-              <p class="text-sm text-gray-400 mb-3">{{ integration.description }}</p>
-              <span class="inline-block px-3 py-1 rounded-full bg-primary-500/10 text-primary-400 text-xs font-semibold">
-                {{ integration.status }}
-              </span>
+    <!-- Available today -->
+    <section class="section">
+      <div class="container-site">
+        <UiSectionHeader eyebrow="Available today" title="What connects now" lead="These connections are part of the product today." />
+        <div class="mt-12 grid gap-5 lg:grid-cols-2">
+          <div v-for="t in today" :key="t.title" class="card flex flex-col">
+            <div class="flex items-start justify-between gap-4">
+              <span class="icon-tile"><i :class="t.icon" aria-hidden="true"></i></span>
+              <span class="inline-flex items-center gap-1.5 rounded-full bg-emerald-50 px-2.5 py-1 text-[11px] font-semibold uppercase tracking-wider text-emerald-700"><i class="fa-solid fa-circle-check" aria-hidden="true"></i>Available</span>
             </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- API Section -->
-    <section class="py-20 bg-gradient-to-b from-slate-900 to-slate-800">
-      <div class="max-w-7xl mx-auto px-4">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div>
-            <div class="text-5xl mb-4"><i class="fa-solid fa-plug"></i></div>
-            <h2 class="text-4xl font-bold text-white mb-4">
-              Powerful REST API
-            </h2>
-            <p class="text-xl text-gray-300 mb-6">
-              Build custom integrations with our comprehensive REST API. Access all CCorex functionality programmatically.
-            </p>
-            <ul class="space-y-3 mb-8">
-              <li v-for="feature in apiFeatures" :key="feature" class="flex items-center gap-3">
-                <i class="fa-solid fa-check text-primary-400"></i>
-                <span class="text-gray-300">{{ feature }}</span>
-              </li>
+            <h3 class="mt-5 text-xl font-bold">{{ t.title }}</h3>
+            <p class="mt-2 text-sm leading-relaxed text-ink-600">{{ t.text }}</p>
+            <ul class="mt-5 space-y-2 text-sm text-ink-700">
+              <li v-for="b in t.points" :key="b" class="flex gap-2.5"><i class="fa-solid fa-check mt-1 text-brand-600" aria-hidden="true"></i>{{ b }}</li>
             </ul>
-            <div class="flex gap-4">
-              <a href="/contact" class="px-6 py-3 rounded-lg bg-primary-500 text-slate-900 font-semibold hover:bg-primary-400 transition-all">
-                Request API Access
-              </a>
-              <a href="#" class="px-6 py-3 rounded-lg border border-primary-500 text-primary-400 font-semibold hover:bg-primary-500 hover:text-slate-900 transition-all">
-                View Documentation
-              </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Zoho flow -->
+    <section class="section bg-ink-50">
+      <div class="container-site grid gap-12 lg:grid-cols-[1fr_1.2fr] lg:items-center">
+        <div>
+          <UiSectionHeader eyebrow="DeepTrack → Zoho Books" title="From purchase request to your books" lead="Each tenant can link Zoho Books in DeepTrack for vendors and purchase orders. Connector credentials are stored encrypted and can be tested from the settings screen. Month-end produces a journal CSV for your ledger." />
+          <div class="mt-8"><UiStepFlow :steps="zohoFlow" /></div>
+        </div>
+        <UiBrowserFrame src="/images/product/deeptrack-reports.webp" alt="DeepTrack reports across projects, budgets, procurement and claims" url="deeptrack.app / reports" />
+      </div>
+    </section>
+
+    <!-- Plan-level connectivity -->
+    <section class="section">
+      <div class="container-site">
+        <UiSectionHeader eyebrow="Built in" title="Data in and out of each app" lead="Imports, exports and files each app produces today. Lists and reports export to Excel and PDF throughout. We confirm the exact scope for your systems during scoping." />
+        <div class="mt-10 overflow-x-auto rounded-2xl border border-ink-100 bg-white shadow-card">
+          <table class="w-full min-w-[620px] text-sm">
+            <caption class="sr-only">Imports and exports by app</caption>
+            <thead class="bg-ink-50 text-xs uppercase tracking-wider text-ink-500">
+              <tr><th scope="col" class="px-5 py-3 text-left font-semibold">App</th><th scope="col" class="px-5 py-3 text-left font-semibold">Imports, exports and connectors</th></tr>
+            </thead>
+            <tbody class="divide-y divide-ink-100">
+              <tr v-for="r in enterprise" :key="r.app">
+                <th scope="row" class="whitespace-nowrap px-5 py-4 text-left font-semibold text-ink-900"><i :class="r.icon" class="mr-2 text-brand-600" aria-hidden="true"></i>{{ r.app }}</th>
+                <td class="px-5 py-4"><ul class="flex flex-wrap gap-2"><li v-for="x in r.items" :key="x" class="chip">{{ x }}</li></ul></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Roadmap -->
+    <section id="roadmap" class="section scroll-mt-20 bg-ink-50">
+      <div class="container-site">
+        <UiSectionHeader center eyebrow="On the roadmap" title="Unified today, connected tomorrow" lead="These are planned and not yet available. We will tell you what is in the current release when you book a demo." />
+        <ul class="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <li v-for="r in roadmap" :key="r.title" class="flex h-full flex-col rounded-2xl border border-dashed border-ink-300 bg-white p-6">
+            <div class="flex items-center justify-between">
+              <span class="icon-tile" :class="r.ai ? 'bg-ai-50 text-ai-700' : 'bg-ink-100 text-ink-600'"><i :class="r.icon" aria-hidden="true"></i></span>
+              <span class="rounded-full bg-ink-100 px-2.5 py-1 text-[11px] font-semibold uppercase tracking-wider text-ink-600">Roadmap</span>
             </div>
-          </div>
-
-          <div class="p-8 rounded-2xl border border-white/10 bg-white/5 backdrop-blur">
-            <div class="bg-slate-900 rounded-lg p-6 font-mono text-sm">
-              <div class="text-gray-500 mb-2">// Example API Request</div>
-              <div class="text-primary-400">POST</div>
-              <div class="text-gray-300 mb-4">/api/v1/projects/create</div>
-              <div class="text-gray-500 mb-2">// Response</div>
-              <div class="text-gray-300">{</div>
-              <div class="text-gray-300 ml-4">"project_id": "PRJ-12345",</div>
-              <div class="text-gray-300 ml-4">"status": "success",</div>
-              <div class="text-gray-300 ml-4">"message": "Project created"</div>
-              <div class="text-gray-300">}</div>
-            </div>
-          </div>
-        </div>
+            <h3 class="mt-5 text-base font-semibold">{{ r.title }}</h3>
+            <p class="mt-1.5 text-sm leading-relaxed text-ink-600">{{ r.text }}</p>
+          </li>
+        </ul>
+        <p class="mx-auto mt-8 max-w-2xl text-center text-sm text-ink-600">Enterprise customers get priority access to new integrations as they arrive. <NuxtLink to="/pricing" class="font-semibold text-brand-700 hover:text-brand-900">Compare plans</NuxtLink></p>
       </div>
     </section>
 
-    <!-- Webhooks Section -->
-    <section class="py-20 bg-slate-800">
-      <div class="max-w-7xl mx-auto px-4">
-        <div class="text-center mb-12">
-          <div class="text-5xl mb-4"><i class="fa-solid fa-bolt"></i></div>
-          <h2 class="text-4xl font-bold text-white mb-4">
-            Real-Time Webhooks
-          </h2>
-          <p class="text-xl text-gray-300 max-w-3xl mx-auto">
-            Get instant notifications when events occur in CCorex. Build automated workflows with webhooks.
-          </p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div v-for="webhook in webhooks" :key="webhook.event" class="p-6 rounded-xl border border-white/10 bg-white/5">
-            <h3 class="text-lg font-bold text-white mb-2">{{ webhook.event }}</h3>
-            <p class="text-sm text-gray-400">{{ webhook.description }}</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="py-20 bg-slate-900">
-      <div class="max-w-4xl mx-auto px-4 text-center">
-        <h2 class="text-4xl md:text-5xl font-bold mb-6 text-white">
-          Need a Custom Integration?
-        </h2>
-        <p class="text-xl text-gray-300 mb-10">
-          Our team can help you build custom integrations tailored to your specific workflow requirements.
-        </p>
-        <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <a href="/contact" class="px-8 py-4 rounded-lg bg-primary-500 text-slate-900 font-bold hover:bg-primary-400 transition-all">
-            Contact Integration Team
-          </a>
-          <NuxtLink to="/pricing" class="px-8 py-4 rounded-lg border-2 border-primary-500 text-primary-400 font-bold hover:bg-primary-500 hover:text-slate-900 transition-all">
-            View Enterprise Plans
-          </NuxtLink>
-        </div>
-      </div>
-    </section>
+    <UiCtaBand title="Tell us what you need to connect" lead="Share your accounting, CRM and other systems with us. We will tell you honestly what works today and what is planned." primary-label="Talk to our team" secondary-label="See the platform" secondary-to="/platform" />
   </div>
 </template>
 
 <script setup lang="ts">
-const categories = [
+const config = useRuntimeConfig()
+useSeoMeta({
+  title: 'Integrations: SSO, Zoho Books, Excel & roadmap',
+  description: 'CCorex apps share one sign-in and user base today, DeepTrack links to Zoho Books, and every app imports and exports Excel. Cross-app data flow is on the roadmap.',
+  ogTitle: 'CCorex integrations — available today and on the roadmap',
+  ogDescription: 'Shared sign-in and users across every app, a DeepTrack link to Zoho Books, Excel imports and exports, and a clearly labelled roadmap.'
+})
+useHead({ link: [{ rel: 'canonical', href: config.public.siteUrl + '/integrations' }] })
+
+const today = [
   {
-    name: 'Project Management',
-    icon: 'fa-solid fa-clipboard-list',
-    description: 'Sync projects, tasks, and schedules with leading construction management platforms.',
-    integrations: [
-      { name: 'Procore', icon: 'fa-solid fa-helmet-safety', description: 'Bi-directional sync', status: 'Available' },
-      { name: 'Autodesk BIM 360', icon: 'fa-solid fa-building', description: 'Model integration', status: 'Available' },
-      { name: 'PlanGrid', icon: 'fa-solid fa-drafting-compass', description: 'Drawing sync', status: 'Available' },
-      { name: 'Primavera P6', icon: 'fa-solid fa-chart-bar', description: 'Schedule sync', status: 'Available' }
-    ]
+    icon: 'fa-solid fa-layer-group', title: 'The CCorex platform, across every app',
+    text: 'DeepCost, DeepTrack, DeepHR, DeepPlan and ARIVU run on the same platform today; Deep Drive and PDF Editor are coming soon.',
+    points: ['One sign-in at dash.ccorex.com, with a signed token every app checks', 'Users created in the portal are provisioned into each assigned app', 'Roles per organisation and per app', 'ARIVU reads across the apps, read-only']
   },
   {
-    name: 'Accounting & Finance',
-    icon: 'fa-solid fa-briefcase',
-    description: 'Connect with your accounting systems for seamless financial management.',
-    integrations: [
-      { name: 'QuickBooks', icon: 'fa-solid fa-book', description: 'Invoice & expense sync', status: 'Available' },
-      { name: 'Xero', icon: 'fa-solid fa-book', description: 'Accounting integration', status: 'Available' },
-      { name: 'SAP', icon: 'fa-solid fa-building-columns', description: 'ERP integration', status: 'Available' },
-      { name: 'NetSuite', icon: 'fa-solid fa-coins', description: 'Financial sync', status: 'Coming Soon' }
-    ]
-  },
-  {
-    name: 'Collaboration',
-    icon: 'fa-solid fa-comments',
-    description: 'Stay connected with your team through integrated communication tools.',
-    integrations: [
-      { name: 'Slack', icon: 'fa-solid fa-comments', description: 'Notifications & alerts', status: 'Available' },
-      { name: 'Microsoft Teams', icon: 'fa-solid fa-users', description: 'Team collaboration', status: 'Available' },
-      { name: 'Google Workspace', icon: 'fa-solid fa-envelope', description: 'Email & calendar', status: 'Available' },
-      { name: 'Zoom', icon: 'fa-solid fa-video', description: 'Video meetings', status: 'Available' }
-    ]
-  },
-  {
-    name: 'Storage & Documents',
-    icon: 'fa-solid fa-folder',
-    description: 'Access and manage your documents from cloud storage platforms.',
-    integrations: [
-      { name: 'Dropbox', icon: 'fa-solid fa-box', description: 'File storage', status: 'Available' },
-      { name: 'Google Drive', icon: 'fa-solid fa-cloud', description: 'Cloud storage', status: 'Available' },
-      { name: 'OneDrive', icon: 'fa-solid fa-folder-open', description: 'Microsoft storage', status: 'Available' },
-      { name: 'Box', icon: 'fa-solid fa-upload', description: 'Enterprise storage', status: 'Available' }
-    ]
+    icon: 'fa-solid fa-book', title: 'Zoho Books link from DeepTrack',
+    text: 'Each tenant can link Zoho Books for DeepTrack vendors and purchase orders, configured in the portal’s app settings.',
+    points: ['Connector credentials stored encrypted', 'Test the connection from the settings screen', 'Journal CSV from month-end and CSV import of general-ledger costs']
   }
 ]
-
-const apiFeatures = [
-  'RESTful API with comprehensive documentation',
-  'OAuth 2.0 authentication and authorization',
-  'Rate limiting and usage monitoring',
-  'Sandbox environment for testing',
-  'SDKs for popular programming languages',
-  'Dedicated support for enterprise customers'
+const zohoFlow = [
+  { title: 'Purchase request', text: 'Raised against an approved budget.' },
+  { title: 'Purchase order', text: 'Issued to a vendor from your Zoho Books-linked list.' },
+  { title: 'Month-end', text: 'Journal CSV for your ledger.' }
 ]
-
-const webhooks = [
-  { event: 'project.created', description: 'Triggered when a new project is created' },
-  { event: 'estimate.completed', description: 'Triggered when an estimate is finalized' },
-  { event: 'budget.exceeded', description: 'Triggered when budget threshold is exceeded' },
-  { event: 'po.approved', description: 'Triggered when a purchase order is approved' },
-  { event: 'timesheet.submitted', description: 'Triggered when timesheet is submitted' },
-  { event: 'document.uploaded', description: 'Triggered when a document is uploaded' }
+const enterprise = [
+  { app: 'DeepCost', icon: 'fa-solid fa-calculator', items: ['Excel master-data upload', 'Area schedule Excel import', 'Area, component & FOT reports (Excel, PDF)', 'Email at each stage'] },
+  { app: 'DeepTrack', icon: 'fa-solid fa-diagram-project', items: ['Zoho Books link', 'GL cost CSV import', 'Journal CSV', 'Bulk timesheets', 'Scheduled reports'] },
+  { app: 'DeepHR', icon: 'fa-solid fa-user-group', items: ['Excel bulk upload (with dry run)', 'Record-mode payroll upload', 'Reports to Excel or CSV', 'EPF ECR, ESIC & PT files (India)', 'Bank transfer sheet (India)'] },
+  { app: 'ARIVU AI', icon: 'fa-solid fa-wand-magic-sparkles', items: ['Charts', 'PDF & Excel exports', 'Attachments incl. scanned PDFs'] }
+]
+const roadmap = [
+  { icon: 'fa-solid fa-address-book', title: 'Shared customers & contacts', text: 'Customers and contacts shared across apps.' },
+  { icon: 'fa-solid fa-right-left', title: 'Cross-app data flow', text: 'Won tender → project → payroll, without re-entry.' },
+  { icon: 'fa-solid fa-plug', title: 'Deeper integrations', text: 'Extend to your accounting, CRM and other systems.' },
+  { icon: 'fa-solid fa-building-columns', title: 'Singapore bank payment file', text: 'A bank payment file for Singapore payroll (India already has a bank transfer sheet).' }
 ]
 </script>

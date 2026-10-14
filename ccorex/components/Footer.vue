@@ -1,7 +1,54 @@
 <template>
-  <footer class="mt-20 border-t border-white/10 py-10 text-center text-gray-400">
-    <div class="max-w-6xl mx-auto px-4">
-      <p>© {{ new Date().getFullYear() }} CCorex. All rights reserved.</p>
+  <footer class="bg-brand-950 text-ink-300">
+    <div class="container-site grid gap-10 py-16 md:grid-cols-[1.4fr_repeat(3,1fr)]">
+      <div class="max-w-xs">
+        <img src="/ccorex-logo.png" alt="CCorex" class="h-7 w-auto brightness-0 invert" width="112" height="28" loading="lazy" />
+        <p class="mt-4 text-sm leading-relaxed">The AI-powered platform for construction businesses — estimating, project delivery and HR &amp; payroll on one login.</p>
+        <p class="mt-4 text-sm">Delivered by <a :href="config.public.newhamUrl" class="font-semibold text-white hover:text-cyan-400">Newham Technological Solutions</a>, Singapore.</p>
+      </div>
+      <div>
+        <h2 class="text-sm font-semibold text-white">Products</h2>
+        <ul class="mt-4 space-y-2.5 text-sm">
+          <li v-for="a in apps" :key="a.slug"><NuxtLink :to="`/products/${a.slug}`" class="hover:text-white">{{ a.name }}</NuxtLink></li>
+        </ul>
+      </div>
+      <div>
+        <h2 class="text-sm font-semibold text-white">Platform</h2>
+        <ul class="mt-4 space-y-2.5 text-sm">
+          <li><NuxtLink to="/platform" class="hover:text-white">How it works</NuxtLink></li>
+          <li><NuxtLink to="/integrations" class="hover:text-white">Integrations</NuxtLink></li>
+          <li><NuxtLink to="/solutions" class="hover:text-white">Solutions by role</NuxtLink></li>
+          <li><NuxtLink to="/industries" class="hover:text-white">Industries</NuxtLink></li>
+          <li><NuxtLink to="/pricing" class="hover:text-white">Pricing</NuxtLink></li>
+        </ul>
+      </div>
+      <div>
+        <h2 class="text-sm font-semibold text-white">Company</h2>
+        <ul class="mt-4 space-y-2.5 text-sm">
+          <li><NuxtLink to="/about" class="hover:text-white">About</NuxtLink></li>
+          <li><NuxtLink to="/resources" class="hover:text-white">Resources</NuxtLink></li>
+          <li><NuxtLink to="/faq" class="hover:text-white">FAQ</NuxtLink></li>
+          <li><NuxtLink to="/contact" class="hover:text-white">Contact &amp; demo</NuxtLink></li>
+          <li><a href="mailto:admin@newhamtech.com" class="hover:text-white">admin@newhamtech.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="border-t border-white/10">
+      <div class="container-site flex flex-col gap-2 py-6 text-xs text-ink-400 sm:flex-row sm:items-center sm:justify-between">
+        <p>© {{ year }} Newham Technological Solutions. CCorex is a product of Newham.</p>
+        <p class="flex flex-wrap items-center gap-x-4 gap-y-1">
+          <NuxtLink to="/privacy" class="hover:text-white">Privacy</NuxtLink>
+          <button type="button" class="hover:text-white" @click="openSettings">Cookie settings</button>
+          <span>Built for construction firms in Singapore and India.</span>
+        </p>
+      </div>
     </div>
   </footer>
 </template>
+
+<script setup lang="ts">
+import { apps } from '~/data/apps'
+const config = useRuntimeConfig()
+const year = new Date().getFullYear()
+const { openSettings } = useConsent()
+</script>

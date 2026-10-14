@@ -11,8 +11,8 @@ if ! command -v vercel &> /dev/null; then
 fi
 
 # Step 2: Build the Vue app
-echo "📦 Building the Vue.js application..."
-npm run generate
+echo "📦 Building the Nuxt application (server routes need nuxt build, not generate)..."
+npm run build
 
 if [ $? -ne 0 ]; then
   echo "❌ Build failed! Please fix the errors and try again."
