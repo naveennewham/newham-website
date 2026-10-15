@@ -1,0 +1,24 @@
+# CCorex
+
+> CCorex is construction software for MEP, fire-protection and main contractors in Singapore and India: tender estimating, drawing take-off, project cost control, and HR & payroll on one sign-in, with an AI assistant (ARIVU) in every app. Made by Newham Technological Solutions, Singapore.
+
+## Apps
+- [DeepCost](https://ccorex.com/products/deepcost): MEP tender estimating — AI tender summary, area schedules, material take-off, a priced library, and FOT AI on the client's BOQ PDF.
+- [DeepPlan AI](https://ccorex.com/products/deepplan-ai): drawing take-off — rooms, measurements and symbol counts from floor plans into a priced BOQ (AI take-off in early access).
+- [DeepTrack](https://ccorex.com/products/deeptrack): project delivery and cost control — budgets, budget against actual by workhead, WBS and cost centre, purchasing, invoice matching, client claims, month-end cost allocation.
+- [DeepHR](https://ccorex.com/products/deephr): HR and payroll — face and GPS attendance on the employee's phone, leave, claims, Singapore (CPF, SDL, SHG) and India (EPF, ESI, PT, TDS) payroll.
+- [ARIVU AI](https://ccorex.com/products/arivu-ai): read-only AI assistant that answers questions from your own data across the apps.
+- [Deep Drive](https://ccorex.com/products/deep-drive): project document storage.
+- [PDF Editor](https://ccorex.com/products/pdf-editor): mark up, sign, split and merge PDFs.
+
+## Key pages
+- [Platform](https://ccorex.com/platform): one sign-in, users and roles managed once.
+- [Solutions by role](https://ccorex.com/solutions)
+- [Industries](https://ccorex.com/industries): MEP contractors, main contractors, EPC companies, tender-based specialists.
+- [Pricing](https://ccorex.com/pricing): plans shared on request.
+- [Resources](https://ccorex.com/resources): estimating and BOQ guides.
+- [FAQ](https://ccorex.com/faq)
+- [Book a demo](https://ccorex.com/contact)
+
+## Contact
+admin@newhamtech.com

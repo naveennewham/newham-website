@@ -237,6 +237,17 @@
       </div>
     </section>
 
+    <!-- Estimating by trade -->
+    <section class="section-tight">
+      <div class="container-site">
+        <p class="eyebrow">Estimating by trade</p>
+        <ul class="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+          <li v-for="t in tradeLinks" :key="t.to">
+            <NuxtLink :to="t.to" class="card flex h-full items-center gap-3 hover:border-brand-200"><i :class="t.icon" class="text-brand-600" aria-hidden="true"></i><span class="font-semibold">{{ t.name }}</span></NuxtLink>
+          </li>
+        </ul>
+      </div>
+    </section>
     <UiCtaBand
       title="Price every tender with confidence."
       lead="Summarise the tender with AI, take off materials by area, price from one library and submit a checked Form of Tender. See it on your own tender in a live demo."
@@ -276,6 +287,13 @@ useHead({
     })
   }]
 })
+
+const tradeLinks = [
+  { to: '/estimating/fire-protection', name: 'Fire protection estimating', icon: 'fa-solid fa-fire-extinguisher' },
+  { to: '/estimating/acmv', name: 'ACMV estimating', icon: 'fa-solid fa-fan' },
+  { to: '/estimating/elv', name: 'ELV estimating', icon: 'fa-solid fa-network-wired' },
+  { to: '/compare/costx-cubicost-alternative', name: 'Compared with CostX & Cubicost', icon: 'fa-solid fa-scale-balanced' }
+]
 
 const heroPoints = ['AI tender summary', 'Area-based material take-off', 'FOT AI on the client\'s BOQ', 'Approval at every stage']
 

@@ -33,6 +33,8 @@ export default defineNuxtConfig({
   css: ['~/assets/css/main.css', '~/assets/css/theme.css'],
   runtimeConfig: {
     public: {
+      // Day this build was made; the sitemap uses it as lastmod for fixed pages.
+      buildDate: new Date().toISOString().slice(0, 10),
       siteUrl: 'https://ccorex.com',
       // CCorex portal sign-in (Functional Design Document §3).
       appLoginUrl: process.env.NUXT_PUBLIC_APP_LOGIN_URL || 'https://dash.ccorex.com',

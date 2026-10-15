@@ -2,11 +2,12 @@
 import { parse } from 'yaml'
 import { apps } from '../../data/apps'
 
-const STATIC = ['/', '/products', '/platform', '/solutions', '/industries', '/integrations', '/pricing', '/resources', '/faq', '/about', '/contact', '/privacy']
+const STATIC = ['/', '/products', '/estimating/fire-protection', '/estimating/acmv', '/estimating/elv', '/compare/costx-cubicost-alternative', '/platform', '/solutions', '/industries', '/integrations', '/pricing', '/resources', '/faq', '/about', '/contact', '/privacy']
 
 export default defineEventHandler(async (event) => {
   const site = (useRuntimeConfig(event).public.siteUrl as string).replace(/\/$/, '')
-  const urls: { loc: string; lastmod?: string }[] = [...STATIC, ...apps.map((a) => `/products/${a.slug}`)].map((p) => ({ loc: `${site}${p}` }))
+  const built = useRuntimeConfig(event).public.buildDate as string | undefined
+  const urls: { loc: string; lastmod?: string }[] = [...STATIC, ...apps.map((a) => `/products/${a.slug}`)].map((p) => ({ loc: `${site}${p}`, lastmod: built }))
   const store = useStorage('assets:guides')
   for (const key of await store.getKeys()) {
     if (!key.endsWith('.md')) continue
