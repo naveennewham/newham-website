@@ -1,3 +1,4 @@
+import { fileURLToPath } from 'node:url'
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   modules: [
@@ -23,6 +24,8 @@ export default defineNuxtConfig({
     legacyLeadWebhook: 'https://firefabx.com/webhook/newham-contact',
     legacyAppointmentWebhook: 'https://firefabx.com/webhook/newham-appointment'
   },
+  // Guides (content/guides/*.md) are readable on the server for the sitemap.
+  nitro: { serverAssets: [{ baseName: 'guides', dir: fileURLToPath(new URL('./content/guides', import.meta.url)) }] },
   routeRules: {
     // Old case-study URLs (fabricated examples, removed) -> project experience.
     ...Object.fromEntries(['acmv1', 'fire1', 'cs1', 'elv1', 'ana1', 'cs2', 'cs3', 'cs4', 'cs5', 'cs6', 'ai1', 'cloud1', 'uiux1']

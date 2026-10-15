@@ -131,7 +131,7 @@
 <script setup lang="ts">
 const config = useRuntimeConfig()
 useSeoMeta({
-  title: 'Book a demo',
+  title: 'Book a CCorex demo for estimating, projects and payroll',
   description: 'Book a 30-minute live demo of CCorex on your own estimating, project or payroll workflow. Tell us about your team, or email us at admin@newhamtech.com.',
   ogTitle: 'Book a CCorex demo',
   ogDescription: 'See DeepCost, DeepTrack, DeepHR and ARIVU AI on your own workflow in a 30-minute live demo.'

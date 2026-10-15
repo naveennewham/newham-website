@@ -48,9 +48,12 @@
 
 <script setup lang="ts">
 useSeoMeta({
-  title: 'Privacy policy',
+  title: 'Privacy policy: how CCorex handles personal data',
+  ogTitle: 'Privacy policy | CCorex',
+  ogDescription: 'How Newham Technological Solutions handles personal data on ccorex.com.',
   description: 'How Newham Technological Solutions collects, uses and protects personal data on ccorex.com, including cookies and enquiry forms.',
 })
+useHead({ link: [{ rel: 'canonical', href: `${useRuntimeConfig().public.siteUrl}/privacy` }] })
 </script>
 
 <style scoped>

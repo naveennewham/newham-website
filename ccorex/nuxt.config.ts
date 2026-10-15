@@ -1,4 +1,5 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+import { fileURLToPath } from 'node:url'
 export default defineNuxtConfig({
   modules: ['@nuxtjs/tailwindcss'],
   app: {
@@ -47,6 +48,8 @@ export default defineNuxtConfig({
     markaitingWorkspace: 'ccorex',
     legacyLeadWebhook: ''
   },
+  // Guides (content/guides/*.md) are readable on the server for the sitemap.
+  nitro: { serverAssets: [{ baseName: 'guides', dir: fileURLToPath(new URL('./content/guides', import.meta.url)) }] },
   routeRules: {
     // Old duplicate URLs — one canonical page per app.
     '/apps': { redirect: { to: '/products', statusCode: 301 } },

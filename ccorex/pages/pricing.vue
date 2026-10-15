@@ -129,7 +129,7 @@
 <script setup lang="ts">
 const config = useRuntimeConfig()
 useSeoMeta({
-  title: 'Pricing & plans',
+  title: 'Pricing and plans for construction estimating software',
   description: 'CCorex plans: Essentials, Business and Enterprise. Per-user pricing for estimating, project delivery and HR & payroll apps — get a tailored quote.',
   ogTitle: 'CCorex pricing — Essentials, Business and Enterprise plans',
   ogDescription: 'Flexible per-user pricing for DeepCost, DeepTrack and DeepHR. Bundle the apps that fit your business and get a tailored quote.'

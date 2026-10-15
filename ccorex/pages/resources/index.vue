@@ -17,11 +17,28 @@
       </div>
     </section>
 
+    <!-- Published guides -->
+    <section v-if="published.length" class="section">
+      <div class="container-site">
+        <UiSectionHeader eyebrow="Guides" title="Read now" />
+        <ul class="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          <li v-for="p in published" :key="p.slug">
+            <NuxtLink :to="`/resources/${p.slug}`" class="card card-hover flex h-full flex-col">
+              <p class="text-xs font-semibold uppercase tracking-wider text-ink-500">{{ p.minutes }} min read</p>
+              <h3 class="mt-2 text-lg font-semibold text-ink-900">{{ p.title }}</h3>
+              <p class="mt-2 flex-1 text-sm leading-relaxed text-ink-600">{{ p.description }}</p>
+              <span class="mt-5 text-sm font-semibold text-brand-700">Read the guide <i class="fa-solid fa-arrow-right ml-1 text-xs" aria-hidden="true"></i></span>
+            </NuxtLink>
+          </li>
+        </ul>
+      </div>
+    </section>
+
     <!-- Upcoming guides -->
     <section id="guides" class="section scroll-mt-20">
       <div class="container-site">
         <div class="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
-          <UiSectionHeader eyebrow="Guides in progress" title="Coming soon" lead="These guides are being written now. None are published yet." />
+          <UiSectionHeader eyebrow="Guides in progress" title="Coming soon" :lead="published.length ? 'More guides being written now.' : 'These guides are being written now. None are published yet.'" />
           <a href="mailto:admin@newhamtech.com?subject=Notify%20me%20when%20CCorex%20guides%20are%20published" class="btn-secondary shrink-0"><i class="fa-regular fa-bell text-xs" aria-hidden="true"></i>Email me when they’re out</a>
         </div>
         <ul class="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
@@ -84,6 +101,8 @@
 </template>
 
 <script setup lang="ts">
+import { guides as publishedGuides } from '~/utils/guides'
+const published = publishedGuides
 const config = useRuntimeConfig()
 useSeoMeta({
   title: 'Resources: estimating & payroll guides',

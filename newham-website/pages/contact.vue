@@ -78,7 +78,7 @@ import { CCOREX_SIGNIN_URL } from '~/data/ccorex'
 
 const siteUrl = useRuntimeConfig().public.siteUrl as string
 useSeoMeta({
-  title: 'Contact Newham',
+  title: 'Contact Newham: construction software and M&E engineers',
   description: 'Contact Newham Technological Solutions about CCorex construction software, dedicated M&E engineers or fire protection and commercial engineering services.',
   ogTitle: 'Contact Newham',
   ogDescription: 'Send us a message or book a 30-minute discovery call.',
