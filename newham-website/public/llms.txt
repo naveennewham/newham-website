@@ -4,7 +4,7 @@
 
 ## Services
 - [BOQ preparation and M&E estimation services](https://newhamtech.com/boq-estimation-services): take-offs, priced BOQs, rate build-ups and tender queries for fire protection, ACMV, electrical, ELV and plumbing.
-- [Engineering services](https://newhamtech.com/engineering-services): sprinkler design and hydraulic calculations to SS CP 52 / NFPA 13, fire alarm design to SS CP 10, submission drawings, commercial and QS support.
+- [Engineering services](https://newhamtech.com/engineering-services): sprinkler design and hydraulic calculations to SS CP 52 / NFPA 13, fire alarm design to SS 645, submission drawings, commercial and QS support.
 - [Engineering talent outsourcing](https://newhamtech.com/talent-outsourcing): dedicated M&E estimators, QS, BIM modellers and coordinators working in the client's templates.
 - [CCorex software](https://ccorex.com): estimating, project cost control and HR & payroll for contractors.
 

@@ -16,7 +16,7 @@ export const trades: Trade[] = [
     id: 'fire-protection', name: 'Fire protection', icon: 'fa-solid fa-fire-extinguisher',
     summary: 'Sprinkler, fire alarm, gas suppression, riser and hose reel systems, from design and calculations to submission drawings.',
     deliverables: ['Sprinkler layouts and riser diagrams', 'Hydraulic calculation reports', 'Fire pump sizing and pump room layouts', 'Fire alarm zoning and cause-and-effect matrices', 'Gas suppression agent and pipe sizing', 'SCDF submission drawing packages'],
-    standards: ['SS CP 52', 'NFPA 13', 'SS CP 10', 'BS 5839'],
+    standards: ['SS CP 52', 'NFPA 13', 'SS 645', 'BS 5839'],
     roles: ['Fire protection engineers', 'Drafters', 'Estimators']
   },
   {

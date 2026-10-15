@@ -40,7 +40,7 @@ ELV systems often interface with fire alarm, lifts, ACMV and the building manage
 
 ## Singapore context
 
-In Singapore, structured cabling and telecommunication facilities in buildings are subject to IMDA requirements, and ELV systems that interface with fire alarm (for example, access control doors releasing on fire alarm) need to align with SCDF fire safety requirements and the fire alarm design under SS CP 10. Your specification will usually reference the standards and editions that apply. Price to the specification and note anything that appears to conflict with it.
+In Singapore, structured cabling and telecommunication facilities in buildings are subject to IMDA requirements, and ELV systems that interface with fire alarm (for example, access control doors releasing on fire alarm) need to align with SCDF fire safety requirements and the fire alarm design under SS 645. Your specification will usually reference the standards and editions that apply. Price to the specification and note anything that appears to conflict with it.
 
 ## How to prepare an ELV BOQ
 
