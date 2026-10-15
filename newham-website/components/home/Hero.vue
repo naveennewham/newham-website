@@ -19,15 +19,34 @@
 
       <!-- Headline -->
       <h1 class="mx-auto mt-8 max-w-5xl text-center font-display text-[2.6rem] font-extrabold leading-[1.08] tracking-tight text-ink-900 sm:text-6xl lg:text-[4.6rem]">
-        Software
-        and specialist engineers
-        for
+        <span class="rise mr-[0.25em]" style="animation-delay: .05s">Software</span>
+        <span class="rise mr-[0.25em]" style="animation-delay: .15s">and specialist</span>
+        <span class="rise mr-[0.25em]" style="animation-delay: .25s">engineers</span>
+        <span class="rise mr-[0.25em]" style="animation-delay: .35s">for</span>
         <FxRotatingWord :words="['Singapore construction.', 'M&E contractors.', 'engineering consultants.']" word-class="bg-gradient-to-r from-brand-600 via-cyan-500 to-emerald-500 bg-clip-text text-transparent" />
       </h1>
 
       <p class="mx-auto mt-6 max-w-2xl text-center text-lg leading-relaxed text-ink-600">Newham builds CCorex — AI-powered software for estimating, projects and payroll — and supplies the Singapore-code-trained M&amp;E engineers who model, estimate and design alongside your team.</p>
 
-      <div class="mt-8 flex flex-wrap justify-center gap-3">
+      <!-- Minimal offer line: software + engineers -> delivered -->
+      <div class="rise-in mx-auto mt-7 flex w-fit max-w-full items-center gap-2 rounded-full border border-ink-100 bg-white/70 px-3 py-2 shadow-card backdrop-blur sm:gap-3 sm:px-4" style="animation-delay: .55s" aria-label="CCorex software plus Newham engineers, delivering your project">
+        <span class="flex items-center gap-1.5">
+          <span class="flex -space-x-1.5"><UiAppIcon v-for="a in ['deepcost', 'deeptrack', 'deephr']" :key="a" :app="a" size="xs" class="ring-2 ring-white" /></span>
+          <span class="text-xs font-semibold text-ink-800 sm:text-sm">Software</span>
+        </span>
+        <span class="text-ink-400" aria-hidden="true"><i class="fa-solid fa-plus text-[10px]"></i></span>
+        <span class="flex items-center gap-1.5">
+          <span class="flex h-6 w-6 items-center justify-center rounded-md bg-emerald-50 text-[11px] text-emerald-700"><i class="fa-solid fa-helmet-safety" aria-hidden="true"></i></span>
+          <span class="text-xs font-semibold text-ink-800 sm:text-sm">Engineers</span>
+        </span>
+        <span class="wire relative block h-0.5 w-6 rounded bg-ink-200 sm:w-10" aria-hidden="true"><span class="pulse"></span></span>
+        <span class="flex items-center gap-1.5">
+          <span class="flex h-6 w-6 items-center justify-center rounded-full bg-brand-700 text-[10px] text-white"><i class="fa-solid fa-check" aria-hidden="true"></i></span>
+          <span class="text-xs font-semibold text-ink-800 sm:text-sm">Delivered</span>
+        </span>
+      </div>
+
+      <div class="mt-7 flex flex-wrap justify-center gap-3">
         <NuxtLink to="/appointment" class="group inline-flex items-center gap-2 rounded-full bg-ink-900 px-6 py-3.5 text-sm font-semibold text-white shadow-lift transition-transform hover:-translate-y-0.5">
           Book a discovery call
           <span class="flex h-6 w-6 items-center justify-center rounded-full bg-cyan-400 text-ink-900 transition-transform group-hover:translate-x-0.5"><i class="fa-solid fa-arrow-right text-[10px]" aria-hidden="true"></i></span>
@@ -116,5 +135,10 @@ onBeforeUnmount(() => clearInterval(t))
 <style scoped>
 .nh-mesh { animation: nh-mesh 20s ease-in-out infinite alternate; }
 @keyframes nh-mesh { 0% { transform: translate(0, 0) scale(1); } 100% { transform: translate(8%, 10%) scale(1.15); } }
-@media (prefers-reduced-motion: reduce) { .nh-mesh { animation: none; } }
+.rise { display: inline-block; animation: rise .7s cubic-bezier(.2, .8, .2, 1) both; }
+@keyframes rise { from { opacity: 0; transform: translateY(14px); } }
+.rise-in { animation: rise .7s cubic-bezier(.2, .8, .2, 1) both; }
+.pulse { position: absolute; top: -3px; left: 0; height: 8px; width: 8px; border-radius: 9999px; background: #0e9fb5; box-shadow: 0 0 8px rgba(14, 159, 181, .7); animation: pulse 1.8s ease-in-out 1.2s infinite both; }
+@keyframes pulse { 0% { left: -2px; opacity: 0; } 25%, 75% { opacity: 1; } 100% { left: calc(100% - 6px); opacity: 0; } }
+@media (prefers-reduced-motion: reduce) { .nh-mesh, .rise, .rise-in, .pulse { animation: none; } .pulse { display: none; } }
 </style>
