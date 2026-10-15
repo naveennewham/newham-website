@@ -272,7 +272,7 @@ const pageUrl = config.public.siteUrl + '/products/deeptrack'
 const description = 'DeepTrack is project cost control for contractors: budgets, client claims, timesheets, PR-to-PO procurement, invoice matching and month-end cost allocation.'
 
 useSeoMeta({
-  title: 'DeepTrack — project cost control for contractors',
+  title: 'DeepTrack — construction project & cost control software',
   description,
   ogTitle: 'DeepTrack — project delivery & cost control for contractors',
   ogDescription: description

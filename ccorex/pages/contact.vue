@@ -20,7 +20,7 @@
           <p class="mt-1 text-sm text-ink-600">Fields marked <span class="text-rose-600" aria-hidden="true">*</span><span class="sr-only">with an asterisk</span> are required.</p>
 
           <div v-if="submitted" class="mt-6 rounded-xl border border-brand-200 bg-brand-50 p-5" role="status">
-            <p class="flex items-center gap-2 font-semibold text-brand-800"><i class="fa-solid fa-circle-check" aria-hidden="true"></i>{{ viaEmail ? 'Almost done — please send the email' : 'Request received' }}</p>
+            <p class="flex items-center gap-2 font-semibold text-brand-800"><UiLottie v-if="!viaEmail" src="/lottie/success.json" :loop="false" class="h-8 w-8 shrink-0"><template #fallback><i class="fa-solid fa-circle-check" aria-hidden="true"></i></template></UiLottie><i v-else class="fa-solid fa-circle-check" aria-hidden="true"></i>{{ viaEmail ? 'Almost done — please send the email' : 'Request received' }}</p>
             <p v-if="!viaEmail" class="mt-2 text-sm text-ink-700">Thank you. We have your request and will reply by email to arrange your demo. If it's urgent, write to <a href="mailto:admin@newhamtech.com" class="font-semibold text-brand-700 underline">admin@newhamtech.com</a>.</p>
             <p v-else class="mt-2 text-sm text-ink-700">Your email app should have opened with your request addressed to <a href="mailto:admin@newhamtech.com" class="font-semibold text-brand-700 underline">admin@newhamtech.com</a>. Press send and we will reply to arrange your demo. If nothing opened, email us directly at that address.</p>
             <button type="button" class="btn-secondary mt-4" @click="submitted = false">Edit my request</button>
@@ -140,7 +140,7 @@ useHead({ link: [{ rel: 'canonical', href: config.public.siteUrl + '/contact' }]
 
 const roles = ['Owner / Managing Director', 'General Manager', 'Estimation / QS', 'Project Manager', 'Procurement / Finance', 'HR / Admin', 'Site Engineer / Supervisor', 'IT', 'Other']
 const sizes = ['1–20 employees', '21–50 employees', '51–200 employees', '201–500 employees', '500+ employees']
-const appOptions = ['DeepCost — tender estimation', 'DeepTrack — project delivery', 'DeepHR — HR & payroll', 'DeepPlan AI — drawing take-off', 'ARIVU AI — AI assistant', 'Deep Drive & PDF Editor (coming soon)', 'Not sure yet — the whole suite']
+const appOptions = ['DeepCost — tender estimation', 'DeepTrack — project delivery', 'DeepHR — HR & payroll', 'DeepPlan AI — drawing take-off', 'ARIVU AI — AI assistant', 'Deep Drive & PDF Editor — documents', 'Not sure yet — the whole suite']
 const nextSteps = [
   { title: 'We reply to you', text: 'Our team replies by email to understand your workflow and agree a time.' },
   { title: 'Live demo on your workflow', text: '30 minutes on the apps you chose, using examples close to your work.' },

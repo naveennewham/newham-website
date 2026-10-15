@@ -33,7 +33,7 @@
             </component>
           </li>
         </ul>
-        <p class="mt-6 text-center text-sm text-ink-500">Deep Drive (document storage) and PDF Editor are coming soon.</p>
+        
       </div>
     </section>
 

@@ -17,17 +17,10 @@
         </span>
       </div>
 
-      <!-- Headline with inline media -->
+      <!-- Headline -->
       <h1 class="mx-auto mt-8 max-w-5xl text-center font-display text-[2.6rem] font-extrabold leading-[1.08] tracking-tight text-ink-900 sm:text-6xl lg:text-[4.6rem]">
         Software
-        <span class="relative mx-1 inline-block h-[0.82em] w-[1.7em] -translate-y-[0.06em] overflow-hidden rounded-full align-middle shadow-lift ring-4 ring-white" aria-hidden="true">
-          <img src="/images/product/ccorex-portal.webp" alt="" class="h-full w-full object-cover object-left-top" />
-        </span>
         and specialist engineers
-        <span class="relative mx-1 inline-block h-[0.82em] w-[1.7em] -translate-y-[0.06em] overflow-hidden rounded-full align-middle shadow-lift ring-4 ring-white" aria-hidden="true">
-          <video v-if="motion" src="/videos/stock-office-estimator.mp4" class="h-full w-full object-cover" autoplay muted loop playsinline></video>
-          <img v-else src="/videos/stock-office-estimator-poster.webp" alt="" class="h-full w-full object-cover" />
-        </span>
         for
         <FxRotatingWord :words="['Singapore construction.', 'M&E contractors.', 'engineering consultants.']" word-class="bg-gradient-to-r from-brand-600 via-cyan-500 to-emerald-500 bg-clip-text text-transparent" />
       </h1>
@@ -42,7 +35,7 @@
         <a href="#what-we-do" class="inline-flex items-center gap-2 rounded-full border border-ink-200 bg-white/80 px-6 py-3.5 text-sm font-semibold text-ink-900 backdrop-blur hover:border-ink-300">See what we do</a>
       </div>
 
-      <!-- Expanding pillar panels -->
+      <!-- Expanding pillar panels: only the open panel plays its clip -->
       <div class="mt-14 flex flex-col gap-3 md:h-[440px] md:flex-row" role="list" aria-label="What Newham does">
         <a
           v-for="(p, i) in pillars"
@@ -54,7 +47,7 @@
           @mouseenter="select(i)"
           @focus="select(i)"
         >
-          <video v-if="motion && p.video" :src="p.video" :poster="p.poster" class="absolute inset-0 -z-10 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" autoplay muted loop playsinline aria-hidden="true"></video>
+          <video v-if="motion && p.video && active === i" :src="p.video" :poster="p.poster" class="absolute inset-0 -z-10 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" autoplay muted loop playsinline aria-hidden="true"></video>
           <img v-else :src="p.poster" alt="" class="absolute inset-0 -z-10 h-full w-full object-cover" />
           <div class="absolute inset-0 -z-10 bg-gradient-to-t from-ink-950/90 via-ink-950/35 to-ink-950/5" aria-hidden="true"></div>
 
@@ -90,7 +83,7 @@ const pillars = [
     title: 'CCorex software', kicker: 'Software', icon: 'fa-solid fa-laptop-code', href: '/ccorex', cta: 'Explore CCorex',
     text: 'Estimating, project delivery and HR & payroll on one sign-in — with AI tender summaries, FOT AI and the ARIVU assistant in every app.',
     tags: ['DeepCost', 'DeepTrack', 'DeepHR', 'ARIVU AI'],
-    video: '/videos/stock-circuit-tech.mp4', poster: '/videos/stock-circuit-tech-poster.webp'
+    video: '/videos/ccorex-platform.mp4', poster: '/videos/ccorex-platform-poster.webp'
   },
   {
     title: 'Engineering talent', kicker: 'Talent outsourcing', icon: 'fa-solid fa-user-gear', href: '/talent-outsourcing', cta: 'See the roles',

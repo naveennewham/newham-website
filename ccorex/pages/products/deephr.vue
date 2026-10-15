@@ -49,7 +49,7 @@
             <ul class="mt-4 space-y-3">
               <li v-for="b in v.bullets" :key="b" class="flex gap-3 text-ink-700"><i class="fa-solid fa-circle-check mt-1 text-brand-600" aria-hidden="true"></i>{{ b }}</li>
             </ul>
-            <div class="mt-6"><UiBrowserFrame :src="v.src" :alt="v.alt" :url="v.url" /></div>
+            <div class="mt-6"><UiBrowserFrame :src="v.src" :alt="v.alt" :url="v.url" aspect="16/10" /></div>
           </div>
         </div>
       </div>
@@ -196,7 +196,7 @@
       <div class="container-site">
         <UiSectionHeader eyebrow="Built for Singapore and India" title="Statutory payroll for the country you pay in" lead="Each organisation has one payroll jurisdiction: Singapore (default) or India. It can change only before the first payroll run; a group with entities in both countries uses two organisations." />
         <UiReveal class="mt-12">
-          <div class="overflow-x-auto rounded-2xl border border-ink-100 bg-white shadow-card">
+          <div class="relative overflow-x-auto rounded-2xl border border-ink-100 bg-white shadow-card">
             <table class="w-full min-w-[640px] text-left text-sm">
               <caption class="sr-only">Singapore and India payroll compared</caption>
               <thead>

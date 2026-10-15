@@ -21,88 +21,30 @@
     </section>
 
     <!-- Software + specialists -->
-    <section class="section bg-ink-50">
-      <div class="container-site grid gap-14 lg:grid-cols-[1fr_1.1fr] lg:items-center">
-        <div>
-          <UiSectionHeader eyebrow="Software + specialists" title="Buy the software, or let our engineers run it for you." lead="Most software vendors hand over a login. Most outsourcing firms hand over people. Newham does both — so you choose how much of the work stays in-house." />
-          <ol class="mt-8 space-y-4">
-            <li v-for="(m, i) in modes" :key="m.title" class="flex gap-4 rounded-2xl border border-ink-100 bg-white p-5 shadow-card">
-              <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-brand-700 text-sm font-bold text-white">{{ i + 1 }}</span>
-              <div>
-                <h3 class="font-semibold">{{ m.title }}</h3>
-                <p class="mt-1 text-sm leading-relaxed text-ink-600">{{ m.text }}</p>
-              </div>
-            </li>
-          </ol>
-          <p class="mt-6 flex gap-3 rounded-xl border border-brand-100 bg-brand-50 px-4 py-3 text-sm text-brand-900">
-            <i class="fa-regular fa-comments mt-0.5 text-brand-700" aria-hidden="true"></i>
-            <span>Have a live tender? Bring the drawings to a discovery call and we can talk through how a take-off would run on it.</span>
-          </p>
-        </div>
-        <div class="relative">
-          <UiBrowserFrame src="/images/product/deepcost-area-schedule.webp" alt="DeepCost area schedule listing buildings, floors and rooms with dimensions and hazard class" url="deepcost.app / area schedule" :width="1800" :height="1093" />
-          <div class="mt-4 grid gap-4 sm:grid-cols-2">
-            <div class="card p-5">
-              <p class="flex items-center gap-2 text-sm font-semibold text-ink-900"><i class="fa-solid fa-laptop-code text-brand-600" aria-hidden="true"></i>The software</p>
-              <p class="mt-1.5 text-sm text-ink-600">One catalog, one approval flow, one record of every estimate and project.</p>
-            </div>
-            <div class="card p-5">
-              <p class="flex items-center gap-2 text-sm font-semibold text-ink-900"><i class="fa-solid fa-helmet-safety text-brand-600" aria-hidden="true"></i>The specialists</p>
-              <p class="mt-1.5 text-sm text-ink-600">Engineers who know the codes, the trades and the tools — including CCorex.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    <HomeWorkModes />
 
-    <!-- CCorex suite tour -->
-    <section class="section">
-      <div class="container-site">
-        <div class="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
-          <UiSectionHeader eyebrow="CCorex software" title="One suite from tender to payroll" lead="CCorex is our own product, built for construction. Each app shares the same login, users and roles." />
-          <a :href="CCOREX_URL" target="_blank" rel="noopener" class="btn-secondary shrink-0">Visit ccorex.com <i class="fa-solid fa-arrow-up-right-from-square text-xs" aria-hidden="true"></i></a>
-        </div>
-        <div class="mt-12"><UiScreenshotTabs :tabs="tour" label="CCorex apps" /></div>
-      </div>
-    </section>
-
-    <!-- Videos -->
-    <section class="section bg-ink-50">
-      <div class="container-site">
-        <UiSectionHeader center eyebrow="See it in action" title="Watch CCorex at work" lead="Short tours of the software our clients use — and our engineers work in every day." />
-        <div class="mt-12 grid gap-5 lg:grid-cols-[1.6fr_1fr]">
-          <UiVideoCard large src="/videos/tour-overview.mp4" poster="/videos/tour-overview-poster.webp" eyebrow="CCorex" title="The platform in 40 seconds" duration="0:39" />
-          <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-1">
-            <UiVideoCard src="/videos/tour-deepcost.mp4" poster="/videos/tour-deepcost-poster.webp" eyebrow="DeepCost" title="From tender to Form of Tender" duration="0:36" />
-            <UiVideoCard src="/videos/tour-deephr.mp4" poster="/videos/tour-deephr-poster.webp" eyebrow="DeepHR" title="Attendance to payslips" duration="0:29" />
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <HomeBento />
+    <!-- CCorex suite -->
+    <UiAppParallax
+      eyebrow="CCorex software"
+      title="One suite from tender to payroll"
+      lead="CCorex is our own product, built for construction. Every app shares the same sign-in, users and roles — and our engineers work in it every day."
+      :bullets="['One portal at dash.ccorex.com', 'Users and roles managed once', 'ARIVU AI inside every app']"
+      :cta="{ label: 'Visit ccorex.com', to: CCOREX_URL }"
+      :link-for="ccorexLink"
+    />
 
     <!-- AI -->
     <section id="ai" class="section relative overflow-hidden bg-hero text-white">
       <div class="bg-grid pointer-events-none absolute inset-0 opacity-40" aria-hidden="true"></div>
-      <div class="container-site relative grid gap-14 lg:grid-cols-2 lg:items-center">
-        <div>
-          <UiSectionHeader dark eyebrow="AI in CCorex" lead="CCorex uses AI where estimators and managers lose the most time: reading tender documents, pricing the client's BOQ and finding answers across the business.">
-            <template #title>AI for the paperwork <span class="text-ai-gradient">behind every tender</span></template>
-          </UiSectionHeader>
-          <ul class="mt-8 grid gap-4 sm:grid-cols-2">
-            <li v-for="a in aiPoints" :key="a.title" class="rounded-2xl border border-white/10 bg-white/5 p-5">
-              <span class="flex h-9 w-9 items-center justify-center rounded-lg text-white" :class="a.soon ? 'bg-white/10' : 'bg-ai-gradient'"><i :class="a.icon" aria-hidden="true"></i></span>
-              <h3 class="mt-4 flex items-center gap-2 font-semibold text-white">{{ a.title }}<span v-if="a.soon" class="rounded-full border border-white/20 px-2 py-0.5 text-[10px] font-medium text-ink-200">Early access</span></h3>
-              <p class="mt-1 text-sm leading-relaxed text-ink-300">{{ a.text }}</p>
-            </li>
-          </ul>
-          <div class="mt-8 flex flex-wrap gap-3">
-            <a :href="ccorexAppUrl('deepcost')" target="_blank" rel="noopener" class="btn-accent">DeepCost on ccorex.com <i class="fa-solid fa-arrow-up-right-from-square text-xs" aria-hidden="true"></i></a>
-            <a :href="ccorexAppUrl('arivu-ai')" target="_blank" rel="noopener" class="btn-ghost-dark">ARIVU AI on ccorex.com</a>
-          </div>
+      <div class="container-site relative">
+        <UiSectionHeader dark center eyebrow="AI in CCorex" lead="CCorex uses AI where estimators and managers lose the most time: reading tender documents, pricing the client's BOQ and finding answers across the business. Let ARIVU show you.">
+          <template #title>AI for the paperwork <span class="text-ai-gradient">behind every tender</span></template>
+        </UiSectionHeader>
+        <div class="mt-12"><HomeArivuMovie /></div>
+        <div class="mt-10 flex flex-wrap justify-center gap-3">
+          <a :href="ccorexAppUrl('deepcost')" target="_blank" rel="noopener" class="btn-accent">DeepCost on ccorex.com <i class="fa-solid fa-arrow-up-right-from-square text-xs" aria-hidden="true"></i></a>
+          <a :href="ccorexAppUrl('arivu-ai')" target="_blank" rel="noopener" class="btn-ghost-dark">ARIVU AI on ccorex.com</a>
         </div>
-        <img src="/images/photos/ai-workflow.webp" alt="Illustration of an AI assistant connecting construction documents and workflows" width="2000" height="1091" loading="lazy" decoding="async" class="w-full rounded-2xl border border-white/10 shadow-frame" />
       </div>
     </section>
 
@@ -207,6 +149,10 @@
 <script setup lang="ts">
 import { ccorexAppUrl, CCOREX_URL } from '~/data/ccorex'
 
+// Apps with a page on this site link here; the rest go to ccorex.com.
+const localApps = ['deepcost', 'deeptrack', 'deephr', 'deepplan-ai']
+const ccorexLink = (app: string) => (localApps.includes(app) ? `/ccorex/${app}` : `${CCOREX_URL}/products/${app}`)
+
 const config = useRuntimeConfig()
 const siteUrl = config.public.siteUrl as string
 
@@ -223,7 +169,16 @@ useHead({
     type: 'application/ld+json',
     innerHTML: JSON.stringify({
       '@context': 'https://schema.org',
+      '@graph': [{
+      '@type': 'WebSite',
+      '@id': siteUrl + '/#website',
+      name: 'Newham Tech',
+      alternateName: ['Newham Technological Solutions', 'newhamtech.com'],
+      url: siteUrl + '/',
+      publisher: { '@id': siteUrl + '/#organization' }
+    }, {
       '@type': 'Organization',
+      '@id': siteUrl + '/#organization',
       name: 'Newham Technological Solutions',
       alternateName: 'Newham',
       url: siteUrl,
@@ -234,6 +189,7 @@ useHead({
       address: { '@type': 'PostalAddress', streetAddress: '160 Robinson Road, #14-04 SBF Center', addressLocality: 'Singapore', addressCountry: 'SG' },
       brand: { '@type': 'Brand', name: 'CCorex', url: CCOREX_URL },
       knowsAbout: ['MEP estimation', 'BIM modelling', 'Quantity surveying', 'Fire protection design', 'SS CP 52', 'Construction software']
+    }]
     })
   }]
 })
@@ -246,25 +202,8 @@ const segments = [
   { icon: 'fa-solid fa-industry', label: 'EPC companies' }
 ]
 
-const modes = [
-  { title: 'Use CCorex yourself', text: 'Your team runs estimating, projects and payroll in CCorex. We set it up and support it.' },
-  { title: 'Add dedicated Newham engineers', text: 'Our modellers, estimators and QS join your team and work in your tools — or in CCorex.' },
-  { title: 'Hand us the work', text: 'Send drawings or a tender package. We return take-offs, BOQs, FP designs or calculations, scoped in writing.' }
-]
 
-const tour = [
-  { title: 'DeepCost — MEP estimation', text: 'AI tender summary, area-based take-off and a price library, through to a priced Form of Tender.', src: '/images/product/deepcost-mto.webp', alt: 'DeepCost material take-off grouped by building, floor and room', url: 'deepcost.app / mto' },
-  { title: 'DeepTrack — project delivery', text: 'Budgets, purchase requests, claims and manpower per project.', src: '/images/product/deeptrack-procurement.webp', alt: 'DeepTrack purchase requests with budget, status and approvals', url: 'deeptrack.app / procurement' },
-  { title: 'DeepTrack — claims & variations', text: 'Progress claims and variations that keep project margin up to date.', src: '/images/product/deeptrack-claims.webp', alt: 'DeepTrack progress claims list per project with amounts and status', url: 'deeptrack.app / claims' },
-  { title: 'DeepHR — HR & payroll', text: 'Attendance, leave and claims into payroll with Singapore and India statutory rules.', src: '/images/product/deephr-payroll.webp', alt: 'DeepHR payroll run selecting employees, pay items and pay period', url: 'deephr.app / payroll' },
-]
 
-const aiPoints = [
-  { icon: 'fa-solid fa-file-lines', title: 'AI tender summary', text: 'DeepCost reads the uploaded tender documents and fills a set of key fields for your team to review and export.' },
-  { icon: 'fa-solid fa-file-invoice-dollar', title: 'FOT AI', text: 'Upload the client\'s BOQ PDF; DeepCost finds the quantity and amount columns so you can price the Form of Tender on top of it.' },
-  { icon: 'fa-solid fa-wand-magic-sparkles', title: 'ARIVU assistant', text: 'Ask in plain language for answers, summaries, charts and exports across your CCorex data. It reads; it never changes records.' },
-  { icon: 'fa-solid fa-compass-drafting', title: 'DeepPlan take-off', soon: true, text: 'Rooms, areas and quantities from floor plans into a priced BOQ. Its AI take-off is in early access.' }
-]
 
 const roles = [
   { icon: 'fa-solid fa-cubes', title: 'BIM modellers & drafters', text: 'Revit MEP, AutoCAD and Navisworks. Shop drawings, coordination models and as-built documentation to Singapore submission standards.' },

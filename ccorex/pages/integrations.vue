@@ -54,7 +54,7 @@
     <section class="section">
       <div class="container-site">
         <UiSectionHeader eyebrow="Built in" title="Data in and out of each app" lead="Imports, exports and files each app produces today. Lists and reports export to Excel and PDF throughout. We confirm the exact scope for your systems during scoping." />
-        <div class="mt-10 overflow-x-auto rounded-2xl border border-ink-100 bg-white shadow-card">
+        <div class="relative mt-10 overflow-x-auto rounded-2xl border border-ink-100 bg-white shadow-card">
           <table class="w-full min-w-[620px] text-sm">
             <caption class="sr-only">Imports and exports by app</caption>
             <thead class="bg-ink-50 text-xs uppercase tracking-wider text-ink-500">
@@ -106,7 +106,7 @@ useHead({ link: [{ rel: 'canonical', href: config.public.siteUrl + '/integration
 const today = [
   {
     icon: 'fa-solid fa-layer-group', title: 'The CCorex platform, across every app',
-    text: 'DeepCost, DeepTrack, DeepHR, DeepPlan and ARIVU run on the same platform today; Deep Drive and PDF Editor are coming soon.',
+    text: 'DeepCost, DeepTrack, DeepHR, DeepPlan and ARIVU, Deep Drive and PDF Editor run on the same platform today.',
     points: ['One sign-in at dash.ccorex.com, with a signed token every app checks', 'Users created in the portal are provisioned into each assigned app', 'Roles per organisation and per app', 'ARIVU reads across the apps, read-only']
   },
   {

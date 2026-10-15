@@ -28,7 +28,7 @@
     <section class="section">
       <div class="container-site grid gap-12 lg:grid-cols-[1fr_1.25fr] lg:items-center">
         <div>
-          <UiSectionHeader eyebrow="One login" title="Your whole business behind one dashboard" lead="Sign in once at dash.ccorex.com and see a tile for each app you may open — DeepCost, DeepTrack, DeepHR, DeepPlan and DeepAssist (ARIVU), plus Deep Drive and PDF Editor, which are coming soon and will be included with every active subscription." />
+          <UiSectionHeader eyebrow="One login" title="Your whole business behind one dashboard" lead="Sign in once at dash.ccorex.com and see a tile for each app you may open — DeepCost, DeepTrack, DeepHR, DeepPlan, DeepAssist (ARIVU), Deep Drive and PDF Editor." />
           <ul class="mt-8 space-y-3">
             <li v-for="b in launcherPoints" :key="b" class="flex gap-3 text-ink-700"><i class="fa-solid fa-circle-check mt-1 text-brand-600" aria-hidden="true"></i>{{ b }}</li>
           </ul>
@@ -162,7 +162,7 @@
     <section class="section">
       <div class="container-site">
         <UiSectionHeader eyebrow="Role-based access" title="Each person sees exactly what they need" lead="Roles are defined per organisation and per app, each with its own set of permissions. Each user has a role in each app they are assigned to." />
-        <div class="mt-12 overflow-x-auto rounded-2xl border border-ink-100 bg-white shadow-card">
+        <div class="relative mt-12 overflow-x-auto rounded-2xl border border-ink-100 bg-white shadow-card">
           <table class="w-full min-w-[640px] text-left text-sm">
             <caption class="sr-only">Roles in CCorex apps</caption>
             <thead class="bg-ink-50 text-xs uppercase tracking-wider text-ink-500">
@@ -234,7 +234,7 @@ const capabilities = [
 ]
 const packageRules = [
   { icon: 'fa-solid fa-box-open', title: 'Packages switch apps on', text: 'Each package sets which apps are on, the user limit and the included services and features.' },
-  { icon: 'fa-solid fa-folder-open', title: 'Documents included', text: 'Deep Drive and PDF Editor will be included with every active subscription (coming soon).' },
+  { icon: 'fa-solid fa-folder-open', title: 'Documents included', text: 'Deep Drive and PDF Editor are included with every active subscription.' },
   { icon: 'fa-solid fa-bolt', title: 'Provisioned on subscribe', text: 'When your organisation subscribes, its roles, users and permissions are set up in each app.' },
   { icon: 'fa-solid fa-calendar-xmark', title: 'Lapsed means locked', text: 'Sign-in is refused when the organisation has no active subscription.' }
 ]
@@ -247,7 +247,7 @@ const today = [
 const roadmap = [
   { icon: 'fa-solid fa-address-book', title: 'Shared customers & contacts', text: 'Customers and contacts shared across apps.' },
   { icon: 'fa-solid fa-right-left', title: 'Cross-app data flow', text: 'Won tender → project → payroll, without re-entry.' },
-  { icon: 'fa-solid fa-folder-open', title: 'Deep Drive & PDF Editor', text: 'Document storage, mark-up and signing — in development, coming soon.' }
+  { icon: 'fa-solid fa-folder-open', title: 'Deep Drive & PDF Editor', text: 'Document storage, mark-up and signing on the same sign-in.' }
 ]
 const crossCutting = [
   { icon: 'fa-solid fa-building-shield', title: 'Tenancy', text: 'Every record belongs to one organisation; users only see their own organisation’s data. DeepCost also enforces this in the database.' },

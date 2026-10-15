@@ -3,7 +3,7 @@
     <!-- Hero -->
     <section class="relative overflow-hidden bg-hero text-white">
       <div class="bg-grid pointer-events-none absolute inset-0 opacity-50" aria-hidden="true"></div>
-      <div class="container-site relative grid gap-14 pb-24 pt-16 lg:grid-cols-[1fr_1.1fr] lg:items-center lg:pt-24">
+      <div class="container-site relative grid gap-14 pb-24 pt-16 lg:grid-cols-[1fr_1fr] lg:items-center lg:pt-24">
         <div>
           <p class="eyebrow-dark">Solutions by role</p>
           <h1 class="h-display mt-5 text-white">One platform. The right view for every role.</h1>
@@ -13,8 +13,16 @@
             <a href="#roles" class="btn-ghost-dark">Find your role</a>
           </div>
         </div>
-        <div class="lg:-mr-24">
-          <UiBrowserFrame src="/images/product/deeptrack-dashboard.webp" alt="DeepTrack dashboard showing project financials, budgets and approvals" url="deeptrack.app / dashboard" dark eager />
+        <!-- Role → app map -->
+        <div class="grid gap-3 sm:grid-cols-2" aria-label="Apps by role">
+          <a v-for="r in roles" :key="r.id" :href="`#${r.id}`" class="group rounded-2xl border border-white/10 bg-white/5 p-4 transition-colors hover:border-cyan-400/50 hover:bg-white/10">
+            <span class="flex items-center gap-2.5 text-sm font-semibold text-white">
+              <span class="flex h-8 w-8 items-center justify-center rounded-lg bg-white/10 text-cyan-300"><i :class="r.icon" aria-hidden="true"></i></span>{{ r.role }}
+            </span>
+            <span class="mt-3 flex flex-wrap gap-1.5">
+              <span v-for="a in r.apps" :key="a.slug" class="rounded-full px-2 py-0.5 text-[11px] font-medium" :class="a.ai ? 'bg-ai-500/20 text-ai-100' : 'bg-white/10 text-ink-100'">{{ a.name }}</span>
+            </span>
+          </a>
         </div>
       </div>
     </section>
@@ -39,16 +47,6 @@
           <p class="eyebrow"><i :class="r.icon" aria-hidden="true"></i>{{ r.role }}</p>
           <h2 class="h-section mt-3">{{ r.title }}</h2>
           <p class="lead mt-4">{{ r.lead }}</p>
-          <div class="mt-6 rounded-xl border border-rose-100 bg-rose-50/60 p-4">
-            <p class="text-xs font-semibold uppercase tracking-wider text-rose-700">Today’s friction</p>
-            <ul class="mt-2 space-y-1.5 text-sm text-ink-700">
-              <li v-for="p in r.pains" :key="p" class="flex gap-2"><i class="fa-solid fa-xmark mt-1 text-xs text-rose-500" aria-hidden="true"></i>{{ p }}</li>
-            </ul>
-          </div>
-          <p class="mt-6 text-xs font-semibold uppercase tracking-wider text-ink-500">What changes with CCorex</p>
-          <ul class="mt-3 space-y-2.5">
-            <li v-for="o in r.outcomes" :key="o" class="flex gap-3 text-ink-700"><i class="fa-solid fa-circle-check mt-1 text-brand-600" aria-hidden="true"></i>{{ o }}</li>
-          </ul>
           <div class="mt-6 flex flex-wrap items-center gap-2">
             <span class="text-sm font-semibold text-ink-900">Apps:</span>
             <NuxtLink v-for="a in r.apps" :key="a.slug" :to="`/products/${a.slug}`" class="chip hover:border-brand-300 hover:text-brand-800" :class="a.ai ? 'chip-ai' : ''">
@@ -56,15 +54,33 @@
             </NuxtLink>
           </div>
         </div>
-        <UiBrowserFrame :src="r.src" :alt="r.alt" :url="r.url" />
+
+        <!-- Before → after -->
+        <UiReveal class="grid gap-3 sm:grid-cols-[1fr_auto_1fr] sm:items-center">
+          <div class="rounded-2xl border border-rose-100 bg-rose-50 p-5">
+            <p class="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-rose-700"><i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i>Today’s friction</p>
+            <ul class="mt-4 space-y-3 text-sm text-ink-700">
+              <li v-for="p in r.pains" :key="p" class="flex gap-2.5"><i class="fa-solid fa-xmark mt-1 text-xs text-rose-500" aria-hidden="true"></i>{{ p }}</li>
+            </ul>
+          </div>
+          <div class="flex items-center justify-center" aria-hidden="true">
+            <span class="flex h-10 w-10 rotate-90 items-center justify-center rounded-full bg-brand-700 text-white shadow-lift sm:rotate-0"><i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+          <div class="rounded-2xl border border-brand-100 bg-white p-5 shadow-card">
+            <p class="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-brand-700"><i class="fa-solid fa-circle-check" aria-hidden="true"></i>With CCorex</p>
+            <ul class="mt-4 space-y-3 text-sm text-ink-700">
+              <li v-for="o in r.outcomes" :key="o" class="flex gap-2.5"><i class="fa-solid fa-check mt-1 text-xs text-brand-600" aria-hidden="true"></i>{{ o }}</li>
+            </ul>
+          </div>
+        </UiReveal>
       </div>
     </section>
 
     <!-- Matrix -->
     <section class="section">
       <div class="container-site">
-        <UiSectionHeader center eyebrow="At a glance" title="Which apps each team uses" lead="Every role signs in to the same platform. Each app's roles and permissions decide what each person can see, add, edit and approve. Deep Drive and PDF Editor are coming soon." />
-        <div class="mt-12 overflow-x-auto rounded-2xl border border-ink-100 bg-white shadow-card">
+        <UiSectionHeader center eyebrow="At a glance" title="Which apps each team uses" lead="Every role signs in to the same platform. Each app's roles and permissions decide what each person can see, add, edit and approve." />
+        <div class="relative mt-12 overflow-x-auto rounded-2xl border border-ink-100 bg-white shadow-card">
           <table class="w-full min-w-[760px] text-sm">
             <caption class="sr-only">CCorex apps typically used by each role</caption>
             <thead class="bg-ink-50 text-xs uppercase tracking-wider text-ink-500">
@@ -110,9 +126,9 @@ const DT = { name: 'DeepTrack', slug: 'deeptrack' }
 const HR = { name: 'DeepHR', slug: 'deephr' }
 const DP = { name: 'DeepPlan AI', slug: 'deepplan-ai', ai: true }
 const AR = { name: 'ARIVU AI', slug: 'arivu-ai', ai: true }
-const DD = { name: 'Deep Drive (soon)', slug: 'deep-drive' }
-const PE = { name: 'PDF Editor (soon)', slug: 'pdf-editor' }
-const matrixApps = ['DeepCost', 'DeepTrack', 'DeepHR', 'DeepPlan AI', 'ARIVU AI', 'Deep Drive (soon)', 'PDF Editor (soon)']
+const DD = { name: 'Deep Drive', slug: 'deep-drive' }
+const PE = { name: 'PDF Editor', slug: 'pdf-editor' }
+const matrixApps = ['DeepCost', 'DeepTrack', 'DeepHR', 'DeepPlan AI', 'ARIVU AI', 'Deep Drive', 'PDF Editor']
 
 const roles = [
   {
@@ -122,7 +138,6 @@ const roles = [
     pains: ['Margin surfaces at project close, not while you can act', 'Approvals arrive by email with no thresholds or trail', 'Five tools and five logins to answer one question'],
     outcomes: ['Budget against actual and profitability per project in DeepTrack', 'Approval thresholds per tenant — the MD approves purchase requests and budgets above yours', 'Ask ARIVU about tenders, projects and people, with charts and exports', 'Audit logs for finance actions, HR changes and period unlocks'],
     apps: [DT, DC, HR, AR],
-    src: '/images/product/deeptrack-dashboard.webp', alt: 'DeepTrack dashboard with contract value, budget and margin across projects', url: 'deeptrack.app / dashboard'
   },
   {
     id: 'estimation', role: 'Estimation & QS', icon: 'fa-solid fa-ruler-combined',
@@ -131,7 +146,6 @@ const roles = [
     pains: ['Tender documents read page by page, quantities counted by hand', 'Every estimator uses their own rates', 'Priced figures re-typed into the client’s BOQ before the deadline'],
     outcomes: ['AI tender summary fills a predefined set of fields from the tender documents', 'Take off by building, floor and room, priced from a dated library', 'Validation engine rejects components that break your rules', 'Drawings measured in DeepPlan (AI take-off in early access)'],
     apps: [DC, DP, PE, AR],
-    src: '/images/product/deepcost-mto.webp', alt: 'DeepCost material take-off by building, floor and room with priced components', url: 'deepcost.app / mto'
   },
   {
     id: 'project-managers', role: 'Project managers', icon: 'fa-solid fa-diagram-project',
@@ -140,7 +154,6 @@ const roles = [
     pains: ['Budgets in one file, POs in another, claims on paper', 'Labour cost never reaches the project', 'Payment approvals chased by email'],
     outcomes: ['Projects carry contract value, retention, payment terms and GST', 'Budget against actual, utilisation and over-budget alerts', 'Progress claims with retention, GST and a PDF certificate', 'Approve your team’s timesheets and first-approve payments'],
     apps: [DT, DD, PE, AR],
-    src: '/images/product/deeptrack-budget.webp', alt: 'DeepTrack budget screen with budget lines, committed cost and variance', url: 'deeptrack.app / budget'
   },
   {
     id: 'procurement-finance', role: 'Procurement & finance', icon: 'fa-solid fa-file-invoice-dollar',
@@ -149,7 +162,6 @@ const roles = [
     pains: ['Purchases committed before a budget is approved', 'Invoices paid without checking delivery', 'Month-end means chasing timesheets and spreadsheets'],
     outcomes: ['Every purchase request raised against an approved budget and routed through your configured approvals', 'Invoices matched against PO, delivery and request; duplicates blocked', 'Maker-checker payment approval: PM, PD, then Director', 'Five-stage month-end allocation, journal CSV and Zoho Books link'],
     apps: [DT, DD, AR],
-    src: '/images/product/deeptrack-procurement.webp', alt: 'DeepTrack purchase requests with budget, status and multi-level approvals', url: 'deeptrack.app / procurement'
   },
   {
     id: 'hr-admin', role: 'HR & admin', icon: 'fa-solid fa-id-card',
@@ -158,7 +170,6 @@ const roles = [
     pains: ['Leave balances and payroll in fragile spreadsheets', 'Card or paper attendance that is easy to game', 'Leave and claim approvals lost in chat'],
     outcomes: ['Singapore: CPF (incl. graduated rates for new PRs), SDL and SHG funds', 'India: EPF, ESI, PT, TDS and statutory filings', 'One approvals engine for leave, claims, letters and timesheets', 'Payslips filed to each employee’s Documents; reports on a schedule'],
     apps: [HR, DD, AR],
-    src: '/images/product/deephr-payroll.webp', alt: 'DeepHR payroll run with employees, pay items and pay period', url: 'deephr.app / payroll'
   },
   {
     id: 'site', role: 'Site supervisors', icon: 'fa-solid fa-helmet-safety',
@@ -167,7 +178,6 @@ const roles = [
     pains: ['Punch cards and paper timesheets for field crews', 'Buddy-punching that cannot be verified', 'Requests sent by message and forgotten'],
     outcomes: ['Face check-in on the employee’s own phone — no hardware to buy', 'GPS check against the site radius; on time or late against site hours', 'Works offline; punches re-verified when back online', 'Raise purchase requests and endorse deliveries in DeepTrack'],
     apps: [HR, DT, PE],
-    src: '/images/product/deephr-my-dashboard.webp', alt: 'DeepHR employee dashboard with leave balance, attendance and tasks', url: 'deephr.app / my dashboard'
   }
 ]
 </script>

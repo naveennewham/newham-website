@@ -98,7 +98,7 @@
             <NuxtLink v-for="a in s.apps" :key="a.slug" :to="`/products/${a.slug}`" class="chip hover:border-brand-300 hover:text-brand-800">{{ a.name }}</NuxtLink>
           </div>
         </div>
-        <UiBrowserFrame :src="s.src" :alt="s.alt" :url="s.url" />
+        <UiVerticalFlow :steps="s.flow" :title="`How it runs in CCorex`" />
       </div>
     </section>
 
@@ -156,7 +156,7 @@ const DC = { name: 'DeepCost', slug: 'deepcost' }
 const DT = { name: 'DeepTrack', slug: 'deeptrack' }
 const HR = { name: 'DeepHR', slug: 'deephr' }
 const DP = { name: 'DeepPlan AI', slug: 'deepplan-ai' }
-const DD = { name: 'Deep Drive (soon)', slug: 'deep-drive' }
+const DD = { name: 'Deep Drive', slug: 'deep-drive' }
 const detail = [
   {
     id: 'main-contractors', name: 'Main contractors', icon: 'fa-solid fa-helmet-safety',
@@ -165,7 +165,14 @@ const detail = [
     challenges: ['Margin visible only at project close', 'Purchases committed outside the budget', 'Subcontractor invoices paid without a match'],
     helps: ['Projects with contract value, retention and payment terms', 'Purchase requests raised against an approved budget', 'Invoices matched against PO and delivery', 'Approval thresholds and a screen-by-role matrix per tenant'],
     apps: [DT, HR, DD],
-    src: '/images/product/deeptrack-claims.webp', alt: 'DeepTrack client claims list with claim number, amount and status', url: 'deeptrack.app / claims'
+    flow: [
+      { title: 'Project set up', text: 'Contract value, retention and payment terms.', icon: 'fa-solid fa-folder-plus', app: 'DeepTrack' },
+      { title: 'Budget approved', text: 'Approval thresholds that match your organisation.', icon: 'fa-solid fa-scale-balanced', app: 'DeepTrack' },
+      { title: 'Purchase request', text: 'Raised against the approved budget.', icon: 'fa-solid fa-file-circle-plus', app: 'DeepTrack' },
+      { title: 'PO and delivery', text: 'Ordered and received on the project.', icon: 'fa-solid fa-truck-ramp-box', app: 'DeepTrack' },
+      { title: 'Invoice matched', text: 'Against the PO and delivery before payment.', icon: 'fa-solid fa-file-invoice-dollar', app: 'DeepTrack' },
+      { title: 'Client claim', text: 'Progress claims with retention.', icon: 'fa-solid fa-hand-holding-dollar', app: 'DeepTrack' }
+    ]
   },
   {
     id: 'epc', name: 'EPC companies', icon: 'fa-solid fa-industry',
@@ -174,7 +181,14 @@ const detail = [
     challenges: ['Estimates, procurement and site cost in separate systems', 'Approvals across several managers and directors', 'Labour cost missing from project cost'],
     helps: ['Tender → area schedule → MTO → priced Form of Tender', 'PR → PO → delivery → invoice → payment, tracked', 'Month-end allocates labour and overhead to projects', 'ARIVU answers across all three apps'],
     apps: [DC, DT, HR],
-    src: '/images/product/deeptrack-overview.webp', alt: 'DeepTrack project overview with contract value, budgets and procurement status', url: 'deeptrack.app / overview'
+    flow: [
+      { title: 'Tender priced', text: 'Area schedule → MTO → priced Form of Tender.', icon: 'fa-solid fa-calculator', app: 'DeepCost' },
+      { title: 'Job won, project opened', text: 'Budgets and approvals across managers and directors.', icon: 'fa-solid fa-diagram-project', app: 'DeepTrack' },
+      { title: 'Procure', text: 'PR → PO → delivery → invoice → payment, tracked.', icon: 'fa-solid fa-cart-flatbed', app: 'DeepTrack' },
+      { title: 'Staff and pay', text: 'Attendance, leave and payroll for the people on site.', icon: 'fa-solid fa-user-group', app: 'DeepHR' },
+      { title: 'Month-end', text: 'Labour and overhead allocated to projects.', icon: 'fa-solid fa-calendar-check', app: 'DeepTrack' },
+      { title: 'Ask across all three', text: 'ARIVU answers from your data, read-only.', icon: 'fa-solid fa-wand-magic-sparkles', app: 'ARIVU AI' }
+    ]
   },
   {
     id: 'specialists', name: 'Tender-based specialists', icon: 'fa-solid fa-file-signature',
@@ -183,7 +197,13 @@ const detail = [
     challenges: ['Tender documents read by hand, bid after bid', 'Rates drift between estimators', 'Priced figures re-typed into the client’s BOQ'],
     helps: ['AI tender summary of the tender documents', 'One priced library behind every number', 'FOT AI overlays your figures on the client’s BOQ PDF', 'Drawings measured in DeepPlan (AI take-off in early access)'],
     apps: [DC, DP],
-    src: '/images/product/deepcost-opportunity.webp', alt: 'DeepCost opportunity pipeline with tenders, customers and status', url: 'deepcost.app / opportunities'
+    flow: [
+      { title: 'Tender received', text: 'Documents uploaded to the opportunity.', icon: 'fa-solid fa-inbox', app: 'DeepCost' },
+      { title: 'AI tender summary', text: 'Key fields read from the tender documents.', icon: 'fa-solid fa-wand-magic-sparkles', app: 'DeepCost' },
+      { title: 'Drawings measured', text: 'AI take-off in early access.', icon: 'fa-solid fa-compass-drafting', app: 'DeepPlan AI' },
+      { title: 'Priced from one library', text: 'The same rates behind every number.', icon: 'fa-solid fa-book-open', app: 'DeepCost' },
+      { title: 'FOT AI', text: 'Your figures overlaid on the client’s BOQ PDF.', icon: 'fa-solid fa-table-list', app: 'DeepCost' }
+    ]
   }
 ]
 const singapore = [

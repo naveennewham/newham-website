@@ -31,12 +31,15 @@
       <!-- Panel -->
       <div id="hub-panel" role="tabpanel" :aria-labelledby="`hub-tab-${active}`" class="mt-12">
         <Transition name="hub" mode="out-in">
-          <div :key="team.id" class="grid gap-10 lg:grid-cols-[0.9fr_1.25fr] lg:items-center">
-            <div>
+          <div :key="team.id">
+            <div class="grid gap-6 lg:grid-cols-2 lg:gap-12">
+              <div>
               <p class="eyebrow">{{ team.eyebrow }}</p>
               <h3 class="mt-3 text-2xl font-bold sm:text-3xl">{{ team.title }}</h3>
               <p class="lead mt-4">{{ team.text }}</p>
-              <ul class="mt-6 space-y-3">
+              </div>
+              <div class="lg:pt-8">
+              <ul class="space-y-3">
                 <li v-for="p in team.points" :key="p" class="flex gap-3 text-ink-700">
                   <span class="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-brand-50 text-brand-700"><i class="fa-solid fa-check text-[10px]" aria-hidden="true"></i></span>{{ p }}
                 </li>
@@ -47,9 +50,10 @@
                   <span v-if="a.badge" class="rounded-full bg-amber-50 px-1.5 text-[10px] font-semibold text-amber-800">{{ a.badge }}</span>
                 </NuxtLink>
               </div>
+              </div>
             </div>
 
-            <div class="relative">
+            <div class="relative mx-auto mt-10 max-w-5xl">
               <div class="absolute -inset-6 -z-10 rounded-[2.5rem] bg-gradient-to-br opacity-70 blur-2xl" :class="team.glow" aria-hidden="true"></div>
               <UiBrowserFrame v-if="team.src" :src="team.src" :alt="team.alt!" :url="team.url" />
               <div v-else class="grid grid-cols-2 gap-4 rounded-3xl border border-ink-100 bg-white p-6 shadow-lift sm:grid-cols-4" aria-hidden="true">
@@ -118,7 +122,7 @@ const teams: Team[] = [
     eyebrow: 'Deep Drive · PDF Editor', title: 'Files, mark-ups and signatures',
     text: 'Store project documents per organisation, then mark up, sign, split and merge PDFs — with the same sign-in and roles as every other app.',
     points: ['Folders, uploads and inline viewing', 'Text, signatures, images and overlays on PDFs', 'Split, merge and export annotated PDFs', 'Searchable by ARIVU'],
-    apps: [{ name: 'Deep Drive', to: '/products/deep-drive', icon: 'fa-solid fa-folder-open', badge: 'Soon' }, { name: 'PDF Editor', to: '/products/pdf-editor', icon: 'fa-solid fa-file-pen', badge: 'Soon' }]
+    apps: [{ name: 'Deep Drive', to: '/products/deep-drive', icon: 'fa-solid fa-folder-open' }, { name: 'PDF Editor', to: '/products/pdf-editor', icon: 'fa-solid fa-file-pen' }]
   }
 ]
 const docFeatures = [

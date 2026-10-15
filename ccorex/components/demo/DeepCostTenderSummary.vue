@@ -1,5 +1,5 @@
 <template>
-  <figure ref="root" class="overflow-hidden rounded-2xl border border-ink-100 bg-white text-ink-900 shadow-frame">
+  <figure ref="root" class="light-surface overflow-hidden rounded-2xl border border-ink-100 bg-white text-ink-900 shadow-frame">
     <div class="flex items-center gap-2 border-b border-ink-100 bg-ink-50 px-4 py-2.5">
       <span class="chip-ai"><i class="fa-solid fa-wand-magic-sparkles text-[10px]" aria-hidden="true"></i>AI tender summary</span>
       <span class="ml-auto rounded-full bg-ink-100 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-ink-600">Illustration</span>

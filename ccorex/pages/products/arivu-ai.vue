@@ -226,7 +226,7 @@ const perApp = [
     questions: ['Which drawings are uploaded for the clinic project?', 'Export the Level 2 BOQ to Excel.', 'Total floor area measured on this project?']
   },
   {
-    name: 'Deep Drive', slug: 'deep-drive', area: 'Documents', badge: 'Coming soon', icon: 'fa-solid fa-folder-open', color: 'bg-indigo-50 text-indigo-700',
+    name: 'Deep Drive', slug: 'deep-drive', area: 'Documents', icon: 'fa-solid fa-folder-open', color: 'bg-indigo-50 text-indigo-700',
     reads: ['Files'],
     questions: ['Find the latest approved shop drawings for Block B.', 'Which documents mention the fire-alarm interface?']
   },

@@ -51,7 +51,7 @@
     <section id="compare" class="section scroll-mt-20">
       <div class="container-site">
         <UiSectionHeader center eyebrow="Compare" title="Suite plans side by side" />
-        <div class="mt-12 overflow-x-auto rounded-2xl border border-ink-100 bg-white shadow-card">
+        <div class="relative mt-12 overflow-x-auto rounded-2xl border border-ink-100 bg-white shadow-card">
           <table class="w-full min-w-[720px] text-sm">
             <caption class="sr-only">Comparison of Essentials, Business and Enterprise plans</caption>
             <thead>
@@ -137,7 +137,7 @@ useSeoMeta({
 useHead({ link: [{ rel: 'canonical', href: config.public.siteUrl + '/pricing' }] })
 
 const plans = [
-  { name: 'Essentials', icon: 'fa-solid fa-seedling', for: 'Start with one workflow', features: ['Choose 1 flagship app', 'Core modules & dashboard', 'ARIVU AI assistant', 'SSO & user management', 'Deep Drive & PDF Editor (coming soon)'] },
+  { name: 'Essentials', icon: 'fa-solid fa-seedling', for: 'Start with one workflow', features: ['Choose 1 flagship app', 'Core modules & dashboard', 'ARIVU AI assistant', 'SSO & user management', 'Deep Drive & PDF Editor'] },
   { name: 'Business', icon: 'fa-solid fa-building', for: 'Run the business end to end', popular: true, features: ['DeepCost + DeepTrack + DeepHR', 'Shared user base & roles', 'ARIVU across all apps', 'Singapore & India payroll', 'Higher user limits'] },
   { name: 'Enterprise', icon: 'fa-solid fa-city', for: 'Multiple organisations & scale', features: ['Full suite incl. DeepPlan AI', 'Multi-organisation management', 'Advanced roles & audit', 'Priority CRM-integration access', 'Priority support & onboarding'] }
 ]
@@ -147,7 +147,7 @@ const included = [
   { icon: 'fa-solid fa-wand-magic-sparkles', title: 'ARIVU AI assistant', text: 'Answers, charts and exports from your own data, in every app you subscribe to.', ai: true },
   { icon: 'fa-solid fa-bolt', title: 'Automatic provisioning', text: 'Subscribe and your apps are activated automatically.' },
   { icon: 'fa-solid fa-user-shield', title: 'Encryption & access control', text: 'Personal and configuration fields encrypted, roles per app, and audit logs for finance, HR changes and period unlocks.' },
-  { icon: 'fa-solid fa-folder-open', title: 'Deep Drive & PDF Editor', text: 'Included with every active subscription when they launch. Coming soon.' },
+  { icon: 'fa-solid fa-folder-open', title: 'Deep Drive & PDF Editor', text: 'Document storage, mark-up and signing — included with every active subscription.' },
   { icon: 'fa-solid fa-cloud', title: 'Cloud-based', text: 'No servers to run and no hardware to buy.' }
 ]
 const comparison = [
@@ -156,7 +156,7 @@ const comparison = [
     rows: [
       { label: 'Flagship apps', values: ['1 of DeepCost, DeepTrack or DeepHR', 'DeepCost + DeepTrack + DeepHR', 'Full suite'] },
       { label: 'DeepPlan AI', values: [false, false, true] },
-      { label: 'Deep Drive & PDF Editor (coming soon)', values: [true, true, true] },
+      { label: 'Deep Drive & PDF Editor', values: [true, true, true] },
       { label: 'Core modules & dashboard', values: [true, true, true] }
     ]
   },
@@ -223,7 +223,7 @@ const faqs = [
   { q: 'Why don’t you publish prices?', a: 'CCorex is priced per user (per employee for DeepHR) and depends on the apps and plan you choose. We give every customer a tailored quote rather than a one-size price list.' },
   { q: 'Can we start with one app and add more later?', a: 'Yes. Essentials starts with one flagship app — DeepCost, DeepTrack or DeepHR. You can move to Business or Enterprise as you add apps, and every app shares the same sign-in and users.' },
   { q: 'Is ARIVU AI an extra cost?', a: 'No. The ARIVU AI assistant is included in every suite plan, with usage budgets per organisation. On Business and Enterprise it answers across all your apps.' },
-  { q: 'Are Deep Drive and PDF Editor included?', a: 'Yes. Deep Drive (document storage) and PDF Editor (mark-up and signing) are included with every active subscription. Both are in development and coming soon.' },
+  { q: 'Are Deep Drive and PDF Editor included?', a: 'Yes. Deep Drive (document storage) and PDF Editor (mark-up and signing) are included with every active subscription.' },
   { q: 'What is the difference between Business and Enterprise?', a: 'Business bundles DeepCost, DeepTrack and DeepHR with a shared user base. Enterprise adds DeepPlan AI, multi-organisation management, advanced roles and audit, priority access to CRM integrations as they arrive, and priority support and onboarding.' },
   { q: 'How do we get pricing?', a: 'Pricing is shared on request. Email admin@newhamtech.com with the apps and number of users you need, or book a demo and we will prepare a quote.' },
   { q: 'Do we need to buy hardware for attendance?', a: 'No. Face-recognition attendance runs on each employee\'s own phone, with a face match and a GPS check against the site radius. There is no kiosk or shared device to buy.' }

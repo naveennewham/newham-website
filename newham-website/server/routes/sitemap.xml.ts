@@ -4,7 +4,7 @@ import { industries } from '../../data/industries'
 import { trades } from '../../data/experience'
 
 // /ccorex, /ccorex/*, /product and /deeptrack are left out: their canonical is on ccorex.com.
-const STATIC = ['/', '/services', '/talent-outsourcing', '/engineering-services', '/industries', '/case-studies', '/pricing', '/about', '/contact', '/appointment', '/privacy']
+const STATIC = ['/', '/services', '/talent-outsourcing', '/engineering-services', '/boq-estimation-services', '/industries', '/case-studies', '/pricing', '/about', '/contact', '/appointment', '/privacy']
 
 export default defineEventHandler(async (event) => {
   const site = (useRuntimeConfig(event).public.siteUrl as string).replace(/\/$/, '')

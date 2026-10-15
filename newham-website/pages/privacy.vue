@@ -3,7 +3,7 @@
     <section class="bg-hero text-white">
       <div class="container-site py-16 sm:py-20">
         <p class="eyebrow text-cyan-300">Legal</p>
-        <h1 class="mt-3 text-4xl font-extrabold sm:text-5xl">Privacy policy</h1>
+        <h1 class="mt-3 text-4xl font-extrabold text-white sm:text-5xl">Privacy policy</h1>
         <p class="lead-dark mt-4 max-w-2xl">How Newham Technological Solutions handles personal data on newhamtech.com.</p>
       </div>
     </section>

@@ -37,6 +37,9 @@
     </section>
 
     <!-- Portal -->
+    <!-- Every product tour, one player -->
+    <HomeVideoGallery />
+
     <section class="section bg-ink-50">
       <div class="container-site grid gap-12 lg:grid-cols-[1fr_1.25fr] lg:items-center">
         <div>
@@ -59,7 +62,7 @@
     <section id="compare" class="section scroll-mt-20">
       <div class="container-site">
         <UiSectionHeader eyebrow="Compare" title="Which app solves what" lead="Start from the job you need done. Each app can be used on its own, and they all share the same login, users and roles." />
-        <div class="mt-10 overflow-x-auto rounded-2xl border border-ink-100 bg-white shadow-card">
+        <div class="relative mt-10 overflow-x-auto rounded-2xl border border-ink-100 bg-white shadow-card">
           <table class="w-full min-w-[640px] text-left text-sm">
             <caption class="sr-only">Jobs to be done and the CCorex app that handles each one</caption>
             <thead class="border-b border-ink-100 bg-ink-50/70 text-xs uppercase tracking-wider text-ink-500">
@@ -126,7 +129,7 @@ const config = useRuntimeConfig()
 const path = '/products'
 useSeoMeta({
   title: 'CCorex products — construction software suite',
-  description: 'Explore the CCorex suite: DeepCost, DeepTrack and DeepHR, plus ARIVU AI and DeepPlan AI, with Deep Drive and PDF Editor coming soon — one sign-in.',
+  description: 'Explore the CCorex suite: DeepCost, DeepTrack and DeepHR, plus ARIVU AI and DeepPlan AI, plus Deep Drive and PDF Editor — one sign-in.',
   ogTitle: 'The CCorex suite — construction apps on one platform',
   ogDescription: 'MEP tender estimation, project delivery, HR & payroll and drawing take-off — one sign-in, with ARIVU AI in every app.'
 })
@@ -148,7 +151,7 @@ const appOf = (slug: string) => appBySlug(slug)!
 const groups = [
   { id: 'flagship', eyebrow: 'Flagship apps', short: 'flagship', title: 'Estimate, deliver and pay your people', text: 'The three core apps that run a construction business, from tender to payroll.', apps: ['deepcost', 'deeptrack', 'deephr'], names: 'Cost · Track · HR' },
   { id: 'ai', eyebrow: 'AI', short: 'AI', ai: true, title: 'AI that works inside your workflow', text: 'A read-only assistant in every app that answers from your own data, and drawing take-off with AI room and symbol detection in early access — with people reviewing every number.', apps: ['arivu-ai', 'deepplan-ai'], names: 'ARIVU · DeepPlan' },
-  { id: 'supporting', eyebrow: 'Supporting apps', short: 'supporting', title: 'Documents and drawings — coming soon', text: 'Store, mark up and sign project documents on the same platform. Both apps are in development and will be included with every active subscription.', apps: ['deep-drive', 'pdf-editor'], names: 'Drive · PDF Editor' }
+  { id: 'supporting', eyebrow: 'Supporting apps', short: 'supporting', title: 'Documents and PDFs', text: 'Store, mark up and sign project documents on the same platform. Both apps are included with every active subscription.', apps: ['deep-drive', 'pdf-editor'], names: 'Drive · PDF Editor' }
 ]
 
 const jobs = [
@@ -158,8 +161,8 @@ const jobs = [
   { job: 'Match vendor invoices, bill client claims and close the month', slug: 'deeptrack', who: 'Finance, commercial teams' },
   { job: 'Run attendance, leave and Singapore or India payroll', slug: 'deephr', who: 'HR, managers and every employee' },
   { job: 'Ask questions of your own data, with charts and exports', slug: 'arivu-ai', who: 'Every CCorex user' },
-  { job: 'Store drawings, submittals and project documents (coming soon)', slug: 'deep-drive', who: 'All users' },
-  { job: 'Mark up and sign PDFs (coming soon)', slug: 'pdf-editor', who: 'Office and project staff' }
+  { job: 'Store drawings, submittals and project documents', slug: 'deep-drive', who: 'All users' },
+  { job: 'Mark up and sign PDFs', slug: 'pdf-editor', who: 'Office and project staff' }
 ]
 
 const portalPoints = [
@@ -177,6 +180,6 @@ const today = [
 const roadmap = [
   { icon: 'fa-solid fa-address-book', title: 'Connected CRM modules', text: 'Customers and contacts shared and synced across apps.' },
   { icon: 'fa-solid fa-arrow-right-arrow-left', title: 'Cross-app data flow', text: 'Won tender → project → payroll, without re-entry.' },
-  { icon: 'fa-solid fa-folder-open', title: 'Deep Drive & PDF Editor', text: 'Document storage, mark-up and signing — in development, coming soon.' }
+  { icon: 'fa-solid fa-folder-open', title: 'Deep Drive & PDF Editor', text: 'Document storage, mark-up and signing on the same sign-in.' }
 ]
 </script>

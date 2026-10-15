@@ -62,6 +62,7 @@
     <section id="commercial" class="section scroll-mt-16 bg-ink-50">
       <div class="container-site">
         <UiSectionHeader eyebrow="Stream 2" title="Commercial & tender support" lead="Commercial and tender functions for M&E contractors, from first tender to final account, so your project teams can focus on delivery." />
+        <NuxtLink to="/boq-estimation-services" class="mt-4 inline-flex text-sm font-semibold text-brand-700 hover:text-brand-900">BOQ preparation &amp; estimation services in detail <i class="fa-solid fa-arrow-right ml-2 mt-1 text-xs" aria-hidden="true"></i></NuxtLink>
         <div class="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           <UiFeatureCard v-for="s in commercialServices" :key="s.title" :icon="s.icon" :title="s.title" :text="s.text" />
           <div class="card flex flex-col justify-between bg-brand-950 text-white">
@@ -127,7 +128,7 @@
 <script setup lang="ts">
 const siteUrl = useRuntimeConfig().public.siteUrl as string
 useSeoMeta({
-  title: 'Fire protection design & M&E commercial support',
+  title: 'Fire protection design & BOQ services in Singapore',
   description: 'Sprinkler design and hydraulic calculations to SS CP 52 / NFPA 13, plus estimation, BOQ, tender support, QS and document control for M&E contractors.',
   ogTitle: 'Construction engineering services — Newham',
   ogDescription: 'Fire protection design and commercial project support for Singapore M&E contractors and consultants.',

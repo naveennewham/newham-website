@@ -138,7 +138,7 @@ const realScreens = [
 const config = useRuntimeConfig()
 const path = '/products/deepplan-ai'
 useSeoMeta({
-  title: 'DeepPlan AI — drawing take-off & BOQ generation',
+  title: 'DeepPlan AI — AI quantity take-off & BOQ software',
   description: 'DeepPlan turns drawings into measured quantities and a priced BOQ: upload, calibrate, measure rooms, apply rates. AI take-off is in early access.',
   ogTitle: 'DeepPlan AI — from drawings to a priced BOQ',
   ogDescription: 'Drawing upload, scale calibration, room measurement, rate library and BOQ generation today. AI room take-off and symbol detection in early access.'

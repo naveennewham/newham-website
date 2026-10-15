@@ -19,7 +19,7 @@
       </ol>
 
       <div class="mx-auto mt-16 flex max-w-4xl flex-col items-center gap-6 rounded-3xl border border-ink-100 bg-white p-6 shadow-card sm:flex-row sm:p-8">
-        <span class="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-ai-gradient text-xl text-white"><i class="fa-regular fa-calendar-check" aria-hidden="true"></i></span>
+        <UiLottie src="/lottie/getting-started.json" class="h-20 w-20 shrink-0"><template #fallback><span class="flex h-14 w-14 items-center justify-center rounded-2xl bg-ai-gradient text-xl text-white"><i class="fa-regular fa-calendar-check" aria-hidden="true"></i></span></template></UiLottie>
         <div class="flex-1 text-center sm:text-left">
           <p class="text-lg font-bold text-ink-900">Not sure where to start?</p>
           <p class="mt-1 text-sm text-ink-600">Book a 30-minute call. We’ll look at how your team estimates, delivers and pays today — a conversation, not a sales pitch.</p>

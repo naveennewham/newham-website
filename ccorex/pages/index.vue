@@ -30,9 +30,10 @@
       </div>
     </section>
 
-    <HomeTeamHub />
+    <UiAppParallax />
 
-    <HomeVideoGallery />
+    <HomeAppSuite />
+
 
     <HomeBento />
 
@@ -44,7 +45,7 @@
           <div class="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
             <div>
               <p class="eyebrow">Business flow across apps</p>
-              <h3 class="mt-2 text-xl font-bold">One job, from tender to payroll</h3>
+              <h3 class="mt-2 text-xl font-bold">One job, from tender to month-end costing</h3>
             </div>
             <p class="max-w-md text-sm text-ink-600">Each app keeps its own records under one sign-in and one user base. Passing records automatically from one app to the next is on the roadmap.</p>
           </div>
@@ -54,18 +55,18 @@
             Across every step, ARIVU answers questions from your data in each app — read-only.
           </p>
         </UiReveal>
-        <div class="mt-16 space-y-20">
-          <UiReveal v-for="(f, i) in flow" :key="f.app" class="grid gap-10 lg:grid-cols-2 lg:items-center">
-            <div :class="i % 2 ? 'lg:order-2' : ''">
+        <div class="mt-10 grid gap-5 lg:grid-cols-3">
+          <UiReveal v-for="f in flow" :key="f.app" class="flex flex-col rounded-3xl border border-ink-100 bg-white p-6 shadow-card">
+            <div class="flex items-center gap-3">
+              <span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl" :class="f.tone"><i :class="f.icon" aria-hidden="true"></i></span>
               <p class="eyebrow">{{ f.step }}</p>
-              <h3 class="mt-3 text-2xl font-bold sm:text-3xl">{{ f.title }}</h3>
-              <p class="lead mt-4">{{ f.text }}</p>
-              <ul class="mt-6 space-y-3">
-                <li v-for="b in f.bullets" :key="b" class="flex gap-3 text-ink-700"><i class="fa-solid fa-circle-check mt-1 text-brand-600" aria-hidden="true"></i>{{ b }}</li>
-              </ul>
-              <NuxtLink :to="`/products/${f.slug}`" class="mt-7 inline-flex font-semibold text-brand-700 hover:text-brand-900">Explore {{ f.app }} <i class="fa-solid fa-arrow-right ml-2 mt-1 text-xs" aria-hidden="true"></i></NuxtLink>
             </div>
-            <UiBrowserFrame :src="f.src" :alt="f.alt" :url="f.url" />
+            <h3 class="mt-4 text-xl font-bold">{{ f.title }}</h3>
+            <p class="mt-2 text-sm leading-relaxed text-ink-600">{{ f.text }}</p>
+            <ul class="mt-5 space-y-2.5">
+              <li v-for="b in f.bullets" :key="b" class="flex gap-2.5 text-sm text-ink-700"><i class="fa-solid fa-circle-check mt-0.5 text-brand-600" aria-hidden="true"></i>{{ b }}</li>
+            </ul>
+            <NuxtLink :to="`/products/${f.slug}`" class="mt-auto inline-flex pt-6 text-sm font-semibold text-brand-700 hover:text-brand-900">Explore {{ f.app }} <i class="fa-solid fa-arrow-right ml-2 mt-1 text-xs" aria-hidden="true"></i></NuxtLink>
           </UiReveal>
         </div>
       </div>
@@ -98,20 +99,18 @@
 
     <!-- Platform -->
     <section class="section">
-      <div class="container-site grid gap-14 lg:grid-cols-[1.1fr_1fr] lg:items-center">
-        <div class="order-2 rounded-3xl bg-brand-950 px-6 py-14 lg:order-1">
-          <UiPlatformDiagram />
+      <div class="container-site">
+        <div class="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+          <UiSectionHeader eyebrow="The platform underneath" title="One portal, one sign-in, every app" lead="Your organisation admin manages users, roles and app settings once, in the portal at dash.ccorex.com. Add a user once and they are created in each assigned app; disable them once and they are disabled in the apps too." />
+          <NuxtLink to="/platform" class="btn-secondary shrink-0">How the platform works <i class="fa-solid fa-arrow-right text-xs" aria-hidden="true"></i></NuxtLink>
         </div>
-        <div class="order-1 lg:order-2">
-          <UiSectionHeader eyebrow="The platform underneath" title="One secure control plane for every app" lead="Your organisation admin manages users, roles and app settings once, in the portal at dash.ccorex.com. Add a user once and they are created in each assigned app; disable them once and they are disabled in the apps too." />
-          <ul class="mt-8 grid gap-x-6 gap-y-5 sm:grid-cols-2">
-            <li v-for="c in platform" :key="c.title" class="flex gap-3">
-              <span class="icon-tile h-9 w-9 shrink-0 text-sm"><i :class="c.icon" aria-hidden="true"></i></span>
-              <div><p class="font-semibold text-ink-900">{{ c.title }}</p><p class="text-sm text-ink-600">{{ c.text }}</p></div>
-            </li>
-          </ul>
-          <NuxtLink to="/platform" class="mt-8 inline-flex font-semibold text-brand-700 hover:text-brand-900">How the platform works <i class="fa-solid fa-arrow-right ml-2 mt-1 text-xs" aria-hidden="true"></i></NuxtLink>
-        </div>
+        <UiReveal class="mt-12"><DemoPortalDashboard /></UiReveal>
+        <ul class="mt-12 grid gap-x-6 gap-y-5 sm:grid-cols-2 lg:grid-cols-3">
+          <li v-for="c in platform" :key="c.title" class="flex gap-3">
+            <span class="icon-tile h-9 w-9 shrink-0 text-sm"><i :class="c.icon" aria-hidden="true"></i></span>
+            <div><p class="font-semibold text-ink-900">{{ c.title }}</p><p class="text-sm text-ink-600">{{ c.text }}</p></div>
+          </li>
+        </ul>
       </div>
     </section>
 
@@ -166,7 +165,7 @@
 <script setup lang="ts">
 const config = useRuntimeConfig()
 useSeoMeta({
-  title: 'Construction software for estimating, projects & payroll',
+  title: 'Construction & BOQ software for Singapore contractors',
   description: 'CCorex unifies MEP tender estimation (DeepCost), project cost control (DeepTrack) and HR & payroll (DeepHR) on one sign-in, with ARIVU AI in every app.',
   ogTitle: 'CCorex — run your construction business on one AI-powered platform',
   ogDescription: 'MEP estimation, project delivery and HR & payroll on one login, with ARIVU AI in every app.'
@@ -178,7 +177,8 @@ useHead({
     innerHTML: JSON.stringify({
       '@context': 'https://schema.org',
       '@graph': [
-        { '@type': 'Organization', name: 'CCorex', url: 'https://ccorex.com', logo: 'https://ccorex.com/ccorex-logo.png', email: 'admin@newhamtech.com', parentOrganization: { '@type': 'Organization', name: 'Newham Technological Solutions', url: 'https://newhamtech.com' } },
+        { '@type': 'WebSite', '@id': 'https://ccorex.com/#website', name: 'CCorex', alternateName: ['CCorex construction software', 'ccorex.com'], url: 'https://ccorex.com/', publisher: { '@id': 'https://ccorex.com/#organization' } },
+        { '@type': 'Organization', '@id': 'https://ccorex.com/#organization', name: 'CCorex', url: 'https://ccorex.com', logo: 'https://ccorex.com/ccorex-logo.png', email: 'admin@newhamtech.com', parentOrganization: { '@type': 'Organization', name: 'Newham Technological Solutions', url: 'https://newhamtech.com' } },
         { '@type': 'SoftwareApplication', name: 'CCorex', applicationCategory: 'BusinessApplication', operatingSystem: 'Web', description: 'Construction management platform for MEP estimation, project delivery and HR & payroll, with an AI assistant in every app.', offers: { '@type': 'Offer', availability: 'https://schema.org/InStock' } }
       ]
     })
@@ -209,20 +209,20 @@ const problems = [
 ]
 const flow = [
   {
-    step: '01 · Estimate', app: 'DeepCost', slug: 'deepcost', url: 'deepcost.app / mto',
-    title: 'Price every tender with confidence', src: '/images/product/deepcost-mto.webp', alt: 'DeepCost material take-off by building, floor and room with item groups and prices',
+    step: '01 · Estimate', app: 'DeepCost', slug: 'deepcost', icon: 'fa-solid fa-calculator', tone: 'bg-sky-50 text-sky-700',
+    title: 'Price every tender with confidence',
     text: 'From tender received to a priced Form of Tender: an AI summary of the tender documents, area-based material take-off, one priced library, and FOT AI that overlays your figures on the client’s BOQ PDF.',
     bullets: ['AI tender summary you can edit and export', 'Take off by building, floor and room — priced as quantity × (material + installation)', 'Area schedule, MTO and FOT each submitted, checked and approved']
   },
   {
-    step: '02 · Deliver', app: 'DeepTrack', slug: 'deeptrack', url: 'deeptrack.app / procurement',
-    title: 'Protect margin on every project', src: '/images/product/deeptrack-procurement.webp', alt: 'DeepTrack purchase requests with budget, status and approvals by project manager, general manager and director',
+    step: '02 · Deliver', app: 'DeepTrack', slug: 'deeptrack', icon: 'fa-solid fa-diagram-project', tone: 'bg-amber-50 text-amber-700',
+    title: 'Protect margin on every project',
     text: 'Budgets, client claims, manpower and timesheets, procurement, accounts payable with invoice matching, and month-end cost allocation — in SGD with 9% GST.',
     bullets: ['Every purchase request raised against an approved budget and routed through your configured approvals', 'PR → PO → delivery → invoice, matched before payment', 'Progress claims with retention, GST and a PDF certificate']
   },
   {
-    step: '03 · Staff & pay', app: 'DeepHR', slug: 'deephr', url: 'deephr.app / payroll',
-    title: 'Run Singapore or India payroll', src: '/images/product/deephr-payroll.webp', alt: 'DeepHR payroll run selecting employees, pay items and pay period',
+    step: '03 · Staff & pay', app: 'DeepHR', slug: 'deephr', icon: 'fa-solid fa-user-group', tone: 'bg-emerald-50 text-emerald-700',
+    title: 'Run Singapore or India payroll',
     text: 'Face and GPS attendance on each employee’s phone, reviewed by HR, flows with approved leave into payroll — with Singapore or India statutory rules.',
     bullets: ['Face-recognition attendance with no hardware to buy, even offline', 'Singapore: CPF, SDL and SHG funds. India: EPF, ESI, PT and TDS', 'Leave, claims, timesheets and one approvals engine']
   }
@@ -232,7 +232,9 @@ const businessFlow = [
   { title: 'Drawings measured', text: 'Quantities taken off in DeepPlan.', icon: 'fa-solid fa-compass-drafting' },
   { title: 'Priced bid out', text: 'MTO and Form of Tender priced and approved in DeepCost.', icon: 'fa-solid fa-file-signature' },
   { title: 'Won job → project', text: 'Budgets, purchasing and client claims in DeepTrack.', icon: 'fa-solid fa-diagram-project' },
-  { title: 'People managed & paid', text: 'Attendance, leave and payroll in DeepHR.', icon: 'fa-solid fa-user-group' }
+  { title: 'Budget tracked', text: 'Budget against actual by workhead, WBS and cost centre in DeepTrack.', icon: 'fa-solid fa-chart-column' },
+  { title: 'People managed & paid', text: 'Attendance, leave and payroll in DeepHR.', icon: 'fa-solid fa-user-group' },
+  { title: 'Month-end costing', text: 'Labour and overhead allocated to projects and cost centres.', icon: 'fa-solid fa-calendar-check' }
 ]
 const aiPoints = [
   { icon: 'fa-regular fa-comments', title: 'Ask in plain language', text: '“Which purchase requests are pending?” — answered from your data across your apps.' },
@@ -257,7 +259,7 @@ const reasons = [
   { title: 'Singapore and India payroll', text: 'CPF, SDL and SHG funds in Singapore; EPF, ESI, PT, TDS and statutory filings in India.' }
 ]
 const plans = [
-  { name: 'Essentials', for: 'Start with one workflow', features: ['Choose 1 flagship app', 'Core modules & dashboard', 'ARIVU AI assistant', 'SSO & user management', 'Deep Drive & PDF Editor (coming soon)'] },
+  { name: 'Essentials', for: 'Start with one workflow', features: ['Choose 1 flagship app', 'Core modules & dashboard', 'ARIVU AI assistant', 'SSO & user management', 'Deep Drive & PDF Editor'] },
   { name: 'Business', for: 'Run the business end to end', popular: true, features: ['DeepCost + DeepTrack + DeepHR', 'Shared user base & roles', 'ARIVU across all apps', 'Singapore & India payroll', 'Higher user limits'] },
   { name: 'Enterprise', for: 'Multiple companies & scale', features: ['Full suite incl. DeepPlan AI', 'Multi-organisation management', 'Advanced roles & audit', 'Priority integration access', 'Priority support & onboarding'] }
 ]

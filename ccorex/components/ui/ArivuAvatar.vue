@@ -22,13 +22,21 @@
       <!-- antenna spark -->
       <line x1="60" y1="22" x2="60" y2="10" stroke="#9fe8f3" stroke-width="3" stroke-linecap="round" />
       <path d="M60 0 L63 6 L69 9 L63 12 L60 18 L57 12 L51 9 L57 6 Z" fill="#fff" class="arivu-spark" />
+      <!-- arms (cartoon poses) -->
+      <g v-if="pose !== 'none'">
+        <g class="arm arm-l" :class="`l-${pose}`"><rect x="6" y="60" width="26" height="11" rx="5.5" :fill="`url(#${uid}-body)`" /><circle cx="8" cy="65.5" r="6.5" fill="#7ee8f5" /></g>
+        <g class="arm arm-r" :class="`r-${pose}`"><rect x="88" y="60" width="26" height="11" rx="5.5" :fill="`url(#${uid}-body)`" /><circle cx="112" cy="65.5" r="6.5" fill="#7ee8f5" /></g>
+      </g>
       <!-- body -->
       <circle cx="60" cy="64" r="42" :fill="`url(#${uid}-body)`" />
       <ellipse cx="46" cy="44" rx="14" ry="8" fill="#fff" opacity=".35" transform="rotate(-25 46 44)" />
       <!-- visor -->
       <rect x="28" y="50" width="64" height="34" rx="17" :fill="`url(#${uid}-visor)`" />
       <!-- eyes -->
-      <g class="arivu-eyes">
+      <g v-if="pose === 'happy'" fill="none" stroke="#7ee8f5" stroke-width="3" stroke-linecap="round">
+        <path d="M41 66 Q47 58 53 66" /><path d="M67 66 Q73 58 79 66" />
+      </g>
+      <g v-else class="arivu-eyes" :style="{ transform: `translate(${look[0]}px, ${look[1]}px)` }">
         <ellipse cx="47" cy="64" rx="5.5" ry="6.5" fill="#7ee8f5" />
         <ellipse cx="73" cy="64" rx="5.5" ry="6.5" fill="#7ee8f5" />
       </g>
@@ -43,8 +51,9 @@
 
 <script setup lang="ts">
 // ARIVU's avatar: a friendly AI orb. Blinks, floats, and shows a voice wave while "talking".
-withDefaults(defineProps<{ size?: number; talking?: boolean; float?: boolean; label?: string }>(), {
-  size: 48, talking: false, float: true, label: 'ARIVU, the CCorex AI assistant'
+// Optional cartoon poses: wave, point-left / point-right (arm reaches out), happy (smiling eyes, hop).
+withDefaults(defineProps<{ size?: number; talking?: boolean; float?: boolean; label?: string; pose?: 'none' | 'idle' | 'wave' | 'point-left' | 'point-right' | 'happy'; look?: [number, number] }>(), {
+  size: 48, talking: false, float: true, label: 'ARIVU, the CCorex AI assistant', pose: 'none', look: () => [0, 0]
 })
 const uid = useId()
 </script>
@@ -62,5 +71,15 @@ const uid = useId()
 @keyframes arivu-pulse { 0%, 100% { transform: scale(.92); opacity: .8; } 50% { transform: scale(1.05); opacity: 1; } }
 .arivu-wave { transform-box: fill-box; transform-origin: center; animation: arivu-wave .6s ease-in-out infinite alternate; }
 @keyframes arivu-wave { from { transform: scaleY(.35); } to { transform: scaleY(1.25); } }
-@media (prefers-reduced-motion: reduce) { .arivu-float, .arivu-eyes, .arivu-spark, .arivu-ring, .arivu-pulse, .arivu-wave { animation: none; } }
+.arivu-eyes { transition: transform .4s ease; }
+.arm { transition: transform .45s cubic-bezier(.3, 1.4, .5, 1); }
+.arm-l { transform-origin: 32px 65.5px; } .arm-r { transform-origin: 88px 65.5px; }
+.l-idle, .l-wave, .l-point-right, .l-happy { transform: rotate(-25deg); }
+.r-idle, .r-point-left { transform: rotate(25deg); }
+.r-wave { animation: wave .5s ease-in-out infinite alternate; }
+@keyframes wave { from { transform: rotate(-70deg); } to { transform: rotate(-120deg); } }
+.r-point-right { transform: rotate(-12deg) translateX(6px); }
+.l-point-left { transform: rotate(12deg) translateX(-6px); }
+.r-happy { transform: rotate(-60deg); } .l-happy { transform: rotate(60deg); }
+@media (prefers-reduced-motion: reduce) { .arivu-float, .arivu-eyes, .arivu-spark, .arivu-ring, .arivu-pulse, .arivu-wave, .r-wave { animation: none; } }
 </style>

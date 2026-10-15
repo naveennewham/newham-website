@@ -20,3 +20,14 @@ Free-licensed but not used: 2451 (visible generator brand logo), 49845 (Google l
 Stock photos in `public/images/photos/` (AdobeStock_*) come from the owner's existing Adobe Stock assets in `newham-website/assets/Images/stock/`. Product screenshots are Newham's own.
 
 > Update 14 Oct 2026: stock clips are now used on the Newham site only (`newham-website/public/videos/`). The CCorex site uses only Newham’s own product videos (`tour-*.mp4`, `loop-suite.mp4`), generated from real product screenshots.
+
+## Lottie animations (`public/lottie/`)
+
+All from LottieFiles "free animations", under the Lottie Simple License (FL 9.13.21): commercial use and modification allowed, attribution not required (https://lottiefiles.com/page/license, checked 15 Oct 2026). Extracted from the `.lottie` file to plain Lottie JSON.
+
+| File | Site | Source file |
+|---|---|---|
+| `success.json` | both | https://assets-v2.lottiefiles.com/a/a03173b0-4214-11ee-8796-83095fab89a7/JGIGUR22fl.lottie ("check-circle-regular") |
+| `not-found.json` | both | https://assets-v2.lottiefiles.com/a/c32bae06-1151-11ee-9711-cfaab569a8cc/5pvMN2CCye.lottie ("UnderConstruction", tower crane) |
+| `getting-started.json` | ccorex | https://assets-v2.lottiefiles.com/a/c97fbf04-7da8-11ee-8359-afa0f72ae027/M6jOBTsE6T.lottie (clipboard checklist) |
+| `blueprint.json` | newham | https://assets-v2.lottiefiles.com/a/589c3ada-1172-11ee-8396-cb51304e2663/VmANMT58lH.lottie ("Man draws a blueprint") |

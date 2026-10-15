@@ -44,7 +44,7 @@
               <i v-if="isSubmitting" class="fa-solid fa-spinner fa-spin" aria-hidden="true"></i>
               {{ isSubmitting ? 'Sending…' : 'Send message' }}
             </button>
-            <p v-if="formSubmitted" role="status" class="rounded-lg border border-emerald-200 bg-emerald-50 px-4 py-3 text-sm text-emerald-800">Thank you. Your message has been sent and we will reply by email.</p>
+            <p v-if="formSubmitted" role="status" class="flex items-center gap-3 rounded-lg border border-emerald-200 bg-emerald-50 px-4 py-3 text-sm text-emerald-800"><UiLottie src="/lottie/success.json" :loop="false" class="h-8 w-8 shrink-0" />Thank you. Your message has been sent and we will reply by email.</p>
             <p v-if="submitError" role="alert" class="rounded-lg border border-rose-200 bg-rose-50 px-4 py-3 text-sm text-rose-800">{{ submitError }}</p>
           </form>
         </div>

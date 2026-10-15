@@ -11,7 +11,7 @@
             <NuxtLink to="/appointment" class="btn-accent">Book a discovery call <i class="fa-solid fa-arrow-right text-xs" aria-hidden="true"></i></NuxtLink>
           </div>
         </div>
-        <img src="/images/photos/hero-building-digital.webp" alt="Illustration of a building model with MEP services and engineers" width="2000" height="1116" fetchpriority="high" class="w-full rounded-2xl border border-white/10 shadow-frame" />
+        <HomeTradeBuilding />
       </div>
     </section>
 

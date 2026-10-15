@@ -59,7 +59,7 @@
 
               <!-- Videos (crossfade) -->
               <div class="relative aspect-video bg-[#03191f]">
-                <video v-for="(t, k) in tours" :key="t.key" :ref="(el) => (vids[k] = el as HTMLVideoElement)" class="absolute inset-0 h-full w-full object-cover transition-opacity duration-700 ease-out" :class="k === active ? 'opacity-100' : 'opacity-0'" :src="`/videos/tour-${t.key}.mp4`" :poster="`/videos/tour-${t.key}-poster.webp`" :preload="k === 0 ? 'auto' : 'none'" muted playsinline :aria-hidden="k !== active" :aria-label="`${t.name} product tour, no sound`" @ended="next"></video>
+                <video v-for="(t, k) in tours" :key="t.key" :ref="(el) => (vids[k] = el as HTMLVideoElement)" class="absolute inset-0 h-full w-full object-cover transition-opacity duration-700 ease-out" :class="k === active ? 'opacity-100' : 'opacity-0'" :src="`/videos/tour-${t.key}.mp4`" :poster="`/videos/tour-${t.key}-start.webp`" :preload="k === 0 ? 'auto' : 'none'" muted playsinline :aria-hidden="k !== active" :aria-label="`${t.name} product tour, no sound`" @ended="next"></video>
               </div>
             </div>
           </div>
@@ -116,14 +116,40 @@ function playActive() {
   if (!v || paused.value || !visible || lightbox.value) return
   v.play().catch(() => {})
 }
+// Tours play a little faster than recorded.
+const RATE = 1.35
+let pending = -1
+
+function prime(v: HTMLVideoElement | undefined) {
+  if (!v) return
+  v.defaultPlaybackRate = RATE
+  v.playbackRate = RATE
+}
+// Start loading the tour after the current one so the switch has no gap.
+function preloadNext() {
+  const v = vids[(active.value + 1) % tours.length]
+  if (v && v.preload !== 'auto') { v.preload = 'auto'; v.load(); prime(v) }
+}
+// Switch only once the next tour is actually playing, so the crossfade never shows a loading frame.
 function select(k: number) {
   if (k === active.value) return
-  vids[active.value]?.pause()
+  const next = vids[k]
   bars.forEach((b, i) => { if (b) b.style.transform = `scaleX(${i < k ? 1 : 0})` })
-  active.value = k
-  const v = vids[k]
-  if (v) { v.preload = 'auto'; v.currentTime = 0 }
-  playActive()
+  if (!next) { active.value = k; return }
+  pending = k
+  if (next.preload !== 'auto') { next.preload = 'auto'; next.load() }
+  prime(next)
+  next.currentTime = 0
+  const show = () => {
+    if (pending !== k) return
+    vids[active.value]?.pause()
+    active.value = k
+    pending = -1
+    preloadNext()
+  }
+  if (paused.value || !visible || lightbox.value) { show(); return }
+  next.addEventListener('playing', show, { once: true })
+  next.play().catch(show)
 }
 function next() { select((active.value + 1) % tours.length) }
 function togglePause() {
@@ -156,6 +182,8 @@ watch(lightbox, (open) => { if (open) vids[active.value]?.pause(); else playActi
 
 onMounted(() => {
   reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+  vids.forEach(prime)
+  vids[0]?.addEventListener('playing', preloadNext, { once: true })
   if (reduced) { paused.value = true; p = pTarget = 1; stage.value?.style.setProperty('--p', '1') }
   else {
     measure()

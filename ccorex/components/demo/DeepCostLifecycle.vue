@@ -15,10 +15,10 @@
       <li v-for="(st, i) in stages" :key="st.name" class="relative flex flex-col items-center text-center" :aria-current="i === s ? 'step' : undefined">
         <span v-if="i > 0" class="absolute right-1/2 top-4 h-0.5 w-full -translate-y-1/2 transition-colors duration-500" :class="i <= s ? 'bg-brand-600' : 'bg-ink-200'" aria-hidden="true"></span>
         <span class="relative z-10 flex h-8 w-8 items-center justify-center rounded-full border-2 text-xs font-bold transition-all duration-500"
-          :class="i < s ? 'border-brand-600 bg-brand-600 text-white' : i === s ? 'scale-110 border-brand-600 bg-white text-brand-700 ring-4 ring-brand-100' : 'border-ink-200 bg-white text-ink-400'">
+          :class="i < s ? 'border-brand-600 bg-brand-600 text-white' : i === s ? 'scale-110 border-brand-600 bg-white text-brand-700 ring-4 ring-brand-100' : 'border-ink-200 bg-white text-ink-500'">
           <i v-if="i < s" class="fa-solid fa-check text-[11px]" aria-hidden="true"></i><template v-else>{{ i + 1 }}</template>
         </span>
-        <span class="mt-2 text-[11px] font-semibold leading-tight sm:text-xs" :class="i <= s ? 'text-ink-900' : 'text-ink-400'">{{ st.name }}</span>
+        <span class="mt-2 text-[11px] font-semibold leading-tight sm:text-xs" :class="i <= s ? 'text-ink-900' : 'text-ink-500'">{{ st.name }}</span>
         <span v-if="st.action" class="mt-0.5 hidden text-[10px] text-ink-500 sm:block">by {{ st.by }}</span>
       </li>
     </ol>

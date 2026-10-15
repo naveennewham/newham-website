@@ -253,7 +253,7 @@ const pageUrl = config.public.siteUrl + '/products/deepcost'
 const description = 'DeepCost is MEP tender estimating software: AI tender summary, area schedules, material take-off, a priced library and FOT AI for the client\'s BOQ.'
 
 useSeoMeta({
-  title: 'DeepCost — MEP estimating & take-off software',
+  title: 'DeepCost — M&E estimating & BOQ software, Singapore',
   description,
   ogTitle: 'DeepCost — MEP estimating & material take-off software',
   ogDescription: description

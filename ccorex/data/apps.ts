@@ -54,14 +54,14 @@ export const apps: CcorexApp[] = [
     slug: 'deep-drive', name: 'Deep Drive', category: 'Document storage',
     tagline: 'Every project document, in one place.',
     summary: 'Your organisation\'s document store: folders, uploads, inline viewing and storage tracking, searchable by ARIVU.',
-    status: 'preview', statusNote: 'Coming soon',
+    status: 'available',
     icon: 'fa-solid fa-folder-open', color: 'bg-indigo-50 text-indigo-700'
   },
   {
     slug: 'pdf-editor', name: 'PDF Editor', category: 'Drawing markup',
     tagline: 'Annotate drawings without leaving CCorex.',
     summary: 'Mark up and sign PDFs: text, signatures, overlays, split and merge, with draft-to-completed states.',
-    status: 'preview', statusNote: 'Coming soon',
+    status: 'available',
     icon: 'fa-solid fa-file-pen', color: 'bg-rose-50 text-rose-700'
   }
 ]

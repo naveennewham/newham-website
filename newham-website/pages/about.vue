@@ -13,7 +13,7 @@
             <NuxtLink to="/contact" class="btn-ghost-dark">Contact us</NuxtLink>
           </div>
         </div>
-        <img src="/images/photos/hero-newham-network.webp" alt="Illustration connecting software, business, talent and engineering" width="2000" height="1116" fetchpriority="high" class="w-full rounded-2xl border border-white/10 shadow-frame" />
+        <AboutPillarHub />
       </div>
     </section>
 
