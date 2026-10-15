@@ -134,6 +134,9 @@
       </div>
     </section>
 
+    <!-- Latest guides -->
+    <HomeLatestGuides />
+
     <!-- FAQ -->
     <section class="section-tight bg-ink-50">
       <div class="container-site grid gap-10 py-6 lg:grid-cols-[1fr_1.6fr]">

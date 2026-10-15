@@ -150,6 +150,9 @@
 
     <HomeGetStarted />
 
+    <!-- Latest guides -->
+    <HomeLatestGuides />
+
     <!-- FAQ -->
     <section class="section-tight">
       <div class="container-site grid gap-10 lg:grid-cols-[1fr_1.6fr]">
