@@ -192,7 +192,7 @@
             <NuxtLink to="/products/arivu-ai" class="btn-accent">Explore ARIVU AI</NuxtLink>
           </div>
         </div>
-        <div class="rounded-2xl border border-white/10 bg-ink-950/80 p-6 shadow-frame">
+        <div class="rounded-2xl border border-white/10 bg-[#0b111c]/80 p-6 shadow-frame">
           <p class="flex items-center gap-3 text-sm font-semibold text-white">
             <span class="flex h-8 w-8 items-center justify-center rounded-lg bg-ai-gradient"><i class="fa-solid fa-wand-magic-sparkles text-sm" aria-hidden="true"></i></span>
             Things project teams ask ARIVU

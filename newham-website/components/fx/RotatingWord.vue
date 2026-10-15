@@ -4,7 +4,7 @@
     <span class="sr-only">{{ words[0] }}</span>
     <span aria-hidden="true" class="invisible col-start-1 row-start-1 sm:whitespace-nowrap">{{ longest }}</span>
     <Transition name="fx-word" mode="out-in">
-      <span :key="i" aria-hidden="true" class="col-start-1 row-start-1 sm:whitespace-nowrap" :class="wordClass">{{ words[i] }}</span>
+      <span :key="i" aria-hidden="true" class="col-start-1 row-start-1 inline-block sm:whitespace-nowrap" :class="wordClass">{{ words[i] }}</span>
     </Transition>
   </span>
 </template>
@@ -22,7 +22,9 @@ onBeforeUnmount(() => clearInterval(t))
 </script>
 
 <style scoped>
-.fx-word-enter-active, .fx-word-leave-active { transition: transform .45s cubic-bezier(.2,.8,.2,1), opacity .45s, filter .45s; }
-.fx-word-enter-from { transform: translateY(60%); opacity: 0; filter: blur(6px); }
-.fx-word-leave-to { transform: translateY(-60%); opacity: 0; filter: blur(6px); }
+.fx-word-enter-active, .fx-word-leave-active { transition: transform .45s cubic-bezier(.2,.8,.2,1), opacity .45s; }
+.fx-word-enter-from { transform: translateY(60%); opacity: 0; }
+.fx-word-leave-to { transform: translateY(-60%); opacity: 0; }
+/* Safari drops gradient (background-clip: text) words without these. */
+[aria-hidden] { -webkit-box-decoration-break: clone; box-decoration-break: clone; }
 </style>

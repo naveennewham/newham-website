@@ -2,7 +2,7 @@
   <div>
   <button type="button" class="group relative block w-full overflow-hidden rounded-2xl bg-ink-900 text-left shadow-lift ring-1 ring-ink-900/10" :aria-label="`Play video: ${title}`" @click="open = true">
     <img :src="poster" alt="" class="aspect-video w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]" loading="lazy" />
-    <span class="absolute inset-0 bg-gradient-to-t from-ink-950/85 via-ink-950/10 to-transparent" aria-hidden="true"></span>
+    <span class="absolute inset-0 bg-gradient-to-t from-[#0b111c]/85 via-[#0b111c]/10 to-transparent" aria-hidden="true"></span>
     <span class="absolute left-1/2 top-1/2 flex -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white/95 text-brand-800 shadow-lift transition-transform group-hover:scale-110" :class="large ? 'h-20 w-20 text-2xl' : 'h-14 w-14 text-lg'" aria-hidden="true">
       <span class="absolute inset-0 animate-ping rounded-full bg-white/40 motion-reduce:hidden"></span>
       <i class="fa-solid fa-play relative ml-1"></i>

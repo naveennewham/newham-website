@@ -58,9 +58,15 @@
     <div v-show="open" id="mobile-menu" class="border-t border-ink-100 bg-white lg:hidden">
       <div class="container-site max-h-[80vh] overflow-y-auto py-4">
         <p class="eyebrow mb-2">Products</p>
-        <ul class="mb-4 grid grid-cols-2 gap-1">
+        <ul class="mb-4 grid grid-cols-2 gap-2">
           <li v-for="a in apps" :key="a.slug">
-            <NuxtLink :to="`/products/${a.slug}`" class="block rounded-lg px-2 py-2 text-sm font-medium text-ink-800 hover:bg-ink-50" @click="open = false">{{ a.name }}</NuxtLink>
+            <NuxtLink :to="`/products/${a.slug}`" class="flex items-center gap-2.5 rounded-xl border border-ink-100 p-2 hover:bg-ink-50" @click="open = false">
+              <UiAppIcon :app="a.slug" size="sm" />
+              <span class="min-w-0">
+                <span class="block truncate text-sm font-semibold text-ink-900">{{ a.name }}</span>
+                <span class="block truncate text-[11px] text-ink-500">{{ a.category }}</span>
+              </span>
+            </NuxtLink>
           </li>
         </ul>
         <ul class="flex flex-col border-t border-ink-100 pt-3">

@@ -1,7 +1,7 @@
 <template>
   <section class="relative isolate overflow-hidden bg-[#f6fbfb]">
     <!-- Gradient mesh -->
-    <div class="pointer-events-none absolute inset-0 -z-10" aria-hidden="true">
+    <div class="pointer-events-none absolute inset-0 -z-10 dark:opacity-30" aria-hidden="true">
       <span class="nh-mesh absolute -left-40 -top-40 h-[34rem] w-[34rem] rounded-full bg-cyan-300/50 blur-3xl"></span>
       <span class="nh-mesh absolute -right-32 top-10 h-[30rem] w-[30rem] rounded-full bg-emerald-200/60 blur-3xl [animation-delay:-6s]"></span>
       <span class="nh-mesh absolute bottom-[-12rem] left-1/3 h-[30rem] w-[30rem] rounded-full bg-brand-200/60 blur-3xl [animation-delay:-11s]"></span>
@@ -49,7 +49,7 @@
         >
           <video v-if="motion && p.video && active === i" :src="p.video" :poster="p.poster" class="absolute inset-0 -z-10 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" autoplay muted loop playsinline aria-hidden="true"></video>
           <img v-else :src="p.poster" alt="" class="absolute inset-0 -z-10 h-full w-full object-cover" />
-          <div class="absolute inset-0 -z-10 bg-gradient-to-t from-ink-950/90 via-ink-950/35 to-ink-950/5" aria-hidden="true"></div>
+          <div class="absolute inset-0 -z-10 bg-[#04161b]/80 md:bg-transparent md:bg-gradient-to-t md:from-[#04161b]/90 md:via-[#04161b]/35 md:to-[#04161b]/5" aria-hidden="true"></div>
 
           <!-- collapsed label (desktop) -->
           <span class="absolute bottom-6 left-1/2 hidden -translate-x-1/2 rotate-180 whitespace-nowrap text-lg font-semibold transition-opacity duration-300 [writing-mode:vertical-rl] md:block" :class="active === i ? 'opacity-0' : 'opacity-100'" aria-hidden="true">{{ p.title }}</span>

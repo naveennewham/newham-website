@@ -15,7 +15,7 @@
         </div>
         <div class="relative lg:-mr-24">
           <img src="/images/photos/mep-model-laptop.webp" alt="Engineer reviewing a 3D MEP services model on a laptop" width="2000" height="1055" class="aspect-[16/10] w-full rounded-2xl border border-white/10 object-cover shadow-frame" loading="eager" />
-          <div class="absolute -bottom-8 left-6 right-6 hidden rounded-2xl border border-white/10 bg-ink-950/90 p-4 shadow-frame backdrop-blur sm:block lg:right-auto lg:w-80">
+          <div class="absolute -bottom-8 left-6 right-6 hidden rounded-2xl border border-white/10 bg-[#0b111c]/90 p-4 shadow-frame backdrop-blur sm:block lg:right-auto lg:w-80">
             <p class="text-xs font-semibold uppercase tracking-wider text-cyan-400">Purpose-built for</p>
             <ul class="mt-2 grid grid-cols-2 gap-x-4 gap-y-1.5 text-xs text-ink-100">
               <li v-for="s in segments" :key="s.id" class="flex items-center gap-2"><i :class="s.icon" class="text-cyan-400" aria-hidden="true"></i>{{ s.short }}</li>

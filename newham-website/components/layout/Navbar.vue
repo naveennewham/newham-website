@@ -119,13 +119,26 @@
           <li v-for="l in links" :key="l.to"><NuxtLink :to="l.to" class="block rounded-lg px-2 py-2.5 text-sm font-medium text-ink-800 hover:bg-ink-50">{{ l.label }}</NuxtLink></li>
           <li><NuxtLink to="/contact" class="block rounded-lg px-2 py-2.5 text-sm font-medium text-ink-800 hover:bg-ink-50">Contact</NuxtLink></li>
         </ul>
-        <p class="eyebrow mb-2 mt-4 border-t border-ink-100 pt-4">CCorex software</p>
-        <ul class="grid grid-cols-2 gap-1">
-          <li v-for="a in ccorexApps" :key="a.slug">
-            <a :href="ccorexAppUrl(a.slug)" target="_blank" rel="noopener" class="block rounded-lg px-2 py-2 text-sm font-medium text-ink-800 hover:bg-ink-50">{{ a.name }}</a>
-          </li>
-          <li><a :href="CCOREX_URL" target="_blank" rel="noopener" class="block rounded-lg px-2 py-2 text-sm font-semibold text-brand-700 hover:bg-ink-50">ccorex.com <i class="fa-solid fa-arrow-up-right-from-square text-[10px]" aria-hidden="true"></i></a></li>
-        </ul>
+        <div class="mt-4 border-t border-ink-100 pt-4">
+          <div class="flex items-center justify-between">
+            <p class="eyebrow">CCorex software</p>
+            <a :href="CCOREX_URL" target="_blank" rel="noopener" class="text-xs font-semibold text-brand-700">ccorex.com <i class="fa-solid fa-arrow-up-right-from-square text-[9px]" aria-hidden="true"></i></a>
+          </div>
+          <ul class="mt-3 grid grid-cols-2 gap-2">
+            <li v-for="a in ccorexApps" :key="a.slug">
+              <a :href="ccorexAppUrl(a.slug)" target="_blank" rel="noopener" class="flex items-center gap-2.5 rounded-xl border border-ink-100 p-2 hover:bg-ink-50">
+                <UiAppIcon :app="a.slug" size="sm" />
+                <span class="min-w-0">
+                  <span class="block truncate text-sm font-semibold text-ink-900">{{ a.name }}</span>
+                  <span class="block truncate text-[11px] text-ink-500">{{ a.category }}</span>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a :href="CCOREX_SIGNIN_URL" class="flex h-full items-center justify-center gap-2 rounded-xl border border-dashed border-ink-200 p-2 text-sm font-semibold text-brand-700"><i class="fa-solid fa-right-to-bracket text-xs" aria-hidden="true"></i>Sign in</a>
+            </li>
+          </ul>
+        </div>
         <div class="mt-4 flex items-center justify-between border-t border-ink-100 pt-4"><span class="text-sm font-medium text-ink-700">Theme</span><UiThemeToggle /></div>
         <NuxtLink to="/appointment" class="btn-primary mt-4 w-full">Book a discovery call</NuxtLink>
       </div>

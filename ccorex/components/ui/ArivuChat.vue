@@ -1,5 +1,5 @@
 <template>
-  <div class="overflow-hidden rounded-2xl border border-white/10 bg-ink-950/80 shadow-frame backdrop-blur">
+  <div class="overflow-hidden rounded-2xl border border-white/10 bg-[#0b111c]/80 shadow-frame backdrop-blur">
     <div class="flex items-center gap-3 border-b border-white/10 px-5 py-3.5">
       <UiArivuAvatar :size="40" :talking="typing" :float="false" />
       <div>

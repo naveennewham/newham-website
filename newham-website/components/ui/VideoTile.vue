@@ -7,7 +7,7 @@
       class="absolute inset-0 -z-10 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
       :src="src" :poster="poster" muted loop playsinline preload="none" aria-hidden="true"
     ></video>
-    <div class="absolute inset-0 -z-10 bg-gradient-to-t from-ink-950/90 via-ink-950/40 to-ink-950/10" aria-hidden="true"></div>
+    <div class="absolute inset-0 -z-10 bg-gradient-to-t from-[#0b111c]/90 via-[#0b111c]/40 to-[#0b111c]/10" aria-hidden="true"></div>
     <div class="flex h-full flex-col justify-end p-6 text-white">
       <slot />
     </div>

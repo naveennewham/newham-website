@@ -1,5 +1,5 @@
 <template>
-  <figure ref="root" class="overflow-hidden rounded-xl border border-white/10 bg-ink-950/80 text-white shadow-frame">
+  <figure ref="root" class="overflow-hidden rounded-xl border border-white/10 bg-[#0b111c]/80 text-white shadow-frame">
     <div class="flex items-center gap-3 border-b border-white/10 bg-brand-900 px-4 py-2.5">
       <span class="flex gap-1.5" aria-hidden="true">
         <span class="h-2.5 w-2.5 rounded-full bg-[#ff5f57]"></span>

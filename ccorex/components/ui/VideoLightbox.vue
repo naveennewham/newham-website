@@ -1,7 +1,7 @@
 <template>
   <Teleport to="body">
     <Transition name="lb">
-      <div v-if="open" class="fixed inset-0 z-[100] flex items-center justify-center bg-ink-950/90 p-4 backdrop-blur-sm" role="dialog" aria-modal="true" :aria-label="title" @click.self="close" @keydown.esc="close">
+      <div v-if="open" class="fixed inset-0 z-[100] flex items-center justify-center bg-[#0b111c]/90 p-4 backdrop-blur-sm" role="dialog" aria-modal="true" :aria-label="title" @click.self="close" @keydown.esc="close">
         <div class="relative w-full max-w-5xl">
           <button ref="closeBtn" type="button" class="absolute -top-12 right-0 flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white hover:bg-white/20" aria-label="Close video" @click="close">
             <i class="fa-solid fa-xmark" aria-hidden="true"></i>

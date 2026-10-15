@@ -70,7 +70,7 @@
         <div class="relative mx-auto mt-5 flex max-w-6xl flex-wrap items-center gap-x-5 gap-y-3 rounded-2xl border border-white/10 bg-white/[.04] px-4 py-3 sm:px-5">
           <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-white/10"><i :class="[tours[active].icon, tours[active].tone]" aria-hidden="true"></i></span>
           <Transition name="msg" mode="out-in">
-            <p :key="active" class="min-w-0 flex-1 text-sm text-ink-200"><span class="font-semibold text-white">{{ tours[active].name }}</span> — {{ tours[active].line }}</p>
+            <p :key="active" class="min-w-[12rem] flex-1 text-sm text-ink-200"><span class="font-semibold text-white">{{ tours[active].name }}</span> — {{ tours[active].line }}</p>
           </Transition>
           <span class="hidden text-[11px] text-ink-400 md:inline">Motion-graphic tour · sample data</span>
           <div class="flex items-center gap-2">
