@@ -20,6 +20,8 @@
           <li><NuxtLink to="/talent-outsourcing" class="hover:text-white">Engineering talent outsourcing</NuxtLink></li>
           <li><NuxtLink to="/engineering-services" class="hover:text-white">Construction engineering services</NuxtLink></li>
           <li><NuxtLink to="/boq-estimation-services" class="hover:text-white">BOQ &amp; estimation services</NuxtLink></li>
+          <li><NuxtLink to="/fire-protection-design" class="hover:text-white">Fire protection design</NuxtLink></li>
+          <li><NuxtLink to="/shop-drawing-services" class="hover:text-white">Shop drawings &amp; as-builts</NuxtLink></li>
           <li><NuxtLink to="/industries" class="hover:text-white">Industries</NuxtLink></li>
         </ul>
       </div>

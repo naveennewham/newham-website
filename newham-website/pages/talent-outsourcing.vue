@@ -60,6 +60,7 @@
             <ul class="mt-4 flex flex-wrap gap-2">
               <li v-for="t in r.tags" :key="t" class="chip">{{ t }}</li>
             </ul>
+            <NuxtLink v-if="r.more" :to="r.more.to" class="mt-4 inline-flex text-sm font-semibold text-brand-700 hover:text-brand-900">{{ r.more.label }} <i class="fa-solid fa-arrow-right ml-2 mt-1 text-xs" aria-hidden="true"></i></NuxtLink>
           </div>
         </div>
         <div class="mt-10 rounded-2xl border border-ink-100 bg-ink-50 p-6">
@@ -128,7 +129,28 @@ useSeoMeta({
   ogDescription: 'Dedicated, Singapore-code-trained M&E engineers who work on your projects, to your standards.',
   ogUrl: siteUrl + '/talent-outsourcing'
 })
-useHead({ link: [{ rel: 'canonical', href: siteUrl + '/talent-outsourcing' }] })
+useHead({
+  link: [{ rel: 'canonical', href: siteUrl + '/talent-outsourcing' }],
+  script: [{
+    type: 'application/ld+json',
+    innerHTML: JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'Service',
+      name: 'M&E engineering talent outsourcing',
+      serviceType: 'Engineering staff outsourcing',
+      description: 'Dedicated M&E professionals for Singapore contractors: BIM modellers and drafters, estimators and QS, tender coordinators and fire protection engineers.',
+      url: siteUrl + '/talent-outsourcing',
+      areaServed: { '@type': 'Country', name: 'Singapore' },
+      provider: { '@type': 'Organization', name: 'Newham Technological Solutions', url: siteUrl },
+      hasOfferCatalog: { '@type': 'OfferCatalog', name: 'M&E engineering talent outsourcing', itemListElement: [
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'BIM modellers and drafters' } },
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Estimators and quantity surveyors' } },
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Tender and commercial coordinators' } },
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Fire protection engineers' } }
+      ] }
+    })
+  }]
+})
 
 const problems = [
   { icon: 'fa-solid fa-user-clock', title: 'Talent is scarce', text: 'Experienced M&E professionals in Singapore are hard to find and expensive, and every contractor is hiring from the same pool.' },
@@ -143,10 +165,10 @@ const values = [
 ]
 
 const roles = [
-  { icon: 'fa-solid fa-cubes', title: 'BIM modellers & drafters', text: 'Shop drawings, coordination models and as-built documentation, trained to Singapore submission standards.', tags: ['Revit MEP', 'AutoCAD', 'Navisworks', 'Shop drawings', 'As-builts'] },
-  { icon: 'fa-solid fa-calculator', title: 'Estimators & quantity surveyors', text: 'BOQ preparation, material take-offs, cost estimates and variation pricing, familiar with local tender formats.', tags: ['Take-offs', 'BOQ', 'Rate build-up', 'Variations'] },
+  { icon: 'fa-solid fa-cubes', title: 'BIM modellers & drafters', text: 'Shop drawings, coordination models and as-built documentation, trained to Singapore submission standards.', tags: ['Revit MEP', 'AutoCAD', 'Navisworks', 'Shop drawings', 'As-builts'], more: { to: '/shop-drawing-services', label: 'Shop drawing services' } },
+  { icon: 'fa-solid fa-calculator', title: 'Estimators & quantity surveyors', text: 'BOQ preparation, material take-offs, cost estimates and variation pricing, familiar with local tender formats.', tags: ['Take-offs', 'BOQ', 'Rate build-up', 'Variations'], more: { to: '/boq-estimation-services', label: 'BOQ & estimation services' } },
   { icon: 'fa-solid fa-file-signature', title: 'Tender & commercial coordinators', text: 'Tender compilation, compliance checklists, subcontractor comparisons and commercial correspondence.', tags: ['Tender compilation', 'Compliance checklists', 'Subcontractor comparison'] },
-  { icon: 'fa-solid fa-fire-extinguisher', title: 'Fire protection engineers', text: 'Sprinkler design, fire alarm layouts, gas suppression specifications and SCDF submission documents.', tags: ['Sprinklers', 'Fire alarm', 'Gas suppression', 'SCDF submissions'] }
+  { icon: 'fa-solid fa-fire-extinguisher', title: 'Fire protection engineers', text: 'Sprinkler design, fire alarm layouts, gas suppression specifications and SCDF submission documents.', tags: ['Sprinklers', 'Fire alarm', 'Gas suppression', 'SCDF submissions'], more: { to: '/fire-protection-design', label: 'Fire protection design' } }
 ]
 
 const disciplines = ['Fire protection', 'ACMV', 'ELV', 'Plumbing & sanitary', 'Electrical']

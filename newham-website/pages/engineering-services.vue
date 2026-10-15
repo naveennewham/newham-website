@@ -42,7 +42,8 @@
     <section id="fire-protection" class="section scroll-mt-16">
       <div class="container-site">
         <div class="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
-          <UiSectionHeader eyebrow="Stream 1" title="Fire protection design & calculations" lead="Design services for contractors and consultants. Deliverables are produced to Singapore codes and formatted for authority submission." />
+          <div><UiSectionHeader eyebrow="Stream 1" title="Fire protection design & calculations" lead="Design services for contractors and consultants. Deliverables are produced to Singapore codes and formatted for authority submission." />
+          <NuxtLink to="/fire-protection-design" class="mt-4 inline-flex text-sm font-semibold text-brand-700 hover:text-brand-900">Fire protection design in detail <i class="fa-solid fa-arrow-right ml-2 mt-1 text-xs" aria-hidden="true"></i></NuxtLink></div>
           <ul class="flex flex-wrap gap-2 lg:justify-end"><li v-for="c in ['SS CP 52', 'NFPA 13', 'SS CP 10', 'SCDF submission']" :key="c" class="chip">{{ c }}</li></ul>
         </div>
         <div class="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
@@ -134,7 +135,32 @@ useSeoMeta({
   ogDescription: 'Fire protection design and commercial project support for Singapore M&E contractors and consultants.',
   ogUrl: siteUrl + '/engineering-services'
 })
-useHead({ link: [{ rel: 'canonical', href: siteUrl + '/engineering-services' }] })
+useHead({
+  link: [{ rel: 'canonical', href: siteUrl + '/engineering-services' }],
+  script: [{
+    type: 'application/ld+json',
+    innerHTML: JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'Service',
+      name: 'Fire protection design and M&E commercial support',
+      serviceType: 'Engineering design services',
+      description: 'Sprinkler design and hydraulic calculations to SS CP 52 / NFPA 13, fire alarm design to SS CP 10, submission drawings, estimation, BOQ, tender support and QS for M&E contractors in Singapore.',
+      url: siteUrl + '/engineering-services',
+      areaServed: { '@type': 'Country', name: 'Singapore' },
+      provider: { '@type': 'Organization', name: 'Newham Technological Solutions', url: siteUrl },
+      hasOfferCatalog: { '@type': 'OfferCatalog', name: 'Fire protection design and M&E commercial support', itemListElement: [
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Sprinkler system design' } },
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Hydraulic calculations' } },
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Fire pump design and selection' } },
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Fire alarm system design' } },
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Submission drawing packages' } },
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Estimation and BOQ preparation' } },
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Tender queries and addenda' } },
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Project QS and variations' } }
+      ] }
+    })
+  }]
+})
 
 const problems = [
   { icon: 'fa-solid fa-hourglass-half', title: 'Design bottlenecks', text: 'FP drawings and hydraulic calculations pile up while engineers juggle coordination meetings, site visits and submissions.' },

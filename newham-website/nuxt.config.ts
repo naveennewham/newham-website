@@ -7,6 +7,8 @@ export default defineNuxtConfig({
   css: ['~/assets/main.css', '~/assets/theme.css'],
   runtimeConfig: {
     public: {
+      // Day this build was made; the sitemap uses it as lastmod for fixed pages.
+      buildDate: new Date().toISOString().slice(0, 10),
       siteUrl: 'https://newhamtech.com',
       // Base URL for the standalone CCorex product site.
       ccorexBaseUrl: process.env.CCOREX_BASE_URL || 'https://ccorex.com',

@@ -20,6 +20,10 @@
           <li><NuxtLink to="/solutions" class="hover:text-white">Solutions by role</NuxtLink></li>
           <li><NuxtLink to="/industries" class="hover:text-white">Industries</NuxtLink></li>
           <li><NuxtLink to="/pricing" class="hover:text-white">Pricing</NuxtLink></li>
+          <li><NuxtLink to="/estimating/fire-protection" class="hover:text-white">Fire protection estimating</NuxtLink></li>
+          <li><NuxtLink to="/estimating/acmv" class="hover:text-white">ACMV estimating</NuxtLink></li>
+          <li><NuxtLink to="/estimating/elv" class="hover:text-white">ELV estimating</NuxtLink></li>
+          <li><NuxtLink to="/compare/costx-cubicost-alternative" class="hover:text-white">CostX &amp; Cubicost alternative</NuxtLink></li>
         </ul>
       </div>
       <div>

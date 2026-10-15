@@ -4,11 +4,12 @@ import { industries } from '../../data/industries'
 import { trades } from '../../data/experience'
 
 // /ccorex, /ccorex/*, /product and /deeptrack are left out: their canonical is on ccorex.com.
-const STATIC = ['/', '/services', '/talent-outsourcing', '/engineering-services', '/boq-estimation-services', '/industries', '/case-studies', '/pricing', '/about', '/contact', '/appointment', '/privacy']
+const STATIC = ['/', '/services', '/talent-outsourcing', '/engineering-services', '/boq-estimation-services', '/fire-protection-design', '/shop-drawing-services', '/industries', '/case-studies', '/pricing', '/about', '/contact', '/appointment', '/privacy']
 
 export default defineEventHandler(async (event) => {
   const site = (useRuntimeConfig(event).public.siteUrl as string).replace(/\/$/, '')
-  const urls: { loc: string; lastmod?: string }[] = [...STATIC, ...industries.map((i) => `/industries/${i.id}`), ...trades.map((t) => `/case-studies/${t.id}`)].map((p) => ({ loc: `${site}${p}` }))
+  const built = useRuntimeConfig(event).public.buildDate as string | undefined
+  const urls: { loc: string; lastmod?: string }[] = [...STATIC, ...industries.map((i) => `/industries/${i.id}`), ...trades.map((t) => `/case-studies/${t.id}`)].map((p) => ({ loc: `${site}${p}`, lastmod: built }))
   const store = useStorage('assets:guides')
   for (const key of await store.getKeys()) {
     if (!key.endsWith('.md')) continue

@@ -106,18 +106,13 @@ const published = publishedGuides
 const config = useRuntimeConfig()
 useSeoMeta({
   title: 'Resources: estimating & payroll guides',
-  description: 'Upcoming CCorex guides on ACMV BOQs, material take-off, Singapore construction payroll and choosing estimating software, plus product tours and FAQs.',
+  description: 'Guides for MEP contractors: how to prepare a BOQ, take-off methods, ACMV, fire protection and ELV estimating, PSG grants, IDD and Singapore payroll.',
   ogTitle: 'CCorex resources — guides for construction teams',
-  ogDescription: 'Guides on BOQs, take-off, Singapore payroll and estimating software are coming soon. Explore product tours and the FAQ today.'
+  ogDescription: 'Practical guides for MEP contractors: preparing a BOQ, take-off methods, ACMV, fire protection and ELV estimating, PSG grants and Singapore payroll.'
 })
 useHead({ link: [{ rel: 'canonical', href: config.public.siteUrl + '/resources' }] })
 
 const guides = [
-  { topic: 'Estimating', icon: 'fa-solid fa-fan', tone: 'bg-blue-50 text-mep-mech', title: 'How to prepare an ACMV BOQ', text: 'Structuring an ACMV bill of quantities by area and item group so it is easy to price, check and approve.', related: { label: 'DeepCost', to: '/products/deepcost' } },
-  { topic: 'Take-off', icon: 'fa-solid fa-ruler-combined', tone: 'bg-sky-50 text-sky-700', title: 'Material take-off methods compared', text: 'Manual counts, spreadsheet MTOs, area-based take-off and on-screen take-off from drawings — trade-offs of each.', related: { label: 'DeepPlan AI', to: '/products/deepplan-ai' } },
-  { topic: 'HR & payroll', icon: 'fa-solid fa-landmark', tone: 'bg-emerald-50 text-emerald-700', title: 'Singapore payroll for construction: CPF, SDL & MOM', text: 'CPF and SDL contributions, MOM overtime rules and itemised payslips for an office and site workforce.', related: { label: 'DeepHR', to: '/products/deephr' } },
-  { topic: 'Buying guide', icon: 'fa-solid fa-list-check', tone: 'bg-brand-50 text-brand-700', title: 'Choosing estimating software for MEP contractors', text: 'Questions to ask about catalogs, approvals, take-off and how estimates carry into orders and projects.', related: { label: 'Pricing & plans', to: '/pricing' } },
-  { topic: 'Project delivery', icon: 'fa-solid fa-file-invoice-dollar', tone: 'bg-amber-50 text-amber-700', title: 'Controlling project cost from budget to month-end', text: 'Linking budgets, procurement, invoice matching, claims and month-end cost allocation so margin is visible while you can still act.', related: { label: 'DeepTrack', to: '/products/deeptrack' } },
   { topic: 'AI', icon: 'fa-solid fa-wand-magic-sparkles', tone: 'bg-ai-50 text-ai-700', title: 'Using an AI assistant in construction software', text: 'What a read-only assistant like ARIVU can help with day to day — answers from your own data, charts, exports and document search.', related: { label: 'ARIVU AI', to: '/products/arivu-ai' } }
 ]
 const links = [
