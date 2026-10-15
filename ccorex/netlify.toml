@@ -1,0 +1,8 @@
+# Netlify builds this folder as its own site (base directory = this folder).
+# Nuxt detects Netlify and builds server routes (sitemap, lead API) as functions.
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "22"

@@ -16,7 +16,7 @@ echo "✅ Build successful!"
 
 # Step 2: Set FTP credentials (replace only if not set externally)
 FTP_USER="${FTP_USER:-u704463692.lavenderblush-hippopotamus-801576.hostingersite.com}"
-FTP_PASSWORD="${FTP_PASSWORD:-Flexinnovix@2124}"
+FTP_PASSWORD="${FTP_PASSWORD:?Set FTP_PASSWORD in your environment; never commit it}"
 FTP_HOST="${FTP_HOST:-145.223.17.74}"
 
 # Clean FTP_HOST if it has ftp:// prefix
