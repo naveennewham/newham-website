@@ -11,6 +11,8 @@ export default defineNuxtConfig({
         { innerHTML: "(function(){var d=document.documentElement;try{var q=new URLSearchParams(location.search).get('theme');if(q==='light'||q==='dark')localStorage.setItem('theme',q);var t=q||localStorage.getItem('theme');if(t!=='light')d.classList.add('dark')}catch(e){d.classList.add('dark')}})()", tagPosition: 'head' }],
       titleTemplate: (title?: string) => (title ? `${title} | CCorex` : 'CCorex — AI-powered construction management platform'),
       meta: [
+        // Google Search Console ownership (URL-prefix property, verified by Markaiting's reader account).
+        { name: 'google-site-verification', content: 'f1yycXP3G0bTobOMlBs954eHMyqk2-pV0M-M4lETdiY' },
         { charset: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
         { name: 'theme-color', content: '#062a33' },
