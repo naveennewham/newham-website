@@ -3,6 +3,9 @@
 [build]
   command = "npm run build"
   publish = "dist"
+  # Always build. Netlify otherwise skips a site whose folder did not change and reports the
+  # skip as a failed deploy (with an email). "exit 1" means "go ahead and build".
+  ignore = "exit 1"
 
 [build.environment]
   NODE_VERSION = "24"
