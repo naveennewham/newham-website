@@ -13,7 +13,7 @@ faq:
   - q: "Why does hazard classification matter for estimating?"
     a: "The hazard class of each area determines the sprinkler design: head type, spacing, design density and pipe sizing. Pricing an area under the wrong hazard class changes both quantities and materials."
   - q: "Which codes apply to fire protection in Singapore?"
-    a: "SCDF's Fire Code sets fire safety requirements for buildings, and it references standards such as SS CP 52 for automatic sprinkler systems and SS CP 10 for fire alarm systems. Check the tender specification for the editions that apply."
+    a: "SCDF's Fire Code sets fire safety requirements for buildings, and it references standards such as SS CP 52 for automatic sprinkler systems and SS 645 for fire alarm systems. Check the tender specification for the editions that apply."
   - q: "How are sprinkler heads and pipework measured?"
     a: "Sprinkler heads are counted by type and finish per area. Pipework is measured in linear metres by size and material, with fittings either measured separately or included in the rate as stated in the BOQ."
   - q: "Should authority submissions be priced?"
@@ -39,7 +39,7 @@ Check the scope split carefully. Power supply to pumps and panels, tank construc
 
 ## Codes and the Singapore context
 
-In Singapore, fire safety requirements for buildings are set by SCDF through the Fire Code. Sprinkler systems are designed to SS CP 52, the code of practice for automatic fire sprinkler systems, and fire alarm systems to SS CP 10, the code of practice for the installation and servicing of electrical fire alarm systems. Smoke control and ventilation interfaces also link to SS 553 for ACMV.
+In Singapore, fire safety requirements for buildings are set by SCDF through the Fire Code. Sprinkler systems are designed to SS CP 52, the code of practice for automatic fire sprinkler systems, and fire alarm systems to SS 645, the code of practice for the installation and servicing of electrical fire alarm systems. Smoke control and ventilation interfaces also link to SS 553 for ACMV.
 
 You are rarely checking the design itself at tender, but you need to know enough to spot when the drawings and the stated hazard class do not match, or when a required item is missing. Always use the code editions named in the specification.
 

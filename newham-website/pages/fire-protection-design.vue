@@ -7,7 +7,7 @@
     title="Fire protection design and hydraulic calculations"
     lead="Sprinkler layouts, hydraulic calculations and submission drawings for M&E contractors and consultants — prepared to Singapore codes, scoped in writing, with PE review coordinated when the submission needs it."
     cta="Send us a project to scope"
-    :chips="['SS CP 52', 'NFPA 13', 'SS CP 10 / BS 5839', 'SCDF submission']"
+    :chips="['SS CP 52', 'NFPA 13', 'SS 645 / BS 5839', 'SCDF submission']"
     lottie="/lottie/blueprint.json"
     lottie-label="Illustration of an engineer drawing a blueprint"
     problem-eyebrow="Why contractors outsource fire protection design"
@@ -41,7 +41,7 @@ const scope = [
   { icon: 'fa-solid fa-shower', title: 'Sprinkler system design', text: 'Layout, head placement, pipe routing, zoning and riser diagrams to SS CP 52 and NFPA 13, across hazard classifications.' },
   { icon: 'fa-solid fa-square-root-variable', title: 'Hydraulic calculations', text: 'Node-by-node analysis, demand versus supply and residual pressure, in submission-ready reports.' },
   { icon: 'fa-solid fa-gears', title: 'Fire pump design & selection', text: 'Pump sizing, duty and standby, pressure-flow curves and pump room layouts.' },
-  { icon: 'fa-solid fa-bell', title: 'Fire alarm system design', text: 'Detection layout, zoning, loop design and cause-and-effect matrices to SS CP 10 / BS 5839.' },
+  { icon: 'fa-solid fa-bell', title: 'Fire alarm system design', text: 'Detection layout, zoning, loop design and cause-and-effect matrices to SS 645 / BS 5839.' },
   { icon: 'fa-solid fa-wind', title: 'Gas suppression design', text: 'Clean agent and inert gas systems: agent quantities, pipe sizing and nozzle placement.' },
   { icon: 'fa-solid fa-arrows-up-down', title: 'Wet & dry riser design', text: 'Riser sizing, landing valve placement and breeching inlet locations to SS CP 52.' },
   { icon: 'fa-solid fa-fire-extinguisher', title: 'Hose reel system design', text: 'Coverage planning, pipe sizing and flow and pressure analysis.' },
@@ -64,7 +64,7 @@ const related = [
 ]
 
 const faqs = [
-  { q: 'Which codes do you design to?', a: 'Sprinkler design and hydraulic calculations follow SS CP 52 and NFPA 13; fire alarm design follows SS CP 10 / BS 5839. Drawings are formatted for SCDF submission, using the code edition that applies to your project.' },
+  { q: 'Which codes do you design to?', a: 'Sprinkler design and hydraulic calculations follow SS CP 52 and NFPA 13; fire alarm design follows SS 645 / BS 5839. Drawings are formatted for SCDF submission, using the code edition that applies to your project.' },
   { q: 'Can you handle PE endorsement?', a: 'We coordinate review and endorsement by a Singapore-registered Professional Engineer where the submission needs it, and quote those fees separately.' },
   { q: 'What do you need to start?', a: 'The architectural drawings, any fire safety requirements already issued, the systems in scope and your submission date. Existing water supply information helps for hydraulic calculations.' },
   { q: 'Do you work in AutoCAD or Revit?', a: 'Either. Submission drawing packages are prepared in AutoCAD or Revit to match your standards.' },

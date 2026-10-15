@@ -39,7 +39,7 @@ Full hydraulic analysis per SS CP 52 / NFPA. Node-by-node calculations, demand v
 Fire Pump Design & Selection
 Pump sizing, duty/standby configuration, pressure-flow curve analysis, pump room layouts. Electric, diesel, and jockey pump specifications.
 Fire Alarm System Design
-Detection layout, zone planning, loop design, cause-and-effect matrices, panel specifications. SS CP 10 / BS 5839. Conventional and addressable systems.
+Detection layout, zone planning, loop design, cause-and-effect matrices, panel specifications. SS 645 / BS 5839. Conventional and addressable systems.
 Gas Suppression System Design
 Clean agent (FM-200, Novec 1230) and inert gas systems. Room integrity, agent quantity calculations, pipe network sizing, nozzle placement.
 Wet Riser & Dry Riser Design
