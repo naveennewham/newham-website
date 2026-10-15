@@ -1,0 +1,32 @@
+{
+  "name": "newham-nuxt",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "dev:main": "cross-env NUXT_CLI_FORKS=0 NUXT_TELEMETRY_DISABLED=1 NODE_NO_WARNINGS=1 npx nuxi dev --no-fork --host 127.0.0.1 --port 3005",
+    "dev:ccorex": "npm run dev:host --prefix ../ccorex",
+    "dev:all": "concurrently -k -n ccorex,main -c magenta,cyan \"npm run dev:ccorex\" \"cross-env CCOREX_BASE_URL=http://127.0.0.1:3100 npm run dev:main\"",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "dependencies": {
+    "animate.css": "^4.1.1",
+    "lottie-web": "5.12.2",
+    "marked": "^18.1.1",
+    "swiper": "^11.2.10",
+    "vue": "^3.3.4",
+    "yaml": "^2.9.1"
+  },
+  "devDependencies": {
+    "@nuxtjs/tailwindcss": "^6.12.0",
+    "autoprefixer": "^10.4.14",
+    "concurrently": "^9.0.0",
+    "cross-env": "^7.0.3",
+    "nuxt": "^3.11.0",
+    "postcss": "^8.4.27",
+    "tailwindcss": "^3.3.3"
+  }
+}

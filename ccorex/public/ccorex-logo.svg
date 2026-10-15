@@ -1,0 +1,74 @@
+<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Circle -->
+  <circle cx="100" cy="100" r="95" fill="url(#gradientCCorex)" stroke="#06B6D4" stroke-width="2" opacity="0.9"/>
+
+  <!-- Define Gradients -->
+  <defs>
+    <linearGradient id="gradientCCorex" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#06b6d4;stop-opacity:0.9" />
+    </linearGradient>
+  </defs>
+
+  <!-- Center Circle - CCorex Hub -->
+  <circle cx="100" cy="100" r="25" fill="#06B6D4" opacity="0.2" stroke="#06B6D4" stroke-width="2"/>
+  <circle cx="100" cy="100" r="15" fill="#06B6D4" opacity="0.4"/>
+  <text x="100" y="108" font-size="20" font-weight="bold" fill="#00D9FF" text-anchor="middle" opacity="0.8">CC</text>
+
+  <!-- Top Left Quadrant - DeepCost -->
+  <g>
+    <circle cx="65" cy="65" r="18" fill="url(#quadrant1)" stroke="#06B6D4" stroke-width="1.5" opacity="0.8"/>
+    <text x="65" y="71" font-size="12" font-weight="bold" fill="#00D9FF" text-anchor="middle" opacity="0.7">$</text>
+    <!-- Connection Line to Center -->
+    <line x1="78" y1="78" x2="88" y2="88" stroke="#00D9FF" stroke-width="1.5" opacity="0.5"/>
+  </g>
+
+  <!-- Top Right Quadrant - DeepTrack -->
+  <g>
+    <circle cx="135" cy="65" r="18" fill="url(#quadrant2)" stroke="#06B6D4" stroke-width="1.5" opacity="0.8"/>
+    <text x="135" y="72" font-size="13" font-weight="bold" fill="#00D9FF" text-anchor="middle" opacity="0.7">▢</text>
+    <!-- Connection Line to Center -->
+    <line x1="122" y1="78" x2="112" y2="88" stroke="#00D9FF" stroke-width="1.5" opacity="0.5"/>
+  </g>
+
+  <!-- Bottom Left Quadrant - DeepHR -->
+  <g>
+    <circle cx="65" cy="135" r="18" fill="url(#quadrant3)" stroke="#06B6D4" stroke-width="1.5" opacity="0.8"/>
+    <text x="65" y="141" font-size="13" font-weight="bold" fill="#00D9FF" text-anchor="middle" opacity="0.7">👥</text>
+    <!-- Connection Line to Center -->
+    <line x1="78" y1="122" x2="88" y2="112" stroke="#00D9FF" stroke-width="1.5" opacity="0.5"/>
+  </g>
+
+  <!-- Bottom Right Quadrant - DeepPlanAI -->
+  <g>
+    <circle cx="135" cy="135" r="18" fill="url(#quadrant4)" stroke="#06B6D4" stroke-width="1.5" opacity="0.8"/>
+    <text x="135" y="141" font-size="13" font-weight="bold" fill="#00D9FF" text-anchor="middle" opacity="0.7">🧠</text>
+    <!-- Connection Line to Center -->
+    <line x1="122" y1="122" x2="112" y2="112" stroke="#00D9FF" stroke-width="1.5" opacity="0.5"/>
+  </g>
+
+  <!-- Additional decorative connections -->
+  <circle cx="65" cy="65" r="20" fill="none" stroke="#00D9FF" stroke-width="0.8" opacity="0.3"/>
+  <circle cx="135" cy="65" r="20" fill="none" stroke="#00D9FF" stroke-width="0.8" opacity="0.3"/>
+  <circle cx="65" cy="135" r="20" fill="none" stroke="#00D9FF" stroke-width="0.8" opacity="0.3"/>
+  <circle cx="135" cy="135" r="20" fill="none" stroke="#00D9FF" stroke-width="0.8" opacity="0.3"/>
+
+  <defs>
+    <radialGradient id="quadrant1" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#06b6d4;stop-opacity:0.4" />
+      <stop offset="100%" style="stop-color:#06b6d4;stop-opacity:0.1" />
+    </radialGradient>
+    <radialGradient id="quadrant2" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#06b6d4;stop-opacity:0.4" />
+      <stop offset="100%" style="stop-color:#06b6d4;stop-opacity:0.1" />
+    </radialGradient>
+    <radialGradient id="quadrant3" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#06b6d4;stop-opacity:0.4" />
+      <stop offset="100%" style="stop-color:#06b6d4;stop-opacity:0.1" />
+    </radialGradient>
+    <radialGradient id="quadrant4" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#06b6d4;stop-opacity:0.4" />
+      <stop offset="100%" style="stop-color:#06b6d4;stop-opacity:0.1" />
+    </radialGradient>
+  </defs>
+</svg>
