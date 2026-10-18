@@ -69,7 +69,7 @@
     <!-- Options -->
     <section class="section">
       <div class="container-site">
-        <UiSectionHeader center eyebrow="Your options" title="Outsource the BOQ, buy CostX, or hire an estimator?" lead="Contractors short of estimating capacity usually weigh three options. Each suits a different tender volume." />
+        <UiSectionHeader center eyebrow="Your options" title="Outsource the BOQ, buy estimating software, or hire an estimator?" lead="Contractors short of estimating capacity usually weigh three options. Each suits a different tender volume." />
         <div class="relative mt-12 overflow-x-auto rounded-2xl border border-ink-100 bg-white shadow-card">
           <table class="w-full min-w-[760px] text-sm">
             <caption class="sr-only">Outsourced BOQ services compared with estimating software and an in-house estimator</caption>
@@ -89,7 +89,7 @@
         </div>
         <p class="mt-6 text-center text-sm text-ink-600">
           Choosing estimating software instead?
-          <a :href="`${ccorexUrl}/compare/costx-cubicost-alternative`" class="font-semibold text-brand-700 hover:text-brand-900">See how DeepCost compares with CostX and Cubicost</a>.
+          <a :href="`${ccorexUrl}/compare/costx-cubicost-alternative`" class="font-semibold text-brand-700 hover:text-brand-900">See how DeepCost compares with other estimating tools</a>.
         </p>
       </div>
     </section>
@@ -137,11 +137,11 @@ const faqs = [
   { q: 'Can you help with tender queries and addenda?', a: 'Yes. We draft RFIs, track clarifications, review addenda and flag scope gaps between the drawings, specifications and BOQ.' },
   { q: 'How is the work priced?', a: 'Per deliverable for a single tender, or as a monthly retainer for a steady pipeline. Billing is monthly in SGD, with no recruitment or setup fees. Contact admin@newhamtech.com for a quote.' },
   { q: 'Can your estimators work in our estimating software?', a: 'Yes. If you use DeepCost from CCorex, our estimators can work directly in your data; otherwise we deliver in Excel or your own templates.' },
-  { q: 'Should we outsource the BOQ or buy software such as CostX or Cubicost?', a: 'Software helps an estimator you already have work faster, but someone on your team still measures and prices every tender. Outsourcing suits contractors who are short of estimators or tender in peaks. If your volume is steady, a dedicated estimator may suit you better than either.' },
+  { q: 'Should we outsource the BOQ or buy estimating software?', a: 'Software helps an estimator you already have work faster, but someone on your team still measures and prices every tender. Outsourcing suits contractors who are short of estimators or tender in peaks. If your volume is steady, a dedicated estimator may suit you better than either.' },
   { q: 'How quickly can you prepare a BOQ?', a: 'It depends on the size of the drawing set and the number of trades. We confirm the delivery date in writing, against your submission date, before work starts.' }
 ]
 
-const optionCols = ['Newham BOQ service', 'Software (CostX, Cubicost)', 'Hiring an estimator']
+const optionCols = ['Newham BOQ service', 'Estimating software', 'Hiring an estimator']
 const optionRows = [
   { label: 'Who measures and prices', values: ['Our M&E estimators', 'Your own estimator, using the software', 'Your new employee'] },
   { label: 'What you pay for', values: ['Each tender, or a monthly retainer', 'Software licences and training', 'Salary, CPF and recruitment'] },

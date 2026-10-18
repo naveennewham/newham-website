@@ -50,6 +50,7 @@
             </tbody>
           </table>
         </div>
+        <p class="mt-4 text-xs leading-relaxed text-ink-500">Compiled from each vendor's public information as of October 2026 and may have changed since. CostX is a trademark of RIB Software, Cubicost of Glodon and PlanSwift of ConstructConnect. Their owners are not affiliated with CCorex and have not endorsed this comparison. To correct anything here, email admin@newhamtech.com.</p>
       </div>
     </section>
 
@@ -96,8 +97,8 @@ const rows = [
   { label: 'Take-off from drawings', values: ['In DeepPlan AI (AI take-off in early access)', 'Yes', 'Yes', 'Yes'] },
   { label: 'Pricing on the client’s BOQ', values: ['FOT AI finds the quantity and amount columns on the BOQ PDF', 'Check with vendor', 'Check with vendor', 'Check with vendor'] },
   { label: 'Approvals per tender stage', values: ['Area schedule, MTO and FOT each approved', 'Check with vendor', 'Check with vendor', 'Check with vendor'] },
-  { label: 'Same sign-in for projects & payroll', values: ['Yes — DeepTrack and DeepHR', 'No', 'No', 'No'] },
-  { label: 'Singapore PSG pre-approved', values: ['No', 'Check GoBusiness', 'Yes (per GoBusiness listing)', 'Check GoBusiness'] }
+  { label: 'Same sign-in for projects & payroll', values: ['Yes — DeepTrack and DeepHR', 'Check with vendor', 'Check with vendor', 'Check with vendor'] },
+  { label: 'Singapore PSG pre-approved', values: ['No', 'Check GoBusiness', 'Check GoBusiness', 'Check GoBusiness'] }
 ]
 const chooseUs = [
   'You are an MEP or fire protection contractor pricing tenders, not a consultant QS measuring every trade.',
