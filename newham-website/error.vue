@@ -21,5 +21,7 @@
 <script setup lang="ts">
 const props = defineProps<{ error: { statusCode?: number } }>()
 const is404 = computed(() => props.error?.statusCode === 404)
-useSeoMeta({ title: is404.value ? 'Page not found' : 'Error', robots: 'noindex' })
+// noindex only for real 404s. Any other error can be a file that failed to load in a crawler's
+// renderer; marking it noindex would tell Google to drop a page that is fine.
+useSeoMeta({ title: is404.value ? 'Page not found' : 'Error', robots: is404.value ? 'noindex' : undefined })
 </script>
