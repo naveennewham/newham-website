@@ -6,8 +6,8 @@
       <div class="container-site relative grid items-center gap-10 pb-20 pt-16 lg:grid-cols-[1.3fr_1fr] lg:pt-20">
         <div class="max-w-3xl">
           <p class="eyebrow-dark">Estimation &amp; tender support · Singapore</p>
-          <h1 class="h-display mt-4 text-white">BOQ preparation and M&amp;E estimation services in Singapore</h1>
-          <p class="lead-dark mt-6 max-w-2xl">Take-offs, priced BOQs, rate build-ups and tender queries for M&amp;E contractors who have more tenders than estimators. Scoped in writing, turned around to your submission date.</p>
+          <h1 class="h-display mt-4 text-white">BOQ services in Singapore: BOQ preparation and M&amp;E estimation</h1>
+          <p class="lead-dark mt-6 max-w-2xl">Bill of quantities (BOQ) services for M&amp;E contractors who have more tenders than estimators: take-offs, priced BOQs, rate build-ups and tender queries. Scoped in writing, turned around to your submission date.</p>
           <div class="mt-8 flex flex-wrap gap-3">
             <NuxtLink to="/appointment" class="btn-accent">Send us a tender to scope <i class="fa-solid fa-arrow-right text-xs" aria-hidden="true"></i></NuxtLink>
             <a href="#scope" class="btn-ghost-dark">What we prepare</a>
@@ -66,8 +66,36 @@
       </div>
     </section>
 
-    <!-- Related -->
+    <!-- Options -->
     <section class="section">
+      <div class="container-site">
+        <UiSectionHeader center eyebrow="Your options" title="Outsource the BOQ, buy CostX, or hire an estimator?" lead="Contractors short of estimating capacity usually weigh three options. Each suits a different tender volume." />
+        <div class="relative mt-12 overflow-x-auto rounded-2xl border border-ink-100 bg-white shadow-card">
+          <table class="w-full min-w-[760px] text-sm">
+            <caption class="sr-only">Outsourced BOQ services compared with estimating software and an in-house estimator</caption>
+            <thead class="bg-ink-50 text-xs uppercase tracking-wider text-ink-500">
+              <tr>
+                <th scope="col" class="px-5 py-3 text-left font-semibold"></th>
+                <th v-for="c in optionCols" :key="c" scope="col" class="px-4 py-3 text-left font-semibold" :class="c === optionCols[0] ? 'text-brand-700' : ''">{{ c }}</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-ink-100">
+              <tr v-for="r in optionRows" :key="r.label">
+                <th scope="row" class="px-5 py-3.5 text-left font-semibold text-ink-900">{{ r.label }}</th>
+                <td v-for="(v, i) in r.values" :key="i" class="px-4 py-3.5 text-ink-700" :class="i === 0 ? 'bg-brand-50/40' : ''">{{ v }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="mt-6 text-center text-sm text-ink-600">
+          Choosing estimating software instead?
+          <a :href="`${ccorexUrl}/compare/costx-cubicost-alternative`" class="font-semibold text-brand-700 hover:text-brand-900">See how DeepCost compares with CostX and Cubicost</a>.
+        </p>
+      </div>
+    </section>
+
+    <!-- Related -->
+    <section class="section pt-0">
       <div class="container-site grid gap-4 md:grid-cols-2">
         <NuxtLink to="/engineering-services" class="card group">
           <p class="eyebrow">Also from Newham</p>
@@ -99,7 +127,8 @@
 <script setup lang="ts">
 const siteUrl = useRuntimeConfig().public.siteUrl as string
 const pageUrl = siteUrl + '/boq-estimation-services'
-const description = 'BOQ preparation, M&E take-offs, rate build-ups and tender support for Singapore contractors: fire protection, ACMV, electrical, ELV and plumbing.'
+const ccorexUrl = useRuntimeConfig().public.ccorexBaseUrl as string
+const description = 'BOQ services in Singapore: BOQ preparation, M&E take-offs, rate build-ups and tender support for fire protection, ACMV, electrical, ELV and plumbing.'
 
 const faqs = [
   { q: 'What do you need from us to prepare a BOQ?', a: 'The tender drawings and specifications, the client\'s BOQ format if there is one, your submission date, and your preferred rates or supplier prices if you want the BOQ priced with them.' },
@@ -107,13 +136,23 @@ const faqs = [
   { q: 'Which trades do you cover?', a: 'M&E building services: fire protection, ACMV, electrical, ELV, and plumbing and sanitary.' },
   { q: 'Can you help with tender queries and addenda?', a: 'Yes. We draft RFIs, track clarifications, review addenda and flag scope gaps between the drawings, specifications and BOQ.' },
   { q: 'How is the work priced?', a: 'Per deliverable for a single tender, or as a monthly retainer for a steady pipeline. Billing is monthly in SGD, with no recruitment or setup fees. Contact admin@newhamtech.com for a quote.' },
-  { q: 'Can your estimators work in our estimating software?', a: 'Yes. If you use DeepCost from CCorex, our estimators can work directly in your data; otherwise we deliver in Excel or your own templates.' }
+  { q: 'Can your estimators work in our estimating software?', a: 'Yes. If you use DeepCost from CCorex, our estimators can work directly in your data; otherwise we deliver in Excel or your own templates.' },
+  { q: 'Should we outsource the BOQ or buy software such as CostX, Cubicost or Togal.AI?', a: 'Software helps an estimator you already have work faster, but someone on your team still measures and prices every tender. Outsourcing suits contractors who are short of estimators or tender in peaks. If your volume is steady, a dedicated estimator may suit you better than either.' },
+  { q: 'How quickly can you prepare a BOQ?', a: 'It depends on the size of the drawing set and the number of trades. We confirm the delivery date in writing, against your submission date, before work starts.' }
+]
+
+const optionCols = ['Newham BOQ service', 'Software (CostX, Cubicost, Togal.AI)', 'Hiring an estimator']
+const optionRows = [
+  { label: 'Who measures and prices', values: ['Our M&E estimators', 'Your own estimator, using the software', 'Your new employee'] },
+  { label: 'What you pay for', values: ['Each tender, or a monthly retainer', 'Software licences and training', 'Salary, CPF and recruitment'] },
+  { label: 'Time to first BOQ', values: ['From your first tender', 'After set-up and training', 'After hiring and onboarding'] },
+  { label: 'Best when', values: ['Tenders come in peaks, or you have no spare estimator', 'You have estimators and want them faster', 'Tender volume is steady all year'] }
 ]
 
 useSeoMeta({
-  title: 'BOQ preparation & M&E estimation services, Singapore',
+  title: 'BOQ services in Singapore: preparation & M&E estimation',
   description,
-  ogTitle: 'BOQ preparation & M&E estimation services in Singapore — Newham',
+  ogTitle: 'BOQ services in Singapore: BOQ preparation & M&E estimation — Newham',
   ogDescription: description,
   ogUrl: pageUrl
 })
@@ -126,6 +165,7 @@ useHead({
         '@context': 'https://schema.org',
         '@type': 'Service',
         name: 'BOQ preparation and M&E estimation services',
+        alternateName: ['BOQ services', 'Bill of quantities services'],
         serviceType: 'Construction cost estimation',
         description,
         url: pageUrl,
