@@ -142,4 +142,4 @@ This guide is general information, not legal advice. Check the current Act and y
 
 ## How CCorex helps
 
-[DeepTrack](/products/deeptrack) calculates retention on each progress claim, alongside 9% GST, and produces a PDF Progress Claim Certificate numbered per project that shows retention to date and the previous retention. [Contact us](/contact) to set it up on one of your live projects.
+[DeepTrack](/products/deeptrack) calculates retention on each progress claim, alongside 9% GST, and produces a PDF Progress Claim Certificate numbered per project that shows retention to date and the previous retention. A retention release tracker is in early access: [request early access](/contact?interest=retention-release). [Contact us](/contact) to set it up on one of your live projects.

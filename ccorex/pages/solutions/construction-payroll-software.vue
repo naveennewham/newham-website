@@ -5,7 +5,7 @@
     app-name="DeepHR"
     eyebrow="Construction payroll · Singapore"
     seo-title="Construction payroll software in Singapore"
-    seo-description="Construction payroll software for Singapore: site attendance into payroll, CPF, SDL and SHG, payslips, leave and work pass records."
+    seo-description="Construction payroll software for Singapore: site attendance into payroll, CPF, SDL and SHG, payslips and work pass records. IR8A files and levy reports in early access."
     h1="Construction payroll software for Singapore"
     lead="DeepHR turns face and GPS attendance from your sites into payroll with CPF, SDL and SHG worked out, and keeps each worker’s pass type, number and expiry date on their record."
     :hero-points="['Site attendance into payroll', 'CPF, SDL & SHG', 'Payslips & leave', 'Work pass records']"
@@ -17,6 +17,7 @@
     :features="features"
     :guide-links="guides"
     :faqs="faqs"
+    :early-access="['ir8a-ais', 'foreign-worker-levy', 'work-pass-alerts']"
     cta-title="See a construction payroll run in DeepHR"
     cta-lead="Bring a month of attendance to a 30-minute demo. We will walk through attendance approval, the payroll run and the statutory figures."
   />

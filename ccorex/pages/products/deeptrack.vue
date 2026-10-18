@@ -257,6 +257,8 @@
       </div>
     </section>
 
+    <SolutionEarlyAccess :items="['sop-act-claims', 'retention-release', 'variation-orders']" />
+
     <!-- Singapore solutions -->
     <section class="section-tight">
       <div class="container-site">

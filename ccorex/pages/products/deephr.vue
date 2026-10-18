@@ -355,6 +355,8 @@
       </div>
     </section>
 
+    <SolutionEarlyAccess :items="['ir8a-ais', 'foreign-worker-levy', 'work-pass-alerts']" />
+
     <!-- Singapore solutions -->
     <section class="section-tight">
       <div class="container-site">

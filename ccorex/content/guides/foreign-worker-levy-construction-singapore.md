@@ -141,4 +141,4 @@ Two cost views are worth separating. **Levy per worker** catches billing errors 
 
 ## How CCorex helps
 
-[DeepHR](/products/deephr) keeps each worker's immigration status, pass type, pass number and issue and expiry dates on their employee record, with Excel import and export. Attendance is captured with a face check and GPS on each worker's own phone, with no kiosk hardware, and approved attendance flows into Singapore payroll with CPF, SDL and SHG funds. [Contact us](/contact) to see it with your own workforce data.
+[DeepHR](/products/deephr) keeps each worker's immigration status, pass type, pass number and issue and expiry dates on their employee record, with Excel import and export. Attendance is captured with a face check and GPS on each worker's own phone, with no kiosk hardware, and approved attendance flows into Singapore payroll with CPF, SDL and SHG funds. A foreign worker levy report and Work Permit expiry alerts are in early access: [request early access](/contact?interest=foreign-worker-levy). [Contact us](/contact) to see it with your own workforce data.
