@@ -189,7 +189,7 @@ useHead({
       email: 'admin@newhamtech.com',
       description: 'Construction software (CCorex), engineering talent outsourcing and construction engineering services for the Singapore construction industry.',
       areaServed: [{ '@type': 'Country', name: 'Singapore' }, { '@type': 'Country', name: 'India' }],
-      address: { '@type': 'PostalAddress', streetAddress: '160 Robinson Road, #14-04 SBF Center', addressLocality: 'Singapore', addressCountry: 'SG' },
+      address: { '@type': 'PostalAddress', streetAddress: '101 Kitchener Road, #03-14, Jalan Besar Plaza', addressLocality: 'Singapore', postalCode: '208511', addressCountry: 'SG' },
       brand: { '@type': 'Brand', name: 'CCorex', url: CCOREX_URL },
       knowsAbout: ['MEP estimation', 'BIM modelling', 'Quantity surveying', 'Fire protection design', 'SS CP 52', 'Construction software']
     }]

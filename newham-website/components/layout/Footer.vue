@@ -32,7 +32,7 @@
           <li><NuxtLink to="/contact" class="hover:text-white">Contact</NuxtLink></li>
           <li><NuxtLink to="/appointment" class="hover:text-white">Book a discovery call</NuxtLink></li>
         </ul>
-        <p class="mt-6 text-sm leading-relaxed"><span class="font-semibold text-white">Singapore</span><br />160 Robinson Road, #14-04 SBF Center<br />Newham Solutions Pte. Ltd. · UEN 202346654E</p>
+        <p class="mt-6 text-sm leading-relaxed"><span class="font-semibold text-white">Singapore</span><br />101 Kitchener Road, #03-14<br />Jalan Besar Plaza, Singapore 208511<br />Newham Solutions Pte. Ltd. · UEN 202346654E</p>
         <p class="mt-3 text-sm leading-relaxed"><span class="font-semibold text-white">Chennai, India</span><br />Perungudi, OMR</p>
       </div>
     </div>

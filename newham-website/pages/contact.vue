@@ -60,7 +60,7 @@
             <h2 class="text-base font-semibold">Email</h2>
             <p class="mt-2 text-sm"><a href="mailto:admin@newhamtech.com" class="font-semibold text-brand-700 hover:text-brand-900">admin@newhamtech.com</a></p>
             <h2 class="mt-6 text-base font-semibold">Offices</h2>
-            <p class="mt-2 text-sm text-ink-600"><span class="font-semibold text-ink-900">Singapore</span><br />160 Robinson Road, #14-04 SBF Center, Singapore</p>
+            <p class="mt-2 text-sm text-ink-600"><span class="font-semibold text-ink-900">Singapore</span><br />101 Kitchener Road, #03-14, Jalan Besar Plaza, Singapore 208511</p>
             <p class="mt-3 text-sm text-ink-600"><span class="font-semibold text-ink-900">Chennai, India</span><br />3rd Floor, Plot no. 21, Perungudi, OMR, Chennai, Tamil Nadu 600096</p>
             <h2 class="mt-6 text-base font-semibold">CCorex users</h2>
             <p class="mt-2 text-sm text-ink-600">Sign in at <a :href="CCOREX_SIGNIN_URL" class="font-semibold text-brand-700 hover:text-brand-900">dash.ccorex.com</a>.</p>
