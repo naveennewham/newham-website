@@ -137,11 +137,11 @@ const faqs = [
   { q: 'Can you help with tender queries and addenda?', a: 'Yes. We draft RFIs, track clarifications, review addenda and flag scope gaps between the drawings, specifications and BOQ.' },
   { q: 'How is the work priced?', a: 'Per deliverable for a single tender, or as a monthly retainer for a steady pipeline. Billing is monthly in SGD, with no recruitment or setup fees. Contact admin@newhamtech.com for a quote.' },
   { q: 'Can your estimators work in our estimating software?', a: 'Yes. If you use DeepCost from CCorex, our estimators can work directly in your data; otherwise we deliver in Excel or your own templates.' },
-  { q: 'Should we outsource the BOQ or buy software such as CostX, Cubicost or Togal.AI?', a: 'Software helps an estimator you already have work faster, but someone on your team still measures and prices every tender. Outsourcing suits contractors who are short of estimators or tender in peaks. If your volume is steady, a dedicated estimator may suit you better than either.' },
+  { q: 'Should we outsource the BOQ or buy software such as CostX or Cubicost?', a: 'Software helps an estimator you already have work faster, but someone on your team still measures and prices every tender. Outsourcing suits contractors who are short of estimators or tender in peaks. If your volume is steady, a dedicated estimator may suit you better than either.' },
   { q: 'How quickly can you prepare a BOQ?', a: 'It depends on the size of the drawing set and the number of trades. We confirm the delivery date in writing, against your submission date, before work starts.' }
 ]
 
-const optionCols = ['Newham BOQ service', 'Software (CostX, Cubicost, Togal.AI)', 'Hiring an estimator']
+const optionCols = ['Newham BOQ service', 'Software (CostX, Cubicost)', 'Hiring an estimator']
 const optionRows = [
   { label: 'Who measures and prices', values: ['Our M&E estimators', 'Your own estimator, using the software', 'Your new employee'] },
   { label: 'What you pay for', values: ['Each tender, or a monthly retainer', 'Software licences and training', 'Salary, CPF and recruitment'] },
