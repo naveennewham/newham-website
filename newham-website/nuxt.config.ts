@@ -35,7 +35,8 @@ export default defineNuxtConfig({
     // Every page is static HTML served from the CDN (fast for crawlers, no cold starts).
     // Pages are found by following links from the home page, sitemap and robots.txt.
     // Redirect URLs are skipped: they must stay 301s, and Netlify serves a static file in place of a redirect.
-    prerender: { crawlLinks: true, routes: ['/', '/sitemap.xml', '/robots.txt'], ignore: oldCaseStudies.map((id) => `/case-studies/${id}`) }
+    // about.html rather than about/index.html: Netlify would 301 /about to /about/.
+    prerender: { crawlLinks: true, autoSubfolderIndex: false, routes: ['/', '/sitemap.xml', '/robots.txt'], ignore: oldCaseStudies.map((id) => `/case-studies/${id}`) }
   },
   routeRules: {
     // Old case-study URLs (fabricated examples, removed) -> project experience.

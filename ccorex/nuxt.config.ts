@@ -59,7 +59,8 @@ export default defineNuxtConfig({
     // Pages are found by following links from the home page, sitemap and robots.txt.
     // Skipped: /studio is dev-only (404 in production); redirect URLs must stay 301s, and
     // Netlify serves a static file in place of a redirect.
-    prerender: { crawlLinks: true, routes: ['/', '/sitemap.xml', '/robots.txt'], ignore: ['/studio', '/apps', '/products/deepplanai'] }
+    // about.html rather than about/index.html: Netlify would 301 /about to /about/.
+    prerender: { crawlLinks: true, autoSubfolderIndex: false, routes: ['/', '/sitemap.xml', '/robots.txt'], ignore: ['/studio', '/apps', '/products/deepplanai'] }
   },
   routeRules: {
     // Old duplicate URLs — one canonical page per app.
