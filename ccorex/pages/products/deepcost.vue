@@ -36,6 +36,8 @@
             src="/images/product/deepcost-area-schedule.webp"
             alt="DeepCost material take-off for a government school project: block, level and room tree on the left, room dimensions and fire alarm item groups priced by material and installation cost in SGD on the right"
             url="deepcost.app / mto"
+            :width="1800"
+            :height="1093"
             dark
             eager
           />
