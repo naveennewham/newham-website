@@ -5,6 +5,7 @@
         <img src="~/assets/Newham_Logo_white.png" alt="Newham" class="h-7 w-auto" width="110" height="28" loading="lazy" />
         <p class="mt-4 text-sm leading-relaxed">Newham Technological Solutions builds CCorex construction software and provides specialist M&amp;E engineers and engineering services to construction businesses in Singapore and India.</p>
         <p class="mt-4 text-sm"><a :href="`mailto:${email}`" class="font-semibold text-white hover:text-cyan-400">{{ email }}</a></p>
+        <p class="mt-1 text-sm"><a href="tel:+6598804197" class="font-semibold text-white hover:text-cyan-400">+65 9880 4197</a></p>
       </div>
       <div>
         <h2 class="text-sm font-semibold text-white">CCorex software</h2>

@@ -187,6 +187,7 @@ useHead({
       url: siteUrl,
       logo: siteUrl + '/newham-logo.png',
       email: 'admin@newhamtech.com',
+      telephone: '+65 9880 4197',
       description: 'Construction software (CCorex), engineering talent outsourcing and construction engineering services for the Singapore construction industry.',
       areaServed: [{ '@type': 'Country', name: 'Singapore' }, { '@type': 'Country', name: 'India' }],
       address: { '@type': 'PostalAddress', streetAddress: '101 Kitchener Road, #03-14, Jalan Besar Plaza', addressLocality: 'Singapore', postalCode: '208511', addressCountry: 'SG' },

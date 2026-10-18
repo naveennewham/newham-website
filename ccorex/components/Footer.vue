@@ -38,6 +38,7 @@
           <li><NuxtLink to="/faq" class="hover:text-white">FAQ</NuxtLink></li>
           <li><NuxtLink to="/contact" class="hover:text-white">Contact &amp; demo</NuxtLink></li>
           <li><a href="mailto:admin@newhamtech.com" class="hover:text-white">admin@newhamtech.com</a></li>
+          <li><a href="tel:+6598804197" class="hover:text-white">+65 9880 4197</a></li>
         </ul>
       </div>
     </div>
