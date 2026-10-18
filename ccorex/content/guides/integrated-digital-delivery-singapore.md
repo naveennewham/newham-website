@@ -3,6 +3,7 @@ title: "IDD Construction in Singapore: What Contractors Need"
 description: "What Integrated Digital Delivery (IDD) and CORENET X mean for Singapore contractors, and how estimating, cost and site data fit a digital workflow."
 slug: integrated-digital-delivery-singapore
 date: 2026-10-15
+updated: 2026-10-18
 author: "CCorex team"
 author_role: "Construction software specialists"
 keywords: [idd construction, integrated digital delivery singapore, corenet x, bca idd, digital construction workflow, mep contractor digitalisation]
@@ -13,7 +14,7 @@ faq:
   - q: "How widely has IDD been adopted in Singapore?"
     a: "BCA reports IDD adoption of about 58% of new developments by gross floor area in 2023 and about 67% in 2024, against a target of 70% for 2025."
   - q: "When does CORENET X become mandatory?"
-    a: "According to URA circular DC26-08, CORENET X is mandatory from 1 October 2026 for new projects of 5,000 square metres GFA or more. Check the circular for the exact scope and any exceptions."
+    a: "According to the joint BCA and URA circular DC26-08 of 23 July 2026, CORENET X Gateway submissions are mandatory from 1 October 2026 for new projects of 5,000 square metres GFA or more. It replaced an earlier plan to make CORENET X mandatory for all new projects from that date. Projects below 5,000 square metres can continue to use CORENET 2 for now. Check the circular for the exact scope and transition arrangements."
   - q: "Do subcontractors need to do anything for IDD?"
     a: "Main contractors and developers usually lead the IDD setup, but subcontractors are asked to work with shared models, digital submissions and structured data. Clean, digital commercial records make that much easier."
   - q: "Is cost and estimating data part of IDD?"
@@ -49,7 +50,18 @@ In practice, this means most larger projects you tender for are likely to involv
 
 ## CORENET X
 
-CORENET X is Singapore's platform for regulatory submissions for building projects. URA's [circular DC26-08](https://www.ura.gov.sg/guidelines/circulars/dc26-08/) states that CORENET X is **mandatory from 1 October 2026 for new projects of 5,000 m² GFA or more**.
+CORENET X is Singapore's platform for regulatory submissions for building projects. It has been made mandatory in phases:
+
+| From | Mandatory for |
+|---|---|
+| 1 October 2025 | New projects of 30,000 m² GFA or more ([URA circular DC25-07](https://www.ura.gov.sg/guidelines/circulars/dc25-07/)) |
+| 1 October 2026 | New projects of 5,000 m² GFA or more ([URA circular DC26-08](https://www.ura.gov.sg/guidelines/circulars/dc26-08/)) |
+
+The joint BCA and URA circular DC26-08, issued on 23 July 2026, updated the implementation plan. Earlier BCA material had scheduled CORENET X to become mandatory for **all** new projects, regardless of GFA, from 1 October 2026. Following industry feedback, the circular set the threshold at 5,000 m² instead. Under DC26-08:
+
+- **Scope.** The requirement covers new buildings or works to existing buildings not yet formally submitted to a regulatory agency: new buildings of 5,000 m² GFA or more, additions or extensions adding 5,000 m² or more, and major addition and alteration works affecting or replacing 5,000 m² or more. It covers both the Three-Gateway Process and the Direct Submission Process.
+- **Ongoing projects.** Projects of 5,000 m² or more that started submissions in CORENET 2 by 30 September 2026 may continue in CORENET 2 for now.
+- **Smaller projects.** Projects below 5,000 m² can keep using CORENET 2 for now. Using the CORENET X Gateway Processes is voluntary for them, and the agencies say they will share their approach for this group later.
 
 CORENET X is mainly about how design and regulatory information is submitted and approved. It is not a cost or estimating tool. But it reinforces the direction: project information is expected to be structured, digital and shared.
 

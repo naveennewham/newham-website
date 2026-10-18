@@ -100,7 +100,7 @@
         <NuxtLink to="/engineering-services" class="card group">
           <p class="eyebrow">Also from Newham</p>
           <h2 class="mt-2 text-xl font-bold">Fire protection design &amp; hydraulic calculations</h2>
-          <p class="mt-2 text-sm text-ink-600">Sprinkler layouts and hydraulic calculations to SS CP 52 / NFPA 13, formatted for SCDF submission.</p>
+          <p class="mt-2 text-sm text-ink-600">Sprinkler layouts and hydraulic calculations to SS CP 52 (NFPA 13 where the project specification calls for it), formatted for SCDF submission.</p>
           <span class="mt-4 inline-flex text-sm font-semibold text-brand-700 group-hover:text-brand-900">Engineering services <i class="fa-solid fa-arrow-right ml-2 mt-1 text-xs" aria-hidden="true"></i></span>
         </NuxtLink>
         <NuxtLink to="/talent-outsourcing" class="card group">

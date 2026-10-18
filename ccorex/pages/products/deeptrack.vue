@@ -257,6 +257,17 @@
       </div>
     </section>
 
+    <!-- Singapore solutions -->
+    <section class="section-tight">
+      <div class="container-site">
+        <p class="eyebrow">For Singapore contractors</p>
+        <ul class="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+          <li v-for="t in solutionLinks" :key="t.to">
+            <NuxtLink :to="t.to" class="card flex h-full items-center gap-3 hover:border-brand-200"><i :class="t.icon" class="text-brand-600" aria-hidden="true"></i><span class="font-semibold">{{ t.name }}</span></NuxtLink>
+          </li>
+        </ul>
+      </div>
+    </section>
     <UiCtaBand
       title="Bring every project under one system."
       lead="Control budgets and procurement, match every invoice, bill claims cleanly and see real project margin after month-end. See it on your own projects in a live demo."
@@ -398,7 +409,8 @@ const differentiators = [
     bullets: [
       { title: 'Progress claims in sequence', text: 'Numbered per project, with retention and 9% GST calculated.' },
       { title: 'Progress Claim Certificate', text: 'A PDF certificate for each claim, ready to send.' },
-      { title: 'Payment tracking', text: 'Track what the client has paid, with a retention tracker and cash-flow forecast in reports.' }
+      { title: 'SOP Act payment claims', text: 'Claims can state they are made under the Security of Payment Act, with the payment-response due date tracked and the response recorded.' },
+      { title: 'Payment tracking', text: 'Track what the client has paid, with a retention tracker (release at completion and after the defects liability period) and cash-flow forecast in reports.' }
     ],
     outcome: 'A clean record of what you billed, what you hold in retention and what was paid.'
   },
@@ -458,12 +470,18 @@ const plans = [
   { name: 'Enterprise', for: 'Multi-entity contractors', features: ['Everything in Growth', 'Month-end cost allocation', 'Zoho Books link', 'Screen-by-role matrix & budget templates', 'Audit log & priority support'] }
 ]
 
+const solutionLinks = [
+  { to: '/solutions/progress-claim-software', name: 'Progress claim software', icon: 'fa-solid fa-file-invoice-dollar' },
+  { to: '/resources/sop-act-payment-claims-singapore', name: 'Guide: SOP Act payment claims', icon: 'fa-solid fa-scale-balanced' },
+  { to: '/resources/retention-sum-singapore', name: 'Guide: retention sums', icon: 'fa-solid fa-piggy-bank' }
+]
 const faqs = [
   { q: 'What does DeepTrack cover?', a: 'A contractor’s projects from contract to profit: projects and client POs, budgets, client claims, manpower and timesheets, procurement, accounts payable with invoice matching, and month-end cost allocation — with reports and scheduled exports.' },
   { q: 'How do purchase requests get approved?', a: 'Every purchase request is raised against an approved budget and routed through the configured approvals: project manager, then general manager, and the managing director above your tenant’s threshold. A request code is assigned at final approval.' },
   { q: 'How does invoice matching work?', a: 'Accounts payable captures the vendor invoice and DeepTrack matches it against the PO, the delivery endorsement and the purchase request. Duplicate invoice numbers are blocked, and a rate mismatch or quantity above what was endorsed marks the invoice as a discrepancy.' },
   { q: 'Does DeepTrack track labour and overhead cost?', a: 'Yes. Timesheets are coded to project, workhead, WBS activity and business unit. The month-end run allocates direct labour at actual hourly rates, the worker pool, HQ and business-unit overhead, and project overhead, then locks the period.' },
   { q: 'Is it set up for Singapore?', a: 'Yes. DeepTrack works in SGD with 9% GST, and codes cost to BCA workheads. Progress claims carry retention and GST and produce a PDF Progress Claim Certificate.' },
+  { q: 'Does DeepTrack support SOP Act payment claims?', a: 'Yes. A progress claim can state that it is made under the Building and Construction Industry Security of Payment Act, and DeepTrack tracks the payment-response due date and records the response. It is a record-keeping tool, not legal advice.' },
   { q: 'Does it connect to our accounting system?', a: 'Each tenant can link Zoho Books for vendors and purchase orders. Month-end also produces a journal CSV for your ledger, and general-ledger costs can be imported from CSV.' },
   { q: 'How is DeepTrack priced?', a: 'Plans scale with your team and projects — Starter, Growth and Enterprise. Contact us for a tailored quote.' }
 ]

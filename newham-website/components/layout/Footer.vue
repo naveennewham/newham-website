@@ -5,6 +5,7 @@
         <img src="~/assets/Newham_Logo_white.png" alt="Newham" class="h-7 w-auto" width="110" height="28" loading="lazy" />
         <p class="mt-4 text-sm leading-relaxed">Newham Technological Solutions builds CCorex construction software and provides specialist M&amp;E engineers and engineering services to construction businesses in Singapore and India.</p>
         <p class="mt-4 text-sm"><a :href="`mailto:${email}`" class="font-semibold text-white hover:text-cyan-400">{{ email }}</a></p>
+        <p class="mt-1 text-sm"><a href="tel:+6598804197" class="font-semibold text-white hover:text-cyan-400">+65 9880 4197</a></p>
       </div>
       <div>
         <h2 class="text-sm font-semibold text-white">CCorex software</h2>
@@ -32,7 +33,7 @@
           <li><NuxtLink to="/contact" class="hover:text-white">Contact</NuxtLink></li>
           <li><NuxtLink to="/appointment" class="hover:text-white">Book a discovery call</NuxtLink></li>
         </ul>
-        <p class="mt-6 text-sm leading-relaxed"><span class="font-semibold text-white">Singapore</span><br />160 Robinson Road, #14-04 SBF Center</p>
+        <p class="mt-6 text-sm leading-relaxed"><span class="font-semibold text-white">Singapore</span><br />101 Kitchener Road, #03-14<br />Jalan Besar Plaza, Singapore 208511<br />Newham Solutions Pte. Ltd. · UEN 202346654E</p>
         <p class="mt-3 text-sm leading-relaxed"><span class="font-semibold text-white">Chennai, India</span><br />Perungudi, OMR</p>
       </div>
     </div>

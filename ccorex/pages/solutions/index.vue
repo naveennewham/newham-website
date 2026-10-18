@@ -105,6 +105,18 @@
       </div>
     </section>
 
+    <!-- Singapore solutions -->
+    <section class="section-tight bg-ink-50">
+      <div class="container-site">
+        <UiSectionHeader eyebrow="For Singapore contractors" title="Start with the job you need done" />
+        <ul class="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+          <li v-for="s in sgSolutions" :key="s.to">
+            <NuxtLink :to="s.to" class="card flex h-full items-center gap-3 hover:border-brand-200"><i :class="s.icon" class="text-brand-600" aria-hidden="true"></i><span class="font-semibold">{{ s.name }}</span></NuxtLink>
+          </li>
+        </ul>
+      </div>
+    </section>
+
     <UiTrustStrip />
 
     <UiCtaBand title="Show us how your team works today" lead="Bring your estimators, project managers and HR lead to a 30-minute demo. We will map each role to the apps and approvals it needs." />
@@ -113,6 +125,12 @@
 
 <script setup lang="ts">
 const config = useRuntimeConfig()
+const sgSolutions = [
+  { name: 'Progress claim software', icon: 'fa-solid fa-file-invoice-dollar', to: '/solutions/progress-claim-software' },
+  { name: 'Construction payroll software', icon: 'fa-solid fa-money-check-dollar', to: '/solutions/construction-payroll-software' },
+  { name: 'Foreign worker attendance app', icon: 'fa-solid fa-user-check', to: '/solutions/foreign-worker-attendance-app' },
+  { name: 'MEP estimating and BOQ software', icon: 'fa-solid fa-calculator', to: '/products/deepcost' }
+]
 useSeoMeta({
   title: 'Solutions by role for construction teams',
   description: 'How CCorex supports directors, estimators and QS, project managers, procurement and finance, HR and admin, and site supervisors on one construction platform.',

@@ -3,6 +3,7 @@ title: "PSG for Construction Software: A Singapore Guide"
 description: "How Singapore contractors can approach the Built Environment PSG and other digitalisation grants when buying construction software, and what to check."
 slug: construction-digitalisation-grants-singapore
 date: 2026-10-15
+updated: 2026-10-18
 author: "CCorex team"
 author_role: "Construction software specialists"
 keywords: [psg construction software, psg approved construction solution, construction digitalisation grant, built environment psg, bca grants, edge grant construction]
@@ -15,7 +16,7 @@ faq:
   - q: "Can I apply for the grant after I buy the software?"
     a: "Grant schemes generally require you to apply before you commit to the purchase. Read the conditions on GoBusiness and the BCA page before signing any contract or paying a deposit."
   - q: "What happens to the BE PSG in December 2026?"
-    a: "BCA says the BE PSG is scheduled to transition to Enterprise Singapore's EDGE grant in December 2026, and that EDGE co-funding terms are not yet confirmed. Check the latest position before you plan a purchase around it."
+    a: "Enterprise Singapore's own PSG ended on 29 September 2026 and was succeeded by the EDGE Grant, but BCA says this does not affect the BE PSG, which remains open. BCA says the BE PSG is scheduled to transition to EDGE in December 2026 and that it will share details closer to the date. Check the latest position before you plan a purchase around it."
   - q: "Should a grant decide which software we buy?"
     a: "A grant should not be the main reason. Choose the tool that fits your workflow and gives you a return without the subsidy, then see whether funding is available."
 ---
@@ -30,17 +31,22 @@ According to [BCA's BE PSG page](https://www1.bca.gov.sg/grants-and-funded-progr
 
 - The grant provides **up to 50% co-funding** for eligible solutions.
 - For digital solutions, funding is **capped at S$50,000 per firm over five years**.
-- The current scheme runs from **1 April 2026 to 31 March 2031**.
-- BCA says the BE PSG is **scheduled to transition to Enterprise Singapore's EDGE grant in December 2026**, and **EDGE co-funding terms are not yet confirmed**.
+- The current tranche covers applications submitted from **1 April 2026 to 31 March 2031**.
+- The grant is for **local SMEs**, and you must not have signed a contract or paid anything for the solution before you apply.
+- BCA says the BE PSG is **scheduled to transition to EDGE in December 2026**, and that it will share more details closer to the date. It has not yet published how the BE PSG will work under EDGE.
 
-That last point matters. If you are planning a software purchase for late 2026 or 2027, the terms that apply to you may not be the terms listed today. Check before you commit.
+When BCA announced this tranche in [January 2026](https://www1.bca.gov.sg/resources/newsroom/steady-construction-demand-in-2026-as-singapore-steps-up-support-for-built-environment-firms-through-collaboration-and-innovation/), it said the tranche would include more pre-approved digital solutions in focus areas such as **digital contract management** and coordinated regulatory approvals, extend support to advanced equipment such as robotics and automation, and raise grant caps. SMEs that used earlier PSG tranches can apply again. Which specific contract management products are supported is decided by the pre-approved list, so check it for the exact solution and package.
+
+Do not confuse the BE PSG with Enterprise Singapore's general PSG. According to [Enterprise Singapore](https://www.enterprisesg.gov.sg/edge-grant), its PSG, together with EDG and MRA, ceased on 29 September 2026, and businesses now apply for that support under the EDGE Grant. BCA's page states that this does not affect the BE PSG, which BCA administers and which remains open.
+
+The December transition matters. If you are planning a software purchase for late 2026 or 2027, the terms that apply to you may not be the terms listed today. Check before you commit.
 
 ## Where to check the facts
 
 Two official sources should be your starting point:
 
 1. **BCA's BE PSG page:** [www1.bca.gov.sg/grants-and-funded-programmes/built-environment-productivity-solutions-grant](https://www1.bca.gov.sg/grants-and-funded-programmes/built-environment-productivity-solutions-grant). This sets out the scheme for the built environment sector and any transition updates.
-2. **GoBusiness PSG page:** [www.gobusiness.gov.sg/productivity-solutions-grant/](https://www.gobusiness.gov.sg/productivity-solutions-grant/). This is where you find the list of pre-approved solutions and apply.
+2. **GoBusiness PSG directory:** [www.gobusiness.gov.sg/productivity-solutions-grant/](https://www.gobusiness.gov.sg/productivity-solutions-grant/). BCA points applicants here to see which solutions are supported. Applications are made on the Business Grants Portal with Corppass.
 
 A vendor telling you they are "PSG approved" is not enough. Search for the exact solution name and package on the GoBusiness list. Approval is usually for a specific package, not for everything a vendor sells.
 
@@ -114,7 +120,7 @@ A vendor who answers these clearly, including saying "we are not on the list", i
 
 ## Other support to look at
 
-Beyond the BE PSG, Singapore has other enterprise support schemes. Their names, terms and eligibility change over time, so we do not list figures here. Start from the GoBusiness grants pages and BCA's grants section, and speak to the agency directly if your case is unusual.
+Beyond the BE PSG, Singapore has other enterprise support schemes. Enterprise Singapore's [EDGE Grant](https://www.enterprisesg.gov.sg/edge-grant) took over from its EDG, PSG and MRA grants from 30 September 2026. Names, terms and eligibility change over time, so we do not list figures here. Start from the Enterprise Singapore and GoBusiness grants pages and BCA's grants section, and speak to the agency directly if your case is unusual.
 
 ## Common mistakes
 

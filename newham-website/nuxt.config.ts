@@ -1,14 +1,32 @@
+import { execSync } from 'node:child_process'
 import { fileURLToPath } from 'node:url'
 
 // Old case-study URLs (fabricated examples, removed); they redirect to /case-studies.
 const oldCaseStudies = ['acmv1', 'fire1', 'cs1', 'elv1', 'ana1', 'cs2', 'cs3', 'cs4', 'cs5', 'cs6', 'ai1', 'cloud1', 'uiux1']
 // https://nuxt.com/docs/api/configuration/nuxt-config
+
+// Last commit date (YYYY-MM-DD) of each file under pages/, for sitemap <lastmod>. Empty when git
+// history is unavailable; the sitemap then falls back to the build date.
+function pageDates(): Record<string, string> {
+  const dates: Record<string, string> = {}
+  try {
+    const log = execSync('git log --format=%cs --name-only -- pages', { cwd: fileURLToPath(new URL('.', import.meta.url)), encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'] })
+    let date = ''
+    for (const line of log.split('\n')) {
+      if (/^\d{4}-\d{2}-\d{2}$/.test(line)) date = line
+      else if (line.includes('pages/')) dates[line.slice(line.indexOf('pages/'))] ??= date
+    }
+  } catch {}
+  return dates
+}
 export default defineNuxtConfig({
   modules: [
     '@nuxtjs/tailwindcss'
   ],
   css: ['~/assets/main.css', '~/assets/theme.css'],
   runtimeConfig: {
+    // Server only: page file -> last change date, read by the sitemap.
+    pageDates: pageDates(),
     public: {
       // Day this build was made; the sitemap uses it as lastmod for fixed pages.
       buildDate: new Date().toISOString().slice(0, 10),

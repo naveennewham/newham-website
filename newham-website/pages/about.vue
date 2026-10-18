@@ -91,7 +91,7 @@ useSeoMeta({
 useHead({ link: [{ rel: 'canonical', href: siteUrl + '/about' }] })
 
 const focus = [
-  { icon: 'fa-solid fa-fire-extinguisher', title: 'Fire protection codes', text: 'SS CP 52 and NFPA 13 for sprinkler design and hydraulic calculations.' },
+  { icon: 'fa-solid fa-fire-extinguisher', title: 'Fire protection codes', text: 'SS CP 52 for sprinkler design and hydraulic calculations under the SCDF Fire Code, with NFPA 13 where the project specification calls for it.' },
   { icon: 'fa-solid fa-file-circle-check', title: 'Authority submissions', text: 'Drawings and documents prepared for SCDF and BCA requirements.' },
   { icon: 'fa-solid fa-building-columns', title: 'Local trades and formats', text: 'Fire protection, ACMV, ELV, plumbing and electrical, in Singapore tender formats.' },
   { icon: 'fa-solid fa-sack-dollar', title: 'Singapore & India payroll', text: 'DeepHR payroll covers CPF, SDL and self-help group funds, and India statutory rules too.' }
