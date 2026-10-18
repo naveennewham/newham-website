@@ -24,7 +24,7 @@ const pillars = [
   {
     eyebrow: '01 · Software', title: 'CCorex construction software',
     text: 'Our AI-powered suite for construction businesses — estimating, project delivery and HR & payroll on one login.',
-    bullets: ['DeepCost tender estimation, with AI tender summary and FOT AI', 'DeepTrack budgets, procurement, claims and invoice matching', 'DeepHR attendance, leave and Singapore & India payroll'],
+    bullets: ['DeepCost tender estimation, with AI tender summary and FOT AI', 'DeepTrack budgets, procurement, claims and invoice matching', 'DeepHR attendance, leave and Singapore payroll'],
     img: '/images/photos/hero-ccorex-suite.webp', alt: 'Illustration of the CCorex apps connected to one platform',
     to: CCOREX_URL, cta: 'Explore CCorex', external: true
   },

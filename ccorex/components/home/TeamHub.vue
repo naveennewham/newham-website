@@ -104,8 +104,8 @@ const teams: Team[] = [
   {
     id: 'people', label: 'People & payroll', icon: 'fa-solid fa-user-group', tone: 'text-emerald-600', glow: 'from-emerald-200 to-teal-100',
     eyebrow: 'DeepHR', title: 'Hire to retire, on every phone',
-    text: 'Face and GPS check-in on the employee’s own phone, leave and claims through your approval chain, and payroll with Singapore or India statutory rules.',
-    points: ['Face + GPS attendance — no kiosk or hardware', 'Configurable multi-level approvals', 'Singapore (CPF, SDL, SHG) and India payroll', 'Payslips, reports and policies in one app'],
+    text: 'Face and GPS check-in on the employee’s own phone, leave and claims through your approval chain, and Singapore payroll with CPF, SDL and SHG.',
+    points: ['Face + GPS attendance — no kiosk or hardware', 'Configurable multi-level approvals', 'Singapore payroll: CPF, SDL, SHG', 'Payslips, reports and policies in one app'],
     apps: [{ name: 'DeepHR', to: '/products/deephr', icon: 'fa-solid fa-user-group' }],
     src: '/images/product/deephr-admin-dashboard.webp', url: 'deephr.ccorex.com / dashboard', alt: 'DeepHR admin dashboard with employees, pending leave, attendance today and weekly attendance trend'
   },

@@ -32,7 +32,7 @@ export const apps: CcorexApp[] = [
   {
     slug: 'deephr', name: 'DeepHR', category: 'HR & Singapore payroll',
     tagline: 'Hire to retire, fully automated.',
-    summary: 'Face-and-GPS attendance on the phone, leave, claims and payroll with Singapore (CPF, SDL) and India statutory rules.',
+    summary: 'Face-and-GPS attendance on the phone, leave, claims and Singapore payroll with CPF, SDL and SHG.',
     status: 'available',
     icon: 'fa-solid fa-user-group', color: 'bg-emerald-50 text-emerald-700', screenshot: '/images/product/deephr-dashboard.webp'
   },

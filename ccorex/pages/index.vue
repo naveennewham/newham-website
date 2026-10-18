@@ -194,7 +194,7 @@ const capabilities = [
   { icon: 'fa-solid fa-compass-drafting', text: 'Drawing take-off' }, { icon: 'fa-solid fa-wallet', text: 'Budgets & purchase approvals' },
   { icon: 'fa-solid fa-file-invoice-dollar', text: 'Invoice matching' }, { icon: 'fa-solid fa-hand-holding-dollar', text: 'Client claims' },
   { icon: 'fa-solid fa-face-smile', text: 'Face + GPS attendance' }, { icon: 'fa-solid fa-money-check', text: 'CPF, SDL & SHG payroll' },
-  { icon: 'fa-solid fa-indian-rupee-sign', text: 'India payroll: EPF, ESI, PT, TDS' }, { icon: 'fa-solid fa-wand-magic-sparkles', text: 'ARIVU charts & exports' },
+{ icon: 'fa-solid fa-wand-magic-sparkles', text: 'ARIVU charts & exports' },
   { icon: 'fa-solid fa-key', text: 'One sign-in for every app' }, { icon: 'fa-solid fa-user-shield', text: 'Roles per app' }
 ]
 const segments = [
@@ -225,9 +225,9 @@ const flow = [
   },
   {
     step: '03 · Staff & pay', app: 'DeepHR', slug: 'deephr', icon: 'fa-solid fa-user-group', tone: 'bg-emerald-50 text-emerald-700',
-    title: 'Run Singapore or India payroll',
-    text: 'Face and GPS attendance on each employee’s phone, reviewed by HR, flows with approved leave into payroll — with Singapore or India statutory rules.',
-    bullets: ['Face-recognition attendance with no hardware to buy, even offline', 'Singapore: CPF, SDL and SHG funds. India: EPF, ESI, PT and TDS', 'Leave, claims, timesheets and one approvals engine']
+    title: 'Run Singapore payroll',
+    text: 'Face and GPS attendance on each employee’s phone, reviewed by HR, flows with approved leave into payroll — with CPF, SDL and SHG worked out.',
+    bullets: ['Face-recognition attendance with no hardware to buy, even offline', 'Singapore: CPF, SDL and SHG funds', 'Leave, claims, timesheets and one approvals engine']
   }
 ]
 const businessFlow = [
@@ -259,16 +259,16 @@ const reasons = [
   { title: 'One sign-in, all apps', text: 'One user base managed by your organisation admin, with roles per app.' },
   { title: 'AI in every app', text: 'ARIVU answers questions from your own data, charts results and searches your documents — read-only.' },
   { title: 'Face attendance, zero hardware', text: 'Face and GPS attendance on each employee’s own phone, with offline punches re-verified later.' },
-  { title: 'Singapore and India payroll', text: 'CPF, SDL and SHG funds in Singapore; EPF, ESI, PT, TDS and statutory filings in India.' }
+  { title: 'Singapore payroll', text: 'CPF, SDL and SHG funds, MOM proration and overtime rules.' }
 ]
 const plans = [
   { name: 'Essentials', for: 'Start with one workflow', features: ['Choose 1 flagship app', 'Core modules & dashboard', 'ARIVU AI assistant', 'SSO & user management', 'Deep Drive & PDF Editor'] },
-  { name: 'Business', for: 'Run the business end to end', popular: true, features: ['DeepCost + DeepTrack + DeepHR', 'Shared user base & roles', 'ARIVU across all apps', 'Singapore & India payroll', 'Higher user limits'] },
+  { name: 'Business', for: 'Run the business end to end', popular: true, features: ['DeepCost + DeepTrack + DeepHR', 'Shared user base & roles', 'ARIVU across all apps', 'Singapore payroll', 'Higher user limits'] },
   { name: 'Enterprise', for: 'Multiple companies & scale', features: ['Full suite incl. DeepPlan AI', 'Multi-organisation management', 'Advanced roles & audit', 'Priority integration access', 'Priority support & onboarding'] }
 ]
 const faqs = [
   { q: 'Do we have to buy the whole suite?', a: 'No. Start with one flagship app — DeepCost, DeepTrack or DeepHR — and add apps as you grow. Every app shares the same sign-in and users.' },
-  { q: 'Who is CCorex built for?', a: 'Engineering and construction contractors — mainly MEP and fire-protection firms in Singapore and India. DeepTrack works in SGD with 9% GST, and DeepHR runs Singapore or India payroll. The platform is delivered and supported by Newham in Singapore.' },
+  { q: 'Who is CCorex built for?', a: 'Engineering and construction contractors — mainly MEP and fire-protection firms in Singapore and India. DeepTrack works in SGD with 9% GST, and DeepHR runs Singapore payroll. The platform is delivered and supported by Newham in Singapore.' },
   { q: 'What does ARIVU AI do?', a: 'ARIVU is a read-only AI assistant in every CCorex app. It answers questions from your own organisation’s data across DeepCost, DeepTrack, DeepHR, DeepPlan and Deep Drive, produces charts and PDF or Excel exports, and searches and summarises documents. It never changes your data.' },
   { q: 'Is DeepPlan’s AI take-off live?', a: 'DeepPlan’s drawing upload, scale calibration, room measurement, rate library and BOQ generation are live. AI room take-off and symbol detection are in early access while they are rebuilt.' },
   { q: 'Do we need to install servers or buy hardware?', a: 'No. CCorex is cloud-based. Face-recognition attendance runs on each employee’s own phone, so there are no biometric devices or kiosks to buy.' },

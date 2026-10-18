@@ -52,7 +52,7 @@
           <div class="grid gap-8 md:grid-cols-[1fr_auto] md:items-center lg:grid-cols-[1fr_auto_1fr]">
             <div>
               <AppHead app="deephr" who="HR, site teams & every employee" title="Hire to retire, on every phone" />
-              <p class="mt-3 text-sm leading-relaxed text-ink-600">Face and GPS check-in on the employee’s own phone, leave and claims through your approval chain, and payroll with Singapore or India statutory rules.</p>
+              <p class="mt-3 text-sm leading-relaxed text-ink-600">Face and GPS check-in on the employee’s own phone, leave and claims through your approval chain, and Singapore payroll with CPF, SDL and SHG.</p>
               <ul class="mt-5 space-y-2">
                 <li v-for="p in points.deephr" :key="p" class="pt"><i class="fa-solid fa-check" aria-hidden="true"></i>{{ p }}</li>
               </ul>
@@ -173,7 +173,7 @@ const rooms = [
   { x: 12, y: 12, w: 76, h: 96, label: 'Room 1' }, { x: 92, y: 12, w: 116, h: 46, label: 'Room 2' }, { x: 92, y: 62, w: 116, h: 46, label: 'Room 3' }
 ]
 const symbols = [[40, 40], [60, 80], [130, 30], [180, 30], [130, 85], [180, 85]]
-const statutory = ['CPF', 'SDL', 'SHG', 'EPF', 'ESI', 'PT', 'TDS']
+const statutory = ['CPF', 'SDL', 'SHG']
 const checkin = ['Face registered once, locked by HR', 'Scan face to verify identity', 'Select today’s office or site', 'Confirm with GPS — sent to HR for approval']
 const p2p = ['Budget', 'Purchase request', 'PO', 'Delivery', 'Invoice matched', 'Paid']
 const waiting = [

@@ -55,7 +55,7 @@
 const config = useRuntimeConfig()
 useSeoMeta({
   title: 'FAQ: platform, apps, AI, security & pricing',
-  description: 'Answers about CCorex: one sign-in across apps, DeepCost, DeepTrack and DeepHR, ARIVU AI, data security, Singapore and India payroll, pricing and onboarding.',
+  description: 'Answers about CCorex: one sign-in across apps, DeepCost, DeepTrack and DeepHR, ARIVU AI, data security, Singapore payroll, pricing and onboarding.',
   ogTitle: 'CCorex FAQ',
   ogDescription: 'Straight answers about the CCorex platform, apps, ARIVU AI, security, pricing and onboarding.'
 })
@@ -68,7 +68,7 @@ const groups = [
       { q: 'What is CCorex?', a: 'CCorex is a multi-tenant business suite for engineering and construction contractors, mainly MEP and fire-protection firms in Singapore and India. One portal signs users in to DeepCost (tender estimating), DeepTrack (project and financial control), DeepHR (HR and payroll), DeepPlan (drawing take-off), Deep Drive (documents), PDF Editor (mark-up and signing) and the ARIVU AI assistant.' },
       { q: 'Do all the apps share one sign-in?', a: 'Yes. Users sign in once at dash.ccorex.com, see a tile for each app they are entitled to, and open any app without signing in again. Your organisation admin adds users once — or bulk-uploads them from Excel — and they are created in each assigned app.' },
       { q: 'How do we get started?', a: 'Self sign-up creates your organisation and its first admin user. The admin then manages the organisation profile, users, roles per app and app settings, including connectors such as Zoho Books.' },
-      { q: 'Can we manage more than one company?', a: 'Each organisation is its own tenant with its own users and settings. A group with entities in Singapore and India, for example, uses one organisation per entity. Multi-organisation management is part of the Enterprise plan.' },
+      { q: 'Can we manage more than one company?', a: 'Each organisation is its own tenant with its own users and settings. A group with several entities uses one organisation per entity. Multi-organisation management is part of the Enterprise plan.' },
       { q: 'Is data shared between apps today?', a: 'The apps share sign-in and users today, and ARIVU can answer questions across all of them. Passing records from one app to the next — such as a won tender becoming a DeepTrack project without re-entry — is on the roadmap.' },
       { q: 'Is CCorex cloud-based?', a: 'Yes. CCorex runs in the cloud, so there are no servers to install and no hardware to buy.' }
     ]
@@ -79,9 +79,9 @@ const groups = [
       { q: 'What does DeepCost do?', a: 'DeepCost takes an MEP or building-services contractor from a tender received to a priced tender submission: customer and opportunity, tender documents with an AI tender summary, area schedule, an order per trade, material take-off per area, and the priced Form of Tender (FOT) — line by line or with FOT AI on the client’s BOQ PDF. Seeded trades are Fire Protection, ACMV, A&A and ELV, priced in SGD.' },
       { q: 'What is a Form of Tender (FOT)?', a: 'The priced schedule submitted with a tender. In DeepCost, the FOT goes through the same submit, approve and complete steps as the area schedule and MTO, and its export serves as the quotation.' },
       { q: 'What does DeepTrack do?', a: 'DeepTrack runs a contractor’s projects from contract to profit: budgets, client progress claims, manpower and timesheets, procurement from purchase request to purchase order, delivery and invoice, accounts payable with invoice matching, and month-end cost allocation. It works in SGD with 9% GST and can link to Zoho Books.' },
-      { q: 'What does DeepHR do?', a: 'DeepHR is the HR system of record: people and organisation structure, an approvals engine, leave, face and GPS attendance, claims, payroll with Singapore or India statutory rules, payslips filed to Documents, reports with schedules, policies, a helpdesk and an optional tasks module. Employees can install it on a phone as an app.' },
+      { q: 'What does DeepHR do?', a: 'DeepHR is the HR system of record: people and organisation structure, an approvals engine, leave, face and GPS attendance, claims, Singapore payroll (CPF, SDL, SHG), payslips filed to Documents, reports with schedules, policies, a helpdesk and an optional tasks module. Employees can install it on a phone as an app.' },
       { q: 'Does face-recognition attendance need special devices?', a: 'No. Employees check in and out on their own phone: the face must match, the phone’s GPS must be inside the site radius, and the record is marked on time or late. There is no kiosk mode. Offline punches are queued and re-verified when the phone reconnects.' },
-      { q: 'Which payroll rules does DeepHR support?', a: 'Singapore: CPF (including graduated rates for new PRs), SDL, self-help group funds (CDAC, SINDA, MBMF, ECF), MOM proration and overtime rules. India: EPF, ESI, Professional Tax, TDS and statutory filings such as EPF ECR, ESIC, PT return, 24Q and Form 16 Part B. A Singapore bank payment file is not available yet.' },
+      { q: 'Which payroll rules does DeepHR support?', a: 'Singapore: CPF (including graduated rates for new PRs), SDL, self-help group funds (CDAC, SINDA, MBMF, ECF), MOM proration and overtime rules.' },
       { q: 'What are Deep Drive and PDF Editor?', a: 'Deep Drive is your organisation’s document store (folders, uploads, inline viewing, storage tracking), and PDF Editor marks up and signs PDFs (text, signatures, images, overlays, split and merge). Both are included with every active subscription.' }
     ]
   },

@@ -30,9 +30,9 @@ export const ccorexApps: CcorexApp[] = [
   },
   {
     slug: 'deephr', name: 'DeepHR', category: 'HR & payroll',
-    summary: 'Attendance, leave and claims flowing into payroll with Singapore (CPF, SDL) and India statutory rules.',
+    summary: 'Attendance, leave and claims flowing into Singapore payroll with CPF, SDL and SHG.',
     icon: 'fa-solid fa-user-group', color: 'bg-emerald-50 text-emerald-700',
-    points: ['Face + GPS attendance on the phone', 'Leave, claims and approvals', 'Singapore & India payroll']
+    points: ['Face + GPS attendance on the phone', 'Leave, claims and approvals', 'Singapore payroll']
   },
   {
     slug: 'deepplan-ai', name: 'DeepPlan AI', category: 'Drawing take-off',
@@ -109,9 +109,8 @@ export const ccorexSummaries: Record<string, CcorexSummary> = {
     lead: 'DeepHR is the HR system of record: people, leave, attendance, claims and payroll, with self-service for every employee on their phone.',
     points: [
       'Face and GPS attendance check-in against each site',
-      'Leave with Singapore and India presets, and multi-level approvals',
+      'Leave with Singapore presets, and multi-level approvals',
       'Singapore payroll: CPF, SDL and self-help group funds, MOM proration',
-      'India payroll: EPF, ESI, professional tax and statutory filings',
       'Payslips filed to each employee’s documents'
     ],
     screenshot: { src: '/images/product/deephr-payroll.webp', alt: 'DeepHR payroll run selecting employees, pay items and pay period', url: 'deephr.app / payroll', width: 1580, height: 711 }

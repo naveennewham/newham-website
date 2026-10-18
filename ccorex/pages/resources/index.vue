@@ -7,7 +7,7 @@
         <div>
           <p class="eyebrow-dark">Resources</p>
           <h1 class="h-display mt-5 text-white">Practical guides for construction teams.</h1>
-          <p class="lead-dark mt-6 max-w-xl">We are writing plain-language guides on estimating, take-off, project cost control and Singapore and India payroll. While they are in progress, explore the products and our FAQ — or ask us directly.</p>
+          <p class="lead-dark mt-6 max-w-xl">We are writing plain-language guides on estimating, take-off, project cost control and Singapore payroll. While they are in progress, explore the products and our FAQ — or ask us directly.</p>
           <div class="mt-8 flex flex-wrap gap-3">
             <a href="#guides" class="btn-accent">Upcoming guides <i class="fa-solid fa-arrow-down text-xs" aria-hidden="true"></i></a>
             <NuxtLink to="/faq" class="btn-ghost-dark">Read the FAQ</NuxtLink>

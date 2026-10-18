@@ -99,7 +99,7 @@ The last step matters for margin. Labour is often the largest cost a project tea
 
 ## If you also run payroll in India
 
-Many Singapore contractors have engineering, estimating or site teams in India. Indian payroll has its own statutory items: EPF, ESI, professional tax (PT) and TDS. Rules vary by state for some items. Use a payroll system that handles both countries properly rather than adapting a Singapore template.
+Many Singapore contractors have engineering, estimating or site teams in India. Indian payroll has its own statutory items: EPF, ESI, professional tax (PT) and TDS. Rules vary by state for some items. Run Indian payroll in a system set up for Indian rules rather than adapting a Singapore template.
 
 ## Rolling out phone attendance on site
 
@@ -138,4 +138,4 @@ For wider digitalisation and possible funding, see [construction digitalisation 
 
 ## How CCorex helps
 
-[DeepHR](/products/deephr) captures face and GPS attendance on each worker's own phone, with no kiosk hardware, and queues punches when there is no signal. HR approves each session, and approved attendance and leave flow straight into payroll. It runs Singapore payroll with CPF, SDL and SHG funds, and India payroll with EPF, ESI, PT and TDS, alongside leave, claims, timesheets and multi-level approvals. [Contact us](/contact) to see it with your own site setup.
+[DeepHR](/products/deephr) captures face and GPS attendance on each worker's own phone, with no kiosk hardware, and queues punches when there is no signal. HR approves each session, and approved attendance and leave flow straight into payroll. It runs Singapore payroll with CPF, SDL and SHG funds, alongside leave, claims, timesheets and multi-level approvals. [Contact us](/contact) to see it with your own site setup.

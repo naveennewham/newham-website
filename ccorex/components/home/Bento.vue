@@ -117,7 +117,7 @@ const places = [
   {
     key: 'site', where: 'On site', title: 'Check in by face and GPS', grid: 'lg:col-start-1 lg:row-start-2 lg:mr-10',
     icon: 'fa-solid fa-helmet-safety', tone: 'bg-emerald-50 text-emerald-700',
-    text: 'Workers check in on their own phone at the site. Approved attendance and leave flow into Singapore and India payroll — CPF, SDL, SHG, EPF, ESI, PT and TDS.',
+    text: 'Workers check in on their own phone at the site. Approved attendance and leave flow into Singapore payroll — CPF, SDL and SHG.',
     apps: [{ name: 'DeepHR', to: '/products/deephr' }]
   },
   {

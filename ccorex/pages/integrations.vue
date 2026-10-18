@@ -123,7 +123,7 @@ const zohoFlow = [
 const enterprise = [
   { app: 'DeepCost', icon: 'fa-solid fa-calculator', items: ['Excel master-data upload', 'Area schedule Excel import', 'Area, component & FOT reports (Excel, PDF)', 'Email at each stage'] },
   { app: 'DeepTrack', icon: 'fa-solid fa-diagram-project', items: ['Zoho Books link', 'GL cost CSV import', 'Journal CSV', 'Bulk timesheets', 'Scheduled reports'] },
-  { app: 'DeepHR', icon: 'fa-solid fa-user-group', items: ['Excel bulk upload (with dry run)', 'Record-mode payroll upload', 'Reports to Excel or CSV', 'EPF ECR, ESIC & PT files (India)', 'Bank transfer sheet (India)'] },
+  { app: 'DeepHR', icon: 'fa-solid fa-user-group', items: ['Excel bulk upload (with dry run)', 'Record-mode payroll upload', 'Reports to Excel or CSV'] },
   { app: 'ARIVU AI', icon: 'fa-solid fa-wand-magic-sparkles', items: ['Charts', 'PDF & Excel exports', 'Attachments incl. scanned PDFs'] }
 ]
 const roadmap = [

@@ -138,7 +138,7 @@ useHead({ link: [{ rel: 'canonical', href: config.public.siteUrl + '/pricing' }]
 
 const plans = [
   { name: 'Essentials', icon: 'fa-solid fa-seedling', for: 'Start with one workflow', features: ['Choose 1 flagship app', 'Core modules & dashboard', 'ARIVU AI assistant', 'SSO & user management', 'Deep Drive & PDF Editor'] },
-  { name: 'Business', icon: 'fa-solid fa-building', for: 'Run the business end to end', popular: true, features: ['DeepCost + DeepTrack + DeepHR', 'Shared user base & roles', 'ARIVU across all apps', 'Singapore & India payroll', 'Higher user limits'] },
+  { name: 'Business', icon: 'fa-solid fa-building', for: 'Run the business end to end', popular: true, features: ['DeepCost + DeepTrack + DeepHR', 'Shared user base & roles', 'ARIVU across all apps', 'Singapore payroll', 'Higher user limits'] },
   { name: 'Enterprise', icon: 'fa-solid fa-city', for: 'Multiple organisations & scale', features: ['Full suite incl. DeepPlan AI', 'Multi-organisation management', 'Advanced roles & audit', 'Priority CRM-integration access', 'Priority support & onboarding'] }
 ]
 const included = [
@@ -175,7 +175,7 @@ const comparison = [
     rows: [
       { label: 'ARIVU AI assistant', values: ['In your app', 'Across all apps', 'Across all apps'] },
       { label: 'Face-recognition attendance', values: ['With DeepHR', true, true] },
-      { label: 'Singapore & India payroll', values: ['With DeepHR', true, true] }
+      { label: 'Singapore payroll', values: ['With DeepHR', true, true] }
     ]
   },
   {

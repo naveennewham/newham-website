@@ -106,7 +106,7 @@
     <section class="section relative overflow-hidden bg-hero text-white">
       <div class="bg-grid pointer-events-none absolute inset-0 opacity-40" aria-hidden="true"></div>
       <div class="container-site relative">
-        <UiSectionHeader dark center eyebrow="Built for Singapore and India" title="Local rules for an office and site workforce" lead="DeepTrack works in SGD with 9% GST and BCA workheads. DeepHR runs payroll for Singapore or India, with each organisation set to one jurisdiction." />
+        <UiSectionHeader dark center eyebrow="Built for Singapore" title="Local rules for an office and site workforce" lead="DeepTrack works in SGD with 9% GST and BCA workheads. DeepHR runs Singapore payroll with CPF, SDL and SHG." />
         <ul class="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           <li v-for="c in singapore" :key="c.title" class="rounded-2xl border border-white/10 bg-white/5 p-5">
             <i :class="c.icon" class="text-cyan-400" aria-hidden="true"></i>
@@ -128,7 +128,7 @@ useSeoMeta({
   title: 'Industries: MEP, main contractors & EPC',
   description: 'CCorex for MEP and fire-protection contractors in Singapore and India (Fire Protection, ACMV, A&A, ELV), main contractors, EPC firms and tender-based specialists.',
   ogTitle: 'CCorex for MEP contractors, main contractors and EPC companies',
-  ogDescription: 'Tender estimating, project cost control and Singapore or India HR & payroll for MEP, fire-protection, main contractor and EPC businesses.'
+  ogDescription: 'Tender estimating, project cost control and Singapore HR & payroll for MEP, fire-protection, main contractor and EPC businesses.'
 })
 useHead({ link: [{ rel: 'canonical', href: config.public.siteUrl + '/industries' }] })
 
@@ -208,7 +208,6 @@ const detail = [
 ]
 const singapore = [
   { icon: 'fa-solid fa-landmark', title: 'Singapore payroll', text: 'CPF (incl. graduated rates for new PRs), SDL and SHG funds: CDAC, SINDA, MBMF, ECF.' },
-  { icon: 'fa-solid fa-indian-rupee-sign', title: 'India payroll', text: 'EPF, ESI, Professional Tax and TDS, with ECR, ESIC, PT, 24Q and Form 16 Part B.' },
   { icon: 'fa-solid fa-business-time', title: 'MOM overtime & proration', text: 'MOM proration and OT rate rules; warnings above 72 OT hours a month.' },
   { icon: 'fa-solid fa-location-crosshairs', title: 'Site attendance', text: 'Face and GPS check-in on the employee’s own phone — no hardware to buy.' }
 ]
