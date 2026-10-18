@@ -1,7 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 import { fileURLToPath } from 'node:url'
 export default defineNuxtConfig({
-  modules: ['@nuxtjs/tailwindcss', '@nuxt/fonts'],
+  modules: ['@nuxtjs/tailwindcss'],
   app: {
     head: {
       htmlAttrs: { lang: 'en-SG' },
@@ -9,8 +9,9 @@ export default defineNuxtConfig({
         // Consent Mode v2: everything denied until the visitor chooses (see composables/useConsent).
         { innerHTML: "window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('consent','default',{ad_storage:'denied',analytics_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',wait_for_update:500});", tagPosition: 'head' },
         { innerHTML: "(function(){var d=document.documentElement;try{var q=new URLSearchParams(location.search).get('theme');if(q==='light'||q==='dark')localStorage.setItem('theme',q);var t=q||localStorage.getItem('theme');if(t!=='light')d.classList.add('dark')}catch(e){d.classList.add('dark')}})()", tagPosition: 'head' },
-        // Font Awesome as a non-blocking stylesheet: a script-inserted link does not hold up rendering.
-        { innerHTML: "(function(){var l=document.createElement('link');l.rel='stylesheet';l.crossOrigin='anonymous';l.href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css';document.head.appendChild(l)})()", tagPosition: 'head' }],
+        // Web fonts and icons as non-blocking stylesheets: a script-inserted link does not hold up
+        // the first paint (text shows in the size-matched fallback from main.css meanwhile).
+        { innerHTML: "['https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Inter+Tight:wght@500;600;700;800&display=swap','https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css'].forEach(function(h){var l=document.createElement('link');l.rel='stylesheet';l.crossOrigin='anonymous';l.href=h;document.head.appendChild(l)})", tagPosition: 'head' }],
       titleTemplate: (title?: string) => (title ? `${title} | CCorex` : 'CCorex — AI-powered construction management platform'),
       meta: [
         // Google Search Console ownership (URL-prefix property, verified by Markaiting's reader account).
@@ -25,19 +26,13 @@ export default defineNuxtConfig({
       ],
       link: [
         { rel: 'icon', type: 'image/png', href: '/ccorex-logo.png' },
-        // Icons: fetched early but applied without blocking the first paint (see the script above).
+        { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
+        { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' },
+        // Fetched early, applied without blocking the first paint (see the script above).
+        { rel: 'preload', as: 'style', href: 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Inter+Tight:wght@500;600;700;800&display=swap', crossorigin: 'anonymous' },
         { rel: 'preload', as: 'style', href: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css', crossorigin: 'anonymous' }
       ]
     }
-  },
-  // Fonts are self-hosted at build time (no render-blocking Google Fonts request) with
-  // size-matched fallbacks, so text shows at once and does not jump when Inter arrives.
-  fonts: {
-    defaults: { subsets: ['latin'], styles: ['normal'] },
-    families: [
-      { name: 'Inter', provider: 'google', weights: [400, 500, 600, 700] },
-      { name: 'Inter Tight', provider: 'google', weights: [500, 600, 700, 800] }
-    ]
   },
   css: ['~/assets/css/main.css', '~/assets/css/theme.css'],
   runtimeConfig: {
