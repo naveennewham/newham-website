@@ -1,6 +1,6 @@
 ---
 title: "Hydraulic calculation services for sprinklers in Singapore"
-description: "How sprinkler hydraulic calculations work under SS CP 52 and NFPA 13, what a submission-ready report contains, and how to outsource sprinkler design well."
+description: "How sprinkler hydraulic calculations work under SS CP 52 for SCDF, what a submission-ready report contains, and how to outsource sprinkler design well."
 slug: sprinkler-hydraulic-calculations
 date: 2026-10-15
 author: "Newham engineering team"
@@ -9,7 +9,7 @@ keywords: [hydraulic calculation services, sprinkler design outsourcing, fire pr
 related: /engineering-services
 faq:
   - q: "Which codes apply to sprinkler hydraulic calculations in Singapore?"
-    a: "SS CP 52 is the local code of practice for automatic sprinkler systems, and NFPA 13 is used where the project specification or the authority calls for it. Always design to the code edition in force for the project, and format the submission for SCDF."
+    a: "SS CP 52 is the local code of practice for automatic sprinkler systems and the one the SCDF Fire Code requires. NFPA 13 applies only where the project specification calls for it. Always design to the code edition in force for the project, and format the submission for SCDF."
   - q: "What do I need to send for an outsourced hydraulic calculation?"
     a: "The architectural plans and sections, the sprinkler layout or the brief for one, the hazard classification basis, the water supply data or pump details, the project specification and the required submission format. Missing supply data is the most common cause of rework."
   - q: "Does Newham endorse the calculations as a PE?"
@@ -20,7 +20,7 @@ faq:
     a: "Per deliverable for a single design package, or as a monthly retainer if you have a steady pipeline. Billing is in SGD and the scope is confirmed in writing first. Email admin@newhamtech.com for a quote."
 ---
 
-A sprinkler hydraulic calculation proves that the water supply can deliver the flow and pressure the system needs at its most demanding point. You calculate the hydraulically most remote design area, work back node by node to the source, adding friction and elevation losses, and then compare the total demand with what the town main, tank or fire pump can supply. In Singapore the method follows SS CP 52, or NFPA 13 where the project calls for it, and the report goes into the SCDF submission. Outsourcing the calculation works well when the inputs are fixed and the reviewer knows what a complete report looks like. This guide covers both.
+A sprinkler hydraulic calculation proves that the water supply can deliver the flow and pressure the system needs at its most demanding point. You calculate the hydraulically most remote design area, work back node by node to the source, adding friction and elevation losses, and then compare the total demand with what the town main, tank or fire pump can supply. In Singapore the method follows SS CP 52 under the SCDF Fire Code, with NFPA 13 only where the project specification calls for it, and the report goes into the SCDF submission. Outsourcing the calculation works well when the inputs are fixed and the reviewer knows what a complete report looks like. This guide covers both.
 
 ## What a hydraulic calculation has to prove
 
@@ -38,7 +38,7 @@ Most rework comes from starting before the inputs are settled. Check that you ha
 
 - [ ] Architectural plans, sections and ceiling heights for every protected area
 - [ ] The occupancy and storage information you need to set the hazard classification
-- [ ] The code and edition the project is designed to (SS CP 52, NFPA 13 or both)
+- [ ] The code and edition the project is designed to (SS CP 52, plus NFPA 13 if the project specification calls for it)
 - [ ] The sprinkler layout, or a clear brief for one, including head type and orientation
 - [ ] Pipe material, schedule and the friction loss method the code specifies
 - [ ] Water supply data: town main test results, tank capacity, or the pump curve
@@ -118,4 +118,4 @@ If the sprinkler package is part of a tender, see the [MEP tender submission che
 
 ## How Newham can help
 
-Newham's fire protection engineers prepare sprinkler layouts, hydraulic calculations and fire pump selection to SS CP 52 and NFPA 13, and package them as submission drawings in Singapore format. Where a submission needs Professional Engineer endorsement, we coordinate review by a Singapore-registered PE and quote those fees separately. Work is priced per deliverable or on a monthly retainer, billed in SGD, with the scope confirmed in writing first. See our [engineering services](/engineering-services), or [book a discovery call](/appointment) to scope your next package.
+Newham's fire protection engineers prepare sprinkler layouts, hydraulic calculations and fire pump selection to SS CP 52, with NFPA 13 where the project specification calls for it, and package them as submission drawings in Singapore format. Where a submission needs Professional Engineer endorsement, we coordinate review by a Singapore-registered PE and quote those fees separately. Work is priced per deliverable or on a monthly retainer, billed in SGD, with the scope confirmed in writing first. See our [engineering services](/engineering-services), or [book a discovery call](/appointment) to scope your next package.

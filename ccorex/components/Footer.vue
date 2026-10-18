@@ -5,6 +5,7 @@
         <img src="/ccorex-logo.png" alt="CCorex" class="h-7 w-auto brightness-0 invert" width="112" height="28" loading="lazy" />
         <p class="mt-4 text-sm leading-relaxed">The AI-powered platform for construction businesses — estimating, project delivery and HR &amp; payroll on one login.</p>
         <p class="mt-4 text-sm">Delivered by <a :href="config.public.newhamUrl" class="font-semibold text-white hover:text-cyan-400">Newham Technological Solutions</a>, Singapore.</p>
+        <p class="mt-2 text-xs text-ink-400">Singapore entity: Newham Solutions Pte. Ltd. · UEN 202346654E</p>
       </div>
       <div>
         <h2 class="text-sm font-semibold text-white">Products</h2>
@@ -23,6 +24,9 @@
           <li><NuxtLink to="/estimating/fire-protection" class="hover:text-white">Fire protection estimating</NuxtLink></li>
           <li><NuxtLink to="/estimating/acmv" class="hover:text-white">ACMV estimating</NuxtLink></li>
           <li><NuxtLink to="/estimating/elv" class="hover:text-white">ELV estimating</NuxtLink></li>
+          <li><NuxtLink to="/solutions/progress-claim-software" class="hover:text-white">Progress claim software</NuxtLink></li>
+          <li><NuxtLink to="/solutions/construction-payroll-software" class="hover:text-white">Construction payroll software</NuxtLink></li>
+          <li><NuxtLink to="/solutions/foreign-worker-attendance-app" class="hover:text-white">Foreign worker attendance app</NuxtLink></li>
           <li><NuxtLink to="/compare/costx-cubicost-alternative" class="hover:text-white">CostX &amp; Cubicost alternative</NuxtLink></li>
         </ul>
       </div>

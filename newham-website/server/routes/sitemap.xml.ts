@@ -6,10 +6,20 @@ import { trades } from '../../data/experience'
 // /ccorex, /ccorex/*, /product and /deeptrack are left out: their canonical is on ccorex.com.
 const STATIC = ['/', '/services', '/talent-outsourcing', '/engineering-services', '/boq-estimation-services', '/fire-protection-design', '/shop-drawing-services', '/industries', '/case-studies', '/pricing', '/about', '/contact', '/appointment', '/privacy']
 
+// <lastmod> for a fixed page: the last change to its page file (exact, folder index, or the
+// dynamic [param] file that renders it), else the build date.
+function pageLastmod(route: string, dates: Record<string, string>, built?: string) {
+  const base = route === '/' ? 'pages/index' : `pages${route}`
+  const parent = base.slice(0, base.lastIndexOf('/'))
+  const dynamic = Object.keys(dates).find((f) => f.startsWith(`${parent}/[`) && f.split('/').length === base.split('/').length)
+  return dates[`${base}.vue`] ?? dates[`${base}/index.vue`] ?? (dynamic && dates[dynamic]) ?? built
+}
+
 export default defineEventHandler(async (event) => {
   const site = (useRuntimeConfig(event).public.siteUrl as string).replace(/\/$/, '')
   const built = useRuntimeConfig(event).public.buildDate as string | undefined
-  const urls: { loc: string; lastmod?: string }[] = [...STATIC, ...industries.map((i) => `/industries/${i.id}`), ...trades.map((t) => `/case-studies/${t.id}`)].map((p) => ({ loc: `${site}${p}`, lastmod: built }))
+  const dates = (useRuntimeConfig(event).pageDates ?? {}) as Record<string, string>
+  const urls: { loc: string; lastmod?: string }[] = [...STATIC, ...industries.map((i) => `/industries/${i.id}`), ...trades.map((t) => `/case-studies/${t.id}`)].map((p) => ({ loc: `${site}${p}`, lastmod: pageLastmod(p, dates, built) }))
   const store = useStorage('assets:guides')
   for (const key of await store.getKeys()) {
     if (!key.endsWith('.md')) continue

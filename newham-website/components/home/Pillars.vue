@@ -38,7 +38,7 @@ const pillars = [
   {
     eyebrow: '03 · Engineering', title: 'Construction engineering services',
     text: 'Fire protection design and commercial project support, delivered as a scoped service by a domain-trained team.',
-    bullets: ['Sprinkler design and hydraulic calculations (SS CP 52 / NFPA 13)', 'Estimation, BOQ and tender support', 'Project QS, progress claims and document control'],
+    bullets: ['Sprinkler design and hydraulic calculations to SS CP 52 (NFPA 13 where specified)', 'Estimation, BOQ and tender support', 'Project QS, progress claims and document control'],
     img: '/images/photos/mep-model-laptop.webp', alt: 'MEP model reviewed on a laptop with a stylus (stock photo)',
     to: '/engineering-services', cta: 'Engineering services'
   }

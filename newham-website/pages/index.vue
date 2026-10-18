@@ -243,7 +243,7 @@ const steps = [
 ]
 
 const standards = [
-  { title: 'SS CP 52', text: 'Sprinkler design and hydraulic calculations, alongside NFPA 13.' },
+  { title: 'SS CP 52', text: 'Sprinkler design and hydraulic calculations under the SCDF Fire Code, with NFPA 13 where the project specification calls for it.' },
   { title: 'SCDF', text: 'Fire safety submission drawings and documentation.' },
   { title: 'BCA', text: 'Engineers familiar with local building and submission requirements.' },
   { title: 'CPF & MOM', text: 'DeepHR payroll covers CPF, SDL and self-help group funds, with MOM proration rules.' }
@@ -262,7 +262,7 @@ const faqs = [
   { q: 'Is Newham a staffing agency?', a: 'No. Newham is a specialist engineering partner for construction. Our professionals are trained in Singapore M&E codes and workflows before they work on your projects, and we manage them for quality while you direct the work.' },
   { q: 'How is CCorex related to Newham?', a: 'CCorex is Newham’s own construction software suite — DeepCost, DeepTrack, DeepHR, DeepPlan and the ARIVU AI assistant. Product details and demos are on ccorex.com, and existing users sign in at dash.ccorex.com.' },
   { q: 'Can we use your engineers without buying CCorex?', a: 'Yes. Our engineers work in the tools you already use, such as Revit MEP, AutoCAD and Navisworks. CCorex is available if you want it, but it is not required.' },
-  { q: 'Which standards do your fire protection designs follow?', a: 'Sprinkler design and hydraulic calculations are prepared to SS CP 52 and NFPA 13, and drawings are formatted for SCDF submission. Where a submission needs Professional Engineer endorsement, we discuss how that will be handled when we scope the work.' },
+  { q: 'Which standards do your fire protection designs follow?', a: 'Sprinkler design and hydraulic calculations are prepared to SS CP 52 as the SCDF Fire Code requires, with NFPA 13 only where the project specification calls for it, and drawings are formatted for SCDF submission. Where a submission needs Professional Engineer endorsement, we discuss how that will be handled when we scope the work.' },
   { q: 'How do engagements start?', a: 'With a 30-minute discovery call. We then confirm scope, team and pricing in writing, onboard to your standards and start delivery.' }
 ]
 </script>

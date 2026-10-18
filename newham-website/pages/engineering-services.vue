@@ -130,7 +130,7 @@
 const siteUrl = useRuntimeConfig().public.siteUrl as string
 useSeoMeta({
   title: 'Fire protection design & BOQ services in Singapore',
-  description: 'Sprinkler design and hydraulic calculations to SS CP 52 / NFPA 13, plus estimation, BOQ, tender support, QS and document control for M&E contractors.',
+  description: 'Sprinkler design and hydraulic calculations to SS CP 52 (NFPA 13 where specified), plus estimation, BOQ, tender support, QS and document control for M&E contractors.',
   ogTitle: 'Construction engineering services — Newham',
   ogDescription: 'Fire protection design and commercial project support for Singapore M&E contractors and consultants.',
   ogUrl: siteUrl + '/engineering-services'
@@ -144,7 +144,7 @@ useHead({
       '@type': 'Service',
       name: 'Fire protection design and M&E commercial support',
       serviceType: 'Engineering design services',
-      description: 'Sprinkler design and hydraulic calculations to SS CP 52 / NFPA 13, fire alarm design to SS 645, submission drawings, estimation, BOQ, tender support and QS for M&E contractors in Singapore.',
+      description: 'Sprinkler design and hydraulic calculations to SS CP 52 (NFPA 13 where the project specification calls for it), fire alarm design to SS 645, submission drawings, estimation, BOQ, tender support and QS for M&E contractors in Singapore.',
       url: siteUrl + '/engineering-services',
       areaServed: { '@type': 'Country', name: 'Singapore' },
       provider: { '@type': 'Organization', name: 'Newham Technological Solutions', url: siteUrl },
@@ -175,10 +175,10 @@ const benefits = [
 ]
 
 const fireServices = [
-  { icon: 'fa-solid fa-shower', title: 'Sprinkler system design', text: 'Layout, head placement, pipe routing, zoning and riser diagrams to SS CP 52 and NFPA 13, across hazard classifications.' },
+  { icon: 'fa-solid fa-shower', title: 'Sprinkler system design', text: 'Layout, head placement, pipe routing, zoning and riser diagrams to SS CP 52, with NFPA 13 where the project specification calls for it, across hazard classifications.' },
   { icon: 'fa-solid fa-square-root-variable', title: 'Hydraulic calculations', text: 'Node-by-node analysis, demand versus supply and residual pressure, in submission-ready reports.' },
   { icon: 'fa-solid fa-gears', title: 'Fire pump design & selection', text: 'Pump sizing, duty and standby, pressure-flow curves and pump room layouts.' },
-  { icon: 'fa-solid fa-bell', title: 'Fire alarm system design', text: 'Detection layout, zoning, loop design and cause-and-effect matrices to SS 645 / BS 5839.' },
+  { icon: 'fa-solid fa-bell', title: 'Fire alarm system design', text: 'Detection layout, zoning, loop design and cause-and-effect matrices to SS 645, with BS 5839 where the project specification calls for it.' },
   { icon: 'fa-solid fa-wind', title: 'Gas suppression design', text: 'Clean agent and inert gas systems: agent quantities, pipe sizing and nozzle placement.' },
   { icon: 'fa-solid fa-arrows-up-down', title: 'Wet & dry riser design', text: 'Riser sizing, landing valve placement and breeching inlet locations to SS CP 52.' },
   { icon: 'fa-solid fa-fire-extinguisher', title: 'Hose reel system design', text: 'Coverage planning, pipe sizing and flow and pressure analysis.' },
@@ -214,7 +214,7 @@ const models = [
 const principles = ['Billed monthly in SGD', 'No recruitment or setup fees', 'Scope confirmed in writing first', 'Revision cycles within agreed scope', 'Third-party and PE fees quoted separately']
 
 const faqs = [
-  { q: 'Which codes do you design to?', a: 'Sprinkler design and hydraulic calculations follow SS CP 52 and NFPA 13; fire alarm design follows SS 645 / BS 5839. Drawings are formatted for SCDF submission.' },
+  { q: 'Which codes do you design to?', a: 'Sprinkler design and hydraulic calculations follow SS CP 52 and fire alarm design follows SS 645, as the SCDF Fire Code requires. NFPA 13 or BS 5839 apply only where the project specification calls for them. Drawings are formatted for SCDF submission.' },
   { q: 'Can you handle PE endorsement?', a: 'Yes. We coordinate review and endorsement by a Singapore-registered Professional Engineer where the submission needs it, and quote those fees separately.' },
   { q: 'Can we use only one stream?', a: 'Yes. Engage fire protection design, commercial support, or both.' },
   { q: 'How quickly can you turn work around?', a: 'It depends on scope. We agree timelines in writing for each deliverable before work starts.' }
