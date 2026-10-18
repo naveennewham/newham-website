@@ -50,6 +50,7 @@
             </tbody>
           </table>
         </div>
+        <p class="mt-4 text-xs leading-relaxed text-ink-500">Compiled from each vendor's public information as of October 2026 and may have changed since. CostX is a trademark of RIB Software, Cubicost of Glodon and PlanSwift of ConstructConnect. Their owners are not affiliated with CCorex and have not endorsed this comparison. To correct anything here, email admin@newhamtech.com.</p>
       </div>
     </section>
 
@@ -68,6 +69,12 @@
             <li v-for="p in chooseThem" :key="p" class="flex gap-3 text-sm text-ink-700"><i class="fa-solid fa-circle-info mt-0.5 text-ink-400" aria-hidden="true"></i>{{ p }}</li>
           </ul>
         </div>
+        <a :href="`${config.public.newhamUrl}/boq-estimation-services`" class="card group lg:col-span-2">
+          <p class="eyebrow">No estimator free for this tender?</p>
+          <h2 class="mt-2 text-xl font-bold">Have the BOQ prepared for you</h2>
+          <p class="mt-2 text-sm text-ink-600">Software still needs someone to measure and price. Newham's BOQ services in Singapore take your tender drawings to a priced M&amp;E BOQ in your format, for fire protection, ACMV, electrical, ELV and plumbing.</p>
+          <span class="mt-4 inline-flex text-sm font-semibold text-brand-700 group-hover:text-brand-900">BOQ services from Newham <i class="fa-solid fa-arrow-up-right-from-square ml-2 mt-1 text-xs" aria-hidden="true"></i></span>
+        </a>
       </div>
     </section>
 
@@ -90,8 +97,8 @@ const rows = [
   { label: 'Take-off from drawings', values: ['In DeepPlan AI (AI take-off in early access)', 'Yes', 'Yes', 'Yes'] },
   { label: 'Pricing on the client’s BOQ', values: ['FOT AI finds the quantity and amount columns on the BOQ PDF', 'Check with vendor', 'Check with vendor', 'Check with vendor'] },
   { label: 'Approvals per tender stage', values: ['Area schedule, MTO and FOT each approved', 'Check with vendor', 'Check with vendor', 'Check with vendor'] },
-  { label: 'Same sign-in for projects & payroll', values: ['Yes — DeepTrack and DeepHR', 'No', 'No', 'No'] },
-  { label: 'Singapore PSG pre-approved', values: ['No', 'Check GoBusiness', 'Yes (per GoBusiness listing)', 'Check GoBusiness'] }
+  { label: 'Same sign-in for projects & payroll', values: ['Yes — DeepTrack and DeepHR', 'Check with vendor', 'Check with vendor', 'Check with vendor'] },
+  { label: 'Singapore PSG pre-approved', values: ['No', 'Check GoBusiness', 'Check GoBusiness', 'Check GoBusiness'] }
 ]
 const chooseUs = [
   'You are an MEP or fire protection contractor pricing tenders, not a consultant QS measuring every trade.',
@@ -114,8 +121,8 @@ const faqs = [
 
 const config = useRuntimeConfig()
 const url = `${config.public.siteUrl}/compare/costx-cubicost-alternative`
-const description = 'CostX, Cubicost or PlanSwift alternative for MEP contractors? How DeepCost compares on take-off, pricing the client’s BOQ, approvals and PSG status.'
-useSeoMeta({ title: 'CostX & Cubicost alternative for MEP contractors', description, ogTitle: 'CostX, Cubicost & PlanSwift alternative for MEP tenders | CCorex', ogDescription: description })
+const description = 'CostX, Cubicost or PlanSwift alternative for MEP contractors in Singapore? How DeepCost compares on take-off, pricing the client’s BOQ, approvals and PSG.'
+useSeoMeta({ title: 'CostX & Cubicost alternative for MEP contractors in Singapore', description, ogTitle: 'CostX, Cubicost & PlanSwift alternative for MEP tenders in Singapore | CCorex', ogDescription: description })
 useHead({
   link: [{ rel: 'canonical', href: url }],
   script: [{ type: 'application/ld+json', innerHTML: JSON.stringify({ '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faqs.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) }) }]
