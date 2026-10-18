@@ -66,6 +66,20 @@ export default defineNuxtConfig({
     // about.html rather than about/index.html: Netlify would 301 /about to /about/.
     prerender: { crawlLinks: true, autoSubfolderIndex: false, routes: ['/', '/sitemap.xml', '/robots.txt'], ignore: ['/studio', '/apps', '/products/deepplanai'] }
   },
+  // Search engines render pages with a cap on how many files they will fetch; a page that needs
+  // ~30 files can lose one and fall back to the error page. So the browser build ships few files:
+  // page data inline in the HTML, styles inlined, and small code chunks merged.
+  experimental: { payloadExtraction: false },
+  hooks: {
+    'vite:extendConfig'(config, { isClient }) {
+      if (!isClient) return
+      config.build ??= {}
+      config.build.cssCodeSplit = false
+      // Rollup merges chunks under this size into their importers, keeping execution order safe.
+      const output = ((config.build.rollupOptions ??= {}).output ??= {}) as { experimentalMinChunkSize?: number }
+      output.experimentalMinChunkSize = 60_000
+    }
+  },
   routeRules: {
     // Old duplicate URLs — one canonical page per app.
     '/apps': { redirect: { to: '/products', statusCode: 301 } },
