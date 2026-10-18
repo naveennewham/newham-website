@@ -1,4 +1,7 @@
 import { fileURLToPath } from 'node:url'
+
+// Old case-study URLs (fabricated examples, removed); they redirect to /case-studies.
+const oldCaseStudies = ['acmv1', 'fire1', 'cs1', 'elv1', 'ana1', 'cs2', 'cs3', 'cs4', 'cs5', 'cs6', 'ai1', 'cloud1', 'uiux1']
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   modules: [
@@ -27,11 +30,17 @@ export default defineNuxtConfig({
     legacyAppointmentWebhook: 'https://firefabx.com/webhook/newham-appointment'
   },
   // Guides (content/guides/*.md) are readable on the server for the sitemap.
-  nitro: { serverAssets: [{ baseName: 'guides', dir: fileURLToPath(new URL('./content/guides', import.meta.url)) }] },
+  nitro: {
+    serverAssets: [{ baseName: 'guides', dir: fileURLToPath(new URL('./content/guides', import.meta.url)) }],
+    // Every page is static HTML served from the CDN (fast for crawlers, no cold starts).
+    // Pages are found by following links from the home page, sitemap and robots.txt.
+    // Redirect URLs are skipped: they must stay 301s, and Netlify serves a static file in place of a redirect.
+    // about.html rather than about/index.html: Netlify would 301 /about to /about/.
+    prerender: { crawlLinks: true, autoSubfolderIndex: false, routes: ['/', '/sitemap.xml', '/robots.txt'], ignore: oldCaseStudies.map((id) => `/case-studies/${id}`) }
+  },
   routeRules: {
     // Old case-study URLs (fabricated examples, removed) -> project experience.
-    ...Object.fromEntries(['acmv1', 'fire1', 'cs1', 'elv1', 'ana1', 'cs2', 'cs3', 'cs4', 'cs5', 'cs6', 'ai1', 'cloud1', 'uiux1']
-      .map((id) => [`/case-studies/${id}`, { redirect: { to: '/case-studies', statusCode: 301 } }]))
+    ...Object.fromEntries(oldCaseStudies.map((id) => [`/case-studies/${id}`, { redirect: { to: '/case-studies', statusCode: 301 } }]))
   },
   app: {
     head: {
