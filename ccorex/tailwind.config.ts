@@ -14,8 +14,8 @@ export default <Partial<Config>>{
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Inter', 'system-ui', 'sans-serif'],
-        display: ['"Inter Tight"', 'Inter', 'system-ui', 'sans-serif']
+        sans: ['Inter', '"Inter Fallback: Helvetica Neue"', '"Inter Fallback: Roboto"', '"Inter Fallback: Segoe UI"', '"Inter Fallback: Arial"', 'system-ui', 'sans-serif'],
+        display: ['"Inter Tight"', '"Inter Tight Fallback: Helvetica Neue"', '"Inter Tight Fallback: Roboto"', '"Inter Tight Fallback: Segoe UI"', '"Inter Tight Fallback: Arial"', 'Inter', 'system-ui', 'sans-serif']
       },
       colors: {
         brand: {

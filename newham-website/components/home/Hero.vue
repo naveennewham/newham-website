@@ -66,7 +66,7 @@
           @mouseenter="select(i)"
           @focus="select(i)"
         >
-          <video v-if="motion && p.video && active === i" :src="p.video" :poster="p.poster" class="absolute inset-0 -z-10 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" autoplay muted loop playsinline aria-hidden="true"></video>
+          <video v-if="motion && videoOk && p.video && active === i" :src="p.video" :poster="p.poster" class="absolute inset-0 -z-10 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" autoplay muted loop playsinline aria-hidden="true"></video>
           <img v-else :src="p.poster" alt="" class="absolute inset-0 -z-10 h-full w-full object-cover" />
           <div class="absolute inset-0 -z-10 bg-[#04161b]/80 md:bg-transparent md:bg-gradient-to-t md:from-[#04161b]/90 md:via-[#04161b]/35 md:to-[#04161b]/5" aria-hidden="true"></div>
 
@@ -121,12 +121,17 @@ const standards = ['SS CP 52', 'NFPA 13', 'SCDF', 'BCA', 'CPF / MOM']
 
 const active = ref(0)
 const motion = ref(false)
+// Clips start only after the page has loaded, so video never competes with the first paint.
+const videoOk = ref(false)
 let userPicked = false
 let t: ReturnType<typeof setInterval> | undefined
 function select(i: number) { userPicked = true; active.value = i }
 onMounted(() => {
   motion.value = !window.matchMedia('(prefers-reduced-motion: reduce)').matches
   if (!motion.value) return
+  const go = () => setTimeout(() => { videoOk.value = true }, 800)
+  if (document.readyState === 'complete') go()
+  else window.addEventListener('load', go, { once: true })
   t = setInterval(() => { if (!userPicked) active.value = (active.value + 1) % pillars.length }, 5500)
 })
 onBeforeUnmount(() => clearInterval(t))

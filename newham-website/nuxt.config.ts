@@ -48,7 +48,10 @@ export default defineNuxtConfig({
       script: [
         // Consent Mode v2: everything denied until the visitor chooses (see composables/useConsent).
         { innerHTML: "window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('consent','default',{ad_storage:'denied',analytics_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',wait_for_update:500});", tagPosition: 'head' },
-        { innerHTML: "(function(){var d=document.documentElement;try{var q=new URLSearchParams(location.search).get('theme');if(q==='light'||q==='dark')localStorage.setItem('theme',q);var t=q||localStorage.getItem('theme');if(t!=='light')d.classList.add('dark')}catch(e){d.classList.add('dark')}})()", tagPosition: 'head' }],
+        { innerHTML: "(function(){var d=document.documentElement;try{var q=new URLSearchParams(location.search).get('theme');if(q==='light'||q==='dark')localStorage.setItem('theme',q);var t=q||localStorage.getItem('theme');if(t!=='light')d.classList.add('dark')}catch(e){d.classList.add('dark')}})()", tagPosition: 'head' },
+        // Web fonts and icons as non-blocking stylesheets: a script-inserted link does not hold up
+        // the first paint (text shows in the size-matched fallback from main.css meanwhile).
+        { innerHTML: "['https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Inter+Tight:wght@500;600;700;800&display=swap','https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css'].forEach(function(h){var l=document.createElement('link');l.rel='stylesheet';l.crossOrigin='anonymous';l.href=h;document.head.appendChild(l)})", tagPosition: 'head' }],
       titleTemplate: (title?: string) => (title ? `${title} | Newham` : 'Newham — Construction software and specialist M&E engineers, Singapore'),
       meta: [
         // Google Search Console ownership (URL-prefix property, verified by Markaiting's reader account).
@@ -66,8 +69,9 @@ export default defineNuxtConfig({
         { rel: 'icon', type: 'image/png', href: '/newham-logo.png' },
         { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
         { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' },
-        { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Inter+Tight:wght@500;600;700;800&display=swap' },
-        { rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css' }
+        // Fetched early, applied without blocking the first paint (see the script above).
+        { rel: 'preload', as: 'style', href: 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Inter+Tight:wght@500;600;700;800&display=swap', crossorigin: 'anonymous' },
+        { rel: 'preload', as: 'style', href: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css', crossorigin: 'anonymous' }
       ]
     }
   },

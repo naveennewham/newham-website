@@ -12,11 +12,11 @@
     <div v-if="aspect" class="overflow-hidden" :style="{ aspectRatio: aspect }">
       <img :src="src" :alt="alt" class="block h-full w-full object-cover" :style="{ objectPosition: focus ?? 'left top' }" :loading="eager ? 'eager' : 'lazy'" decoding="async" />
     </div>
-    <img v-else :src="src" :alt="alt" class="block w-full" :loading="eager ? 'eager' : 'lazy'" decoding="async" />
+    <img v-else :src="src" :alt="alt" :width="width" :height="height" class="block h-auto w-full" :loading="eager ? 'eager' : 'lazy'" decoding="async" />
     <figcaption v-if="caption" class="border-t border-ink-100 px-4 py-2.5 text-xs text-ink-500">{{ caption }}</figcaption>
   </figure>
 </template>
 
 <script setup lang="ts">
-defineProps<{ src: string; alt: string; url?: string; caption?: string; dark?: boolean; eager?: boolean; aspect?: string; focus?: string }>()
+defineProps<{ src: string; alt: string; url?: string; caption?: string; dark?: boolean; eager?: boolean; aspect?: string; focus?: string; width?: number; height?: number }>()
 </script>

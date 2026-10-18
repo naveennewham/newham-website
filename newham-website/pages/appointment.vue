@@ -85,7 +85,7 @@
 <script setup lang="ts">
 const siteUrl = useRuntimeConfig().public.siteUrl as string
 useSeoMeta({
-  title: 'Book a discovery call on construction software and M&E support',
+  title: 'Book a discovery call: software and M&E support',
   description: 'Book a 30-minute discovery call with Newham about CCorex software, dedicated M&E engineers or fire protection and commercial engineering services.',
   ogTitle: 'Book a discovery call with Newham',
   ogDescription: 'Thirty minutes on your pipeline and team, with no obligation.',

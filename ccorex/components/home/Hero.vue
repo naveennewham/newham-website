@@ -59,7 +59,7 @@
 
               <!-- Videos (crossfade) -->
               <div class="relative aspect-video bg-[#03191f]">
-                <video v-for="(t, k) in tours" :key="t.key" :ref="(el) => (vids[k] = el as HTMLVideoElement)" class="absolute inset-0 h-full w-full object-cover transition-opacity duration-700 ease-out" :class="k === active ? 'opacity-100' : 'opacity-0'" :src="`/videos/tour-${t.key}.mp4`" :poster="`/videos/tour-${t.key}-start.webp`" :preload="k === 0 ? 'auto' : 'none'" muted playsinline :aria-hidden="k !== active" :aria-label="`${t.name} product tour, no sound`" @ended="next"></video>
+                <video v-for="(t, k) in tours" :key="t.key" :ref="(el) => (vids[k] = el as HTMLVideoElement)" class="absolute inset-0 h-full w-full object-cover transition-opacity duration-700 ease-out" :class="k === active ? 'opacity-100' : 'opacity-0'" :src="`/videos/tour-${t.key}.mp4`" :poster="`/videos/tour-${t.key}-start.webp`" preload="none" muted playsinline :aria-hidden="k !== active" :aria-label="`${t.name} product tour, no sound`" @ended="next"></video>
               </div>
             </div>
           </div>
@@ -111,9 +111,16 @@ let p = 0.35 // scroll progress: 0 = tilted, 1 = flat
 let pTarget = 0.35
 let io: IntersectionObserver | undefined
 
+// Tours start only after the page has loaded, so video never competes with the first paint.
+let ready = false
+function whenIdle(fn: () => void) {
+  const go = () => setTimeout(() => ('requestIdleCallback' in window ? requestIdleCallback(fn, { timeout: 2000 }) : fn()), 300)
+  if (document.readyState === 'complete') go()
+  else window.addEventListener('load', go, { once: true })
+}
 function playActive() {
   const v = vids[active.value]
-  if (!v || paused.value || !visible || lightbox.value) return
+  if (!v || !ready || paused.value || !visible || lightbox.value) return
   v.play().catch(() => {})
 }
 // Tours play a little faster than recorded.
@@ -184,6 +191,7 @@ onMounted(() => {
   reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
   vids.forEach(prime)
   vids[0]?.addEventListener('playing', preloadNext, { once: true })
+  whenIdle(() => { ready = true; const v = vids[0]; if (v) { v.preload = 'auto'; v.load(); prime(v) } playActive() })
   if (reduced) { paused.value = true; p = pTarget = 1; stage.value?.style.setProperty('--p', '1') }
   else {
     measure()

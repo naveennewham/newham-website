@@ -6,6 +6,17 @@
    Design system (shared with ccorex/assets/css/main.css).
    See ../DESIGN_SYSTEM.md for usage.
    ------------------------------------------------------------------ */
+
+/* Size-matched fallbacks: text renders at once in a local font with Inter's metrics, so nothing
+   jumps when the web font (loaded without blocking, see nuxt.config) arrives. */
+@font-face{font-family:"Inter Fallback: Helvetica Neue";src:local("Helvetica Neue");size-adjust:106.1198%;ascent-override:91.2883%;descent-override:22.7301%;line-gap-override:0%}
+@font-face{font-family:"Inter Fallback: Roboto";src:local("Roboto");size-adjust:107.3546%;ascent-override:90.2384%;descent-override:22.4686%;line-gap-override:0%}
+@font-face{font-family:"Inter Fallback: Segoe UI";src:local("Segoe UI");size-adjust:107.7093%;ascent-override:89.9412%;descent-override:22.3946%;line-gap-override:0%}
+@font-face{font-family:"Inter Fallback: Arial";src:local("Arial");size-adjust:107.1194%;ascent-override:90.4365%;descent-override:22.518%;line-gap-override:0%}
+@font-face{font-family:"Inter Tight Fallback: Helvetica Neue";src:local("Helvetica Neue");size-adjust:95.4861%;ascent-override:101.4545%;descent-override:25.2614%;line-gap-override:0%}
+@font-face{font-family:"Inter Tight Fallback: Roboto";src:local("Roboto");size-adjust:96.5971%;ascent-override:100.2876%;descent-override:24.9708%;line-gap-override:0%}
+@font-face{font-family:"Inter Tight Fallback: Segoe UI";src:local("Segoe UI");size-adjust:96.9163%;ascent-override:99.9574%;descent-override:24.8886%;line-gap-override:0%}
+@font-face{font-family:"Inter Tight Fallback: Arial";src:local("Arial");size-adjust:96.3855%;ascent-override:100.5078%;descent-override:25.0256%;line-gap-override:0%}
 @layer base {
   html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
   body { @apply bg-white text-ink-700 font-sans; }
