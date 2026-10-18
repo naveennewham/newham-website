@@ -49,7 +49,6 @@ const guides = [
   { to: '/resources/retention-sum-singapore', title: 'Retention sums in Singapore construction' }
 ]
 const faqs = [
-  { q: 'Does DeepTrack track SOP Act deadlines?', a: 'Not yet. DeepTrack prepares the claim and its certificate; the SOP Act steps (serving the claim, payment response, adjudication) are handled outside it for now. Our guide explains the process in general terms.' },
   { q: 'How are retention and GST handled?', a: 'Retention is calculated from the percentage on the claim and 9% GST is applied. The certificate shows retention to date and the previous retention.' },
   { q: 'Can we send the claim in our own format?', a: 'Each claim produces a PDF Progress Claim Certificate. If the main contractor requires its own format, you can use DeepTrack’s figures to fill it.' },
   { q: 'Do claims connect to project costs?', a: 'Yes. Claims sit on the same project as budgets, purchase requests, invoices and timesheets, so you see claimed value against cost.' },

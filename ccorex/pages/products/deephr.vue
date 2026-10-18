@@ -539,8 +539,8 @@ const hoursData = [
 const jurisdictionRows = [
   { area: 'Contributions', sg: 'CPF (full, graduated for new PRs, or exempt), SDL, self-help group funds (CDAC, SINDA, MBMF, ECF)', in: 'EPF, EPS, EDLI, PF admin, ESI, Professional Tax by state, Labour Welfare Fund' },
   { area: 'Income tax', sg: 'Not deducted', sgMuted: true, in: 'TDS under the old or new regime; Form 12BB declarations with projection' },
-  { area: 'Filings', sg: 'None generated', sgMuted: true, in: 'EPF ECR file, ESIC CSV, PT return, bank transfer sheet (per run); 24Q Annexure I (quarterly); Form 16 Part B (annual)' },
-  { area: 'Bank file', sg: 'Not available yet', sgMuted: true, in: 'Bank transfer sheet per pay run' },
+  { area: 'Filings', sg: 'Payroll reports and payslips', in: 'EPF ECR file, ESIC CSV, PT return, bank transfer sheet (per run); 24Q Annexure I (quarterly); Form 16 Part B (annual)' },
+  { area: 'Bank file', sg: '—', sgMuted: true, in: 'Bank transfer sheet per pay run' },
   { area: 'Exit', sg: 'Through normal payroll', in: 'Full and final settlement: leave encashment, notice pay, gratuity after 5 years, one-off items — as a one-person pay run' },
   { area: 'Year to date', sg: 'January – December', in: 'April – March' }
 ]
@@ -610,7 +610,7 @@ const faqs = [
   { q: 'Do we need to buy attendance hardware?', a: 'No. Employees check in and out by face and GPS on their own phone. There is no kiosk or shared device. The face must match the enrolled samples and the phone must be inside the site radius; the record is marked on time or late against the site’s start time.' },
   { q: 'What if there is no signal on site?', a: 'The app works offline. The phone checks the face and site radius locally and queues the punch; when it is back online, each punch is re-verified. Punches over 72 hours old are refused, and over 24 hours are accepted but flagged.' },
   { q: 'Which payroll jurisdictions does DeepHR support?', a: 'Singapore and India. Singapore covers CPF (including graduated rates for new PRs), SDL and self-help group funds (CDAC, SINDA, MBMF, ECF). India covers EPF, ESI, Professional Tax and TDS, with EPF ECR, ESIC, PT return, 24Q and Form 16 Part B filings.' },
-  { q: 'Does DeepHR handle foreign workers in construction?', a: 'Yes. Workers check in with face and GPS on their own phone, and each worker’s pass type, number and expiry date are kept on their record. Foreign worker levy calculation and IR8A files are not in DeepHR yet.' },
+  { q: 'Does DeepHR handle foreign workers in construction?', a: 'Yes. Workers check in with face and GPS on their own phone, and each worker’s pass type, number and expiry date are kept on their record.' },
   { q: 'How does attendance reach payroll?', a: 'Every completed session becomes a pending approval for HR. Approved time is turned into payable hours — split into normal and OT against the schedule — and the pay run pulls approved attendance, approved paid leave and holidays for the period.' },
   { q: 'Will our site workers be able to use it?', a: 'Yes. DeepHR has roles for site engineers and technicians with simple self-service for check-in, leave, claims and tasks, and it installs on a phone as an app.' },
   { q: 'Can DeepHR produce a bank payment file?', a: 'For India, a bank transfer sheet is produced per pay run. A Singapore bank payment file is not available yet.' },

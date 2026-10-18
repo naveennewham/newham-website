@@ -50,7 +50,6 @@ const guides = [
 const faqs = [
   { q: 'Which Singapore contributions does DeepHR calculate?', a: 'CPF, including graduated rates for new permanent residents, the Skills Development Levy, and self-help group funds (CDAC, SINDA, MBMF, ECF). Rates follow the current CPF Board and IRAS rules; check them against official sources when they change.' },
   { q: 'Does it handle foreign workers?', a: 'Yes. Workers check in with face and GPS on their own phone, and each worker’s pass type, number and expiry date are kept on their record.' },
-  { q: 'Does DeepHR calculate the foreign worker levy or prepare IR8A?', a: 'Not yet. Ask us about the roadmap; for now the levy and year-end IRAS submissions are handled outside DeepHR.' },
   { q: 'Do workers need a company phone?', a: 'No. Attendance runs on the worker’s own phone, and punches are queued if there is no signal on site.' },
   { q: 'How is DeepHR priced?', a: 'Pricing is shared on request. Book a demo or email admin@newhamtech.com.' }
 ]

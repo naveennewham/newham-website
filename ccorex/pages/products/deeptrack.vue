@@ -480,7 +480,6 @@ const faqs = [
   { q: 'How does invoice matching work?', a: 'Accounts payable captures the vendor invoice and DeepTrack matches it against the PO, the delivery endorsement and the purchase request. Duplicate invoice numbers are blocked, and a rate mismatch or quantity above what was endorsed marks the invoice as a discrepancy.' },
   { q: 'Does DeepTrack track labour and overhead cost?', a: 'Yes. Timesheets are coded to project, workhead, WBS activity and business unit. The month-end run allocates direct labour at actual hourly rates, the worker pool, HQ and business-unit overhead, and project overhead, then locks the period.' },
   { q: 'Is it set up for Singapore?', a: 'Yes. DeepTrack works in SGD with 9% GST, and codes cost to BCA workheads. Progress claims carry retention and GST and produce a PDF Progress Claim Certificate.' },
-  { q: 'Does DeepTrack track SOP Act deadlines?', a: 'Not yet. DeepTrack prepares each progress claim and its certificate; serving the claim, the payment response and adjudication are handled outside it for now.' },
   { q: 'Does it connect to our accounting system?', a: 'Each tenant can link Zoho Books for vendors and purchase orders. Month-end also produces a journal CSV for your ledger, and general-ledger costs can be imported from CSV.' },
   { q: 'How is DeepTrack priced?', a: 'Plans scale with your team and projects — Starter, Growth and Enterprise. Contact us for a tailored quote.' }
 ]
