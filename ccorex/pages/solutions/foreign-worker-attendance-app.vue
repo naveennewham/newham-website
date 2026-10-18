@@ -5,10 +5,10 @@
     app-name="DeepHR"
     eyebrow="Site attendance · Singapore"
     seo-title="Foreign worker attendance app with face & GPS"
-    seo-description="Attendance app for construction foreign workers in Singapore: face and GPS check-in on the worker's phone, offline punches, Work Permit expiry alerts and levy reports."
+    seo-description="Attendance app for construction foreign workers in Singapore: face and GPS check-in on the worker's phone, offline punches, HR approval and work pass records."
     h1="Foreign worker attendance app with face and GPS check-in"
-    lead="Workers check in on their own phone with face and GPS, even without signal. HR approves each session, Work Permit expiry dates are tracked, and attendance flows straight into payroll."
-    :hero-points="['Face + GPS on the worker’s phone', 'Works without signal', 'HR approves each session', 'Work Permit expiry alerts', 'Skill tier & levy per worker']"
+    lead="Workers check in on their own phone with face and GPS, even without signal. HR approves each session, and approved attendance flows straight into payroll."
+    :hero-points="['Face + GPS on the worker’s phone', 'Works without signal', 'HR approves each session', 'Work pass details per worker']"
     problem-title="Site attendance that nobody fully trusts"
     :problems="problems"
     flow-title="From check-in to payroll"
@@ -26,7 +26,7 @@
 const problems = [
   { icon: 'fa-solid fa-fingerprint', title: 'Kiosks and paper sheets', text: 'Hardware has to be installed and maintained on every site, or attendance lives on paper.' },
   { icon: 'fa-solid fa-user-secret', title: 'Buddy punching', text: 'Without a face check and a location, it is hard to prove who was on which site.' },
-  { icon: 'fa-solid fa-id-card', title: 'Permits expire unnoticed', text: 'Work Permit expiry dates sit in a spreadsheet, and renewals are missed.' }
+  { icon: 'fa-solid fa-clock', title: 'Hours re-keyed', text: 'Site hours are copied from sheets into payroll and project costs, with mistakes along the way.' }
 ]
 const flow = [
   { title: 'Check in', text: 'Face and GPS on the worker’s phone.', icon: 'fa-solid fa-user-check' },
@@ -39,8 +39,7 @@ const features = [
   { icon: 'fa-solid fa-face-smile', title: 'Face check-in', text: 'Each check-in and check-out is verified against the worker’s face.' },
   { icon: 'fa-solid fa-location-dot', title: 'GPS location', text: 'The location is recorded with every punch, so you know which site the worker was on.' },
   { icon: 'fa-solid fa-signal', title: 'Works offline', text: 'Punches are queued without signal and sent when the phone reconnects.' },
-  { icon: 'fa-solid fa-id-card', title: 'Work Permit register', text: 'Permit numbers and expiry dates per worker, with alerts before a permit expires.' },
-  { icon: 'fa-solid fa-ranking-star', title: 'Skill tier and levy', text: 'Basic or higher-skilled tier per worker, with the monthly levy cost per worker and per project.' },
+  { icon: 'fa-solid fa-id-card', title: 'Work pass details', text: 'Pass type, number and issue and expiry dates on each worker’s record.' },
   { icon: 'fa-solid fa-mobile-screen', title: 'No hardware', text: 'Runs on the worker’s own phone as an installable web app.' }
 ]
 const guides = [
@@ -52,7 +51,7 @@ const faqs = [
   { q: 'Do workers need to install anything?', a: 'DeepHR runs on the worker’s own phone as an installable web app. There is no kiosk or other hardware to buy.' },
   { q: 'What if a site has no mobile signal?', a: 'Punches are queued on the phone and sent when it reconnects, so attendance is not lost.' },
   { q: 'How do we stop buddy punching?', a: 'Each punch is checked against the worker’s face and records the GPS location, and HR approves each session before it reaches payroll.' },
-  { q: 'Can it remind us about Work Permit renewals?', a: 'Yes. Work Permit expiry dates are kept per worker, with alerts before a permit expires.' },
+  { q: 'Does it keep Work Permit details?', a: 'Yes. Each worker’s pass type, number and issue and expiry dates are kept on their record and can be imported or exported in Excel.' },
   { q: 'How is DeepHR priced?', a: 'Pricing is shared on request. Book a demo or email admin@newhamtech.com.' }
 ]
 </script>

@@ -157,4 +157,4 @@ This guide is general information, not legal advice. Check the current Act and y
 
 ## How CCorex helps
 
-[DeepTrack](/products/deeptrack) builds this layout from your project data. Progress claims are numbered per project, calculate retention at the contract rate and 9% GST, and produce a PDF Progress Claim Certificate. Each payment claim states that it is made under the SOP Act, and DeepTrack records the payment-response due date and the response you receive. Retention held is tracked per project with its release dates. [Contact us](/contact) to walk through a claim on one of your live projects.
+[DeepTrack](/products/deeptrack) builds a similar layout from your project data. Progress claims are numbered per project against the customer PO, calculate retention and 9% GST, and produce a PDF Progress Claim Certificate showing retention to date and the amount due. The same project holds budgets, purchasing and costs, so claimed value sits next to cost. [Contact us](/contact) to walk through a claim on one of your live projects.
