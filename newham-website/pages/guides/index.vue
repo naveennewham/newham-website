@@ -28,7 +28,7 @@
 
 <script setup lang="ts">
 const site = useRuntimeConfig().public.siteUrl as string
-useSeoMeta({ title: 'Guides for M&E contractors: estimating, design and delivery', description: 'Practical guides from Newham on M&E estimating, fire protection and commercial work, project delivery and site teams in Singapore and India.' })
+useSeoMeta({ title: 'Guides for M&E contractors: estimating, design and delivery', description: 'Practical guides from Newham on M&E estimating, fire protection and commercial work, project delivery and site teams in Singapore and India.', ogTitle: 'Guides for M&E contractors — Newham', ogDescription: 'Practical guides on M&E estimating, fire protection design and project delivery.', ogUrl: `${site}/guides` })
 // An empty guides page is thin content: keep it out of the index until the first guide is published.
 useHead({ link: [{ rel: 'canonical', href: `${site}/guides` }], meta: guides.length ? [] : [{ name: 'robots', content: 'noindex, follow' }] })
 </script>
