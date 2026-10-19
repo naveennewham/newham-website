@@ -101,8 +101,10 @@ const props = defineProps<{
 }>()
 
 const all = [
+  { slug: 'construction-cost-control-software', name: 'Construction cost control software', icon: 'fa-solid fa-chart-line', to: '/solutions/construction-cost-control-software' },
   { slug: 'progress-claim-software', name: 'Progress claim software', icon: 'fa-solid fa-file-invoice-dollar', to: '/solutions/progress-claim-software' },
   { slug: 'construction-payroll-software', name: 'Construction payroll software', icon: 'fa-solid fa-money-check-dollar', to: '/solutions/construction-payroll-software' },
+  { slug: 'construction-hr-software', name: 'HR software for construction', icon: 'fa-solid fa-people-group', to: '/solutions/construction-hr-software' },
   { slug: 'foreign-worker-attendance-app', name: 'Foreign worker attendance app', icon: 'fa-solid fa-user-check', to: '/solutions/foreign-worker-attendance-app' },
   { slug: 'estimating', name: 'MEP estimating and BOQ software', icon: 'fa-solid fa-calculator', to: '/products/deepcost' }
 ]

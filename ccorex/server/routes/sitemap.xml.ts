@@ -2,7 +2,7 @@
 import { parse } from 'yaml'
 import { apps } from '../../data/apps'
 
-const STATIC = ['/', '/products', '/estimating/fire-protection', '/estimating/acmv', '/estimating/elv', '/compare/costx-cubicost-alternative', '/solutions/progress-claim-software', '/solutions/construction-payroll-software', '/solutions/foreign-worker-attendance-app', '/platform', '/solutions', '/industries', '/integrations', '/pricing', '/resources', '/faq', '/about', '/contact', '/privacy']
+const STATIC = ['/', '/products', '/estimating/fire-protection', '/estimating/acmv', '/estimating/elv', '/compare/costx-cubicost-alternative', '/solutions/construction-cost-control-software', '/solutions/progress-claim-software', '/solutions/construction-hr-software', '/solutions/construction-payroll-software', '/solutions/foreign-worker-attendance-app', '/platform', '/solutions', '/industries', '/integrations', '/pricing', '/resources', '/faq', '/about', '/contact', '/privacy']
 
 // <lastmod> for a fixed page: the last change to its page file (exact, folder index, or the
 // dynamic [param] file that renders it), else the build date.

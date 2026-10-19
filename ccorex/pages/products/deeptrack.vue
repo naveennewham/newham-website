@@ -8,7 +8,7 @@
       url="deeptrack.app / dashboard"
     >
       <template #title>Project cost control for contractors, from contract to profit.</template>
-      <template #lead>DeepTrack is the project delivery app in CCorex. Budgets, client claims, manpower and timesheets, procurement, accounts payable with invoice matching and month-end cost allocation in one system — built for Singapore contractors, in SGD with 9% GST.</template>
+      <template #lead>DeepTrack is construction cost control software you can use on its own or with the rest of CCorex. Budgets, client claims, manpower and timesheets, procurement, accounts payable with invoice matching and month-end cost allocation in one system — built for Singapore contractors, in SGD with 9% GST.</template>
     </UiProductHero>
 
     <!-- Problem -->
@@ -283,9 +283,9 @@ const pageUrl = config.public.siteUrl + '/products/deeptrack'
 const description = 'DeepTrack is project cost control for contractors: budgets, client claims, timesheets, PR-to-PO procurement, invoice matching and month-end cost allocation.'
 
 useSeoMeta({
-  title: 'DeepTrack — construction project & cost control software',
+  title: 'DeepTrack — construction cost control & progress claim software, Singapore',
   description,
-  ogTitle: 'DeepTrack — project delivery & cost control for contractors',
+  ogTitle: 'DeepTrack — construction cost control & progress claim software for Singapore contractors',
   ogDescription: description
 })
 useHead({
@@ -471,11 +471,13 @@ const plans = [
 ]
 
 const solutionLinks = [
+  { to: '/solutions/construction-cost-control-software', name: 'Construction cost control software', icon: 'fa-solid fa-chart-line' },
   { to: '/solutions/progress-claim-software', name: 'Progress claim software', icon: 'fa-solid fa-file-invoice-dollar' },
   { to: '/resources/sop-act-payment-claims-singapore', name: 'Guide: SOP Act payment claims', icon: 'fa-solid fa-scale-balanced' },
   { to: '/resources/retention-sum-singapore', name: 'Guide: retention sums', icon: 'fa-solid fa-piggy-bank' }
 ]
 const faqs = [
+  { q: 'Can we buy DeepTrack on its own?', a: 'Yes. DeepTrack is sold on its own in Starter, Growth and Enterprise tiers, priced per user. You do not need any other CCorex app; DeepCost or DeepHR can be added later on the same sign-in.' },
   { q: 'What does DeepTrack cover?', a: 'A contractor’s projects from contract to profit: projects and client POs, budgets, client claims, manpower and timesheets, procurement, accounts payable with invoice matching, and month-end cost allocation — with reports and scheduled exports.' },
   { q: 'How do purchase requests get approved?', a: 'Every purchase request is raised against an approved budget and routed through the configured approvals: project manager, then general manager, and the managing director above your tenant’s threshold. A request code is assigned at final approval.' },
   { q: 'How does invoice matching work?', a: 'Accounts payable captures the vendor invoice and DeepTrack matches it against the PO, the delivery endorsement and the purchase request. Duplicate invoice numbers are blocked, and a rate mismatch or quantity above what was endorsed marks the invoice as a discrepancy.' },

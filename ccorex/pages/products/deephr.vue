@@ -8,7 +8,7 @@
       url="deephr.app / dashboard"
     >
       <template #title>HR and payroll software for Singapore and India.</template>
-      <template #lead>DeepHR is the HR &amp; payroll app in CCorex. Face and GPS attendance on each employee’s own phone, leave, claims and timesheets — flowing into payroll with Singapore (CPF, SDL, SHG) or India (EPF, ESI, PT, TDS) statutory rules. Self-service for every employee, control for HR.</template>
+      <template #lead>DeepHR is HR and payroll software you can use on its own or with the rest of CCorex. Face and GPS attendance on each employee’s own phone, leave, claims and timesheets — flowing into payroll with Singapore (CPF, SDL, SHG) or India (EPF, ESI, PT, TDS) statutory rules. Self-service for every employee, control for HR.</template>
     </UiProductHero>
 
     <!-- Section nav -->
@@ -389,7 +389,7 @@ const pageUrl = config.public.siteUrl + '/products/deephr'
 const description = 'DeepHR is HR and payroll software for Singapore and India: face and GPS attendance on the phone, leave, claims, approvals, and CPF or EPF statutory payroll.'
 
 useSeoMeta({
-  title: 'DeepHR — HR & payroll for Singapore and India',
+  title: 'DeepHR — HR, payroll & site attendance software, Singapore',
   description,
   ogTitle: 'DeepHR — HR, attendance & payroll (Singapore CPF, India EPF)',
   ogDescription: description
@@ -602,11 +602,13 @@ const plans = [
 ]
 
 const solutionLinks = [
+  { to: '/solutions/construction-hr-software', name: 'HR software for construction', icon: 'fa-solid fa-people-group' },
   { to: '/solutions/construction-payroll-software', name: 'Construction payroll software', icon: 'fa-solid fa-money-check-dollar' },
   { to: '/solutions/foreign-worker-attendance-app', name: 'Foreign worker attendance app', icon: 'fa-solid fa-user-check' },
   { to: '/resources/foreign-worker-levy-construction-singapore', name: 'Guide: foreign worker levy', icon: 'fa-solid fa-coins' }
 ]
 const faqs = [
+  { q: 'Can we buy DeepHR on its own?', a: 'Yes. DeepHR is sold on its own in Starter, Growth and Enterprise tiers, priced per employee. You do not need any other CCorex app; DeepCost or DeepTrack can be added later on the same sign-in.' },
   { q: 'Do we need to buy attendance hardware?', a: 'No. Employees check in and out by face and GPS on their own phone. There is no kiosk or shared device. The face must match the enrolled samples and the phone must be inside the site radius; the record is marked on time or late against the site’s start time.' },
   { q: 'What if there is no signal on site?', a: 'The app works offline. The phone checks the face and site radius locally and queues the punch; when it is back online, each punch is re-verified. Punches over 72 hours old are refused, and over 24 hours are accepted but flagged.' },
   { q: 'Which payroll jurisdictions does DeepHR support?', a: 'Singapore and India. Singapore covers CPF (including graduated rates for new PRs), SDL and self-help group funds (CDAC, SINDA, MBMF, ECF). India covers EPF, ESI, Professional Tax and TDS, with EPF ECR, ESIC, PT return, 24Q and Form 16 Part B filings. Singapore payroll also prepares IR8A / AIS year-end files. Each organisation has one jurisdiction; a group with entities in both uses two organisations.' },

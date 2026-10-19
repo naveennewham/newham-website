@@ -5,7 +5,7 @@
       <div class="bg-grid pointer-events-none absolute inset-0 opacity-50" aria-hidden="true"></div>
       <div class="container-site relative pb-28 pt-16 text-center lg:pt-24">
         <p class="eyebrow-dark">Plans &amp; packages</p>
-        <h1 class="h-display mx-auto mt-5 max-w-4xl text-white">Subscribe to the suite. Scale as you grow.</h1>
+        <h1 class="h-display mx-auto mt-5 max-w-4xl text-white">One app or the whole suite. Scale as you grow.</h1>
         <p class="lead-dark mx-auto mt-6 max-w-2xl">Flexible per-user pricing — bundle the apps that fit your business and get a tailored quote. Start with one workflow and add apps when you are ready.</p>
         <div class="mt-8 flex flex-wrap justify-center gap-3">
           <NuxtLink to="/contact" class="btn-accent">Get a tailored quote <i class="fa-solid fa-arrow-right text-xs" aria-hidden="true"></i></NuxtLink>
