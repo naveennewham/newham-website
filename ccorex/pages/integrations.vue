@@ -130,6 +130,6 @@ const roadmap = [
   { icon: 'fa-solid fa-address-book', title: 'Shared customers & contacts', text: 'Customers and contacts shared across apps.' },
   { icon: 'fa-solid fa-right-left', title: 'Cross-app data flow', text: 'Won tender → project → payroll, without re-entry.' },
   { icon: 'fa-solid fa-plug', title: 'Deeper integrations', text: 'Extend to your accounting, CRM and other systems.' },
-  { icon: 'fa-solid fa-building-columns', title: 'Singapore bank payment file', text: 'A bank payment file for Singapore payroll (India already has a bank transfer sheet).' }
+  { icon: 'fa-solid fa-building-columns', title: 'Singapore bank payment file', text: 'A bank payment file for Singapore payroll.' }
 ]
 </script>

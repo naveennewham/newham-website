@@ -3,6 +3,8 @@
 > CCorex is construction software for MEP, fire-protection and main contractors in Singapore and India: tender estimating, drawing take-off, project cost control, and HR & payroll on one sign-in, with an AI assistant (ARIVU) in every app. Made by Newham Technological Solutions, Singapore.
 
 ## Apps
+DeepCost, DeepTrack and DeepHR are each sold on their own (Starter, Growth and Enterprise tiers) or together as a suite on one sign-in.
+
 - [DeepCost](https://ccorex.com/products/deepcost): MEP tender estimating — AI tender summary, area schedules, material take-off, a priced library, and FOT AI on the client's BOQ PDF.
 - [DeepPlan AI](https://ccorex.com/products/deepplan-ai): drawing take-off — rooms, measurements and symbol counts from floor plans into a priced BOQ (AI take-off in early access).
 - [DeepTrack](https://ccorex.com/products/deeptrack): project delivery and cost control — budgets, budget against actual by workhead, WBS and cost centre, purchasing, invoice matching, client claims, month-end cost allocation.
@@ -10,6 +12,14 @@
 - [ARIVU AI](https://ccorex.com/products/arivu-ai): read-only AI assistant that answers questions from your own data across the apps.
 - [Deep Drive](https://ccorex.com/products/deep-drive): project document storage.
 - [PDF Editor](https://ccorex.com/products/pdf-editor): mark up, sign, split and merge PDFs.
+
+## Solutions for Singapore contractors
+- [MEP estimating and BOQ software](https://ccorex.com/products/deepcost) (DeepCost), with trade pages for [fire protection](https://ccorex.com/estimating/fire-protection), [ACMV](https://ccorex.com/estimating/acmv) and [ELV](https://ccorex.com/estimating/elv)
+- [Construction cost control software](https://ccorex.com/solutions/construction-cost-control-software) (DeepTrack)
+- [Progress claim software](https://ccorex.com/solutions/progress-claim-software) (DeepTrack)
+- [HR software for construction](https://ccorex.com/solutions/construction-hr-software) (DeepHR)
+- [Construction payroll software](https://ccorex.com/solutions/construction-payroll-software) (DeepHR)
+- [Foreign worker attendance app](https://ccorex.com/solutions/foreign-worker-attendance-app) (DeepHR)
 
 ## Key pages
 - [Platform](https://ccorex.com/platform): one sign-in, users and roles managed once.
