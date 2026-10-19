@@ -37,6 +37,8 @@
 <script setup lang="ts">
 // A short form in front of a guide download. The lead goes to /api/lead (Markaiting + Netlify
 // Forms email) as form "template_download"; the file link appears once it is accepted.
+// Not sent to GA as generate_lead: downloads are not enquiries and must not count as conversions
+// (GA's enhanced measurement already records the file_download).
 const props = defineProps<{ file: string; title: string; guide: string }>()
 const form = reactive({ name: '', email: '', company: '', consent: false, website_url: '' })
 const sending = ref(false)
@@ -51,7 +53,6 @@ async function submit() {
   sending.value = true
   try {
     await $fetch('/api/lead', { method: 'POST', body: { ...form, form: 'template_download', subject: `Download: ${props.title}`, message: `Downloaded from /resources/${props.guide}`, pagesViewed: $track.pagesViewed() } })
-    $track.lead('template_download')
     done.value = true
   } catch {
     error.value = 'Something went wrong. Please try again, or email admin@newhamtech.com.'
