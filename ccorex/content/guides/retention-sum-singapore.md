@@ -142,4 +142,4 @@ This guide is general information, not legal advice. Check the current Act and y
 
 ## How CCorex helps
 
-[DeepTrack](/products/deeptrack) calculates retention on each progress claim at the contract rate, alongside 9% GST, and produces a PDF Progress Claim Certificate numbered per project. Its retention tracker records retention held on each project and the release dates: the first moiety at completion and the balance after the defects liability period. Payment claims state that they are made under the SOP Act, and DeepTrack records each claim's payment-response due date and the response received. [Contact us](/contact) to set it up on one of your live projects.
+[DeepTrack](/products/deeptrack) calculates retention on each progress claim, alongside 9% GST, and produces a PDF Progress Claim Certificate numbered per project that shows retention to date and the previous retention. A retention release tracker is in early access: [request early access](/contact?interest=retention-release). [Contact us](/contact) to set it up on one of your live projects.

@@ -104,7 +104,7 @@ const mission = [
 const newham = [
   { icon: 'fa-solid fa-code', title: 'A software team', text: 'Designs, builds and supports the CCorex platform and every app in the suite.' },
   { icon: 'fa-solid fa-gears', title: 'A specialist M&E engineering team', text: 'Brings day-to-day knowledge of MEP estimating, take-off and project work into the product.' },
-  { icon: 'fa-solid fa-location-dot', title: 'Based in Singapore, serving India too', text: 'Built for local requirements: CPF, SDL and MOM rules for Singapore, and EPF, ESI, PT and TDS for India, in DeepHR.' }
+  { icon: 'fa-solid fa-location-dot', title: 'Based in Singapore', text: 'Built for local requirements: CPF, SDL, SHG and MOM rules in DeepHR, and SGD with 9% GST in DeepTrack.' }
 ]
 const why = [
   { icon: 'fa-solid fa-table-cells', title: 'Spreadsheet estimating', text: 'Take-offs and rates drift between files and estimators.' },

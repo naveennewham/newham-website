@@ -123,13 +123,13 @@ const zohoFlow = [
 const enterprise = [
   { app: 'DeepCost', icon: 'fa-solid fa-calculator', items: ['Excel master-data upload', 'Area schedule Excel import', 'Area, component & FOT reports (Excel, PDF)', 'Email at each stage'] },
   { app: 'DeepTrack', icon: 'fa-solid fa-diagram-project', items: ['Zoho Books link', 'GL cost CSV import', 'Journal CSV', 'Bulk timesheets', 'Scheduled reports'] },
-  { app: 'DeepHR', icon: 'fa-solid fa-user-group', items: ['Excel bulk upload (with dry run)', 'Record-mode payroll upload', 'Reports to Excel or CSV', 'EPF ECR, ESIC & PT files (India)', 'Bank transfer sheet (India)'] },
+  { app: 'DeepHR', icon: 'fa-solid fa-user-group', items: ['Excel bulk upload (with dry run)', 'Record-mode payroll upload', 'Reports to Excel or CSV'] },
   { app: 'ARIVU AI', icon: 'fa-solid fa-wand-magic-sparkles', items: ['Charts', 'PDF & Excel exports', 'Attachments incl. scanned PDFs'] }
 ]
 const roadmap = [
   { icon: 'fa-solid fa-address-book', title: 'Shared customers & contacts', text: 'Customers and contacts shared across apps.' },
   { icon: 'fa-solid fa-right-left', title: 'Cross-app data flow', text: 'Won tender → project → payroll, without re-entry.' },
   { icon: 'fa-solid fa-plug', title: 'Deeper integrations', text: 'Extend to your accounting, CRM and other systems.' },
-  { icon: 'fa-solid fa-building-columns', title: 'Singapore bank payment file', text: 'A bank payment file for Singapore payroll (India already has a bank transfer sheet).' }
+  { icon: 'fa-solid fa-building-columns', title: 'Singapore bank payment file', text: 'A bank payment file for Singapore payroll.' }
 ]
 </script>

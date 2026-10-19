@@ -7,8 +7,8 @@
       screenshot-alt="DeepHR HR dashboard with total employees, pending leave, present and absent today, an attendance donut, a weekly attendance trend, pending leave requests and expiring work passes"
       url="deephr.app / dashboard"
     >
-      <template #title>HR and payroll software for Singapore and India.</template>
-      <template #lead>DeepHR is HR and payroll software you can use on its own or with the rest of CCorex. Face and GPS attendance on each employee’s own phone, leave, claims and timesheets — flowing into payroll with Singapore (CPF, SDL, SHG) or India (EPF, ESI, PT, TDS) statutory rules. Self-service for every employee, control for HR.</template>
+      <template #title>HR and payroll software for Singapore.</template>
+      <template #lead>DeepHR is HR and payroll software you can use on its own or with the rest of CCorex. Face and GPS attendance on each employee’s own phone, leave, claims and timesheets — flowing into payroll with CPF, SDL and SHG worked out. Self-service for every employee, control for HR.</template>
     </UiProductHero>
 
     <!-- Section nav -->
@@ -194,23 +194,21 @@
     <!-- Jurisdictions -->
     <section id="compliance" class="section scroll-mt-20 bg-ink-50">
       <div class="container-site">
-        <UiSectionHeader eyebrow="Built for Singapore and India" title="Statutory payroll for the country you pay in" lead="Each organisation has one payroll jurisdiction: Singapore (default) or India. It can change only before the first payroll run; a group with entities in both countries uses two organisations." />
+        <UiSectionHeader eyebrow="Built for Singapore" title="Statutory payroll for Singapore" lead="CPF, SDL and self-help group funds are worked out on every pay run, with MOM overtime rules and Singapore leave presets built in." />
         <UiReveal class="mt-12">
           <div class="relative overflow-x-auto rounded-2xl border border-ink-100 bg-white shadow-card">
-            <table class="w-full min-w-[640px] text-left text-sm">
-              <caption class="sr-only">Singapore and India payroll compared</caption>
+            <table class="w-full min-w-[480px] text-left text-sm">
+              <caption class="sr-only">Singapore payroll</caption>
               <thead>
                 <tr class="border-b border-ink-100 bg-ink-50">
                   <th scope="col" class="w-40 px-5 py-4 font-semibold text-ink-500"><span class="sr-only">Area</span></th>
                   <th scope="col" class="px-5 py-4 font-display text-base font-bold text-ink-900">Singapore</th>
-                  <th scope="col" class="px-5 py-4 font-display text-base font-bold text-ink-900">India</th>
                 </tr>
               </thead>
               <tbody>
                 <tr v-for="r in jurisdictionRows" :key="r.area" class="border-b border-ink-100 align-top last:border-0">
                   <th scope="row" class="px-5 py-4 font-semibold text-ink-900">{{ r.area }}</th>
                   <td class="px-5 py-4 leading-relaxed text-ink-700" :class="r.sgMuted ? 'text-ink-500' : ''">{{ r.sg }}</td>
-                  <td class="px-5 py-4 leading-relaxed text-ink-700">{{ r.in }}</td>
                 </tr>
               </tbody>
             </table>
@@ -225,7 +223,7 @@
             </ul>
           </div>
         </div>
-        <p class="mt-6 text-sm text-ink-500">Employees missing a required number (PAN, UAN, ESI and so on) are listed as skipped in filings, never silently dropped. Leave presets are a starting point; HR can adjust types, entitlements and balances. Please check statutory rates with your payroll adviser.</p>
+        <p class="mt-6 text-sm text-ink-500">Leave presets are a starting point; HR can adjust types, entitlements and balances. Please check statutory rates with your payroll adviser.</p>
       </div>
     </section>
 
@@ -325,12 +323,6 @@
                 <li v-for="t in suiteToday" :key="t" class="flex gap-2"><i class="fa-solid fa-check mt-1 text-xs text-brand-600" aria-hidden="true"></i>{{ t }}</li>
               </ul>
             </div>
-            <div class="rounded-2xl border border-ink-100 bg-ink-50 p-5">
-              <p class="text-xs font-semibold uppercase tracking-wider text-ink-500">Not yet available</p>
-              <ul class="mt-3 space-y-2 text-sm text-ink-700">
-                <li v-for="t in suiteNext" :key="t" class="flex gap-2"><i class="fa-solid fa-road mt-1 text-xs text-ink-400" aria-hidden="true"></i>{{ t }}</li>
-              </ul>
-            </div>
           </div>
         </div>
         <div class="mt-12"><UiAppGrid :exclude="['deephr']" /></div>
@@ -363,6 +355,8 @@
       </div>
     </section>
 
+    <SolutionEarlyAccess :items="['ir8a-ais', 'foreign-worker-levy', 'work-pass-alerts']" />
+
     <!-- Singapore solutions -->
     <section class="section-tight">
       <div class="container-site">
@@ -376,7 +370,7 @@
     </section>
     <UiCtaBand
       title="Bring your whole HR into one place."
-      lead="Give every employee self-service, give HR control, and connect attendance to Singapore or India payroll — without new hardware. See it with your own policies in a live demo."
+      lead="Give every employee self-service, give HR control, and connect attendance to Singapore payroll — without new hardware. See it with your own policies in a live demo."
       secondary-label="See all plans"
       secondary-to="/pricing"
     />
@@ -386,12 +380,12 @@
 <script setup lang="ts">
 const config = useRuntimeConfig()
 const pageUrl = config.public.siteUrl + '/products/deephr'
-const description = 'DeepHR is HR and payroll software for Singapore and India: face and GPS attendance on the phone, leave, claims, approvals, and CPF or EPF statutory payroll.'
+const description = 'DeepHR is HR and payroll software for Singapore: face and GPS attendance on the phone, leave, claims, approvals, and CPF, SDL and SHG payroll.'
 
 useSeoMeta({
   title: 'DeepHR — HR, payroll & site attendance software, Singapore',
   description,
-  ogTitle: 'DeepHR — HR, attendance & payroll (Singapore CPF, India EPF)',
+  ogTitle: 'DeepHR — HR, attendance & payroll (Singapore CPF)',
   ogDescription: description
 })
 useHead({
@@ -413,14 +407,14 @@ useHead({
   }]
 })
 
-const heroPoints = ['Face + GPS attendance on the employee’s phone', 'Singapore & India payroll', 'One approvals engine', 'Self-service, installable on a phone']
+const heroPoints = ['Face + GPS attendance on the employee’s phone', 'Singapore payroll: CPF, SDL, SHG', 'One approvals engine', 'Self-service, installable on a phone']
 
 const pageNav = [
   { id: 'attendance', label: 'Attendance' },
   { id: 'tour', label: 'Product tour' },
   { id: 'approvals', label: 'Approvals' },
   { id: 'payroll', label: 'Payroll' },
-  { id: 'compliance', label: 'Singapore & India' },
+  { id: 'compliance', label: 'Singapore payroll' },
   { id: 'reports', label: 'Reports & more' }
 ]
 
@@ -435,8 +429,8 @@ const steps = [
   { title: 'People', text: 'Profiles, organisation structure and bulk upload with a dry run.' },
   { title: 'Attendance', text: 'Face + GPS check-in on the employee’s own phone; HR approves each session.' },
   { title: 'Leave, claims & timesheets', text: 'Requests run through one approvals engine.' },
-  { title: 'Payroll', text: 'Approved attendance and leave pull into the pay run; statutory rules by jurisdiction.' },
-  { title: 'Payslips & filings', text: 'PDF payslips filed to Documents; India statutory files generated per run.' },
+  { title: 'Payroll', text: 'Approved attendance and leave pull into the pay run; CPF, SDL and SHG applied.' },
+  { title: 'Payslips & filings', text: 'PDF payslips filed to each employee’s Documents.' },
   { title: 'Reports', text: 'Payroll, people, leave and claims reports — saved and emailed on a schedule.' }
 ]
 
@@ -517,7 +511,7 @@ const requestStates = ['Draft', 'Submitted', 'In progress']
 const payrollFlow = [
   { icon: 'fa-solid fa-user-check', title: 'Attendance & leave', text: 'Approved sessions, paid leave, holidays and timesheets' },
   { icon: 'fa-solid fa-play', title: 'Pay run', text: 'Select employees, choose pay items, review' },
-  { icon: 'fa-solid fa-landmark', title: 'Statutory', text: 'CPF, SDL, SHG — or EPF, ESI, PT, TDS' },
+  { icon: 'fa-solid fa-landmark', title: 'Statutory', text: 'CPF, SDL and SHG' },
   { icon: 'fa-solid fa-file-invoice-dollar', title: 'Payslips', text: 'PDFs filed to each employee’s Documents' },
   { icon: 'fa-solid fa-chart-column', title: 'Reports', text: 'Salary register, reconciliation, statutory summary' }
 ]
@@ -525,7 +519,7 @@ const payrollPoints = [
   { icon: 'fa-solid fa-scale-balanced', title: 'MOM proration', text: 'Part months and unpaid leave are prorated using the Ministry of Manpower method.' },
   { icon: 'fa-solid fa-envelope-open-text', title: 'Payslip released email', text: 'PDF payslips go to Documents; the release email is a separate action you choose.' },
   { icon: 'fa-solid fa-file-import', title: 'Record mode', text: 'Payroll already paid elsewhere can be uploaded from Excel. Past payslips never change.' },
-  { icon: 'fa-solid fa-arrow-trend-up', title: 'Salary revisions & arrears', text: 'A back-dated revision pays one arrears line in the next run; CTC components flag PF, ESI and tax.' }
+  { icon: 'fa-solid fa-arrow-trend-up', title: 'Salary revisions & arrears', text: 'A back-dated revision pays one arrears line in the next run.' }
 ]
 const hoursData = [
   { label: 'Mon', value: 8, value2: 1 },
@@ -537,27 +531,25 @@ const hoursData = [
 ]
 
 const jurisdictionRows = [
-  { area: 'Contributions', sg: 'CPF (full, graduated for new PRs, or exempt), SDL, self-help group funds (CDAC, SINDA, MBMF, ECF)', in: 'EPF, EPS, EDLI, PF admin, ESI, Professional Tax by state, Labour Welfare Fund' },
-  { area: 'Income tax', sg: 'Not deducted', sgMuted: true, in: 'TDS under the old or new regime; Form 12BB declarations with projection' },
-  { area: 'Filings', sg: 'IR8A / AIS year-end employee income files', in: 'EPF ECR file, ESIC CSV, PT return, bank transfer sheet (per run); 24Q Annexure I (quarterly); Form 16 Part B (annual)' },
-  { area: 'Bank file', sg: 'Not available yet', sgMuted: true, in: 'Bank transfer sheet per pay run' },
-  { area: 'Exit', sg: 'Through normal payroll', in: 'Full and final settlement: leave encashment, notice pay, gratuity after 5 years, one-off items — as a one-person pay run' },
-  { area: 'Year to date', sg: 'January – December', in: 'April – March' }
+  { area: 'Contributions', sg: 'CPF (full, graduated for new PRs, or exempt), SDL, self-help group funds (CDAC, SINDA, MBMF, ECF)' },
+  { area: 'Outputs', sg: 'PDF payslips, salary register, reconciliation and statutory summary' },
+  { area: 'Exit', sg: 'Through normal payroll' },
+  { area: 'Year to date', sg: 'January – December' }
 ]
 const compliance = [
   { title: 'Singapore overtime & hours', icon: 'fa-solid fa-clock', items: ['OT hourly rate = 12 × basic ÷ (52 × 44) × multiplier', 'OT up to a basic of $2,600 (non-workmen) or $4,500 (workmen)', 'Rest-day and public-holiday pay rules', 'Warnings above 72 OT hours a month or 12 a day'] },
-  { title: 'Leave presets', icon: 'fa-solid fa-umbrella-beach', items: ['Singapore: Annual 14, Medical 14, Hospitalisation 60', 'Childcare 6, Maternity 16 weeks, Paternity', 'India: Earned 15, Casual 7, Sick 7', 'Maternity 26 weeks, Paternity 5, Comp Off'] }
+  { title: 'Leave presets', icon: 'fa-solid fa-umbrella-beach', items: ['Singapore: Annual 14, Medical 14, Hospitalisation 60', 'Childcare 6, Maternity 16 weeks, Paternity'] }
 ]
 
 const reports = [
-  { area: 'Payroll', items: 'Salary register, reconciliation, statutory summary, cost to company, salary revisions, TDS summary and F&F (India)' },
+  { area: 'Payroll', items: 'Salary register, reconciliation, statutory summary, cost to company, salary revisions' },
   { area: 'People', items: 'Employee master, headcount, joiners and leavers, attrition' },
   { area: 'Leave', items: 'Balances, leave taken' },
   { area: 'Claims', items: 'Claims register' },
   { area: 'Custom', items: 'Pick a source and columns' }
 ]
 const moreModules = [
-  { icon: 'fa-solid fa-receipt', title: 'Claims', text: 'Transport, meals, medical, training and more in SGD or INR with a receipt — approved, then marked paid.' },
+  { icon: 'fa-solid fa-receipt', title: 'Claims', text: 'Transport, meals, medical, training and more in SGD with a receipt — approved, then marked paid.' },
   { icon: 'fa-solid fa-list-check', title: 'Tasks (optional)', text: 'Projects, phases, templates and dependency-driven dates, with a role matrix for rights.' },
   { icon: 'fa-solid fa-folder-open', title: 'Documents', text: 'Payslips, tax forms, HR letters from templates and personal documents with expiry alerts.' },
   { icon: 'fa-solid fa-headset', title: 'Policies & helpdesk', text: 'Policies employees acknowledge, and tickets from employees to HR.' },
@@ -570,7 +562,7 @@ const security = [
   { icon: 'fa-solid fa-clipboard-list', title: 'Audit log of HR changes' },
   { icon: 'fa-solid fa-key', title: 'One CCorex sign-in' }
 ]
-const connects = ['CCorex SSO', 'Excel & CSV exports', 'Excel bulk upload with dry run', 'EPF ECR & ESIC files (India)', 'Bank transfer sheet (India)']
+const connects = ['CCorex SSO', 'Excel & CSV exports', 'Excel bulk upload with dry run']
 
 const roles = [
   { icon: 'fa-solid fa-user-gear', title: 'HR admin', text: 'Sets organisation settings and approval chains; runs people, payroll and attendance administration.' },
@@ -593,12 +585,11 @@ const arivuPrompts = [
 ]
 
 const suiteToday = ['One sign-in at dash.ccorex.com', 'Users created once, provisioned into each app', 'Disabling a user disables them in the apps too', 'ARIVU in every app, read-only']
-const suiteNext = ['Multiple shifts per day (built, not yet released)', 'A Singapore bank payment file', 'People data flowing into project and cost workflows']
 
 const plans = [
   { name: 'Starter', for: 'Small teams getting organised', features: ['Employee self-service', 'Leave & holidays', 'Face + GPS attendance', 'Documents, policies & helpdesk', 'Standard approvals'] },
   { name: 'Growth', for: 'Scaling companies', popular: true, features: ['Everything in Starter', 'Claims', 'Timesheets & payroll', 'Multi-level approval chains', 'Reports & schedules'] },
-  { name: 'Enterprise', for: 'Complex, multi-site organisations', features: ['Everything in Growth', 'India statutory filings & F&F', 'Tasks module', 'Custom roles & condition rules', 'Priority support'] }
+  { name: 'Enterprise', for: 'Complex, multi-site organisations', features: ['Everything in Growth', 'Tasks module', 'Custom roles & condition rules', 'Priority support'] }
 ]
 
 const solutionLinks = [
@@ -611,11 +602,10 @@ const faqs = [
   { q: 'Can we buy DeepHR on its own?', a: 'Yes. DeepHR is sold on its own in Starter, Growth and Enterprise tiers, priced per employee. You do not need any other CCorex app; DeepCost or DeepTrack can be added later on the same sign-in.' },
   { q: 'Do we need to buy attendance hardware?', a: 'No. Employees check in and out by face and GPS on their own phone. There is no kiosk or shared device. The face must match the enrolled samples and the phone must be inside the site radius; the record is marked on time or late against the site’s start time.' },
   { q: 'What if there is no signal on site?', a: 'The app works offline. The phone checks the face and site radius locally and queues the punch; when it is back online, each punch is re-verified. Punches over 72 hours old are refused, and over 24 hours are accepted but flagged.' },
-  { q: 'Which payroll jurisdictions does DeepHR support?', a: 'Singapore and India. Singapore covers CPF (including graduated rates for new PRs), SDL and self-help group funds (CDAC, SINDA, MBMF, ECF). India covers EPF, ESI, Professional Tax and TDS, with EPF ECR, ESIC, PT return, 24Q and Form 16 Part B filings. Singapore payroll also prepares IR8A / AIS year-end files. Each organisation has one jurisdiction; a group with entities in both uses two organisations.' },
-  { q: 'Does DeepHR handle foreign workers in construction?', a: 'Yes. Workers check in with face and GPS on their own phone, each worker’s Work Permit number, expiry date and skill tier (basic or higher-skilled) is recorded with alerts before expiry, and the monthly foreign worker levy is reported per worker and per project.' },
+  { q: 'Which payroll rules does DeepHR follow?', a: 'Singapore. DeepHR covers CPF (including graduated rates for new PRs), SDL and self-help group funds (CDAC, SINDA, MBMF, ECF).' },
+  { q: 'Does DeepHR handle foreign workers in construction?', a: 'Yes. Workers check in with face and GPS on their own phone, and each worker’s pass type, number and expiry date are kept on their record.' },
   { q: 'How does attendance reach payroll?', a: 'Every completed session becomes a pending approval for HR. Approved time is turned into payable hours — split into normal and OT against the schedule — and the pay run pulls approved attendance, approved paid leave and holidays for the period.' },
   { q: 'Will our site workers be able to use it?', a: 'Yes. DeepHR has roles for site engineers and technicians with simple self-service for check-in, leave, claims and tasks, and it installs on a phone as an app.' },
-  { q: 'Can DeepHR produce a bank payment file?', a: 'For India, a bank transfer sheet is produced per pay run. A Singapore bank payment file is not available yet.' },
   { q: 'How is DeepHR priced?', a: 'Per-employee pricing across three plans — Starter, Growth and Enterprise — that scales with your headcount. Contact us for a tailored quote.' }
 ]
 </script>

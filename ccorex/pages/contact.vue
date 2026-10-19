@@ -27,6 +27,7 @@
           </div>
 
           <form v-else class="mt-6 grid gap-5 sm:grid-cols-2" novalidate @submit.prevent="handleSubmit">
+            <p v-if="interest" class="sm:col-span-2 flex items-center gap-2 rounded-lg border border-cyan-200 bg-cyan-50 px-3 py-2.5 text-sm text-cyan-900"><i class="fa-solid fa-flask" aria-hidden="true"></i>Early access request: <span class="font-semibold">{{ interest.title }}</span></p>
             <!-- Honeypot for bots: hidden from people and screen readers. -->
             <input v-model="form.website_url" type="text" name="website_url" tabindex="-1" autocomplete="off" class="hidden" aria-hidden="true" />
             <div>
@@ -129,6 +130,7 @@
 </template>
 
 <script setup lang="ts">
+import { earlyAccessBySlug } from '~/data/earlyAccess'
 const config = useRuntimeConfig()
 useSeoMeta({
   title: 'Book a CCorex demo for estimating, projects and payroll',
@@ -150,6 +152,15 @@ const demoPoints = ['Your estimating, project or payroll workflow', 'ARIVU AI an
 
 const blank = () => ({ name: '', email: '', company: '', role: '', phone: '', size: '', apps: [] as string[], message: '', consent: false, website_url: '' })
 const form = ref(blank())
+// ?interest=<slug> from an "Request early access" button: tag the lead with that feature.
+const route = useRoute()
+const interest = computed(() => earlyAccessBySlug(typeof route.query.interest === 'string' ? route.query.interest : undefined))
+const appLabel = (app: string) => appOptions.find((a) => a.toLowerCase().startsWith(app))
+watch(interest, (f) => {
+  if (!f) return
+  const label = appLabel(f.app)
+  if (label && !form.value.apps.includes(label)) form.value.apps.push(label)
+}, { immediate: true })
 const errors = ref<Record<string, string>>({})
 const submitted = ref(false)
 const sending = ref(false)
@@ -171,8 +182,9 @@ async function handleSubmit() {
   if (!validate()) return
   sending.value = true
   try {
-    await $fetch('/api/lead', { method: 'POST', body: { ...form.value, form: 'demo_request', pagesViewed: $track.pagesViewed() } })
-    $track.lead('demo_request')
+    const kind = interest.value ? 'early_access' : 'demo_request'
+    await $fetch('/api/lead', { method: 'POST', body: { ...form.value, form: kind, subject: interest.value ? `Early access: ${interest.value.title}` : undefined, pagesViewed: $track.pagesViewed() } })
+    $track.lead(kind)
     viaEmail.value = false
     submitted.value = true
     return
@@ -185,6 +197,7 @@ async function handleSubmit() {
   const body = [
     `Name: ${f.name}`, `Work email: ${f.email}`, `Company: ${f.company}`, `Role: ${f.role || '-'}`,
     `Phone: ${f.phone || '-'}`, `Company size: ${f.size || '-'}`, `Apps of interest: ${f.apps.join(', ') || '-'}`,
+    ...(interest.value ? [`Early access: ${interest.value.title}`] : []),
     '', 'Message:', f.message || '-', '', 'PDPA consent given: yes'
   ].join('\n')
   const href = `mailto:admin@newhamtech.com?subject=${encodeURIComponent(`CCorex demo request — ${f.company}`)}&body=${encodeURIComponent(body)}`

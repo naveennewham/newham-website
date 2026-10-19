@@ -185,10 +185,10 @@ const roles = [
   },
   {
     id: 'hr-admin', role: 'HR & admin', icon: 'fa-solid fa-id-card',
-    title: 'Run Singapore or India payroll from attendance you trust',
-    lead: 'Approved attendance and leave flow into payroll with Singapore or India statutory rules — with self-service for every employee.',
+    title: 'Run Singapore payroll from attendance you trust',
+    lead: 'Approved attendance and leave flow into payroll with CPF, SDL and SHG — with self-service for every employee.',
     pains: ['Leave balances and payroll in fragile spreadsheets', 'Card or paper attendance that is easy to game', 'Leave and claim approvals lost in chat'],
-    outcomes: ['Singapore: CPF (incl. graduated rates for new PRs), SDL and SHG funds', 'India: EPF, ESI, PT, TDS and statutory filings', 'One approvals engine for leave, claims, letters and timesheets', 'Payslips filed to each employee’s Documents; reports on a schedule'],
+    outcomes: ['Singapore: CPF (incl. graduated rates for new PRs), SDL and SHG funds', 'One approvals engine for leave, claims, letters and timesheets', 'Payslips filed to each employee’s Documents; reports on a schedule'],
     apps: [HR, DD, AR],
   },
   {

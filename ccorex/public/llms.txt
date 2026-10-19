@@ -8,7 +8,7 @@ DeepCost, DeepTrack and DeepHR are each sold on their own (Starter, Growth and E
 - [DeepCost](https://ccorex.com/products/deepcost): MEP tender estimating — AI tender summary, area schedules, material take-off, a priced library, and FOT AI on the client's BOQ PDF.
 - [DeepPlan AI](https://ccorex.com/products/deepplan-ai): drawing take-off — rooms, measurements and symbol counts from floor plans into a priced BOQ (AI take-off in early access).
 - [DeepTrack](https://ccorex.com/products/deeptrack): project delivery and cost control — budgets, budget against actual by workhead, WBS and cost centre, purchasing, invoice matching, client claims, month-end cost allocation.
-- [DeepHR](https://ccorex.com/products/deephr): HR and payroll — face and GPS attendance on the employee's phone, leave, claims, Singapore (CPF, SDL, SHG) and India (EPF, ESI, PT, TDS) payroll.
+- [DeepHR](https://ccorex.com/products/deephr): HR and payroll — face and GPS attendance on the employee's phone, leave, claims, Singapore payroll (CPF, SDL, SHG).
 - [ARIVU AI](https://ccorex.com/products/arivu-ai): read-only AI assistant that answers questions from your own data across the apps.
 - [Deep Drive](https://ccorex.com/products/deep-drive): project document storage.
 - [PDF Editor](https://ccorex.com/products/pdf-editor): mark up, sign, split and merge PDFs.

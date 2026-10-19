@@ -257,6 +257,8 @@
       </div>
     </section>
 
+    <SolutionEarlyAccess :items="['sop-act-claims', 'retention-release', 'variation-orders']" />
+
     <!-- Singapore solutions -->
     <section class="section-tight">
       <div class="container-site">
@@ -409,8 +411,7 @@ const differentiators = [
     bullets: [
       { title: 'Progress claims in sequence', text: 'Numbered per project, with retention and 9% GST calculated.' },
       { title: 'Progress Claim Certificate', text: 'A PDF certificate for each claim, ready to send.' },
-      { title: 'SOP Act payment claims', text: 'Claims can state they are made under the Security of Payment Act, with the payment-response due date tracked and the response recorded.' },
-      { title: 'Payment tracking', text: 'Track what the client has paid, with a retention tracker (release at completion and after the defects liability period) and cash-flow forecast in reports.' }
+      { title: 'Claim certificate', text: 'A PDF Progress Claim Certificate for each claim, with retention to date and the amount due.' }
     ],
     outcome: 'A clean record of what you billed, what you hold in retention and what was paid.'
   },
@@ -483,7 +484,6 @@ const faqs = [
   { q: 'How does invoice matching work?', a: 'Accounts payable captures the vendor invoice and DeepTrack matches it against the PO, the delivery endorsement and the purchase request. Duplicate invoice numbers are blocked, and a rate mismatch or quantity above what was endorsed marks the invoice as a discrepancy.' },
   { q: 'Does DeepTrack track labour and overhead cost?', a: 'Yes. Timesheets are coded to project, workhead, WBS activity and business unit. The month-end run allocates direct labour at actual hourly rates, the worker pool, HQ and business-unit overhead, and project overhead, then locks the period.' },
   { q: 'Is it set up for Singapore?', a: 'Yes. DeepTrack works in SGD with 9% GST, and codes cost to BCA workheads. Progress claims carry retention and GST and produce a PDF Progress Claim Certificate.' },
-  { q: 'Does DeepTrack support SOP Act payment claims?', a: 'Yes. A progress claim can state that it is made under the Building and Construction Industry Security of Payment Act, and DeepTrack tracks the payment-response due date and records the response. It is a record-keeping tool, not legal advice.' },
   { q: 'Does it connect to our accounting system?', a: 'Each tenant can link Zoho Books for vendors and purchase orders. Month-end also produces a journal CSV for your ledger, and general-ledger costs can be imported from CSV.' },
   { q: 'How is DeepTrack priced?', a: 'Plans scale with your team and projects — Starter, Growth and Enterprise. Contact us for a tailored quote.' }
 ]

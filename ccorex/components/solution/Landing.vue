@@ -11,6 +11,7 @@
           <div class="mt-8 flex flex-wrap gap-3">
             <NuxtLink to="/contact" class="btn-accent">Book a live demo <i class="fa-solid fa-arrow-right text-xs" aria-hidden="true"></i></NuxtLink>
             <NuxtLink :to="`/products/${app}`" class="btn-ghost-dark">See {{ appName }}</NuxtLink>
+            <a v-if="earlyAccess?.length" href="#early-access" class="btn-ghost-dark">Singapore early access</a>
           </div>
         </div>
         <figure class="rounded-3xl border border-white/10 bg-white/5 p-6 backdrop-blur" :aria-label="`What ${appName} covers`">
@@ -51,6 +52,8 @@
         </div>
       </div>
     </section>
+
+    <SolutionEarlyAccess v-if="earlyAccess?.length" :items="earlyAccess" />
 
     <!-- Other solutions + guides -->
     <section class="section-tight bg-ink-50">
@@ -98,6 +101,7 @@ const props = defineProps<{
   guideLinks: { to: string; title: string }[]
   faqs: { q: string; a: string }[]
   ctaTitle: string; ctaLead: string
+  earlyAccess?: string[]
 }>()
 
 const all = [

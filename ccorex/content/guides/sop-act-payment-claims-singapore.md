@@ -162,4 +162,4 @@ This guide is general information, not legal advice. Check the current Act and y
 
 ## How CCorex helps
 
-[DeepTrack](/products/deeptrack) produces progress claims numbered per project, with retention, 9% GST and a PDF Progress Claim Certificate. Each payment claim states that it is made under the SOP Act. DeepTrack records the payment-response due date for each claim and the payment response you receive, so you can see which claims are awaiting a response and how the response amount compares with the claim. [Contact us](/contact) to see it on one of your live projects.
+[DeepTrack](/products/deeptrack) produces progress claims numbered per project, with retention, 9% GST and a PDF Progress Claim Certificate, and keeps them on the same project as budgets and costs. SOP Act claim tracking (served date, payment-response due date and the response) is in early access: [request early access](/contact?interest=sop-act-claims). [Contact us](/contact) to see it on one of your live projects.

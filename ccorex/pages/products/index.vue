@@ -159,7 +159,7 @@ const jobs = [
   { job: 'Measure drawings and build a priced BOQ (AI take-off in early access)', slug: 'deepplan-ai', who: 'Estimators, QS teams' },
   { job: 'Control project budgets, procurement and margin', slug: 'deeptrack', who: 'Project managers, buyers, directors' },
   { job: 'Match vendor invoices, bill client claims and close the month', slug: 'deeptrack', who: 'Finance, commercial teams' },
-  { job: 'Run attendance, leave and Singapore or India payroll', slug: 'deephr', who: 'HR, managers and every employee' },
+  { job: 'Run attendance, leave and Singapore payroll', slug: 'deephr', who: 'HR, managers and every employee' },
   { job: 'Ask questions of your own data, with charts and exports', slug: 'arivu-ai', who: 'Every CCorex user' },
   { job: 'Store drawings, submittals and project documents', slug: 'deep-drive', who: 'All users' },
   { job: 'Mark up and sign PDFs', slug: 'pdf-editor', who: 'Office and project staff' }

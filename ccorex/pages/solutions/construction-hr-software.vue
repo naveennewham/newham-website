@@ -41,7 +41,7 @@ const features = [
   { icon: 'fa-solid fa-landmark', title: 'Singapore payroll', text: 'CPF (including graduated rates for new PRs), SDL and self-help group funds.' },
   { icon: 'fa-solid fa-id-badge', title: 'Employee self-service', text: 'Payslips, leave balances and policies in the app for every employee.' },
   { icon: 'fa-solid fa-chart-column', title: 'HR reports', text: 'Headcount, joiners and leavers, attrition, leave and claims registers, and payroll summaries.' },
-  { icon: 'fa-solid fa-earth-asia', title: 'Singapore and India', text: 'Run a Singapore organisation, an India organisation, or both, each with its own statutory rules.' }
+  { icon: 'fa-solid fa-diagram-project', title: 'Linked to projects', text: 'Timesheets and labour cost flow to projects in DeepTrack at month end, if you use both apps.' }
 ]
 const guides = [
   { to: '/resources/construction-payroll-singapore', title: 'Construction payroll in Singapore' },
@@ -50,7 +50,7 @@ const guides = [
 ]
 const faqs = [
   { q: 'Can we use DeepHR without the other CCorex apps?', a: 'Yes. DeepHR is sold on its own in Starter, Growth and Enterprise tiers, priced per employee. DeepCost or DeepTrack can be added later on the same sign-in.' },
-  { q: 'Is DeepHR only for construction companies?', a: 'It is built for firms with office and site teams, such as contractors, but the HR, leave, claims and payroll features work for any Singapore or India company.' },
+  { q: 'Is DeepHR only for construction companies?', a: 'It is built for firms with office and site teams, such as contractors, but the HR, leave, claims and payroll features work for any Singapore company.' },
   { q: 'Do employees need a company phone?', a: 'No. Attendance, leave, claims and payslips run on each employee’s own phone.' },
   { q: 'Which Singapore payroll contributions are covered?', a: 'CPF (including graduated rates for new permanent residents), the Skills Development Levy and self-help group funds (CDAC, SINDA, MBMF, ECF).' },
   { q: 'How is DeepHR priced?', a: 'Per employee, in Starter, Growth and Enterprise tiers. Contact us for a tailored quote.' }
