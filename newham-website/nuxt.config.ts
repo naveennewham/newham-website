@@ -27,6 +27,8 @@ export default defineNuxtConfig({
   runtimeConfig: {
     // Server only: page file -> last change date, read by the sitemap.
     pageDates: pageDates(),
+    // Netlify Forms endpoint for enquiry copies + email, set only in Netlify builds (this deploy's URL).
+    netlifyFormsUrl: process.env.NETLIFY ? `${(process.env.CONTEXT === 'production' ? process.env.URL : process.env.DEPLOY_PRIME_URL) ?? ''}/` : '',
     public: {
       // Day this build was made; the sitemap uses it as lastmod for fixed pages.
       buildDate: new Date().toISOString().slice(0, 10),
