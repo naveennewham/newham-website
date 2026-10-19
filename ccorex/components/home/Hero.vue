@@ -34,9 +34,9 @@
 
       <!-- Product stage -->
       <div ref="stageWrap" class="relative mt-12 [perspective:1800px] lg:mt-16">
-        <div class="pointer-events-none absolute inset-x-[8%] -bottom-10 top-16 rounded-full bg-gradient-to-r from-cyan-500/40 via-brand-500/30 to-ai-500/40 blur-3xl" aria-hidden="true"></div>
+        <div class="pointer-events-none absolute inset-x-[14%] -bottom-10 top-16 rounded-full bg-gradient-to-r from-cyan-500/40 via-brand-500/30 to-ai-500/40 blur-3xl" aria-hidden="true"></div>
 
-        <div ref="stage" class="stage relative mx-auto max-w-6xl" style="--p: .35">
+        <div ref="stage" class="stage relative mx-auto max-w-[57.6rem]" style="--p: .35">
           <!-- Animated gradient border -->
           <div class="relative overflow-hidden rounded-[24px] p-px">
             <div class="beam pointer-events-none absolute left-1/2 top-1/2 aspect-square w-[160%]" aria-hidden="true"></div>
@@ -67,7 +67,7 @@
         </div>
 
         <!-- Caption bar -->
-        <div class="relative mx-auto mt-5 flex max-w-6xl flex-wrap items-center gap-x-5 gap-y-3 rounded-2xl border border-white/10 bg-white/[.04] px-4 py-3 sm:px-5">
+        <div class="relative mx-auto mt-5 flex max-w-[57.6rem] flex-wrap items-center gap-x-5 gap-y-3 rounded-2xl border border-white/10 bg-white/[.04] px-4 py-3 sm:px-5">
           <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-white/10"><i :class="[tours[active].icon, tours[active].tone]" aria-hidden="true"></i></span>
           <Transition name="msg" mode="out-in">
             <p :key="active" class="min-w-[12rem] flex-1 text-sm text-ink-200"><span class="font-semibold text-white">{{ tours[active].name }}</span> — {{ tours[active].line }}</p>
