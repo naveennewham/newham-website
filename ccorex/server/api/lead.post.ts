@@ -15,7 +15,7 @@ function employees(size?: string) {
 
 export default defineEventHandler(async (event) => {
   const cfg = useRuntimeConfig(event) as unknown as {
-    markaitingUrl?: string; markaitingLeadSecret?: string; markaitingWorkspace?: string; legacyLeadWebhook?: string; public: { siteUrl?: string }
+    markaitingUrl?: string; markaitingLeadSecret?: string; markaitingWorkspace?: string; legacyLeadWebhook?: string; netlifyFormsUrl?: string; public: { siteUrl?: string }
   }
   const body = (await readBody<Record<string, unknown>>(event).catch(() => null)) ?? {}
 
@@ -58,6 +58,17 @@ export default defineEventHandler(async (event) => {
   }
   if (cfg.legacyLeadWebhook) {
     sends.push($fetch(cfg.legacyLeadWebhook, { method: 'POST', body: { ...body, pagesViewed: undefined }, timeout: 10_000 }))
+  }
+  // Netlify Forms keeps a copy of every enquiry and emails it (notifications under Netlify → Forms).
+  // The "enquiry" form is declared in pages/contact.vue so Netlify detects it at deploy.
+  if (cfg.netlifyFormsUrl) {
+    const fields: Record<string, string> = { 'form-name': 'enquiry', form, site }
+    for (const [k, v] of Object.entries(body)) {
+      if (['form', 'pagesViewed', 'website_url', 'consent'].includes(k)) continue
+      const s = Array.isArray(v) ? v.map(String).join(', ') : typeof v === 'string' ? v : undefined
+      if (s) fields[k] = s.slice(0, 5000)
+    }
+    sends.push($fetch(cfg.netlifyFormsUrl, { method: 'POST', headers: { 'content-type': 'application/x-www-form-urlencoded' }, body: new URLSearchParams(fields).toString(), timeout: 10_000 }))
   }
   if (!sends.length) throw createError({ statusCode: 503, statusMessage: 'The enquiry service is not configured.' })
 

@@ -1,5 +1,8 @@
 <template>
   <div>
+    <!-- Netlify Forms: declares the "enquiry" form so Netlify detects it at deploy. The server
+         (server/api/lead.post.ts) submits a copy of each enquiry to it, which Netlify emails. -->
+    <form name="enquiry" data-netlify="true" netlify-honeypot="website_url" hidden aria-hidden="true"><input name="form-name" /><input name="form" /><input name="site" /><input name="subject" /><input name="name" /><input name="email" /><input name="company" /><input name="role" /><input name="phone" /><input name="size" /><input name="apps" /><input name="when" /><textarea name="message"></textarea><input name="website_url" /></form>
     <!-- Hero -->
     <section class="relative overflow-hidden bg-hero text-white">
       <div class="bg-grid pointer-events-none absolute inset-0 opacity-50" aria-hidden="true"></div>
@@ -30,6 +33,7 @@
             <p v-if="interest" class="sm:col-span-2 flex items-center gap-2 rounded-lg border border-cyan-200 bg-cyan-50 px-3 py-2.5 text-sm text-cyan-900"><i class="fa-solid fa-flask" aria-hidden="true"></i>Early access request: <span class="font-semibold">{{ interest.title }}</span></p>
             <!-- Honeypot for bots: hidden from people and screen readers. -->
             <input v-model="form.website_url" type="text" name="website_url" tabindex="-1" autocomplete="off" class="hidden" aria-hidden="true" />
+            <p class="sm:col-span-2 flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-ink-500"><span class="flex h-5 w-5 items-center justify-center rounded-full bg-brand-700 text-[10px] text-white">1</span>About you</p>
             <div>
               <label for="name" class="label">Full name <span class="text-rose-600" aria-hidden="true">*</span></label>
               <input id="name" v-model.trim="form.name" type="text" autocomplete="name" required class="input" :aria-invalid="!!errors.name" aria-describedby="name-err" />
@@ -63,11 +67,16 @@
                 <option v-for="s in sizes" :key="s" :value="s">{{ s }}</option>
               </select>
             </div>
+            <p class="sm:col-span-2 mt-2 flex items-center gap-2 border-t border-ink-100 pt-6 text-xs font-semibold uppercase tracking-wider text-ink-500"><span class="flex h-5 w-5 items-center justify-center rounded-full bg-brand-700 text-[10px] text-white">2</span>What you’d like to see</p>
             <fieldset class="sm:col-span-2">
               <legend class="label">Apps you are interested in</legend>
               <div class="mt-1 grid gap-2 sm:grid-cols-2">
-                <label v-for="a in appOptions" :key="a" class="flex cursor-pointer items-center gap-3 rounded-lg border border-ink-200 px-3 py-2.5 text-sm text-ink-800 hover:border-brand-300 has-[:checked]:border-brand-600 has-[:checked]:bg-brand-50">
-                  <input v-model="form.apps" type="checkbox" :value="a" class="h-4 w-4 rounded border-ink-300 text-brand-700 accent-brand-700" />{{ a }}
+                <label v-for="a in appOptions" :key="a" class="group flex cursor-pointer items-center gap-3 rounded-xl border border-ink-200 px-3 py-2.5 text-sm transition-colors hover:border-brand-300 has-[:checked]:border-brand-600 has-[:checked]:bg-brand-50 has-[:checked]:ring-1 has-[:checked]:ring-brand-600 has-[:focus-visible]:ring-2 has-[:focus-visible]:ring-brand-400">
+                  <input v-model="form.apps" type="checkbox" :value="a" class="sr-only" />
+                  <UiAppIcon v-if="appIcon(a)" :app="appIcon(a)!" size="sm" />
+                  <span v-else class="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-ink-100 text-xs text-ink-600"><i class="fa-solid fa-layer-group" aria-hidden="true"></i></span>
+                  <span class="min-w-0 flex-1"><span class="block font-semibold text-ink-900">{{ a.split(' — ')[0] }}</span><span class="block text-xs text-ink-500">{{ a.split(' — ')[1] }}</span></span>
+                  <i class="fa-solid fa-circle-check text-brand-700 opacity-0 transition-opacity group-has-[:checked]:opacity-100" aria-hidden="true"></i>
                 </label>
               </div>
             </fieldset>
@@ -76,7 +85,7 @@
               <textarea id="message" v-model.trim="form.message" rows="4" class="input" placeholder="For example: how we would price an ACMV tender, or run payroll for site workers."></textarea>
             </div>
             <div class="sm:col-span-2">
-              <label class="flex gap-3 text-sm leading-relaxed text-ink-700">
+              <label class="flex gap-3 rounded-xl bg-ink-50 p-4 text-xs leading-relaxed text-ink-600">
                 <input v-model="form.consent" type="checkbox" required class="mt-1 h-4 w-4 shrink-0 accent-brand-700" :aria-invalid="!!errors.consent" aria-describedby="consent-err" />
                 <span>I agree that Newham Technological Solutions may use the details above to contact me about a CCorex demo. We only use them to respond to this request and handle them in line with Singapore’s Personal Data Protection Act (PDPA). If you accepted marketing cookies, we also record how you found us. See our <NuxtLink to="/privacy" class="font-semibold text-brand-700 underline">privacy policy</NuxtLink>. You can ask us to delete your details at any time by emailing admin@newhamtech.com. <span class="text-rose-600" aria-hidden="true">*</span></span>
               </label>
@@ -84,7 +93,7 @@
             </div>
             <div class="sm:col-span-2">
               <button type="submit" class="btn-primary w-full sm:w-auto" :disabled="sending">{{ sending ? 'Sending…' : 'Request my demo' }} <i class="fa-solid fa-arrow-right text-xs" aria-hidden="true"></i></button>
-              <p class="mt-3 text-xs text-ink-500">Submitting opens your email app with your request addressed to admin@newhamtech.com.</p>
+              <p class="mt-3 flex items-center gap-2 text-xs text-ink-500"><i class="fa-solid fa-envelope-circle-check text-brand-600" aria-hidden="true"></i>We reply by email to arrange a time that suits you.</p>
             </div>
           </form>
         </div>
@@ -101,9 +110,10 @@
             </ol>
           </div>
           <div class="card p-6">
-            <h2 class="text-lg font-bold">Prefer email?</h2>
-            <p class="mt-2 text-sm text-ink-600">Write to us about demos, pricing or support.</p>
-            <a href="mailto:admin@newhamtech.com" class="mt-4 inline-flex items-center gap-2 font-semibold text-brand-700 hover:text-brand-900"><i class="fa-solid fa-envelope" aria-hidden="true"></i>admin@newhamtech.com</a>
+            <h2 class="text-lg font-bold">Prefer to talk?</h2>
+            <p class="mt-2 text-sm text-ink-600">Write or call us about demos, pricing or support.</p>
+            <a href="mailto:admin@newhamtech.com" class="mt-4 flex items-center gap-2 font-semibold text-brand-700 hover:text-brand-900"><i class="fa-solid fa-envelope" aria-hidden="true"></i>admin@newhamtech.com</a>
+            <a href="tel:+6598804197" class="mt-2 flex items-center gap-2 font-semibold text-brand-700 hover:text-brand-900"><i class="fa-solid fa-phone" aria-hidden="true"></i>+65 9880 4197</a>
           </div>
           <div class="rounded-2xl bg-brand-950 p-6 text-white">
             <p class="eyebrow-dark">In your demo</p>
@@ -142,6 +152,8 @@ useHead({ link: [{ rel: 'canonical', href: config.public.siteUrl + '/contact' }]
 
 const roles = ['Owner / Managing Director', 'General Manager', 'Estimation / QS', 'Project Manager', 'Procurement / Finance', 'HR / Admin', 'Site Engineer / Supervisor', 'IT', 'Other']
 const sizes = ['1–20 employees', '21–50 employees', '51–200 employees', '201–500 employees', '500+ employees']
+const appIcons: Record<string, string> = { 'DeepCost': 'deepcost', 'DeepTrack': 'deeptrack', 'DeepHR': 'deephr', 'DeepPlan AI': 'deepplan-ai', 'ARIVU AI': 'arivu-ai', 'Deep Drive & PDF Editor': 'deep-drive' }
+const appIcon = (option: string) => appIcons[option.split(' — ')[0]!]
 const appOptions = ['DeepCost — tender estimation', 'DeepTrack — project delivery', 'DeepHR — HR & payroll', 'DeepPlan AI — drawing take-off', 'ARIVU AI — AI assistant', 'Deep Drive & PDF Editor — documents', 'Not sure yet — the whole suite']
 const nextSteps = [
   { title: 'We reply to you', text: 'Our team replies by email to understand your workflow and agree a time.' },
@@ -219,4 +231,7 @@ const faqs = [
 .input { @apply block w-full rounded-lg border border-ink-200 bg-white px-3.5 py-2.5 text-sm text-ink-900 placeholder:text-ink-400 focus:border-brand-600 focus:outline-none focus:ring-2 focus:ring-brand-100; }
 .input[aria-invalid='true'] { @apply border-rose-400; }
 .err { @apply mt-1.5 text-xs font-medium text-rose-600; }
+/* .input bundles bg-white via @apply, which the dark theme doesn't flip: give it a dark field. */
+:global(html.dark .input) { background-color: #0b171b; border-color: rgb(255 255 255 / .16); }
+:global(html.dark .input option) { background-color: #0b171b; color: #eef3f5; }
 </style>

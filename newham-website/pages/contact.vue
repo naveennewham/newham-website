@@ -1,5 +1,8 @@
 <template>
   <div>
+    <!-- Netlify Forms: declares the "enquiry" form so Netlify detects it at deploy. The server
+         (server/api/lead.post.ts) submits a copy of each enquiry to it, which Netlify emails. -->
+    <form name="enquiry" data-netlify="true" netlify-honeypot="website_url" hidden aria-hidden="true"><input name="form-name" /><input name="form" /><input name="site" /><input name="subject" /><input name="name" /><input name="email" /><input name="company" /><input name="phone" /><input name="date" /><input name="time" /><input name="timezone" /><input name="context" /><textarea name="message"></textarea><input name="website_url" /></form>
     <section class="relative overflow-hidden bg-hero text-white">
       <div class="bg-grid pointer-events-none absolute inset-0 opacity-50" aria-hidden="true"></div>
       <div class="container-site relative py-16 lg:py-20">
