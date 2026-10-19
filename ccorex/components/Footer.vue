@@ -24,7 +24,9 @@
           <li><NuxtLink to="/estimating/fire-protection" class="hover:text-white">Fire protection estimating</NuxtLink></li>
           <li><NuxtLink to="/estimating/acmv" class="hover:text-white">ACMV estimating</NuxtLink></li>
           <li><NuxtLink to="/estimating/elv" class="hover:text-white">ELV estimating</NuxtLink></li>
+          <li><NuxtLink to="/solutions/construction-cost-control-software" class="hover:text-white">Construction cost control software</NuxtLink></li>
           <li><NuxtLink to="/solutions/progress-claim-software" class="hover:text-white">Progress claim software</NuxtLink></li>
+          <li><NuxtLink to="/solutions/construction-hr-software" class="hover:text-white">HR software for construction</NuxtLink></li>
           <li><NuxtLink to="/solutions/construction-payroll-software" class="hover:text-white">Construction payroll software</NuxtLink></li>
           <li><NuxtLink to="/solutions/foreign-worker-attendance-app" class="hover:text-white">Foreign worker attendance app</NuxtLink></li>
           <li><NuxtLink to="/compare/costx-cubicost-alternative" class="hover:text-white">CostX &amp; Cubicost alternative</NuxtLink></li>
