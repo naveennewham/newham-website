@@ -6,8 +6,8 @@
       <div class="container-site relative grid items-center gap-10 pb-20 pt-16 lg:grid-cols-[1.3fr_1fr] lg:pt-20">
         <div class="max-w-3xl">
           <p class="eyebrow-dark">Estimation &amp; tender support · Singapore</p>
-          <h1 class="h-display mt-4 text-white">BOQ services in Singapore: BOQ preparation and M&amp;E estimation</h1>
-          <p class="lead-dark mt-6 max-w-2xl">Bill of quantities (BOQ) services for M&amp;E contractors who have more tenders than estimators: take-offs, priced BOQs, rate build-ups and tender queries. Scoped in writing, turned around to your submission date.</p>
+          <h1 class="h-display mt-4 text-white">MEP estimation and BOQ services in Singapore</h1>
+          <p class="lead-dark mt-6 max-w-2xl">MEP (M&amp;E) estimation and bill of quantities (BOQ) services for contractors who have more tenders than estimators: take-offs, priced BOQs, rate build-ups and tender queries. Scoped in writing, turned around to your submission date.</p>
           <div class="mt-8 flex flex-wrap gap-3">
             <NuxtLink to="/appointment" class="btn-accent">Send us a tender to scope <i class="fa-solid fa-arrow-right text-xs" aria-hidden="true"></i></NuxtLink>
             <a href="#scope" class="btn-ghost-dark">What we prepare</a>
@@ -128,9 +128,10 @@
 const siteUrl = useRuntimeConfig().public.siteUrl as string
 const pageUrl = siteUrl + '/boq-estimation-services'
 const ccorexUrl = useRuntimeConfig().public.ccorexBaseUrl as string
-const description = 'BOQ services in Singapore: BOQ preparation, M&E take-offs, rate build-ups and tender support for fire protection, ACMV, electrical, ELV and plumbing.'
+const description = 'MEP estimation services in Singapore: BOQ preparation, M&E take-offs, rate build-ups and tender support for fire protection, ACMV, electrical, ELV and plumbing.'
 
 const faqs = [
+  { q: 'Is MEP estimation the same as M&E estimation?', a: 'Yes. MEP (mechanical, electrical and plumbing) is the international term; Singapore contractors usually say M&E. Both cover ACMV, electrical, ELV, plumbing and sanitary, and fire protection.' },
   { q: 'What do you need from us to prepare a BOQ?', a: 'The tender drawings and specifications, the client\'s BOQ format if there is one, your submission date, and your preferred rates or supplier prices if you want the BOQ priced with them.' },
   { q: 'Do you price the BOQ or only measure quantities?', a: 'Either. We can deliver measured quantities only, or a priced BOQ with rate build-ups using your rates and supplier prices. The scope is agreed in writing first.' },
   { q: 'Which trades do you cover?', a: 'M&E building services: fire protection, ACMV, electrical, ELV, and plumbing and sanitary.' },
@@ -150,9 +151,9 @@ const optionRows = [
 ]
 
 useSeoMeta({
-  title: 'BOQ services in Singapore: preparation & M&E estimation',
+  title: 'MEP estimation & BOQ services in Singapore',
   description,
-  ogTitle: 'BOQ services in Singapore: BOQ preparation & M&E estimation — Newham',
+  ogTitle: 'MEP estimation & BOQ services in Singapore — Newham',
   ogDescription: description,
   ogUrl: pageUrl
 })
@@ -165,7 +166,7 @@ useHead({
         '@context': 'https://schema.org',
         '@type': 'Service',
         name: 'BOQ preparation and M&E estimation services',
-        alternateName: ['BOQ services', 'Bill of quantities services'],
+        alternateName: ['MEP estimation services', 'M&E estimation services', 'BOQ services', 'Bill of quantities services'],
         serviceType: 'Construction cost estimation',
         description,
         url: pageUrl,

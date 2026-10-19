@@ -3,6 +3,7 @@ title: "Outsourcing MEP estimation: QS, estimator and BIM teams"
 description: "When to outsource M&E estimation, QS and BIM modelling, how to choose between per-deliverable work and a dedicated team, and how to set it up properly."
 slug: outsourcing-mep-estimation
 date: 2026-10-15
+updated: 2026-10-19
 author: "Newham engineering team"
 author_role: "M&E estimators and fire protection engineers"
 keywords: [offshore quantity surveyor, dedicated estimator team, M&E engineering outsourcing Singapore, BIM modeller outsourcing, MEP estimation outsourcing, outsourced QS]
@@ -46,7 +47,7 @@ Outsourcing M&E estimation works when you treat it as extra capacity on your pro
 
 ### Per deliverable
 
-You send a tender, a design package or a claim, and receive a defined output. This suits irregular workloads. The trade-off is that each job starts with a briefing, and the team may not carry your preferences from one job to the next.
+You send a tender, a design package or a claim, and receive a defined output, as with Newham's [MEP estimation and BOQ services in Singapore](/boq-estimation-services). This suits irregular workloads. The trade-off is that each job starts with a briefing, and the team may not carry your preferences from one job to the next.
 
 ### A dedicated estimator team
 
@@ -123,4 +124,4 @@ For the tender workflow itself, see the [MEP tender submission checklist](/guide
 
 ## How Newham can help
 
-Newham provides dedicated M&E professionals for Singapore contractors: BIM modellers and drafters, estimators and quantity surveyors, tender and commercial coordinators, and fire protection engineers. They work only on your projects, learn your templates and work your hours, while Newham handles hiring, training, HR and quality. Engagements run monthly with no recruitment fees, billed in SGD, as a single specialist, a project team or flexible managed capacity. See [talent outsourcing](/talent-outsourcing), or [book a discovery call](/appointment) to plan your team.
+Newham provides dedicated M&E professionals for Singapore contractors: BIM modellers and drafters, estimators and quantity surveyors, tender and commercial coordinators, and fire protection engineers. They work only on your projects, learn your templates and work your hours, while Newham handles hiring, training, HR and quality. Engagements run monthly with no recruitment fees, billed in SGD, as a single specialist, a project team or flexible managed capacity. For a single tender, see our [MEP estimation and BOQ services](/boq-estimation-services). For ongoing capacity, see [talent outsourcing](/talent-outsourcing), or [book a discovery call](/appointment) to plan your team.
