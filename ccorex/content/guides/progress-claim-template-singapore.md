@@ -3,10 +3,14 @@ title: "Progress Claim Template for Singapore Contractors: Format and Columns Ex
 description: "A progress claim format for Singapore: header, valuation columns, variations, retention, previous claims, 9% GST and the amount claimed this period."
 slug: progress-claim-template-singapore
 date: 2026-10-18
+updated: 2026-10-19
 author: "CCorex team"
 author_role: "Construction finance and project controls specialists"
 keywords: [progress claim template singapore, progress claim format, progress claim template, payment claim format singapore, progress claim excel, interim claim format, construction claim template]
 related: /products/deeptrack
+download:
+  file: /downloads/progress-claim-template-singapore.xlsx
+  title: Progress claim template (Excel)
 faq:
   - q: "What columns should a progress claim have?"
     a: "A typical valuation sheet has item reference, description, contract amount, percentage or quantity complete to date, value to date, value previously claimed and value this period. A summary then adds variations, deducts retention and previous certified amounts, and adds GST."
@@ -81,6 +85,8 @@ Only include variation work your contract allows you to claim. Show the status h
 Some contracts allow payment for materials delivered but not yet installed. If yours does, list them on their own sheet with delivery references. If it does not, leave them out.
 
 ## Part 3: The summary
+
+Want this ready to use? Download the free Excel version from the box on this page: header, valuation and variation sheets, and a summary that works out retention, the amount this period and 9% GST for you.
 
 The summary turns the valuation into the amount payable. Most contractors prepare it on a cumulative basis: value everything to date, then deduct what has already been certified.
 
