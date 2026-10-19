@@ -18,6 +18,7 @@
       <div class="container-site grid gap-12 lg:grid-cols-[minmax(0,1fr)_300px]">
         <article class="guide-body min-w-0" v-html="g.html"></article>
         <aside class="space-y-5 lg:sticky lg:top-24 lg:self-start">
+          <GuideDownloadGate v-if="g.download" :file="g.download.file" :title="g.download.title" :guide="g.slug" />
           <div v-if="g.related" class="card">
             <p class="eyebrow">Related</p>
             <NuxtLink :to="g.related" class="mt-2 inline-flex text-sm font-semibold text-brand-700 hover:text-brand-900">{{ relatedLabel }} <i class="fa-solid fa-arrow-right ml-1 mt-1 text-xs" aria-hidden="true"></i></NuxtLink>

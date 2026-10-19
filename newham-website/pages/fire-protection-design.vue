@@ -1,10 +1,10 @@
 <template>
   <ServiceLanding
     path="/fire-protection-design"
-    seo-title="Fire protection design & hydraulic calculations, Singapore"
-    seo-description="Sprinkler design and hydraulic calculations to SS CP 52 (NFPA 13 where specified), fire alarm, pump, riser and gas suppression design, in SCDF submission format."
+    seo-title="Fire sprinkler design & hydraulic calculations, Singapore"
+    seo-description="Fire sprinkler design services in Singapore: layouts and hydraulic calculations to SS CP 52, plus fire alarm, pump, riser and gas suppression design for SCDF submission."
     eyebrow="Fire protection design · Singapore"
-    title="Fire protection design and hydraulic calculations"
+    title="Fire sprinkler design and hydraulic calculations in Singapore"
     lead="Sprinkler layouts, hydraulic calculations and submission drawings for M&E contractors and consultants — prepared to Singapore codes, scoped in writing, with PE review coordinated when the submission needs it."
     cta="Send us a project to scope"
     :chips="['SS CP 52', 'NFPA 13', 'SS 645', 'SCDF submission']"
@@ -64,6 +64,7 @@ const related = [
 ]
 
 const faqs = [
+  { q: 'Do you provide fire sprinkler design for SCDF submission?', a: 'Yes. We prepare sprinkler layouts, hydraulic calculations and submission drawings to SS CP 52, formatted for SCDF. A Singapore-registered Professional Engineer reviews and endorses the submission where required; we coordinate that and quote the PE fees separately.' },
   { q: 'Which codes do you design to?', a: 'Sprinkler design and hydraulic calculations follow SS CP 52 and fire alarm design follows SS 645, as the SCDF Fire Code requires. NFPA 13 or BS 5839 apply only where the project specification calls for them. Drawings are formatted for SCDF submission, using the code edition that applies to your project.' },
   { q: 'Can you handle PE endorsement?', a: 'We coordinate review and endorsement by a Singapore-registered Professional Engineer where the submission needs it, and quote those fees separately.' },
   { q: 'What do you need to start?', a: 'The architectural drawings, any fire safety requirements already issued, the systems in scope and your submission date. Existing water supply information helps for hydraulic calculations.' },

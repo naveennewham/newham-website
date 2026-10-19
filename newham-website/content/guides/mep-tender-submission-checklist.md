@@ -3,9 +3,13 @@ title: "MEP tender submission checklist: BOQ and tender support"
 description: "A step-by-step MEP tender checklist covering take-off, BOQ preparation, rate build-up, tender queries and compilation, and what to outsource for support."
 slug: mep-tender-submission-checklist
 date: 2026-10-15
+updated: 2026-10-19
 author: "Newham engineering team"
 author_role: "M&E estimators and fire protection engineers"
 keywords: [tender support services, M&E estimation outsourcing, BOQ preparation services, MEP tender checklist, rate build-up, tender queries and addenda, Singapore]
+download:
+  file: /downloads/mep-tender-submission-checklist.xlsx
+  title: MEP tender submission checklist (Excel)
 related: /boq-estimation-services
 faq:
   - q: "What should an MEP tender submission include?"
@@ -39,6 +43,8 @@ A complete MEP tender submission comes from a fixed sequence: register the tende
 13. **File everything.** Keep the submitted set, the query log and the rate build-ups under document control. You will need them at award, for variations and for progress claims.
 
 ## Compliance checklist before you submit
+
+Want to tick these off on your next tender? Download the free Excel checklist from the box on this page: the 13-step sequence, this compliance list and a timeline planner, with owner and status columns.
 
 - [ ] Every document in the tender drawing register was received and reviewed
 - [ ] All addenda are listed, priced and acknowledged in the form required

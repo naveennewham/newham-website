@@ -7,6 +7,7 @@ export interface Guide {
   slug: string; title: string; description: string; date: string; updated?: string
   author: string; authorRole?: string; keywords: string[]; related?: string
   faq: { q: string; a: string }[]; html: string; words: number; minutes: number
+  download?: { file: string; title: string } // offered behind a short form on the guide page
 }
 
 const md = new Marked({ gfm: true })
@@ -19,6 +20,7 @@ export function parseGuide(text: string): Guide | null {
   if (fm.draft === true || !fm.slug || !fm.title) return null
   const body = m[2]!.trim()
   const words = body.split(/\s+/).filter(Boolean).length
+  const dl = fm.download as { file?: unknown; title?: unknown } | undefined
   const iso = (v: unknown) => (v instanceof Date ? v.toISOString().slice(0, 10) : v ? String(v) : undefined)
   return {
     slug: String(fm.slug), title: String(fm.title), description: String(fm.description ?? ''),
@@ -27,6 +29,7 @@ export function parseGuide(text: string): Guide | null {
     keywords: Array.isArray(fm.keywords) ? fm.keywords.map(String) : [], related: fm.related ? String(fm.related) : undefined,
     faq: Array.isArray(fm.faq) ? (fm.faq as { q: string; a: string }[]).filter((f) => f?.q && f?.a) : [],
     html: md.parse(body, { async: false }) as string, words, minutes: Math.max(1, Math.round(words / 220)),
+    download: dl?.file ? { file: String(dl.file), title: String(dl.title ?? 'Download') } : undefined,
   }
 }
 
