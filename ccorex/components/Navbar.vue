@@ -6,7 +6,7 @@
       </NuxtLink>
 
       <ul class="hidden items-center gap-1 lg:flex">
-        <li class="relative" @mouseenter="menu = 'products'" @mouseleave="menu = null">
+        <li ref="menuRef" class="relative" @mouseenter="menu = 'products'" @mouseleave="menu = null">
           <button
             type="button"
             class="flex items-center gap-1.5 rounded-lg px-3 py-2 text-sm font-medium text-ink-700 hover:text-ink-900"
@@ -14,27 +14,81 @@
             aria-controls="products-menu"
             @click="menu = menu === 'products' ? null : 'products'"
           >
-            Products <i class="fa-solid fa-chevron-down text-[10px]" aria-hidden="true"></i>
+            Products <i class="fa-solid fa-chevron-down text-[10px] transition-transform" :class="menu === 'products' ? 'rotate-180' : ''" aria-hidden="true"></i>
           </button>
-          <div v-show="menu === 'products'" id="products-menu" class="absolute left-1/2 top-full w-[720px] -translate-x-1/2 pt-2">
-            <div class="grid grid-cols-[1fr_240px] overflow-hidden rounded-2xl border border-ink-100 bg-white shadow-lift">
-              <ul class="grid grid-cols-2 gap-1 p-3">
-                <li v-for="a in apps" :key="a.slug">
-                  <NuxtLink :to="`/products/${a.slug}`" class="flex gap-3 rounded-xl p-3 hover:bg-ink-50" @click="menu = null">
-                    <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg" :class="a.color"><i :class="a.icon" aria-hidden="true"></i></span>
-                    <span>
-                      <span class="flex items-center gap-2 text-sm font-semibold text-ink-900">{{ a.name }}<span v-if="a.ai" class="chip-ai px-2 py-0 text-[10px]">AI</span><span v-if="a.status === 'preview'" class="rounded-full bg-amber-50 px-2 text-[10px] font-semibold text-amber-800">Soon</span></span>
-                      <span class="block text-xs leading-snug text-ink-500">{{ a.category }}</span>
-                    </span>
-                  </NuxtLink>
-                </li>
-              </ul>
-              <div class="flex flex-col justify-between bg-brand-950 p-5 text-white">
-                <div>
-                  <p class="eyebrow-dark">The platform</p>
-                  <p class="mt-2 text-sm leading-relaxed text-ink-200">One login, one user base and one set of roles across every app.</p>
+          <div v-show="menu === 'products'" id="products-menu" class="absolute -left-24 top-full w-[880px] pt-2">
+            <div class="light-surface grid grid-cols-[300px_1fr] overflow-hidden rounded-2xl border border-ink-100 bg-white shadow-lift">
+              <!-- App list -->
+              <div class="border-r border-ink-100 p-2.5" @mouseleave="rowHover = false">
+                <p class="px-2.5 pb-1.5 pt-1 text-[11px] font-semibold uppercase tracking-wider text-ink-500">CCorex apps</p>
+                <ul>
+                  <li v-for="(a, i) in apps" :key="a.slug">
+                    <NuxtLink
+                      :to="`/products/${a.slug}`"
+                      class="flex items-center gap-3 rounded-xl px-2.5 py-2 transition-colors"
+                      :class="hovered === i ? 'bg-ink-50' : ''"
+                      @mouseenter="hovered = i; rowHover = true"
+                      @focus="hovered = i; rowHover = true"
+                      @click="menu = null"
+                    >
+                      <UiAppIcon :app="a.slug" size="sm" />
+                      <span class="min-w-0 flex-1">
+                        <span class="flex items-center gap-1.5 text-sm font-semibold text-ink-900">{{ a.name }}<span v-if="a.ai" class="rounded-full bg-ai-50 px-1.5 text-[9px] font-semibold text-ai-700">AI</span></span>
+                        <span class="block truncate text-xs text-ink-500">{{ a.category }}</span>
+                      </span>
+                      <i class="fa-solid fa-chevron-right text-[10px] transition-opacity" :class="hovered === i ? 'text-ink-500 opacity-100' : 'opacity-0'" aria-hidden="true"></i>
+                    </NuxtLink>
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Snapshot of the hovered app: a tile in the app's own colour -->
+              <div class="flex flex-col p-4">
+                <Transition name="snap" mode="out-in">
+                  <div :key="current.slug" class="relative flex flex-1 flex-col overflow-hidden rounded-2xl p-6 text-white" :style="{ background: accent.bg }">
+                    <i :class="current.icon" class="pointer-events-none absolute -bottom-8 -right-6 text-[11rem] text-white/10" aria-hidden="true"></i>
+                    <span class="pointer-events-none absolute -left-10 -top-10 h-40 w-40 rounded-full bg-white/10 blur-2xl" aria-hidden="true"></span>
+
+                    <div class="relative flex items-start justify-between gap-4">
+                      <div class="flex items-center gap-3">
+                        <span class="flex h-14 w-14 items-center justify-center rounded-2xl bg-white/20 text-2xl shadow-lg ring-1 ring-white/30 backdrop-blur"><i :class="current.icon" aria-hidden="true"></i></span>
+                        <div>
+                          <p class="text-[11px] font-semibold uppercase tracking-wider text-white/75">{{ current.category }}</p>
+                          <p class="font-display text-2xl font-extrabold leading-tight">{{ current.name }}</p>
+                        </div>
+                      </div>
+                      <span v-if="current.ai || current.statusNote" class="rounded-full bg-white/20 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wide ring-1 ring-white/30">{{ current.statusNote ?? 'AI inside' }}</span>
+                    </div>
+
+                    <p class="relative mt-4 min-h-[2.75rem] max-w-md text-sm leading-snug text-white/90">{{ current.summary }}</p>
+
+                    <!-- key points as a mini flow -->
+                    <ol class="relative mt-5 grid grid-cols-[1fr_auto_1fr_auto_1fr] items-stretch gap-1.5">
+                      <template v-for="(pt, i) in current.points" :key="pt">
+                        <li class="pt-card flex flex-col rounded-xl bg-white/15 p-3 ring-1 ring-white/20 backdrop-blur" :style="{ animationDelay: `${i * 0.08}s` }">
+                          <span class="text-[10px] font-bold text-white/70">0{{ i + 1 }}</span>
+                          <span class="mt-1 text-xs font-semibold leading-snug">{{ pt }}</span>
+                        </li>
+                        <li v-if="i < (current.points?.length ?? 0) - 1" class="flex items-center text-[10px] text-white/60" aria-hidden="true"><i class="fa-solid fa-chevron-right"></i></li>
+                      </template>
+                    </ol>
+
+                    <div class="relative mt-auto flex items-center justify-between pt-5">
+                      <span class="flex items-center gap-2 text-[11px] text-white/75">
+                        Works with
+                        <span class="flex -space-x-1.5"><UiAppIcon v-for="o in others" :key="o" :app="o" size="xs" class="ring-2 ring-white/40" /></span>
+                      </span>
+                      <NuxtLink :to="`/products/${current.slug}`" class="inline-flex items-center gap-1.5 rounded-xl bg-white px-3.5 py-2 text-sm font-bold shadow-lg transition-transform hover:-translate-y-0.5" :style="{ color: accent.ink }" @click="menu = null">Explore {{ current.name }} <i class="fa-solid fa-arrow-right text-[10px]" aria-hidden="true"></i></NuxtLink>
+                    </div>
+                  </div>
+                </Transition>
+                <div class="mt-3 flex items-center justify-between px-1 text-sm">
+                  <span class="text-xs text-ink-500">One sign-in for every app</span>
+                  <span class="flex items-center gap-4">
+                    <NuxtLink to="/products" class="font-semibold text-brand-700 hover:text-brand-900" @click="menu = null">All products</NuxtLink>
+                    <NuxtLink to="/platform" class="text-ink-600 hover:text-ink-900" @click="menu = null">How the platform works</NuxtLink>
+                  </span>
                 </div>
-                <NuxtLink to="/platform" class="mt-4 text-sm font-semibold text-cyan-400 hover:text-white" @click="menu = null">How the platform works →</NuxtLink>
               </div>
             </div>
           </div>
@@ -91,6 +145,38 @@ const menu = ref<string | null>(null)
 const route = useRoute()
 watch(() => route.fullPath, () => { open.value = false; menu.value = null })
 
+// Products menu: the hovered app shows as a tile; while open, step through the apps every 2.2 s
+// unless the pointer is on a row.
+const hovered = ref(0)
+const rowHover = ref(false)
+let cycle: ReturnType<typeof setInterval> | undefined
+watch(menu, (m) => {
+  clearInterval(cycle)
+  if (m !== 'products') { rowHover.value = false; return }
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
+  cycle = setInterval(() => { if (!rowHover.value) hovered.value = (hovered.value + 1) % apps.length }, 2200)
+})
+const current = computed(() => apps[hovered.value]!)
+// Tile colours follow the portal's app icons.
+const accents: Record<string, { bg: string; ink: string }> = {
+  'deepcost': { bg: 'linear-gradient(135deg, #3a8fa8, #1f5f72)', ink: '#1f5f72' },
+  'deeptrack': { bg: 'linear-gradient(135deg, #e99a3a, #b8641a)', ink: '#9a5212' },
+  'deephr': { bg: 'linear-gradient(135deg, #4fa95f, #2e7a3e)', ink: '#2e7a3e' },
+  'deepplan-ai': { bg: 'linear-gradient(135deg, #5f7cf0, #3141a8)', ink: '#3141a8' },
+  'arivu-ai': { bg: 'linear-gradient(135deg, #8b6cff, #4b2fc0)', ink: '#4b2fc0' },
+  'deep-drive': { bg: 'linear-gradient(135deg, #b257cf, #6e2a8c)', ink: '#6e2a8c' },
+  'pdf-editor': { bg: 'linear-gradient(135deg, #ec6a5e, #a8322b)', ink: '#a8322b' }
+}
+const accent = computed(() => accents[current.value.slug] ?? accents.deepcost!)
+const others = computed(() => apps.map((a) => a.slug).filter((s) => s !== current.value.slug).slice(0, 4))
+
+// Close the Products menu on Escape or outside click.
+const menuRef = ref<HTMLElement | null>(null)
+const onKey = (e: KeyboardEvent) => { if (e.key === 'Escape') { menu.value = null; open.value = false } }
+const onDocClick = (e: MouseEvent) => { if (menu.value && menuRef.value && !menuRef.value.contains(e.target as Node)) menu.value = null }
+onMounted(() => { document.addEventListener('keydown', onKey); document.addEventListener('click', onDocClick) })
+onBeforeUnmount(() => { clearInterval(cycle); document.removeEventListener('keydown', onKey); document.removeEventListener('click', onDocClick) })
+
 const links = [
   { to: '/platform', label: 'Platform' },
   { to: '/solutions', label: 'Solutions' },
@@ -99,3 +185,12 @@ const links = [
   { to: '/about', label: 'Company' }
 ]
 </script>
+
+<style scoped>
+.snap-enter-active, .snap-leave-active { transition: opacity .18s ease, transform .18s ease; }
+.snap-enter-from { opacity: 0; transform: translateY(4px); }
+.snap-leave-to { opacity: 0; }
+.pt-card { animation: pt .35s ease both; }
+@keyframes pt { from { opacity: 0; transform: translateY(6px); } }
+@media (prefers-reduced-motion: reduce) { .pt-card { animation: none; } }
+</style>

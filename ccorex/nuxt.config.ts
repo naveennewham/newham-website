@@ -65,7 +65,8 @@ export default defineNuxtConfig({
       newhamUrl: 'https://newhamtech.com',
       // Google tags load only after consent, and only when these are set
       // (NUXT_PUBLIC_GA_ID = G-…, NUXT_PUBLIC_ADS_ID = AW-…, NUXT_PUBLIC_ADS_LEAD_LABEL).
-      gaId: '',
+      // GA4 property in the newhamtech2026@gmail.com Analytics account; loads only after analytics consent.
+      gaId: 'G-WNCRB2F8CX',
       adsId: '',
       adsLeadLabel: ''
     },
