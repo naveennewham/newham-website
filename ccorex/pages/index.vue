@@ -18,7 +18,7 @@
     </section>
 
     <!-- Problem -->
-    <section class="section render-later">
+    <section class="section cv-auto">
       <div class="container-site grid gap-12 lg:grid-cols-[1fr_1.2fr] lg:items-center">
         <div>
           <UiSectionHeader eyebrow="The problem" title="Construction runs on scattered tools." lead="Estimates in spreadsheets, budgets in another file, procurement over email, attendance on paper. Off-the-shelf suites weren't built for construction — so the margin leaks out in the gaps." />
@@ -30,15 +30,15 @@
       </div>
     </section>
 
-    <UiAppParallax class="render-later" />
+    <UiAppParallax class="cv-auto" />
 
-    <HomeAppSuite class="render-later" />
+    <HomeAppSuite class="cv-auto" />
 
 
-    <HomeBento class="render-later" />
+    <HomeBento class="cv-auto" />
 
     <!-- Win, deliver, staff -->
-    <section class="section render-later">
+    <section class="section cv-auto">
       <div class="container-site">
         <UiSectionHeader eyebrow="How it fits together" title="Win it in DeepCost. Deliver it in DeepTrack. Staff it with DeepHR." lead="A tender arrives in DeepCost, drawings are measured in DeepPlan and the priced bid goes out from DeepCost. A won job runs in DeepTrack, and the people on it are managed and paid in DeepHR." />
         <UiReveal class="mt-10 rounded-3xl border border-ink-100 bg-ink-50 p-5 sm:p-8">
@@ -73,7 +73,7 @@
     </section>
 
     <!-- AI -->
-    <section class="render-later relative overflow-hidden bg-[#03191f] py-24 text-white">
+    <section class="cv-auto relative overflow-hidden bg-[#03191f] py-24 text-white">
       <FxAurora palette="ai" />
       <div class="bg-grid pointer-events-none absolute inset-0 opacity-40" aria-hidden="true"></div>
       <div class="container-site relative grid gap-14 lg:grid-cols-2 lg:items-center">
@@ -98,7 +98,7 @@
     </section>
 
     <!-- Platform -->
-    <section class="section render-later">
+    <section class="section cv-auto">
       <div class="container-site">
         <div class="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
           <UiSectionHeader eyebrow="The platform underneath" title="One portal, one sign-in, every app" lead="Your organisation admin manages users, roles and app settings once, in the portal at dash.ccorex.com. Add a user once and they are created in each assigned app; disable them once and they are disabled in the apps too." />
@@ -115,7 +115,7 @@
     </section>
 
     <!-- Why -->
-    <section class="section render-later bg-ink-50">
+    <section class="section cv-auto bg-ink-50">
       <div class="container-site">
         <UiSectionHeader center eyebrow="Why CCorex" title="Six reasons construction teams switch" />
         <ol class="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -128,10 +128,10 @@
       </div>
     </section>
 
-    <UiTrustStrip class="render-later" />
+    <UiTrustStrip class="cv-auto" />
 
     <!-- Plans -->
-    <section class="section render-later">
+    <section class="section cv-auto">
       <div class="container-site">
         <UiSectionHeader center eyebrow="Plans" title="Start with one workflow. Scale to the whole business." lead="Per-user pricing — bundle the apps that fit your business." />
         <div class="mt-12 grid gap-4 lg:grid-cols-3">
@@ -148,20 +148,20 @@
       </div>
     </section>
 
-    <HomeGetStarted class="render-later" />
+    <HomeGetStarted class="cv-auto" />
 
     <!-- Latest guides -->
-    <HomeLatestGuides class="render-later" />
+    <HomeLatestGuides class="cv-auto" />
 
     <!-- FAQ -->
-    <section class="section-tight render-later">
+    <section class="section-tight cv-auto">
       <div class="container-site grid gap-10 lg:grid-cols-[1fr_1.6fr]">
         <UiSectionHeader eyebrow="FAQ" title="Questions buyers ask us" lead="Can't find your answer? Email admin@newhamtech.com." />
         <UiFaqList :items="faqs" />
       </div>
     </section>
 
-    <UiCtaBand class="render-later" />
+    <UiCtaBand class="cv-auto" />
   </div>
 </template>
 
@@ -181,7 +181,7 @@ useHead({
       '@context': 'https://schema.org',
       '@graph': [
         { '@type': 'WebSite', '@id': 'https://ccorex.com/#website', name: 'CCorex', alternateName: ['CCorex construction software', 'ccorex.com'], url: 'https://ccorex.com/', publisher: { '@id': 'https://ccorex.com/#organization' } },
-        { '@type': 'Organization', '@id': 'https://ccorex.com/#organization', name: 'CCorex', url: 'https://ccorex.com', logo: 'https://ccorex.com/ccorex-logo.png', email: 'admin@newhamtech.com', telephone: '+65 9880 4197', address: { '@type': 'PostalAddress', streetAddress: '101 Kitchener Road, #03-14, Jalan Besar Plaza', addressLocality: 'Singapore', postalCode: '208511', addressCountry: 'SG' }, parentOrganization: { '@type': 'Organization', name: 'Newham Technological Solutions', url: 'https://newhamtech.com' } },
+        { '@type': 'Organization', '@id': 'https://ccorex.com/#organization', name: 'CCorex', url: 'https://ccorex.com', logo: 'https://ccorex.com/ccorex-logo.png', email: 'admin@newhamtech.com', telephone: '+65 9880 4197', address: { '@type': 'PostalAddress', streetAddress: '101 Kitchener Road, #03-14, Jalan Besar Plaza', addressLocality: 'Singapore', postalCode: '208511', addressCountry: 'SG' }, parentOrganization: { '@type': 'Organization', name: 'Newham Solutions Pte. Ltd.', url: 'https://newhamtech.com' } },
         { '@type': 'SoftwareApplication', name: 'CCorex', applicationCategory: 'BusinessApplication', operatingSystem: 'Web', description: 'Construction management platform for MEP estimation, project delivery and HR & payroll, with an AI assistant in every app.', offers: { '@type': 'Offer', availability: 'https://schema.org/InStock' } }
       ]
     })

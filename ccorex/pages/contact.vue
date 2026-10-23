@@ -87,7 +87,7 @@
             <div class="sm:col-span-2">
               <label class="flex gap-3 rounded-xl bg-ink-50 p-4 text-xs leading-relaxed text-ink-600">
                 <input v-model="form.consent" type="checkbox" required class="mt-1 h-4 w-4 shrink-0 accent-brand-700" :aria-invalid="!!errors.consent" aria-describedby="consent-err" />
-                <span>I agree that Newham Technological Solutions may use the details above to contact me about a CCorex demo. We only use them to respond to this request and handle them in line with Singapore’s Personal Data Protection Act (PDPA). If you accepted marketing cookies, we also record how you found us. See our <NuxtLink to="/privacy" class="font-semibold text-brand-700 underline">privacy policy</NuxtLink>. You can ask us to delete your details at any time by emailing admin@newhamtech.com. <span class="text-rose-600" aria-hidden="true">*</span></span>
+                <span>I agree that Newham Solutions Pte. Ltd. may use the details above to contact me about a CCorex demo. We only use them to respond to this request and handle them in line with Singapore’s Personal Data Protection Act (PDPA). If you accepted marketing cookies, we also record how you found us. See our <NuxtLink to="/privacy" class="font-semibold text-brand-700 underline">privacy policy</NuxtLink>. You can ask us to delete your details at any time by emailing admin@newhamtech.com. <span class="text-rose-600" aria-hidden="true">*</span></span>
               </label>
               <p v-if="errors.consent" id="consent-err" class="err">{{ errors.consent }}</p>
             </div>
@@ -120,7 +120,7 @@
             <ul class="mt-4 space-y-2.5 text-sm text-ink-200">
               <li v-for="d in demoPoints" :key="d" class="flex gap-2.5"><i class="fa-solid fa-check mt-1 text-cyan-400" aria-hidden="true"></i>{{ d }}</li>
             </ul>
-            <p class="mt-5 text-xs text-ink-300">CCorex is delivered by Newham Technological Solutions, Singapore.</p>
+            <p class="mt-5 text-xs text-ink-300">CCorex is delivered by Newham Solutions Pte. Ltd., Singapore.</p>
           </div>
         </aside>
       </div>
@@ -171,6 +171,12 @@ const appLabel = (app: string) => appOptions.find((a) => a.toLowerCase().startsW
 watch(interest, (f) => {
   if (!f) return
   const label = appLabel(f.app)
+  if (label && !form.value.apps.includes(label)) form.value.apps.push(label)
+}, { immediate: true })
+// ?app=<slug> from a guide or product call to action: pre-tick that app.
+watch(() => route.query.app, (app) => {
+  const norm = (v: string) => v.toLowerCase().replace(/[^a-z0-9]/g, '')
+  const label = typeof app === 'string' && app ? appOptions.find((a) => norm(a).startsWith(norm(app))) : undefined
   if (label && !form.value.apps.includes(label)) form.value.apps.push(label)
 }, { immediate: true })
 const errors = ref<Record<string, string>>({})

@@ -1,7 +1,7 @@
 <template>
   <header class="sticky top-0 z-50 border-b border-ink-100 bg-white/90 backdrop-blur supports-[backdrop-filter]:bg-white/75">
     <nav class="container-site flex h-16 items-center justify-between gap-6" aria-label="Main">
-      <NuxtLink to="/" class="flex shrink-0 items-center" aria-label="Newham Technological Solutions home">
+      <NuxtLink to="/" class="flex shrink-0 items-center" aria-label="Newham Solutions Pte. Ltd. home">
         <img src="/newham-logo.png" alt="Newham" class="h-7 w-auto dark:hidden" width="110" height="28" />
         <img src="/newham-logo-white.png" alt="Newham" class="hidden h-7 w-auto dark:block" width="110" height="28" />
       </NuxtLink>

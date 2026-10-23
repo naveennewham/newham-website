@@ -7,7 +7,7 @@
         <div>
           <p class="eyebrow-dark">About CCorex</p>
           <h1 class="h-display mt-5 text-white">Software built by people who know construction.</h1>
-          <p class="lead-dark mt-6 max-w-xl">CCorex is built and delivered by Newham Technological Solutions in Singapore — a team that combines software engineering with specialist M&amp;E engineering experience. It serves engineering and construction contractors, mainly MEP and fire-protection firms in Singapore and India.</p>
+          <p class="lead-dark mt-6 max-w-xl">CCorex is built and delivered by Newham Solutions Pte. Ltd. in Singapore — a team that combines software engineering with specialist M&amp;E engineering experience. It serves engineering and construction contractors, mainly MEP and fire-protection firms in Singapore and India.</p>
           <div class="mt-8 flex flex-wrap gap-3">
             <NuxtLink to="/contact" class="btn-accent">Talk to our team <i class="fa-solid fa-arrow-right text-xs" aria-hidden="true"></i></NuxtLink>
             <a :href="config.public.newhamUrl" class="btn-ghost-dark">Visit Newham <i class="fa-solid fa-arrow-up-right-from-square text-xs" aria-hidden="true"></i></a>
@@ -37,14 +37,14 @@
       <div class="container-site grid gap-12 lg:grid-cols-2 lg:items-center">
         <img src="/images/photos/bim-team-review.webp" alt="Engineers reviewing an MEP model together on large monitors" width="2000" height="1086" class="aspect-[16/10] w-full rounded-2xl object-cover shadow-frame" loading="lazy" />
         <div>
-          <UiSectionHeader eyebrow="Delivered by Newham" title="Software plus specialists" lead="Newham Technological Solutions builds CCorex and also provides specialist M&E engineering services. That combination shapes the product." />
+          <UiSectionHeader eyebrow="Delivered by Newham" title="Software plus specialists" lead="Newham Solutions Pte. Ltd. builds CCorex and also provides specialist M&E engineering services. That combination shapes the product." />
           <ul class="mt-8 space-y-5">
             <li v-for="n in newham" :key="n.title" class="flex gap-4">
               <i :class="n.icon" class="mt-1 w-5 text-brand-600" aria-hidden="true"></i>
               <div><p class="font-semibold text-ink-900">{{ n.title }}</p><p class="text-sm text-ink-600">{{ n.text }}</p></div>
             </li>
           </ul>
-          <a :href="config.public.newhamUrl" class="mt-8 inline-flex font-semibold text-brand-700 hover:text-brand-900">About Newham Technological Solutions <i class="fa-solid fa-arrow-up-right-from-square ml-2 mt-1 text-xs" aria-hidden="true"></i></a>
+          <a :href="config.public.newhamUrl" class="mt-8 inline-flex font-semibold text-brand-700 hover:text-brand-900">About Newham Solutions Pte. Ltd. <i class="fa-solid fa-arrow-up-right-from-square ml-2 mt-1 text-xs" aria-hidden="true"></i></a>
         </div>
       </div>
     </section>
@@ -89,8 +89,8 @@
 <script setup lang="ts">
 const config = useRuntimeConfig()
 useSeoMeta({
-  title: 'About CCorex & Newham Technological Solutions',
-  description: 'CCorex is built by Newham Technological Solutions in Singapore for MEP and fire-protection contractors in Singapore and India, backed by M&E engineering experience.',
+  title: 'About CCorex & Newham Solutions Pte. Ltd.',
+  description: 'CCorex is built by Newham Solutions Pte. Ltd. in Singapore for MEP and fire-protection contractors in Singapore and India, backed by M&E engineering experience.',
   ogTitle: 'About CCorex — construction software delivered by Newham',
   ogDescription: 'Built in Singapore by a team that combines software engineering with specialist M&E engineering experience.'
 })

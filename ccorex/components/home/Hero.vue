@@ -237,8 +237,8 @@ onBeforeUnmount(() => {
   will-change: transform;
 }
 @keyframes beam { to { transform: translate(-50%, -50%) rotate(360deg); } }
-/* Slide only, no fade: the headline is the largest paint, so it must show in the first frame. */
 .hero-in { animation: hero-in .8s cubic-bezier(.2, .8, .2, 1) both; }
+/* Slide only: an opacity fade would hold back the largest paint (the intro paragraph). */
 @keyframes hero-in { from { transform: translate3d(0, 18px, 0); } }
 .fx-shine { animation: fx-shine 3.2s ease-in-out infinite; }
 @keyframes fx-shine { 0%, 60% { transform: translateX(-100%); } 100% { transform: translateX(100%); } }

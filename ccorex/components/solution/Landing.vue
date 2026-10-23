@@ -127,7 +127,7 @@ useHead({
         applicationCategory: 'BusinessApplication', operatingSystem: 'Web', url: pageUrl, description: props.seoDescription,
         areaServed: { '@type': 'Country', name: 'Singapore' },
         isPartOf: { '@type': 'SoftwareApplication', name: 'CCorex', url: config.public.siteUrl },
-        publisher: { '@type': 'Organization', name: 'Newham Technological Solutions' }
+        publisher: { '@type': 'Organization', name: 'Newham Solutions Pte. Ltd.' }
       })
     },
     {

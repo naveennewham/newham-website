@@ -152,9 +152,8 @@
 <script setup lang="ts">
 import { ccorexAppUrl, CCOREX_URL } from '~/data/ccorex'
 
-// Apps with a page on this site link here; the rest go to ccorex.com.
-const localApps = ['deepcost', 'deeptrack', 'deephr', 'deepplan-ai']
-const ccorexLink = (app: string) => (localApps.includes(app) ? `/ccorex/${app}` : `${CCOREX_URL}/products/${app}`)
+// Each app's page lives on ccorex.com.
+const ccorexLink = (app: string) => `${CCOREX_URL}/products/${app}`
 
 const config = useRuntimeConfig()
 const siteUrl = config.public.siteUrl as string
@@ -176,14 +175,15 @@ useHead({
       '@type': 'WebSite',
       '@id': siteUrl + '/#website',
       name: 'Newham Tech',
-      alternateName: ['Newham Technological Solutions', 'newhamtech.com'],
+      alternateName: ['Newham Solutions', 'Newham Technological Solutions', 'newhamtech.com'],
       url: siteUrl + '/',
       publisher: { '@id': siteUrl + '/#organization' }
     }, {
       '@type': 'Organization',
       '@id': siteUrl + '/#organization',
-      name: 'Newham Technological Solutions',
-      alternateName: 'Newham',
+      name: 'Newham Solutions Pte. Ltd.',
+      legalName: 'Newham Solutions Pte. Ltd.',
+      alternateName: ['Newham', 'Newham Technological Solutions'],
       url: siteUrl,
       logo: siteUrl + '/newham-logo.png',
       email: 'admin@newhamtech.com',

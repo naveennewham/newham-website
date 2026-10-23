@@ -16,7 +16,11 @@
 
     <section class="section">
       <div class="container-site grid gap-12 lg:grid-cols-[minmax(0,1fr)_300px]">
-        <article class="guide-body min-w-0" v-html="g.html"></article>
+        <article class="min-w-0">
+          <div class="guide-body" v-html="parts[0]"></div>
+          <GuideInlineCta :guide="g.slug" :related="g.related ? { to: g.related, label: relatedLabel } : undefined" />
+          <div v-if="parts[1]" class="guide-body" v-html="parts[1]"></div>
+        </article>
         <aside class="space-y-5 lg:sticky lg:top-24 lg:self-start">
           <GuideDownloadGate v-if="g.download" :file="g.download.file" :title="g.download.title" :guide="g.slug" />
           <div v-if="g.related" class="card">
@@ -38,6 +42,7 @@
         <div class="mt-8"><UiFaqList :items="g.faq" /></div>
       </div>
     </section>
+    <GuideStickyCta :guide="g.slug" to="/appointment" label="Book a call" text="Talk to an engineer about your project" />
   </div>
 </template>
 
@@ -48,8 +53,19 @@ const route = useRoute()
 const g = guideBySlug(String(route.params.slug))
 if (!g) throw createError({ statusCode: 404, statusMessage: 'Guide not found', fatal: true })
 
-const LABELS: Record<string, string> = { '/talent-outsourcing': 'M&E talent outsourcing', '/engineering-services': 'Engineering services', '/ccorex': 'CCorex software', '/services': 'All services' }
+const LABELS: Record<string, string> = {
+  '/talent-outsourcing': 'M&E talent outsourcing', '/engineering-services': 'Engineering services', '/ccorex': 'CCorex software', '/services': 'All services',
+  '/fire-protection-design': 'Fire protection design services', '/boq-estimation-services': 'BOQ and estimation services', '/shop-drawing-services': 'Shop drawing services'
+}
 const relatedLabel = computed(() => (g?.related ? LABELS[g.related] ?? 'Read more' : ''))
+// The article in two parts, with a call to action before the third section heading
+// (or the last one in a short guide), where mobile readers still are.
+const parts = computed(() => {
+  const html = g?.html ?? ''
+  const heads = [...html.matchAll(/<h2[\s>]/g)].map((m) => m.index ?? 0)
+  const at = heads.length >= 3 ? heads[2]! : heads.length >= 2 ? heads[heads.length - 1]! : -1
+  return at > 0 ? [html.slice(0, at), html.slice(at)] : [html, '']
+})
 const fmt = (d: string) => new Date(`${d}T00:00:00Z`).toLocaleDateString('en-SG', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' })
 
 const site = useRuntimeConfig().public.siteUrl as string
@@ -64,7 +80,7 @@ useHead({
         '@context': 'https://schema.org', '@type': 'Article', headline: g!.title, description: g!.description,
         datePublished: g!.date, dateModified: g!.updated ?? g!.date, mainEntityOfPage: url, keywords: g!.keywords.join(', '),
         author: { '@type': 'Organization', name: g!.author, url: site },
-        publisher: { '@type': 'Organization', name: 'Newham Technological Solutions', url: 'https://newhamtech.com' },
+        publisher: { '@type': 'Organization', name: 'Newham Solutions Pte. Ltd.', url: 'https://newhamtech.com' },
       },
       {
         '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [

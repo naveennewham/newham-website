@@ -147,7 +147,7 @@ useHead({
       description: 'Sprinkler design and hydraulic calculations to SS CP 52 (NFPA 13 where the project specification calls for it), fire alarm design to SS 645, submission drawings, estimation, BOQ, tender support and QS for M&E contractors in Singapore.',
       url: siteUrl + '/engineering-services',
       areaServed: { '@type': 'Country', name: 'Singapore' },
-      provider: { '@type': 'Organization', name: 'Newham Technological Solutions', url: siteUrl },
+      provider: { '@type': 'Organization', name: 'Newham Solutions Pte. Ltd.', url: siteUrl },
       hasOfferCatalog: { '@type': 'OfferCatalog', name: 'Fire protection design and M&E commercial support', itemListElement: [
         { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Sprinkler system design' } },
         { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Hydraulic calculations' } },

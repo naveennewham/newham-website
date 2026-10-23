@@ -3,7 +3,7 @@
     <div class="container-site grid gap-10 py-16 md:grid-cols-2 lg:grid-cols-[1.5fr_repeat(3,1fr)]">
       <div class="max-w-xs">
         <img src="~/assets/Newham_Logo_white.png" alt="Newham" class="h-7 w-auto" width="110" height="28" loading="lazy" />
-        <p class="mt-4 text-sm leading-relaxed">Newham Technological Solutions builds CCorex construction software and provides specialist M&amp;E engineers and engineering services to construction businesses in Singapore and India.</p>
+        <p class="mt-4 text-sm leading-relaxed">Newham Solutions Pte. Ltd. builds CCorex construction software and provides specialist M&amp;E engineers and engineering services to construction businesses in Singapore and India.</p>
         <p class="mt-4 text-sm"><a :href="`mailto:${email}`" class="font-semibold text-white hover:text-cyan-400">{{ email }}</a></p>
         <p class="mt-1 text-sm"><a href="tel:+6598804197" class="font-semibold text-white hover:text-cyan-400">+65 9880 4197</a></p>
       </div>
@@ -39,7 +39,7 @@
     </div>
     <div class="border-t border-white/10">
       <div class="container-site flex flex-col gap-2 py-6 text-xs text-ink-400 sm:flex-row sm:items-center sm:justify-between">
-        <p>© {{ year }} Newham Technological Solutions. CCorex is a product of Newham.</p>
+        <p>© {{ year }} Newham Solutions Pte. Ltd. CCorex is a product of Newham.</p>
         <p class="flex flex-wrap items-center gap-x-4 gap-y-1">
           <NuxtLink to="/privacy" class="hover:text-white">Privacy</NuxtLink>
           <button type="button" class="hover:text-white" @click="openSettings">Cookie settings</button>

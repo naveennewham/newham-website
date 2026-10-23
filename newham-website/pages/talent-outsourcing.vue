@@ -141,7 +141,7 @@ useHead({
       description: 'Dedicated M&E professionals for Singapore contractors: BIM modellers and drafters, estimators and QS, tender coordinators and fire protection engineers.',
       url: siteUrl + '/talent-outsourcing',
       areaServed: { '@type': 'Country', name: 'Singapore' },
-      provider: { '@type': 'Organization', name: 'Newham Technological Solutions', url: siteUrl },
+      provider: { '@type': 'Organization', name: 'Newham Solutions Pte. Ltd.', url: siteUrl },
       hasOfferCatalog: { '@type': 'OfferCatalog', name: 'M&E engineering talent outsourcing', itemListElement: [
         { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'BIM modellers and drafters' } },
         { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Estimators and quantity surveyors' } },

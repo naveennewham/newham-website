@@ -1,6 +1,6 @@
 # CCorex
 
-> CCorex is construction software for MEP, fire-protection and main contractors in Singapore and India: tender estimating, drawing take-off, project cost control, and HR & payroll on one sign-in, with an AI assistant (ARIVU) in every app. Made by Newham Technological Solutions, Singapore.
+> CCorex is construction software for MEP, fire-protection and main contractors in Singapore and India: tender estimating, drawing take-off, project cost control, and HR & payroll on one sign-in, with an AI assistant (ARIVU) in every app. Made by Newham Solutions Pte. Ltd., Singapore.
 
 ## Apps
 DeepCost, DeepTrack and DeepHR are each sold on their own (Starter, Growth and Enterprise tiers) or together as a suite on one sign-in.

@@ -7,7 +7,7 @@
         <div>
           <p class="eyebrow-dark">About Newham</p>
           <h1 class="h-display mt-4 text-white">A construction partner that builds software <span class="text-cyan-400">and</span> does the engineering.</h1>
-          <p class="lead-dark mt-6 max-w-xl">Newham Technological Solutions works with construction businesses in Singapore and India in three ways: we build CCorex construction software, we provide dedicated M&amp;E engineering professionals, and we deliver scoped engineering services.</p>
+          <p class="lead-dark mt-6 max-w-xl">Newham Solutions Pte. Ltd. works with construction businesses in Singapore and India in three ways: we build CCorex construction software, we provide dedicated M&amp;E engineering professionals, and we deliver scoped engineering services.</p>
           <div class="mt-8 flex flex-wrap gap-3">
             <NuxtLink to="/appointment" class="btn-accent">Book a discovery call <i class="fa-solid fa-arrow-right text-xs" aria-hidden="true"></i></NuxtLink>
             <NuxtLink to="/contact" class="btn-ghost-dark">Contact us</NuxtLink>
@@ -82,7 +82,7 @@ const config = useRuntimeConfig()
 const siteUrl = config.public.siteUrl as string
 
 useSeoMeta({
-  title: 'About Newham Technological Solutions',
+  title: 'About Newham Solutions Pte. Ltd.',
   description: 'Newham builds CCorex construction software and provides dedicated M&E engineers and engineering services to contractors and consultants in Singapore.',
   ogTitle: 'About Newham — construction software and specialist engineers',
   ogDescription: 'Who Newham is: CCorex software, engineering talent outsourcing and construction engineering services for Singapore construction.',
