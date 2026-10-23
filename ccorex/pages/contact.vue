@@ -173,6 +173,12 @@ watch(interest, (f) => {
   const label = appLabel(f.app)
   if (label && !form.value.apps.includes(label)) form.value.apps.push(label)
 }, { immediate: true })
+// ?app=<slug> from a guide or product call to action: pre-tick that app.
+watch(() => route.query.app, (app) => {
+  const norm = (v: string) => v.toLowerCase().replace(/[^a-z0-9]/g, '')
+  const label = typeof app === 'string' && app ? appOptions.find((a) => norm(a).startsWith(norm(app))) : undefined
+  if (label && !form.value.apps.includes(label)) form.value.apps.push(label)
+}, { immediate: true })
 const errors = ref<Record<string, string>>({})
 const submitted = ref(false)
 const sending = ref(false)

@@ -129,7 +129,9 @@ function select(i: number) { userPicked = true; active.value = i }
 onMounted(() => {
   motion.value = !window.matchMedia('(prefers-reduced-motion: reduce)').matches
   if (!motion.value) return
-  const go = () => setTimeout(() => { videoOk.value = true }, 800)
+  // Phones and data-saver visitors keep the poster images: the clips are 0.6–2 MB each.
+  const saveData = (navigator as Navigator & { connection?: { saveData?: boolean } }).connection?.saveData === true
+  const go = () => setTimeout(() => { videoOk.value = window.matchMedia('(min-width: 768px)').matches && !saveData }, 800)
   if (document.readyState === 'complete') go()
   else window.addEventListener('load', go, { once: true })
   t = setInterval(() => { if (!userPicked) active.value = (active.value + 1) % pillars.length }, 5500)
