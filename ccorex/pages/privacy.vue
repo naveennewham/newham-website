@@ -4,13 +4,13 @@
       <div class="container-site py-16 sm:py-20">
         <p class="eyebrow text-cyan-300">Legal</p>
         <h1 class="mt-3 text-4xl font-extrabold text-white sm:text-5xl">Privacy policy</h1>
-        <p class="lead-dark mt-4 max-w-2xl">How Newham Technological Solutions handles personal data on ccorex.com.</p>
+        <p class="lead-dark mt-4 max-w-2xl">How Newham Solutions Pte. Ltd. handles personal data on ccorex.com.</p>
       </div>
     </section>
     <section class="section">
       <div class="container-site prose-legal max-w-3xl">
         <h2>Who we are</h2>
-        <p>ccorex.com is run by Newham Technological Solutions (“Newham”, “we”). CCorex is a Newham product. For anything about your personal data, contact our Data Protection Officer at <a href="mailto:admin@newhamtech.com">admin@newhamtech.com</a>.</p>
+        <p>ccorex.com is run by Newham Solutions Pte. Ltd. (“Newham”, “we”). CCorex is a Newham product. For anything about your personal data, contact our Data Protection Officer at <a href="mailto:admin@newhamtech.com">admin@newhamtech.com</a>.</p>
 
         <h2>What we collect</h2>
         <ul>
@@ -50,8 +50,8 @@
 useSeoMeta({
   title: 'Privacy policy: how CCorex handles personal data',
   ogTitle: 'Privacy policy | CCorex',
-  ogDescription: 'How Newham Technological Solutions handles personal data on ccorex.com.',
-  description: 'How Newham Technological Solutions collects, uses and protects personal data on ccorex.com, including cookies and enquiry forms.',
+  ogDescription: 'How Newham Solutions Pte. Ltd. handles personal data on ccorex.com.',
+  description: 'How Newham Solutions Pte. Ltd. collects, uses and protects personal data on ccorex.com, including cookies and enquiry forms.',
 })
 useHead({ link: [{ rel: 'canonical', href: `${useRuntimeConfig().public.siteUrl}/privacy` }] })
 </script>

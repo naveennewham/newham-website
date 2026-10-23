@@ -171,7 +171,7 @@ useHead({
         description,
         url: pageUrl,
         areaServed: { '@type': 'Country', name: 'Singapore' },
-        provider: { '@type': 'Organization', name: 'Newham Technological Solutions', url: siteUrl }
+        provider: { '@type': 'Organization', name: 'Newham Solutions Pte. Ltd.', url: siteUrl }
       })
     },
     {

@@ -156,7 +156,7 @@ useHead({
       url: config.public.siteUrl + path,
       description: 'Drawing take-off and BOQ generation for MEP and fire-protection estimators, part of the CCorex suite. AI take-off is in early access.',
       isPartOf: { '@type': 'SoftwareApplication', name: 'CCorex' },
-      publisher: { '@type': 'Organization', name: 'Newham Technological Solutions' },
+      publisher: { '@type': 'Organization', name: 'Newham Solutions Pte. Ltd.' },
       offers: { '@type': 'Offer', availability: 'https://schema.org/InStock' }
     })
   }]

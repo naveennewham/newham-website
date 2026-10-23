@@ -130,7 +130,7 @@ useHead({
         applicationCategory: 'BusinessApplication', applicationSubCategory: `${props.trade} estimating`, operatingSystem: 'Web',
         url: pageUrl, description: props.seoDescription,
         isPartOf: { '@type': 'SoftwareApplication', name: 'CCorex', url: config.public.siteUrl },
-        publisher: { '@type': 'Organization', name: 'Newham Technological Solutions' }
+        publisher: { '@type': 'Organization', name: 'Newham Solutions Pte. Ltd.' }
       })
     },
     {

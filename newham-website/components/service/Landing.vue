@@ -108,7 +108,7 @@ useHead({
       innerHTML: JSON.stringify({
         '@context': 'https://schema.org', '@type': 'Service', name: props.serviceName, serviceType: props.serviceType,
         description: props.seoDescription, url: pageUrl, areaServed: { '@type': 'Country', name: 'Singapore' },
-        provider: { '@type': 'Organization', name: 'Newham Technological Solutions', url: siteUrl },
+        provider: { '@type': 'Organization', name: 'Newham Solutions Pte. Ltd.', url: siteUrl },
         hasOfferCatalog: { '@type': 'OfferCatalog', name: props.serviceName, itemListElement: props.scope.map((s) => ({ '@type': 'Offer', itemOffered: { '@type': 'Service', name: s.title } })) }
       })
     },

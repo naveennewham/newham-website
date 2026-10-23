@@ -26,7 +26,7 @@
       </div>
       <label class="flex gap-2 text-[11px] leading-snug text-ink-600">
         <input v-model="form.consent" type="checkbox" class="mt-0.5 h-3.5 w-3.5 shrink-0 accent-brand-700" />
-        <span>I agree that Newham Technological Solutions may email me about its engineering and estimation services, under the PDPA. See our <NuxtLink to="/privacy" class="font-semibold text-brand-700 underline">privacy policy</NuxtLink>; unsubscribe any time.</span>
+        <span>I agree that Newham Solutions Pte. Ltd. may email me about its engineering and estimation services, under the PDPA. See our <NuxtLink to="/privacy" class="font-semibold text-brand-700 underline">privacy policy</NuxtLink>; unsubscribe any time.</span>
       </label>
       <p v-if="error" class="text-xs font-medium text-rose-600" role="alert">{{ error }}</p>
       <button type="submit" class="btn-primary w-full" :disabled="sending">{{ sending ? 'Sending…' : 'Get the free file' }}</button>

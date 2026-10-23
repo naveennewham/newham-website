@@ -174,7 +174,7 @@ useHead({
       url: config.public.siteUrl + path,
       description: 'Read-only AI assistant in every CCorex app that answers questions from an organisation\'s own data across DeepCost, DeepTrack, DeepHR, DeepPlan and Deep Drive.',
       isPartOf: { '@type': 'SoftwareApplication', name: 'CCorex' },
-      publisher: { '@type': 'Organization', name: 'Newham Technological Solutions' },
+      publisher: { '@type': 'Organization', name: 'Newham Solutions Pte. Ltd.' },
       offers: { '@type': 'Offer', availability: 'https://schema.org/InStock' }
     })
   }]
