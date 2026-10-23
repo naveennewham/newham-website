@@ -285,7 +285,7 @@ useHead({
       url: pageUrl,
       description,
       isPartOf: { '@type': 'SoftwareApplication', name: 'CCorex', url: config.public.siteUrl },
-      publisher: { '@type': 'Organization', name: 'Newham Technological Solutions' }
+      publisher: { '@type': 'Organization', name: 'Newham Solutions Pte. Ltd.' }
     })
   }]
 })

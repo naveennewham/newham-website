@@ -100,7 +100,7 @@ export default defineNuxtConfig({
         { charset: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
         { name: 'theme-color', content: '#062a33' },
-        { property: 'og:site_name', content: 'Newham Technological Solutions' },
+        { property: 'og:site_name', content: 'Newham Solutions Pte. Ltd.' },
         { property: 'og:type', content: 'website' },
         { property: 'og:locale', content: 'en_SG' },
         { property: 'og:image', content: 'https://newhamtech.com/images/og-newham.jpg' },

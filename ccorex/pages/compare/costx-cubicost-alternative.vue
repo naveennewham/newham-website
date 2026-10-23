@@ -93,7 +93,7 @@
 const cols = ['DeepCost', 'CostX', 'Cubicost', 'PlanSwift']
 const rows = [
   { label: 'Main job', values: ['MEP tender estimating, from documents to priced Form of Tender', '2D and BIM take-off and estimating', 'BIM-based quantity surveying suite', 'On-screen take-off and estimating'] },
-  { label: 'Made by', values: ['Newham Technological Solutions, Singapore', 'RIB Software', 'Glodon', 'ConstructConnect'] },
+  { label: 'Made by', values: ['Newham Solutions Pte. Ltd., Singapore', 'RIB Software', 'Glodon', 'ConstructConnect'] },
   { label: 'Take-off from drawings', values: ['In DeepPlan AI (AI take-off in early access)', 'Yes', 'Yes', 'Yes'] },
   { label: 'Pricing on the client’s BOQ', values: ['FOT AI finds the quantity and amount columns on the BOQ PDF', 'Check with vendor', 'Check with vendor', 'Check with vendor'] },
   { label: 'Approvals per tender stage', values: ['Area schedule, MTO and FOT each approved', 'Check with vendor', 'Check with vendor', 'Check with vendor'] },

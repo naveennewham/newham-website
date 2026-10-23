@@ -113,7 +113,7 @@ const groups = [
       { q: 'Do we have to buy the whole suite?', a: 'No. Essentials starts with one flagship app — DeepCost, DeepTrack or DeepHR — and you can add apps as you grow.' },
       { q: 'How do we get pricing?', a: 'Pricing is shared on request. Email admin@newhamtech.com or book a demo and we will prepare a quote for your team.' },
       { q: 'What does onboarding involve?', a: 'Discovery of how you work today, configuration of your organisation, roles and approvals, import of data such as your price library, users and employees from Excel templates, role-based training, and ongoing support.' },
-      { q: 'Who provides support?', a: 'CCorex is built and supported by Newham Technological Solutions in Singapore. Every app has a support contact form. Enterprise plans include priority support and onboarding.' }
+      { q: 'Who provides support?', a: 'CCorex is built and supported by Newham Solutions Pte. Ltd. in Singapore. Every app has a support contact form. Enterprise plans include priority support and onboarding.' }
     ]
   }
 ]

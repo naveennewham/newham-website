@@ -81,7 +81,7 @@ useHead({
         '@context': 'https://schema.org', '@type': 'Article', headline: g!.title, description: g!.description,
         datePublished: g!.date, dateModified: g!.updated ?? g!.date, mainEntityOfPage: url, keywords: g!.keywords.join(', '),
         author: { '@type': 'Organization', name: g!.author, url: site },
-        publisher: { '@type': 'Organization', name: 'Newham Technological Solutions', url: 'https://newhamtech.com' },
+        publisher: { '@type': 'Organization', name: 'Newham Solutions Pte. Ltd.', url: 'https://newhamtech.com' },
       },
       {
         '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [

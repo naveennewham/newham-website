@@ -181,7 +181,7 @@ useHead({
       '@context': 'https://schema.org',
       '@graph': [
         { '@type': 'WebSite', '@id': 'https://ccorex.com/#website', name: 'CCorex', alternateName: ['CCorex construction software', 'ccorex.com'], url: 'https://ccorex.com/', publisher: { '@id': 'https://ccorex.com/#organization' } },
-        { '@type': 'Organization', '@id': 'https://ccorex.com/#organization', name: 'CCorex', url: 'https://ccorex.com', logo: 'https://ccorex.com/ccorex-logo.png', email: 'admin@newhamtech.com', telephone: '+65 9880 4197', address: { '@type': 'PostalAddress', streetAddress: '101 Kitchener Road, #03-14, Jalan Besar Plaza', addressLocality: 'Singapore', postalCode: '208511', addressCountry: 'SG' }, parentOrganization: { '@type': 'Organization', name: 'Newham Technological Solutions', url: 'https://newhamtech.com' } },
+        { '@type': 'Organization', '@id': 'https://ccorex.com/#organization', name: 'CCorex', url: 'https://ccorex.com', logo: 'https://ccorex.com/ccorex-logo.png', email: 'admin@newhamtech.com', telephone: '+65 9880 4197', address: { '@type': 'PostalAddress', streetAddress: '101 Kitchener Road, #03-14, Jalan Besar Plaza', addressLocality: 'Singapore', postalCode: '208511', addressCountry: 'SG' }, parentOrganization: { '@type': 'Organization', name: 'Newham Solutions Pte. Ltd.', url: 'https://newhamtech.com' } },
         { '@type': 'SoftwareApplication', name: 'CCorex', applicationCategory: 'BusinessApplication', operatingSystem: 'Web', description: 'Construction management platform for MEP estimation, project delivery and HR & payroll, with an AI assistant in every app.', offers: { '@type': 'Offer', availability: 'https://schema.org/InStock' } }
       ]
     })

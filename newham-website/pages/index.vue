@@ -175,14 +175,15 @@ useHead({
       '@type': 'WebSite',
       '@id': siteUrl + '/#website',
       name: 'Newham Tech',
-      alternateName: ['Newham Technological Solutions', 'newhamtech.com'],
+      alternateName: ['Newham Solutions', 'Newham Technological Solutions', 'newhamtech.com'],
       url: siteUrl + '/',
       publisher: { '@id': siteUrl + '/#organization' }
     }, {
       '@type': 'Organization',
       '@id': siteUrl + '/#organization',
-      name: 'Newham Technological Solutions',
-      alternateName: 'Newham',
+      name: 'Newham Solutions Pte. Ltd.',
+      legalName: 'Newham Solutions Pte. Ltd.',
+      alternateName: ['Newham', 'Newham Technological Solutions'],
       url: siteUrl,
       logo: siteUrl + '/newham-logo.png',
       email: 'admin@newhamtech.com',
