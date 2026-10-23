@@ -18,7 +18,7 @@
     </section>
 
     <!-- Problem -->
-    <section class="section">
+    <section class="section cv-auto">
       <div class="container-site grid gap-12 lg:grid-cols-[1fr_1.2fr] lg:items-center">
         <div>
           <UiSectionHeader eyebrow="The problem" title="Construction runs on scattered tools." lead="Estimates in spreadsheets, budgets in another file, procurement over email, attendance on paper. Off-the-shelf suites weren't built for construction — so the margin leaks out in the gaps." />
@@ -30,7 +30,7 @@
       </div>
     </section>
 
-    <UiAppParallax />
+    <UiAppParallax class="cv-auto" />
 
     <HomeAppSuite class="cv-auto" />
 
@@ -128,7 +128,7 @@
       </div>
     </section>
 
-    <UiTrustStrip />
+    <UiTrustStrip class="cv-auto" />
 
     <!-- Plans -->
     <section class="section cv-auto">
@@ -154,14 +154,14 @@
     <HomeLatestGuides class="cv-auto" />
 
     <!-- FAQ -->
-    <section class="section-tight">
+    <section class="section-tight cv-auto">
       <div class="container-site grid gap-10 lg:grid-cols-[1fr_1.6fr]">
         <UiSectionHeader eyebrow="FAQ" title="Questions buyers ask us" lead="Can't find your answer? Email admin@newhamtech.com." />
         <UiFaqList :items="faqs" />
       </div>
     </section>
 
-    <UiCtaBand />
+    <UiCtaBand class="cv-auto" />
   </div>
 </template>
 

@@ -101,8 +101,10 @@
 </template>
 
 <script setup lang="ts">
-import { guides as publishedGuides } from '~/utils/guides'
-const published = publishedGuides
+// Read at prerender and inlined with the page, so the browser does not get every guide's Markdown.
+const { data: publishedGuides } = await useAsyncData('published-guides', async () => (await import('~/utils/guides')).guides
+  .map(({ slug, title, description, minutes }) => ({ slug, title, description, minutes })))
+const published = computed(() => publishedGuides.value ?? [])
 const config = useRuntimeConfig()
 useSeoMeta({
   title: 'Resources: estimating & payroll guides',

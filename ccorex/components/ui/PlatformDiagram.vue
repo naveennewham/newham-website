@@ -9,7 +9,7 @@
       </g>
     </svg>
     <div class="absolute left-1/2 top-1/2 flex h-36 w-36 -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center rounded-full bg-brand-800 text-center ring-8 ring-brand-900/60">
-      <img src="/ccorex-logo.png" alt="" class="h-6 w-auto brightness-0 invert" />
+      <img src="/ccorex-logo-sm.png" alt="" class="h-6 w-auto brightness-0 invert" />
       <span class="mt-2 text-[11px] leading-tight text-ink-200">One login · users<br>roles · data</span>
     </div>
     <NuxtLink

@@ -4,7 +4,7 @@
       <div class="light-surface overflow-hidden rounded-2xl border border-ink-200 bg-[#f3f5f7] text-[#14232a] shadow-frame" aria-hidden="true">
         <!-- Portal top bar -->
         <div class="flex items-center justify-between bg-[#255e6b] px-4 py-2.5">
-          <img src="/ccorex-logo.png" alt="" width="112" height="28" class="h-5 w-auto brightness-0 invert" />
+          <img src="/ccorex-logo-sm.png" alt="" width="112" height="28" class="h-5 w-auto brightness-0 invert" />
           <span class="rounded-md bg-white/10 px-2 py-0.5 font-mono text-[10px] text-white/80">dash.ccorex.com</span>
         </div>
 

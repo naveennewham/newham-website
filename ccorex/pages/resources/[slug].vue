@@ -52,7 +52,11 @@
 import { apps } from '~/data/apps'
 
 const route = useRoute()
-const g = guideBySlug(String(route.params.slug))
+// Read at prerender and inlined with the page, so the browser gets this guide and not every guide's
+// Markdown plus the parser.
+const slug = String(route.params.slug)
+const { data } = await useAsyncData(`guide-${slug}`, async () => (await import('~/utils/guides')).guideBySlug(slug) ?? null)
+const g = data.value
 if (!g) throw createError({ statusCode: 404, statusMessage: 'Guide not found', fatal: true })
 
 const related = computed(() => {

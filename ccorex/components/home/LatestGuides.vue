@@ -21,6 +21,9 @@
 
 <script setup lang="ts">
 // The newest guides, linked from the homepage so search engines find new pages on their next homepage crawl.
-import { guides } from '~/utils/guides'
-const latest = guides.slice(0, 6)
+// Read at prerender and inlined with the page: importing utils/guides here would ship every guide's
+// Markdown and the parser to the browser (~100 KB gzip).
+const { data } = await useAsyncData('latest-guides', async () => (await import('~/utils/guides')).guides.slice(0, 6)
+  .map(({ slug, title, description, minutes }) => ({ slug, title, description, minutes })))
+const latest = computed(() => data.value ?? [])
 </script>

@@ -2,7 +2,7 @@
   <header class="sticky top-0 z-50 border-b border-ink-100 bg-white/90 backdrop-blur supports-[backdrop-filter]:bg-white/75">
     <nav class="container-site flex h-16 items-center justify-between gap-6" aria-label="Main">
       <NuxtLink to="/" class="flex shrink-0 items-center" aria-label="CCorex home">
-        <img src="/ccorex-logo.png" alt="CCorex" class="logo-auto h-7 w-auto brightness-0" width="112" height="28" />
+        <img src="/ccorex-logo-sm.png" alt="CCorex" class="logo-auto h-7 w-auto brightness-0" width="112" height="28" />
       </NuxtLink>
 
       <ul class="hidden items-center gap-1 lg:flex">
