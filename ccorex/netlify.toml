@@ -9,3 +9,9 @@
 
 [build.environment]
   NODE_VERSION = "24"
+
+# Empty Cloudflare's cache after each production deploy (see the plugin for why).
+[[plugins]]
+  package = "./netlify/plugins/purge-cloudflare"
+  [plugins.inputs]
+    zoneId = "5392010581dc29792134f1ffee3ee1dd"
