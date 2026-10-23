@@ -59,7 +59,7 @@
 
               <!-- Videos (crossfade) -->
               <div class="relative aspect-video bg-[#03191f]">
-                <video v-for="(t, k) in tours" :key="t.key" :ref="(el) => (vids[k] = el as HTMLVideoElement)" class="absolute inset-0 h-full w-full object-cover transition-opacity duration-700 ease-out" :class="k === active ? 'opacity-100' : 'opacity-0'" :src="`/videos/tour-${t.key}.mp4`" :poster="`/videos/tour-${t.key}-start.webp`" preload="none" muted playsinline :aria-hidden="k !== active" :aria-label="`${t.name} product tour, no sound`" @ended="next"></video>
+                <video v-for="(t, k) in tours" :key="t.key" :ref="(el) => (vids[k] = el as HTMLVideoElement)" class="absolute inset-0 h-full w-full object-cover transition-opacity duration-700 ease-out" :class="k === active ? 'opacity-100' : 'opacity-0'" :src="`/videos/tour-${t.key}.mp4`" :poster="`/videos/tour-${t.key}-start.webp`" preload="none" muted playsinline :aria-hidden="k !== active" :aria-label="`${t.name} product tour, no sound`" @playing="wake" @ended="next"></video>
               </div>
             </div>
           </div>
@@ -171,19 +171,25 @@ function measure() {
   const vh = window.innerHeight
   const top = el.getBoundingClientRect().top
   pTarget = Math.min(1, Math.max(0, 1 - (top - vh * 0.12) / (vh * 0.55)))
+  wake()
 }
-// One loop eases the scroll tilt and moves the active tab's progress bar.
+// One loop eases the scroll tilt and moves the active tab's progress bar. It stops once the tilt
+// has settled and no tour is playing; scrolling or a tour starting wakes it.
 function frame() {
+  let busy = false
   // Write the CSS variable directly so Vue does not re-render each frame.
   if (Math.abs(pTarget - p) > 0.0005) {
     p += (pTarget - p) * 0.1
     stage.value?.style.setProperty('--p', p.toFixed(4))
+    busy = true
   }
   const v = vids[active.value]
   const b = bars[active.value]
   if (v && b && v.duration) b.style.transform = `scaleX(${v.currentTime / v.duration})`
-  raf = visible ? requestAnimationFrame(frame) : 0
+  if (v && !v.paused) busy = true
+  raf = visible && busy ? requestAnimationFrame(frame) : 0
 }
+function wake() { if (visible && !raf) raf = requestAnimationFrame(frame) }
 
 watch(lightbox, (open) => { if (open) vids[active.value]?.pause(); else playActive() })
 
@@ -191,16 +197,21 @@ onMounted(() => {
   reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
   vids.forEach(prime)
   vids[0]?.addEventListener('playing', preloadNext, { once: true })
-  whenIdle(() => { ready = true; const v = vids[0]; if (v) { v.preload = 'auto'; v.load(); prime(v) } playActive() })
+  // With Data Saver on or on a 2G connection the posters stay; the play button starts a tour.
+  const conn = (navigator as Navigator & { connection?: { saveData?: boolean; effectiveType?: string } }).connection
+  const lite = !!conn && (conn.saveData === true || /2g$/.test(conn.effectiveType ?? ''))
+  if (lite) paused.value = true
+  whenIdle(() => { ready = true; if (lite) return; const v = vids[0]; if (v) { v.preload = 'auto'; v.load(); prime(v) } playActive() })
   if (reduced) { paused.value = true; p = pTarget = 1; stage.value?.style.setProperty('--p', '1') }
   else {
-    measure()
+    // Measured on the next frame, after hydration, so it does not force a layout mid-task.
+    requestAnimationFrame(measure)
     window.addEventListener('scroll', measure, { passive: true })
     window.addEventListener('resize', measure, { passive: true })
   }
   io = new IntersectionObserver(([e]) => {
     visible = e.isIntersecting
-    if (visible) { playActive(); if (!raf) raf = requestAnimationFrame(frame) }
+    if (visible) { playActive(); wake() }
     else vids[active.value]?.pause()
   }, { threshold: 0.05 })
   if (root.value) io.observe(root.value)
@@ -226,8 +237,9 @@ onBeforeUnmount(() => {
   will-change: transform;
 }
 @keyframes beam { to { transform: translate(-50%, -50%) rotate(360deg); } }
+/* Slide only, no fade: the headline is the largest paint, so it must show in the first frame. */
 .hero-in { animation: hero-in .8s cubic-bezier(.2, .8, .2, 1) both; }
-@keyframes hero-in { from { opacity: 0; transform: translate3d(0, 18px, 0); } }
+@keyframes hero-in { from { transform: translate3d(0, 18px, 0); } }
 .fx-shine { animation: fx-shine 3.2s ease-in-out infinite; }
 @keyframes fx-shine { 0%, 60% { transform: translateX(-100%); } 100% { transform: translateX(100%); } }
 .msg-enter-active, .msg-leave-active { transition: opacity .35s ease, transform .35s ease; }

@@ -2,7 +2,7 @@
   <footer class="bg-brand-950 text-ink-300">
     <div class="container-site grid gap-10 py-16 md:grid-cols-[1.4fr_repeat(3,1fr)]">
       <div class="max-w-xs">
-        <img src="/ccorex-logo.png" alt="CCorex" class="h-7 w-auto brightness-0 invert" width="112" height="28" loading="lazy" />
+        <img src="/ccorex-logo-sm.png" alt="CCorex" class="h-7 w-auto brightness-0 invert" width="112" height="28" loading="lazy" />
         <p class="mt-4 text-sm leading-relaxed">The AI-powered platform for construction businesses — estimating, project delivery and HR &amp; payroll on one login.</p>
         <p class="mt-4 text-sm">Delivered by <a :href="config.public.newhamUrl" class="font-semibold text-white hover:text-cyan-400">Newham Technological Solutions</a>, Singapore.</p>
         <p class="mt-2 text-xs text-ink-400">Newham Solutions Pte. Ltd. · UEN 202346654E<br />101 Kitchener Road, #03-14, Jalan Besar Plaza, Singapore 208511</p>

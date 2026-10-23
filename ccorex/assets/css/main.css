@@ -54,3 +54,9 @@
   .bg-grid { background-image: radial-gradient(rgba(255,255,255,.10) 1px, transparent 1.3px); background-size: 22px 22px; }
   .text-ai-gradient { @apply bg-ai-gradient bg-clip-text text-transparent; }
 }
+
+@layer utilities {
+  /* Below-the-fold sections: the browser skips their style, layout and paint until they come near
+     the viewport. The placeholder height is replaced by the real one once a section has rendered. */
+  .render-later { content-visibility: auto; contain-intrinsic-size: auto 900px; }
+}

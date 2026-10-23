@@ -1,6 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 import { execSync } from 'node:child_process'
 import { fileURLToPath } from 'node:url'
+import { subsetIcons, usedIcons } from './scripts/icons.mjs'
 
 // Last commit date (YYYY-MM-DD) of each file under pages/, for sitemap <lastmod>. Empty when git
 // history is unavailable; the sitemap then falls back to the build date.
@@ -25,9 +26,9 @@ export default defineNuxtConfig({
         // Consent Mode v2: everything denied until the visitor chooses (see composables/useConsent).
         { innerHTML: "window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('consent','default',{ad_storage:'denied',analytics_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',wait_for_update:500});", tagPosition: 'head' },
         { innerHTML: "(function(){var d=document.documentElement;try{var q=new URLSearchParams(location.search).get('theme');if(q==='light'||q==='dark')localStorage.setItem('theme',q);var t=q||localStorage.getItem('theme');if(t!=='light')d.classList.add('dark')}catch(e){d.classList.add('dark')}})()", tagPosition: 'head' },
-        // Web fonts and icons as non-blocking stylesheets: a script-inserted link does not hold up
-        // the first paint (text shows in the size-matched fallback from main.css meanwhile).
-        { innerHTML: "['https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Inter+Tight:wght@500;600;700;800&display=swap','https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css'].forEach(function(h){var l=document.createElement('link');l.rel='stylesheet';l.crossOrigin='anonymous';l.href=h;document.head.appendChild(l)})", tagPosition: 'head' }],
+        // Web fonts as a non-blocking stylesheet: a script-inserted link does not hold up the first
+        // paint (text shows in the size-matched fallback from main.css meanwhile).
+        { innerHTML: "['https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Inter+Tight:wght@500;600;700;800&display=swap'].forEach(function(h){var l=document.createElement('link');l.rel='stylesheet';l.crossOrigin='anonymous';l.href=h;document.head.appendChild(l)})", tagPosition: 'head' }],
       titleTemplate: (title?: string) => (title ? `${title} | CCorex` : 'CCorex — AI-powered construction management platform'),
       meta: [
         // Google Search Console ownership (URL-prefix property, verified by Markaiting's reader account).
@@ -41,16 +42,15 @@ export default defineNuxtConfig({
         { name: 'twitter:card', content: 'summary_large_image' }
       ],
       link: [
-        { rel: 'icon', type: 'image/png', href: '/ccorex-logo.png' },
+        { rel: 'icon', type: 'image/png', href: '/ccorex-logo-sm.png' },
         { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
         { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' },
         // Fetched early, applied without blocking the first paint (see the script above).
-        { rel: 'preload', as: 'style', href: 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Inter+Tight:wght@500;600;700;800&display=swap', crossorigin: 'anonymous' },
-        { rel: 'preload', as: 'style', href: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css', crossorigin: 'anonymous' }
+        { rel: 'preload', as: 'style', href: 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Inter+Tight:wght@500;600;700;800&display=swap', crossorigin: 'anonymous' }
       ]
     }
   },
-  css: ['~/assets/css/main.css', '~/assets/css/theme.css'],
+  css: ['~/assets/css/main.css', '~/assets/css/theme.css', '~/assets/css/icons.css'],
   runtimeConfig: {
     // Server only: page file -> last change date, read by the sitemap.
     pageDates: pageDates(),
@@ -92,6 +92,11 @@ export default defineNuxtConfig({
   // page data inline in the HTML, styles inlined, and small code chunks merged.
   experimental: { payloadExtraction: false },
   hooks: {
+    // Icons come from a Font Awesome subset; a class it was not made from would render blank.
+    'build:before'() {
+      const missing = [...usedIcons()].filter((c) => !subsetIcons().has(c))
+      if (missing.length) throw new Error(`Icons missing from assets/css/icons.css: ${missing.join(' ')}. Run npm run icons.`)
+    },
     'vite:extendConfig'(config, { isClient }) {
       if (!isClient) return
       config.build ??= {}
@@ -111,6 +116,8 @@ export default defineNuxtConfig({
     '/products/deepplanai': { redirect: { to: '/products/deepplan-ai', statusCode: 301 } }
   },
   tailwindcss: {
+    // main.css holds the @tailwind layers; without this the module adds a second full copy.
+    cssPath: '~/assets/css/main.css',
     exposeConfig: false
   },
   postcss: {

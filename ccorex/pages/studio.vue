@@ -2,7 +2,7 @@
   <div class="studio relative h-[720px] w-[1280px] overflow-hidden bg-[#03191f] text-white">
     <FxAurora palette="ai" />
     <div class="bg-grid pointer-events-none absolute inset-0 opacity-40" aria-hidden="true"></div>
-    <img src="/ccorex-logo.png" alt="" class="absolute right-10 top-8 z-20 h-6 brightness-0 invert opacity-80" />
+    <img src="/ccorex-logo-sm.png" alt="" class="absolute right-10 top-8 z-20 h-6 brightness-0 invert opacity-80" />
 
     <Transition name="scene" mode="out-in">
       <!-- Title -->
@@ -35,7 +35,7 @@
 
       <!-- Outro -->
       <div v-else-if="scene?.type === 'outro'" :key="idx" class="absolute inset-0 flex flex-col items-center justify-center text-center">
-        <img src="/ccorex-logo.png" alt="" class="anim-in h-12 brightness-0 invert" />
+        <img src="/ccorex-logo-sm.png" alt="" class="anim-in h-12 brightness-0 invert" />
         <h2 class="anim-in mt-8 font-display text-5xl font-extrabold text-white [animation-delay:.15s]">{{ scene.title }}</h2>
         <p class="anim-in mt-4 text-xl text-ink-200 [animation-delay:.3s]">{{ scene.text }}</p>
         <span class="anim-in mt-10 rounded-full bg-cyan-500 px-8 py-4 text-lg font-semibold text-brand-950 shadow-[0_10px_40px_-10px_rgba(1,172,200,.9)] [animation-delay:.45s]">Book a live demo · ccorex.com</span>

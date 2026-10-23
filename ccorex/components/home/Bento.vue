@@ -17,7 +17,7 @@
           <div class="hub relative flex h-60 w-60 flex-col items-center justify-center rounded-full bg-white text-center shadow-lift ring-1 ring-ink-100">
             <span class="hub-ring absolute -inset-3 rounded-full border-2 border-dashed border-brand-200" aria-hidden="true"></span>
             <span class="hub-glow absolute inset-0 rounded-full" aria-hidden="true"></span>
-            <img src="/ccorex-logo.png" alt="CCorex" width="112" height="28" class="logo-auto relative h-7 w-auto brightness-0" />
+            <img src="/ccorex-logo-sm.png" alt="CCorex" width="112" height="28" class="logo-auto relative h-7 w-auto brightness-0" />
             <ul class="relative mt-3 space-y-1 text-xs font-medium text-ink-600">
               <li>One sign-in</li>
               <li>One record per job</li>

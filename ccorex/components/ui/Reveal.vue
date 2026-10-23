@@ -12,13 +12,17 @@ const el = ref<HTMLElement | null>(null)
 const shown = ref(true)
 let io: IntersectionObserver | undefined
 
+// The observer's first report says where the element starts (no forced layout while hydrating):
+// on screen or already scrolled past, it stays shown; below the fold, it hides until scrolled to.
 onMounted(() => {
   if (!el.value || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
-  const r = el.value.getBoundingClientRect()
-  if (r.top < window.innerHeight * 0.9) return // already on screen
-  shown.value = false
-  io = new IntersectionObserver((entries) => {
-    if (entries.some((e) => e.isIntersecting)) { shown.value = true; io?.disconnect() }
+  let first = true
+  io = new IntersectionObserver(([e]) => {
+    if (!e) return
+    const done = e.isIntersecting || (first && e.boundingClientRect.top < 0)
+    first = false
+    shown.value = done
+    if (done) io?.disconnect()
   }, { rootMargin: '0px 0px -10% 0px' })
   io.observe(el.value)
 })
