@@ -2,6 +2,11 @@ import { execSync } from 'node:child_process'
 import { fileURLToPath } from 'node:url'
 
 // Old case-study URLs (fabricated examples, removed); they redirect to /case-studies.
+// Short CCorex app pages that duplicated ccorex.com (Google showed both): now 301s there.
+const ccorexMoved: Record<string, string> = {
+  '/ccorex/deepcost': 'deepcost', '/ccorex/deeptrack': 'deeptrack', '/ccorex/deephr': 'deephr', '/ccorex/deepplan-ai': 'deepplan-ai',
+  '/product': 'deepcost', '/deeptrack': 'deeptrack'
+}
 const oldCaseStudies = ['acmv1', 'fire1', 'cs1', 'elv1', 'ana1', 'cs2', 'cs3', 'cs4', 'cs5', 'cs6', 'ai1', 'cloud1', 'uiux1']
 // https://nuxt.com/docs/api/configuration/nuxt-config
 
@@ -57,7 +62,7 @@ export default defineNuxtConfig({
     // Pages are found by following links from the home page, sitemap and robots.txt.
     // Redirect URLs are skipped: they must stay 301s, and Netlify serves a static file in place of a redirect.
     // about.html rather than about/index.html: Netlify would 301 /about to /about/.
-    prerender: { crawlLinks: true, autoSubfolderIndex: false, routes: ['/', '/sitemap.xml', '/robots.txt'], ignore: oldCaseStudies.map((id) => `/case-studies/${id}`) }
+    prerender: { crawlLinks: true, autoSubfolderIndex: false, routes: ['/', '/sitemap.xml', '/robots.txt'], ignore: [...oldCaseStudies.map((id) => `/case-studies/${id}`), ...Object.keys(ccorexMoved)] }
   },
   // Search engines render pages with a cap on how many files they will fetch; a page that needs
   // ~30 files can lose one and fall back to the error page. So the browser build ships few files:
@@ -75,7 +80,8 @@ export default defineNuxtConfig({
   },
   routeRules: {
     // Old case-study URLs (fabricated examples, removed) -> project experience.
-    ...Object.fromEntries(oldCaseStudies.map((id) => [`/case-studies/${id}`, { redirect: { to: '/case-studies', statusCode: 301 } }]))
+    ...Object.fromEntries(oldCaseStudies.map((id) => [`/case-studies/${id}`, { redirect: { to: '/case-studies', statusCode: 301 } }])),
+    ...Object.fromEntries(Object.entries(ccorexMoved).map(([from, app]) => [from, { redirect: { to: `https://ccorex.com/products/${app}`, statusCode: 301 } }]))
   },
   app: {
     head: {

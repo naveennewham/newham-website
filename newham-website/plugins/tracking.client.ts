@@ -83,6 +83,10 @@ export default defineNuxtPlugin((nuxtApp) => {
           if (consent.value.analytics && config.gaId) gtag('event', 'generate_lead', { form })
           if (consent.value.marketing && config.adsId && config.adsLeadLabel) gtag('event', 'conversion', { send_to: `${config.adsId}/${config.adsLeadLabel}` })
         },
+        /** A named interaction such as a call-to-action click. Analytics consent only. */
+        event(name: string, params: Record<string, unknown> = {}) {
+          if (consent.value.analytics && config.gaId) gtag('event', name, params)
+        },
         pagesViewed(): string[] {
           try { return JSON.parse(sessionStorage.getItem('mk_pv') || '[]') } catch { return [] }
         },

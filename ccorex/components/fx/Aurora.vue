@@ -27,5 +27,6 @@ const blobs = computed(() => props.palette === 'ai'
   50% { transform: translate(6%, 8%) scale(1.12); }
   100% { transform: translate(-6%, 3%) scale(0.95); }
 }
-@media (prefers-reduced-motion: reduce) { .fx-blob { animation: none; } }
+/* Phones: large blurred layers that move cost more than they show. */
+@media (prefers-reduced-motion: reduce), (max-width: 767px) { .fx-blob { animation: none; } }
 </style>

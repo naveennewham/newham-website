@@ -68,6 +68,7 @@ useSeoMeta({
 // Canonical product site is ccorex.com.
 useHead({ link: [{ rel: 'canonical', href: CCOREX_URL + '/' }] })
 
-const localPages: Record<string, string> = { deepcost: '/ccorex/deepcost', deeptrack: '/ccorex/deeptrack', deephr: '/ccorex/deephr', 'deepplan-ai': '/ccorex/deepplan-ai' }
+// Every app's page lives on ccorex.com (the short copies here now redirect there).
+const localPages: Record<string, string> = {}
 const apps = ccorexApps.map((a) => ({ ...a, local: localPages[a.slug] }))
 </script>

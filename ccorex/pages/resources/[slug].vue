@@ -16,7 +16,11 @@
 
     <section class="section">
       <div class="container-site grid gap-12 lg:grid-cols-[minmax(0,1fr)_300px]">
-        <article class="guide-body min-w-0" v-html="g.html"></article>
+        <article class="min-w-0">
+          <div class="guide-body" v-html="parts[0]"></div>
+          <GuideInlineCta :guide="g.slug" :app="related" />
+          <div v-if="parts[1]" class="guide-body" v-html="parts[1]"></div>
+        </article>
         <aside class="space-y-5 lg:sticky lg:top-24 lg:self-start">
           <GuideDownloadGate v-if="g.download" :file="g.download.file" :title="g.download.title" :guide="g.slug" />
           <div v-if="related" class="card">
@@ -40,6 +44,7 @@
         <div class="mt-8"><UiFaqList :items="g.faq" /></div>
       </div>
     </section>
+    <GuideStickyCta :guide="g.slug" :to="related ? `/contact?app=${related.slug}` : '/contact'" label="Book a demo" :text="related ? `See ${related.name} on your work` : 'See CCorex on your workflow'" />
   </div>
 </template>
 
@@ -53,6 +58,14 @@ if (!g) throw createError({ statusCode: 404, statusMessage: 'Guide not found', f
 const related = computed(() => {
   const slug = g?.related?.replace(/^\/products\//, '')
   return slug ? apps.find((a) => a.slug === slug) : undefined
+})
+// The article in two parts, with a call to action before the third section heading
+// (or the last one in a short guide), where mobile readers still are.
+const parts = computed(() => {
+  const html = g?.html ?? ''
+  const heads = [...html.matchAll(/<h2[\s>]/g)].map((m) => m.index ?? 0)
+  const at = heads.length >= 3 ? heads[2]! : heads.length >= 2 ? heads[heads.length - 1]! : -1
+  return at > 0 ? [html.slice(0, at), html.slice(at)] : [html, '']
 })
 const fmt = (d: string) => new Date(`${d}T00:00:00Z`).toLocaleDateString('en-SG', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' })
 

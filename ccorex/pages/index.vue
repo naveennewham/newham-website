@@ -32,13 +32,13 @@
 
     <UiAppParallax />
 
-    <HomeAppSuite />
+    <HomeAppSuite class="cv-auto" />
 
 
-    <HomeBento />
+    <HomeBento class="cv-auto" />
 
     <!-- Win, deliver, staff -->
-    <section class="section">
+    <section class="section cv-auto">
       <div class="container-site">
         <UiSectionHeader eyebrow="How it fits together" title="Win it in DeepCost. Deliver it in DeepTrack. Staff it with DeepHR." lead="A tender arrives in DeepCost, drawings are measured in DeepPlan and the priced bid goes out from DeepCost. A won job runs in DeepTrack, and the people on it are managed and paid in DeepHR." />
         <UiReveal class="mt-10 rounded-3xl border border-ink-100 bg-ink-50 p-5 sm:p-8">
@@ -73,7 +73,7 @@
     </section>
 
     <!-- AI -->
-    <section class="relative overflow-hidden bg-[#03191f] py-24 text-white">
+    <section class="cv-auto relative overflow-hidden bg-[#03191f] py-24 text-white">
       <FxAurora palette="ai" />
       <div class="bg-grid pointer-events-none absolute inset-0 opacity-40" aria-hidden="true"></div>
       <div class="container-site relative grid gap-14 lg:grid-cols-2 lg:items-center">
@@ -98,7 +98,7 @@
     </section>
 
     <!-- Platform -->
-    <section class="section">
+    <section class="section cv-auto">
       <div class="container-site">
         <div class="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
           <UiSectionHeader eyebrow="The platform underneath" title="One portal, one sign-in, every app" lead="Your organisation admin manages users, roles and app settings once, in the portal at dash.ccorex.com. Add a user once and they are created in each assigned app; disable them once and they are disabled in the apps too." />
@@ -115,7 +115,7 @@
     </section>
 
     <!-- Why -->
-    <section class="section bg-ink-50">
+    <section class="section cv-auto bg-ink-50">
       <div class="container-site">
         <UiSectionHeader center eyebrow="Why CCorex" title="Six reasons construction teams switch" />
         <ol class="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -131,7 +131,7 @@
     <UiTrustStrip />
 
     <!-- Plans -->
-    <section class="section">
+    <section class="section cv-auto">
       <div class="container-site">
         <UiSectionHeader center eyebrow="Plans" title="Start with one workflow. Scale to the whole business." lead="Per-user pricing — bundle the apps that fit your business." />
         <div class="mt-12 grid gap-4 lg:grid-cols-3">
@@ -148,10 +148,10 @@
       </div>
     </section>
 
-    <HomeGetStarted />
+    <HomeGetStarted class="cv-auto" />
 
     <!-- Latest guides -->
-    <HomeLatestGuides />
+    <HomeLatestGuides class="cv-auto" />
 
     <!-- FAQ -->
     <section class="section-tight">

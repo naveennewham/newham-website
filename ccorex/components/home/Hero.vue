@@ -227,7 +227,8 @@ onBeforeUnmount(() => {
 }
 @keyframes beam { to { transform: translate(-50%, -50%) rotate(360deg); } }
 .hero-in { animation: hero-in .8s cubic-bezier(.2, .8, .2, 1) both; }
-@keyframes hero-in { from { opacity: 0; transform: translate3d(0, 18px, 0); } }
+/* Slide only: an opacity fade would hold back the largest paint (the intro paragraph). */
+@keyframes hero-in { from { transform: translate3d(0, 18px, 0); } }
 .fx-shine { animation: fx-shine 3.2s ease-in-out infinite; }
 @keyframes fx-shine { 0%, 60% { transform: translateX(-100%); } 100% { transform: translateX(100%); } }
 .msg-enter-active, .msg-leave-active { transition: opacity .35s ease, transform .35s ease; }
