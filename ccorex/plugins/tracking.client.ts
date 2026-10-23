@@ -15,7 +15,11 @@ export default defineNuxtPlugin((nuxtApp) => {
   const config = useRuntimeConfig().public as { gaId?: string; adsId?: string; adsLeadLabel?: string; siteUrl?: string }
   const { consent } = useConsent()
   const ft = useCookie<Record<string, unknown> | null>('mk_ft', { maxAge: 60 * 60 * 24 * 90, sameSite: 'lax', path: '/', default: () => null })
-  const gtag: Gtag = (...args) => { window.dataLayer = window.dataLayer || []; window.dataLayer.push(args) }
+  // gtag.js only acts on Arguments objects in dataLayer (as in Google's snippet); a plain array
+  // is ignored, which silently dropped consent updates, config and events.
+  // eslint-disable-next-line prefer-rest-params
+  const gtag: Gtag = function () { window.dataLayer = window.dataLayer || []; window.dataLayer.push(arguments) }
+  window.gtag = gtag
 
   // What brought the visitor here, captured once per visit, in memory until consent.
   const url = new URL(window.location.href)
