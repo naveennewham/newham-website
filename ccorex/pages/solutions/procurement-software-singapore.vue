@@ -72,6 +72,7 @@ const faqs = [
   { q: 'Can we set approval limits by amount?', a: 'Yes. Purchase requests go to the project manager, then the general manager, and to the managing director above the threshold your organisation sets. Payments follow a separate maker-checker chain.' },
   { q: 'Does it work with our accounting software?', a: 'DeepTrack links to Zoho Books for vendors and purchase orders, and produces a month-end journal CSV that can be loaded into other ledgers.' },
   { q: 'Is DeepTrack procurement only for construction?', a: 'DeepTrack was built for contractors, and its purchasing controls suit any business that buys against project budgets. Approval thresholds, dropdown lists and screen access are set for each organisation.' },
-  { q: 'Can we use DeepTrack on its own, and how is it priced?', a: 'Yes. DeepTrack is sold on its own, priced per user. Procurement (purchase request to PO and delivery), invoice matching and payments are in the Growth tier. Pricing is shared on request.' }
+  { q: 'Can we use DeepTrack on its own, and how is it priced?', a: 'Yes. DeepTrack is sold on its own, priced per user. Procurement (purchase request to PO and delivery), invoice matching and payments are in the Growth tier. Pricing is shared on request.' },
+  { q: 'Can AI approve purchase requests?', a: 'No. ARIVU, the AI assistant in DeepTrack, can tell you which purchase requests are waiting for approval or which delivery orders came in this week, but it is read-only: purchase requests and POs are raised and approved by people, within your approval limits. AI invoice auto-capture, which pre-fills vendor invoices for matching, is in early access.' }
 ]
 </script>

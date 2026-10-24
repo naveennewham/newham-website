@@ -69,6 +69,7 @@ const faqs = [
   { q: 'Can DeepHR follow our own leave policy?', a: 'Yes. The Singapore presets are a starting point. HR can add or change leave types, set entitlements, adjust balances and configure the approval chain for leave requests.' },
   { q: 'Can employees apply for leave on their phone?', a: 'Yes. Employees apply, see their balances and track each request in the DeepHR app on their own phone. Approvers see their queue in Pending Approvals.' },
   { q: 'Does leave sync with payroll?', a: 'Yes. Approved paid leave and public holidays are pulled into the pay run for the period, and unpaid leave is prorated using the Ministry of Manpower method.' },
-  { q: 'Can we use DeepHR just for leave and attendance?', a: 'Yes. The DeepHR Starter tier covers employee self-service, leave and holidays, face and GPS attendance, documents, policies and standard approvals. Claims, payroll and multi-level approval chains come with Growth.' }
+  { q: 'Can we use DeepHR just for leave and attendance?', a: 'Yes. The DeepHR Starter tier covers employee self-service, leave and holidays, face and GPS attendance, documents, policies and standard approvals. Claims, payroll and multi-level approval chains come with Growth.' },
+  { q: 'Can AI tell us who is on leave?', a: 'Yes. Ask ARIVU, the AI assistant in DeepHR, “Who is on leave next week?” or for each employee’s leave balance this year, and get the answer as text, a chart or an Excel export. ARIVU is read-only: it never applies for, approves or changes leave, and staff see only their own leave while managers and admins see their team’s.' }
 ]
 </script>

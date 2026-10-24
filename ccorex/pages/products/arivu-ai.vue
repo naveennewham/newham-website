@@ -130,6 +130,9 @@
       </div>
     </section>
 
+    <!-- AI features in early access -->
+    <SolutionEarlyAccess eyebrow="Coming next · early access" title="New AI features for DeepHR and DeepTrack" lead="These AI features are in early access, not yet generally available. Request access and we will show you where they stand in your demo." :items="[...aiEarlyAccess.deephr, ...aiEarlyAccess.deeptrack]" show-app />
+
     <!-- Responsible AI -->
     <section class="section">
       <div class="container-site">
@@ -153,6 +156,8 @@
 </template>
 
 <script setup lang="ts">
+import { arivuApps, aiEarlyAccess } from '~/data/arivu'
+
 const config = useRuntimeConfig()
 const path = '/products/arivu-ai'
 useSeoMeta({
@@ -212,13 +217,13 @@ const perApp = [
   },
   {
     name: 'DeepTrack', slug: 'deeptrack', area: 'Projects & cost control', icon: 'fa-solid fa-diagram-project', color: 'bg-amber-50 text-amber-700',
-    reads: ['Projects', 'Budgets', 'Purchase requests', 'Claims', 'Timesheets', 'Delivery orders'],
-    questions: ['Show purchase requests by project this month.', 'How is committed cost tracking against the approved budget?', 'Which client claims are still unpaid?']
+    reads: arivuApps.deeptrack.reads,
+    questions: arivuApps.deeptrack.questions.slice(0, 3)
   },
   {
     name: 'DeepHR', slug: 'deephr', area: 'HR & payroll', icon: 'fa-solid fa-user-group', color: 'bg-emerald-50 text-emerald-700',
-    reads: ['Employees', 'Leave', 'Attendance', 'Claims'],
-    questions: ['Who is on leave this week?', 'Who was late at the Tuas site yesterday?', 'Which expense claims are pending?']
+    reads: arivuApps.deephr.reads,
+    questions: arivuApps.deephr.questions.slice(0, 3)
   },
   {
     name: 'DeepPlan', slug: 'deepplan-ai', area: 'Drawing take-off', icon: 'fa-solid fa-compass-drafting', color: 'bg-violet-50 text-violet-700',
@@ -247,7 +252,8 @@ const today = [
 const roadmap = [
   'Deep Drive search grows as Deep Drive moves from development to production',
   'Cross-app data flow: won tender → project without re-entry',
-  'Customers and contacts shared across apps'
+  'Customers and contacts shared across apps',
+  'AI receipt scan, attendance alerts, budget overrun forecast and invoice auto-capture (early access, below)'
 ]
 const responsible = [
   { icon: 'fa-solid fa-eye', title: 'Read-only', text: 'ARIVU reads, but never changes, your data. Estimates, budgets, claims and leave are still submitted and approved by people in the apps.' },

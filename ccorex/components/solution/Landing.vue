@@ -76,6 +76,9 @@
       </div>
     </section>
 
+    <!-- AI built in: what ARIVU answers on this page's topic (data/arivu.ts) -->
+    <SolutionAiBlock v-if="ai" :app-name="appName" :title="ai.title" :lead="ai.lead" :questions="ai.questions" :note="ai.note" :early-access="ai.earlyAccess" />
+
     <SolutionEarlyAccess v-if="earlyAccess?.length" :items="earlyAccess" :title="earlyAccessTitle" />
 
     <!-- Bought on its own -->
@@ -136,6 +139,7 @@
 // Shared layout for search-led solution pages (/solutions/<slug>). Content and SEO come from the page.
 interface Card { icon: string; title: string; text: string }
 import { solutionPages, solutionPath } from '~/data/solutions'
+import { arivuSolutions } from '~/data/arivu'
 
 const props = defineProps<{
   slug: string; app: 'deeptrack' | 'deephr'; appName: string; eyebrow: string
@@ -159,6 +163,7 @@ const all = solutionPages.map((s) => ({ ...s, to: solutionPath(s) }))
 const group = all.find((s) => s.slug === props.slug)?.group ?? 'construction'
 const otherSolutions = all.filter((s) => s.slug !== props.slug && s.group === group)
 const crossSolutions = all.filter((s) => s.group !== group)
+const ai = arivuSolutions[props.slug]
 const standaloneText = props.app === 'deephr'
   ? 'DeepHR is sold on its own in Starter, Growth and Enterprise tiers, priced per employee, with a tailored quote. You do not need any other CCorex app; DeepTrack or DeepCost can be added later on the same sign-in.'
   : 'DeepTrack is sold on its own in Starter, Growth and Enterprise tiers, priced per user, with a tailored quote. You do not need any other CCorex app; DeepHR or DeepCost can be added later on the same sign-in.'

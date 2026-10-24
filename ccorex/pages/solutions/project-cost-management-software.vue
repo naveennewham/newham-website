@@ -72,6 +72,7 @@ const faqs = [
   { q: 'Is DeepTrack only for construction companies?', a: 'DeepTrack was built for contractors, and it suits other businesses that deliver work as projects against a budget. Budget templates, dropdown lists, approval thresholds and screen access are set for each organisation.' },
   { q: 'Is DeepTrack job costing software?', a: 'Yes. Purchases, matched invoices, labour from timesheets and allocated overhead all land on a project and its cost codes, so you see job cost and margin per project.' },
   { q: 'Does it replace our accounting software?', a: 'No. It sits beside it. Each organisation can link Zoho Books for vendors and purchase orders, and month-end produces a journal CSV for your ledger.' },
-  { q: 'Can we use DeepTrack on its own, and how is it priced?', a: 'Yes. DeepTrack is sold on its own in Starter, Growth and Enterprise tiers, priced per user. Pricing is shared on request, with a tailored quote.' }
+  { q: 'Can we use DeepTrack on its own, and how is it priced?', a: 'Yes. DeepTrack is sold on its own in Starter, Growth and Enterprise tiers, priced per user. Pricing is shared on request, with a tailored quote.' },
+  { q: 'Does DeepTrack use AI for project cost control?', a: 'Yes. ARIVU, the AI assistant in DeepTrack, answers questions such as “How is committed cost tracking against the approved budget?” from your own project data, and can chart the answer or export it to Excel or PDF. It is read-only and never changes budgets or approves spend. An AI budget overrun forecast is in early access.' }
 ]
 </script>

@@ -74,6 +74,7 @@ const faqs = [
   { q: 'Do employees need a company phone or a time clock?', a: 'No. Attendance, leave, claims and payslips run on each employee’s own phone. There is no kiosk or time clock to buy.' },
   { q: 'Can we use DeepHR on its own?', a: 'Yes. DeepHR is sold on its own in Starter, Growth and Enterprise tiers, priced per employee. DeepTrack or DeepCost can be added later on the same sign-in.' },
   { q: 'Does DeepHR prepare IR8A forms?', a: 'IR8A / AIS year-end files are in early access. Request early access and we will show you where the feature stands in your demo.' },
-  { q: 'How much does DeepHR cost?', a: 'DeepHR is priced per employee in Starter, Growth and Enterprise tiers. Pricing is shared on request: book a demo or email admin@newhamtech.com for a tailored quote.' }
+  { q: 'How much does DeepHR cost?', a: 'DeepHR is priced per employee in Starter, Growth and Enterprise tiers. Pricing is shared on request: book a demo or email admin@newhamtech.com for a tailored quote.' },
+  { q: 'Is DeepHR AI HR software?', a: 'DeepHR has AI built in. ARIVU, the AI assistant in every CCorex app, answers HR and managers’ questions about employees, leave balances, attendance and expense claims, as text, a chart, or an Excel or PDF export, and attendance check-in uses face recognition on the employee’s own phone. ARIVU is read-only: it never changes records, and staff see only their own data while managers and admins see their team’s. AI receipt scanning and attendance anomaly alerts are in early access.' }
 ]
 </script>

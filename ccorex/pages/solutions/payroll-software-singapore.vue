@@ -74,6 +74,7 @@ const faqs = [
   { q: 'How does attendance get into payroll?', a: 'Every completed attendance session becomes a pending approval for HR. Approved time is split into normal and OT hours against the schedule, and the pay run pulls approved attendance, approved paid leave and holidays for the period.' },
   { q: 'Can we move to DeepHR in the middle of the year?', a: 'Yes. Record mode lets you upload payroll already paid elsewhere from Excel, so the year-to-date record is complete. Past payslips never change.' },
   { q: 'Is DeepHR payroll only for construction?', a: 'No. The payroll works for any Singapore company. It suits businesses with staff on site, in the field or on shifts, because attendance is captured on each employee’s phone and approved by HR before it is paid.' },
-  { q: 'How much does DeepHR payroll cost?', a: 'DeepHR is priced per employee in Starter, Growth and Enterprise tiers; payroll is included from Growth. Pricing is shared on request, with a tailored quote.' }
+  { q: 'How much does DeepHR payroll cost?', a: 'DeepHR is priced per employee in Starter, Growth and Enterprise tiers; payroll is included from Growth. Pricing is shared on request, with a tailored quote.' },
+  { q: 'Is DeepHR AI payroll software? Can AI run our payroll?', a: 'No AI runs your payroll. ARIVU, the AI assistant in DeepHR, can answer questions about the attendance, leave and expense claims that feed the pay run, and export them to Excel or PDF, but it is read-only: it does not run, change or approve payroll. The pay run is prepared and approved by your HR team, with CPF, SDL and SHG worked out by DeepHR.' }
 ]
 </script>

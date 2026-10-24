@@ -9,7 +9,11 @@ export const earlyAccess: EarlyAccessFeature[] = [
   { slug: 'work-pass-alerts', app: 'deephr', title: 'Work Permit expiry alerts', text: 'Alerts to HR before a Work Permit, S Pass or EP expires, with insurance and security bond dates.', icon: 'fa-solid fa-bell' },
   { slug: 'sop-act-claims', app: 'deeptrack', title: 'SOP Act payment claims', text: 'Record when each claim is served, track the payment-response due date and log the response against the claim.', icon: 'fa-solid fa-scale-balanced' },
   { slug: 'retention-release', app: 'deeptrack', title: 'Retention release tracker', text: 'Retention held per project, with release dates at completion and after the defects liability period.', icon: 'fa-solid fa-piggy-bank' },
-  { slug: 'variation-orders', app: 'deeptrack', title: 'Variation order register', text: 'Variations raised, approved and claimed, flowing into each progress claim.', icon: 'fa-solid fa-list-check' }
+  { slug: 'variation-orders', app: 'deeptrack', title: 'Variation order register', text: 'Variations raised, approved and claimed, flowing into each progress claim.', icon: 'fa-solid fa-list-check' },
+  { slug: 'ai-receipt-scan', app: 'deephr', title: 'AI receipt scan for claims', text: 'Snap a receipt and AI fills in the amount, date, merchant and category on the expense claim, for the employee to check and submit.', icon: 'fa-solid fa-receipt' },
+  { slug: 'ai-attendance-alerts', app: 'deephr', title: 'Attendance anomaly alerts', text: 'AI flags unusual patterns — repeated lateness, check-ins from unusual locations, missing punches — for HR to review.', icon: 'fa-solid fa-user-clock' },
+  { slug: 'ai-budget-forecast', app: 'deeptrack', title: 'Budget overrun forecast', text: 'AI warns you when committed plus forecast cost is heading past a project’s approved budget.', icon: 'fa-solid fa-chart-line' },
+  { slug: 'ai-invoice-capture', app: 'deeptrack', title: 'Invoice auto-capture', text: 'AI reads vendor invoice PDFs and pre-fills them, ready for matching against the PO and the delivery endorsement.', icon: 'fa-solid fa-file-import' }
 ]
 
 export const earlyAccessBySlug = (slug?: string) => earlyAccess.find((f) => f.slug === slug)

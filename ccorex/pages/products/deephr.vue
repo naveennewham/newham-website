@@ -58,7 +58,7 @@
     <!-- FaceReg check-in -->
     <section id="attendance" class="section scroll-mt-20 bg-ink-50">
       <div class="container-site">
-        <UiSectionHeader eyebrow="Face + GPS attendance" title="Check in on the employee’s own phone — no kiosk, no hardware" lead="FaceReg verifies every check-in and check-out by face and location, and holds the master record of times. DeepHR adds HR’s review and turns approved time into payable hours." />
+        <UiSectionHeader eyebrow="AI face check-in + GPS" title="Check in on the employee’s own phone — no kiosk, no hardware" lead="FaceReg verifies every check-in and check-out by AI face recognition and location, and holds the master record of times. DeepHR adds HR’s review and turns approved time into payable hours." />
         <UiReveal class="mt-12">
           <DemoDeepHrFaceCheckin />
         </UiReveal>
@@ -278,14 +278,14 @@
     </section>
 
     <!-- AI -->
-    <section class="section relative overflow-hidden bg-hero text-white">
+    <section id="ai" class="section relative scroll-mt-20 overflow-hidden bg-hero text-white">
       <div class="bg-grid pointer-events-none absolute inset-0 opacity-40" aria-hidden="true"></div>
       <div class="container-site relative grid gap-14 lg:grid-cols-2 lg:items-center">
         <div>
-          <UiSectionHeader dark eyebrow="AI in DeepHR" lead="ARIVU, the CCorex AI assistant, sits inside DeepHR. HR and managers ask in plain language and get answers from their own organisation’s data.">
-            <template #title>Everyday HR, with <span class="text-ai-gradient">ARIVU AI</span> to help</template>
+          <UiSectionHeader dark eyebrow="AI in DeepHR" lead="ARIVU, the CCorex AI assistant, is built into DeepHR. HR and managers ask in plain language about employees, leave balances, attendance and expense claims, and get answers from their own organisation’s data.">
+            <template #title>AI built in: ask <span class="text-ai-gradient">ARIVU</span> about your people</template>
           </UiSectionHeader>
-          <ul class="mt-8 grid gap-4 sm:grid-cols-3">
+          <ul class="mt-8 grid gap-4 sm:grid-cols-2">
             <li v-for="a in aiPoints" :key="a.title" class="rounded-2xl border border-white/10 bg-white/5 p-5">
               <i :class="a.icon" class="text-cyan-400" aria-hidden="true"></i>
               <p class="mt-3 font-semibold text-white">{{ a.title }}</p>
@@ -294,7 +294,9 @@
           </ul>
           <div class="mt-8 flex flex-wrap gap-3">
             <NuxtLink to="/products/arivu-ai" class="btn-accent">Explore ARIVU AI</NuxtLink>
+            <a href="#ai-early-access" class="btn-ghost-dark">AI in early access</a>
           </div>
+          <p class="mt-5 text-xs text-ink-300">{{ arivuPlanNote }}</p>
         </div>
         <div class="rounded-2xl border border-white/10 bg-[#0b111c]/80 p-6 shadow-frame">
           <p class="flex items-center gap-3 text-sm font-semibold text-white">
@@ -306,10 +308,12 @@
               <i class="fa-regular fa-comment mt-0.5 text-cyan-400" aria-hidden="true"></i>{{ q }}
             </li>
           </ul>
-          <p class="mt-5 text-xs text-ink-300">Example questions. ARIVU reads, but never changes, your organisation's data — in DeepHR and every other CCorex app.</p>
+          <p class="mt-5 text-xs text-ink-300">Example questions. ARIVU reads, but never changes, your organisation's data — in DeepHR and every other CCorex app. It does not run or change payroll.</p>
         </div>
       </div>
     </section>
+
+    <SolutionEarlyAccess id="ai-early-access" eyebrow="ARIVU AI · early access" title="AI coming to DeepHR — join early access" lead="These AI features are in early access, not yet generally available. Request access and we will show you where they stand in your demo." :items="aiEarlyAccess.deephr" />
 
     <!-- Suite -->
     <section class="section">
@@ -378,9 +382,11 @@
 </template>
 
 <script setup lang="ts">
+import { arivuApps, arivuPlanNote, aiEarlyAccess } from '~/data/arivu'
+
 const config = useRuntimeConfig()
 const pageUrl = config.public.siteUrl + '/products/deephr'
-const description = 'DeepHR is HR and payroll software for Singapore SMEs: face and GPS attendance on staff phones, leave, claims, approvals, and CPF, SDL and SHG payroll.'
+const description = 'DeepHR is HR and payroll software for Singapore SMEs: face and GPS attendance on staff phones, leave, claims, CPF, SDL and SHG payroll, and ARIVU AI.'
 
 useSeoMeta({
   title: 'HR & Payroll Software Singapore — DeepHR',
@@ -416,7 +422,8 @@ const pageNav = [
   { id: 'approvals', label: 'Approvals' },
   { id: 'payroll', label: 'Payroll' },
   { id: 'compliance', label: 'Singapore payroll' },
-  { id: 'reports', label: 'Reports & more' }
+  { id: 'reports', label: 'Reports & more' },
+  { id: 'ai', label: 'AI (ARIVU)' }
 ]
 
 const problems = [
@@ -575,15 +582,12 @@ const roles = [
 ]
 
 const aiPoints = [
-  { icon: 'fa-regular fa-comments', title: 'Ask in plain language', text: 'Ask about employees, leave, attendance and claims in your organisation.' },
-  { icon: 'fa-solid fa-chart-column', title: 'Charts & exports', text: 'Turn an answer into a chart, or export it to PDF or Excel.' },
-  { icon: 'fa-solid fa-eye', title: 'Read-only', text: 'ARIVU reports what it finds; requests and approvals stay in DeepHR.' }
+  { icon: 'fa-regular fa-comments', title: 'Ask in plain language', text: 'Employees, leave balances by year, attendance over any date range, and expense claims by status or date.' },
+  { icon: 'fa-solid fa-chart-column', title: 'Charts, exports & files', text: 'Turn an answer into a chart, export it to Excel or PDF, or attach a document and ask about it.' },
+  { icon: 'fa-solid fa-eye', title: 'Read-only', text: 'ARIVU never changes data. Leave, claims, attendance approvals and payroll stay with people in DeepHR.' },
+  { icon: 'fa-solid fa-user-shield', title: 'Role-aware', text: 'Staff see their own records; managers and admins see their team’s. Every lookup stays inside your organisation.' }
 ]
-const arivuPrompts = [
-  'Which leave requests are waiting for approval?',
-  'Who was late at the Tuas site this week?',
-  'How many claims are pending payment this month?'
-]
+const arivuPrompts = arivuApps.deephr.questions
 
 const suiteToday = ['One sign-in at dash.ccorex.com', 'Users created once, provisioned into each app', 'Disabling a user disables them in the apps too', 'ARIVU in every app, read-only']
 
@@ -612,6 +616,8 @@ const faqs = [
   { q: 'Does DeepHR handle foreign workers in construction?', a: 'Yes. Workers check in with face and GPS on their own phone, and each worker’s pass type, number and expiry date are kept on their record.' },
   { q: 'How does attendance reach payroll?', a: 'Every completed session becomes a pending approval for HR. Approved time is turned into payable hours — split into normal and OT against the schedule — and the pay run pulls approved attendance, approved paid leave and holidays for the period.' },
   { q: 'Will our site workers be able to use it?', a: 'Yes. DeepHR has roles for site engineers and technicians with simple self-service for check-in, leave, claims and tasks, and it installs on a phone as an app.' },
-  { q: 'How is DeepHR priced?', a: 'Per-employee pricing across three plans — Starter, Growth and Enterprise — that scales with your headcount. Contact us for a tailored quote.' }
+  { q: 'How is DeepHR priced?', a: 'Per-employee pricing across three plans — Starter, Growth and Enterprise — that scales with your headcount. Contact us for a tailored quote.' },
+  { q: 'Does DeepHR use AI?', a: 'Yes. ARIVU, the AI assistant in every CCorex app, is built into DeepHR. HR and managers ask in plain language — for example “Who is on leave this week?” or “Who was late at the Tuas site yesterday?” — and get answers about employees, leave balances, attendance and expense claims, as text, a chart, or an Excel or PDF export. Check-in also uses face recognition on the employee’s own phone. AI receipt scanning for claims and attendance anomaly alerts are in early access. ARIVU is part of the CCorex suite plans: your organisation’s package must include it and each user must be assigned to it.' },
+  { q: 'Can AI change our payroll or HR data?', a: 'No. ARIVU is read-only. It looks things up, summarises and exports, but never creates, edits or approves leave, claims, attendance or payroll. Answers follow the user’s role — staff see their own records, managers and admins see their team’s — and every lookup is limited to your organisation.' }
 ]
 </script>
