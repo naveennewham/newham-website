@@ -62,13 +62,13 @@ interface Msg {
 // summarises, charts and exports — it never changes data.
 const script: Msg[] = [
   { from: 'arivu', text: "Hi! I'm ARIVU. Ask me anything across your CCorex apps." },
-  { from: 'user', text: 'What is waiting for my approval today?' },
+  { from: 'user', text: 'Which claims and purchase requests are still pending?' },
   {
-    from: 'arivu', text: '3 items are waiting for you in the apps:',
+    from: 'arivu', text: '3 items are still pending in the apps:',
     items: [
-      { app: 'DeepTrack', label: 'Budget for Block B fit-out', tone: 'bg-amber-400/20 text-amber-300' },
-      { app: 'DeepHR', label: 'Annual leave request, 3 days', tone: 'bg-emerald-400/20 text-emerald-300' },
-      { app: 'DeepCost', label: 'ACMV estimate ready for review', tone: 'bg-sky-400/20 text-sky-300' }
+      { app: 'DeepTrack', label: 'PR for Block B fit-out, waiting for Finance approval', tone: 'bg-amber-400/20 text-amber-300' },
+      { app: 'DeepHR', label: 'Expense claim, site transport S$86', tone: 'bg-emerald-400/20 text-emerald-300' },
+      { app: 'DeepHR', label: 'Expense claim, safety boots S$120', tone: 'bg-emerald-400/20 text-emerald-300' }
     ]
   },
   { from: 'user', text: 'Show purchase requests by project this month.' },

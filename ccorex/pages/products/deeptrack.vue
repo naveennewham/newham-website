@@ -174,14 +174,14 @@
     </section>
 
     <!-- AI -->
-    <section class="section relative overflow-hidden bg-hero text-white">
+    <section id="ai" class="section relative scroll-mt-20 overflow-hidden bg-hero text-white">
       <div class="bg-grid pointer-events-none absolute inset-0 opacity-40" aria-hidden="true"></div>
       <div class="container-site relative grid gap-14 lg:grid-cols-2 lg:items-center">
         <div>
-          <UiSectionHeader dark eyebrow="AI in DeepTrack" lead="ARIVU, the CCorex AI assistant, sits inside DeepTrack. Project managers and approvers ask in plain language and get answers from their own project data, without leaving their work.">
-            <template #title>Deliver projects with <span class="text-ai-gradient">ARIVU AI</span> beside you</template>
+          <UiSectionHeader dark eyebrow="AI in DeepTrack" lead="ARIVU, the CCorex AI assistant, is built into DeepTrack. Project managers and approvers ask in plain language about projects, budgets, purchase requests, client claims, timesheets and delivery orders, and get answers from their own project data without leaving their work.">
+            <template #title>AI built in: ask <span class="text-ai-gradient">ARIVU</span> how your projects are tracking</template>
           </UiSectionHeader>
-          <ul class="mt-8 grid gap-4 sm:grid-cols-3">
+          <ul class="mt-8 grid gap-4 sm:grid-cols-2">
             <li v-for="a in aiPoints" :key="a.title" class="rounded-2xl border border-white/10 bg-white/5 p-5">
               <i :class="a.icon" class="text-cyan-400" aria-hidden="true"></i>
               <p class="mt-3 font-semibold text-white">{{ a.title }}</p>
@@ -190,7 +190,9 @@
           </ul>
           <div class="mt-8 flex flex-wrap gap-3">
             <NuxtLink to="/products/arivu-ai" class="btn-accent">Explore ARIVU AI</NuxtLink>
+            <a href="#ai-early-access" class="btn-ghost-dark">AI in early access</a>
           </div>
+          <p class="mt-5 text-xs text-ink-300">{{ arivuPlanNote }}</p>
         </div>
         <div class="rounded-2xl border border-white/10 bg-[#0b111c]/80 p-6 shadow-frame">
           <p class="flex items-center gap-3 text-sm font-semibold text-white">
@@ -206,6 +208,8 @@
         </div>
       </div>
     </section>
+
+    <SolutionEarlyAccess id="ai-early-access" eyebrow="ARIVU AI · early access" title="AI coming to DeepTrack — join early access" lead="These AI features are in early access, not yet generally available. Request access and we will show you where they stand in your demo." :items="aiEarlyAccess.deeptrack" />
 
     <!-- Suite -->
     <section class="section">
@@ -262,7 +266,7 @@
     <!-- Singapore solutions -->
     <section class="section-tight">
       <div class="container-site">
-        <p class="eyebrow">For Singapore contractors</p>
+        <p class="eyebrow">DeepTrack in Singapore</p>
         <ul class="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
           <li v-for="t in solutionLinks" :key="t.to">
             <NuxtLink :to="t.to" class="card flex h-full items-center gap-3 hover:border-brand-200"><i :class="t.icon" class="text-brand-600" aria-hidden="true"></i><span class="font-semibold">{{ t.name }}</span></NuxtLink>
@@ -280,9 +284,11 @@
 </template>
 
 <script setup lang="ts">
+import { arivuApps, arivuPlanNote, aiEarlyAccess } from '~/data/arivu'
+
 const config = useRuntimeConfig()
 const pageUrl = config.public.siteUrl + '/products/deeptrack'
-const description = 'DeepTrack is project cost control for contractors: budgets, client claims, timesheets, PR-to-PO procurement, invoice matching and month-end cost allocation.'
+const description = 'DeepTrack is project cost control for contractors: budgets, client claims, timesheets, procurement, invoice matching, month-end allocation and ARIVU AI.'
 
 useSeoMeta({
   title: 'DeepTrack — construction cost control & progress claim software, Singapore',
@@ -452,26 +458,25 @@ const roles = [
 ]
 
 const aiPoints = [
-  { icon: 'fa-regular fa-comments', title: 'Ask in plain language', text: 'Ask about projects, budgets, purchase requests, claims, timesheets and delivery orders.' },
-  { icon: 'fa-solid fa-chart-column', title: 'Charts & exports', text: 'Turn an answer into a chart, or export it to PDF or Excel.' },
-  { icon: 'fa-solid fa-eye', title: 'Read-only', text: 'ARIVU reports what it finds; approvals stay with your team in DeepTrack.' }
+  { icon: 'fa-regular fa-comments', title: 'Ask in plain language', text: 'Projects, budget against committed and actual cost, purchase requests, client claims, timesheets and delivery orders.' },
+  { icon: 'fa-solid fa-chart-column', title: 'Charts, exports & files', text: 'Turn an answer into a chart, export it to Excel or PDF, or attach a document and ask about it.' },
+  { icon: 'fa-solid fa-eye', title: 'Read-only', text: 'ARIVU never changes data. Budgets, purchase requests and claims are still raised and approved by your team.' },
+  { icon: 'fa-solid fa-user-shield', title: 'Role-aware', text: 'Staff see their own records; managers and admins see their team’s. Every lookup stays inside your organisation.' }
 ]
-const arivuPrompts = [
-  'Which purchase requests are waiting for approval?',
-  'How is committed cost tracking against budget on Block B?',
-  'Which client claims are still unpaid this quarter?'
-]
+const arivuPrompts = arivuApps.deeptrack.questions
 
 const suiteToday = ['One sign-in at dash.ccorex.com', 'Users and roles managed by your organisation admin', 'Users provisioned into each app automatically', 'ARIVU in every app, read-only']
 const suiteNext = ['Won DeepCost tender → DeepTrack project without re-entry', 'Customers and contacts shared across apps']
 
 const plans = [
   { name: 'Starter', for: 'Small teams & single projects', features: ['Projects & client POs', 'Budgets & budget against actual', 'Client claims', 'Configured approvals', 'Core project reports'] },
-  { name: 'Growth', for: 'Scaling project businesses', popular: true, features: ['Everything in Starter', 'Procurement (PR → PO → delivery)', 'Invoice matching & payments', 'Manpower & timesheets', 'Scheduled reports'] },
+  { name: 'Growth', for: 'Growing contractors', popular: true, features: ['Everything in Starter', 'Procurement (PR → PO → delivery)', 'Invoice matching & payments', 'Manpower & timesheets', 'Scheduled reports'] },
   { name: 'Enterprise', for: 'Multi-entity contractors', features: ['Everything in Growth', 'Month-end cost allocation', 'Zoho Books link', 'Screen-by-role matrix & budget templates', 'Audit log & priority support'] }
 ]
 
 const solutionLinks = [
+  { to: '/solutions/project-cost-management-software', name: 'Project cost management software', icon: 'fa-solid fa-chart-line' },
+  { to: '/solutions/procurement-software-singapore', name: 'Procurement and purchase order software', icon: 'fa-solid fa-cart-shopping' },
   { to: '/solutions/construction-cost-control-software', name: 'Construction cost control software', icon: 'fa-solid fa-chart-line' },
   { to: '/solutions/progress-claim-software', name: 'Progress claim software', icon: 'fa-solid fa-file-invoice-dollar' },
   { to: '/resources/sop-act-payment-claims-singapore', name: 'Guide: SOP Act payment claims', icon: 'fa-solid fa-scale-balanced' },
@@ -485,6 +490,8 @@ const faqs = [
   { q: 'Does DeepTrack track labour and overhead cost?', a: 'Yes. Timesheets are coded to project, workhead, WBS activity and business unit. The month-end run allocates direct labour at actual hourly rates, the worker pool, HQ and business-unit overhead, and project overhead, then locks the period.' },
   { q: 'Is it set up for Singapore?', a: 'Yes. DeepTrack works in SGD with 9% GST, and codes cost to BCA workheads. Progress claims carry retention and GST and produce a PDF Progress Claim Certificate.' },
   { q: 'Does it connect to our accounting system?', a: 'Each tenant can link Zoho Books for vendors and purchase orders. Month-end also produces a journal CSV for your ledger, and general-ledger costs can be imported from CSV.' },
-  { q: 'How is DeepTrack priced?', a: 'Plans scale with your team and projects — Starter, Growth and Enterprise. Contact us for a tailored quote.' }
+  { q: 'How is DeepTrack priced?', a: 'Plans scale with your team and projects — Starter, Growth and Enterprise. Contact us for a tailored quote.' },
+  { q: 'Does DeepTrack use AI?', a: 'Yes. ARIVU, the AI assistant in every CCorex app, is built into DeepTrack. Project managers and approvers ask in plain language — for example “How is committed cost tracking against the approved budget?” or “Which client claims are still unpaid?” — and get answers about projects, budgets, purchase requests, client claims, timesheets and delivery orders, as text, a chart, or an Excel or PDF export. A budget overrun forecast and invoice auto-capture are in early access. ARIVU is included in every plan, even when you subscribe to DeepTrack on its own; each user must be assigned to it.' },
+  { q: 'Can AI change our budgets or approve purchases?', a: 'No. ARIVU is read-only. It looks things up, summarises and exports, but never creates, edits or approves budgets, purchase requests, purchase orders or claims; approvals stay with the people your workflow assigns. Answers follow the user’s role, and every lookup is limited to your organisation.' }
 ]
 </script>

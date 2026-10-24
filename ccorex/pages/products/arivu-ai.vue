@@ -56,7 +56,7 @@
           <ul class="mt-6 space-y-2.5 text-sm text-ink-700">
             <li class="flex gap-2.5"><i class="fa-solid fa-check mt-1 text-brand-600" aria-hidden="true"></i>“Summarise the status of my active projects”</li>
             <li class="flex gap-2.5"><i class="fa-solid fa-check mt-1 text-brand-600" aria-hidden="true"></i>“Show budget vs actuals for this quarter as a chart”</li>
-            <li class="flex gap-2.5"><i class="fa-solid fa-check mt-1 text-brand-600" aria-hidden="true"></i>“Who is on leave this week?”</li>
+            <li class="flex gap-2.5"><i class="fa-solid fa-check mt-1 text-brand-600" aria-hidden="true"></i>“How much annual leave does each person have left?”</li>
           </ul>
         </div>
         <UiBrowserFrame src="/images/product/arivu-deepcost.webp" url="deepcost.ccorex.com / order" alt="ARIVU assistant panel open over a DeepCost order screen, asking “How can I help you today?” with suggested questions about active projects, budget versus actuals as a chart and who is on leave, a message box with attachments and a Skills selector" />
@@ -130,6 +130,9 @@
       </div>
     </section>
 
+    <!-- AI features in early access -->
+    <SolutionEarlyAccess eyebrow="Coming next · early access" title="New AI features for DeepHR and DeepTrack" lead="These AI features are in early access, not yet generally available. Request access and we will show you where they stand in your demo." :items="[...aiEarlyAccess.deephr, ...aiEarlyAccess.deeptrack]" show-app />
+
     <!-- Responsible AI -->
     <section class="section">
       <div class="container-site">
@@ -153,6 +156,8 @@
 </template>
 
 <script setup lang="ts">
+import { arivuApps, aiEarlyAccess } from '~/data/arivu'
+
 const config = useRuntimeConfig()
 const path = '/products/arivu-ai'
 useSeoMeta({
@@ -212,13 +217,13 @@ const perApp = [
   },
   {
     name: 'DeepTrack', slug: 'deeptrack', area: 'Projects & cost control', icon: 'fa-solid fa-diagram-project', color: 'bg-amber-50 text-amber-700',
-    reads: ['Projects', 'Budgets', 'Purchase requests', 'Claims', 'Timesheets', 'Delivery orders'],
-    questions: ['Show purchase requests by project this month.', 'How is committed cost tracking against the approved budget?', 'Which client claims are still unpaid?']
+    reads: arivuApps.deeptrack.reads,
+    questions: arivuApps.deeptrack.questions.slice(0, 3)
   },
   {
     name: 'DeepHR', slug: 'deephr', area: 'HR & payroll', icon: 'fa-solid fa-user-group', color: 'bg-emerald-50 text-emerald-700',
-    reads: ['Employees', 'Leave', 'Attendance', 'Claims'],
-    questions: ['Who is on leave this week?', 'Who was late at the Tuas site yesterday?', 'Which expense claims are pending?']
+    reads: arivuApps.deephr.reads,
+    questions: arivuApps.deephr.questions.slice(0, 3)
   },
   {
     name: 'DeepPlan', slug: 'deepplan-ai', area: 'Drawing take-off', icon: 'fa-solid fa-compass-drafting', color: 'bg-violet-50 text-violet-700',
@@ -247,7 +252,8 @@ const today = [
 const roadmap = [
   'Deep Drive search grows as Deep Drive moves from development to production',
   'Cross-app data flow: won tender → project without re-entry',
-  'Customers and contacts shared across apps'
+  'Customers and contacts shared across apps',
+  'AI receipt scan, attendance alerts, budget overrun forecast and invoice auto-capture (early access, below)'
 ]
 const responsible = [
   { icon: 'fa-solid fa-eye', title: 'Read-only', text: 'ARIVU reads, but never changes, your data. Estimates, budgets, claims and leave are still submitted and approved by people in the apps.' },
@@ -262,6 +268,6 @@ const faqs = [
   { q: 'Whose data can ARIVU see?', a: 'Only your own organisation\'s. Every lookup is limited to the organisation of the person asking. Chat messages are encrypted at rest.' },
   { q: 'What are organisation skills?', a: 'Reusable instruction sets your organisation defines, with reference documents attached — for example, how your company wants tender scopes summarised. Anyone in the organisation can then use them in ARIVU.' },
   { q: 'Which AI model does ARIVU use?', a: 'ARIVU runs on enterprise-grade large language models, set up so it answers only from your own organisation’s CCorex data and never changes your records.' },
-  { q: 'Is ARIVU included in our plan?', a: 'ARIVU is part of the CCorex suite plans. Your organisation\'s package must include it and each user must be assigned to it; usage budgets keep AI use predictable. We confirm the details in your quote.' }
+  { q: 'Is ARIVU included in our plan?', a: 'Yes. ARIVU is included in every CCorex plan, including a single app such as DeepHR or DeepTrack on its own, where it answers from that app. On Business and Enterprise it answers across all your apps. Each user must be assigned to it, and usage budgets keep AI use predictable.' }
 ]
 </script>

@@ -58,7 +58,7 @@
     <!-- FaceReg check-in -->
     <section id="attendance" class="section scroll-mt-20 bg-ink-50">
       <div class="container-site">
-        <UiSectionHeader eyebrow="Face + GPS attendance" title="Check in on the employee’s own phone — no kiosk, no hardware" lead="FaceReg verifies every check-in and check-out by face and location, and holds the master record of times. DeepHR adds HR’s review and turns approved time into payable hours." />
+        <UiSectionHeader eyebrow="AI face check-in + GPS" title="Check in on the employee’s own phone — no kiosk, no hardware" lead="FaceReg verifies every check-in and check-out by AI face recognition and location, and holds the master record of times. DeepHR adds HR’s review and turns approved time into payable hours." />
         <UiReveal class="mt-12">
           <DemoDeepHrFaceCheckin />
         </UiReveal>
@@ -278,14 +278,14 @@
     </section>
 
     <!-- AI -->
-    <section class="section relative overflow-hidden bg-hero text-white">
+    <section id="ai" class="section relative scroll-mt-20 overflow-hidden bg-hero text-white">
       <div class="bg-grid pointer-events-none absolute inset-0 opacity-40" aria-hidden="true"></div>
       <div class="container-site relative grid gap-14 lg:grid-cols-2 lg:items-center">
         <div>
-          <UiSectionHeader dark eyebrow="AI in DeepHR" lead="ARIVU, the CCorex AI assistant, sits inside DeepHR. HR and managers ask in plain language and get answers from their own organisation’s data.">
-            <template #title>Everyday HR, with <span class="text-ai-gradient">ARIVU AI</span> to help</template>
+          <UiSectionHeader dark eyebrow="AI in DeepHR" lead="ARIVU, the CCorex AI assistant, is built into DeepHR. HR and managers ask in plain language about employees, leave balances, attendance and expense claims, and get answers from their own organisation’s data.">
+            <template #title>AI built in: ask <span class="text-ai-gradient">ARIVU</span> about your people</template>
           </UiSectionHeader>
-          <ul class="mt-8 grid gap-4 sm:grid-cols-3">
+          <ul class="mt-8 grid gap-4 sm:grid-cols-2">
             <li v-for="a in aiPoints" :key="a.title" class="rounded-2xl border border-white/10 bg-white/5 p-5">
               <i :class="a.icon" class="text-cyan-400" aria-hidden="true"></i>
               <p class="mt-3 font-semibold text-white">{{ a.title }}</p>
@@ -294,7 +294,9 @@
           </ul>
           <div class="mt-8 flex flex-wrap gap-3">
             <NuxtLink to="/products/arivu-ai" class="btn-accent">Explore ARIVU AI</NuxtLink>
+            <a href="#ai-early-access" class="btn-ghost-dark">AI in early access</a>
           </div>
+          <p class="mt-5 text-xs text-ink-300">{{ arivuPlanNote }}</p>
         </div>
         <div class="rounded-2xl border border-white/10 bg-[#0b111c]/80 p-6 shadow-frame">
           <p class="flex items-center gap-3 text-sm font-semibold text-white">
@@ -306,10 +308,12 @@
               <i class="fa-regular fa-comment mt-0.5 text-cyan-400" aria-hidden="true"></i>{{ q }}
             </li>
           </ul>
-          <p class="mt-5 text-xs text-ink-300">Example questions. ARIVU reads, but never changes, your organisation's data — in DeepHR and every other CCorex app.</p>
+          <p class="mt-5 text-xs text-ink-300">Example questions. ARIVU reads, but never changes, your organisation's data — in DeepHR and every other CCorex app. It does not run or change payroll.</p>
         </div>
       </div>
     </section>
+
+    <SolutionEarlyAccess id="ai-early-access" eyebrow="ARIVU AI · early access" title="AI coming to DeepHR — join early access" lead="These AI features are in early access, not yet generally available. Request access and we will show you where they stand in your demo." :items="aiEarlyAccess.deephr" />
 
     <!-- Suite -->
     <section class="section">
@@ -360,7 +364,7 @@
     <!-- Singapore solutions -->
     <section class="section-tight">
       <div class="container-site">
-        <p class="eyebrow">For Singapore contractors</p>
+        <p class="eyebrow">DeepHR in Singapore</p>
         <ul class="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
           <li v-for="t in solutionLinks" :key="t.to">
             <NuxtLink :to="t.to" class="card flex h-full items-center gap-3 hover:border-brand-200"><i :class="t.icon" class="text-brand-600" aria-hidden="true"></i><span class="font-semibold">{{ t.name }}</span></NuxtLink>
@@ -378,14 +382,16 @@
 </template>
 
 <script setup lang="ts">
+import { arivuApps, arivuPlanNote, aiEarlyAccess } from '~/data/arivu'
+
 const config = useRuntimeConfig()
 const pageUrl = config.public.siteUrl + '/products/deephr'
-const description = 'DeepHR is HR and payroll software for Singapore: face and GPS attendance on the phone, leave, claims, approvals, and CPF, SDL and SHG payroll.'
+const description = 'DeepHR is HR and payroll software for Singapore SMEs: face and GPS attendance on staff phones, leave, claims, CPF, SDL and SHG payroll, and ARIVU AI.'
 
 useSeoMeta({
-  title: 'DeepHR — HR, payroll & site attendance software, Singapore',
+  title: 'HR & Payroll Software Singapore — DeepHR',
   description,
-  ogTitle: 'DeepHR — HR, attendance & payroll (Singapore CPF)',
+  ogTitle: 'DeepHR — HR, attendance & payroll software, Singapore (CPF, SDL, SHG)',
   ogDescription: description
 })
 useHead({
@@ -401,6 +407,7 @@ useHead({
       operatingSystem: 'Web',
       url: pageUrl,
       description,
+      areaServed: { '@type': 'Country', name: 'Singapore' },
       isPartOf: { '@type': 'SoftwareApplication', name: 'CCorex', url: config.public.siteUrl },
       publisher: { '@type': 'Organization', name: 'Newham Solutions Pte. Ltd.' }
     })
@@ -415,7 +422,8 @@ const pageNav = [
   { id: 'approvals', label: 'Approvals' },
   { id: 'payroll', label: 'Payroll' },
   { id: 'compliance', label: 'Singapore payroll' },
-  { id: 'reports', label: 'Reports & more' }
+  { id: 'reports', label: 'Reports & more' },
+  { id: 'ai', label: 'AI (ARIVU)' }
 ]
 
 const problems = [
@@ -430,7 +438,7 @@ const steps = [
   { title: 'Attendance', text: 'Face + GPS check-in on the employee’s own phone; HR approves each session.' },
   { title: 'Leave, claims & timesheets', text: 'Requests run through one approvals engine.' },
   { title: 'Payroll', text: 'Approved attendance and leave pull into the pay run; CPF, SDL and SHG applied.' },
-  { title: 'Payslips & filings', text: 'PDF payslips filed to each employee’s Documents.' },
+  { title: 'Payslips & filings', text: 'Itemised PDF payslips filed to each employee’s Documents.' },
   { title: 'Reports', text: 'Payroll, people, leave and claims reports — saved and emailed on a schedule.' }
 ]
 
@@ -512,7 +520,7 @@ const payrollFlow = [
   { icon: 'fa-solid fa-user-check', title: 'Attendance & leave', text: 'Approved sessions, paid leave, holidays and timesheets' },
   { icon: 'fa-solid fa-play', title: 'Pay run', text: 'Select employees, choose pay items, review' },
   { icon: 'fa-solid fa-landmark', title: 'Statutory', text: 'CPF, SDL and SHG' },
-  { icon: 'fa-solid fa-file-invoice-dollar', title: 'Payslips', text: 'PDFs filed to each employee’s Documents' },
+  { icon: 'fa-solid fa-file-invoice-dollar', title: 'Itemised payslips', text: 'PDFs filed to each employee’s Documents' },
   { icon: 'fa-solid fa-chart-column', title: 'Reports', text: 'Salary register, reconciliation, statutory summary' }
 ]
 const payrollPoints = [
@@ -532,7 +540,7 @@ const hoursData = [
 
 const jurisdictionRows = [
   { area: 'Contributions', sg: 'CPF (full, graduated for new PRs, or exempt), SDL, self-help group funds (CDAC, SINDA, MBMF, ECF)' },
-  { area: 'Outputs', sg: 'PDF payslips, salary register, reconciliation and statutory summary' },
+  { area: 'Outputs', sg: 'Itemised PDF payslips, salary register, reconciliation and statutory summary' },
   { area: 'Exit', sg: 'Through normal payroll' },
   { area: 'Year to date', sg: 'January – December' }
 ]
@@ -574,15 +582,12 @@ const roles = [
 ]
 
 const aiPoints = [
-  { icon: 'fa-regular fa-comments', title: 'Ask in plain language', text: 'Ask about employees, leave, attendance and claims in your organisation.' },
-  { icon: 'fa-solid fa-chart-column', title: 'Charts & exports', text: 'Turn an answer into a chart, or export it to PDF or Excel.' },
-  { icon: 'fa-solid fa-eye', title: 'Read-only', text: 'ARIVU reports what it finds; requests and approvals stay in DeepHR.' }
+  { icon: 'fa-regular fa-comments', title: 'Ask in plain language', text: 'Employees, leave balances by year, attendance over any date range, and expense claims by status or date.' },
+  { icon: 'fa-solid fa-chart-column', title: 'Charts, exports & files', text: 'Turn an answer into a chart, export it to Excel or PDF, or attach a document and ask about it.' },
+  { icon: 'fa-solid fa-eye', title: 'Read-only', text: 'ARIVU never changes data. Leave, claims, attendance approvals and payroll stay with people in DeepHR.' },
+  { icon: 'fa-solid fa-user-shield', title: 'Role-aware', text: 'Staff see their own records; managers and admins see their team’s. Every lookup stays inside your organisation.' }
 ]
-const arivuPrompts = [
-  'Which leave requests are waiting for approval?',
-  'Who was late at the Tuas site this week?',
-  'How many claims are pending payment this month?'
-]
+const arivuPrompts = arivuApps.deephr.questions
 
 const suiteToday = ['One sign-in at dash.ccorex.com', 'Users created once, provisioned into each app', 'Disabling a user disables them in the apps too', 'ARIVU in every app, read-only']
 
@@ -593,6 +598,10 @@ const plans = [
 ]
 
 const solutionLinks = [
+  { to: '/solutions/hr-software-singapore', name: 'HR software for Singapore SMEs', icon: 'fa-solid fa-people-group' },
+  { to: '/solutions/payroll-software-singapore', name: 'Payroll software (CPF, SDL, SHG)', icon: 'fa-solid fa-money-check-dollar' },
+  { to: '/solutions/attendance-app-singapore', name: 'Attendance app with face and GPS', icon: 'fa-solid fa-location-crosshairs' },
+  { to: '/solutions/leave-management-system-singapore', name: 'Leave management system', icon: 'fa-solid fa-calendar-days' },
   { to: '/solutions/construction-hr-software', name: 'HR software for construction', icon: 'fa-solid fa-people-group' },
   { to: '/solutions/construction-payroll-software', name: 'Construction payroll software', icon: 'fa-solid fa-money-check-dollar' },
   { to: '/solutions/foreign-worker-attendance-app', name: 'Foreign worker attendance app', icon: 'fa-solid fa-user-check' },
@@ -600,12 +609,15 @@ const solutionLinks = [
 ]
 const faqs = [
   { q: 'Can we buy DeepHR on its own?', a: 'Yes. DeepHR is sold on its own in Starter, Growth and Enterprise tiers, priced per employee. You do not need any other CCorex app; DeepCost or DeepTrack can be added later on the same sign-in.' },
+  { q: 'Is DeepHR only for construction companies?', a: 'No. DeepHR is HR and payroll software for any Singapore company. It was built for businesses with staff on site or on the move as well as in the office, which is why attendance runs on each employee’s own phone.' },
   { q: 'Do we need to buy attendance hardware?', a: 'No. Employees check in and out by face and GPS on their own phone. There is no kiosk or shared device. The face must match the enrolled samples and the phone must be inside the site radius; the record is marked on time or late against the site’s start time.' },
   { q: 'What if there is no signal on site?', a: 'The app works offline. The phone checks the face and site radius locally and queues the punch; when it is back online, each punch is re-verified. Punches over 72 hours old are refused, and over 24 hours are accepted but flagged.' },
   { q: 'Which payroll rules does DeepHR follow?', a: 'Singapore. DeepHR covers CPF (including graduated rates for new PRs), SDL and self-help group funds (CDAC, SINDA, MBMF, ECF).' },
   { q: 'Does DeepHR handle foreign workers in construction?', a: 'Yes. Workers check in with face and GPS on their own phone, and each worker’s pass type, number and expiry date are kept on their record.' },
   { q: 'How does attendance reach payroll?', a: 'Every completed session becomes a pending approval for HR. Approved time is turned into payable hours — split into normal and OT against the schedule — and the pay run pulls approved attendance, approved paid leave and holidays for the period.' },
   { q: 'Will our site workers be able to use it?', a: 'Yes. DeepHR has roles for site engineers and technicians with simple self-service for check-in, leave, claims and tasks, and it installs on a phone as an app.' },
-  { q: 'How is DeepHR priced?', a: 'Per-employee pricing across three plans — Starter, Growth and Enterprise — that scales with your headcount. Contact us for a tailored quote.' }
+  { q: 'How is DeepHR priced?', a: 'Per-employee pricing across three plans — Starter, Growth and Enterprise — that scales with your headcount. Contact us for a tailored quote.' },
+  { q: 'Does DeepHR use AI?', a: 'Yes. ARIVU, the AI assistant in every CCorex app, is built into DeepHR. HR and managers ask in plain language — for example “How much annual leave does each person have left?” or “How many hours did each person log last week?” — and get answers about employees, leave balances, logged hours and expense claims, as text, a chart, or an Excel or PDF export. Check-in also uses face recognition on the employee’s own phone. AI receipt scanning for claims and attendance anomaly alerts are in early access. ARIVU is included in every plan, even when you subscribe to DeepHR on its own; each user must be assigned to it.' },
+  { q: 'Can AI change our payroll or HR data?', a: 'No. ARIVU is read-only. It looks things up, summarises and exports, but never creates, edits or approves leave, claims, attendance or payroll. Answers follow the user’s role — staff see their own records, managers and admins see their team’s — and every lookup is limited to your organisation.' }
 ]
 </script>

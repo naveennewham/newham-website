@@ -114,6 +114,14 @@
             <NuxtLink :to="s.to" class="card flex h-full items-center gap-3 hover:border-brand-200"><i :class="s.icon" class="text-brand-600" aria-hidden="true"></i><span class="font-semibold">{{ s.name }}</span></NuxtLink>
           </li>
         </ul>
+        <div class="mt-14">
+          <UiSectionHeader eyebrow="For Singapore businesses in any sector" title="DeepHR on its own" lead="HR, payroll, attendance and leave for Singapore SMEs in any sector, especially teams with staff on site or on the move." />
+        </div>
+        <ul class="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+          <li v-for="s in businessSolutions" :key="s.to">
+            <NuxtLink :to="s.to" class="card flex h-full items-center gap-3 hover:border-brand-200"><i :class="s.icon" class="text-brand-600" aria-hidden="true"></i><span class="font-semibold">{{ s.name }}</span></NuxtLink>
+          </li>
+        </ul>
       </div>
     </section>
 
@@ -124,15 +132,12 @@
 </template>
 
 <script setup lang="ts">
+import { solutionPages, solutionPath } from '~/data/solutions'
+
 const config = useRuntimeConfig()
-const sgSolutions = [
-  { name: 'Construction cost control software', icon: 'fa-solid fa-chart-line', to: '/solutions/construction-cost-control-software' },
-  { name: 'Progress claim software', icon: 'fa-solid fa-file-invoice-dollar', to: '/solutions/progress-claim-software' },
-  { name: 'Construction payroll software', icon: 'fa-solid fa-money-check-dollar', to: '/solutions/construction-payroll-software' },
-  { name: 'HR software for construction', icon: 'fa-solid fa-people-group', to: '/solutions/construction-hr-software' },
-  { name: 'Foreign worker attendance app', icon: 'fa-solid fa-user-check', to: '/solutions/foreign-worker-attendance-app' },
-  { name: 'MEP estimating and BOQ software', icon: 'fa-solid fa-calculator', to: '/products/deepcost' }
-]
+const withPath = (g: 'construction' | 'business') => solutionPages.filter((s) => s.group === g).map((s) => ({ ...s, to: solutionPath(s) }))
+const sgSolutions = withPath('construction')
+const businessSolutions = withPath('business')
 useSeoMeta({
   title: 'Solutions by role for construction teams',
   description: 'How CCorex supports directors, estimators and QS, project managers, procurement and finance, HR and admin, and site supervisors on one construction platform.',
