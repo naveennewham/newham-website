@@ -470,7 +470,7 @@ const suiteNext = ['Won DeepCost tender → DeepTrack project without re-entry',
 
 const plans = [
   { name: 'Starter', for: 'Small teams & single projects', features: ['Projects & client POs', 'Budgets & budget against actual', 'Client claims', 'Configured approvals', 'Core project reports'] },
-  { name: 'Growth', for: 'Scaling project businesses', popular: true, features: ['Everything in Starter', 'Procurement (PR → PO → delivery)', 'Invoice matching & payments', 'Manpower & timesheets', 'Scheduled reports'] },
+  { name: 'Growth', for: 'Growing contractors', popular: true, features: ['Everything in Starter', 'Procurement (PR → PO → delivery)', 'Invoice matching & payments', 'Manpower & timesheets', 'Scheduled reports'] },
   { name: 'Enterprise', for: 'Multi-entity contractors', features: ['Everything in Growth', 'Month-end cost allocation', 'Zoho Books link', 'Screen-by-role matrix & budget templates', 'Audit log & priority support'] }
 ]
 
@@ -491,7 +491,7 @@ const faqs = [
   { q: 'Is it set up for Singapore?', a: 'Yes. DeepTrack works in SGD with 9% GST, and codes cost to BCA workheads. Progress claims carry retention and GST and produce a PDF Progress Claim Certificate.' },
   { q: 'Does it connect to our accounting system?', a: 'Each tenant can link Zoho Books for vendors and purchase orders. Month-end also produces a journal CSV for your ledger, and general-ledger costs can be imported from CSV.' },
   { q: 'How is DeepTrack priced?', a: 'Plans scale with your team and projects — Starter, Growth and Enterprise. Contact us for a tailored quote.' },
-  { q: 'Does DeepTrack use AI?', a: 'Yes. ARIVU, the AI assistant in every CCorex app, is built into DeepTrack. Project managers and approvers ask in plain language — for example “How is committed cost tracking against the approved budget?” or “Which client claims are still unpaid?” — and get answers about projects, budgets, purchase requests, client claims, timesheets and delivery orders, as text, a chart, or an Excel or PDF export. A budget overrun forecast and invoice auto-capture are in early access. ARIVU is part of the CCorex suite plans: your organisation’s package must include it and each user must be assigned to it.' },
+  { q: 'Does DeepTrack use AI?', a: 'Yes. ARIVU, the AI assistant in every CCorex app, is built into DeepTrack. Project managers and approvers ask in plain language — for example “How is committed cost tracking against the approved budget?” or “Which client claims are still unpaid?” — and get answers about projects, budgets, purchase requests, client claims, timesheets and delivery orders, as text, a chart, or an Excel or PDF export. A budget overrun forecast and invoice auto-capture are in early access. ARIVU is included in every plan, even when you subscribe to DeepTrack on its own; each user must be assigned to it.' },
   { q: 'Can AI change our budgets or approve purchases?', a: 'No. ARIVU is read-only. It looks things up, summarises and exports, but never creates, edits or approves budgets, purchase requests, purchase orders or claims; approvals stay with the people your workflow assigns. Answers follow the user’s role, and every lookup is limited to your organisation.' }
 ]
 </script>

@@ -9,7 +9,7 @@ DeepCost, DeepTrack and DeepHR are each sold on their own (Starter, Growth and E
 - [DeepPlan AI](https://ccorex.com/products/deepplan-ai): drawing take-off — rooms, measurements and symbol counts from floor plans into a priced BOQ (AI take-off in early access).
 - [DeepTrack](https://ccorex.com/products/deeptrack): project delivery and cost control — budgets, budget against actual by workhead, WBS and cost centre, purchasing, invoice matching, client claims, month-end cost allocation. ARIVU AI answers questions about projects, budgets (against committed and actual cost), purchase requests, client claims, timesheets and delivery orders, read-only. In early access: AI budget overrun forecast and AI invoice auto-capture from vendor invoice PDFs.
 - [DeepHR](https://ccorex.com/products/deephr): HR and payroll software for Singapore SMEs — face and GPS attendance on the employee's phone, leave, claims, Singapore payroll (CPF, SDL, SHG). ARIVU AI answers questions about employees, leave balances, attendance and expense claims, read-only and role-aware; it does not run or change payroll. In early access: AI receipt scan for expense claims and AI attendance anomaly alerts.
-- [ARIVU AI](https://ccorex.com/products/arivu-ai): read-only, role-aware AI assistant that answers questions from your own organisation's data across the apps, with charts and Excel or PDF exports. Included in the CCorex suite plans.
+- [ARIVU AI](https://ccorex.com/products/arivu-ai): read-only, role-aware AI assistant that answers questions from your own organisation's data across the apps, with charts and Excel or PDF exports. Included in every CCorex plan, including a single app on its own.
 - [Deep Drive](https://ccorex.com/products/deep-drive): project document storage.
 - [PDF Editor](https://ccorex.com/products/pdf-editor): mark up, sign, split and merge PDFs.
 
@@ -20,15 +20,15 @@ DeepCost, DeepTrack and DeepHR are each sold on their own (Starter, Growth and E
 - [HR software for construction](https://ccorex.com/solutions/construction-hr-software) (DeepHR)
 - [Construction payroll software](https://ccorex.com/solutions/construction-payroll-software) (DeepHR)
 - [Foreign worker attendance app](https://ccorex.com/solutions/foreign-worker-attendance-app) (DeepHR)
+- [Project cost management software](https://ccorex.com/solutions/project-cost-management-software) (DeepTrack, for contractors): approved budgets, budget against actual, purchases to POs, invoice matching, timesheet labour, SGD with 9% GST.
+- [Procurement and purchase order software](https://ccorex.com/solutions/procurement-software-singapore) (DeepTrack, for contractors): purchase requests against budgets, approval limits, purchase orders, delivery endorsement, invoice matching.
 
 ## Solutions for Singapore businesses in any sector
-DeepHR and DeepTrack are also sold on their own to Singapore SMEs outside construction, especially teams with staff on site or on the move.
+DeepHR is also sold on its own to Singapore SMEs in any sector, especially teams with staff on site or on the move. DeepTrack is for construction contractors.
 - [HR software for Singapore SMEs](https://ccorex.com/solutions/hr-software-singapore) (DeepHR): face and GPS attendance on staff phones, leave, claims, timesheets, multi-level approvals, and CPF, SDL and SHG payroll.
-- [Payroll software for Singapore](https://ccorex.com/solutions/payroll-software-singapore) (DeepHR): CPF (incl. graduated PR rates), SDL and SHG on every pay run, MOM overtime and proration, PDF payslips and payroll reports. IR8A / AIS files in early access.
+- [Payroll software for Singapore](https://ccorex.com/solutions/payroll-software-singapore) (DeepHR): CPF (incl. graduated PR rates), SDL and SHG on every pay run, MOM overtime and proration, itemised payslips and payroll reports. IR8A / AIS files in early access.
 - [Attendance app for Singapore](https://ccorex.com/solutions/attendance-app-singapore) (DeepHR): face and GPS check-in on each employee's own phone, no kiosk, works offline, HR approves each session, hours flow to payroll.
 - [Leave management system for Singapore](https://ccorex.com/solutions/leave-management-system-singapore) (DeepHR): leave applied on the phone, Singapore leave presets and public holidays, multi-level approvals, team calendar, payroll sync.
-- [Project cost management software](https://ccorex.com/solutions/project-cost-management-software) (DeepTrack): approved budgets, budget against actual, purchases to POs, invoice matching, timesheet labour, SGD with 9% GST.
-- [Procurement and purchase order software](https://ccorex.com/solutions/procurement-software-singapore) (DeepTrack): purchase requests against budgets, approval limits, purchase orders, delivery endorsement, invoice matching.
 
 ## Singapore HR guides
 - [Leave entitlement in Singapore (Employment Act)](https://ccorex.com/resources/leave-entitlement-singapore)

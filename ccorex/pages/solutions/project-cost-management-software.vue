@@ -6,8 +6,8 @@
     sub-category="Project cost management software"
     eyebrow="Project cost management · Singapore"
     seo-title="Project Cost Management Software Singapore"
-    seo-description="Project cost management software for Singapore: approved budgets, budget against actual, purchases to POs, invoice matching, timesheet labour, 9% GST."
-    h1="Project cost management software for Singapore businesses"
+    seo-description="Project cost management for Singapore contractors: approved budgets, budget against actual, purchases to POs, invoice matching, timesheet labour, 9% GST."
+    h1="Project cost management software for Singapore contractors"
     lead="DeepTrack keeps every project’s budget, commitments and actual cost in one place: approved budgets, purchases checked against them, vendor invoices matched before payment, and labour and overhead allocated at month end. Built for contractors and other project-based businesses in Singapore, in SGD with 9% GST."
     :hero-points="['Approved budgets per project', 'Budget against actual', 'Purchases within budget', 'Invoice matching', 'Labour and overhead per project']"
     problem-title="Project margin is only known when the project closes"
@@ -69,7 +69,7 @@ const guides = [
 const faqs = [
   { q: 'What is project cost management software?', a: 'Software that keeps each project’s budget, committed spend and actual cost in one place, so you can compare budget against actual and see margin while the project is still running. DeepTrack does this with approved budgets, purchasing against them, invoice matching, timesheet labour and month-end overhead allocation.' },
   { q: 'Is DeepTrack project management software?', a: 'DeepTrack covers the commercial side of running projects: projects and client POs, budgets, purchasing, timesheets, client claims and cost reports. It is not a task board. If you also need task scheduling, DeepHR has an optional Tasks module with phases, templates and dependency-driven dates.' },
-  { q: 'Is DeepTrack only for construction companies?', a: 'DeepTrack was built for contractors, and it suits other businesses that deliver work as projects against a budget. Budget templates, dropdown lists, approval thresholds and screen access are set for each organisation.' },
+  { q: 'Is DeepTrack only for construction companies?', a: 'Yes. DeepTrack is built for construction contractors in Singapore, from main contractors to MEP and fire-protection subcontractors. Budget templates, dropdown lists, approval thresholds and screen access are set for each organisation.' },
   { q: 'Is DeepTrack job costing software?', a: 'Yes. Purchases, matched invoices, labour from timesheets and allocated overhead all land on a project and its cost codes, so you see job cost and margin per project.' },
   { q: 'Does it replace our accounting software?', a: 'No. It sits beside it. Each organisation can link Zoho Books for vendors and purchase orders, and month-end produces a journal CSV for your ledger.' },
   { q: 'Can we use DeepTrack on its own, and how is it priced?', a: 'Yes. DeepTrack is sold on its own in Starter, Growth and Enterprise tiers, priced per user. Pricing is shared on request, with a tailored quote.' },

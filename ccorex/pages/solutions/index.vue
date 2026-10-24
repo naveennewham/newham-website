@@ -115,7 +115,7 @@
           </li>
         </ul>
         <div class="mt-14">
-          <UiSectionHeader eyebrow="For Singapore businesses in any sector" title="DeepHR and DeepTrack on their own" lead="HR, payroll, attendance and leave for Singapore SMEs, especially teams with staff on site or on the move, and project cost and purchasing control for any project-based business." />
+          <UiSectionHeader eyebrow="For Singapore businesses in any sector" title="DeepHR on its own" lead="HR, payroll, attendance and leave for Singapore SMEs in any sector, especially teams with staff on site or on the move." />
         </div>
         <ul class="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
           <li v-for="s in businessSolutions" :key="s.to">

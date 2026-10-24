@@ -64,6 +64,7 @@ const guides = [
   { to: '/solutions/payroll-software-singapore', title: 'Payroll software for Singapore' }
 ]
 const faqs = [
+  { q: 'Does DeepHR follow MOM leave rules?', a: 'Yes. DeepHR’s Singapore leave presets follow the Employment Act entitlements published by MOM. See our guide to leave entitlement in Singapore for the statutory figures.' },
   { q: 'How many days of annual leave are employees entitled to in Singapore?', a: 'Under the Employment Act, an employee who has worked for at least 3 months gets 7 days of annual leave in the first year of service, rising by one day a year to 14 days from the eighth year. Employers can give more by contract. See the MOM annual leave page for the full rules.' },
   { q: 'How much sick leave do employees get in Singapore?', a: 'After 6 months of service, employees covered by the Employment Act get 14 days of paid outpatient sick leave and up to 60 days of hospitalisation leave a year (the 60 days include the 14). Between 3 and 6 months of service the entitlement is pro-rated.' },
   { q: 'Can DeepHR follow our own leave policy?', a: 'Yes. The Singapore presets are a starting point. HR can add or change leave types, set entitlements, adjust balances and configure the approval chain for leave requests.' },

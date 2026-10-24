@@ -6,10 +6,10 @@
     sub-category="Payroll software"
     eyebrow="Payroll software · Singapore"
     seo-title="Payroll Software Singapore: CPF, SDL & SHG"
-    seo-description="Payroll software for Singapore SMEs: CPF (incl. graduated PR rates), SDL and SHG on every pay run, MOM overtime and proration, PDF payslips and reports."
+    seo-description="Payroll software for Singapore SMEs: CPF (incl. graduated PR rates), SDL and SHG on every pay run, MOM overtime and proration, itemised payslips, reports."
     h1="Payroll software for Singapore with CPF, SDL and SHG"
     lead="DeepHR runs Singapore payroll from attendance and leave you have already approved. CPF, SDL and self-help group funds are worked out on every pay run, overtime follows the MOM formula, and PDF payslips go to each employee."
-    :hero-points="['CPF incl. graduated PR rates', 'SDL & SHG funds', 'MOM overtime & proration', 'PDF payslips', 'Salary register & reconciliation']"
+    :hero-points="['CPF incl. graduated PR rates', 'SDL & SHG funds', 'MOM overtime & proration', 'Itemised payslips', 'Salary register & reconciliation']"
     problem-title="Payroll that is re-typed and checked by hand"
     :problems="problems"
     flow-title="From approved time to payslip"
@@ -45,7 +45,7 @@ const features = [
   { icon: 'fa-solid fa-landmark', title: 'CPF, SDL and SHG', text: 'CPF (full, graduated for new PRs, or exempt), the Skills Development Levy and CDAC, SINDA, MBMF and ECF funds.' },
   { icon: 'fa-solid fa-clock', title: 'MOM overtime rules', text: 'OT hourly rate = 12 × basic ÷ (52 × 44) × multiplier, rest-day and public-holiday pay rules, and warnings above 72 OT hours a month.' },
   { icon: 'fa-solid fa-scale-balanced', title: 'MOM proration', text: 'Part months and unpaid leave are prorated using the Ministry of Manpower method.' },
-  { icon: 'fa-solid fa-file-invoice', title: 'PDF payslips', text: 'Payslips filed to each employee’s Documents, with NRIC/FIN masked; release and email them a month at a time.' },
+  { icon: 'fa-solid fa-file-invoice', title: 'Itemised payslips', text: 'Itemised PDF payslips, as MOM requires, filed to each employee’s Documents, with NRIC/FIN masked; release and email them a month at a time.' },
   { icon: 'fa-solid fa-chart-column', title: 'Payroll reports', text: 'Salary register, reconciliation, statutory summary, cost to company and monthly totals for gross, CPF, SHG, net and SDL.' },
   { icon: 'fa-solid fa-arrow-trend-up', title: 'Revisions and arrears', text: 'A back-dated salary revision pays one arrears line in the next run; past payslips never change.' },
   { icon: 'fa-solid fa-file-import', title: 'Record mode', text: 'Payroll already paid elsewhere can be uploaded from Excel, so the year-to-date record is complete.' },
@@ -58,7 +58,7 @@ const checklist = [
   { need: 'Self-help group funds', how: 'CDAC, SINDA, MBMF and ECF deducted per employee.' },
   { need: 'Overtime under the Employment Act', how: 'MOM hourly basic rate formula, OT for basic salaries up to $2,600 (non-workmen) or $4,500 (workmen), rest-day and public-holiday rules.' },
   { need: 'Unpaid leave and part months', how: 'Prorated using the MOM method.' },
-  { need: 'Payslips to every employee', how: 'PDF payslips from each pay run, filed to the employee’s Documents and released by email.' },
+  { need: 'Payslips to every employee', how: 'Itemised PDF payslips from each pay run, filed to the employee’s Documents and released by email.' },
   { need: 'Payroll records and reports', how: 'Salary register, reconciliation and statutory summary, exportable to Excel or CSV and emailed on a schedule.' },
   { need: 'IR8A / AIS for IRAS', how: 'Year-end employee income files prepared from the year’s payroll.', early: true },
   { need: 'Foreign worker levy', how: 'Skill tier per worker and the monthly levy cost per worker.', early: true }
@@ -69,6 +69,7 @@ const guides = [
   { to: '/solutions/construction-payroll-software', title: 'Payroll for construction site teams' }
 ]
 const faqs = [
+  { q: 'Is DeepHR PSG pre-approved?', a: 'Not yet. We have applied for Productivity Solutions Grant (PSG) pre-approval for DeepHR. Until it is approved, PSG co-funding cannot be claimed for it; check the pre-approved list on GoBusiness or ask us for the latest status.' },
   { q: 'What should payroll software in Singapore handle?', a: 'CPF for Singapore Citizens and PRs (including graduated rates for new PRs), the Skills Development Levy, self-help group fund deductions, overtime and proration under the Employment Act, payslips for every employee, and year-end income reporting to IRAS. DeepHR covers the pay-run items today; IR8A / AIS files are in early access.' },
   { q: 'Do foreign employees pay CPF?', a: 'No. CPF applies to Singapore Citizens and permanent residents. For Work Permit and S Pass holders the employer pays the foreign worker levy instead, and SDL is still payable. DeepHR keeps each employee’s immigration status and pass details on their record.' },
   { q: 'How does attendance get into payroll?', a: 'Every completed attendance session becomes a pending approval for HR. Approved time is split into normal and OT hours against the schedule, and the pay run pulls approved attendance, approved paid leave and holidays for the period.' },

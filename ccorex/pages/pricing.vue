@@ -82,7 +82,7 @@
     <!-- Per-app tiers -->
     <section class="section bg-ink-50">
       <div class="container-site">
-        <UiSectionHeader center eyebrow="Buying a single app?" title="Per-app tiers" lead="Each flagship app is also available in Starter, Growth and Enterprise tiers, priced per user (per employee for DeepHR)." />
+        <UiSectionHeader center eyebrow="Buying a single app?" title="Per-app tiers" lead="Each flagship app is also available in Starter, Growth and Enterprise tiers, priced per user (per employee for DeepHR). The ARIVU AI assistant is included in every tier." />
         <div class="mt-12 grid gap-5 lg:grid-cols-3">
           <div v-for="a in appTiers" :key="a.name" class="card flex flex-col">
             <div class="flex items-center gap-3">
@@ -200,7 +200,7 @@ const appTiers = [
     name: 'DeepTrack', slug: 'deeptrack', tagline: 'Project delivery & cost control', icon: 'fa-solid fa-diagram-project', color: 'bg-amber-50 text-amber-700',
     tiers: [
       { name: 'Starter', for: 'Single projects', features: ['Projects, customer POs & contract value', 'Budgets, variance & standard approvals'] },
-      { name: 'Growth', for: 'Scaling project businesses', popular: true, features: ['Procurement (PR → PO → invoice), client claims', 'Manpower, timesheets & scheduled reports'] },
+      { name: 'Growth', for: 'Growing contractors', popular: true, features: ['Procurement (PR → PO → invoice), client claims', 'Manpower, timesheets & scheduled reports'] },
       { name: 'Enterprise', for: 'Multi-entity contractors', features: ['Month-end cost allocation & Zoho Books link', 'Screen-by-role matrix, budget templates & audit log'] }
     ]
   },
@@ -222,7 +222,7 @@ const quoteSteps = [
 const faqs = [
   { q: 'Why don’t you publish prices?', a: 'CCorex is priced per user (per employee for DeepHR) and depends on the apps and plan you choose. We give every customer a tailored quote rather than a one-size price list.' },
   { q: 'Can we start with one app and add more later?', a: 'Yes. Essentials starts with one flagship app — DeepCost, DeepTrack or DeepHR. You can move to Business or Enterprise as you add apps, and every app shares the same sign-in and users.' },
-  { q: 'Is ARIVU AI an extra cost?', a: 'No. The ARIVU AI assistant is included in every suite plan, with usage budgets per organisation. On Business and Enterprise it answers across all your apps.' },
+  { q: 'Is ARIVU AI an extra cost?', a: 'No. The ARIVU AI assistant is included in every plan, including a single app on its own, with usage budgets per organisation. On Business and Enterprise it answers across all your apps.' },
   { q: 'Are Deep Drive and PDF Editor included?', a: 'Yes. Deep Drive (document storage) and PDF Editor (mark-up and signing) are included with every active subscription.' },
   { q: 'What is the difference between Business and Enterprise?', a: 'Business bundles DeepCost, DeepTrack and DeepHR with a shared user base. Enterprise adds DeepPlan AI, multi-organisation management, advanced roles and audit, priority access to CRM integrations as they arrive, and priority support and onboarding.' },
   { q: 'How do we get pricing?', a: 'Pricing is shared on request. Email admin@newhamtech.com with the apps and number of users you need, or book a demo and we will prepare a quote.' },

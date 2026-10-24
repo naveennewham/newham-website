@@ -268,6 +268,6 @@ const faqs = [
   { q: 'Whose data can ARIVU see?', a: 'Only your own organisation\'s. Every lookup is limited to the organisation of the person asking. Chat messages are encrypted at rest.' },
   { q: 'What are organisation skills?', a: 'Reusable instruction sets your organisation defines, with reference documents attached — for example, how your company wants tender scopes summarised. Anyone in the organisation can then use them in ARIVU.' },
   { q: 'Which AI model does ARIVU use?', a: 'ARIVU runs on enterprise-grade large language models, set up so it answers only from your own organisation’s CCorex data and never changes your records.' },
-  { q: 'Is ARIVU included in our plan?', a: 'ARIVU is part of the CCorex suite plans. Your organisation\'s package must include it and each user must be assigned to it; usage budgets keep AI use predictable. We confirm the details in your quote.' }
+  { q: 'Is ARIVU included in our plan?', a: 'Yes. ARIVU is included in every CCorex plan, including a single app such as DeepHR or DeepTrack on its own, where it answers from that app. On Business and Enterprise it answers across all your apps. Each user must be assigned to it, and usage budgets keep AI use predictable.' }
 ]
 </script>

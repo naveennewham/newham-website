@@ -438,7 +438,7 @@ const steps = [
   { title: 'Attendance', text: 'Face + GPS check-in on the employee’s own phone; HR approves each session.' },
   { title: 'Leave, claims & timesheets', text: 'Requests run through one approvals engine.' },
   { title: 'Payroll', text: 'Approved attendance and leave pull into the pay run; CPF, SDL and SHG applied.' },
-  { title: 'Payslips & filings', text: 'PDF payslips filed to each employee’s Documents.' },
+  { title: 'Payslips & filings', text: 'Itemised PDF payslips filed to each employee’s Documents.' },
   { title: 'Reports', text: 'Payroll, people, leave and claims reports — saved and emailed on a schedule.' }
 ]
 
@@ -520,7 +520,7 @@ const payrollFlow = [
   { icon: 'fa-solid fa-user-check', title: 'Attendance & leave', text: 'Approved sessions, paid leave, holidays and timesheets' },
   { icon: 'fa-solid fa-play', title: 'Pay run', text: 'Select employees, choose pay items, review' },
   { icon: 'fa-solid fa-landmark', title: 'Statutory', text: 'CPF, SDL and SHG' },
-  { icon: 'fa-solid fa-file-invoice-dollar', title: 'Payslips', text: 'PDFs filed to each employee’s Documents' },
+  { icon: 'fa-solid fa-file-invoice-dollar', title: 'Itemised payslips', text: 'PDFs filed to each employee’s Documents' },
   { icon: 'fa-solid fa-chart-column', title: 'Reports', text: 'Salary register, reconciliation, statutory summary' }
 ]
 const payrollPoints = [
@@ -540,7 +540,7 @@ const hoursData = [
 
 const jurisdictionRows = [
   { area: 'Contributions', sg: 'CPF (full, graduated for new PRs, or exempt), SDL, self-help group funds (CDAC, SINDA, MBMF, ECF)' },
-  { area: 'Outputs', sg: 'PDF payslips, salary register, reconciliation and statutory summary' },
+  { area: 'Outputs', sg: 'Itemised PDF payslips, salary register, reconciliation and statutory summary' },
   { area: 'Exit', sg: 'Through normal payroll' },
   { area: 'Year to date', sg: 'January – December' }
 ]
@@ -617,7 +617,7 @@ const faqs = [
   { q: 'How does attendance reach payroll?', a: 'Every completed session becomes a pending approval for HR. Approved time is turned into payable hours — split into normal and OT against the schedule — and the pay run pulls approved attendance, approved paid leave and holidays for the period.' },
   { q: 'Will our site workers be able to use it?', a: 'Yes. DeepHR has roles for site engineers and technicians with simple self-service for check-in, leave, claims and tasks, and it installs on a phone as an app.' },
   { q: 'How is DeepHR priced?', a: 'Per-employee pricing across three plans — Starter, Growth and Enterprise — that scales with your headcount. Contact us for a tailored quote.' },
-  { q: 'Does DeepHR use AI?', a: 'Yes. ARIVU, the AI assistant in every CCorex app, is built into DeepHR. HR and managers ask in plain language — for example “How much annual leave does each person have left?” or “How many hours did each person log last week?” — and get answers about employees, leave balances, logged hours and expense claims, as text, a chart, or an Excel or PDF export. Check-in also uses face recognition on the employee’s own phone. AI receipt scanning for claims and attendance anomaly alerts are in early access. ARIVU is part of the CCorex suite plans: your organisation’s package must include it and each user must be assigned to it.' },
+  { q: 'Does DeepHR use AI?', a: 'Yes. ARIVU, the AI assistant in every CCorex app, is built into DeepHR. HR and managers ask in plain language — for example “How much annual leave does each person have left?” or “How many hours did each person log last week?” — and get answers about employees, leave balances, logged hours and expense claims, as text, a chart, or an Excel or PDF export. Check-in also uses face recognition on the employee’s own phone. AI receipt scanning for claims and attendance anomaly alerts are in early access. ARIVU is included in every plan, even when you subscribe to DeepHR on its own; each user must be assigned to it.' },
   { q: 'Can AI change our payroll or HR data?', a: 'No. ARIVU is read-only. It looks things up, summarises and exports, but never creates, edits or approves leave, claims, attendance or payroll. Answers follow the user’s role — staff see their own records, managers and admins see their team’s — and every lookup is limited to your organisation.' }
 ]
 </script>

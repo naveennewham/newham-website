@@ -37,7 +37,7 @@ export const arivuTrust = [
   { icon: 'fa-solid fa-building-shield', title: 'Your organisation only', text: 'Every lookup is limited to your organisation, with usage budgets and rate limits.' }
 ]
 
-export const arivuPlanNote = 'ARIVU is part of the CCorex suite plans. Your organisation’s package must include it and each user must be assigned to it; we confirm the details in your quote.'
+export const arivuPlanNote = 'ARIVU is included in every CCorex plan, even when you subscribe to DeepHR or DeepTrack on its own, with usage budgets per organisation. Each user must be assigned to it.'
 
 // AI features in early access (see data/earlyAccess.ts), per app.
 export const aiEarlyAccess: Record<ArivuApp, string[]> = {

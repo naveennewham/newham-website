@@ -93,7 +93,7 @@ const groups = [
       { q: 'What AI is in DeepCost?', a: 'An AI tender summary that reads the uploaded tender documents and fills a predefined set of fields, and FOT AI, which finds the quantity and amount columns on the client’s BOQ PDF and overlays editable figures. Both outputs can be edited and exported.' },
       { q: 'Is DeepPlan’s AI take-off live?', a: 'Not in production yet. DeepPlan’s drawing upload, scale calibration, room and measurement editor, rate library and BOQ generation are live. AI room take-off and symbol detection (23 electrical and fire symbol classes) are in early access while they are rebuilt.' },
       { q: 'Which AI models does CCorex use?', a: 'ARIVU runs on enterprise-grade large language models, set up so it answers only from your own organisation’s CCorex data and never changes your records. DeepPlan’s take-off uses its own room-segmentation, OCR and symbol-detection models.' },
-      { q: 'Is ARIVU included in our plan?', a: 'Yes. ARIVU is included in every suite plan, with usage budgets per organisation. On Business and Enterprise it answers across all your apps.' }
+      { q: 'Is ARIVU included in our plan?', a: 'Yes. ARIVU is included in every plan, including a single app on its own, with usage budgets per organisation. On Business and Enterprise it answers across all your apps.' }
     ]
   },
   {

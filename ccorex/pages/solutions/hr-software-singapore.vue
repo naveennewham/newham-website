@@ -39,7 +39,7 @@ const flow = [
   { title: 'Approvals', text: 'Routed through your approval levels.', icon: 'fa-solid fa-user-check' },
   { title: 'HR review', text: 'HR approves each attendance session.', icon: 'fa-solid fa-circle-check' },
   { title: 'Payroll', text: 'CPF, SDL and SHG applied.', icon: 'fa-solid fa-money-check-dollar' },
-  { title: 'Payslips', text: 'Filed to each employee’s Documents.', icon: 'fa-solid fa-file-invoice' }
+  { title: 'Itemised payslips', text: 'Filed to each employee’s Documents.', icon: 'fa-solid fa-file-invoice' }
 ]
 const features = [
   { icon: 'fa-solid fa-id-badge', title: 'Employee records', text: 'Profiles, organisation structure and work pass details, with Excel bulk upload and a dry run before anything is saved.' },
@@ -68,6 +68,7 @@ const guides = [
   { to: '/solutions/payroll-software-singapore', title: 'Payroll software for Singapore' }
 ]
 const faqs = [
+  { q: 'Is DeepHR PSG pre-approved?', a: 'Not yet. We have applied for Productivity Solutions Grant (PSG) pre-approval for DeepHR. Until it is approved, PSG co-funding cannot be claimed for it; check the pre-approved list on GoBusiness or ask us for the latest status.' },
   { q: 'What should HR software in Singapore include?', a: 'At minimum: employee records, leave that follows Employment Act entitlements, claims, attendance, and payroll that works out CPF, SDL and self-help group funds, with approvals and self-service for employees. DeepHR covers all of these in one app, with face and GPS attendance on each employee’s own phone.' },
   { q: 'Is DeepHR only for construction companies?', a: 'No. DeepHR works for any Singapore company. It was built for businesses with staff on site or on the move as well as in the office, so it suits SMEs whose people do not sit at a desk all day.' },
   { q: 'What is the difference between HR software and payroll software?', a: 'HR software manages people, leave, claims, attendance and approvals; payroll software turns that into pay with statutory contributions. DeepHR does both, so approved attendance and leave flow straight into the pay run.' },

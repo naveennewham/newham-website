@@ -6,8 +6,8 @@
     sub-category="Procurement and purchase order software"
     eyebrow="Procurement software · Singapore"
     seo-title="Procurement & Purchase Order Software Singapore"
-    seo-description="Procurement software for Singapore: purchase requests against budgets, approval limits, purchase orders, delivery endorsement, invoice matching, 9% GST."
-    h1="Procurement and purchase order software for Singapore"
+    seo-description="Procurement software for Singapore contractors: purchase requests against budgets, approval limits, POs, delivery endorsement, invoice matching, 9% GST."
+    h1="Procurement and purchase order software for Singapore contractors"
     lead="DeepTrack follows every purchase from request to payment: raised against an approved budget, approved to your thresholds, issued as a purchase order, endorsed on delivery and matched to the vendor invoice before anyone is paid."
     :hero-points="['Purchase requests against budget', 'Approval thresholds', 'Versioned purchase orders', 'Delivery endorsement', 'Invoice matching & payments']"
     problem-title="Purchases approved by email and paid on trust"
@@ -71,7 +71,7 @@ const faqs = [
   { q: 'What is three-way matching?', a: 'Checking a vendor invoice against the purchase order and the goods actually received before it is paid. DeepTrack matches each invoice to the PO, the delivery endorsement and the purchase request, blocks duplicate invoice numbers and flags rate or quantity mismatches.' },
   { q: 'Can we set approval limits by amount?', a: 'Yes. Purchase requests go to the project manager, then the general manager, and to the managing director above the threshold your organisation sets. Payments follow a separate maker-checker chain.' },
   { q: 'Does it work with our accounting software?', a: 'DeepTrack links to Zoho Books for vendors and purchase orders, and produces a month-end journal CSV that can be loaded into other ledgers.' },
-  { q: 'Is DeepTrack procurement only for construction?', a: 'DeepTrack was built for contractors, and its purchasing controls suit any business that buys against project budgets. Approval thresholds, dropdown lists and screen access are set for each organisation.' },
+  { q: 'Is DeepTrack procurement only for construction?', a: 'Yes. DeepTrack is built for construction contractors in Singapore, so purchasing runs against each project’s approved budget. Approval thresholds, dropdown lists and screen access are set for each organisation.' },
   { q: 'Can we use DeepTrack on its own, and how is it priced?', a: 'Yes. DeepTrack is sold on its own, priced per user. Procurement (purchase request to PO and delivery), invoice matching and payments are in the Growth tier. Pricing is shared on request.' },
   { q: 'Can AI approve purchase requests?', a: 'No. ARIVU, the AI assistant in DeepTrack, can tell you which purchase requests are waiting for approval or which delivery orders came in this week, but it is read-only: purchase requests and POs are raised and approved by people, within your approval limits. AI invoice auto-capture, which pre-fills vendor invoices for matching, is in early access.' }
 ]
