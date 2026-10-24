@@ -1,8 +1,10 @@
 // sitemap.xml: every indexable page plus published guides (read from content/guides at build).
 import { parse } from 'yaml'
 import { apps } from '../../data/apps'
+import { solutionPages } from '../../data/solutions'
 
-const STATIC = ['/', '/products', '/estimating/fire-protection', '/estimating/acmv', '/estimating/elv', '/compare/costx-cubicost-alternative', '/solutions/construction-cost-control-software', '/solutions/progress-claim-software', '/solutions/construction-hr-software', '/solutions/construction-payroll-software', '/solutions/foreign-worker-attendance-app', '/platform', '/solutions', '/industries', '/integrations', '/pricing', '/resources', '/faq', '/about', '/contact', '/privacy']
+const SOLUTIONS = solutionPages.filter((s) => s.slug !== 'estimating').map((s) => `/solutions/${s.slug}`)
+const STATIC = ['/', '/products', '/estimating/fire-protection', '/estimating/acmv', '/estimating/elv', '/compare/costx-cubicost-alternative', ...SOLUTIONS, '/platform', '/solutions', '/industries', '/integrations', '/pricing', '/resources', '/faq', '/about', '/contact', '/privacy']
 
 // <lastmod> for a fixed page: the last change to its page file (exact, folder index, or the
 // dynamic [param] file that renders it), else the build date.

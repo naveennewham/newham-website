@@ -1,6 +1,6 @@
 <template>
   <footer class="bg-brand-950 text-ink-300">
-    <div class="container-site grid gap-10 py-16 md:grid-cols-[1.4fr_repeat(3,1fr)]">
+    <div class="container-site grid gap-10 py-16 md:grid-cols-2 lg:grid-cols-[1.4fr_repeat(4,1fr)]">
       <div class="max-w-xs">
         <img src="/ccorex-logo-sm.png" alt="CCorex" class="h-7 w-auto brightness-0 invert" width="112" height="28" loading="lazy" />
         <p class="mt-4 text-sm leading-relaxed">The AI-powered platform for construction businesses — estimating, project delivery and HR &amp; payroll on one login.</p>
@@ -24,12 +24,13 @@
           <li><NuxtLink to="/estimating/fire-protection" class="hover:text-white">Fire protection estimating</NuxtLink></li>
           <li><NuxtLink to="/estimating/acmv" class="hover:text-white">ACMV estimating</NuxtLink></li>
           <li><NuxtLink to="/estimating/elv" class="hover:text-white">ELV estimating</NuxtLink></li>
-          <li><NuxtLink to="/solutions/construction-cost-control-software" class="hover:text-white">Construction cost control software</NuxtLink></li>
-          <li><NuxtLink to="/solutions/progress-claim-software" class="hover:text-white">Progress claim software</NuxtLink></li>
-          <li><NuxtLink to="/solutions/construction-hr-software" class="hover:text-white">HR software for construction</NuxtLink></li>
-          <li><NuxtLink to="/solutions/construction-payroll-software" class="hover:text-white">Construction payroll software</NuxtLink></li>
-          <li><NuxtLink to="/solutions/foreign-worker-attendance-app" class="hover:text-white">Foreign worker attendance app</NuxtLink></li>
           <li><NuxtLink to="/compare/costx-cubicost-alternative" class="hover:text-white">CostX &amp; Cubicost alternative</NuxtLink></li>
+        </ul>
+      </div>
+      <div>
+        <h2 class="text-sm font-semibold text-white">Solutions in Singapore</h2>
+        <ul class="mt-4 space-y-2.5 text-sm">
+          <li v-for="s in footerSolutions" :key="s.slug"><NuxtLink :to="solutionPath(s)" class="hover:text-white">{{ s.name }}</NuxtLink></li>
         </ul>
       </div>
       <div>
@@ -59,6 +60,9 @@
 
 <script setup lang="ts">
 import { apps } from '~/data/apps'
+import { solutionPages, solutionPath } from '~/data/solutions'
+// MEP estimating is already linked under Products (DeepCost).
+const footerSolutions = solutionPages.filter((s) => s.slug !== 'estimating')
 const config = useRuntimeConfig()
 const year = new Date().getFullYear()
 const { openSettings } = useConsent()

@@ -53,17 +53,60 @@
       </div>
     </section>
 
-    <SolutionEarlyAccess v-if="earlyAccess?.length" :items="earlyAccess" />
+    <!-- Singapore checklist: what buyers look for, and where the app stands on each -->
+    <section v-if="checklist?.length" class="section bg-ink-50">
+      <div class="container-site">
+        <UiSectionHeader eyebrow="Singapore checklist" :title="checklistTitle" :lead="checklistLead" />
+        <div class="relative mt-10 overflow-x-auto rounded-2xl border border-ink-100 bg-white shadow-card">
+          <table class="w-full min-w-[560px] text-left text-sm">
+            <caption class="sr-only">{{ checklistTitle }}</caption>
+            <thead class="bg-ink-50 text-xs uppercase tracking-wider text-ink-500">
+              <tr><th scope="col" class="w-1/3 px-5 py-3 font-semibold">What to look for</th><th scope="col" class="px-5 py-3 font-semibold">In {{ appName }}</th></tr>
+            </thead>
+            <tbody class="divide-y divide-ink-100">
+              <tr v-for="c in checklist" :key="c.need" class="align-top">
+                <th scope="row" class="px-5 py-4 font-semibold text-ink-900">{{ c.need }}</th>
+                <td class="px-5 py-4 leading-relaxed text-ink-700">
+                  <a v-if="c.early" href="#early-access" class="mr-2 inline-block rounded-full bg-cyan-50 px-2 py-0.5 text-[11px] font-semibold uppercase tracking-wider text-cyan-700 ring-1 ring-cyan-200">Early access</a>{{ c.how }}
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <SolutionEarlyAccess v-if="earlyAccess?.length" :items="earlyAccess" :title="earlyAccessTitle" />
+
+    <!-- Bought on its own -->
+    <section class="section-tight">
+      <div class="container-site">
+        <div class="flex flex-col gap-6 rounded-2xl border border-brand-100 bg-brand-50 p-6 sm:p-8 lg:flex-row lg:items-center lg:justify-between">
+          <div class="max-w-2xl">
+            <p class="eyebrow">Use {{ appName }} on its own</p>
+            <p class="mt-3 text-ink-700">{{ standaloneText }}</p>
+          </div>
+          <div class="flex shrink-0 flex-wrap gap-3">
+            <NuxtLink to="/pricing" class="btn-primary">See plans and pricing</NuxtLink>
+            <NuxtLink :to="`/products/${app}`" class="btn-secondary">See {{ appName }}</NuxtLink>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- Other solutions + guides -->
     <section class="section-tight bg-ink-50">
       <div class="container-site grid gap-8 lg:grid-cols-2">
         <div>
-          <p class="eyebrow">Also for Singapore contractors</p>
+          <p class="eyebrow">{{ group === 'business' ? 'Also for Singapore businesses' : 'Also for Singapore contractors' }}</p>
           <ul class="mt-4 grid gap-3">
             <li v-for="s in otherSolutions" :key="s.to">
               <NuxtLink :to="s.to" class="card flex items-center gap-3 hover:border-brand-200"><i :class="s.icon" class="text-brand-600" aria-hidden="true"></i><span class="font-semibold">{{ s.name }}</span></NuxtLink>
             </li>
+          </ul>
+          <p class="mt-5 text-sm font-semibold text-ink-900">{{ group === 'business' ? 'Run a construction business?' : 'Not in construction?' }}</p>
+          <ul class="mt-3 flex flex-wrap gap-2">
+            <li v-for="s in crossSolutions" :key="s.to"><NuxtLink :to="s.to" class="chip hover:border-brand-300 hover:text-brand-800">{{ s.name }}</NuxtLink></li>
           </ul>
         </div>
         <div>
@@ -81,7 +124,7 @@
     <section class="section-tight">
       <div class="container-site grid gap-10 py-6 lg:grid-cols-[1fr_1.6fr]">
         <UiSectionHeader eyebrow="FAQ" title="Questions we are asked" />
-        <UiFaqList :items="faqs" />
+        <UiFaqList :items="faqs" :schema="false" />
       </div>
     </section>
 
@@ -92,6 +135,8 @@
 <script setup lang="ts">
 // Shared layout for search-led solution pages (/solutions/<slug>). Content and SEO come from the page.
 interface Card { icon: string; title: string; text: string }
+import { solutionPages, solutionPath } from '~/data/solutions'
+
 const props = defineProps<{
   slug: string; app: 'deeptrack' | 'deephr'; appName: string; eyebrow: string
   seoTitle: string; seoDescription: string; h1: string; lead: string; heroPoints: string[]
@@ -102,17 +147,21 @@ const props = defineProps<{
   faqs: { q: string; a: string }[]
   ctaTitle: string; ctaLead: string
   earlyAccess?: string[]
+  earlyAccessTitle?: string
+  // Optional "what to look for" table; early items are shown with an early-access badge.
+  checklistTitle?: string; checklistLead?: string
+  checklist?: { need: string; how: string; early?: boolean }[]
+  subCategory?: string
 }>()
 
-const all = [
-  { slug: 'construction-cost-control-software', name: 'Construction cost control software', icon: 'fa-solid fa-chart-line', to: '/solutions/construction-cost-control-software' },
-  { slug: 'progress-claim-software', name: 'Progress claim software', icon: 'fa-solid fa-file-invoice-dollar', to: '/solutions/progress-claim-software' },
-  { slug: 'construction-payroll-software', name: 'Construction payroll software', icon: 'fa-solid fa-money-check-dollar', to: '/solutions/construction-payroll-software' },
-  { slug: 'construction-hr-software', name: 'HR software for construction', icon: 'fa-solid fa-people-group', to: '/solutions/construction-hr-software' },
-  { slug: 'foreign-worker-attendance-app', name: 'Foreign worker attendance app', icon: 'fa-solid fa-user-check', to: '/solutions/foreign-worker-attendance-app' },
-  { slug: 'estimating', name: 'MEP estimating and BOQ software', icon: 'fa-solid fa-calculator', to: '/products/deepcost' }
-]
-const otherSolutions = all.filter((s) => s.slug !== props.slug)
+// 'construction' pages target contractor searches; 'business' pages target broad Singapore searches.
+const all = solutionPages.map((s) => ({ ...s, to: solutionPath(s) }))
+const group = all.find((s) => s.slug === props.slug)?.group ?? 'construction'
+const otherSolutions = all.filter((s) => s.slug !== props.slug && s.group === group)
+const crossSolutions = all.filter((s) => s.group !== group)
+const standaloneText = props.app === 'deephr'
+  ? 'DeepHR is sold on its own in Starter, Growth and Enterprise tiers, priced per employee, with a tailored quote. You do not need any other CCorex app; DeepTrack or DeepCost can be added later on the same sign-in.'
+  : 'DeepTrack is sold on its own in Starter, Growth and Enterprise tiers, priced per user, with a tailored quote. You do not need any other CCorex app; DeepHR or DeepCost can be added later on the same sign-in.'
 
 const config = useRuntimeConfig()
 const pageUrl = `${config.public.siteUrl}/solutions/${props.slug}`
@@ -124,7 +173,7 @@ useHead({
       type: 'application/ld+json',
       innerHTML: JSON.stringify({
         '@context': 'https://schema.org', '@type': 'SoftwareApplication', name: props.appName,
-        applicationCategory: 'BusinessApplication', operatingSystem: 'Web', url: pageUrl, description: props.seoDescription,
+        applicationCategory: 'BusinessApplication', ...(props.subCategory ? { applicationSubCategory: props.subCategory } : {}), operatingSystem: 'Web', url: pageUrl, description: props.seoDescription,
         areaServed: { '@type': 'Country', name: 'Singapore' },
         isPartOf: { '@type': 'SoftwareApplication', name: 'CCorex', url: config.public.siteUrl },
         publisher: { '@type': 'Organization', name: 'Newham Solutions Pte. Ltd.' }

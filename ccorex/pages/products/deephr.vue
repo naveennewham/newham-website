@@ -360,7 +360,7 @@
     <!-- Singapore solutions -->
     <section class="section-tight">
       <div class="container-site">
-        <p class="eyebrow">For Singapore contractors</p>
+        <p class="eyebrow">DeepHR in Singapore</p>
         <ul class="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
           <li v-for="t in solutionLinks" :key="t.to">
             <NuxtLink :to="t.to" class="card flex h-full items-center gap-3 hover:border-brand-200"><i :class="t.icon" class="text-brand-600" aria-hidden="true"></i><span class="font-semibold">{{ t.name }}</span></NuxtLink>
@@ -380,12 +380,12 @@
 <script setup lang="ts">
 const config = useRuntimeConfig()
 const pageUrl = config.public.siteUrl + '/products/deephr'
-const description = 'DeepHR is HR and payroll software for Singapore: face and GPS attendance on the phone, leave, claims, approvals, and CPF, SDL and SHG payroll.'
+const description = 'DeepHR is HR and payroll software for Singapore SMEs: face and GPS attendance on staff phones, leave, claims, approvals, and CPF, SDL and SHG payroll.'
 
 useSeoMeta({
-  title: 'DeepHR — HR, payroll & site attendance software, Singapore',
+  title: 'HR & Payroll Software Singapore — DeepHR',
   description,
-  ogTitle: 'DeepHR — HR, attendance & payroll (Singapore CPF)',
+  ogTitle: 'DeepHR — HR, attendance & payroll software, Singapore (CPF, SDL, SHG)',
   ogDescription: description
 })
 useHead({
@@ -401,6 +401,7 @@ useHead({
       operatingSystem: 'Web',
       url: pageUrl,
       description,
+      areaServed: { '@type': 'Country', name: 'Singapore' },
       isPartOf: { '@type': 'SoftwareApplication', name: 'CCorex', url: config.public.siteUrl },
       publisher: { '@type': 'Organization', name: 'Newham Solutions Pte. Ltd.' }
     })
@@ -593,6 +594,10 @@ const plans = [
 ]
 
 const solutionLinks = [
+  { to: '/solutions/hr-software-singapore', name: 'HR software for Singapore SMEs', icon: 'fa-solid fa-people-group' },
+  { to: '/solutions/payroll-software-singapore', name: 'Payroll software (CPF, SDL, SHG)', icon: 'fa-solid fa-money-check-dollar' },
+  { to: '/solutions/attendance-app-singapore', name: 'Attendance app with face and GPS', icon: 'fa-solid fa-location-crosshairs' },
+  { to: '/solutions/leave-management-system-singapore', name: 'Leave management system', icon: 'fa-solid fa-calendar-days' },
   { to: '/solutions/construction-hr-software', name: 'HR software for construction', icon: 'fa-solid fa-people-group' },
   { to: '/solutions/construction-payroll-software', name: 'Construction payroll software', icon: 'fa-solid fa-money-check-dollar' },
   { to: '/solutions/foreign-worker-attendance-app', name: 'Foreign worker attendance app', icon: 'fa-solid fa-user-check' },
@@ -600,6 +605,7 @@ const solutionLinks = [
 ]
 const faqs = [
   { q: 'Can we buy DeepHR on its own?', a: 'Yes. DeepHR is sold on its own in Starter, Growth and Enterprise tiers, priced per employee. You do not need any other CCorex app; DeepCost or DeepTrack can be added later on the same sign-in.' },
+  { q: 'Is DeepHR only for construction companies?', a: 'No. DeepHR is HR and payroll software for any Singapore company. It was built for businesses with staff on site or on the move as well as in the office, which is why attendance runs on each employee’s own phone.' },
   { q: 'Do we need to buy attendance hardware?', a: 'No. Employees check in and out by face and GPS on their own phone. There is no kiosk or shared device. The face must match the enrolled samples and the phone must be inside the site radius; the record is marked on time or late against the site’s start time.' },
   { q: 'What if there is no signal on site?', a: 'The app works offline. The phone checks the face and site radius locally and queues the punch; when it is back online, each punch is re-verified. Punches over 72 hours old are refused, and over 24 hours are accepted but flagged.' },
   { q: 'Which payroll rules does DeepHR follow?', a: 'Singapore. DeepHR covers CPF (including graduated rates for new PRs), SDL and self-help group funds (CDAC, SINDA, MBMF, ECF).' },

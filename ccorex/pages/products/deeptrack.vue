@@ -262,7 +262,7 @@
     <!-- Singapore solutions -->
     <section class="section-tight">
       <div class="container-site">
-        <p class="eyebrow">For Singapore contractors</p>
+        <p class="eyebrow">DeepTrack in Singapore</p>
         <ul class="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
           <li v-for="t in solutionLinks" :key="t.to">
             <NuxtLink :to="t.to" class="card flex h-full items-center gap-3 hover:border-brand-200"><i :class="t.icon" class="text-brand-600" aria-hidden="true"></i><span class="font-semibold">{{ t.name }}</span></NuxtLink>
@@ -472,6 +472,8 @@ const plans = [
 ]
 
 const solutionLinks = [
+  { to: '/solutions/project-cost-management-software', name: 'Project cost management software', icon: 'fa-solid fa-chart-line' },
+  { to: '/solutions/procurement-software-singapore', name: 'Procurement and purchase order software', icon: 'fa-solid fa-cart-shopping' },
   { to: '/solutions/construction-cost-control-software', name: 'Construction cost control software', icon: 'fa-solid fa-chart-line' },
   { to: '/solutions/progress-claim-software', name: 'Progress claim software', icon: 'fa-solid fa-file-invoice-dollar' },
   { to: '/resources/sop-act-payment-claims-singapore', name: 'Guide: SOP Act payment claims', icon: 'fa-solid fa-scale-balanced' },
