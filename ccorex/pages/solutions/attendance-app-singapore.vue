@@ -72,6 +72,6 @@ const faqs = [
   { q: 'Is the attendance app only for construction sites?', a: 'No. It works for any Singapore business with staff who start work away from a single office: field service, multiple outlets, client sites or shift teams.' },
   { q: 'Does attendance flow into payroll?', a: 'Yes. HR approves each session, approved time is split into normal and OT hours, and the DeepHR pay run pulls approved attendance, paid leave and holidays for the period.' },
   { q: 'Can we use the attendance app without the rest of CCorex?', a: 'Yes. Attendance is part of DeepHR, which is sold on its own in Starter, Growth and Enterprise tiers, priced per employee. Face and GPS attendance is included from Starter.' },
-  { q: 'Is this an AI attendance system?', a: 'Check-in uses AI face recognition on the employee’s own phone, matched against the face samples they registered, plus a GPS check against the site radius. ARIVU, the CCorex AI assistant, then answers attendance questions such as who was late or absent over a date range. HR still approves every session. AI alerts for unusual attendance patterns are in early access.' }
+  { q: 'Is this an AI attendance system?', a: 'Check-in uses AI face recognition on the employee’s own phone, matched against the face samples they registered, plus a GPS check against the site radius. ARIVU, the CCorex AI assistant, then answers questions about logged hours, per day or per employee, over any date range. HR still approves every session. AI alerts for unusual attendance patterns are in early access.' }
 ]
 </script>
