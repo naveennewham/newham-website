@@ -1,6 +1,7 @@
 // ARIVU AI in DeepHR and DeepTrack: what it reads and can answer today, and the AI features in early access.
 // Used by the product pages, the solution template and /products/arivu-ai, so the claims stay the same everywhere.
-// Only list what ARIVU's tools read today. ARIVU is read-only and has no payroll tool.
+// Only list what ARIVU's tools read today. ARIVU is read-only and has no payroll tool. Leave is balances only (not who is
+// off on which dates); attendance is submitted work-log hours per day and per employee (not clock-in times or sites).
 export type ArivuApp = 'deephr' | 'deeptrack'
 
 export const arivuApps: Record<ArivuApp, { reads: string[]; questions: string[] }> = {
@@ -8,11 +9,11 @@ export const arivuApps: Record<ArivuApp, { reads: string[]; questions: string[] 
     reads: ['Employees', 'Leave', 'Attendance', 'Claims'],
     // The first three also appear on /products/arivu-ai.
     questions: [
-      'Who is on leave this week?',
-      'Who was late at the Tuas site yesterday?',
+      'How much annual leave does each person have left this year?',
+      'How many hours did each person log last week?',
       'Which expense claims are pending?',
-      'Show each employee’s leave balance for this year.',
-      'Who was absent more than twice last month?',
+      'Show leave balances by leave type for the whole company.',
+      'Chart logged hours by day for this month.',
       'Export this month’s approved claims to Excel.'
     ]
   },
@@ -49,27 +50,27 @@ export const arivuSolutions: Record<string, { title: string; lead: string; quest
   'hr-software-singapore': {
     title: 'AI built in: ask ARIVU about your people',
     lead: 'ARIVU, the AI assistant in every CCorex app, works inside DeepHR. HR and managers ask in plain language about employees, leave, attendance and claims, and get an answer, a chart or an Excel or PDF export.',
-    questions: ['Who is on leave this week?', 'Who was late this morning?', 'Which expense claims are pending?', 'Show each employee’s leave balance for this year.'],
+    questions: ['How much annual leave does each person have left this year?', 'How many hours did each person log last week?', 'Which expense claims are pending?', 'Show leave balances by leave type for the whole company.'],
     earlyAccess: ['ai-receipt-scan', 'ai-attendance-alerts']
   },
   'payroll-software-singapore': {
     title: 'AI to check the records behind the pay run',
     lead: 'Before payroll, HR can ask ARIVU, the AI assistant in DeepHR, about the attendance, leave and claims that feed the pay run, and export the answer to Excel or PDF.',
-    questions: ['Which expense claims are still pending approval?', 'Who was absent more than twice last month?', 'Show each employee’s leave taken this year.', 'Export this month’s approved claims to Excel.'],
+    questions: ['Which expense claims are still pending approval?', 'How many hours did each person log this month?', 'Show each employee’s leave balance for this year.', 'Export this month’s approved claims to Excel.'],
     note: 'ARIVU does not run, change or approve payroll. The pay run is prepared and approved by your HR team in DeepHR.',
     earlyAccess: ['ai-receipt-scan']
   },
   'attendance-app-singapore': {
     title: 'AI face check-in, and answers about attendance',
-    lead: 'Check-in uses face recognition on the employee’s own phone, with a GPS check against the site radius. Then HR and managers can ask ARIVU, the AI assistant in DeepHR, about attendance over any date range.',
-    questions: ['Who was late this morning?', 'Who was absent at the Changi site last week?', 'Summarise Ravi’s attendance for last month.', 'Chart late check-ins by day for this month.'],
+    lead: 'Check-in uses face recognition on the employee’s own phone, with a GPS check against the site radius. Then HR and managers can ask ARIVU, the AI assistant in DeepHR, about the hours logged over any date range.',
+    questions: ['How many hours did each person log last week?', 'Summarise Ravi’s logged hours for last month.', 'Chart logged hours by day for this month.', 'Export last month’s hours per employee to Excel.'],
     note: 'HR still approves every attendance session; ARIVU only reads the records.',
     earlyAccess: ['ai-attendance-alerts']
   },
   'leave-management-system-singapore': {
-    title: 'AI built in: ask ARIVU who is on leave',
-    lead: 'ARIVU, the AI assistant in DeepHR, reads leave records so managers can plan cover without opening the calendar. Answers come back as text, a chart, or an Excel or PDF export.',
-    questions: ['Who is on leave next week?', 'Show each employee’s leave balance for this year.', 'How many days of annual leave has each person on my team taken this year?', 'Export this year’s leave summary to Excel.'],
+    title: 'AI built in: ask ARIVU about leave balances',
+    lead: 'ARIVU, the AI assistant in DeepHR, reads leave balances so HR and managers can see what each person has left without running a report. Answers come back as text, a chart, or an Excel or PDF export.',
+    questions: ['How much annual leave does each person have left this year?', 'Show leave balances by leave type for the whole company.', 'What is Ravi’s leave balance this year?', 'Export this year’s leave balances to Excel.'],
     note: 'ARIVU never applies for, approves or changes leave. Requests and approvals stay with people in DeepHR.'
   },
   'project-cost-management-software': {
@@ -81,7 +82,7 @@ export const arivuSolutions: Record<string, { title: string; lead: string; quest
   'procurement-software-singapore': {
     title: 'AI built in: ask ARIVU where each purchase stands',
     lead: 'ARIVU, the AI assistant in DeepTrack, reads purchase requests and delivery orders so buyers and approvers can find what is waiting without running a report.',
-    questions: ['Which purchase requests are waiting for approval?', 'Show purchase requests by project this month.', 'Which delivery orders came in this week?', 'Export this month’s purchase requests to Excel.'],
+    questions: ['Which purchase requests are waiting for approval?', 'Show purchase requests by project this month.', 'Which delivery orders are still waiting to be verified?', 'Export this month’s purchase requests to Excel.'],
     note: 'ARIVU never raises, approves or changes a purchase request or PO. Approvals follow your configured limits.',
     earlyAccess: ['ai-invoice-capture']
   }

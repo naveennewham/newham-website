@@ -56,7 +56,7 @@
           <ul class="mt-6 space-y-2.5 text-sm text-ink-700">
             <li class="flex gap-2.5"><i class="fa-solid fa-check mt-1 text-brand-600" aria-hidden="true"></i>“Summarise the status of my active projects”</li>
             <li class="flex gap-2.5"><i class="fa-solid fa-check mt-1 text-brand-600" aria-hidden="true"></i>“Show budget vs actuals for this quarter as a chart”</li>
-            <li class="flex gap-2.5"><i class="fa-solid fa-check mt-1 text-brand-600" aria-hidden="true"></i>“Who is on leave this week?”</li>
+            <li class="flex gap-2.5"><i class="fa-solid fa-check mt-1 text-brand-600" aria-hidden="true"></i>“How much annual leave does each person have left?”</li>
           </ul>
         </div>
         <UiBrowserFrame src="/images/product/arivu-deepcost.webp" url="deepcost.ccorex.com / order" alt="ARIVU assistant panel open over a DeepCost order screen, asking “How can I help you today?” with suggested questions about active projects, budget versus actuals as a chart and who is on leave, a message box with attachments and a Skills selector" />
