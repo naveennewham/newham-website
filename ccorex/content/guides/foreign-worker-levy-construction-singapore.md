@@ -1,15 +1,19 @@
 ---
-title: "Foreign Worker Levy in Construction: A Singapore Guide"
-description: "How the foreign worker levy, Work Permit quota, R1 higher-skilled routes and permit renewals work for Singapore construction employers, and what to track."
+title: "Construction Foreign Worker Levy in Singapore: R1 Rates, Levy Bond and Quota"
+description: "Construction levy rates for R1 and R2 workers, the S$600 levy bond, the 1:5 Work Permit quota, R1 upgrade routes and permit renewals for Singapore employers."
 slug: foreign-worker-levy-construction-singapore
 date: 2026-10-18
 author: "CCorex team"
 author_role: "HR and payroll specialists"
-keywords: [foreign worker levy construction singapore, construction work permit quota, higher-skilled r1 construction worker, work permit expiry, man-year entitlement, coretrade, dependency ratio ceiling construction]
+keywords: [foreign worker levy construction singapore, construction levy, r1 worker levy, levy bond, construction work permit quota, higher-skilled r1 construction worker, work permit expiry, man-year entitlement, coretrade, dependency ratio ceiling construction]
 related: /products/deephr
 faq:
   - q: "How much is the foreign worker levy for construction in Singapore?"
     a: "As of October 2026, MOM lists monthly construction levies from S$300 to S$900 per worker for on-site work, depending on the worker's source and whether they are Higher-Skilled (R1) or Basic-Skilled (R2). Check MOM's construction sector requirements page for the current rates before you budget."
+  - q: "What is the levy bond for construction workers?"
+    a: "As of October 2026, MOM's construction sector page lists a levy bond of S$600 per Higher-Skilled (R1) or Basic-Skilled (R2) worker and S$2,000 per unskilled worker. It is separate from the security bond, which is only required for non-Malaysian workers."
+  - q: "What is the R1 worker levy in construction?"
+    a: "For on-site construction work, MOM lists a monthly levy of S$300 per Higher-Skilled (R1) worker from Malaysia, North Asian sources or the PRC, and S$500 per R1 worker from non-traditional sources, effective 1 January 2024. Basic-Skilled (R2) workers cost S$400 a month more in both groups."
   - q: "What is the construction Work Permit quota?"
     a: "MOM sets a dependency ratio ceiling for construction: you can employ 5 Work Permit holders for each local employee earning the Local Qualifying Salary. At least 10% of your construction Work Permit holders must also be Higher-Skilled (R1)."
   - q: "Does the Man-Year Entitlement (MYE) still apply to construction?"
@@ -41,7 +45,7 @@ A few points from the same page that affect your monthly bill:
 - **Workers without the required certification** are treated as unskilled and charged S$900 regardless of source.
 - **Part months** are charged at a daily rate for workers who did not work a full calendar month.
 - **Skill changes take effect on the 1st of the following month.** Upgrading a worker to R1 on the 3rd does not reduce this month's levy.
-- **Security bond.** MOM lists a S$600 levy bond for higher-skilled or basic-skilled workers and S$2,000 for unskilled workers.
+- **Levy bond.** MOM lists a S$600 levy bond for each higher-skilled or basic-skilled worker and S$2,000 for each unskilled worker. This is separate from the security bond, which is only required for non-Malaysian workers.
 
 The gap between R1 and R2 is S$400 a month per worker for both NTS and Malaysia/NAS/PRC workers on site. Across a workforce of 50, that difference adds up quickly, which is why skill tier is a cost decision, not just an HR record.
 
