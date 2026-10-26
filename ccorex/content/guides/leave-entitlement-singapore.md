@@ -89,6 +89,10 @@ A leave system only helps if it holds the facts that decide each entitlement and
 4. **Public holidays** for the year, excluded from leave days.
 5. **Unpaid leave in payroll**, so the salary is prorated for the days not paid.
 
+## Related guides
+
+- [How to calculate overtime pay in Singapore](/resources/overtime-calculation-singapore)
+
 ## How DeepHR handles leave
 
 [DeepHR](/products/deephr) is HR and payroll software for Singapore SMEs. Employees apply for leave on their own phone and track it in My Requests; the request follows your approval levels, with conditional rules such as an extra approver for requests over 2 days. Singapore leave presets (annual, medical, hospitalisation, childcare, maternity and paternity) are a starting point that HR adjusts, Singapore public holidays are excluded from leave days, and a team calendar shows who is away. Approved paid leave and holidays flow into the pay run, and unpaid leave is prorated using the MOM method. See the [leave management system](/solutions/leave-management-system-singapore) page, or [book a demo](/contact) to see it with your own leave policy.

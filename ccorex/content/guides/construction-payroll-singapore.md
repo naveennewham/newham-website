@@ -136,6 +136,10 @@ Good records protect you when there is a dispute or an inspection. Keep, for eac
 
 For wider digitalisation and possible funding, see [construction digitalisation grants in Singapore](/resources/construction-digitalisation-grants-singapore).
 
+## Related guides
+
+- [How to calculate overtime pay in Singapore](/resources/overtime-calculation-singapore)
+
 ## How CCorex helps
 
 [DeepHR](/products/deephr) captures face and GPS attendance on each worker's own phone, with no kiosk hardware, and queues punches when there is no signal. HR approves each session, and approved attendance and leave flow straight into payroll. It runs Singapore payroll with CPF, SDL and SHG funds, alongside leave, claims, timesheets and multi-level approvals. IR8A / AIS year-end files are in early access: [request early access](/contact?interest=ir8a-ais). [Contact us](/contact) to see it with your own site setup.

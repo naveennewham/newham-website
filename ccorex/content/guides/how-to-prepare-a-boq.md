@@ -171,6 +171,10 @@ Many contractors still prepare BOQs in spreadsheets. That works until rates are 
 
 For a broader comparison, see our guide on [choosing MEP estimating software](/resources/choosing-mep-estimating-software).
 
+## Related guides
+
+- [Tender estimating software for Singapore contractors](/solutions/tender-estimating-software)
+
 ## How CCorex helps
 
 [DeepCost](/products/deepcost) structures each tender as an area schedule by building, floor and room, with a material take-off per area priced from your component library, so every line is quantity × (material + installation price) with separate markups. Prices carry a dated history, validation rules per trade flag mismatches before submission, and approval checklists sit at each stage. When the client issues a BOQ PDF, FOT AI detects the quantity and amount columns so you can fill your prices on their document, and you can export to Excel or PDF. [Contact us](/contact) to see it on one of your own tenders. Short of estimators for a tender? [Newham's BOQ services](https://newhamtech.com/boq-estimation-services) prepare the take-off and priced BOQ for you.

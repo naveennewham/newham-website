@@ -137,6 +137,7 @@ Review the register monthly. Retention due for release should appear on your cas
 - [Progress claim template and format](/resources/progress-claim-template-singapore)
 - [SOP Act payment claims and payment responses](/resources/sop-act-payment-claims-singapore)
 - [Budget vs actual in construction](/resources/budget-vs-actual-construction)
+- [Variation order template for Singapore contractors](/resources/variation-order-template-singapore), with an Excel VO form and register
 
 This guide is general information, not legal advice. Check the current Act and your contract, and take legal advice on disputes.
 

@@ -142,6 +142,7 @@ Two cost views are worth separating. **Levy per worker** catches billing errors 
 - [Budget vs actual in construction](/resources/budget-vs-actual-construction)
 - [Construction digitalisation grants in Singapore](/resources/construction-digitalisation-grants-singapore)
 - [Progress claims in Singapore](/resources/progress-claims-singapore)
+- [How to calculate overtime pay in Singapore](/resources/overtime-calculation-singapore)
 
 ## How CCorex helps
 

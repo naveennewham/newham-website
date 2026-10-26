@@ -180,6 +180,11 @@ See the [fire protection estimating guide](/resources/fire-protection-estimating
 7. **Breaking the client's format.** Renumbering or adding items makes your tender hard to compare.
 8. **No record of approval.** If nobody can say who approved the margin, nobody owns it.
 
+## Related guides
+
+- [Tender estimating software for Singapore contractors](/solutions/tender-estimating-software)
+- [Fire protection estimating: sprinkler, fire alarm and suppression](/estimating/fire-protection)
+
 ## How CCorex helps
 
 [DeepCost](/products/deepcost) builds much of this checklist into the tender workflow. Each tender sits in a pipeline with an AI tender summary that your estimators review, an area schedule by building, floor and room with hazard class, and a material take-off priced from your component library with separate material and installation prices, markups, dated price history and assemblies. Validation rules per trade and approvals at each stage stop incomplete estimates moving forward, and FOT AI finds the quantity and amount columns on the client's BOQ PDF so you can fill prices on their document before exporting to Excel or PDF. Fire Protection, ACMV, A&A and ELV come seeded. [Contact us](/contact) to run it on one of your current tenders.

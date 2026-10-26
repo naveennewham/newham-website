@@ -151,6 +151,10 @@ If you tender in both countries, check that the software does not lock you into 
 
 If you are new to structured BOQs, start with [how to prepare a BOQ](/resources/how-to-prepare-a-boq) and [quantity take-off methods](/resources/quantity-takeoff-methods) before you compare tools.
 
+## Related guides
+
+- [Tender estimating software for Singapore contractors](/solutions/tender-estimating-software)
+
 ## How CCorex helps
 
 [DeepCost](/products/deepcost) is built for MEP and fire-protection estimators. It keeps your tenders in one pipeline, produces an AI tender summary that your estimators review and edit, and builds an area schedule and material take-off priced from your own component library. Validation rules per trade and approvals per stage catch errors before submission, FOT AI reads the client's BOQ PDF, and you export to Excel or PDF. [Talk to us](/contact) to see it on one of your own tenders.
