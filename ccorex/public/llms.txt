@@ -14,7 +14,8 @@ DeepCost, DeepTrack and DeepHR are each sold on their own (Starter, Growth and E
 - [PDF Editor](https://ccorex.com/products/pdf-editor): mark up, sign, split and merge PDFs.
 
 ## Solutions for Singapore contractors
-- [MEP estimating and BOQ software](https://ccorex.com/products/deepcost) (DeepCost), with trade pages for [fire protection](https://ccorex.com/estimating/fire-protection), [ACMV](https://ccorex.com/estimating/acmv) and [ELV](https://ccorex.com/estimating/elv)
+- [MEP estimating and BOQ software](https://ccorex.com/products/deepcost) (DeepCost), with trade pages for [fire protection](https://ccorex.com/estimating/fire-protection) (sprinkler, fire alarm, gas suppression, firestopping and fireproofing), [ACMV](https://ccorex.com/estimating/acmv) and [ELV](https://ccorex.com/estimating/elv)
+- [Tender estimating software](https://ccorex.com/solutions/tender-estimating-software) (DeepCost): AI tender summary, take-off by area, one price library, approvals at each stage and FOT AI on the client's BOQ PDF.
 - [Construction cost control software](https://ccorex.com/solutions/construction-cost-control-software) (DeepTrack)
 - [Progress claim software](https://ccorex.com/solutions/progress-claim-software) (DeepTrack)
 - [HR software for construction](https://ccorex.com/solutions/construction-hr-software) (DeepHR)
@@ -33,6 +34,11 @@ DeepHR is also sold on its own to Singapore SMEs in any sector, especially teams
 ## Singapore HR guides
 - [Leave entitlement in Singapore (Employment Act)](https://ccorex.com/resources/leave-entitlement-singapore)
 - [How to calculate CPF contributions in Singapore](https://ccorex.com/resources/how-to-calculate-cpf-contributions)
+- [How to calculate overtime pay in Singapore (MOM rules)](https://ccorex.com/resources/overtime-calculation-singapore)
+
+## Singapore contractor guides
+- [Variation order template for Singapore contractors](https://ccorex.com/resources/variation-order-template-singapore), with an Excel VO form and register
+- [Progress claim template for Singapore](https://ccorex.com/resources/progress-claim-template-singapore)
 
 ## Key pages
 - [Platform](https://ccorex.com/platform): one sign-in, users and roles managed once.

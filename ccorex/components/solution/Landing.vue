@@ -142,7 +142,7 @@ import { solutionPages, solutionPath } from '~/data/solutions'
 import { arivuSolutions } from '~/data/arivu'
 
 const props = defineProps<{
-  slug: string; app: 'deeptrack' | 'deephr'; appName: string; eyebrow: string
+  slug: string; app: 'deeptrack' | 'deephr' | 'deepcost'; appName: string; eyebrow: string
   seoTitle: string; seoDescription: string; h1: string; lead: string; heroPoints: string[]
   problemTitle: string; problems: Card[]
   flowTitle: string; flow: { title: string; text: string; icon: string }[]
@@ -164,9 +164,11 @@ const group = all.find((s) => s.slug === props.slug)?.group ?? 'construction'
 const otherSolutions = all.filter((s) => s.slug !== props.slug && s.group === group)
 const crossSolutions = all.filter((s) => s.group !== group)
 const ai = arivuSolutions[props.slug]
-const standaloneText = props.app === 'deephr'
-  ? 'DeepHR is sold on its own in Starter, Growth and Enterprise tiers, priced per employee, with a tailored quote. You do not need any other CCorex app; DeepTrack or DeepCost can be added later on the same sign-in.'
-  : 'DeepTrack is sold on its own in Starter, Growth and Enterprise tiers, priced per user, with a tailored quote. You do not need any other CCorex app; DeepHR or DeepCost can be added later on the same sign-in.'
+const standaloneText = {
+  deephr: 'DeepHR is sold on its own in Starter, Growth and Enterprise tiers, priced per employee, with a tailored quote. You do not need any other CCorex app; DeepTrack or DeepCost can be added later on the same sign-in.',
+  deeptrack: 'DeepTrack is sold on its own in Starter, Growth and Enterprise tiers, priced per user, with a tailored quote. You do not need any other CCorex app; DeepHR or DeepCost can be added later on the same sign-in.',
+  deepcost: 'DeepCost is sold on its own in Starter, Growth and Enterprise tiers, priced per user, with a tailored quote. You do not need any other CCorex app; DeepTrack or DeepHR can be added later on the same sign-in.'
+}[props.app]
 
 const config = useRuntimeConfig()
 const pageUrl = `${config.public.siteUrl}/solutions/${props.slug}`

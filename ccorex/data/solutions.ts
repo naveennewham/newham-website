@@ -15,6 +15,7 @@ export const solutionPages: SolutionPage[] = [
   { slug: 'construction-payroll-software', name: 'Construction payroll software', icon: 'fa-solid fa-money-check-dollar', app: 'deephr', group: 'construction' },
   { slug: 'construction-hr-software', name: 'HR software for construction', icon: 'fa-solid fa-people-group', app: 'deephr', group: 'construction' },
   { slug: 'foreign-worker-attendance-app', name: 'Foreign worker attendance app', icon: 'fa-solid fa-user-check', app: 'deephr', group: 'construction' },
+  { slug: 'tender-estimating-software', name: 'Tender estimating software', icon: 'fa-solid fa-file-signature', app: 'deepcost', group: 'construction' },
   { slug: 'estimating', name: 'MEP estimating and BOQ software', icon: 'fa-solid fa-calculator', app: 'deepcost', group: 'construction' }
 ]
 
