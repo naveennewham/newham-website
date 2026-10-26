@@ -132,6 +132,10 @@ Our [budget vs actual guide](/resources/budget-vs-actual-construction) explains 
 6. **Missing deadlines.** Late claims or late responses can affect your position. Track every date.
 7. **Claims disconnected from cost.** Claiming without comparing to cost hides losing projects.
 
+## Related guides
+
+- [Variation order template for Singapore contractors](/resources/variation-order-template-singapore), with an Excel VO form and register
+
 ## How CCorex helps
 
 [DeepTrack](/products/deeptrack) holds each project's contract value, retention and payment terms, and produces client progress claims with retention, 9% GST and a PDF certificate. The same project tracks budget against actual by workhead, WBS and cost centre, so you can compare what you have claimed with what you have spent. Purchases run from purchase request against approved budget through PO, delivery, invoice matching and payment, and link to Zoho Books. [Contact us](/contact) to walk through it on one of your live projects.

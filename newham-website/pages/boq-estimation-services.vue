@@ -5,9 +5,9 @@
       <div class="bg-grid pointer-events-none absolute inset-0 opacity-50" aria-hidden="true"></div>
       <div class="container-site relative grid items-center gap-10 pb-20 pt-16 lg:grid-cols-[1.3fr_1fr] lg:pt-20">
         <div class="max-w-3xl">
-          <p class="eyebrow-dark">Estimation &amp; tender support · Singapore</p>
-          <h1 class="h-display mt-4 text-white">MEP estimation and BOQ services in Singapore</h1>
-          <p class="lead-dark mt-6 max-w-2xl">MEP (M&amp;E) estimation and bill of quantities (BOQ) services for contractors who have more tenders than estimators: take-offs, priced BOQs, rate build-ups and tender queries. Scoped in writing, turned around to your submission date.</p>
+          <p class="eyebrow-dark">Tender estimation &amp; BOQ preparation · Singapore</p>
+          <h1 class="h-display mt-4 text-white">MEP tender estimation and BOQ services in Singapore</h1>
+          <p class="lead-dark mt-6 max-w-2xl">MEP (M&amp;E) tender estimation and bill of quantities (BOQ) preparation for contractors who have more tenders than estimators: take-offs, priced BOQs, rate build-ups, tender queries and the compiled tender submission. Scoped in writing, turned around to your submission date.</p>
           <div class="mt-8 flex flex-wrap gap-3">
             <NuxtLink to="/appointment" class="btn-accent">Send us a tender to scope <i class="fa-solid fa-arrow-right text-xs" aria-hidden="true"></i></NuxtLink>
             <a href="#scope" class="btn-ghost-dark">What we prepare</a>
@@ -88,6 +88,9 @@
           </table>
         </div>
         <p class="mt-6 text-center text-sm text-ink-600">
+          Preparing a submission yourself? Use our <NuxtLink to="/guides/mep-tender-submission-checklist" class="font-semibold text-brand-700 hover:text-brand-900">MEP tender submission checklist</NuxtLink>, or read <NuxtLink to="/guides/outsourcing-mep-estimation" class="font-semibold text-brand-700 hover:text-brand-900">when to outsource MEP estimation</NuxtLink>.
+        </p>
+        <p class="mt-2 text-center text-sm text-ink-600">
           Choosing estimating software instead?
           <a :href="`${ccorexUrl}/compare/costx-cubicost-alternative`" class="font-semibold text-brand-700 hover:text-brand-900">See how DeepCost compares with other estimating tools</a>.
         </p>
@@ -128,12 +131,14 @@
 const siteUrl = useRuntimeConfig().public.siteUrl as string
 const pageUrl = siteUrl + '/boq-estimation-services'
 const ccorexUrl = useRuntimeConfig().public.ccorexBaseUrl as string
-const description = 'MEP estimation services in Singapore: BOQ preparation, M&E take-offs, rate build-ups and tender support for fire protection, ACMV, electrical, ELV and plumbing.'
+const description = 'MEP tender estimation and BOQ preparation services in Singapore: M&E take-offs, rate build-ups, tender submissions and outsourced QS support for contractors.'
 
 const faqs = [
   { q: 'Is MEP estimation the same as M&E estimation?', a: 'Yes. MEP (mechanical, electrical and plumbing) is the international term; Singapore contractors usually say M&E. Both cover ACMV, electrical, ELV, plumbing and sanitary, and fire protection.' },
   { q: 'What do you need from us to prepare a BOQ?', a: 'The tender drawings and specifications, the client\'s BOQ format if there is one, your submission date, and your preferred rates or supplier prices if you want the BOQ priced with them.' },
   { q: 'Do you price the BOQ or only measure quantities?', a: 'Either. We can deliver measured quantities only, or a priced BOQ with rate build-ups using your rates and supplier prices. The scope is agreed in writing first.' },
+  { q: 'What does a tender estimation service include?', a: 'Reading the tender documents, measuring quantities from the drawings, compiling them into the BOQ, building up rates from your price lists and supplier quotes, and preparing the priced submission. We also draft tender queries, review addenda and compile the tender documents against a compliance checklist.' },
+  { q: 'Do you offer outsourced quantity surveying?', a: 'Yes, for M&E contractors: take-offs and BOQs at tender stage, and variation pricing, budget versus actual and progress claims once the project is won. We work for the contractor’s commercial team, in your templates and with your rates.' },
   { q: 'Which trades do you cover?', a: 'M&E building services: fire protection, ACMV, electrical, ELV, and plumbing and sanitary.' },
   { q: 'Can you help with tender queries and addenda?', a: 'Yes. We draft RFIs, track clarifications, review addenda and flag scope gaps between the drawings, specifications and BOQ.' },
   { q: 'How is the work priced?', a: 'Per deliverable for a single tender, or as a monthly retainer for a steady pipeline. Billing is monthly in SGD, with no recruitment or setup fees. Contact admin@newhamtech.com for a quote.' },
@@ -151,9 +156,9 @@ const optionRows = [
 ]
 
 useSeoMeta({
-  title: 'MEP estimation & BOQ services in Singapore',
+  title: 'MEP tender estimation & BOQ preparation services, Singapore',
   description,
-  ogTitle: 'MEP estimation & BOQ services in Singapore — Newham',
+  ogTitle: 'MEP tender estimation & BOQ preparation services, Singapore — Newham',
   ogDescription: description,
   ogUrl: pageUrl
 })
@@ -166,7 +171,7 @@ useHead({
         '@context': 'https://schema.org',
         '@type': 'Service',
         name: 'BOQ preparation and M&E estimation services',
-        alternateName: ['MEP estimation services', 'M&E estimation services', 'BOQ services', 'Bill of quantities services'],
+        alternateName: ['MEP estimation services', 'M&E estimation services', 'Tender estimation services', 'BOQ preparation services', 'BOQ services', 'Bill of quantities services', 'Outsourced quantity surveying for contractors'],
         serviceType: 'Construction cost estimation',
         description,
         url: pageUrl,

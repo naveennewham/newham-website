@@ -145,6 +145,11 @@ An unpriced BOQ is the version issued for tender. A priced BOQ is the same docum
 4. **Confusing provisional and PC sums.** They are adjusted differently and attract different attendance and profit treatment.
 5. **Losing the BOQ after award.** The priced BOQ is the basis for claims and variations. Keep the final submitted version where the project team can find it.
 
+## Related guides
+
+- [Tender estimating software for Singapore contractors](/solutions/tender-estimating-software)
+- [Variation order template for Singapore contractors](/resources/variation-order-template-singapore), with an Excel VO form and register
+
 ## How CCorex helps
 
 [DeepCost](/products/deepcost) builds your estimate as an area schedule by building, floor and room, with a material take-off priced from your component library using separate material and installation prices, markups and dated price history. When the client issues a BOQ PDF, FOT AI finds the quantity and amount columns so you can fill your prices onto their document, and validation rules per trade and approvals at each stage check the estimate before it goes out. Finished tenders export to Excel or PDF. [Contact us](/contact) to see it on one of your own BOQs. If you would rather have the BOQ prepared for you, [Newham's BOQ services in Singapore](https://newhamtech.com/boq-estimation-services) take tender drawings to a priced M&E BOQ in your format.

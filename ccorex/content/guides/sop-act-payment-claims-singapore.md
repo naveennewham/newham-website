@@ -157,6 +157,7 @@ SMC appoints an adjudicator within 7 days. The respondent may lodge an adjudicat
 - [Progress claim template and format](/resources/progress-claim-template-singapore)
 - [Retention sum in Singapore construction](/resources/retention-sum-singapore)
 - [Budget vs actual in construction](/resources/budget-vs-actual-construction)
+- [Variation order template for Singapore contractors](/resources/variation-order-template-singapore), with an Excel VO form and register
 
 This guide is general information, not legal advice. Check the current Act and your contract, and take legal advice on disputes.
 

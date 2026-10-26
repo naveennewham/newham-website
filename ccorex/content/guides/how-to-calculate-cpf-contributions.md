@@ -99,6 +99,10 @@ For bonuses, part-year employment and older employees, use the CPF Board’s cal
 
 The most common errors come from inputs, not arithmetic: the wrong age band after a birthday, a PR’s graduated rate applied after the second year, a bonus pushed over the annual ceiling, or unpaid leave not deducted before CPF is worked out. Payroll software helps because it holds the employee’s date of birth, residency status and approved attendance, and applies the current rates on every run.
 
+## Related guides
+
+- [How to calculate overtime pay in Singapore](/resources/overtime-calculation-singapore)
+
 ## How DeepHR calculates CPF
 
 [DeepHR](/products/deephr) is HR and payroll software for Singapore SMEs. Each pay run works out CPF (full, graduated for new PRs, or exempt), SDL and self-help group funds (CDAC, SINDA, MBMF, ECF), using approved attendance and leave for the period, with part months and unpaid leave prorated using the MOM method. PDF payslips go to each employee’s Documents, and monthly totals show gross, employee CPF, SHG, net, employer CPF and SDL. IR8A / AIS year-end files are in early access: [request early access](/contact?interest=ir8a-ais). See [payroll software for Singapore](/solutions/payroll-software-singapore) or [book a demo](/contact).

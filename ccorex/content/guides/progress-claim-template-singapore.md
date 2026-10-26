@@ -158,6 +158,7 @@ GST in Singapore is 9%. IRAS's guidance for the construction sector says GST on 
 - [Retention sum in Singapore construction](/resources/retention-sum-singapore)
 - [What is a BOQ?](/resources/what-is-a-boq)
 - [Budget vs actual in construction](/resources/budget-vs-actual-construction)
+- [Variation order template for Singapore contractors](/resources/variation-order-template-singapore), with an Excel VO form and register
 
 This guide is general information, not legal advice. Check the current Act and your contract, and take legal advice on disputes.
 
