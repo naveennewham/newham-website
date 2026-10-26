@@ -55,6 +55,28 @@
       </div>
     </section>
 
+    <!-- What to measure and price per system (optional) -->
+    <section v-if="systems?.length" class="section-tight">
+      <div class="container-site">
+        <UiSectionHeader :eyebrow="`${trade} systems`" :title="systemsTitle" :lead="systemsLead" />
+        <div class="relative mt-10 overflow-x-auto rounded-2xl border border-ink-100 bg-white shadow-card">
+          <table class="w-full min-w-[640px] text-left text-sm">
+            <caption class="sr-only">{{ systemsTitle }}</caption>
+            <thead class="bg-ink-50 text-xs uppercase tracking-wider text-ink-500">
+              <tr><th scope="col" class="w-1/4 px-5 py-3 font-semibold">System</th><th scope="col" class="px-5 py-3 font-semibold">What to measure and price</th><th scope="col" class="w-1/3 px-5 py-3 font-semibold">Watch for</th></tr>
+            </thead>
+            <tbody class="divide-y divide-ink-100">
+              <tr v-for="s in systems" :key="s.name" class="align-top">
+                <th scope="row" class="px-5 py-4 font-semibold text-ink-900">{{ s.name }}</th>
+                <td class="px-5 py-4 leading-relaxed text-ink-700">{{ s.measure }}</td>
+                <td class="px-5 py-4 leading-relaxed text-ink-700">{{ s.watch }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
     <!-- Other trades + guides -->
     <section class="section-tight bg-ink-50">
       <div class="container-site grid gap-8 lg:grid-cols-2">
@@ -99,6 +121,9 @@ const props = defineProps<{
   featureTitle: string; features: Card[]
   guideLinks: { to: string; title: string }[]
   faqs: { q: string; a: string }[]
+  // Optional table of systems in the trade: what to measure and price, and what to watch for.
+  systemsTitle?: string; systemsLead?: string
+  systems?: { name: string; measure: string; watch: string }[]
 }>()
 
 const all = [
