@@ -1,15 +1,17 @@
 ---
-title: "What Is a BOQ? Meaning, Format and Types"
+title: "What Is a BOQ? Meaning, Full Form, Format and Types"
 description: "What is a BOQ? Bill of quantities meaning, a standard BOQ format with columns and sections, the main types of BOQ and how contractors use it."
 slug: what-is-a-boq
 date: 2026-10-16
 author: "CCorex team"
 author_role: "MEP estimating specialists"
-keywords: [what is a boq, bill of quantities meaning, boq meaning, boq format, types of boq, boq full form, bill of quantities construction, boq singapore]
+keywords: [what is a boq, boq meaning in business, boq means, bill of quantities meaning, boq meaning, boq format, types of boq, boq full form, bill of quantities construction, boq singapore]
 related: /products/deepcost
 faq:
   - q: "What is the full form of BOQ?"
     a: "BOQ stands for bill of quantities. It is an itemised list of the work and materials in a construction project, with a description, unit and quantity for each item, which contractors price to form their tender."
+  - q: "What does BOQ mean in business?"
+    a: "In business and construction, BOQ means bill of quantities: the itemised list of work and materials that contractors price when they tender. The priced BOQ then becomes the basis for the contract sum, progress claims and variations."
   - q: "What is the difference between a BOQ and an estimate?"
     a: "A BOQ is a structured list of measured items, often issued by the client's consultant for all tenderers to price. An estimate is a contractor's own calculation of cost and price, which may sit behind the BOQ and include detail the client never sees."
   - q: "Who prepares a bill of quantities?"
