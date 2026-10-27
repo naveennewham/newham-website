@@ -167,7 +167,7 @@ const form = ref(blank())
 // ?interest=<slug> from an "Request early access" button: tag the lead with that feature.
 const route = useRoute()
 const interest = computed(() => earlyAccessBySlug(typeof route.query.interest === 'string' ? route.query.interest : undefined))
-const appLabel = (app: string) => appOptions.find((a) => a.toLowerCase().startsWith(app))
+const appLabel = (app: string) => appOptions.find((a) => a.toLowerCase().replace(/[^a-z0-9]/g, '').startsWith(app.replace(/[^a-z0-9]/g, '')))
 watch(interest, (f) => {
   if (!f) return
   const label = appLabel(f.app)

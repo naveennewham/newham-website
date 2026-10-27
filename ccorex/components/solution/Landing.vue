@@ -11,7 +11,7 @@
           <div class="mt-8 flex flex-wrap gap-3">
             <NuxtLink to="/contact" class="btn-accent">Book a live demo <i class="fa-solid fa-arrow-right text-xs" aria-hidden="true"></i></NuxtLink>
             <NuxtLink :to="`/products/${app}`" class="btn-ghost-dark">See {{ appName }}</NuxtLink>
-            <a v-if="earlyAccess?.length" href="#early-access" class="btn-ghost-dark">Singapore early access</a>
+            <a v-if="earlyAccess?.length" href="#early-access" class="btn-ghost-dark">{{ app === 'deepplan-ai' ? 'AI take-off early access' : 'Singapore early access' }}</a>
           </div>
         </div>
         <figure class="rounded-3xl border border-white/10 bg-white/5 p-6 backdrop-blur" :aria-label="`What ${appName} covers`">
@@ -79,14 +79,14 @@
     <!-- AI built in: what ARIVU answers on this page's topic (data/arivu.ts) -->
     <SolutionAiBlock v-if="ai" :app-name="appName" :title="ai.title" :lead="ai.lead" :questions="ai.questions" :note="ai.note" :early-access="ai.earlyAccess" />
 
-    <SolutionEarlyAccess v-if="earlyAccess?.length" :items="earlyAccess" :title="earlyAccessTitle" />
+    <SolutionEarlyAccess v-if="earlyAccess?.length" :items="earlyAccess" :title="earlyAccessTitle" :eyebrow="earlyAccessEyebrow" />
 
     <!-- Bought on its own -->
     <section class="section-tight">
       <div class="container-site">
         <div class="flex flex-col gap-6 rounded-2xl border border-brand-100 bg-brand-50 p-6 sm:p-8 lg:flex-row lg:items-center lg:justify-between">
           <div class="max-w-2xl">
-            <p class="eyebrow">Use {{ appName }} on its own</p>
+            <p class="eyebrow">{{ app === 'deepplan-ai' ? `How ${appName} is sold` : `Use ${appName} on its own` }}</p>
             <p class="mt-3 text-ink-700">{{ standaloneText }}</p>
           </div>
           <div class="flex shrink-0 flex-wrap gap-3">
@@ -142,7 +142,7 @@ import { solutionPages, solutionPath } from '~/data/solutions'
 import { arivuSolutions } from '~/data/arivu'
 
 const props = defineProps<{
-  slug: string; app: 'deeptrack' | 'deephr' | 'deepcost'; appName: string; eyebrow: string
+  slug: string; app: 'deeptrack' | 'deephr' | 'deepcost' | 'deepplan-ai'; appName: string; eyebrow: string
   seoTitle: string; seoDescription: string; h1: string; lead: string; heroPoints: string[]
   problemTitle: string; problems: Card[]
   flowTitle: string; flow: { title: string; text: string; icon: string }[]
@@ -152,6 +152,7 @@ const props = defineProps<{
   ctaTitle: string; ctaLead: string
   earlyAccess?: string[]
   earlyAccessTitle?: string
+  earlyAccessEyebrow?: string
   // Optional "what to look for" table; early items are shown with an early-access badge.
   checklistTitle?: string; checklistLead?: string
   checklist?: { need: string; how: string; early?: boolean }[]
@@ -167,7 +168,8 @@ const ai = arivuSolutions[props.slug]
 const standaloneText = {
   deephr: 'DeepHR is sold on its own in Starter, Growth and Enterprise tiers, priced per employee, with a tailored quote. You do not need any other CCorex app; DeepTrack or DeepCost can be added later on the same sign-in.',
   deeptrack: 'DeepTrack is sold on its own in Starter, Growth and Enterprise tiers, priced per user, with a tailored quote. You do not need any other CCorex app; DeepHR or DeepCost can be added later on the same sign-in.',
-  deepcost: 'DeepCost is sold on its own in Starter, Growth and Enterprise tiers, priced per user, with a tailored quote. You do not need any other CCorex app; DeepTrack or DeepHR can be added later on the same sign-in.'
+  deepcost: 'DeepCost is sold on its own in Starter, Growth and Enterprise tiers, priced per user, with a tailored quote. You do not need any other CCorex app; DeepTrack or DeepHR can be added later on the same sign-in.',
+  'deepplan-ai': 'DeepPlan AI is included in the Enterprise plan, which covers the full CCorex suite, with a tailored quote. Drawings measured in DeepPlan are priced and submitted from DeepCost on the same sign-in.'
 }[props.app]
 
 const config = useRuntimeConfig()

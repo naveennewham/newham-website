@@ -295,6 +295,7 @@ const tradeLinks = [
   { to: '/estimating/acmv', name: 'ACMV estimating', icon: 'fa-solid fa-fan' },
   { to: '/estimating/elv', name: 'ELV estimating', icon: 'fa-solid fa-network-wired' },
   { to: '/solutions/tender-estimating-software', name: 'Tender estimating software', icon: 'fa-solid fa-file-signature' },
+  { to: '/solutions/quantity-takeoff-software', name: 'Quantity take-off from PDFs', icon: 'fa-solid fa-ruler-combined' },
   { to: '/compare/costx-cubicost-alternative', name: 'Compared with CostX & Cubicost', icon: 'fa-solid fa-scale-balanced' }
 ]
 

@@ -1,7 +1,7 @@
 // Search-led solution pages (/solutions/<slug>), listed on the solutions index, in the footer,
 // on each solution page and in the sitemap. 'construction' pages answer contractor searches;
 // 'business' pages answer broad Singapore searches from any sector (DeepHR only; DeepTrack is for contractors).
-export type SolutionPage = { slug: string; name: string; icon: string; app: 'deephr' | 'deeptrack' | 'deepcost'; group: 'construction' | 'business' }
+export type SolutionPage = { slug: string; name: string; icon: string; app: 'deephr' | 'deeptrack' | 'deepcost' | 'deepplan-ai'; group: 'construction' | 'business' }
 
 export const solutionPages: SolutionPage[] = [
   { slug: 'hr-software-singapore', name: 'HR software for Singapore SMEs', icon: 'fa-solid fa-people-group', app: 'deephr', group: 'business' },
@@ -16,6 +16,7 @@ export const solutionPages: SolutionPage[] = [
   { slug: 'construction-hr-software', name: 'HR software for construction', icon: 'fa-solid fa-people-group', app: 'deephr', group: 'construction' },
   { slug: 'foreign-worker-attendance-app', name: 'Foreign worker attendance app', icon: 'fa-solid fa-user-check', app: 'deephr', group: 'construction' },
   { slug: 'tender-estimating-software', name: 'Tender estimating software', icon: 'fa-solid fa-file-signature', app: 'deepcost', group: 'construction' },
+  { slug: 'quantity-takeoff-software', name: 'Quantity take-off software', icon: 'fa-solid fa-ruler-combined', app: 'deepplan-ai', group: 'construction' },
   { slug: 'estimating', name: 'MEP estimating and BOQ software', icon: 'fa-solid fa-calculator', app: 'deepcost', group: 'construction' }
 ]
 

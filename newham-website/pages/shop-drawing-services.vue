@@ -51,6 +51,7 @@ const steps = [
 const related = [
   { to: '/talent-outsourcing', eyebrow: 'How engagement works', title: 'Engineering talent outsourcing', text: 'Single specialists, project teams or managed capacity, billed monthly.', cta: 'Talent outsourcing' },
   { to: '/fire-protection-design', eyebrow: 'Also from Newham', title: 'Fire protection design', text: 'Sprinkler design, hydraulic calculations and SCDF submission packages.', cta: 'Fire protection design' },
+  { to: '/guides/mep-shop-drawings-singapore', eyebrow: 'Guide', title: 'MEP shop drawings in Singapore', text: 'What goes into MEP shop drawings, how they are coordinated and how the review cycle works.', cta: 'Read the guide' },
   { to: '/boq-estimation-services', eyebrow: 'Also from Newham', title: 'BOQ & estimation services', text: 'Take-offs, priced BOQs and tender support for M&E trades.', cta: 'BOQ services' }
 ]
 
@@ -59,6 +60,7 @@ const faqs = [
   { q: 'Do you provide one drafter or a team?', a: 'Either. Engage a single dedicated modeller or drafter, or a small project team for a peak.' },
   { q: 'Can your drafters work on our existing models?', a: 'Yes. They work in your files and templates, following your naming conventions and review process.' },
   { q: 'Which trades do you draft for?', a: 'M&E building services: fire protection, ACMV, ELV and wet services (plumbing and sanitary).' },
+  { q: 'Do you prepare coordination drawings as well as shop drawings?', a: 'Yes. Our modellers build and coordinate the services in Revit MEP and Navisworks with your project team, and produce the shop drawings from the coordinated model.' },
   { q: 'How is it priced?', a: 'A dedicated drafter is billed monthly in SGD, with no recruitment or setup fees. Contact admin@newhamtech.com for a quote.' }
 ]
 </script>

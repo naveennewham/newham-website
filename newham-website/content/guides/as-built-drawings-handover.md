@@ -107,6 +107,10 @@ As-built work suits a dedicated drafter because it runs alongside construction a
 - The handover requirements from the contract
 - The name of one person on site who answers queries
 
+## Related guides
+
+- [MEP shop drawings in Singapore: what goes in them and how they get approved](/guides/mep-shop-drawings-singapore)
+
 ## How Newham can help
 
 Newham provides dedicated BIM modellers and drafters who prepare as-built documentation, shop drawings and coordination models in Revit MEP, AutoCAD and Navisworks, working in your templates, title blocks and naming conventions. They cover fire protection, ACMV, ELV and wet services (plumbing and sanitary), and keep record drawings up to date as the project changes rather than leaving them to handover. A dedicated drafter is billed monthly in SGD, with no recruitment or setup fees and the scope confirmed in writing. See [shop drawing services](/shop-drawing-services), or [book a discovery call](/appointment) to plan your drafting capacity.
