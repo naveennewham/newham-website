@@ -64,7 +64,9 @@ const checklist = [
 const guides = [
   { to: '/solutions/project-cost-management-software', title: 'Project cost management software' },
   { to: '/resources/budget-vs-actual-construction', title: 'Budget against actual: how it works' },
-  { to: '/solutions/construction-cost-control-software', title: 'Cost control for construction contractors' }
+  { to: '/solutions/construction-cost-control-software', title: 'Cost control for construction contractors' },
+  { to: '/resources/purchase-order-approval-process-construction', title: 'Purchase order approval process' },
+  { to: '/resources/construction-cost-report-template', title: 'Construction cost report template (Excel)' }
 ]
 const faqs = [
   { q: 'What is procure-to-pay software?', a: 'Software that runs the whole purchasing cycle in one place: purchase request, approval, purchase order, goods received, vendor invoice and payment. DeepTrack records each step with a named role and an approval trail.' },

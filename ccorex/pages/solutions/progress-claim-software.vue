@@ -47,7 +47,8 @@ const guides = [
   { to: '/resources/progress-claims-singapore', title: 'Progress claims in Singapore' },
   { to: '/resources/sop-act-payment-claims-singapore', title: 'SOP Act payment claims and payment responses' },
   { to: '/resources/progress-claim-template-singapore', title: 'Progress claim template (Singapore)' },
-  { to: '/resources/retention-sum-singapore', title: 'Retention sums in Singapore construction' }
+  { to: '/resources/retention-sum-singapore', title: 'Retention sums in Singapore construction' },
+  { to: '/resources/subcontractor-progress-claims-singapore', title: 'Assessing subcontractor progress claims' }
 ]
 const faqs = [
   { q: 'How are retention and GST handled?', a: 'Retention is calculated from the percentage on the claim and 9% GST is applied. The certificate shows retention to date and the previous retention.' },
