@@ -4,9 +4,15 @@
 
 ## Services
 - [BOQ preparation and M&E estimation services](https://newhamtech.com/boq-estimation-services): take-offs, priced BOQs, rate build-ups and tender queries for fire protection, ACMV, electrical, ELV and plumbing.
-- [Engineering services](https://newhamtech.com/engineering-services): sprinkler design and hydraulic calculations to SS CP 52 / NFPA 13, fire alarm design to SS 645, submission drawings, commercial and QS support.
+- [M&E engineering services](https://newhamtech.com/engineering-services): overview of Newham's fire protection design, estimation and BOQ, shop drawing and commercial support services.
+- [Fire protection and sprinkler design](https://newhamtech.com/fire-protection-design): sprinkler design and hydraulic calculations to SS CP 52 (NFPA 13 where specified), fire alarm design to SS 645, formatted for SCDF submission.
+- [MEP shop drawing and as-built drafting](https://newhamtech.com/shop-drawing-services): MEP shop drawings, coordination drawings and as-built drawings.
 - [Engineering talent outsourcing](https://newhamtech.com/talent-outsourcing): dedicated M&E estimators, QS, BIM modellers and coordinators working in the client's templates.
 - [CCorex software](https://ccorex.com): estimating, project cost control and HR & payroll for contractors.
+
+## Guides
+- [MEP shop drawings in Singapore](https://newhamtech.com/guides/mep-shop-drawings-singapore): what MEP shop drawings contain, coordination and combined services drawings, Revit vs AutoCAD, and the review cycle.
+- [All guides](https://newhamtech.com/guides)
 
 ## Key pages
 - [Industries](https://newhamtech.com/industries)

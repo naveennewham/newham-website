@@ -23,6 +23,7 @@ DeepCost, DeepTrack and DeepHR are each sold on their own (Starter, Growth and E
 - [Foreign worker attendance app](https://ccorex.com/solutions/foreign-worker-attendance-app) (DeepHR)
 - [Project cost management software](https://ccorex.com/solutions/project-cost-management-software) (DeepTrack, for contractors): approved budgets, budget against actual, purchases to POs, invoice matching, timesheet labour, SGD with 9% GST.
 - [Procurement and purchase order software](https://ccorex.com/solutions/procurement-software-singapore) (DeepTrack, for contractors): purchase requests against budgets, approval limits, purchase orders, delivery endorsement, invoice matching.
+- [Quantity take-off software for PDF drawings](https://ccorex.com/solutions/quantity-takeoff-software): DeepPlan AI. Upload PDF drawings, calibrate the scale, measure rooms, price from a rate library and export the BOQ; AI take-off is in early access.
 
 ## Solutions for Singapore businesses in any sector
 DeepHR is also sold on its own to Singapore SMEs in any sector, especially teams with staff on site or on the move. DeepTrack is for construction contractors.
@@ -35,10 +36,18 @@ DeepHR is also sold on its own to Singapore SMEs in any sector, especially teams
 - [Leave entitlement in Singapore (Employment Act)](https://ccorex.com/resources/leave-entitlement-singapore)
 - [How to calculate CPF contributions in Singapore](https://ccorex.com/resources/how-to-calculate-cpf-contributions)
 - [How to calculate overtime pay in Singapore (MOM rules)](https://ccorex.com/resources/overtime-calculation-singapore)
+- [Sick leave entitlement in Singapore (MC, outpatient and hospitalisation leave)](https://ccorex.com/resources/sick-leave-entitlement-singapore)
+- [Singapore public holidays 2027 and employer pay rules](https://ccorex.com/resources/public-holidays-singapore-2027)
+- [Itemised payslips in Singapore (MOM requirements)](https://ccorex.com/resources/itemised-payslip-singapore)
+- [Key employment terms (KETs) in Singapore](https://ccorex.com/resources/key-employment-terms-singapore)
 
 ## Singapore contractor guides
 - [Variation order template for Singapore contractors](https://ccorex.com/resources/variation-order-template-singapore), with an Excel VO form and register
 - [Progress claim template for Singapore](https://ccorex.com/resources/progress-claim-template-singapore)
+- [Purchase order approval process for construction companies](https://ccorex.com/resources/purchase-order-approval-process-construction): requisition, quotes, approval matrix by role, delivery and three-way invoice matching
+- [Subcontractor progress claims: how main contractors assess and pay them](https://ccorex.com/resources/subcontractor-progress-claims-singapore): work done, retention, back-charges, SOP Act payment response, GST and records
+- [Construction cost report template](https://ccorex.com/resources/construction-cost-report-template), with an Excel monthly cost report (budget, committed, actual, cost to complete, forecast)
+- [AI for construction contractors in Singapore](https://ccorex.com/resources/ai-for-construction-contractors-singapore): practical AI uses for tenders, BOQ pricing, take-off, document search and HR, and what to check.
 
 ## Key pages
 - [Platform](https://ccorex.com/platform): one sign-in, users and roles managed once.
