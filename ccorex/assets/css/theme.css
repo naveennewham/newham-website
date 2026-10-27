@@ -72,6 +72,10 @@ html.theme-anim, html.theme-anim * { transition: background-color .35s ease, bor
 /* Component classes that bundle bg-white via @apply */
 html.dark .card, html.dark .card-hover, html.dark .chip, html.dark .btn-secondary, html.dark .field { background-color: #0b171b; }
 html.dark .btn-secondary:hover { background-color: #12242a; }
+html.dark .calc-input { background-color: #0b171b; border-color: rgb(255 255 255 / .16); }
+html.dark .calc-input option { background-color: #0b171b; color: #eef3f5; }
+html.dark .calc-warn { background-color: rgb(251 191 36 / .12); border-color: rgb(251 191 36 / .3); color: #fcd34d; }
+html.dark .calc-info { border-color: rgb(51 207 231 / .3); color: #9fe8f3; }
 
 /* Logos drawn black on light surfaces turn white in dark mode. */
 html.dark img.logo-auto { filter: brightness(0) invert(1); }

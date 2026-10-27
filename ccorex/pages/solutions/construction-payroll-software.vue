@@ -60,6 +60,7 @@ const checklist = [
 const guides = [
   { to: '/resources/construction-payroll-singapore', title: 'Construction payroll in Singapore' },
   { to: '/resources/foreign-worker-levy-construction-singapore', title: 'Foreign worker levy and quota for construction' },
+  { to: '/tools/foreign-worker-levy-calculator', title: 'Free construction levy calculator' },
   { to: '/resources/overtime-calculation-singapore', title: 'How to calculate overtime pay in Singapore' },
   { to: '/solutions/foreign-worker-attendance-app', title: 'Foreign worker attendance app' }
 ]

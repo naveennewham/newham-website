@@ -23,6 +23,8 @@ draft: false
 
 To calculate CPF for an employee in Singapore, take their wages for the month (ordinary wages up to the **$8,000 Ordinary Wage ceiling**, plus any additional wages within the annual limit), apply the **contribution rate for their age band**, round the total to the nearest dollar, and split it into the employee’s share (cents dropped) and the employer’s share (the rest). For an employee aged 55 or below earning more than $750 a month, the total in 2026 is **37%: 17% employer and 20% employee**.
 
+**Free calculator:** use our [CPF contribution calculator](/tools/cpf-contribution-calculator) to work out the employer’s and employee’s shares for a month, including PR graduated rates.
+
 This guide walks through each step with the CPF Board’s figures, then covers the Skills Development Levy (SDL) and self-help group funds that sit on the same payslip. Figures are as published by the CPF Board in October 2026; check the linked pages before you rely on them.
 
 ## Step 1: Check whether CPF applies

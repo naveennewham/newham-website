@@ -56,6 +56,11 @@ DeepHR is also sold on its own to Singapore SMEs in any sector, especially teams
 - [AI for construction contractors in Singapore](https://ccorex.com/resources/ai-for-construction-contractors-singapore): practical AI uses for tenders, BOQ pricing, take-off, document search and HR, and what to check.
 - [BCA contractor registration (CRS): workheads, grades and tendering limits](https://ccorex.com/resources/bca-contractor-registration-workheads)
 
+## Free calculators
+- [CPF contribution calculator](https://ccorex.com/tools/cpf-contribution-calculator): employer and employee CPF for a month with the CPF Board's 2026 rates, the $8,000 Ordinary Wage ceiling and graduated rates for 1st/2nd-year PRs.
+- [Overtime pay calculator](https://ccorex.com/tools/overtime-pay-calculator): MOM's hourly basic rate formula, 1.5× rate, the $13.60 non-workman cap, Part 4 eligibility and the 72-hour monthly limit.
+- [Construction foreign worker levy calculator](https://ccorex.com/tools/foreign-worker-levy-calculator): monthly and annual levy by source and R1/R2 tier, MOM's daily rate for part months, and quota and 10% R1 checks.
+
 ## Key pages
 - [Platform](https://ccorex.com/platform): one sign-in, users and roles managed once.
 - [Solutions by role](https://ccorex.com/solutions)

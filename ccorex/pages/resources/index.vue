@@ -17,6 +17,24 @@
       </div>
     </section>
 
+    <!-- Free calculators -->
+    <section class="section-tight bg-ink-50">
+      <div class="container-site">
+        <div class="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+          <UiSectionHeader eyebrow="Free calculators" title="Work it out now" />
+          <NuxtLink to="/tools" class="btn-secondary shrink-0">All calculators</NuxtLink>
+        </div>
+        <ul class="mt-8 grid gap-4 md:grid-cols-3">
+          <li v-for="t in tools" :key="t.slug">
+            <NuxtLink :to="toolPath(t)" class="card card-hover flex h-full items-start gap-4">
+              <span class="icon-tile shrink-0"><i :class="t.icon" aria-hidden="true"></i></span>
+              <span><span class="block font-semibold text-ink-900">{{ t.name }}</span><span class="mt-1 block text-sm text-ink-600">{{ t.short }}</span></span>
+            </NuxtLink>
+          </li>
+        </ul>
+      </div>
+    </section>
+
     <!-- Published guides -->
     <section v-if="published.length" class="section">
       <div class="container-site">
@@ -101,6 +119,7 @@
 </template>
 
 <script setup lang="ts">
+import { tools, toolPath } from '~/data/tools'
 // Read at prerender and inlined with the page, so the browser does not get every guide's Markdown.
 const { data: publishedGuides } = await useAsyncData('published-guides', async () => (await import('~/utils/guides')).guides
   .map(({ slug, title, description, minutes }) => ({ slug, title, description, minutes })))

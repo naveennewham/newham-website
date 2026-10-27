@@ -2,9 +2,10 @@
 import { parse } from 'yaml'
 import { apps } from '../../data/apps'
 import { solutionPages } from '../../data/solutions'
+import { tools } from '../../data/tools'
 
 const SOLUTIONS = solutionPages.filter((s) => s.slug !== 'estimating').map((s) => `/solutions/${s.slug}`)
-const STATIC = ['/', '/products', '/estimating/fire-protection', '/estimating/acmv', '/estimating/elv', '/estimating/electrical', '/estimating/plumbing-sanitary', '/compare/costx-cubicost-alternative', ...SOLUTIONS, '/platform', '/solutions', '/industries', '/integrations', '/pricing', '/resources', '/faq', '/about', '/contact', '/privacy']
+const STATIC = ['/', '/products', '/estimating/fire-protection', '/estimating/acmv', '/estimating/elv', '/estimating/electrical', '/estimating/plumbing-sanitary', '/compare/costx-cubicost-alternative', ...SOLUTIONS, '/platform', '/solutions', '/industries', '/integrations', '/pricing', '/resources', '/tools', ...tools.map((t) => `/tools/${t.slug}`), '/faq', '/about', '/contact', '/privacy']
 
 // <lastmod> for a fixed page: the last change to its page file (exact, folder index, or the
 // dynamic [param] file that renders it), else the build date.

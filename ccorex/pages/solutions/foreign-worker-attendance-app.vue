@@ -45,6 +45,7 @@ const features = [
 ]
 const guides = [
   { to: '/resources/foreign-worker-levy-construction-singapore', title: 'Foreign worker levy and quota for construction' },
+  { to: '/tools/foreign-worker-levy-calculator', title: 'Free construction levy calculator' },
   { to: '/resources/construction-payroll-singapore', title: 'Construction payroll in Singapore' },
   { to: '/solutions/construction-payroll-software', title: 'Construction payroll software' }
 ]
