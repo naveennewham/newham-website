@@ -1,5 +1,5 @@
 ---
-title: "Construction Workforce Management and Payroll in Singapore"
+title: "Construction Payroll in Singapore: Site Attendance, Overtime and CPF"
 description: "How Singapore contractors can manage foreign worker attendance with phone geolocation and run accurate payroll, with MOM workforce rules and CPF basics."
 slug: construction-payroll-singapore
 date: 2026-10-15
@@ -14,6 +14,8 @@ faq:
     a: "A good attendance app stores the punch on the phone and uploads it when the connection returns, so workers in basements or remote sites can still clock in and out."
   - q: "What are the MOM rules for foreign workers in construction?"
     a: "MOM sets a dependency ratio ceiling of 5 Work Permit holders for each local worker earning the qualifying salary, requires at least 10% of Work Permit holders to be higher-skilled (R1), and charges a monthly levy per worker that ranges from S$300 to S$900 depending on skill and source. Check MOM's construction sector page for current details."
+  - q: "How is overtime paid to construction workers in Singapore?"
+    a: "Workmen earning up to S$4,500 basic a month are covered by Part 4 of the Employment Act: overtime is paid at no less than 1.5 times the hourly basic rate, limited to 72 overtime hours a month, and paid within 14 days after the end of the salary period. See our overtime calculation guide for worked examples, and MOM for the current rules."
   - q: "Do Work Permit holders pay CPF?"
     a: "CPF contributions generally apply to Singapore citizens and permanent residents, not to Work Permit holders. Check the CPF Board's guidance for each employee's situation."
   - q: "Why should HR approve attendance before payroll?"

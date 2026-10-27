@@ -1,5 +1,5 @@
 ---
-title: "Retention Sum in Singapore Construction: How It Works and How to Get It Released"
+title: "Retention Sum in Singapore: Calculation, Release and GST"
 description: "How retention sums work in Singapore construction: how they are calculated and capped, when retention money is released, GST, and how to track it."
 slug: retention-sum-singapore
 date: 2026-10-18

@@ -123,9 +123,9 @@
 <script setup lang="ts">
 const siteUrl = useRuntimeConfig().public.siteUrl as string
 useSeoMeta({
-  title: 'M&E engineering talent outsourcing, Singapore',
+  title: 'M&E engineering outsourcing services, Singapore',
   description: 'Dedicated M&E professionals for Singapore contractors: BIM modellers and drafters, estimators and QS, tender coordinators and fire protection engineers.',
-  ogTitle: 'Engineering talent outsourcing — Newham',
+  ogTitle: 'M&E engineering outsourcing services, Singapore — Newham',
   ogDescription: 'Dedicated, Singapore-code-trained M&E engineers who work on your projects, to your standards.',
   ogUrl: siteUrl + '/talent-outsourcing'
 })
