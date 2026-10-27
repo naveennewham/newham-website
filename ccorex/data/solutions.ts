@@ -8,6 +8,7 @@ export const solutionPages: SolutionPage[] = [
   { slug: 'payroll-software-singapore', name: 'Payroll software (CPF, SDL, SHG)', icon: 'fa-solid fa-money-check-dollar', app: 'deephr', group: 'business' },
   { slug: 'attendance-app-singapore', name: 'Attendance app with face and GPS', icon: 'fa-solid fa-location-crosshairs', app: 'deephr', group: 'business' },
   { slug: 'leave-management-system-singapore', name: 'Leave management system', icon: 'fa-solid fa-calendar-days', app: 'deephr', group: 'business' },
+  { slug: 'expense-claim-software-singapore', name: 'Expense claim software', icon: 'fa-solid fa-receipt', app: 'deephr', group: 'business' },
   { slug: 'project-cost-management-software', name: 'Project cost management software', icon: 'fa-solid fa-chart-line', app: 'deeptrack', group: 'construction' },
   { slug: 'procurement-software-singapore', name: 'Procurement and purchase order software', icon: 'fa-solid fa-cart-shopping', app: 'deeptrack', group: 'construction' },
   { slug: 'construction-cost-control-software', name: 'Construction cost control software', icon: 'fa-solid fa-chart-line', app: 'deeptrack', group: 'construction' },

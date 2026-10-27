@@ -52,7 +52,7 @@ const checklist = [
   { need: 'Consistent rates on every bid', how: 'One price library with material and installation prices, separate markups and dated price history.' },
   { need: 'Pricing in the client’s BOQ format', how: 'FOT AI overlays your prices on the client’s BOQ PDF and shows page totals, so nothing is re-keyed.' },
   { need: 'Checks before the bid goes out', how: 'Validation rules per trade and item group, and an approval at each stage before the Form of Tender is released.' },
-  { need: 'SGD pricing for M&E trades', how: 'Seeded trades for Fire Protection, ACMV, A&A and ELV, priced in SGD, plus Excel import for your own library.' },
+  { need: 'SGD pricing for M&E trades', how: 'Price libraries for every trade: Fire Protection, ACMV, A&A and ELV come seeded, priced in SGD; electrical, plumbing & sanitary and other trades are set up during onboarding or imported from Excel.' },
   { need: 'A record of every tender', how: 'Opportunities with customer, tender type, sector, trades, estimator and submission date, and the documents in one place.' }
 ]
 const guides = [
@@ -63,7 +63,7 @@ const guides = [
 ]
 const faqs = [
   { q: 'What is tender estimating software?', a: 'It is software that takes a contractor from the tender documents to a priced bid: reading the tender, measuring quantities, pricing them from a rate library and producing the priced schedule you submit. DeepCost does this for M&E trades, ending in a priced Form of Tender.' },
-  { q: 'Which trades does DeepCost cover?', a: 'DeepCost comes with seeded trades for Fire Protection, ACMV, A&A and ELV, priced in SGD. You can add item groups, assemblies and templates for other M&E work.' },
+  { q: 'Which trades does DeepCost cover?', a: 'Every trade. DeepCost has price libraries for every trade: Fire Protection, ACMV, A&A and ELV come seeded, priced in SGD, and electrical, plumbing & sanitary and other trade libraries are set up for your company during onboarding, or imported from your own Excel price list. See the trade pages for fire protection, ACMV, ELV, electrical and plumbing & sanitary.' },
   { q: 'Can it price the client’s own BOQ?', a: 'Yes. FOT AI finds the quantity and amount columns on the client’s BOQ PDF, overlays editable figures on the rows to price and saves a revision of the annotated PDF. Your estimator reviews every figure.' },
   { q: 'Does it work for government tenders?', a: 'DeepCost prices the tender you receive, whether it comes from a main contractor, a developer or a public-sector client. You still submit the bid through the client’s own channel, such as GeBIZ for government tenders.' },
   { q: 'How is DeepCost priced?', a: 'Pricing is shared on request. Book a demo or email admin@newhamtech.com.' }

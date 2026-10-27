@@ -143,6 +143,7 @@ For wider digitalisation and possible funding, see [construction digitalisation 
 - [How to calculate overtime pay in Singapore](/resources/overtime-calculation-singapore)
 - [Itemised payslips in Singapore](/resources/itemised-payslip-singapore)
 - [Sick leave entitlement in Singapore](/resources/sick-leave-entitlement-singapore)
+- [Salary payment rules in Singapore](/resources/salary-payment-rules-singapore)
 
 ## How CCorex helps
 

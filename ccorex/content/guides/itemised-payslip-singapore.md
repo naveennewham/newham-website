@@ -107,6 +107,8 @@ Keep them so you can find a single employee’s payslips quickly. Salary claims 
 - [How to calculate overtime pay in Singapore](/resources/overtime-calculation-singapore)
 - [Key employment terms (KETs) in Singapore](/resources/key-employment-terms-singapore)
 - [Public holidays in Singapore 2027](/resources/public-holidays-singapore-2027)
+- [Salary payment rules in Singapore](/resources/salary-payment-rules-singapore)
+- [Expense claim software for Singapore](/solutions/expense-claim-software-singapore)
 
 ## How DeepHR produces itemised payslips
 

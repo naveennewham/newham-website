@@ -66,7 +66,8 @@ const guides = [
   { to: '/solutions/procurement-software-singapore', title: 'Procurement and purchase order software' },
   { to: '/solutions/construction-cost-control-software', title: 'Cost control for construction contractors' },
   { to: '/resources/construction-cost-report-template', title: 'Construction cost report template (Excel)' },
-  { to: '/resources/purchase-order-approval-process-construction', title: 'Purchase order approval process' }
+  { to: '/resources/purchase-order-approval-process-construction', title: 'Purchase order approval process' },
+  { to: '/resources/bca-contractor-registration-workheads', title: 'BCA contractor registration and tendering limits' }
 ]
 const faqs = [
   { q: 'What is project cost management software?', a: 'Software that keeps each project’s budget, committed spend and actual cost in one place, so you can compare budget against actual and see margin while the project is still running. DeepTrack does this with approved budgets, purchasing against them, invoice matching, timesheet labour and month-end overhead allocation.' },

@@ -112,6 +112,8 @@ Several KETs drive the pay run directly: the **salary period**, **basic salary**
 - [Leave entitlement in Singapore under the Employment Act](/resources/leave-entitlement-singapore)
 - [Sick leave entitlement in Singapore](/resources/sick-leave-entitlement-singapore)
 - [How to calculate overtime pay in Singapore](/resources/overtime-calculation-singapore)
+- [Notice period in Singapore](/resources/notice-period-singapore)
+- [Salary payment rules in Singapore](/resources/salary-payment-rules-singapore)
 
 ## How DeepHR helps with KETs
 

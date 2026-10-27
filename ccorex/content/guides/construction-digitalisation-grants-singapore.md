@@ -131,6 +131,10 @@ Beyond the BE PSG, Singapore has other enterprise support schemes. Enterprise Si
 - **Forgetting renewals.** Budget for the full subscription after any funded period ends.
 - **Ignoring setup effort.** The grant does not load your rates, budgets or staff records for you.
 
+## Related guides
+
+- [BCA contractor registration: workheads, grades and tendering limits](/resources/bca-contractor-registration-workheads)
+
 ## How CCorex helps
 
 CCorex is not currently listed as a PSG pre-approved solution, so we will not tell you otherwise. What we can do is show you how [DeepCost](/products/deepcost), [DeepTrack](/products/deeptrack) and [DeepHR](/products/deephr) would fit your tendering, cost control and attendance workflows, so you can compare them fairly against funded options on full cost and fit. Pricing is on request; see our [pricing page](/pricing) or [contact us](/contact) for a quote.

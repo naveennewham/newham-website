@@ -110,6 +110,7 @@ For each claim, keep the claim, your assessment sheet, site measurements and pho
 - [Retention sum in Singapore](/resources/retention-sum-singapore)
 - [Progress claims in Singapore](/resources/progress-claims-singapore)
 - [Purchase order approval process for construction companies](/resources/purchase-order-approval-process-construction)
+- [BCA contractor registration: workheads, grades and tendering limits](/resources/bca-contractor-registration-workheads)
 
 This guide is general information, not legal advice. Check the current Act and your subcontract, and take legal advice on disputes.
 

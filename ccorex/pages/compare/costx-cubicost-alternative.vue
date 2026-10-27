@@ -115,7 +115,7 @@ const faqs = [
   { q: 'Is DeepCost a direct replacement for CostX or Cubicost?', a: 'Not exactly. Those tools focus on measurement and take-off. DeepCost focuses on the MEP tender workflow — pipeline, priced library, approvals and pricing on the client’s BOQ — and takes quantities from area schedules or from DeepPlan AI.' },
   { q: 'Is DeepCost PSG pre-approved?', a: 'No, not at present. If PSG co-funding is a requirement, check the pre-approved list on GoBusiness before you buy.' },
   { q: 'Can I keep my existing take-off tool and use DeepCost?', a: 'Yes. Many estimators measure in one tool and price in another. Quantities can come into DeepCost from your take-off, and library data imports from Excel.' },
-  { q: 'Which trades does DeepCost come set up for?', a: 'Fire Protection, ACMV, A&A and ELV are seeded trades, priced in SGD. You extend them with your own components and templates.' },
+  { q: 'Which trades does DeepCost come set up for?', a: 'DeepCost has price libraries for every trade: Fire Protection, ACMV, A&A and ELV come seeded, priced in SGD, and electrical, plumbing & sanitary and other trade libraries are set up for your company during onboarding, or imported from your own Excel price list.' },
   { q: 'How is DeepCost priced?', a: 'Pricing is shared on request. Book a demo or email admin@newhamtech.com.' }
 ]
 

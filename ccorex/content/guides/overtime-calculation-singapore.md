@@ -164,6 +164,7 @@ Show overtime clearly on the itemised payslip: the overtime hours worked and the
 - [Construction payroll in Singapore](/resources/construction-payroll-singapore)
 - [Singapore public holidays 2027](/resources/public-holidays-singapore-2027)
 - [Itemised payslips in Singapore](/resources/itemised-payslip-singapore)
+- [Salary payment rules in Singapore](/resources/salary-payment-rules-singapore)
 
 ## How DeepHR calculates overtime
 

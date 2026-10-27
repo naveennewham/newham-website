@@ -602,6 +602,7 @@ const solutionLinks = [
   { to: '/solutions/payroll-software-singapore', name: 'Payroll software (CPF, SDL, SHG)', icon: 'fa-solid fa-money-check-dollar' },
   { to: '/solutions/attendance-app-singapore', name: 'Attendance app with face and GPS', icon: 'fa-solid fa-location-crosshairs' },
   { to: '/solutions/leave-management-system-singapore', name: 'Leave management system', icon: 'fa-solid fa-calendar-days' },
+  { to: '/solutions/expense-claim-software-singapore', name: 'Expense claim software', icon: 'fa-solid fa-receipt' },
   { to: '/solutions/construction-hr-software', name: 'HR software for construction', icon: 'fa-solid fa-people-group' },
   { to: '/solutions/construction-payroll-software', name: 'Construction payroll software', icon: 'fa-solid fa-money-check-dollar' },
   { to: '/solutions/foreign-worker-attendance-app', name: 'Foreign worker attendance app', icon: 'fa-solid fa-user-check' },

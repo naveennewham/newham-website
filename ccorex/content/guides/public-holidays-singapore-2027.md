@@ -103,6 +103,7 @@ See our [overtime guide](/resources/overtime-calculation-singapore) for the hour
 - [How to calculate overtime pay in Singapore](/resources/overtime-calculation-singapore)
 - [Sick leave entitlement in Singapore](/resources/sick-leave-entitlement-singapore)
 - [Itemised payslips in Singapore](/resources/itemised-payslip-singapore)
+- [Paternity and shared parental leave in Singapore](/resources/paternity-leave-singapore)
 
 ## How DeepHR handles public holidays
 

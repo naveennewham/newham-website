@@ -73,6 +73,13 @@ export const arivuSolutions: Record<string, { title: string; lead: string; quest
     questions: ['How much annual leave does each person have left this year?', 'Show leave balances by leave type for the whole company.', 'What is Ravi’s leave balance this year?', 'Export this year’s leave balances to Excel.'],
     note: 'ARIVU never applies for, approves or changes leave. Requests and approvals stay with people in DeepHR.'
   },
+  'expense-claim-software-singapore': {
+    title: 'AI built in: ask ARIVU which claims are waiting',
+    lead: 'ARIVU, the AI assistant in DeepHR, reads expense claims so HR, managers and finance can see what is pending or approved without running a report, and export it to Excel or PDF.',
+    questions: ['Which expense claims are pending?', 'Which expense claims are still pending approval?', 'Export this month’s approved claims to Excel.'],
+    note: 'ARIVU never submits, approves or changes a claim. Approvals stay with people in DeepHR.',
+    earlyAccess: ['ai-receipt-scan']
+  },
   'project-cost-management-software': {
     title: 'AI built in: ask ARIVU how each project is tracking',
     lead: 'ARIVU, the AI assistant in every CCorex app, works inside DeepTrack. Project managers ask in plain language about budgets, committed and actual cost, claims and timesheets, and get an answer, a chart or an export.',

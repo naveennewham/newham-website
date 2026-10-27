@@ -99,6 +99,8 @@ Paid sick leave is a paid day: the employee’s salary for the period is not red
 - [Public holidays in Singapore 2027](/resources/public-holidays-singapore-2027)
 - [Itemised payslips in Singapore](/resources/itemised-payslip-singapore)
 - [How to calculate overtime pay in Singapore](/resources/overtime-calculation-singapore)
+- [Maternity leave in Singapore](/resources/maternity-leave-singapore)
+- [Childcare leave in Singapore](/resources/childcare-leave-singapore)
 
 ## How DeepHR handles sick leave
 
