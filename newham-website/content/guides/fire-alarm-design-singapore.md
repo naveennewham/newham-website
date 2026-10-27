@@ -1,13 +1,17 @@
 ---
-title: "Fire alarm design in Singapore: SS 645 guide"
-description: "How fire alarm design works in Singapore: detection layout, zoning, loop design and cause-and-effect matrices to SS 645 and the SCDF Fire Code."
+title: "SS 645 fire alarm design in Singapore: a practical guide"
+description: "SS 645 fire alarm design in Singapore: detectors, manual call points, sounders and visual alarms, zoning, loops and cause-and-effect matrices for SCDF submission."
 slug: fire-alarm-design-singapore
 date: 2026-10-16
 author: "Newham engineering team"
 author_role: "M&E estimators and fire protection engineers"
-keywords: ["SS CP 10", fire alarm design Singapore, fire alarm design services, SS 645 fire alarm, BS 5839, cause and effect matrix, fire alarm zoning, SCDF submission]
+keywords: [SS 645, SS645 Singapore, "SS CP 10", fire alarm design Singapore, fire alarm design services, SS 645 fire alarm, BS 5839, cause and effect matrix, fire alarm zoning, SCDF submission]
 related: /fire-protection-design
 faq:
+  - q: "What is SS 645?"
+    a: "SS 645 is the Singapore Standard code of practice for fire alarm systems in buildings. It replaced SS CP 10 in 2019 and is the fire alarm code the SCDF Fire Code requires. Confirm the edition in force for your project before you design."
+  - q: "Where can I get a copy of SS 645?"
+    a: "Singapore Standards are copyrighted and sold through the Singapore Standards eShop. Buy the current edition there rather than relying on a PDF copied from an old project, which may be out of date."
   - q: "Which code applies to fire alarm design in Singapore?"
     a: "Fire alarm design is prepared to SS 645, with BS 5839 used where the project specification calls for it, alongside the SCDF Fire Code. Codes are revised and superseded over time, so always confirm the edition in force for your project before you start."
   - q: "What is a cause-and-effect matrix?"

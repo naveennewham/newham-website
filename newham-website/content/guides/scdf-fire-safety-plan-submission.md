@@ -1,5 +1,5 @@
 ---
-title: "SCDF fire safety plan submission: a guide for M&E teams"
+title: "SCDF fire safety plan (FSSD) submission: a guide for M&E teams"
 description: "Who submits SCDF fire safety plans, what the M&E or fire protection contractor prepares, and how approval, TFP and FSC work, including CORENET X."
 slug: scdf-fire-safety-plan-submission
 date: 2026-10-18
@@ -8,6 +8,8 @@ author_role: "M&E estimators and fire protection engineers"
 keywords: [SCDF fire safety plan submission, fire safety plan approval Singapore, FSSD submission, QP fire safety, fire protection plan, Temporary Fire Permit, Fire Safety Certificate, CORENET X SCDF]
 related: /fire-protection-design
 faq:
+  - q: "What is an FSSD submission?"
+    a: "FSSD is SCDF's Fire Safety and Shelter Department, which regulates fire safety in buildings. An FSSD submission is the SCDF fire safety plan submission made by the Qualified Person for a project, described in this guide."
   - q: "Who can submit fire safety plans to SCDF?"
     a: "A Qualified Person (QP): an architect registered with the Board of Architects or a Professional Engineer registered with the Professional Engineers Board, with a valid practising certificate. The QP submits on behalf of the owner. Contractors and drafting firms prepare material for the QP but do not submit it themselves."
   - q: "Do fire safety plans now go through CORENET X?"
