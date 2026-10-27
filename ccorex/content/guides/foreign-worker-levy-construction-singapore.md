@@ -26,6 +26,8 @@ faq:
 
 The foreign worker levy is one of the largest costs a Singapore construction employer controls directly. It is charged every month for every Work Permit holder, and the rate depends on the worker's source country and whether they are Higher-Skilled (R1) or Basic-Skilled (R2). The number of Work Permit holders you can hold at all is capped by a dependency ratio tied to your local workforce, and each permit has an expiry date that must be renewed on time.
 
+**Free calculator:** use our [construction foreign worker levy calculator](/tools/foreign-worker-levy-calculator) to estimate your monthly and annual levy, with quota and R1 checks.
+
 This guide explains the levy tiers, the construction work permit quota, what happened to the Man-Year Entitlement (MYE), the routes to higher-skilled R1 status, and Work Permit expiry and renewal. It ends with the figures worth tracking every month. For attendance, CPF and payroll, see our separate guide to [construction workforce management and payroll in Singapore](/resources/construction-payroll-singapore).
 
 Rules and rates change; check MOM's website for the current position before you act.
@@ -143,6 +145,7 @@ Two cost views are worth separating. **Levy per worker** catches billing errors 
 - [Construction digitalisation grants in Singapore](/resources/construction-digitalisation-grants-singapore)
 - [Progress claims in Singapore](/resources/progress-claims-singapore)
 - [How to calculate overtime pay in Singapore](/resources/overtime-calculation-singapore)
+- [BCA contractor registration: workheads, grades and tendering limits](/resources/bca-contractor-registration-workheads)
 
 ## How CCorex helps
 

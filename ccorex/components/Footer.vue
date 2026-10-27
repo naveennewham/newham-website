@@ -24,6 +24,8 @@
           <li><NuxtLink to="/estimating/fire-protection" class="hover:text-white">Fire protection estimating</NuxtLink></li>
           <li><NuxtLink to="/estimating/acmv" class="hover:text-white">ACMV estimating</NuxtLink></li>
           <li><NuxtLink to="/estimating/elv" class="hover:text-white">ELV estimating</NuxtLink></li>
+          <li><NuxtLink to="/estimating/electrical" class="hover:text-white">Electrical estimating</NuxtLink></li>
+          <li><NuxtLink to="/estimating/plumbing-sanitary" class="hover:text-white">Plumbing &amp; sanitary estimating</NuxtLink></li>
           <li><NuxtLink to="/compare/costx-cubicost-alternative" class="hover:text-white">CostX &amp; Cubicost alternative</NuxtLink></li>
         </ul>
       </div>
@@ -38,6 +40,7 @@
         <ul class="mt-4 space-y-2.5 text-sm">
           <li><NuxtLink to="/about" class="hover:text-white">About</NuxtLink></li>
           <li><NuxtLink to="/resources" class="hover:text-white">Resources</NuxtLink></li>
+          <li><NuxtLink to="/tools" class="hover:text-white">Free calculators</NuxtLink></li>
           <li><NuxtLink to="/faq" class="hover:text-white">FAQ</NuxtLink></li>
           <li><NuxtLink to="/contact" class="hover:text-white">Contact &amp; demo</NuxtLink></li>
           <li><a href="mailto:admin@newhamtech.com" class="hover:text-white">admin@newhamtech.com</a></li>

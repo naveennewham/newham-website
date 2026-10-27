@@ -92,6 +92,12 @@ A leave system only helps if it holds the facts that decide each entitlement and
 ## Related guides
 
 - [How to calculate overtime pay in Singapore](/resources/overtime-calculation-singapore)
+- [Sick leave entitlement in Singapore](/resources/sick-leave-entitlement-singapore)
+- [Singapore public holidays 2027](/resources/public-holidays-singapore-2027)
+- [Key employment terms (KETs) in Singapore](/resources/key-employment-terms-singapore)
+- [Maternity leave in Singapore](/resources/maternity-leave-singapore)
+- [Childcare leave in Singapore](/resources/childcare-leave-singapore)
+- [Paternity and shared parental leave in Singapore](/resources/paternity-leave-singapore)
 
 ## How DeepHR handles leave
 

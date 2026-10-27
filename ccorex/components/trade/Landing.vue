@@ -129,7 +129,9 @@ const props = defineProps<{
 const all = [
   { slug: 'fire-protection', name: 'Fire protection', icon: 'fa-solid fa-fire-extinguisher', to: '/estimating/fire-protection' },
   { slug: 'acmv', name: 'ACMV', icon: 'fa-solid fa-fan', to: '/estimating/acmv' },
-  { slug: 'elv', name: 'ELV', icon: 'fa-solid fa-network-wired', to: '/estimating/elv' }
+  { slug: 'elv', name: 'ELV', icon: 'fa-solid fa-network-wired', to: '/estimating/elv' },
+  { slug: 'electrical', name: 'Electrical', icon: 'fa-solid fa-bolt', to: '/estimating/electrical' },
+  { slug: 'plumbing-sanitary', name: 'Plumbing & sanitary', icon: 'fa-solid fa-faucet-drip', to: '/estimating/plumbing-sanitary' }
 ]
 const otherTrades = all.filter((t) => t.slug !== props.slug)
 

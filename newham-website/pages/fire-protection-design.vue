@@ -59,6 +59,7 @@ const steps = [
 
 const related = [
   { to: '/guides/sprinkler-hydraulic-calculations', eyebrow: 'Guide', title: 'Sprinkler hydraulic calculations explained', text: 'What a hydraulic calculation checks, step by step, and what the reviewer looks for.', cta: 'Read the guide' },
+  { to: '/guides/wet-and-dry-riser-requirements-singapore', eyebrow: 'Guide', title: 'Wet and dry riser requirements', text: 'When the SCDF Fire Code requires a dry or wet rising main, and the landing valve and breeching inlet rules.', cta: 'Read the guide' },
   { to: '/boq-estimation-services', eyebrow: 'Also from Newham', title: 'BOQ & estimation services', text: 'Take-offs, priced BOQs and tender support for fire protection and other M&E trades.', cta: 'BOQ services' },
   { to: '/talent-outsourcing', eyebrow: 'Need someone every month?', title: 'A dedicated fire protection engineer', text: 'A Newham engineer working on your projects, in your templates.', cta: 'Talent outsourcing' }
 ]

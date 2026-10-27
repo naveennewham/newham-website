@@ -25,6 +25,8 @@ draft: false
 
 To calculate overtime pay in Singapore, take the employee’s **hourly basic rate of pay**, multiply it by **1.5**, then by the number of **overtime hours** worked in the salary period. For a monthly-rated employee, MOM’s hourly basic rate is **(12 × monthly basic salary) ÷ (52 × 44)**. These rules apply to employees covered by Part 4 of the Employment Act: non-workmen earning a basic salary of $2,600 or less a month, and workmen earning $4,500 or less.
 
+**Free calculator:** use our [overtime pay calculator](/tools/overtime-pay-calculator) to apply this formula, the non-workman cap and the 72-hour limit to your own figures.
+
 This guide sets out who is covered, what counts as normal hours, the formula with worked examples, and the separate rules for rest days and public holidays. Figures are as published by the Ministry of Manpower (MOM) in October 2026, mainly on its [hours of work, overtime and rest days](https://www.mom.gov.sg/employment-practices/hours-of-work-overtime-and-rest-days) page; check it before you rely on them.
 
 ## Who is entitled to overtime pay
@@ -162,6 +164,9 @@ Show overtime clearly on the itemised payslip: the overtime hours worked and the
 - [How to calculate CPF contributions in Singapore](/resources/how-to-calculate-cpf-contributions)
 - [Leave entitlement in Singapore under the Employment Act](/resources/leave-entitlement-singapore)
 - [Construction payroll in Singapore](/resources/construction-payroll-singapore)
+- [Singapore public holidays 2027](/resources/public-holidays-singapore-2027)
+- [Itemised payslips in Singapore](/resources/itemised-payslip-singapore)
+- [Salary payment rules in Singapore](/resources/salary-payment-rules-singapore)
 
 ## How DeepHR calculates overtime
 

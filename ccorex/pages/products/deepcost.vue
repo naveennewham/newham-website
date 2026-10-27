@@ -294,7 +294,10 @@ const tradeLinks = [
   { to: '/estimating/fire-protection', name: 'Fire protection estimating', icon: 'fa-solid fa-fire-extinguisher' },
   { to: '/estimating/acmv', name: 'ACMV estimating', icon: 'fa-solid fa-fan' },
   { to: '/estimating/elv', name: 'ELV estimating', icon: 'fa-solid fa-network-wired' },
+  { to: '/estimating/electrical', name: 'Electrical estimating', icon: 'fa-solid fa-bolt' },
+  { to: '/estimating/plumbing-sanitary', name: 'Plumbing & sanitary estimating', icon: 'fa-solid fa-faucet-drip' },
   { to: '/solutions/tender-estimating-software', name: 'Tender estimating software', icon: 'fa-solid fa-file-signature' },
+  { to: '/solutions/quantity-takeoff-software', name: 'Quantity take-off from PDFs', icon: 'fa-solid fa-ruler-combined' },
   { to: '/compare/costx-cubicost-alternative', name: 'Compared with CostX & Cubicost', icon: 'fa-solid fa-scale-balanced' }
 ]
 
@@ -337,7 +340,7 @@ const differentiators = [
     bullets: [
       { title: 'Components with pricing', text: 'Part code, brand, unit, material and installation price and markup, datasheet and assemblies.' },
       { title: 'Dated price history', text: 'Every price change is dated; the MTO uses the latest price unless the estimator overrides it.' },
-      { title: 'Templates & master-data upload', text: 'Item-group templates per trade, plus bulk Excel import of library data. Seeded trades: Fire Protection, ACMV, A&A and ELV, priced in SGD.' }
+      { title: 'Templates & master-data upload', text: 'Item-group templates per trade, plus bulk Excel import of library data. Price libraries for every trade: Fire Protection, ACMV, A&A and ELV come seeded, priced in SGD; other trades are set up during onboarding or imported from Excel.' }
     ],
     outcome: 'Price once, reuse everywhere — consistent numbers on every bid.'
   },
@@ -394,7 +397,7 @@ const faqs = [
   { q: 'What is the FOT?', a: 'The Form of Tender — the priced schedule submitted with a tender. In DeepCost it unlocks once the MTO is submitted. You can price it line by line, or use FOT AI: upload the client\'s BOQ PDF and DeepCost finds the quantity and amount columns and overlays editable figures on the rows that need pricing.' },
   { q: 'How does the approval workflow work?', a: 'Area schedule, MTO and FOT each move through Not Started, In Progress, Submitted, Approved and Completed (area schedule and MTO also have Revision). Approval needs checklist ticks — measurements or quantities, plus material and installation prices verified. Revoking needs a reason, kept as history, and emails go to the next stage\'s users.' },
   { q: 'How are prices calculated?', a: 'Line cost is quantity × (material price + installation price), using the latest dated price from the library or an estimator\'s override. Selling price applies material and installation markups separately, and assemblies sum their child components. Prices are in SGD.' },
-  { q: 'Which trades are supported?', a: 'DeepCost comes seeded with Fire Protection, ACMV, A&A and ELV. Each trade has its own item groups, components, templates and validation rules — for example, hazard class decides which sprinkler type is allowed — and you can bulk-import your own library from Excel.' },
+  { q: 'Which trades are supported?', a: 'DeepCost has price libraries for every trade: Fire Protection, ACMV, A&A and ELV come seeded, and electrical, plumbing & sanitary and other trade libraries are set up for your company during onboarding, or imported from your own Excel price list. Each trade has its own item groups, components, templates and validation rules — for example, hazard class decides which sprinkler type is allowed — and you can bulk-import your own library from Excel.' },
   { q: 'How does DeepCost work with DeepTrack and DeepHR?', a: 'All CCorex apps share one sign-in, one user base and centrally managed roles today, and ARIVU can answer questions across them. Passing a won tender straight into a DeepTrack project without re-entry is on the CCorex roadmap.' },
   { q: 'How is DeepCost priced?', a: 'Plans scale with your estimating team — Starter, Growth and Enterprise. Contact us for a tailored quote.' }
 ]

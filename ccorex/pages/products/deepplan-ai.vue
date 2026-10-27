@@ -93,7 +93,10 @@
               <div><p class="font-semibold text-ink-900">{{ c.title }}</p><p class="text-sm text-ink-600">{{ c.text }}</p></div>
             </li>
           </ul>
-          <NuxtLink to="/products/deepcost" class="mt-8 inline-flex font-semibold text-brand-700 hover:text-brand-900">Explore DeepCost <i class="fa-solid fa-arrow-right ml-2 mt-1 text-xs" aria-hidden="true"></i></NuxtLink>
+          <div class="mt-8 flex flex-wrap gap-x-6 gap-y-2">
+            <NuxtLink to="/products/deepcost" class="inline-flex font-semibold text-brand-700 hover:text-brand-900">Explore DeepCost <i class="fa-solid fa-arrow-right ml-2 mt-1 text-xs" aria-hidden="true"></i></NuxtLink>
+            <NuxtLink to="/solutions/quantity-takeoff-software" class="inline-flex font-semibold text-brand-700 hover:text-brand-900">Quantity take-off software <i class="fa-solid fa-arrow-right ml-2 mt-1 text-xs" aria-hidden="true"></i></NuxtLink>
+          </div>
         </div>
         <UiBrowserFrame src="/images/product/deepcost-mto.webp" alt="DeepCost material take-off organised by building, floor and room with item groups and prices" url="deepcost.app / mto" caption="DeepCost material take-off, where the tender is priced and approved." />
       </div>

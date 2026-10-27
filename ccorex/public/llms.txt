@@ -14,7 +14,7 @@ DeepCost, DeepTrack and DeepHR are each sold on their own (Starter, Growth and E
 - [PDF Editor](https://ccorex.com/products/pdf-editor): mark up, sign, split and merge PDFs.
 
 ## Solutions for Singapore contractors
-- [MEP estimating and BOQ software](https://ccorex.com/products/deepcost) (DeepCost), with trade pages for [fire protection](https://ccorex.com/estimating/fire-protection) (sprinkler, fire alarm, gas suppression, firestopping and fireproofing), [ACMV](https://ccorex.com/estimating/acmv) and [ELV](https://ccorex.com/estimating/elv)
+- [MEP estimating and BOQ software](https://ccorex.com/products/deepcost) (DeepCost), with trade pages for [fire protection](https://ccorex.com/estimating/fire-protection) (sprinkler, fire alarm, gas suppression, firestopping and fireproofing), [ACMV](https://ccorex.com/estimating/acmv), [ELV](https://ccorex.com/estimating/elv), [electrical](https://ccorex.com/estimating/electrical) and [plumbing & sanitary](https://ccorex.com/estimating/plumbing-sanitary). Price libraries for every trade: Fire Protection, ACMV, A&A and ELV come seeded; electrical, plumbing & sanitary and other trades are set up during onboarding or imported from Excel
 - [Tender estimating software](https://ccorex.com/solutions/tender-estimating-software) (DeepCost): AI tender summary, take-off by area, one price library, approvals at each stage and FOT AI on the client's BOQ PDF.
 - [Construction cost control software](https://ccorex.com/solutions/construction-cost-control-software) (DeepTrack)
 - [Progress claim software](https://ccorex.com/solutions/progress-claim-software) (DeepTrack)
@@ -23,8 +23,10 @@ DeepCost, DeepTrack and DeepHR are each sold on their own (Starter, Growth and E
 - [Foreign worker attendance app](https://ccorex.com/solutions/foreign-worker-attendance-app) (DeepHR)
 - [Project cost management software](https://ccorex.com/solutions/project-cost-management-software) (DeepTrack, for contractors): approved budgets, budget against actual, purchases to POs, invoice matching, timesheet labour, SGD with 9% GST.
 - [Procurement and purchase order software](https://ccorex.com/solutions/procurement-software-singapore) (DeepTrack, for contractors): purchase requests against budgets, approval limits, purchase orders, delivery endorsement, invoice matching.
+- [Quantity take-off software for PDF drawings](https://ccorex.com/solutions/quantity-takeoff-software): DeepPlan AI. Upload PDF drawings, calibrate the scale, measure rooms, price from a rate library and export the BOQ; AI take-off is in early access.
 
 ## Solutions for Singapore businesses in any sector
+- [Expense claim software for Singapore](https://ccorex.com/solutions/expense-claim-software-singapore) (DeepHR): claims in SGD with a receipt on the phone, multi-level approvals with an extra level above a set amount, marked paid, claims register; AI receipt scan in early access.
 DeepHR is also sold on its own to Singapore SMEs in any sector, especially teams with staff on site or on the move. DeepTrack is for construction contractors.
 - [HR software for Singapore SMEs](https://ccorex.com/solutions/hr-software-singapore) (DeepHR): face and GPS attendance on staff phones, leave, claims, timesheets, multi-level approvals, and CPF, SDL and SHG payroll.
 - [Payroll software for Singapore](https://ccorex.com/solutions/payroll-software-singapore) (DeepHR): CPF (incl. graduated PR rates), SDL and SHG on every pay run, MOM overtime and proration, itemised payslips and payroll reports. IR8A / AIS files in early access.
@@ -35,10 +37,29 @@ DeepHR is also sold on its own to Singapore SMEs in any sector, especially teams
 - [Leave entitlement in Singapore (Employment Act)](https://ccorex.com/resources/leave-entitlement-singapore)
 - [How to calculate CPF contributions in Singapore](https://ccorex.com/resources/how-to-calculate-cpf-contributions)
 - [How to calculate overtime pay in Singapore (MOM rules)](https://ccorex.com/resources/overtime-calculation-singapore)
+- [Sick leave entitlement in Singapore (MC, outpatient and hospitalisation leave)](https://ccorex.com/resources/sick-leave-entitlement-singapore)
+- [Singapore public holidays 2027 and employer pay rules](https://ccorex.com/resources/public-holidays-singapore-2027)
+- [Itemised payslips in Singapore (MOM requirements)](https://ccorex.com/resources/itemised-payslip-singapore)
+- [Key employment terms (KETs) in Singapore](https://ccorex.com/resources/key-employment-terms-singapore)
+- [Maternity leave in Singapore (GPML and Employment Act)](https://ccorex.com/resources/maternity-leave-singapore)
+- [Paternity and shared parental leave in Singapore](https://ccorex.com/resources/paternity-leave-singapore)
+- [Childcare leave in Singapore](https://ccorex.com/resources/childcare-leave-singapore)
+- [Notice period in Singapore: minimum notice and salary in lieu](https://ccorex.com/resources/notice-period-singapore)
+- [Salary payment rules in Singapore: deadlines, deductions and final pay](https://ccorex.com/resources/salary-payment-rules-singapore)
 
 ## Singapore contractor guides
 - [Variation order template for Singapore contractors](https://ccorex.com/resources/variation-order-template-singapore), with an Excel VO form and register
 - [Progress claim template for Singapore](https://ccorex.com/resources/progress-claim-template-singapore)
+- [Purchase order approval process for construction companies](https://ccorex.com/resources/purchase-order-approval-process-construction): requisition, quotes, approval matrix by role, delivery and three-way invoice matching
+- [Subcontractor progress claims: how main contractors assess and pay them](https://ccorex.com/resources/subcontractor-progress-claims-singapore): work done, retention, back-charges, SOP Act payment response, GST and records
+- [Construction cost report template](https://ccorex.com/resources/construction-cost-report-template), with an Excel monthly cost report (budget, committed, actual, cost to complete, forecast)
+- [AI for construction contractors in Singapore](https://ccorex.com/resources/ai-for-construction-contractors-singapore): practical AI uses for tenders, BOQ pricing, take-off, document search and HR, and what to check.
+- [BCA contractor registration (CRS): workheads, grades and tendering limits](https://ccorex.com/resources/bca-contractor-registration-workheads)
+
+## Free calculators
+- [CPF contribution calculator](https://ccorex.com/tools/cpf-contribution-calculator): employer and employee CPF for a month with the CPF Board's 2026 rates, the $8,000 Ordinary Wage ceiling and graduated rates for 1st/2nd-year PRs.
+- [Overtime pay calculator](https://ccorex.com/tools/overtime-pay-calculator): MOM's hourly basic rate formula, 1.5× rate, the $13.60 non-workman cap, Part 4 eligibility and the 72-hour monthly limit.
+- [Construction foreign worker levy calculator](https://ccorex.com/tools/foreign-worker-levy-calculator): monthly and annual levy by source and R1/R2 tier, MOM's daily rate for part months, and quota and 10% R1 checks.
 
 ## Key pages
 - [Platform](https://ccorex.com/platform): one sign-in, users and roles managed once.

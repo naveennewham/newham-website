@@ -255,7 +255,7 @@ const platform = [
 ]
 const reasons = [
   { title: 'Built for construction', text: 'Area schedules, MTOs, Forms of Tender, progress claims, retention, BCA workheads and site attendance — not a generic suite with construction bolted on.' },
-  { title: 'Tender estimating with AI', text: 'DeepCost reads the tender, prices the take-off from one library and overlays your figures on the client’s BOQ — seeded for Fire Protection, ACMV, A&A and ELV.' },
+  { title: 'Tender estimating with AI', text: 'DeepCost reads the tender, prices the take-off from one library and overlays your figures on the client’s BOQ — with price libraries for every trade, seeded for Fire Protection, ACMV, A&A and ELV.' },
   { title: 'One sign-in, all apps', text: 'One user base managed by your organisation admin, with roles per app.' },
   { title: 'AI in every app', text: 'ARIVU answers questions from your own data, charts results and searches your documents — read-only.' },
   { title: 'Face attendance, zero hardware', text: 'Face and GPS attendance on each employee’s own phone, with offline punches re-verified later.' },

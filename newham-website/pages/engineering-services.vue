@@ -6,8 +6,8 @@
       <div class="container-site relative grid gap-12 pb-20 pt-16 lg:grid-cols-[1.05fr_1fr] lg:items-center lg:pt-20">
         <div>
           <p class="eyebrow-dark">Pillar 3 · Construction engineering services</p>
-          <h1 class="h-display mt-4 text-white">Fire protection design and commercial support, delivered</h1>
-          <p class="lead-dark mt-6 max-w-xl">Two things M&amp;E contractors and consultants never have enough of: fire protection design capacity and commercial project support. Prepared to Singapore codes, scoped in writing.</p>
+          <h1 class="h-display mt-4 text-white">M&amp;E engineering services for Singapore contractors</h1>
+          <p class="lead-dark mt-6 max-w-xl">MEP design across fire protection, ACMV, electrical, plumbing and sanitary and ELV, plus drafting, estimation and commercial support for M&amp;E contractors and consultants who have more work than people. Prepared to Singapore codes, scoped in writing.</p>
           <div class="mt-8 flex flex-wrap gap-3">
             <NuxtLink to="/appointment" class="btn-accent">Book a discovery call <i class="fa-solid fa-arrow-right text-xs" aria-hidden="true"></i></NuxtLink>
             <a href="#fire-protection" class="btn-ghost-dark">See the services</a>
@@ -15,6 +15,23 @@
           <p class="mt-6 text-sm text-ink-300">Design · estimation · tender support · QS · document control</p>
         </div>
         <img src="/images/photos/mep-model-laptop.webp" alt="MEP model reviewed on a laptop with a stylus (stock photo)" width="2000" height="1055" fetchpriority="high" class="w-full rounded-2xl border border-white/10 shadow-frame" />
+      </div>
+    </section>
+
+    <!-- Service hub -->
+    <section class="section-tight border-b border-ink-100">
+      <div class="container-site">
+        <UiSectionHeader eyebrow="Our engineering services" title="Choose the service you need" />
+        <ul class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <li v-for="h in hub" :key="h.to">
+            <NuxtLink :to="h.to" class="card group flex h-full flex-col hover:border-brand-200">
+              <i :class="h.icon" class="text-xl text-brand-600" aria-hidden="true"></i>
+              <h2 class="mt-3 text-lg font-bold">{{ h.title }}</h2>
+              <p class="mt-2 flex-1 text-sm text-ink-600">{{ h.text }}</p>
+              <span class="mt-4 inline-flex text-sm font-semibold text-brand-700 group-hover:text-brand-900">{{ h.cta }} <i class="fa-solid fa-arrow-right ml-2 mt-1 text-xs" aria-hidden="true"></i></span>
+            </NuxtLink>
+          </li>
+        </ul>
       </div>
     </section>
 
@@ -129,10 +146,10 @@
 <script setup lang="ts">
 const siteUrl = useRuntimeConfig().public.siteUrl as string
 useSeoMeta({
-  title: 'Fire protection design & BOQ services in Singapore',
-  description: 'Sprinkler design and hydraulic calculations to SS CP 52 (NFPA 13 where specified), plus estimation, BOQ, tender support, QS and document control for M&E contractors.',
-  ogTitle: 'Construction engineering services — Newham',
-  ogDescription: 'Fire protection design and commercial project support for Singapore M&E contractors and consultants.',
+  title: 'M&E engineering services in Singapore: design, drafting & QS',
+  description: 'M&E engineering services for Singapore contractors: fire protection, ACMV, electrical, plumbing and ELV design, MEP shop drawings, estimation and BOQ, tender support and QS.',
+  ogTitle: 'M&E engineering services in Singapore — Newham',
+  ogDescription: 'MEP design, drafting, estimation and commercial support for Singapore M&E contractors and consultants.',
   ogUrl: siteUrl + '/engineering-services'
 })
 useHead({
@@ -142,7 +159,8 @@ useHead({
     innerHTML: JSON.stringify({
       '@context': 'https://schema.org',
       '@type': 'Service',
-      name: 'Fire protection design and M&E commercial support',
+      name: 'M&E engineering services',
+      alternateName: ['MEP engineering services', 'Fire protection design and M&E commercial support'],
       serviceType: 'Engineering design services',
       description: 'Sprinkler design and hydraulic calculations to SS CP 52 (NFPA 13 where the project specification calls for it), fire alarm design to SS 645, submission drawings, estimation, BOQ, tender support and QS for M&E contractors in Singapore.',
       url: siteUrl + '/engineering-services',
@@ -161,6 +179,17 @@ useHead({
     })
   }]
 })
+
+const hub = [
+  { to: '/fire-protection-design', icon: 'fa-solid fa-fire-extinguisher', title: 'Fire protection design', text: 'Sprinkler, fire alarm, riser and pump design with hydraulic calculations, formatted for SCDF submission.', cta: 'Fire protection design' },
+  { to: '/acmv-design-services', icon: 'fa-solid fa-fan', title: 'ACMV design', text: 'Heat loads, equipment selection, ductwork and piping layouts and mechanical ventilation to SS 553.', cta: 'ACMV design' },
+  { to: '/electrical-design-services', icon: 'fa-solid fa-bolt', title: 'Electrical design', text: 'Load schedules, single-line diagrams, cable sizing, lighting, small power and containment to SS 638.', cta: 'Electrical design' },
+  { to: '/plumbing-sanitary-design-services', icon: 'fa-solid fa-faucet-drip', title: 'Plumbing & sanitary design', text: 'Water supply, sanitary plumbing and drainage to SS 636 and the PUB codes of practice.', cta: 'Plumbing & sanitary design' },
+  { to: '/elv-design-services', icon: 'fa-solid fa-network-wired', title: 'ELV design', text: 'CCTV, access control, structured cabling, PA, MATV and car park systems.', cta: 'ELV design' },
+  { to: '/boq-estimation-services', icon: 'fa-solid fa-calculator', title: 'Tender estimation & BOQ', text: 'Take-offs, priced BOQs, rate build-ups, tender queries and compiled submissions across M&E trades.', cta: 'Estimation services' },
+  { to: '/shop-drawing-services', icon: 'fa-solid fa-pen-ruler', title: 'MEP shop drawings & as-builts', text: 'Shop drawings, coordination models and as-built records in Revit MEP, AutoCAD and Navisworks.', cta: 'Drafting services' },
+  { to: '/talent-outsourcing', icon: 'fa-solid fa-user-plus', title: 'Dedicated engineers', text: 'A dedicated estimator, QS, BIM modeller or fire protection engineer on your team, billed monthly.', cta: 'Engineering outsourcing' }
+]
 
 const problems = [
   { icon: 'fa-solid fa-hourglass-half', title: 'Design bottlenecks', text: 'FP drawings and hydraulic calculations pile up while engineers juggle coordination meetings, site visits and submissions.' },

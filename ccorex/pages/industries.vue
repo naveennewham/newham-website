@@ -51,7 +51,7 @@
       <div class="container-site">
         <div class="grid gap-12 lg:grid-cols-[1fr_1.15fr] lg:items-center">
           <div>
-            <UiSectionHeader eyebrow="MEP contractors" title="Estimate every M&E trade in one system" lead="DeepCost comes seeded with Fire Protection, ACMV, A&amp;A and ELV, priced in SGD. Each trade has its own item groups, components, templates and validation rules; add your own trades and take off by building, floor and room." />
+            <UiSectionHeader eyebrow="MEP contractors" title="Estimate every M&E trade in one system" lead="DeepCost has price libraries for every trade: Fire Protection, ACMV, A&amp;A and ELV come seeded, priced in SGD, and electrical, plumbing &amp; sanitary and other trade libraries are set up during onboarding or imported from Excel. Each trade has its own item groups, components, templates and validation rules; add your own trades and take off by building, floor and room." />
             <ul class="mt-8 space-y-3">
               <li v-for="b in mepPoints" :key="b" class="flex gap-3 text-ink-700"><i class="fa-solid fa-circle-check mt-1 text-brand-600" aria-hidden="true"></i>{{ b }}</li>
             </ul>

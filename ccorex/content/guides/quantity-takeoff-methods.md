@@ -140,6 +140,13 @@ Run the accuracy checks below before the quantities go into a tender.
 
 Look for takeoff software that does the basics well before anything else: dependable scale calibration, clear length, area and count tools, grouping by building and floor, and a direct path from quantities to priced rates. AI features are worth testing on your own drawings, but they should save you checking time without hiding what was measured. If you are comparing tools for the whole estimating process, see [choosing MEP estimating software](/resources/choosing-mep-estimating-software).
 
+## Related guides
+
+- [Quantity take-off software for PDF drawings](/solutions/quantity-takeoff-software)
+- [How to prepare a BOQ](/resources/how-to-prepare-a-boq)
+- [MEP estimating checklist](/resources/mep-estimating-checklist)
+- [AI for construction contractors in Singapore](/resources/ai-for-construction-contractors-singapore)
+
 ## How CCorex helps
 
 [DeepPlan AI](/products/deepplan-ai) lets you upload drawings, calibrate the scale, measure rooms, count symbols and build a priced BOQ from your own rates in one place. AI room take-off and AI symbol detection are in early access: they propose rooms and counts for your estimator to review, not replace that review. Quantities flow straight into pricing, so there is no re-typing between takeoff and BOQ. [Contact us](/contact) to try it on a set of your drawings.

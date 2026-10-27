@@ -88,7 +88,7 @@
           </table>
         </div>
         <p class="mt-6 text-center text-sm text-ink-600">
-          Preparing a submission yourself? Use our <NuxtLink to="/guides/mep-tender-submission-checklist" class="font-semibold text-brand-700 hover:text-brand-900">MEP tender submission checklist</NuxtLink>, or read <NuxtLink to="/guides/outsourcing-mep-estimation" class="font-semibold text-brand-700 hover:text-brand-900">when to outsource MEP estimation</NuxtLink>.
+          Pricing a fire protection tender? See <NuxtLink to="/guides/fire-protection-tender-estimation-singapore" class="font-semibold text-brand-700 hover:text-brand-900">how to price an FP tender</NuxtLink>. Preparing a submission yourself? Use our <NuxtLink to="/guides/mep-tender-submission-checklist" class="font-semibold text-brand-700 hover:text-brand-900">MEP tender submission checklist</NuxtLink>, or read <NuxtLink to="/guides/outsourcing-mep-estimation" class="font-semibold text-brand-700 hover:text-brand-900">when to outsource MEP estimation</NuxtLink>.
         </p>
         <p class="mt-2 text-center text-sm text-ink-600">
           Choosing estimating software instead?

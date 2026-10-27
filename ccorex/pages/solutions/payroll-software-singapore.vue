@@ -65,8 +65,13 @@ const checklist = [
 ]
 const guides = [
   { to: '/resources/how-to-calculate-cpf-contributions', title: 'How to calculate CPF contributions in Singapore' },
+  { to: '/tools/cpf-contribution-calculator', title: 'Free CPF contribution calculator' },
+  { to: '/tools/overtime-pay-calculator', title: 'Free overtime pay calculator' },
   { to: '/resources/leave-entitlement-singapore', title: 'Leave entitlement in Singapore (Employment Act)' },
-  { to: '/solutions/construction-payroll-software', title: 'Payroll for construction site teams' }
+  { to: '/solutions/construction-payroll-software', title: 'Payroll for construction site teams' },
+  { to: '/resources/itemised-payslip-singapore', title: 'Itemised payslips: MOM requirements' },
+  { to: '/resources/salary-payment-rules-singapore', title: 'Salary payment rules and deductions' },
+  { to: '/solutions/expense-claim-software-singapore', title: 'Expense claim software' }
 ]
 const faqs = [
   { q: 'Is DeepHR PSG pre-approved?', a: 'Not yet. We have applied for Productivity Solutions Grant (PSG) pre-approval for DeepHR. Until it is approved, PSG co-funding cannot be claimed for it; check the pre-approved list on GoBusiness or ask us for the latest status.' },
