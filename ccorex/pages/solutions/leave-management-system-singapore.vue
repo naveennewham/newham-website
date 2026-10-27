@@ -61,7 +61,9 @@ const checklist = [
 const guides = [
   { to: '/resources/leave-entitlement-singapore', title: 'Leave entitlement in Singapore (Employment Act)' },
   { to: '/solutions/hr-software-singapore', title: 'HR software for Singapore SMEs' },
-  { to: '/solutions/payroll-software-singapore', title: 'Payroll software for Singapore' }
+  { to: '/solutions/payroll-software-singapore', title: 'Payroll software for Singapore' },
+  { to: '/resources/sick-leave-entitlement-singapore', title: 'Sick leave entitlement in Singapore' },
+  { to: '/resources/public-holidays-singapore-2027', title: 'Singapore public holidays 2027' }
 ]
 const faqs = [
   { q: 'Does DeepHR follow MOM leave rules?', a: 'Yes. DeepHR’s Singapore leave presets follow the Employment Act entitlements published by MOM. See our guide to leave entitlement in Singapore for the statutory figures.' },

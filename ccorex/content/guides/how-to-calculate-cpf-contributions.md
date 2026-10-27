@@ -102,6 +102,8 @@ The most common errors come from inputs, not arithmetic: the wrong age band afte
 ## Related guides
 
 - [How to calculate overtime pay in Singapore](/resources/overtime-calculation-singapore)
+- [Itemised payslips in Singapore](/resources/itemised-payslip-singapore)
+- [Key employment terms (KETs) in Singapore](/resources/key-employment-terms-singapore)
 
 ## How DeepHR calculates CPF
 

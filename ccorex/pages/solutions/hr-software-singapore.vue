@@ -65,7 +65,9 @@ const checklist = [
 const guides = [
   { to: '/resources/leave-entitlement-singapore', title: 'Leave entitlement in Singapore (Employment Act)' },
   { to: '/resources/how-to-calculate-cpf-contributions', title: 'How to calculate CPF contributions' },
-  { to: '/solutions/payroll-software-singapore', title: 'Payroll software for Singapore' }
+  { to: '/solutions/payroll-software-singapore', title: 'Payroll software for Singapore' },
+  { to: '/resources/key-employment-terms-singapore', title: 'Key employment terms (KETs) in Singapore' },
+  { to: '/resources/sick-leave-entitlement-singapore', title: 'Sick leave entitlement in Singapore' }
 ]
 const faqs = [
   { q: 'Is DeepHR PSG pre-approved?', a: 'Not yet. We have applied for Productivity Solutions Grant (PSG) pre-approval for DeepHR. Until it is approved, PSG co-funding cannot be claimed for it; check the pre-approved list on GoBusiness or ask us for the latest status.' },

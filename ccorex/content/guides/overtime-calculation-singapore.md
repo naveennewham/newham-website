@@ -162,6 +162,8 @@ Show overtime clearly on the itemised payslip: the overtime hours worked and the
 - [How to calculate CPF contributions in Singapore](/resources/how-to-calculate-cpf-contributions)
 - [Leave entitlement in Singapore under the Employment Act](/resources/leave-entitlement-singapore)
 - [Construction payroll in Singapore](/resources/construction-payroll-singapore)
+- [Singapore public holidays 2027](/resources/public-holidays-singapore-2027)
+- [Itemised payslips in Singapore](/resources/itemised-payslip-singapore)
 
 ## How DeepHR calculates overtime
 
