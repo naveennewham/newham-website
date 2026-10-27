@@ -47,7 +47,9 @@ const features = [
 const guides = [
   { to: '/resources/budget-vs-actual-construction', title: 'Budget against actual in construction' },
   { to: '/resources/progress-claims-singapore', title: 'Progress claims in Singapore' },
-  { to: '/resources/retention-sum-singapore', title: 'Retention sums in Singapore construction' }
+  { to: '/resources/retention-sum-singapore', title: 'Retention sums in Singapore construction' },
+  { to: '/resources/construction-cost-report-template', title: 'Construction cost report template (Excel)' },
+  { to: '/resources/subcontractor-progress-claims-singapore', title: 'Assessing subcontractor progress claims' }
 ]
 const faqs = [
   { q: 'Can we use DeepTrack without the other CCorex apps?', a: 'Yes. DeepTrack is sold on its own in Starter, Growth and Enterprise tiers, priced per user. DeepCost or DeepHR can be added later on the same sign-in.' },

@@ -146,6 +146,11 @@ Review this weekly for active projects, not just at month-end. A short weekly re
 - **Rebuilding the budget by hand after award.** Retyping the estimate introduces errors. Bring it across from the tender.
 - **Monthly-only reviews.** By month-end, the money is spent.
 
+## Related guides
+
+- [Purchase order approval process for construction companies](/resources/purchase-order-approval-process-construction)
+- [Construction cost report template](/resources/construction-cost-report-template), with an Excel monthly cost report
+
 ## How CCorex helps
 
 [DeepTrack](/products/deeptrack) holds each project's contract value, retention and payment terms, and tracks budget against actual by workhead, WBS and cost centre. Purchase requests are raised against an approved budget and routed through your configured approvals, then flow from PO to delivery, invoice matching and payment. Progress claims include retention and GST with a PDF certificate, timesheets and month-end allocation bring labour and overhead into project cost, and vendors and POs link to Zoho Books. [Contact us](/contact) to walk through it with one of your live projects.
