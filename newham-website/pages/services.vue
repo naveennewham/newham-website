@@ -41,7 +41,7 @@
 const siteUrl = useRuntimeConfig().public.siteUrl as string
 useSeoMeta({
   title: 'Services: software, M&E talent and engineering',
-  description: 'Newham services for construction: CCorex software, dedicated M&E engineering talent, and fire protection design and commercial support for Singapore contractors.',
+  description: 'Newham services for construction: CCorex software, dedicated M&E engineering talent, and MEP design and commercial support for Singapore contractors.',
   ogTitle: 'Newham services',
   ogDescription: 'CCorex software, engineering talent outsourcing and construction engineering services.',
   ogUrl: siteUrl + '/services'
@@ -51,7 +51,7 @@ useHead({ link: [{ rel: 'canonical', href: siteUrl + '/services' }] })
 const choices = [
   { icon: 'fa-solid fa-table-cells', title: 'Our data is everywhere', text: 'Estimates, budgets and payroll in separate spreadsheets and tools.', to: '/ccorex', label: 'CCorex software' },
   { icon: 'fa-solid fa-user-plus', title: 'We need more people', text: 'Ongoing drafting, estimating or tender work that needs dedicated capacity.', to: '/talent-outsourcing', label: 'Talent outsourcing' },
-  { icon: 'fa-solid fa-clipboard-check', title: 'We need a deliverable', text: 'A fire protection design, hydraulic calculation, BOQ or claim, done to scope.', to: '/engineering-services', label: 'Engineering services' }
+  { icon: 'fa-solid fa-clipboard-check', title: 'We need a deliverable', text: 'An MEP design (fire protection, ACMV, electrical, plumbing or ELV), a BOQ or a claim, done to scope.', to: '/engineering-services', label: 'Engineering services' }
 ]
 
 const steps = [

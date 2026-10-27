@@ -104,6 +104,9 @@ We do not have SCDF statistics, but the same themes come up in practice:
 
 For the design content behind the plans, see [fire alarm design in Singapore](/guides/fire-alarm-design-singapore) and [sprinkler hydraulic calculations](/guides/sprinkler-hydraulic-calculations). For BIM submissions, see [CORENET X for MEP teams](/guides/corenet-x-mep-bim-submission). At completion, see [as-built drawings and MEP handover](/guides/as-built-drawings-handover).
 
+- [Wet and dry riser requirements in Singapore](/guides/wet-and-dry-riser-requirements-singapore)
+- [Fire hose reel requirements in Singapore](/guides/fire-hose-reel-requirements-singapore)
+
 ## How Newham can help
 
 Newham's fire protection engineers prepare the technical content behind an SCDF submission: sprinkler, riser and hose reel layouts, hydraulic calculations, fire alarm layouts and schematics, in Singapore submission format. Newham is not a QP or PE firm. Where a submission needs Professional Engineer endorsement, we coordinate review by a Singapore-registered PE and quote those fees separately; the QP remains responsible for submitting to SCDF. Work is priced per deliverable or on a monthly retainer, billed in SGD, with the scope confirmed in writing first. See [fire protection design](/fire-protection-design), or [book a discovery call](/appointment) to scope your next package.

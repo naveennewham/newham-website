@@ -122,6 +122,8 @@ BIM work is often the easiest to outsource because the output is visual and easy
 
 For the tender workflow itself, see the [MEP tender submission checklist](/guides/mep-tender-submission-checklist). For fire protection design work, see [sprinkler hydraulic calculations](/guides/sprinkler-hydraulic-calculations) and [fire protection design](/fire-protection-design).
 
+- [Fire protection tender estimation](/guides/fire-protection-tender-estimation-singapore)
+
 ## How Newham can help
 
 Newham provides dedicated M&E professionals for Singapore contractors: BIM modellers and drafters, estimators and quantity surveyors, tender and commercial coordinators, and fire protection engineers. They work only on your projects, learn your templates and work your hours, while Newham handles hiring, training, HR and quality. Engagements run monthly with no recruitment fees, billed in SGD, as a single specialist, a project team or flexible managed capacity. For a single tender, see our [MEP estimation and BOQ services](/boq-estimation-services). For ongoing capacity, see [talent outsourcing](/talent-outsourcing), or [book a discovery call](/appointment) to plan your team.
