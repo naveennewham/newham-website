@@ -8,7 +8,7 @@
             <span class="icon-tile"><i :class="f.icon" aria-hidden="true"></i></span>
             <span class="rounded-full bg-cyan-50 px-2.5 py-1 text-[11px] font-semibold uppercase tracking-wider text-cyan-700 ring-1 ring-cyan-200">Early access</span>
           </div>
-          <p v-if="showApp" class="mt-5 text-xs font-semibold uppercase tracking-wider text-ink-500">{{ f.app === 'deephr' ? 'DeepHR' : 'DeepTrack' }}</p>
+          <p v-if="showApp" class="mt-5 text-xs font-semibold uppercase tracking-wider text-ink-500">{{ appNames[f.app] }}</p>
           <h3 :class="showApp ? 'mt-1' : 'mt-5'" class="text-lg font-semibold">{{ f.title }}</h3>
           <p class="mt-2 flex-1 text-sm leading-relaxed text-ink-600">{{ f.text }}</p>
           <NuxtLink :to="{ path: '/contact', query: { interest: f.slug } }" class="btn-secondary mt-5 self-start">Request early access <i class="fa-solid fa-arrow-right text-xs" aria-hidden="true"></i></NuxtLink>
@@ -28,5 +28,6 @@ const props = withDefaults(defineProps<{ items: string[]; title?: string; lead?:
   title: 'Built for Singapore contractors — join early access',
   lead: 'These features are in early access. Request access and we will show you where they stand in your demo.'
 })
+const appNames = { deephr: 'DeepHR', deeptrack: 'DeepTrack', 'deepplan-ai': 'DeepPlan AI' }
 const features = computed(() => props.items.map((s) => earlyAccess.find((f) => f.slug === s)).filter((f) => !!f))
 </script>
