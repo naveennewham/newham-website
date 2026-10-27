@@ -4,7 +4,7 @@ import { industries } from '../../data/industries'
 import { trades } from '../../data/experience'
 
 // /ccorex, /ccorex/*, /product and /deeptrack are left out: their canonical is on ccorex.com.
-const STATIC = ['/', '/services', '/talent-outsourcing', '/engineering-services', '/boq-estimation-services', '/fire-protection-design', '/shop-drawing-services', '/industries', '/case-studies', '/pricing', '/about', '/contact', '/appointment', '/privacy']
+const STATIC = ['/', '/services', '/talent-outsourcing', '/engineering-services', '/boq-estimation-services', '/fire-protection-design', '/acmv-design-services', '/electrical-design-services', '/plumbing-sanitary-design-services', '/elv-design-services', '/shop-drawing-services', '/industries', '/case-studies', '/pricing', '/about', '/contact', '/appointment', '/privacy']
 
 // <lastmod> for a fixed page: the last change to its page file (exact, folder index, or the
 // dynamic [param] file that renders it), else the build date.

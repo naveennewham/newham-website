@@ -110,6 +110,8 @@ Drawings, zone chart and matrix must agree. If a zone changes late, update all t
 
 For the sprinkler side of the same submission, see [sprinkler hydraulic calculations](/guides/sprinkler-hydraulic-calculations). When the project reaches handover, see [as-built drawings and MEP handover](/guides/as-built-drawings-handover).
 
+- [Sprinkler hazard classification under SS CP 52](/guides/sprinkler-hazard-classification-singapore)
+
 ## How Newham can help
 
 Newham's fire protection engineers prepare fire alarm design to SS 645, with BS 5839 where the project specification calls for it: detection layout, zoning, loop design and cause-and-effect matrices, formatted for SCDF submission in AutoCAD or Revit. Where a submission needs Professional Engineer endorsement, we coordinate review by a Singapore-registered PE and quote those fees separately. Work is priced per deliverable or on a monthly retainer, billed in SGD, with the scope confirmed in writing first. See [fire protection design](/fire-protection-design), or [book a discovery call](/appointment) to scope your next package.

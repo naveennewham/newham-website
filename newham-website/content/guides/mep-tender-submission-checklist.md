@@ -109,6 +109,10 @@ The same quantities and build-ups support the project once it is won. Keep the t
 - **No final arithmetic check.** Carried-forward totals and summary pages are where errors hide.
 - **Losing the tender set.** Without the submitted documents and query log, disputes after award are hard to settle.
 
+## Related guides
+
+- [Fire protection tender estimation](/guides/fire-protection-tender-estimation-singapore)
+
 ## How Newham can help
 
 Newham's estimators prepare quantity take-offs, BOQs in your or the client's format, and rate build-ups from your price lists and supplier quotes across fire protection, ACMV, electrical, ELV, and plumbing and sanitary. We also draft tender queries, review addenda, compare subcontractor quotes and compile the tender submission, while your team keeps the final say on pricing. Work is priced per deliverable or on a monthly retainer, billed in SGD, with the scope confirmed in writing. See our [BOQ preparation and estimation services](/boq-estimation-services), or [book a discovery call](/appointment) to scope your next tender.

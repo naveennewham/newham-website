@@ -116,6 +116,9 @@ If you need shop drawings and coordination models as well as the design, see [sh
 
 If the sprinkler package is part of a tender, see the [MEP tender submission checklist](/guides/mep-tender-submission-checklist). If you are deciding how to staff design and estimating work, see [outsourcing MEP estimation](/guides/outsourcing-mep-estimation).
 
+- [Sprinkler hazard classification under SS CP 52](/guides/sprinkler-hazard-classification-singapore)
+- [Wet and dry riser requirements in Singapore](/guides/wet-and-dry-riser-requirements-singapore)
+
 ## How Newham can help
 
 Newham's fire protection engineers prepare sprinkler layouts, hydraulic calculations and fire pump selection to SS CP 52, with NFPA 13 where the project specification calls for it, and package them as submission drawings in Singapore format. Where a submission needs Professional Engineer endorsement, we coordinate review by a Singapore-registered PE and quote those fees separately. Work is priced per deliverable or on a monthly retainer, billed in SGD, with the scope confirmed in writing first. See our [engineering services](/engineering-services), or [book a discovery call](/appointment) to scope your next package.
