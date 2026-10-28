@@ -3,6 +3,8 @@
 // - gtag.js loads only once the visitor allows analytics or marketing, and only if an ID is set.
 // - First touch (UTMs, click ids, landing page, referrer) is kept in memory on landing and
 //   written to a 90-day first-party cookie only with marketing consent.
+// - Apollo's website visitor tracker (company-level B2B visitor identification) loads only
+//   with marketing consent.
 // - Pages viewed this visit (for lead scoring) are kept only with analytics consent.
 
 type Gtag = (...args: unknown[]) => void
@@ -12,7 +14,7 @@ const CLICK_IDS = ['gclid', 'gbraid', 'wbraid', 'li_fat_id', 'fbclid', 'msclkid'
 const UTMS = ['source', 'medium', 'campaign', 'term', 'content']
 
 export default defineNuxtPlugin((nuxtApp) => {
-  const config = useRuntimeConfig().public as { gaId?: string; adsId?: string; adsLeadLabel?: string; siteUrl?: string }
+  const config = useRuntimeConfig().public as { gaId?: string; adsId?: string; adsLeadLabel?: string; siteUrl?: string; apolloAppId?: string }
   const { consent } = useConsent()
   const ft = useCookie<Record<string, unknown> | null>('mk_ft', { maxAge: 60 * 60 * 24 * 90, sameSite: 'lax', path: '/', default: () => null })
   // gtag.js only acts on Arguments objects in dataLayer (as in Google's snippet); a plain array
@@ -43,6 +45,17 @@ export default defineNuxtPlugin((nuxtApp) => {
     gtag('js', new Date())
   }
 
+  let apolloLoaded = false
+  function loadApollo() {
+    if (apolloLoaded || !config.apolloAppId) return
+    apolloLoaded = true
+    const s = document.createElement('script')
+    s.async = true
+    s.src = `https://assets.apollo.io/micro/website-tracker/tracker.iife.js?nocache=${Math.random().toString(36).substring(7)}`
+    s.onload = () => (window as unknown as { trackingFunctions?: { onLoad: (o: { appId: string }) => void } }).trackingFunctions?.onLoad({ appId: config.apolloAppId! })
+    document.head.appendChild(s)
+  }
+
   function apply() {
     const c = consent.value
     gtag('consent', 'update', {
@@ -54,6 +67,7 @@ export default defineNuxtPlugin((nuxtApp) => {
     if (c.analytics || c.marketing) loadGtag()
     if (c.analytics && config.gaId) gtag('config', config.gaId)
     if (c.marketing && config.adsId) gtag('config', config.adsId)
+    if (c.marketing) loadApollo()
     // First touch: keep the earliest; a new campaign click replaces a plain earlier visit.
     if (c.marketing && (!ft.value || (isCampaign && !Object.keys((ft.value.clickIds as object) ?? {}).length && !Object.keys((ft.value.utm as object) ?? {}).length))) {
       ft.value = landing
