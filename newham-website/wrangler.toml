@@ -1,0 +1,20 @@
+# Cloudflare Workers deploy for newhamtech.com (Netlify production deploys paused, Oct 2026).
+# Build: NITRO_PRESET=cloudflare_module npm run build   Deploy: npx wrangler deploy
+# Route newhamtech.com/* (apex only, never a wildcard) is added in the dashboard.
+name = "newhamtech-site"
+account_id = "66a0080a039409e88fa0cd84ebadfa04"
+main = ".output/server/index.mjs"
+compatibility_date = "2024-04-03"
+workers_dev = true
+
+[site]
+bucket = ".output/public"
+# Over the 25 MiB per-file limit and not used by any page.
+exclude = ["hero_banner.mp4"]
+
+[vars]
+NUXT_MARKAITING_URL = "https://markaiting-engine.newhamtech.workers.dev"
+NUXT_MARKAITING_WORKSPACE = "newham"
+# Netlify Forms keeps emailing enquiry copies through the still-published Netlify site.
+NUXT_NETLIFY_FORMS_URL = "https://newhamtech.netlify.app/"
+# Secret, set by the owner: npx wrangler secret put NUXT_MARKAITING_LEAD_SECRET
