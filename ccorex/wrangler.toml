@@ -1,0 +1,19 @@
+# Cloudflare Workers deploy for ccorex.com (Netlify production deploys paused, Oct 2026).
+# Build: NITRO_PRESET=cloudflare_module npm run build   Deploy: npx wrangler deploy
+name = "ccorex-site"
+account_id = "f2fad73ad3ad92bd087b570c0e328fb7"
+main = ".output/server/index.mjs"
+compatibility_date = "2024-04-03"
+workers_dev = true
+# Serves ccorex.com (www already 301s to the apex). Delete the route to fall back to Netlify.
+# Route ccorex.com/* is added in the dashboard (zone lives in the account below).
+
+[site]
+bucket = ".output/public"
+
+[vars]
+NUXT_MARKAITING_URL = "https://markaiting-engine.newhamtech.workers.dev"
+NUXT_MARKAITING_WORKSPACE = "ccorex"
+# Secret, set by the owner: npx wrangler secret put NUXT_MARKAITING_LEAD_SECRET
+# Netlify Forms keeps emailing enquiry copies through the still-published Netlify site.
+NUXT_NETLIFY_FORMS_URL = "https://ccorex.netlify.app/"
