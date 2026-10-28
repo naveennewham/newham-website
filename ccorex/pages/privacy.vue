@@ -32,6 +32,7 @@
         <h2>Who processes it for us</h2>
         <ul>
           <li>Google (Google Analytics and Google Ads), if you accept those cookies.</li>
+          <li>Apollo.io, if you accept marketing cookies: it identifies the company a business visitor's network belongs to, and which pages that company viewed, so we can follow up with businesses interested in our services.</li>
           <li>Vercel, which hosts this website.</li>
           <li>Cloudflare, which hosts the system where we keep enquiries.</li>
         </ul>

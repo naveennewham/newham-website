@@ -67,6 +67,7 @@ export default defineNuxtConfig({
       // (NUXT_PUBLIC_GA_ID = G-…, NUXT_PUBLIC_ADS_ID = AW-…, NUXT_PUBLIC_ADS_LEAD_LABEL).
       // GA4 property in the newhamtech2026@gmail.com Analytics account; loads only after analytics consent.
       gaId: 'G-WNCRB2F8CX',
+      apolloAppId: '6ae18aa9418aff00208d8586',
       adsId: '',
       adsLeadLabel: ''
     },
