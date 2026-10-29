@@ -145,3 +145,87 @@ export function constructionLevy(input: LevyInput): LevyResult {
     overQuota: quota != null && workPermits > quota, belowR1: r1Share != null && r1Share < LEVY_MIN_R1_SHARE
   }
 }
+
+// ---------------------------------------------------------------------------
+// Skills Development Levy: CPF Board, Skills Development Levy (as of October 2026).
+// 0.25% of each employee's monthly total wages, at least $2 and at most $11.25 per employee.
+// The per-employee amounts are added up and the total is rounded down to the nearest dollar.
+// ---------------------------------------------------------------------------
+export const SDL_RATE = 0.0025
+export const SDL_MIN = 2
+export const SDL_MAX = 11.25
+export const SDL_MIN_WAGE = 800
+export const SDL_MAX_WAGE = 4500
+
+/** SDL for one employee for a month, before the total is rounded down. No wages, no levy. */
+export function sdlForEmployee(totalWages: number): number {
+  const w = Math.max(0, totalWages || 0)
+  if (w <= 0) return 0
+  // Kept to 4 decimals to drop floating-point noise; CPF Board rounds only the total.
+  return Math.round(Math.min(SDL_MAX, Math.max(SDL_MIN, w * SDL_RATE)) * 10000) / 10000
+}
+
+export interface SdlResult {
+  lines: { wages: number; levy: number; band: 'none' | 'minimum' | 'rate' | 'maximum' }[]
+  employees: number; total: number; payable: number
+}
+
+export function sdlLevy(wages: number[]): SdlResult {
+  const lines = wages.map((raw) => {
+    const w = Math.max(0, raw || 0)
+    const levy = sdlForEmployee(w)
+    const band: SdlResult['lines'][number]['band'] = w <= 0 ? 'none' : w < SDL_MIN_WAGE ? 'minimum' : w > SDL_MAX_WAGE ? 'maximum' : 'rate'
+    return { wages: w, levy, band }
+  })
+  const total = Math.round(lines.reduce((s, l) => s + l.levy, 0) * 10000) / 10000
+  return { lines, employees: lines.filter((l) => l.wages > 0).length, total, payable: floorDollar(total) }
+}
+
+// ---------------------------------------------------------------------------
+// Pro-rated annual leave: MOM, annual leave eligibility and entitlement (Employment Act).
+// (completed months of service ÷ 12) × entitlement; a fraction of a day below one-half is
+// rounded down, one-half or more is rounded up to a full day. At least 3 months' service needed.
+// ---------------------------------------------------------------------------
+/** Days of annual leave by year of service: index 0 = 1st year … index 7 = 8th year and after. */
+export const ANNUAL_LEAVE_DAYS = [7, 8, 9, 10, 11, 12, 13, 14]
+export const ANNUAL_LEAVE_MIN_MONTHS = 3
+
+export const annualLeaveEntitlement = (yearOfService: number) =>
+  ANNUAL_LEAVE_DAYS[Math.min(ANNUAL_LEAVE_DAYS.length, Math.max(1, Math.floor(yearOfService || 1))) - 1]
+
+const addMonthsClamped = (d: Date, m: number) => {
+  const y = d.getUTCFullYear(); const mo = d.getUTCMonth() + m
+  const last = new Date(Date.UTC(y, mo + 1, 0)).getUTCDate()
+  return new Date(Date.UTC(y, mo, Math.min(d.getUTCDate(), last)))
+}
+
+/** Completed months from `from` to `to` (both inclusive, ISO yyyy-mm-dd). MOM's example: 14 Mar to
+ *  31 Jul is 4 completed months, because 14 to 31 Jul is not a full month. Month ends are clamped
+ *  (a month from 31 Jan runs to the day before 28/29 Feb). Returns 0 if `to` is before `from`. */
+export function completedMonths(from: string, to: string): number {
+  const a = new Date(`${from}T00:00:00Z`); const b = new Date(`${to}T00:00:00Z`)
+  if (Number.isNaN(a.getTime()) || Number.isNaN(b.getTime()) || b < a) return 0
+  const dayAfter = new Date(b.getTime() + 86400000)
+  let m = 0
+  while (m < 1200 && addMonthsClamped(a, m + 1) <= dayAfter) m++
+  return m
+}
+
+export interface ProratedLeaveInput {
+  /** Completed months of service in the year being counted (0–12). */
+  completedMonths: number
+  /** Full-year entitlement in days for that year of service. */
+  entitlement: number
+  /** Total length of service with the employer in completed months (for the 3-month rule). */
+  totalServiceMonths: number
+}
+export interface ProratedLeaveResult { eligible: boolean; months: number; exact: number; days: number; roundedUp: boolean }
+
+export function proratedAnnualLeave(input: ProratedLeaveInput): ProratedLeaveResult {
+  const months = Math.min(12, Math.max(0, Math.floor(input.completedMonths || 0)))
+  const ent = Math.max(0, input.entitlement || 0)
+  const eligible = Math.max(0, input.totalServiceMonths || 0) >= ANNUAL_LEAVE_MIN_MONTHS
+  const exact = Math.round(((months / 12) * ent) * 100) / 100
+  const days = eligible ? roundHalfUp((months / 12) * ent) : 0
+  return { eligible, months, exact, days, roundedUp: eligible && days > (months / 12) * ent + EPS }
+}

@@ -14,9 +14,13 @@ DeepCost, DeepTrack and DeepHR are each sold on their own (Starter, Growth and E
 - [PDF Editor](https://ccorex.com/products/pdf-editor): mark up, sign, split and merge PDFs.
 
 ## Solutions for Singapore contractors
-- [MEP estimating and BOQ software](https://ccorex.com/products/deepcost) (DeepCost), with trade pages for [fire protection](https://ccorex.com/estimating/fire-protection) (sprinkler, fire alarm, gas suppression, firestopping and fireproofing), [ACMV](https://ccorex.com/estimating/acmv), [ELV](https://ccorex.com/estimating/elv), [electrical](https://ccorex.com/estimating/electrical) and [plumbing & sanitary](https://ccorex.com/estimating/plumbing-sanitary). Price libraries for every trade: Fire Protection, ACMV, A&A and ELV come seeded; electrical, plumbing & sanitary and other trades are set up during onboarding or imported from Excel
+- [MEP estimating and BOQ software](https://ccorex.com/products/deepcost) (DeepCost), with trade pages for [fire protection](https://ccorex.com/estimating/fire-protection) (sprinkler, fire alarm, gas suppression, firestopping and fireproofing), [ACMV](https://ccorex.com/estimating/acmv), [A&A works](https://ccorex.com/estimating/a-and-a), [ELV](https://ccorex.com/estimating/elv), [electrical](https://ccorex.com/estimating/electrical) and [plumbing & sanitary](https://ccorex.com/estimating/plumbing-sanitary). Price libraries for every trade: Fire Protection, ACMV, A&A and ELV come seeded; electrical, plumbing & sanitary and other trades are set up during onboarding or imported from Excel
 - [Tender estimating software](https://ccorex.com/solutions/tender-estimating-software) (DeepCost): AI tender summary, take-off by area, one price library, approvals at each stage and FOT AI on the client's BOQ PDF.
+- [Construction software for Singapore contractors](https://ccorex.com/solutions/construction-software-singapore): overview of DeepCost, DeepTrack and DeepHR on one sign-in.
+- [BOQ software](https://ccorex.com/solutions/boq-software) (DeepCost): quantities by area, rates from one library, and FOT AI to price the client's BOQ PDF.
+- [AI tender review](https://ccorex.com/solutions/ai-tender-review) (DeepCost): the AI tender summary answers a set of questions from the uploaded tender documents (scope, closing date, payment terms, bonds, DLP); estimators review, edit and export it.
 - [Construction cost control software](https://ccorex.com/solutions/construction-cost-control-software) (DeepTrack)
+- [Construction timesheet and manpower software](https://ccorex.com/solutions/construction-timesheet-software) (DeepTrack): individual and bulk timesheets coded to project, BCA workhead, WBS and business unit, PM approval, labour cost per project at month end.
 - [Progress claim software](https://ccorex.com/solutions/progress-claim-software) (DeepTrack)
 - [HR software for construction](https://ccorex.com/solutions/construction-hr-software) (DeepHR)
 - [Construction payroll software](https://ccorex.com/solutions/construction-payroll-software) (DeepHR)
@@ -60,6 +64,8 @@ DeepHR is also sold on its own to Singapore SMEs in any sector, especially teams
 - [CPF contribution calculator](https://ccorex.com/tools/cpf-contribution-calculator): employer and employee CPF for a month with the CPF Board's 2026 rates, the $8,000 Ordinary Wage ceiling and graduated rates for 1st/2nd-year PRs.
 - [Overtime pay calculator](https://ccorex.com/tools/overtime-pay-calculator): MOM's hourly basic rate formula, 1.5× rate, the $13.60 non-workman cap, Part 4 eligibility and the 72-hour monthly limit.
 - [Construction foreign worker levy calculator](https://ccorex.com/tools/foreign-worker-levy-calculator): monthly and annual levy by source and R1/R2 tier, MOM's daily rate for part months, and quota and 10% R1 checks.
+- [SDL calculator](https://ccorex.com/tools/sdl-calculator): Skills Development Levy at 0.25% of each employee's monthly total wages, the $2 minimum and $11.25 maximum, and the total rounded down to the nearest dollar (CPF Board).
+- [Pro-rated annual leave calculator](https://ccorex.com/tools/prorated-annual-leave-calculator): MOM's (completed months ÷ 12) × entitlement formula for joiners and leavers, the 7 to 14 day table, the 3-month rule and half-day rounding.
 
 ## Key pages
 - [Platform](https://ccorex.com/platform): one sign-in, users and roles managed once.

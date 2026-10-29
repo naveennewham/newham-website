@@ -151,6 +151,7 @@ An unpriced BOQ is the version issued for tender. A priced BOQ is the same docum
 
 - [Tender estimating software for Singapore contractors](/solutions/tender-estimating-software)
 - [Fire protection estimating software](/estimating/fire-protection)
+- [BOQ software for Singapore contractors](/solutions/boq-software)
 - [Variation order template for Singapore contractors](/resources/variation-order-template-singapore), with an Excel VO form and register
 
 ## How CCorex helps

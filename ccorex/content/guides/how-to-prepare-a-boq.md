@@ -175,6 +175,7 @@ For a broader comparison, see our guide on [choosing MEP estimating software](/r
 
 - [Tender estimating software for Singapore contractors](/solutions/tender-estimating-software)
 - [Quantity take-off software for PDF drawings](/solutions/quantity-takeoff-software)
+- [BOQ software for Singapore contractors](/solutions/boq-software)
 
 ## How CCorex helps
 

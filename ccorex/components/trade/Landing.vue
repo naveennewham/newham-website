@@ -40,7 +40,7 @@
     <!-- Workflow -->
     <section class="section bg-ink-50">
       <div class="container-site">
-        <UiSectionHeader center eyebrow="How it works" :title="`A ${trade.toLowerCase()} tender in DeepCost`" lead="One linked record from the tender to the priced Form of Tender. Steps marked AI use DeepCost's AI features; your estimators review every output." />
+        <UiSectionHeader center eyebrow="How it works" :title="`${aTrade[0]!.toUpperCase()}${aTrade.slice(1)} tender in DeepCost`" lead="One linked record from the tender to the priced Form of Tender. Steps marked AI use DeepCost's AI features; your estimators review every output." />
         <div class="mt-12"><UiFlowPipeline :steps="flow" :interval="2000" /></div>
       </div>
     </section>
@@ -48,7 +48,7 @@
     <!-- Features -->
     <section class="section">
       <div class="container-site">
-        <UiSectionHeader :eyebrow="`Built for ${trade.toLowerCase()}`" :title="featureTitle" />
+        <UiSectionHeader :eyebrow="`Built for ${tradeLower}`" :title="featureTitle" />
         <div class="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           <UiFeatureCard v-for="f in features" :key="f.title" :icon="f.icon" :title="f.title" :text="f.text" />
         </div>
@@ -74,6 +74,32 @@
             </tbody>
           </table>
         </div>
+      </div>
+    </section>
+
+    <!-- Sample BOQ lines (optional): how the trade's items read in a priced BOQ -->
+    <section v-if="sampleBoq?.length" class="section-tight bg-ink-50">
+      <div class="container-site">
+        <UiSectionHeader eyebrow="Sample BOQ" :title="sampleBoqTitle" :lead="sampleBoqLead" />
+        <div class="relative mt-10 overflow-x-auto rounded-2xl border border-ink-100 bg-white shadow-card">
+          <table class="w-full min-w-[640px] text-left text-sm">
+            <caption class="sr-only">{{ sampleBoqTitle }}</caption>
+            <thead class="bg-ink-50 text-xs uppercase tracking-wider text-ink-500">
+              <tr><th scope="col" class="w-16 px-5 py-3 font-semibold">Item</th><th scope="col" class="px-5 py-3 font-semibold">Description</th><th scope="col" class="w-20 px-5 py-3 font-semibold">Unit</th><th scope="col" class="w-24 px-5 py-3 font-semibold">Qty</th><th scope="col" class="w-28 px-5 py-3 font-semibold">Rate (S$)</th><th scope="col" class="w-28 px-5 py-3 font-semibold">Amount (S$)</th></tr>
+            </thead>
+            <tbody class="divide-y divide-ink-100">
+              <tr v-for="r in sampleBoq" :key="r.item" class="align-top" :class="r.heading ? 'bg-ink-50/60' : ''">
+                <td class="px-5 py-3 text-ink-500">{{ r.item }}</td>
+                <td class="px-5 py-3 leading-relaxed" :class="r.heading ? 'font-semibold text-ink-900' : 'text-ink-700'">{{ r.description }}</td>
+                <td class="px-5 py-3 text-ink-700">{{ r.unit }}</td>
+                <td class="px-5 py-3 text-ink-700">{{ r.qty }}</td>
+                <td class="px-5 py-3 text-ink-400">{{ r.heading ? '' : '—' }}</td>
+                <td class="px-5 py-3 text-ink-400">{{ r.heading ? '' : '—' }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="mt-4 text-xs text-ink-500">Illustrative lines with invented quantities. Rates and amounts come from your own library; FOT AI fills them onto the client’s BOQ PDF.</p>
       </div>
     </section>
 
@@ -107,7 +133,7 @@
       </div>
     </section>
 
-    <UiCtaBand :title="`See DeepCost on a ${trade.toLowerCase()} tender`" lead="Bring a recent tender to a 30-minute demo. We will walk through the take-off, pricing and Form of Tender on your own trade." />
+    <UiCtaBand :title="`See DeepCost on ${aTrade} tender`" lead="Bring a recent tender to a 30-minute demo. We will walk through the take-off, pricing and Form of Tender on your own trade." />
   </div>
 </template>
 
@@ -124,11 +150,19 @@ const props = defineProps<{
   // Optional table of systems in the trade: what to measure and price, and what to watch for.
   systemsTitle?: string; systemsLead?: string
   systems?: { name: string; measure: string; watch: string }[]
+  // Optional illustrative BOQ lines (no prices); heading rows group the lines.
+  sampleBoqTitle?: string; sampleBoqLead?: string
+  sampleBoq?: { item: string; description: string; unit?: string; qty?: string; heading?: boolean }[]
 }>()
+
+// Acronyms (ACMV, ELV, A&A) keep their capitals; 'an' before a vowel sound.
+const tradeLower = /^[A-Z&]{2,}$/.test(props.trade) ? props.trade : props.trade.toLowerCase()
+const aTrade = `${/^[aeiou]/i.test(tradeLower) ? 'an' : 'a'} ${tradeLower}`
 
 const all = [
   { slug: 'fire-protection', name: 'Fire protection', icon: 'fa-solid fa-fire-extinguisher', to: '/estimating/fire-protection' },
   { slug: 'acmv', name: 'ACMV', icon: 'fa-solid fa-fan', to: '/estimating/acmv' },
+  { slug: 'a-and-a', name: 'A&A works', icon: 'fa-solid fa-hammer', to: '/estimating/a-and-a' },
   { slug: 'elv', name: 'ELV', icon: 'fa-solid fa-network-wired', to: '/estimating/elv' },
   { slug: 'electrical', name: 'Electrical', icon: 'fa-solid fa-bolt', to: '/estimating/electrical' },
   { slug: 'plumbing-sanitary', name: 'Plumbing & sanitary', icon: 'fa-solid fa-faucet-drip', to: '/estimating/plumbing-sanitary' }

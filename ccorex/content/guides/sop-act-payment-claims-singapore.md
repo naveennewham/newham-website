@@ -155,6 +155,7 @@ SMC appoints an adjudicator within 7 days. The respondent may lodge an adjudicat
 
 ## Related guides
 
+- [Payment certificates in Singapore construction](/resources/payment-certificate-singapore)
 - [Progress claims in Singapore](/resources/progress-claims-singapore)
 - [Progress claim template and format](/resources/progress-claim-template-singapore)
 - [Retention sum in Singapore construction](/resources/retention-sum-singapore)

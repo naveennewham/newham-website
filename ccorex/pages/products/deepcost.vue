@@ -293,6 +293,7 @@ useHead({
 const tradeLinks = [
   { to: '/estimating/fire-protection', name: 'Fire protection estimating', icon: 'fa-solid fa-fire-extinguisher' },
   { to: '/estimating/acmv', name: 'ACMV estimating', icon: 'fa-solid fa-fan' },
+  { to: '/estimating/a-and-a', name: 'A&A works estimating', icon: 'fa-solid fa-hammer' },
   { to: '/estimating/elv', name: 'ELV estimating', icon: 'fa-solid fa-network-wired' },
   { to: '/estimating/electrical', name: 'Electrical estimating', icon: 'fa-solid fa-bolt' },
   { to: '/estimating/plumbing-sanitary', name: 'Plumbing & sanitary estimating', icon: 'fa-solid fa-faucet-drip' },

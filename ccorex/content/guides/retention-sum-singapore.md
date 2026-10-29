@@ -135,6 +135,7 @@ Review the register monthly. Retention due for release should appear on your cas
 
 ## Related guides
 
+- [Payment certificates in Singapore construction](/resources/payment-certificate-singapore)
 - [Progress claims in Singapore](/resources/progress-claims-singapore)
 - [Progress claim template and format](/resources/progress-claim-template-singapore)
 - [SOP Act payment claims and payment responses](/resources/sop-act-payment-claims-singapore)
