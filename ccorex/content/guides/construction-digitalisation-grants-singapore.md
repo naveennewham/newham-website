@@ -3,7 +3,7 @@ title: "PSG for Construction Software: A Singapore Guide"
 description: "How Singapore contractors can approach the Built Environment PSG and other digitalisation grants when buying construction software, and what to check."
 slug: construction-digitalisation-grants-singapore
 date: 2026-10-15
-updated: 2026-10-18
+updated: 2026-10-29
 author: "CCorex team"
 author_role: "Construction software specialists"
 keywords: [psg construction software, psg approved construction solution, construction digitalisation grant, built environment psg, bca grants, edge grant construction]
@@ -120,7 +120,7 @@ A vendor who answers these clearly, including saying "we are not on the list", i
 
 ## Other support to look at
 
-Beyond the BE PSG, Singapore has other enterprise support schemes. Enterprise Singapore's [EDGE Grant](https://www.enterprisesg.gov.sg/edge-grant) took over from its EDG, PSG and MRA grants from 30 September 2026. Names, terms and eligibility change over time, so we do not list figures here. Start from the Enterprise Singapore and GoBusiness grants pages and BCA's grants section, and speak to the agency directly if your case is unusual.
+Beyond the BE PSG, Singapore has other enterprise support schemes. Enterprise Singapore's [EDGE Grant](https://www.enterprisesg.gov.sg/financial-support/edge-grant) took over from its EDG, PSG and MRA grants from 30 September 2026, and covers activities across areas such as automation and digitalisation. As of October 2026, Enterprise Singapore lists support of up to 70% for SMEs and up to 50% for non-SMEs, varying by activity, with total support capped at S$100,000 a year across all activities (the cap resets each 1 April). Support is paid as a reimbursement after the activity is completed and paid for. Applications and projects already submitted under EDG, MRA or PSG are still processed. Terms change, so check the activity page that matches your project. Start from the Enterprise Singapore and GoBusiness grants pages and BCA's grants section, and speak to the agency directly if your case is unusual.
 
 ## Common mistakes
 

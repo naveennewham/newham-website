@@ -19,6 +19,7 @@
           <li><NuxtLink to="/platform" class="hover:text-white">How it works</NuxtLink></li>
           <li><NuxtLink to="/integrations" class="hover:text-white">Integrations</NuxtLink></li>
           <li><NuxtLink to="/solutions" class="hover:text-white">Solutions by role</NuxtLink></li>
+          <li><NuxtLink to="/solutions/construction-software-singapore" class="hover:text-white">Construction software Singapore</NuxtLink></li>
           <li><NuxtLink to="/industries" class="hover:text-white">Industries</NuxtLink></li>
           <li><NuxtLink to="/pricing" class="hover:text-white">Pricing</NuxtLink></li>
           <li><NuxtLink to="/estimating/fire-protection" class="hover:text-white">Fire protection estimating</NuxtLink></li>

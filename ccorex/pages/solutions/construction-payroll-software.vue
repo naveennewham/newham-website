@@ -5,6 +5,7 @@
     app-name="DeepHR"
     eyebrow="Construction payroll · Singapore"
     seo-title="Construction Payroll Software Singapore: CPF, Overtime, Payslips"
+    sub-category="Construction payroll software"
     seo-description="Payroll software for construction companies in Singapore: face and GPS site attendance into payroll, MOM overtime, CPF, SDL and SHG, and itemised payslips."
     h1="Payroll software for construction companies in Singapore"
     lead="DeepHR turns face and GPS attendance from your sites into payroll with CPF, SDL and SHG worked out, and keeps each worker’s pass type, number and expiry date on their record."
@@ -69,6 +70,8 @@ const faqs = [
   { q: 'Does it handle foreign workers?', a: 'Yes. Workers check in with face and GPS on their own phone, and each worker’s pass type, number and expiry date are kept on their record.' },
   { q: 'Do workers need a company phone?', a: 'No. Attendance runs on the worker’s own phone, and punches are queued if there is no signal on site.' },
   { q: 'Does DeepHR calculate overtime for site workers?', a: 'Yes. Approved attendance feeds the payroll run, and overtime follows MOM rules. Our guide to calculating overtime pay in Singapore explains the rates, the 72-hour monthly cap and rest-day pay.' },
+  { q: 'Which site workers are entitled to overtime pay?', a: 'Under Part 4 of the Employment Act, workmen earning a monthly basic salary of S$4,500 or less, and non-workmen earning S$2,600 or less, get overtime at least 1.5 times the hourly basic rate, up to 72 overtime hours a month (MOM). Managers and executives are not covered by Part 4.' },
+  { q: 'Do we pay CPF for foreign construction workers?', a: 'No. CPF contributions apply to Singapore citizens and permanent residents, so Work Permit and S Pass holders are not CPF members. The Skills Development Levy is still payable for every employee, including foreign workers.' },
   { q: 'Is this construction payroll software or a payroll service?', a: 'DeepHR is payroll software that your own HR or finance team runs. It is not an outsourced payroll bureau. Your team approves attendance and runs payroll, and DeepHR does the calculations and payslips.' },
   { q: 'How is DeepHR priced?', a: 'Pricing is shared on request. Book a demo or email admin@newhamtech.com.' }
 ]
