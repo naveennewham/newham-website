@@ -62,6 +62,7 @@ const checklist = [
   { need: 'Fit with your accounting', how: 'Zoho Books link per organisation and a month-end journal CSV for any ledger.' }
 ]
 const guides = [
+  { to: '/solutions/construction-timesheet-software', title: 'Construction timesheet and manpower software' },
   { to: '/resources/budget-vs-actual-construction', title: 'Budget against actual: how it works' },
   { to: '/solutions/procurement-software-singapore', title: 'Procurement and purchase order software' },
   { to: '/solutions/construction-cost-control-software', title: 'Cost control for construction contractors' },

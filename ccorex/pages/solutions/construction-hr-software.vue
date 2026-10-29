@@ -4,7 +4,7 @@
     app="deephr"
     app-name="DeepHR"
     eyebrow="HR software · Singapore"
-    seo-title="HR software for construction companies in Singapore"
+    seo-title="Construction HR Software Singapore for Office and Site Teams"
     seo-description="HR software for Singapore construction companies with office and site teams: phone attendance, leave, claims, multi-level approvals, payslips and CPF payroll."
     h1="HR software for construction companies in Singapore"
     lead="DeepHR runs HR for office and site teams in one app: face and GPS attendance on each employee's phone, leave, claims and timesheets through one approvals engine, and payroll with CPF, SDL and SHG. Use it on its own or with the rest of CCorex."

@@ -56,6 +56,8 @@ const checklist = [
   { need: 'A record of every tender', how: 'Opportunities with customer, tender type, sector, trades, estimator and submission date, and the documents in one place.' }
 ]
 const guides = [
+  { to: '/solutions/ai-tender-review', title: 'AI tender review' },
+  { to: '/solutions/boq-software', title: 'BOQ software' },
   { to: '/resources/how-to-prepare-a-boq', title: 'How to prepare a BOQ' },
   { to: '/resources/mep-estimating-checklist', title: 'MEP estimating checklist' },
   { to: '/resources/choosing-mep-estimating-software', title: 'Choosing MEP estimating software' },

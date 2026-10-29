@@ -134,6 +134,7 @@ Our [budget vs actual guide](/resources/budget-vs-actual-construction) explains 
 
 ## Related guides
 
+- [Payment certificates in Singapore construction](/resources/payment-certificate-singapore)
 - [Variation order template for Singapore contractors](/resources/variation-order-template-singapore), with an Excel VO form and register
 - [Subcontractor progress claims: how main contractors assess them](/resources/subcontractor-progress-claims-singapore)
 

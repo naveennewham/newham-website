@@ -140,6 +140,8 @@ For wider digitalisation and possible funding, see [construction digitalisation 
 
 ## Related guides
 
+- [Payroll software for construction companies](/solutions/construction-payroll-software)
+- [HR software for construction companies](/solutions/construction-hr-software)
 - [How to calculate overtime pay in Singapore](/resources/overtime-calculation-singapore)
 - [Itemised payslips in Singapore](/resources/itemised-payslip-singapore)
 - [Sick leave entitlement in Singapore](/resources/sick-leave-entitlement-singapore)

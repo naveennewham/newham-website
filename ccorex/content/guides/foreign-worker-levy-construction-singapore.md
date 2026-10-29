@@ -1,8 +1,10 @@
 ---
 title: "Construction Foreign Worker Levy in Singapore: R1 Rates, Levy Bond and Quota"
-description: "Construction levy rates for R1 and R2 workers, the S$600 levy bond, the 1:5 Work Permit quota, R1 upgrade routes and permit renewals for Singapore employers."
+seo_title: "Construction Levy Singapore: R1 Rates, Levy Bond & Quota"
+description: "Construction worker levy from S$300 a month for R1 workers, the S$600 levy bond, the 1:5 Work Permit quota and R1 upgrade routes, with a free levy calculator."
 slug: foreign-worker-levy-construction-singapore
 date: 2026-10-18
+updated: 2026-10-29
 author: "CCorex team"
 author_role: "HR and payroll specialists"
 keywords: [foreign worker levy construction singapore, construction levy, r1 worker levy, levy bond, construction work permit quota, higher-skilled r1 construction worker, work permit expiry, man-year entitlement, coretrade, dependency ratio ceiling construction]
@@ -18,6 +20,8 @@ faq:
     a: "MOM sets a dependency ratio ceiling for construction: you can employ 5 Work Permit holders for each local employee earning the Local Qualifying Salary. At least 10% of your construction Work Permit holders must also be Higher-Skilled (R1)."
   - q: "Does the Man-Year Entitlement (MYE) still apply to construction?"
     a: "No. MOM removed the MYE framework for the construction sector from 1 January 2024. Since then, your Work Permit quota is set by the dependency ratio ceiling, based on your local workforce, rather than by MYEs tied to project value."
+  - q: "How much is the security bond for a construction worker?"
+    a: "As of October 2026, MOM requires a S$5,000 security bond, as a banker's or insurer's guarantee, for each non-Malaysian Work Permit holder. It must be in place before the worker arrives, and the employer cannot ask the worker to pay for it."
   - q: "How can a construction worker become Higher-Skilled (R1)?"
     a: "MOM lists four routes: CoreTrade, the Multi-Skilling Scheme, the Direct R1 Pathway and the Market-Based Skills Recognition Framework. Each has its own experience, certification and salary conditions, and R1 status is valid for 2 years before it needs renewing."
   - q: "When should we renew a construction worker's Work Permit?"
@@ -45,9 +49,21 @@ MOM sets construction levy rates on its [construction sector requirements page](
 A few points from the same page that affect your monthly bill:
 
 - **Workers without the required certification** are treated as unskilled and charged S$900 regardless of source.
-- **Part months** are charged at a daily rate for workers who did not work a full calendar month.
+- **Part months** are charged at a daily rate for workers who did not work a full calendar month. MOM works it out as the monthly rate × 12 ÷ 365, rounded up to the nearest cent: for example S$9.87 a day for a S$300 R1 worker and S$29.59 a day for a S$900 worker.
 - **Skill changes take effect on the 1st of the following month.** Upgrading a worker to R1 on the 3rd does not reduce this month's levy.
-- **Levy bond.** MOM lists a S$600 levy bond for each higher-skilled or basic-skilled worker and S$2,000 for each unskilled worker. This is separate from the security bond, which is only required for non-Malaysian workers.
+- **Levy bond.** MOM lists a S$600 levy bond for each higher-skilled or basic-skilled worker and S$2,000 for each unskilled worker, bought separately for skilled and unskilled workers. The levy bond monitoring period is usually 12 months (6 months for new companies), and any late levy payment during that period extends it by 12 months. This is separate from the security bond, which is only required for non-Malaysian workers.
+
+## Security bond for construction Work Permit holders
+
+MOM's [security bond page](https://www.mom.gov.sg/passes-and-permits/work-permit-for-foreign-worker/sector-specific-rules/security-bond) sets out the rules. As of October 2026:
+
+- **S$5,000 per non-Malaysian Work Permit holder.** Malaysian workers do not need one.
+- **A banker's or insurer's guarantee.** You buy it from a bank or insurance company, and you cannot ask the worker to pay for it.
+- **It must be in place before the worker arrives.** If it has not taken effect, the immigration officer will not let the worker enter Singapore. Allow up to 3 working days for the bank or insurer to send the details to MOM.
+- **It can be forfeited** for breaches such as violating Work Permit or bond conditions, paying salary late, or failing to send a worker home when the permit ends.
+- **It is discharged** once the permit is cancelled, the worker has gone home and no conditions were breached, usually one week after the worker leaves Singapore.
+
+The bond's expiry date also limits how long a renewed Work Permit can run (see renewal below), so track it alongside the permit.
 
 The gap between R1 and R2 is S$400 a month per worker for both NTS and Malaysia/NAS/PRC workers on site. Across a workforce of 50, that difference adds up quickly, which is why skill tier is a cost decision, not just an HR record.
 
@@ -141,6 +157,8 @@ Two cost views are worth separating. **Levy per worker** catches billing errors 
 ## Related guides
 
 - [Construction workforce management and payroll in Singapore](/resources/construction-payroll-singapore)
+- [Payroll software for construction companies](/solutions/construction-payroll-software)
+- [Construction software for Singapore contractors](/solutions/construction-software-singapore)
 - [Budget vs actual in construction](/resources/budget-vs-actual-construction)
 - [Construction digitalisation grants in Singapore](/resources/construction-digitalisation-grants-singapore)
 - [Progress claims in Singapore](/resources/progress-claims-singapore)

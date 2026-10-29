@@ -1,8 +1,10 @@
 ---
 title: "SOP Act Payment Claims and Payment Responses: A Contractor's Guide (Singapore)"
-description: "How payment claims and payment responses work under Singapore's Security of Payment Act: contents, service, deadlines and adjudication."
+seo_title: "SOP Act Payment Claims and Payment Response Deadlines"
+description: "Singapore SOP Act explained: what a payment claim must contain, when the payment response is due (up to 21 days), the 7-day dispute settlement period and adjudication."
 slug: sop-act-payment-claims-singapore
 date: 2026-10-18
+updated: 2026-10-29
 author: "CCorex team"
 author_role: "Construction finance and project controls specialists"
 keywords: [sop act payment claim, payment response singapore, security of payment act singapore, sopa singapore, payment claim singapore, adjudication application singapore, dispute settlement period]
@@ -153,6 +155,7 @@ SMC appoints an adjudicator within 7 days. The respondent may lodge an adjudicat
 
 ## Related guides
 
+- [Payment certificates in Singapore construction](/resources/payment-certificate-singapore)
 - [Progress claims in Singapore](/resources/progress-claims-singapore)
 - [Progress claim template and format](/resources/progress-claim-template-singapore)
 - [Retention sum in Singapore construction](/resources/retention-sum-singapore)

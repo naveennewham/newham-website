@@ -19,10 +19,12 @@
           <li><NuxtLink to="/platform" class="hover:text-white">How it works</NuxtLink></li>
           <li><NuxtLink to="/integrations" class="hover:text-white">Integrations</NuxtLink></li>
           <li><NuxtLink to="/solutions" class="hover:text-white">Solutions by role</NuxtLink></li>
+          <li><NuxtLink to="/solutions/construction-software-singapore" class="hover:text-white">Construction software Singapore</NuxtLink></li>
           <li><NuxtLink to="/industries" class="hover:text-white">Industries</NuxtLink></li>
           <li><NuxtLink to="/pricing" class="hover:text-white">Pricing</NuxtLink></li>
           <li><NuxtLink to="/estimating/fire-protection" class="hover:text-white">Fire protection estimating</NuxtLink></li>
           <li><NuxtLink to="/estimating/acmv" class="hover:text-white">ACMV estimating</NuxtLink></li>
+          <li><NuxtLink to="/estimating/a-and-a" class="hover:text-white">A&amp;A works estimating</NuxtLink></li>
           <li><NuxtLink to="/estimating/elv" class="hover:text-white">ELV estimating</NuxtLink></li>
           <li><NuxtLink to="/estimating/electrical" class="hover:text-white">Electrical estimating</NuxtLink></li>
           <li><NuxtLink to="/estimating/plumbing-sanitary" class="hover:text-white">Plumbing &amp; sanitary estimating</NuxtLink></li>

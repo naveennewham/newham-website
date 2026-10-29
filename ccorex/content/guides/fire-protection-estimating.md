@@ -147,7 +147,7 @@ Each answer can change quantities, materials or the attendance you need to price
 5. **Underpricing testing and inspections.** Testing and attendance take labour time that is easy to leave out.
 6. **Ignoring revisions.** A change of room use can change hazard class, which ripples through heads, pipe sizes and pump duty.
 
-For structuring the overall BOQ, see [how to prepare a BOQ](/resources/how-to-prepare-a-boq). For measuring heads and devices from drawings, see [quantity takeoff methods](/resources/quantity-takeoff-methods).
+For structuring the overall BOQ, see [how to prepare a BOQ](/resources/how-to-prepare-a-boq). For measuring heads and devices from drawings, see [quantity takeoff methods](/resources/quantity-takeoff-methods). For what to look for in [fire protection estimating software](/estimating/fire-protection), see our fire protection page.
 
 ## How CCorex helps
 

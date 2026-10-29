@@ -1,8 +1,10 @@
 ---
 title: "Retention Sum in Singapore: Calculation, Release and GST"
-description: "How retention sums work in Singapore construction: how they are calculated and capped, when retention money is released, GST, and how to track it."
+seo_title: "Retention Sum Singapore: How It Is Calculated and Released"
+description: "Retention sum in Singapore construction: a worked example of how retention is calculated and capped, when each half is released, GST on retention and how to track it."
 slug: retention-sum-singapore
 date: 2026-10-18
+updated: 2026-10-29
 author: "CCorex team"
 author_role: "Construction finance and project controls specialists"
 keywords: [retention sum construction singapore, retention money release, retention sum, retention in construction, defects liability period retention, release of retention singapore, retention moiety]
@@ -133,6 +135,7 @@ Review the register monthly. Retention due for release should appear on your cas
 
 ## Related guides
 
+- [Payment certificates in Singapore construction](/resources/payment-certificate-singapore)
 - [Progress claims in Singapore](/resources/progress-claims-singapore)
 - [Progress claim template and format](/resources/progress-claim-template-singapore)
 - [SOP Act payment claims and payment responses](/resources/sop-act-payment-claims-singapore)

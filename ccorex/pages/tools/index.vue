@@ -5,7 +5,7 @@
       <div class="container-site relative pb-16 pt-16 lg:pt-20">
         <p class="eyebrow-dark">Free calculators</p>
         <h1 class="h-display mt-4 max-w-3xl text-white">Free payroll and workforce calculators for Singapore</h1>
-        <p class="lead-dark mt-5 max-w-2xl">Quick estimates of CPF, overtime pay and the construction foreign worker levy, using the CPF Board’s and MOM’s published rates. Free to use, with no sign-up, and nothing you enter is saved.</p>
+        <p class="lead-dark mt-5 max-w-2xl">Quick estimates of CPF, SDL, overtime pay, prorated annual leave and the construction foreign worker levy, using the CPF Board’s and MOM’s published rates. Free to use, with no sign-up, and nothing you enter is saved.</p>
       </div>
     </section>
 
@@ -39,8 +39,8 @@ import { tools, toolPath } from '~/data/tools'
 
 const config = useRuntimeConfig()
 const pageUrl = `${config.public.siteUrl}/tools`
-const description = 'Free Singapore calculators for employers: CPF contributions with 2026 rates, overtime pay under the Employment Act, and the construction foreign worker levy.'
-useSeoMeta({ title: 'Free CPF, overtime and levy calculators for Singapore', description, ogTitle: 'Free CPF, overtime and levy calculators for Singapore | CCorex', ogDescription: description })
+const description = 'Free Singapore calculators for employers: CPF contributions with 2026 rates, the Skills Development Levy, overtime pay and prorated annual leave under the Employment Act, and the construction foreign worker levy.'
+useSeoMeta({ title: 'Free CPF, SDL, overtime, leave and levy calculators (Singapore)', description, ogTitle: 'Free CPF, SDL, overtime, leave and levy calculators (Singapore) | CCorex', ogDescription: description })
 useHead({
   link: [{ rel: 'canonical', href: pageUrl }],
   script: [{
