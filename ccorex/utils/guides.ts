@@ -4,7 +4,7 @@ import { parse } from 'yaml'
 import { Marked } from 'marked'
 
 export interface Guide {
-  slug: string; title: string; description: string; date: string; updated?: string
+  slug: string; title: string; seoTitle?: string; description: string; date: string; updated?: string
   author: string; authorRole?: string; keywords: string[]; related?: string
   faq: { q: string; a: string }[]; html: string; words: number; minutes: number
   download?: { file: string; title: string } // offered behind a short form on the guide page
@@ -23,7 +23,7 @@ export function parseGuide(text: string): Guide | null {
   const dl = fm.download as { file?: unknown; title?: unknown } | undefined
   const iso = (v: unknown) => (v instanceof Date ? v.toISOString().slice(0, 10) : v ? String(v) : undefined)
   return {
-    slug: String(fm.slug), title: String(fm.title), description: String(fm.description ?? ''),
+    slug: String(fm.slug), title: String(fm.title), seoTitle: fm.seo_title ? String(fm.seo_title) : undefined, description: String(fm.description ?? ''),
     date: iso(fm.date) ?? '', updated: iso(fm.updated), author: String(fm.author ?? 'CCorex team'),
     authorRole: fm.author_role ? String(fm.author_role) : undefined,
     keywords: Array.isArray(fm.keywords) ? fm.keywords.map(String) : [], related: fm.related ? String(fm.related) : undefined,

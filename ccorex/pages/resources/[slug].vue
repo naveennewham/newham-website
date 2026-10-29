@@ -75,7 +75,7 @@ const fmt = (d: string) => new Date(`${d}T00:00:00Z`).toLocaleDateString('en-SG'
 
 const site = useRuntimeConfig().public.siteUrl as string
 const url = `${site}/resources/${g!.slug}`
-useSeoMeta({ title: g!.title, description: g!.description, ogTitle: g!.title, ogDescription: g!.description, ogType: 'article' })
+useSeoMeta({ title: g!.seoTitle ?? g!.title, description: g!.description, ogTitle: g!.seoTitle ?? g!.title, ogDescription: g!.description, ogType: 'article' })
 useHead({
   link: [{ rel: 'canonical', href: url }],
   script: [{

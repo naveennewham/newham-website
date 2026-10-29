@@ -1,8 +1,10 @@
 ---
 title: "BOQ Meaning: What Is a Bill of Quantities? Full Form, Format, Types"
-description: "What is a BOQ? Bill of quantities meaning, a standard BOQ format with columns and sections, the main types of BOQ and how contractors use it."
+seo_title: "BOQ Meaning and Full Form: Bill of Quantities Explained"
+description: "BOQ full form: bill of quantities. What a BOQ means in construction and business, a standard BOQ format with columns, the main types and an example."
 slug: what-is-a-boq
 date: 2026-10-16
+updated: 2026-10-29
 author: "CCorex team"
 author_role: "MEP estimating specialists"
 keywords: [what is a boq, boq meaning in business, boq means, bill of quantities meaning, boq meaning, boq format, types of boq, boq full form, bill of quantities construction, boq singapore]
@@ -148,6 +150,7 @@ An unpriced BOQ is the version issued for tender. A priced BOQ is the same docum
 ## Related guides
 
 - [Tender estimating software for Singapore contractors](/solutions/tender-estimating-software)
+- [Fire protection estimating software](/estimating/fire-protection)
 - [Variation order template for Singapore contractors](/resources/variation-order-template-singapore), with an Excel VO form and register
 
 ## How CCorex helps

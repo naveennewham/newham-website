@@ -1,8 +1,10 @@
 ---
 title: "Construction Foreign Worker Levy in Singapore: R1 Rates, Levy Bond and Quota"
-description: "Construction levy rates for R1 and R2 workers, the S$600 levy bond, the 1:5 Work Permit quota, R1 upgrade routes and permit renewals for Singapore employers."
+seo_title: "Construction Levy Singapore: R1 Rates, Levy Bond & Quota"
+description: "Construction worker levy from S$300 a month for R1 workers, the S$600 levy bond, the 1:5 Work Permit quota and R1 upgrade routes, with a free levy calculator."
 slug: foreign-worker-levy-construction-singapore
 date: 2026-10-18
+updated: 2026-10-29
 author: "CCorex team"
 author_role: "HR and payroll specialists"
 keywords: [foreign worker levy construction singapore, construction levy, r1 worker levy, levy bond, construction work permit quota, higher-skilled r1 construction worker, work permit expiry, man-year entitlement, coretrade, dependency ratio ceiling construction]
@@ -141,6 +143,7 @@ Two cost views are worth separating. **Levy per worker** catches billing errors 
 ## Related guides
 
 - [Construction workforce management and payroll in Singapore](/resources/construction-payroll-singapore)
+- [Payroll software for construction companies](/solutions/construction-payroll-software)
 - [Budget vs actual in construction](/resources/budget-vs-actual-construction)
 - [Construction digitalisation grants in Singapore](/resources/construction-digitalisation-grants-singapore)
 - [Progress claims in Singapore](/resources/progress-claims-singapore)

@@ -2,9 +2,9 @@
   <TradeLanding
     slug="fire-protection"
     trade="Fire protection"
-    seo-title="Fire protection estimating software: sprinkler, fire alarm & suppression"
+    seo-title="Fire Protection Estimating Software for Sprinkler & Fire Alarm"
     seo-description="Estimating software for fire sprinkler, fire alarm, gas suppression, firestopping and fireproofing tenders in Singapore: take-off by area, one price library, FOT AI."
-    h1="Price fire protection tenders from one library"
+    h1="Fire protection estimating software for sprinkler, fire alarm and suppression tenders"
     lead="DeepCost takes a fire protection tender from documents to a priced Form of Tender: take-off by building, floor and room with hazard class, one priced library, and rules that catch the wrong sprinkler type before it is priced."
     :item-groups="['Sprinkler heads & pipework', 'Valves & alarm check stations', 'Fire alarm devices & panels', 'Gas suppression', 'Hose reels & risers', 'Fire pumps & tanks', 'Firestopping & fireproofing']"
     problem-title="Every bid re-counted, every rate re-checked"
