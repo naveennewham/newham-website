@@ -81,7 +81,7 @@
             </div>
             <p class="mt-3 text-sm leading-relaxed text-ink-600">{{ s.text }}</p>
             <ul class="mt-5 grid gap-x-6 gap-y-2.5 text-sm sm:grid-cols-2">
-              <li v-for="i in s.items" :key="i" class="flex gap-2.5 text-ink-700"><i class="fa-solid fa-check mt-1 text-brand-600" aria-hidden="true"></i>{{ i }}</li>
+              <li v-for="i in s.items" :key="i" class="flex gap-2.5 text-ink-700"><i class="fa-solid fa-check mt-1 text-brand-600" aria-hidden="true"></i><NuxtLink v-if="itemLinks[i]" :to="itemLinks[i]" class="font-semibold text-brand-700 hover:text-brand-900">{{ i }}</NuxtLink><template v-else>{{ i }}</template></li>
             </ul>
           </div>
         </div>
@@ -234,6 +234,9 @@ const streams = [
     items: ['Estimation & BOQ preparation', 'Tender queries & addenda', 'Document control & submissions', 'Project QS & variations', 'Progress claims & valuations', 'Cost tracking, budget vs actual']
   }
 ]
+
+// Stream items with their own service page.
+const itemLinks: Record<string, string> = { 'Estimation & BOQ preparation': '/boq-estimation-services', 'Sprinkler system design': '/fire-protection-design' }
 
 const steps = [
   { title: 'Discovery call', text: 'A 30-minute call about your pipeline, systems and team.' },

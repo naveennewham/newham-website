@@ -20,7 +20,7 @@
     <section class="section bg-ink-50">
       <div class="container-site">
         <UiSectionHeader center eyebrow="Which fits?" title="Choose by the problem you have" />
-        <div class="mt-12 grid gap-4 md:grid-cols-3">
+        <div class="mt-12 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
           <UiFeatureCard v-for="c in choices" :key="c.title" :icon="c.icon" :title="c.title" :text="c.text" :to="c.to" :link-label="c.label" />
         </div>
       </div>
@@ -51,6 +51,7 @@ useHead({ link: [{ rel: 'canonical', href: siteUrl + '/services' }] })
 const choices = [
   { icon: 'fa-solid fa-table-cells', title: 'Our data is everywhere', text: 'Estimates, budgets and payroll in separate spreadsheets and tools.', to: '/ccorex', label: 'CCorex software' },
   { icon: 'fa-solid fa-user-plus', title: 'We need more people', text: 'Ongoing drafting, estimating or tender work that needs dedicated capacity.', to: '/talent-outsourcing', label: 'Talent outsourcing' },
+  { icon: 'fa-solid fa-file-invoice-dollar', title: 'A tender is closing', text: 'Drawings and specs in, a priced M&E BOQ in your format back before the closing date.', to: '/boq-estimation-services', label: 'BOQ estimation services' },
   { icon: 'fa-solid fa-clipboard-check', title: 'We need a deliverable', text: 'An MEP design (fire protection, ACMV, electrical, plumbing or ELV), a BOQ or a claim, done to scope.', to: '/engineering-services', label: 'Engineering services' }
 ]
 

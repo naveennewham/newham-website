@@ -3,13 +3,14 @@ title: "SS 645 fire alarm design in Singapore: a practical guide"
 description: "SS 645 fire alarm design in Singapore: detectors, manual call points, sounders and visual alarms, zoning, loops and cause-and-effect matrices for SCDF submission."
 slug: fire-alarm-design-singapore
 date: 2026-10-16
+updated: 2026-10-30
 author: "Newham engineering team"
 author_role: "M&E estimators and fire protection engineers"
-keywords: [SS 645, SS645 Singapore, "SS CP 10", fire alarm design Singapore, fire alarm design services, SS 645 fire alarm, BS 5839, cause and effect matrix, fire alarm zoning, SCDF submission]
+keywords: [SS 645, SS645 Singapore, "CP 10", "SS 645:2019", "SS 645 visual alarm", "SCDF manual call point", fire alarm design Singapore, fire alarm design services, SS 645 fire alarm, BS 5839, cause and effect matrix, fire alarm zoning, SCDF submission]
 related: /fire-protection-design
 faq:
   - q: "What is SS 645?"
-    a: "SS 645 is the Singapore Standard code of practice for fire alarm systems in buildings. It replaced SS CP 10 in 2019 and is the fire alarm code the SCDF Fire Code requires. Confirm the edition in force for your project before you design."
+    a: "SS 645 is the Singapore Standard code of practice for fire alarm systems in buildings. Its full title is the Code of practice for the installation and servicing of electrical fire alarm systems. SS 645:2019 replaced CP 10:2005 and is the fire alarm code the SCDF Fire Code references. Confirm the edition in force for your project before you design."
   - q: "Where can I get a copy of SS 645?"
     a: "Singapore Standards are copyrighted and sold through the Singapore Standards eShop. Buy the current edition there rather than relying on a PDF copied from an old project, which may be out of date."
   - q: "Which code applies to fire alarm design in Singapore?"
@@ -24,9 +25,15 @@ faq:
     a: "Per deliverable for a single design package, or as part of a monthly retainer if you have a steady pipeline. Billing is in SGD and the scope is confirmed in writing first. Email admin@newhamtech.com for a quote."
 ---
 
-Fire alarm design in Singapore means deciding where detectors and manual call points go, how the building is split into zones, how devices are wired back to the panel on loops, and what every alarm signal must trigger. That last part is written down in a cause-and-effect matrix. The design is prepared to SS 645, with BS 5839 where the specification calls for it, and to the SCDF Fire Code, then packaged as drawings for the SCDF submission. Good fire alarm design services get four things right: the detection suits each room's use, the zones make sense to a firefighter, the loops are resilient, and the interfaces with other systems are complete. This guide walks through each one. In Singapore, fire alarm systems are designed to **SS 645**, the code of practice that replaced SS CP 10 in 2019 and that the SCDF Fire Code requires.
+Fire alarm design in Singapore means deciding where detectors and manual call points go, how the building is split into zones, how devices are wired back to the panel on loops, and what every alarm signal must trigger. That last part is written down in a cause-and-effect matrix. The design is prepared to SS 645, with BS 5839 where the specification calls for it, and to the SCDF Fire Code, then packaged as drawings for the SCDF submission. Good fire alarm design services get four things right: the detection suits each room's use, the zones make sense to a firefighter, the loops are resilient, and the interfaces with other systems are complete. This guide walks through each one. In Singapore, fire alarm systems are designed to **SS 645**, the code of practice that replaced CP 10:2005 in 2019 and that the SCDF Fire Code references.
 
 Codes in this area are revised and superseded. Before you start, confirm which code and edition apply to your project, and design to that edition. Do not carry spacing, coverage or other values over from an old job.
+
+## What is SS 645?
+
+**SS 645:2019 is the Singapore Standard *Code of practice for the installation and servicing of electrical fire alarm systems*.** It covers fire alarm systems in buildings that use manual call points and heat, smoke, flame or video image fire detectors, and sets out how they are designed, installed, operated and maintained. Enterprise Singapore launched it on 29 August 2019 to replace CP 10:2005, and the [SCDF circular on its implementation](https://www.scdf.gov.sg/docs/default-source/fire-safety-docs/downloads/circulars/circular--implementation-of-ss-645-2019-code-of-practice-for-the-installation-and-servicing-of-electrical-fire-alarm-systems.pdf?sfvrsn=9f5efcb0_1) applied it to building plans submitted to SCDF from 1 April 2020. The [SCDF Fire Code 2023](https://www.scdf.gov.sg/docs/default-source/fire-safety-docs/firecode-2023-111220241013.pdf?sfvrsn=b3dc3c15_3) lists it as the referenced code for electrical fire alarm systems.
+
+Compared with CP 10, the 2019 edition added requirements for the interface with the emergency voice communication (EVC) system and for video image fire detection. SS 645 is copyrighted: buy the current edition from the [Singapore Standards eShop](https://www.singaporestandardseshop.sg/Product/SSPdtDetail/29b073ce-b184-4cd5-9088-d27f5d9a5022) rather than working from a PDF copied from an old project.
 
 ## What a fire alarm design has to deliver
 
