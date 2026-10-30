@@ -12,6 +12,9 @@
       </div>
     </section>
 
+    <!-- Featured service: sprinkler hydraulic calculations -->
+    <HomeHydraulicFeature />
+
     <!-- Three pillars -->
     <section id="what-we-do" class="section scroll-mt-16">
       <div class="container-site">
