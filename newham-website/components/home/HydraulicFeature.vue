@@ -16,7 +16,7 @@
         </ul>
         <div class="mt-9 flex flex-wrap items-center gap-3">
           <NuxtLink to="/sprinkler-hydraulic-calculation-services" class="btn-accent">Hydraulic calculation services <i class="fa-solid fa-arrow-right ml-1 text-xs" aria-hidden="true"></i></NuxtLink>
-          <NuxtLink to="/appointment" class="btn-ghost-dark">Send a layout to calculate</NuxtLink>
+          <button type="button" class="btn-ghost-dark" @click="quickBook.show('Sprinkler hydraulic calculations')"><i class="fa-solid fa-bolt mr-1 text-cyan-300" aria-hidden="true"></i> Quick book this service</button>
         </div>
         <p class="mt-5 text-sm text-white/60">
           Learning the method? Read <NuxtLink to="/guides/sprinkler-hydraulic-calculations" class="font-semibold text-cyan-300 underline-offset-2 hover:underline">how to calculate a fire sprinkler system</NuxtLink>, with a worked example.
@@ -59,6 +59,7 @@
 </template>
 
 <script setup lang="ts">
+const quickBook = useQuickBook()
 const points = ['Remote area and node diagram', 'Node-by-node calculation', 'Demand against supply', 'Fire pump duty point', 'Tree, looped and gridded systems', 'PE review coordinated']
 const rows = [['Head 1', '60.0', '0.562'], ['Head 2', '62.8', '0.617'], ['Head 3', '72.5', '0.822'], ['Branch inlet', '195.4', '0.940']]
 </script>
