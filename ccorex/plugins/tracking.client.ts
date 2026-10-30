@@ -6,6 +6,8 @@
 // - Apollo's website visitor tracker (company-level B2B visitor identification) loads only
 //   with marketing consent.
 // - Pages viewed this visit (for lead scoring) are kept only with analytics consent.
+// - Our own team marks a browser as internal by opening any page with ?internal=1 (?internal=0 undoes it).
+//   GA then receives traffic_type=internal, which the property's Internal Traffic data filter drops.
 
 type Gtag = (...args: unknown[]) => void
 declare global { interface Window { dataLayer: unknown[]; gtag?: Gtag } }
@@ -32,6 +34,15 @@ export default defineNuxtPlugin((nuxtApp) => {
   const clickIds = Object.fromEntries(CLICK_IDS.map((k) => [k, url.searchParams.get(k)]).filter(([, v]) => v))
   const landing = { landingPage: url.pathname, referrer, utm, clickIds, at: new Date().toISOString() }
   const isCampaign = Object.keys(utm).length > 0 || Object.keys(clickIds).length > 0
+
+  // Team browsers flagged as internal stay flagged on this device until ?internal=0.
+  let internal = false
+  try {
+    const flag = url.searchParams.get('internal')
+    if (flag === '1') localStorage.setItem('mk_internal', '1')
+    if (flag === '0') localStorage.removeItem('mk_internal')
+    internal = localStorage.getItem('mk_internal') === '1'
+  } catch { /* storage blocked */ }
 
   let loaded = false
   function loadGtag() {
@@ -65,7 +76,7 @@ export default defineNuxtPlugin((nuxtApp) => {
       ad_personalization: c.marketing ? 'granted' : 'denied',
     })
     if (c.analytics || c.marketing) loadGtag()
-    if (c.analytics && config.gaId) gtag('config', config.gaId)
+    if (c.analytics && config.gaId) gtag('config', config.gaId, internal ? { traffic_type: 'internal' } : {})
     if (c.marketing && config.adsId) gtag('config', config.adsId)
     if (c.marketing) loadApollo()
     // First touch: keep the earliest; a new campaign click replaces a plain earlier visit.
@@ -95,7 +106,7 @@ export default defineNuxtPlugin((nuxtApp) => {
         /** Fire after a successful enquiry. No-ops without consent or IDs. */
         lead(form: string) {
           if (consent.value.analytics && config.gaId) gtag('event', 'generate_lead', { form })
-          if (consent.value.marketing && config.adsId && config.adsLeadLabel) gtag('event', 'conversion', { send_to: `${config.adsId}/${config.adsLeadLabel}` })
+          if (!internal && consent.value.marketing && config.adsId && config.adsLeadLabel) gtag('event', 'conversion', { send_to: `${config.adsId}/${config.adsLeadLabel}` })
         },
         /** A named interaction such as a call-to-action click. Analytics consent only. */
         event(name: string, params: Record<string, unknown> = {}) {
