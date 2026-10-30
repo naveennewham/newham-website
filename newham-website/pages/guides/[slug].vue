@@ -55,7 +55,7 @@ if (!g) throw createError({ statusCode: 404, statusMessage: 'Guide not found', f
 
 const LABELS: Record<string, string> = {
   '/talent-outsourcing': 'M&E talent outsourcing', '/engineering-services': 'Engineering services', '/ccorex': 'CCorex software', '/services': 'All services',
-  '/fire-protection-design': 'Fire protection design services', '/boq-estimation-services': 'BOQ and estimation services', '/shop-drawing-services': 'Shop drawing services',
+  '/fire-protection-design': 'Fire protection design services', '/sprinkler-hydraulic-calculation-services': 'Sprinkler hydraulic calculation services', '/boq-estimation-services': 'BOQ and estimation services', '/shop-drawing-services': 'Shop drawing services',
   '/acmv-design-services': 'ACMV design services', '/electrical-design-services': 'Electrical design services', '/plumbing-sanitary-design-services': 'Plumbing and sanitary design services', '/elv-design-services': 'ELV design services'
 }
 const relatedLabel = computed(() => (g?.related ? LABELS[g.related] ?? 'Read more' : ''))

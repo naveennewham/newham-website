@@ -236,7 +236,7 @@ const streams = [
 ]
 
 // Stream items with their own service page.
-const itemLinks: Record<string, string> = { 'Estimation & BOQ preparation': '/boq-estimation-services', 'Sprinkler system design': '/fire-protection-design' }
+const itemLinks: Record<string, string> = { 'Estimation & BOQ preparation': '/boq-estimation-services', 'Sprinkler system design': '/fire-protection-design', 'Hydraulic calculations': '/sprinkler-hydraulic-calculation-services' }
 
 const steps = [
   { title: 'Discovery call', text: 'A 30-minute call about your pipeline, systems and team.' },
