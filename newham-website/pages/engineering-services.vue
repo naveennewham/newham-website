@@ -64,7 +64,7 @@
           <ul class="flex flex-wrap gap-2 lg:justify-end"><li v-for="c in ['SS CP 52', 'NFPA 13', 'SS 645', 'SCDF submission']" :key="c" class="chip">{{ c }}</li></ul>
         </div>
         <div class="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          <UiFeatureCard v-for="s in fireServices" :key="s.title" :icon="s.icon" :title="s.title" :text="s.text" tone="bg-rose-50 text-rose-700" />
+          <UiFeatureCard v-for="s in fireServices" :key="s.title" :icon="s.icon" :title="s.title" :text="s.text" :to="s.to" :link-label="s.label" tone="bg-rose-50 text-rose-700" />
         </div>
         <div class="mt-8 flex gap-4 rounded-2xl border border-brand-100 bg-brand-50 p-6">
           <i class="fa-solid fa-stamp mt-1 text-brand-700" aria-hidden="true"></i>
@@ -205,7 +205,7 @@ const benefits = [
 
 const fireServices = [
   { icon: 'fa-solid fa-shower', title: 'Sprinkler system design', text: 'Layout, head placement, pipe routing, zoning and riser diagrams to SS CP 52, with NFPA 13 where the project specification calls for it, across hazard classifications.' },
-  { icon: 'fa-solid fa-square-root-variable', title: 'Hydraulic calculations', text: 'Node-by-node analysis, demand versus supply and residual pressure, in submission-ready reports.' },
+  { icon: 'fa-solid fa-square-root-variable', title: 'Hydraulic calculations', text: 'Node-by-node analysis, demand versus supply and residual pressure, in submission-ready reports.', to: '/sprinkler-hydraulic-calculation-services', label: 'Hydraulic calculation services' },
   { icon: 'fa-solid fa-gears', title: 'Fire pump design & selection', text: 'Pump sizing, duty and standby, pressure-flow curves and pump room layouts.' },
   { icon: 'fa-solid fa-bell', title: 'Fire alarm system design', text: 'Detection layout, zoning, loop design and cause-and-effect matrices to SS 645, with BS 5839 where the project specification calls for it.' },
   { icon: 'fa-solid fa-wind', title: 'Gas suppression design', text: 'Clean agent and inert gas systems: agent quantities, pipe sizing and nozzle placement.' },

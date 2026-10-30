@@ -1,13 +1,16 @@
 ---
-title: "Hydraulic calculation services for sprinklers in Singapore"
-description: "How sprinkler hydraulic calculations work under SS CP 52 for SCDF, what a submission-ready report contains, and how to outsource sprinkler design well."
+title: "How to calculate a fire sprinkler system: hydraulic calculation step by step"
+description: "How to calculate a fire sprinkler system in Singapore: the SS CP 52 method step by step, a worked three-head example with K-factor and Hazen-Williams, and what an SCDF-ready report contains."
 slug: sprinkler-hydraulic-calculations
 date: 2026-10-15
+updated: 2026-10-30
 author: "Newham engineering team"
 author_role: "M&E estimators and fire protection engineers"
-keywords: [hydraulic calculation services, sprinkler design outsourcing, fire protection design services Singapore, sprinkler hydraulic calculations, SS CP 52, NFPA 13, SCDF submission]
-related: /engineering-services
+keywords: [how to calculate fire sprinkler system, sprinkler hydraulic calculation example, Hazen-Williams sprinkler, K-factor formula, hydraulic calculation services, sprinkler design outsourcing, fire protection design services Singapore, sprinkler hydraulic calculations, SS CP 52, NFPA 13, SCDF submission]
+related: /sprinkler-hydraulic-calculation-services
 faq:
+  - q: "How do you calculate a fire sprinkler system?"
+    a: "Start at the least favoured sprinkler in the hydraulically most remote design area. Its flow is the design density times the area it covers, and its pressure follows from P = (Q ÷ K)². Then work back pipe by pipe: add the Hazen-Williams friction loss and any elevation change to get the pressure at the next head, find that head's flow from Q = K × √P, and add it to the pipe flow. Carry on to the source, add the allowances the code requires, and check the total demand against the water supply curve."
   - q: "Which codes apply to sprinkler hydraulic calculations in Singapore?"
     a: "SS CP 52 is the local code of practice for automatic sprinkler systems and the one the SCDF Fire Code requires. NFPA 13 applies only where the project specification calls for it. Always design to the code edition in force for the project, and format the submission for SCDF."
   - q: "What do I need to send for an outsourced hydraulic calculation?"
@@ -65,6 +68,33 @@ The numeric values in each step (densities, design areas, minimum pressures, K-f
 
 A tree system has one path from the riser to each head, so the calculation runs in one direction. Looped and gridded systems feed each head from more than one direction. That evens out pressure but means flows split at every junction and must be balanced by iteration. A hand calculation is practical for small tree systems. For grids, use software and check the output for sensible flow directions and velocities.
 
+## Worked example: a three-head tree branch
+
+The figures below are invented to show the arithmetic only. They are not design values: take the density, design area, minimum pressure, K-factor, pipe data and C-factor for a real project from SS CP 52 and the manufacturer's data. Pressures are in bar, flows in litres per minute and pipe internal diameters in millimetres.
+
+Two formulas do the work:
+
+- **Sprinkler discharge:** Q = K × √P, so P = (Q ÷ K)².
+- **Hazen-Williams friction loss per metre:** p = 6.05 × 10⁵ × Q¹·⁸⁵ ÷ (C¹·⁸⁵ × d⁴·⁸⁷), with Q in L/min and d the internal diameter in mm. This is the metric form used in European sprinkler practice, such as EN 12845.
+
+**Assumed inputs:** three sprinklers on one branch, each covering 12 m², a design density of 5 mm/min, K = 80, C = 120, no change in level. Pipes 1 and 2 are 3.2 m long with a 27.3 mm bore; pipe 3 to the range pipe is 3.0 m with a 36.0 mm bore. Fittings are ignored here; a real calculation adds them as equivalent lengths.
+
+1. **Head 1 (most remote).** Flow = density × area = 5 × 12 = 60.0 L/min. Pressure = (60 ÷ 80)² = 0.562 bar.
+2. **Pipe 1 (60.0 L/min).** Loss = 0.0170 bar/m × 3.2 m = 0.054 bar, so the pressure at head 2 is 0.562 + 0.054 = 0.617 bar.
+3. **Head 2.** Flow = 80 × √0.617 = 62.8 L/min. It discharges more than head 1 because it sees more pressure.
+4. **Pipe 2 (60.0 + 62.8 = 122.8 L/min).** Loss = 0.0640 bar/m × 3.2 m = 0.205 bar, so the pressure at head 3 is 0.822 bar.
+5. **Head 3.** Flow = 80 × √0.822 = 72.5 L/min.
+6. **Pipe 3 (195.4 L/min).** Loss = 0.0393 bar/m × 3.0 m = 0.118 bar, so the branch needs **195.4 L/min at 0.940 bar** where it joins the range pipe.
+
+| Node | Flow at head (L/min) | Pressure (bar) | Actual density (mm/min) |
+|---|---:|---:|---:|
+| Head 1 | 60.0 | 0.562 | 5.00 |
+| Head 2 | 62.8 | 0.617 | 5.24 |
+| Head 3 | 72.5 | 0.822 | 6.04 |
+| Branch inlet | 195.4 (total) | 0.940 | |
+
+Every head nearer the supply discharges above the minimum density, which is why the most remote head sets the design. In a full calculation you carry on the same way through the range pipe, risers, valves and changes of level to the source, add any allowances the code requires, and plot the total demand against the supply curve.
+
 ## What each part of the report checks
 
 | Report element | What it checks | Where the values come from |
@@ -121,4 +151,4 @@ If the sprinkler package is part of a tender, see the [MEP tender submission che
 
 ## How Newham can help
 
-Newham's fire protection engineers prepare sprinkler layouts, hydraulic calculations and fire pump selection to SS CP 52, with NFPA 13 where the project specification calls for it, and package them as submission drawings in Singapore format. Where a submission needs Professional Engineer endorsement, we coordinate review by a Singapore-registered PE and quote those fees separately. Work is priced per deliverable or on a monthly retainer, billed in SGD, with the scope confirmed in writing first. See our [engineering services](/engineering-services), or [book a discovery call](/appointment) to scope your next package.
+Newham's fire protection engineers prepare sprinkler layouts, hydraulic calculations and fire pump selection to SS CP 52, with NFPA 13 where the project specification calls for it, and package them as submission drawings in Singapore format. Where a submission needs Professional Engineer endorsement, we coordinate review by a Singapore-registered PE and quote those fees separately. Work is priced per deliverable or on a monthly retainer, billed in SGD, with the scope confirmed in writing first. See our [sprinkler hydraulic calculation services](/sprinkler-hydraulic-calculation-services) and [fire protection design](/fire-protection-design), or [book a discovery call](/appointment) to scope your next package.

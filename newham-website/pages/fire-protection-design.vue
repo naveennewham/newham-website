@@ -39,7 +39,7 @@ const problems = [
 
 const scope = [
   { icon: 'fa-solid fa-shower', title: 'Sprinkler system design', text: 'Layout, head placement, pipe routing, zoning and riser diagrams to SS CP 52, with NFPA 13 where the project specification calls for it, across hazard classifications.' },
-  { icon: 'fa-solid fa-square-root-variable', title: 'Hydraulic calculations', text: 'Node-by-node analysis, demand versus supply and residual pressure, in submission-ready reports.' },
+  { icon: 'fa-solid fa-square-root-variable', title: 'Hydraulic calculations', text: 'Node-by-node analysis, demand versus supply and residual pressure, in submission-ready reports. Also available on its own as a sprinkler hydraulic calculation service.' },
   { icon: 'fa-solid fa-gears', title: 'Fire pump design & selection', text: 'Pump sizing, duty and standby, pressure-flow curves and pump room layouts.' },
   { icon: 'fa-solid fa-bell', title: 'Fire alarm system design', text: 'Detection layout, zoning, loop design and cause-and-effect matrices to SS 645, with BS 5839 where the project specification calls for it.' },
   { icon: 'fa-solid fa-wind', title: 'Gas suppression design', text: 'Clean agent and inert gas systems: agent quantities, pipe sizing and nozzle placement.' },
@@ -58,6 +58,7 @@ const steps = [
 ]
 
 const related = [
+  { to: '/sprinkler-hydraulic-calculation-services', eyebrow: 'Just the calculations?', title: 'Sprinkler hydraulic calculation services', text: 'Remote-area, node-by-node calculations, demand against supply and fire pump duty for your own layout.', cta: 'Hydraulic calculations' },
   { to: '/guides/sprinkler-hydraulic-calculations', eyebrow: 'Guide', title: 'Sprinkler hydraulic calculations explained', text: 'What a hydraulic calculation checks, step by step, and what the reviewer looks for.', cta: 'Read the guide' },
   { to: '/guides/wet-and-dry-riser-requirements-singapore', eyebrow: 'Guide', title: 'Wet and dry riser requirements', text: 'When the SCDF Fire Code requires a dry or wet rising main, and the landing valve and breeching inlet rules.', cta: 'Read the guide' },
   { to: '/boq-estimation-services', eyebrow: 'Also from Newham', title: 'BOQ & estimation services', text: 'Take-offs, priced BOQs and tender support for fire protection and other M&E trades.', cta: 'BOQ services' },
