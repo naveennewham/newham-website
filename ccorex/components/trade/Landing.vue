@@ -121,6 +121,7 @@
               <NuxtLink :to="g.to" class="card flex items-center justify-between gap-3 hover:border-brand-200"><span class="font-semibold">{{ g.title }}</span><i class="fa-solid fa-arrow-right text-xs text-brand-600" aria-hidden="true"></i></NuxtLink>
             </li>
           </ul>
+          <UiOutsourceBoq :trade="tradeLower" />
         </div>
       </div>
     </section>
