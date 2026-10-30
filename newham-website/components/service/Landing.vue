@@ -9,7 +9,8 @@
           <h1 class="h-display mt-4 text-white">{{ title }}</h1>
           <p class="lead-dark mt-6 max-w-2xl">{{ lead }}</p>
           <div class="mt-8 flex flex-wrap gap-3">
-            <NuxtLink to="/appointment" class="btn-accent">{{ cta }} <i class="fa-solid fa-arrow-right text-xs" aria-hidden="true"></i></NuxtLink>
+            <button v-if="quickBook" type="button" class="btn-accent" @click="useQuickBook().show(quickBook)"><i class="fa-solid fa-bolt text-xs" aria-hidden="true"></i> {{ cta }}</button>
+            <NuxtLink v-else to="/appointment" class="btn-accent">{{ cta }} <i class="fa-solid fa-arrow-right text-xs" aria-hidden="true"></i></NuxtLink>
             <a href="#scope" class="btn-ghost-dark">What we deliver</a>
           </div>
           <ul class="mt-6 flex flex-wrap gap-2">
@@ -95,6 +96,8 @@ const props = defineProps<{
   faqTitle: string; faqs: { q: string; a: string }[]
   ctaTitle: string; ctaLead: string
   serviceName: string; serviceType: string
+  // Service name to preselect: the main button opens the Quick book popup instead of /appointment.
+  quickBook?: string
 }>()
 
 const siteUrl = useRuntimeConfig().public.siteUrl as string

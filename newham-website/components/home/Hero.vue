@@ -9,6 +9,15 @@
     </div>
 
     <div class="container-site pb-16 pt-14 sm:pt-20">
+      <!-- Featured service link -->
+      <div class="mb-3 flex justify-center">
+        <NuxtLink to="/sprinkler-hydraulic-calculation-services" class="group inline-flex items-center gap-2 rounded-full border border-brand-100 bg-white/80 py-1 pl-1 pr-3 text-xs font-semibold text-ink-900 shadow-card backdrop-blur hover:border-brand-300">
+          <span class="rounded-full bg-cyan-500 px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-brand-950">New</span>
+          Sprinkler hydraulic calculations for SCDF submission
+          <i class="fa-solid fa-arrow-right text-[10px] transition-transform group-hover:translate-x-0.5" aria-hidden="true"></i>
+        </NuxtLink>
+      </div>
+
       <!-- Kicker -->
       <div class="flex justify-center">
         <span class="inline-flex items-center gap-2 rounded-full border border-brand-100 bg-white/80 py-1 pl-1 pr-4 text-xs font-medium text-ink-700 shadow-card backdrop-blur">

@@ -6,6 +6,7 @@
       <slot />
     </main>
     <LayoutFooter />
+    <UiQuickBook />
     <UiConsentBanner site="newhamtech.com" />
   </div>
 </template>
