@@ -1,5 +1,6 @@
 ---
 title: "Leave Entitlement in Singapore: Employment Act Guide (2026)"
+seo_title: "Leave Entitlement in Singapore (2026 Guide)"
 description: "Annual, sick, hospitalisation, childcare and maternity leave entitlements in Singapore under the Employment Act, with MOM sources and what HR should track."
 slug: leave-entitlement-singapore
 date: 2026-10-24

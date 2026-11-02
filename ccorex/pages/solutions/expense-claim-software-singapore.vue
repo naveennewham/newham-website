@@ -6,7 +6,7 @@
     sub-category="Expense claim software"
     eyebrow="Expense claims · Singapore"
     seo-title="Expense Claim Software Singapore — DeepHR"
-    seo-description="Expense claim software for Singapore SMEs: claims in SGD with a receipt on the phone, multi-level approvals with amount rules, marked paid, claims register and reports."
+    seo-description="Expense claim software for Singapore SMEs: claims in SGD with a phone receipt, multi-level approvals with amount rules, a claims register and reports."
     h1="Expense claim software for Singapore companies"
     lead="With DeepHR, employees submit transport, meal, medical, training and other claims in SGD with a receipt from their phone. Each claim follows your approval chain, with an extra level above a set amount, and is marked paid once approved."
     :hero-points="['Claims in SGD with a receipt', 'Submit on the phone', 'Multi-level approvals', 'Extra level above a set amount', 'Claims register & reports']"

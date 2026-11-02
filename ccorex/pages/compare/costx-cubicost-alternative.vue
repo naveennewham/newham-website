@@ -122,7 +122,7 @@ const faqs = [
 const config = useRuntimeConfig()
 const url = `${config.public.siteUrl}/compare/costx-cubicost-alternative`
 const description = 'CostX, Cubicost or PlanSwift alternative for MEP contractors in Singapore? How DeepCost compares on take-off, pricing the client’s BOQ, approvals and PSG.'
-useSeoMeta({ title: 'CostX & Cubicost alternative for MEP contractors in Singapore', description, ogTitle: 'CostX, Cubicost & PlanSwift alternative for MEP tenders in Singapore | CCorex', ogDescription: description })
+useSeoMeta({ title: 'CostX & Cubicost alternative for MEP contractors', description, ogTitle: 'CostX & Cubicost alternative for MEP contractors | CCorex', ogDescription: description })
 useHead({
   link: [{ rel: 'canonical', href: url }],
   script: [{ type: 'application/ld+json', innerHTML: JSON.stringify({ '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faqs.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) }) }]

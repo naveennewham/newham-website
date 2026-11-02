@@ -2,7 +2,7 @@
   <ToolsShell
     slug="prorated-annual-leave-calculator"
     seo-title="Pro-rated annual leave calculator Singapore (MOM)"
-    seo-description="Free pro-rated annual leave calculator for Singapore: MOM’s formula for employees who join or leave part-way through the year, the 7 to 14 day table, the 3-month rule and rounding."
+    seo-description="Free pro-rated annual leave calculator for Singapore: MOM’s formula for staff who join or leave mid-year, the 7 to 14 day table and the 3-month rule."
     eyebrow="Free calculator · Singapore leave"
     h1="Pro-rated annual leave calculator for Singapore"
     lead="Work out the annual leave for an employee who joins or leaves part-way through a year of service, using MOM’s formula, entitlement table and rounding rule under the Employment Act."

@@ -1,5 +1,6 @@
 ---
 title: "Progress Claim Template for Singapore Contractors: Format and Columns Explained"
+seo_title: "Progress Claim Template for Singapore Contractors"
 description: "A progress claim format for Singapore: header, valuation columns, variations, retention, previous claims, 9% GST and the amount claimed this period."
 slug: progress-claim-template-singapore
 date: 2026-10-18

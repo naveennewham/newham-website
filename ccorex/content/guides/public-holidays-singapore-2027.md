@@ -1,5 +1,6 @@
 ---
 title: "Singapore Public Holidays 2027: Dates and Employer Pay Rules"
+seo_title: "Singapore Public Holidays 2027: Dates & Pay Rules"
 description: "All 11 Singapore public holidays in 2027 with dates and days, the Monday off after a Sunday holiday, and MOM rules on pay for working on a public holiday."
 slug: public-holidays-singapore-2027
 date: 2026-10-27

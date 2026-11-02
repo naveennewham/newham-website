@@ -1,6 +1,7 @@
 ---
 title: "BCA Contractor Registration (CRS): Workheads, Grades and Tendering Limits"
-description: "BCA's Contractors Registration System for Singapore contractors: who must register, workhead groups, grades, tendering limits for public sector projects, and how to apply."
+seo_title: "BCA Contractor Registration: Workheads & Grades"
+description: "BCA's Contractors Registration System explained: who must register, workhead groups, grades, tendering limits for public sector projects and how to apply."
 slug: bca-contractor-registration-workheads
 date: 2026-10-27
 author: "CCorex team"

@@ -39,8 +39,8 @@ import { tools, toolPath } from '~/data/tools'
 
 const config = useRuntimeConfig()
 const pageUrl = `${config.public.siteUrl}/tools`
-const description = 'Free Singapore calculators for employers: CPF contributions with 2026 rates, the Skills Development Levy, overtime pay and prorated annual leave under the Employment Act, and the construction foreign worker levy.'
-useSeoMeta({ title: 'Free CPF, SDL, overtime, leave and levy calculators (Singapore)', description, ogTitle: 'Free CPF, SDL, overtime, leave and levy calculators (Singapore) | CCorex', ogDescription: description })
+const description = 'Free Singapore calculators for employers: CPF with 2026 rates, the Skills Development Levy, overtime pay, prorated annual leave and the construction levy.'
+useSeoMeta({ title: 'Free CPF, SDL, overtime, leave & levy calculators', description, ogTitle: 'Free CPF, SDL, overtime, leave & levy calculators | CCorex', ogDescription: description })
 useHead({
   link: [{ rel: 'canonical', href: pageUrl }],
   script: [{

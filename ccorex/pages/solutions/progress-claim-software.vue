@@ -5,7 +5,7 @@
     app-name="DeepTrack"
     eyebrow="Progress claims · Singapore"
     seo-title="Progress claim software for Singapore contractors"
-    seo-description="Progress claim software for Singapore contractors: claims numbered per project with retention and 9% GST, a PDF claim certificate, claims beside cost; SOP Act tracking in early access."
+    seo-description="Progress claim software for Singapore contractors: claims numbered per project with retention and 9% GST, a PDF claim certificate, and claims beside cost."
     h1="Progress claim software for Singapore contractors"
     lead="DeepTrack prepares each progress claim against the customer PO, with retention and 9% GST worked out, produces the claim certificate as a PDF, and keeps claims on the same project as budgets and costs."
     :hero-points="['Claims numbered per project', 'Retention & 9% GST calculated', 'PDF claim certificate', 'Claims beside budget and cost']"

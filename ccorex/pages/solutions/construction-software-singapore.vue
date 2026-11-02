@@ -166,10 +166,10 @@ const faqs = [
 const config = useRuntimeConfig()
 const pageUrl = `${config.public.siteUrl}/solutions/construction-software-singapore`
 useSeoMeta({
-  title: 'Construction Software Singapore: Estimating, Projects, Payroll',
-  description: 'Construction software for Singapore contractors: tender estimating on the client’s BOQ, project budgets, POs and progress claims, and site payroll with CPF.',
-  ogTitle: 'Construction Software Singapore | CCorex',
-  ogDescription: 'Tender estimating, project cost control and Singapore payroll for contractors, on one sign-in.'
+  title: 'Construction Software Singapore for Contractors',
+  description: 'Construction software for Singapore contractors: tender estimating on the client’s BOQ, project budgets, POs, progress claims and site payroll with CPF.',
+  ogTitle: 'Construction Software Singapore for Contractors | CCorex',
+  ogDescription: 'Construction software for Singapore contractors: tender estimating on the client’s BOQ, project budgets, POs, progress claims and site payroll with CPF.'
 })
 useHead({
   link: [{ rel: 'canonical', href: pageUrl }],

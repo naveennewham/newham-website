@@ -1,5 +1,6 @@
 ---
 title: "Construction Payroll in Singapore: Site Attendance, Overtime and CPF"
+seo_title: "Construction Payroll in Singapore: Overtime & CPF"
 description: "How Singapore contractors can manage foreign worker attendance with phone geolocation and run accurate payroll, with MOM workforce rules and CPF basics."
 slug: construction-payroll-singapore
 date: 2026-10-15

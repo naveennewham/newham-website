@@ -1,6 +1,6 @@
 ---
 title: "BOQ Meaning: What Is a Bill of Quantities? Full Form, Format, Types"
-seo_title: "BOQ Meaning and Full Form: Bill of Quantities Explained"
+seo_title: "BOQ Full Form & Meaning: Bill of Quantities"
 description: "BOQ full form: bill of quantities. What a BOQ means in construction and business, a standard BOQ format with columns, the main types and an example."
 slug: what-is-a-boq
 date: 2026-10-16

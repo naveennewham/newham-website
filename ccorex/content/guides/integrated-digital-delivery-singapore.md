@@ -1,5 +1,6 @@
 ---
 title: "IDD Construction in Singapore: What Contractors Need"
+seo_title: "IDD Construction Singapore: What Contractors Need"
 description: "What Integrated Digital Delivery (IDD) and CORENET X mean for Singapore contractors, and how estimating, cost and site data fit a digital workflow."
 slug: integrated-digital-delivery-singapore
 date: 2026-10-15

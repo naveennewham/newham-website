@@ -2,7 +2,7 @@
   <ToolsShell
     slug="overtime-pay-calculator"
     seo-title="Overtime pay calculator Singapore (MOM formula)"
-    seo-description="Free overtime pay calculator for Singapore: MOM’s hourly basic rate formula, 1.5× rate, the $13.60 non-workman cap, Part 4 eligibility and the 72-hour monthly limit."
+    seo-description="Free overtime pay calculator for Singapore: MOM’s hourly basic rate formula, the 1.5× rate, the $13.60 non-workman cap and the 72-hour monthly limit."
     eyebrow="Free calculator · Singapore payroll"
     h1="Overtime pay calculator for Singapore"
     lead="Enter the monthly basic salary and overtime hours to see the hourly basic rate, the overtime rate and the overtime pay, using MOM’s formula for employees covered by Part 4 of the Employment Act."

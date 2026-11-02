@@ -1,5 +1,6 @@
 ---
 title: "Sick Leave Entitlement in Singapore: MC, Outpatient and Hospitalisation Leave"
+seo_title: "Sick Leave Entitlement in Singapore: MC Rules"
 description: "Paid sick leave in Singapore under the Employment Act: outpatient and hospitalisation days by months of service, MC rules, the 48-hour notice and pay."
 slug: sick-leave-entitlement-singapore
 date: 2026-10-27

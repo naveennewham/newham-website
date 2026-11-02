@@ -5,7 +5,7 @@
     app-name="DeepHR"
     eyebrow="Site attendance · Singapore"
     seo-title="Foreign worker attendance app with face & GPS"
-    seo-description="Attendance app for construction foreign workers in Singapore: face and GPS check-in on the worker's phone, offline punches, HR approval, work pass records; permit alerts in early access."
+    seo-description="Attendance app for construction foreign workers in Singapore: face and GPS check-in on the worker's phone, offline punches, HR approval, work pass records."
     h1="Foreign worker attendance app with face and GPS check-in"
     lead="Workers check in on their own phone with face and GPS, even without signal. HR approves each session, and approved attendance flows straight into payroll."
     :hero-points="['Face + GPS on the worker’s phone', 'Works without signal', 'HR approves each session', 'Work pass details per worker']"

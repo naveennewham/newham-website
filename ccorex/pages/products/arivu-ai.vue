@@ -162,9 +162,9 @@ const config = useRuntimeConfig()
 const path = '/products/arivu-ai'
 useSeoMeta({
   title: 'ARIVU AI — AI assistant for construction software',
-  description: 'ARIVU AI is the assistant in every CCorex app. Ask about your own data across DeepCost, DeepTrack, DeepHR and DeepPlan, and get answers, charts and exports.',
-  ogTitle: 'ARIVU AI — your AI assistant in every CCorex app',
-  ogDescription: 'Ask in plain language and get answers, charts, exports and document search from your own CCorex data — read-only, inside every app.'
+  description: 'ARIVU AI is the assistant in every CCorex app. Ask about your own data across DeepCost, DeepTrack, DeepHR and DeepPlan, and get answers, charts, exports.',
+  ogTitle: 'ARIVU AI — AI assistant for construction software | CCorex',
+  ogDescription: 'ARIVU AI is the assistant in every CCorex app. Ask about your own data across DeepCost, DeepTrack, DeepHR and DeepPlan, and get answers, charts, exports.'
 })
 useHead({
   link: [{ rel: 'canonical', href: config.public.siteUrl + path }],

@@ -291,9 +291,9 @@ const pageUrl = config.public.siteUrl + '/products/deeptrack'
 const description = 'DeepTrack is project cost control for contractors: budgets, client claims, timesheets, procurement, invoice matching, month-end allocation and ARIVU AI.'
 
 useSeoMeta({
-  title: 'DeepTrack — construction cost control & progress claim software, Singapore',
+  title: 'DeepTrack — cost control & progress claim software',
   description,
-  ogTitle: 'DeepTrack — construction cost control & progress claim software for Singapore contractors',
+  ogTitle: 'DeepTrack — cost control & progress claim software | CCorex',
   ogDescription: description
 })
 useHead({

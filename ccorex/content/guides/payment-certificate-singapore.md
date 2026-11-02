@@ -1,7 +1,7 @@
 ---
 title: "Payment Certificates in Singapore Construction: Interim and Final Certificates Explained"
-seo_title: "Payment Certificate in Construction: A Singapore Guide"
-description: "Interim and final payment certificates in Singapore: what they contain, who issues them, how they act as SOP Act payment responses, GST and a worked example."
+seo_title: "Payment Certificates in Construction (Singapore)"
+description: "Interim and final payment certificates in Singapore: what they contain, who issues them, how they act as SOP Act payment responses, and a worked example."
 slug: payment-certificate-singapore
 date: 2026-10-29
 author: "CCorex team"

@@ -1,8 +1,8 @@
 <template>
   <ToolsShell
     slug="foreign-worker-levy-calculator"
-    seo-title="Foreign worker levy calculator for construction (Singapore)"
-    seo-description="Free foreign worker levy calculator for Singapore construction firms: monthly and annual levy by source and skill (R1/R2), daily rates for part months, quota and 10% R1 checks."
+    seo-title="Foreign worker levy calculator for construction"
+    seo-description="Free foreign worker levy calculator for Singapore construction firms: monthly and annual levy by source and skill (R1/R2), part months and quota checks."
     eyebrow="Free calculator · Construction workforce"
     h1="Foreign worker levy calculator for construction"
     lead="Estimate the monthly and annual levy for your construction Work Permit holders by source and skill tier, with MOM’s daily rate for part months and quick checks on quota and the 10% R1 rule."

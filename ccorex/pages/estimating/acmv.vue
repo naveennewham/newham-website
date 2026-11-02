@@ -3,7 +3,7 @@
     slug="acmv"
     trade="ACMV"
     seo-title="ACMV estimating software for M&E contractors"
-    seo-description="Price ACMV tenders by building, floor and room: equipment, ductwork and piping item groups from one priced library, with approvals and FOT AI on the client's BOQ."
+    seo-description="Price ACMV tenders by building, floor and room: equipment, ductwork and piping from one priced library, with approvals and FOT AI on the client's BOQ."
     h1="Price ACMV tenders room by room, from one library"
     lead="DeepCost structures an ACMV tender by area, prices equipment, ductwork and piping from one library with separate material and installation rates, and fills your figures on the client's BOQ."
     :item-groups="['Air-conditioning equipment', 'Ductwork & fittings', 'Refrigerant & condensate piping', 'Ventilation fans', 'Insulation & accessories']"

@@ -1,7 +1,7 @@
 ---
 title: "SOP Act Payment Claims and Payment Responses: A Contractor's Guide (Singapore)"
-seo_title: "SOP Act Payment Claims and Payment Response Deadlines"
-description: "Singapore SOP Act explained: what a payment claim must contain, when the payment response is due (up to 21 days), the 7-day dispute settlement period and adjudication."
+seo_title: "SOP Act Payment Claims and Response Deadlines"
+description: "Singapore SOP Act explained: what a payment claim must contain, when the payment response is due, the 7-day dispute settlement period and adjudication."
 slug: sop-act-payment-claims-singapore
 date: 2026-10-18
 updated: 2026-10-29

@@ -90,9 +90,9 @@
 const config = useRuntimeConfig()
 useSeoMeta({
   title: 'About CCorex & Newham Solutions Pte. Ltd.',
-  description: 'CCorex is built by Newham Solutions Pte. Ltd. in Singapore for MEP and fire-protection contractors in Singapore and India, backed by M&E engineering experience.',
-  ogTitle: 'About CCorex — construction software delivered by Newham',
-  ogDescription: 'Built in Singapore by a team that combines software engineering with specialist M&E engineering experience.'
+  description: 'CCorex is built by Newham Solutions Pte. Ltd. in Singapore for MEP and fire-protection contractors in Singapore and India, with M&E engineering experience.',
+  ogTitle: 'About CCorex & Newham Solutions Pte. Ltd. | CCorex',
+  ogDescription: 'CCorex is built by Newham Solutions Pte. Ltd. in Singapore for MEP and fire-protection contractors in Singapore and India, with M&E engineering experience.'
 })
 useHead({ link: [{ rel: 'canonical', href: config.public.siteUrl + '/about' }] })
 

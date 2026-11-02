@@ -1,5 +1,6 @@
 ---
 title: "How to Calculate CPF Contributions in Singapore (2026)"
+seo_title: "How to Calculate CPF Contributions (2026)"
 description: "How Singapore employers calculate CPF in 2026: rates by age, the $8,000 Ordinary Wage ceiling, rounding rules and worked examples, plus SDL and SHG funds."
 slug: how-to-calculate-cpf-contributions
 date: 2026-10-24

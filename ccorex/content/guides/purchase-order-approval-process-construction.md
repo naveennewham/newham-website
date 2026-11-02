@@ -1,6 +1,7 @@
 ---
 title: "Purchase Order Approval Process for Construction Companies"
-description: "A PO approval process for contractors: requisition, quotes, purchase order, approval limits by role, delivery and three-way invoice matching, with an approval matrix."
+seo_title: "Purchase Order Approval Process for Contractors"
+description: "A PO approval process for contractors: requisition, quotes, purchase order, approval limits by role, delivery and three-way invoice matching, and a matrix."
 slug: purchase-order-approval-process-construction
 date: 2026-10-27
 author: "CCorex team"

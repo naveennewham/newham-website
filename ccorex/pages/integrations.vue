@@ -97,9 +97,9 @@
 const config = useRuntimeConfig()
 useSeoMeta({
   title: 'Integrations: SSO, Zoho Books, Excel & roadmap',
-  description: 'CCorex apps share one sign-in and user base today, DeepTrack links to Zoho Books, and every app imports and exports Excel. Cross-app data flow is on the roadmap.',
-  ogTitle: 'CCorex integrations — available today and on the roadmap',
-  ogDescription: 'Shared sign-in and users across every app, a DeepTrack link to Zoho Books, Excel imports and exports, and a clearly labelled roadmap.'
+  description: 'CCorex apps share one sign-in and user base, DeepTrack links to Zoho Books, and every app imports and exports Excel. Cross-app data flow is on the roadmap.',
+  ogTitle: 'Integrations: SSO, Zoho Books, Excel & roadmap | CCorex',
+  ogDescription: 'CCorex apps share one sign-in and user base, DeepTrack links to Zoho Books, and every app imports and exports Excel. Cross-app data flow is on the roadmap.'
 })
 useHead({ link: [{ rel: 'canonical', href: config.public.siteUrl + '/integrations' }] })
 

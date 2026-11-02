@@ -2,7 +2,7 @@
   <ToolsShell
     slug="sdl-calculator"
     seo-title="SDL calculator Singapore (Skills Development Levy)"
-    seo-description="Free Skills Development Levy calculator for Singapore: 0.25% of monthly total wages per employee, the $2 minimum and $11.25 maximum, and the total rounded down to the dollar."
+    seo-description="Free Skills Development Levy calculator for Singapore: 0.25% of each employee's monthly total wages, the $2 minimum and $11.25 maximum, rounded down."
     eyebrow="Free calculator · Singapore payroll"
     h1="Skills Development Levy (SDL) calculator for Singapore"
     lead="Enter each employee’s total wages for the month to see the SDL for each person and the total payable, using the rate, minimum, maximum and rounding rule published by the CPF Board."

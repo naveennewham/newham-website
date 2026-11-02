@@ -1,5 +1,6 @@
 ---
 title: "Itemised Payslips in Singapore: MOM Requirements and Sample Payslip"
+seo_title: "Itemised Payslips in Singapore: MOM Requirements"
 description: "What MOM requires on an itemised payslip in Singapore: the 12 items, who must get one, when to issue it, record keeping, and a sample payslip layout."
 slug: itemised-payslip-singapore
 date: 2026-10-27
