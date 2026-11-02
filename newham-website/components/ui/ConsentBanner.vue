@@ -40,7 +40,7 @@ watch(() => ui.value.open, (open) => { if (open) Object.assign(choice, { analyti
 const site = computed(() => props.site)
 const categories = [
   { key: 'essential', title: 'Essential', text: 'Keeps the site working and remembers your cookie choice.' },
-  { key: 'analytics', title: 'Analytics', text: 'Google Analytics: pages visited, how you arrived, device type.' },
+  { key: 'analytics', title: 'Analytics', text: 'Google Analytics: pages visited, how you arrived, device type. Microsoft Clarity: clicks, scrolling and mouse movement, with form entries hidden.' },
   { key: 'marketing', title: 'Marketing', text: 'Remembers the campaign or ad that brought you, for up to 90 days, so we can tell which campaigns lead to enquiries; Google Ads conversion measurement.' },
 ] as const
 </script>

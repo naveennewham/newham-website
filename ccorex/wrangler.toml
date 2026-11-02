@@ -12,6 +12,9 @@ workers_dev = true
 bucket = ".output/public"
 
 [vars]
+# Microsoft Clarity project id. Pages are prerendered, so set it in the build shell, not here:
+# NUXT_PUBLIC_CLARITY_ID=<id> NITRO_PRESET=cloudflare_module npm run build. Empty = Clarity off.
+# NUXT_PUBLIC_CLARITY_ID = ""
 NUXT_MARKAITING_URL = "https://markaiting-engine.newhamtech.workers.dev"
 NUXT_MARKAITING_WORKSPACE = "ccorex"
 # Secret, set by the owner: npx wrangler secret put NUXT_MARKAITING_LEAD_SECRET
