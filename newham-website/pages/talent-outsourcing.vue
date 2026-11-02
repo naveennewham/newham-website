@@ -95,6 +95,20 @@
       </div>
     </section>
 
+    <!-- Client quote -->
+    <section class="section-tight border-t border-ink-100" aria-labelledby="client-quote-title">
+      <div class="container-site">
+        <div class="text-center"><h2 id="client-quote-title" class="eyebrow">What clients say</h2></div>
+        <div class="mt-6">
+          <UiClientQuote
+            quote="Newham's engineers work on our projects in our own templates. When tenders pile up, it's like having extra estimators and modellers on the team."
+            name="Saravana Kumar" role="Director" company="Decarb"
+            logo="/images/clients/decarb.png" href="https://thedecarb.com"
+          />
+        </div>
+      </div>
+    </section>
+
     <!-- Software + specialists -->
     <section class="section-tight bg-ink-50">
       <div class="container-site grid gap-10 lg:grid-cols-[1fr_1.1fr] lg:items-center">
