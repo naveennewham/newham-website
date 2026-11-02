@@ -17,6 +17,7 @@
           <li><strong>What you send us</strong> in a form: your name, work email, company, role, phone number, company size, the apps you're interested in, how you heard about us and your message.</li>
           <li><strong>How you found us</strong>, only if you accept marketing cookies: the campaign or ad that brought you (for example utm parameters or a Google Ads click id), the page you landed on and the site that referred you. We keep this for up to 90 days in a cookie on your device and attach it to an enquiry you send.</li>
           <li><strong>How the site is used</strong>, only if you accept analytics cookies: pages visited, how you arrived, device type and clicks on our email and phone links (not the address or number), through Google Analytics. If you send an enquiry, we attach the pages you viewed in that visit and your Google Analytics browser identifier, so we can see which channels lead to enquiries.</li>
+          <li><strong>How pages are used</strong>, only if you accept analytics cookies: clicks, scrolling and mouse movement, through Microsoft Clarity, so we can see which parts of a page help and which get in the way. Clarity hides what you type into forms, and it never runs before you accept.</li>
         </ul>
 
         <h2>Why we use it</h2>
@@ -32,6 +33,7 @@
         <h2>Who processes it for us</h2>
         <ul>
           <li>Google (Google Analytics and Google Ads), if you accept those cookies.</li>
+          <li>Microsoft (Clarity), if you accept analytics cookies: it records clicks, scrolling and mouse movement to show us how pages are used, with form entries hidden.</li>
           <li>Apollo.io, if you accept marketing cookies: it identifies the company a business visitor's network belongs to, and which pages that company viewed, so we can follow up with businesses interested in our services.</li>
           <li>Vercel, which hosts this website.</li>
           <li>Cloudflare, which hosts the system where we keep enquiries.</li>

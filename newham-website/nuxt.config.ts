@@ -46,7 +46,11 @@ export default defineNuxtConfig({
       gaId: 'G-2YVBDH8XJE',
       apolloAppId: '6ae18aa9418aff00208d8586',
       adsId: '',
-      adsLeadLabel: ''
+      adsLeadLabel: '',
+      // Microsoft Clarity project id (heatmaps, session recordings). Empty = Clarity never loads.
+      // Public, like gaId. NUXT_PUBLIC_CLARITY_ID at build time overrides it (pages are prerendered).
+      // Loads only after analytics consent and never on internal browsers (plugins/clarity.client.ts).
+      clarityId: 'z7f1m4k6pk'
     },
     // Server only (Vercel env): NUXT_MARKAITING_URL, NUXT_MARKAITING_LEAD_SECRET, NUXT_MARKAITING_WORKSPACE.
     markaitingUrl: '',
