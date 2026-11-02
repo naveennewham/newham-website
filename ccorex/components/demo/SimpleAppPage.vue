@@ -20,6 +20,8 @@
       </div>
     </section>
 
+    <slot />
+
     <section class="section bg-ink-50">
       <div class="container-site grid gap-10 lg:grid-cols-[1fr_1.4fr] lg:items-center">
         <UiSectionHeader eyebrow="Part of CCorex" :title="`${app.name} works like the rest of the suite`" lead="No separate accounts or logins to manage." />
@@ -33,13 +35,16 @@
       </div>
     </section>
 
+    <slot name="end" />
+
     <UiCtaBand :title="`Ask us about ${app.name}`" lead="Tell us how your team handles documents today and we will show you where it fits in CCorex." secondary-label="See all apps" secondary-to="/products" />
   </div>
 </template>
 
 <script setup lang="ts">
 // Simple, generic app page for supporting apps (Deep Drive, PDF Editor):
-// features only, no product screenshots.
+// features only, no product screenshots. The default slot adds sections after
+// the features; the #end slot adds sections (such as an FAQ) before the CTA.
 import { appBySlug } from '~/data/apps'
 
 const props = defineProps<{
