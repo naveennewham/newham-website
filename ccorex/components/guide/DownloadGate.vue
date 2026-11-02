@@ -52,7 +52,7 @@ async function submit() {
   if (!form.consent) { error.value = 'Please tick the box so we can email you.'; return }
   sending.value = true
   try {
-    await $fetch('/api/lead', { method: 'POST', body: { ...form, form: 'template_download', subject: `Download: ${props.title}`, message: `Downloaded from /resources/${props.guide}`, pagesViewed: $track.pagesViewed() } })
+    await $fetch('/api/lead', { method: 'POST', body: { ...form, form: 'template_download', subject: `Download: ${props.title}`, message: `Downloaded from /resources/${props.guide}`, ...$track.attribution() } })
     done.value = true
   } catch {
     error.value = 'Something went wrong. Please try again, or email admin@newhamtech.com.'

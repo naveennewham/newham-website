@@ -44,7 +44,12 @@ export default defineEventHandler(async (event) => {
       landingPage: str(firstTouch.landingPage, 2000), referrer: str(firstTouch.referrer, 2000),
       utm: (firstTouch.utm as Record<string, string> | undefined) ?? {}, clickIds: (firstTouch.clickIds as Record<string, string> | undefined) ?? {},
     },
-    pagesViewed: Array.isArray(body.pagesViewed) ? body.pagesViewed.slice(-20).map((p) => String(p).slice(0, 300)) : [],
+    pagesViewed: Array.isArray(body.pagesViewed) ? body.pagesViewed.slice(-50).map((p) => String(p).slice(0, 300)) : [],
+    // Self-reported source, GA client id (joins the lead to GA sessions) and our own test enquiries.
+    // Markaiting ignores fields it does not know yet.
+    heardAbout: str(body.heardAbout, 60),
+    gaClientId: typeof body.gaClientId === 'string' && /^\d{1,20}\.\d{1,20}$/.test(body.gaClientId) ? body.gaClientId : undefined,
+    internal: body.internal === true ? true : undefined,
   }
 
   const sends: Promise<unknown>[] = []
@@ -57,14 +62,14 @@ export default defineEventHandler(async (event) => {
     }))
   }
   if (cfg.legacyLeadWebhook) {
-    sends.push($fetch(cfg.legacyLeadWebhook, { method: 'POST', body: { ...body, pagesViewed: undefined }, timeout: 10_000 }))
+    sends.push($fetch(cfg.legacyLeadWebhook, { method: 'POST', body: { ...body, pagesViewed: undefined, gaClientId: undefined, internal: undefined }, timeout: 10_000 }))
   }
   // Netlify Forms keeps a copy of every enquiry and emails it (notifications under Netlify → Forms).
   // The "enquiry" form is declared in pages/contact.vue so Netlify detects it at deploy.
   if (cfg.netlifyFormsUrl) {
     const fields: Record<string, string> = { 'form-name': 'enquiry', form, site }
     for (const [k, v] of Object.entries(body)) {
-      if (['form', 'pagesViewed', 'website_url', 'consent'].includes(k)) continue
+      if (['form', 'pagesViewed', 'website_url', 'consent', 'gaClientId', 'internal'].includes(k)) continue
       const s = Array.isArray(v) ? v.map(String).join(', ') : typeof v === 'string' ? v : undefined
       if (s) fields[k] = s.slice(0, 5000)
     }

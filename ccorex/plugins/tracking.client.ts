@@ -7,7 +7,9 @@
 //   with marketing consent.
 // - Pages viewed this visit (for lead scoring) are kept only with analytics consent.
 // - Our own team marks a browser as internal by opening any page with ?internal=1 (?internal=0 undoes it).
-//   GA then receives traffic_type=internal, which the property's Internal Traffic data filter drops.
+//   GA then receives traffic_type=internal, which the property's Internal Traffic data filter drops,
+//   and enquiries from that browser are flagged internal in Markaiting.
+// - Clicks on email, phone and WhatsApp links send a contact_click event (method and page only).
 
 type Gtag = (...args: unknown[]) => void
 declare global { interface Window { dataLayer: unknown[]; gtag?: Gtag } }
@@ -40,9 +42,11 @@ export default defineNuxtPlugin((nuxtApp) => {
   try {
     const flag = url.searchParams.get('internal')
     if (flag === '1') localStorage.setItem('mk_internal', '1')
-    if (flag === '0') localStorage.removeItem('mk_internal')
-    internal = localStorage.getItem('mk_internal') === '1'
+    if (flag === '0') { localStorage.removeItem('mk_internal'); localStorage.removeItem('mkt_internal') }
+    internal = localStorage.getItem('mk_internal') === '1' || localStorage.getItem('mkt_internal') === '1'
   } catch { /* storage blocked */ }
+  // Set before any config/page_view so every hit from this browser carries it.
+  if (internal) gtag('set', { traffic_type: 'internal' })
 
   let loaded = false
   function loadGtag() {
@@ -76,7 +80,7 @@ export default defineNuxtPlugin((nuxtApp) => {
       ad_personalization: c.marketing ? 'granted' : 'denied',
     })
     if (c.analytics || c.marketing) loadGtag()
-    if (c.analytics && config.gaId) gtag('config', config.gaId, internal ? { traffic_type: 'internal' } : {})
+    if (c.analytics && config.gaId) gtag('config', config.gaId)
     if (c.marketing && config.adsId) gtag('config', config.adsId)
     if (c.marketing) loadApollo()
     // First touch: keep the earliest; a new campaign click replaces a plain earlier visit.
@@ -92,8 +96,25 @@ export default defineNuxtPlugin((nuxtApp) => {
     try {
       const pv = JSON.parse(sessionStorage.getItem('mk_pv') || '[]') as string[]
       if (pv[pv.length - 1] !== path) pv.push(path)
-      sessionStorage.setItem('mk_pv', JSON.stringify(pv.slice(-20)))
+      sessionStorage.setItem('mk_pv', JSON.stringify(pv.slice(-50)))
     } catch { /* storage blocked */ }
+  }
+
+  // Email, phone and WhatsApp link clicks. Only the method and page are sent, never the address or number.
+  document.addEventListener('click', (e) => {
+    const a = (e.target as Element | null)?.closest?.('a[href]') as HTMLAnchorElement | null
+    if (!a) return
+    const href = a.getAttribute('href') ?? ''
+    const method = /^mailto:/i.test(href) ? 'email' : /^tel:/i.test(href) ? 'phone'
+      : /^https?:\/\/(wa\.me|api\.whatsapp\.com|(www\.)?whatsapp\.com)\//i.test(href) ? 'whatsapp' : null
+    if (method && consent.value.analytics && config.gaId) gtag('event', 'contact_click', { method, page_path: window.location.pathname })
+  }, { capture: true })
+
+  /** GA client id from the _ga cookie (GA1.1.XXXX.YYYY → XXXX.YYYY); set only with analytics consent. */
+  function gaClientId(): string | undefined {
+    const m = document.cookie.match(/(?:^|;\s*)_ga=([^;]+)/)
+    const id = m?.[1]?.split('.').slice(2).join('.')
+    return id && /^\d+\.\d+$/.test(id) ? id : undefined
   }
 
   watch(consent, apply, { immediate: true })
@@ -114,6 +135,10 @@ export default defineNuxtPlugin((nuxtApp) => {
         },
         pagesViewed(): string[] {
           try { return JSON.parse(sessionStorage.getItem('mk_pv') || '[]') } catch { return [] }
+        },
+        /** Extra fields for /api/lead: pages viewed, GA client id and the internal flag. */
+        attribution() {
+          return { pagesViewed: this.pagesViewed(), gaClientId: consent.value.analytics ? gaClientId() : undefined, internal: internal || undefined }
         },
       },
     },
