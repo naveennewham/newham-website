@@ -140,9 +140,9 @@ const sgSolutions = withPath('construction')
 const businessSolutions = withPath('business')
 useSeoMeta({
   title: 'Solutions by role for construction teams',
-  description: 'How CCorex supports directors, estimators and QS, project managers, procurement and finance, HR and admin, and site supervisors on one construction platform.',
-  ogTitle: 'CCorex solutions — the right view for every construction role',
-  ogDescription: 'Estimating, project delivery and HR & payroll apps mapped to directors, estimators, project managers, finance, HR and site teams.'
+  description: 'How CCorex supports directors, estimators and QS, project managers, procurement and finance, HR and site supervisors on one construction platform.',
+  ogTitle: 'Solutions by role for construction teams | CCorex',
+  ogDescription: 'How CCorex supports directors, estimators and QS, project managers, procurement and finance, HR and site supervisors on one construction platform.'
 })
 useHead({ link: [{ rel: 'canonical', href: config.public.siteUrl + '/solutions' }] })
 

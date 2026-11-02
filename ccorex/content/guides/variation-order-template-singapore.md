@@ -1,5 +1,6 @@
 ---
 title: "Variation Order Template for Singapore Contractors: Format, Register and Pricing"
+seo_title: "Variation Order Template for Singapore Contractors"
 description: "A variation order format for Singapore contractors: the VO form, how to price additions and omissions, a VO register, and how variations reach your claims."
 slug: variation-order-template-singapore
 date: 2026-10-26

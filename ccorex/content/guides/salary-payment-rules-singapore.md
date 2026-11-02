@@ -1,6 +1,7 @@
 ---
 title: "Salary Payment Rules in Singapore: Deadlines, Deductions and Final Pay"
-description: "MOM salary payment rules for Singapore employers: pay at least monthly, within 7 days of the salary period, overtime within 14 days, the 50% deduction limit and final pay timing."
+seo_title: "Salary Payment Rules in Singapore: MOM Deadlines"
+description: "MOM salary payment rules for Singapore employers: pay within 7 days of the salary period, overtime within 14 days, the 50% deduction limit and final pay."
 slug: salary-payment-rules-singapore
 date: 2026-10-27
 author: "CCorex team"

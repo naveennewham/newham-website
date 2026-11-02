@@ -1,6 +1,7 @@
 ---
 title: "Construction Cost Report Template: Monthly Budget, Committed, Actual and Forecast"
-description: "A monthly construction cost report template: budget, committed, actual, forecast to complete and variance by cost code, with a worked example and a free Excel file."
+seo_title: "Construction Cost Report Template (Monthly)"
+description: "Monthly construction cost report template: budget, committed, actual, forecast to complete and variance by cost code, with a worked example and Excel file."
 slug: construction-cost-report-template
 date: 2026-10-27
 author: "CCorex team"

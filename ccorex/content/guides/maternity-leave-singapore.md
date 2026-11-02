@@ -1,6 +1,7 @@
 ---
 title: "Maternity Leave in Singapore: GPML, Eligibility and Who Pays"
-description: "Maternity leave in Singapore for employers: 16 weeks of Government-Paid Maternity Leave or 12 weeks under the Employment Act, eligibility, notice and reimbursement caps."
+seo_title: "Maternity Leave in Singapore: GPML and Who Pays"
+description: "Maternity leave in Singapore for employers: 16 weeks of Government-Paid Maternity Leave or 12 under the Employment Act, eligibility and reimbursement."
 slug: maternity-leave-singapore
 date: 2026-10-27
 author: "CCorex team"

@@ -1,6 +1,7 @@
 ---
 title: "Notice Period in Singapore: Minimum Notice, Salary in Lieu and Leave"
-description: "Notice periods in Singapore for employers: the minimum notice by length of service when the contract is silent, salary in lieu of notice, offsetting leave and final pay timing."
+seo_title: "Notice Period in Singapore: Minimum Notice Rules"
+description: "Notice periods in Singapore: the minimum notice by length of service when the contract is silent, salary in lieu of notice, offsetting leave and final pay."
 slug: notice-period-singapore
 date: 2026-10-27
 author: "CCorex team"

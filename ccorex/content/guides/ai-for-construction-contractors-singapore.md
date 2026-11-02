@@ -1,6 +1,7 @@
 ---
 title: "AI for Construction Contractors in Singapore: Practical Uses"
-description: "Where AI helps Singapore contractors today: reading tenders, pricing the client's BOQ, drawing take-off, document search, site attendance and HR, with what to check."
+seo_title: "AI for Construction Contractors in Singapore"
+description: "Where AI helps Singapore contractors: reading tenders, pricing the client's BOQ, drawing take-off, document search, site attendance and what to check."
 slug: ai-for-construction-contractors-singapore
 date: 2026-10-27
 author: "CCorex team"

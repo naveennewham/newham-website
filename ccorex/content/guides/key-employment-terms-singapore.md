@@ -1,6 +1,7 @@
 ---
 title: "Key Employment Terms (KETs) in Singapore: What to Include and When"
-description: "KETs in Singapore: which employees must get them, the 14-day deadline, the 18 items MOM lists, written formats, and how KETs relate to the employment contract."
+seo_title: "Key Employment Terms (KETs) in Singapore"
+description: "KETs in Singapore: which employees must get them, the 14-day deadline, the 18 items MOM lists, written formats, and how KETs relate to the contract."
 slug: key-employment-terms-singapore
 date: 2026-10-27
 author: "CCorex team"

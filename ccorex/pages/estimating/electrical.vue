@@ -2,8 +2,8 @@
   <TradeLanding
     slug="electrical"
     trade="Electrical"
-    seo-title="Electrical estimating software & BOQ for contractors"
-    seo-description="Electrical estimating software for Singapore contractors: price power distribution, lighting, small power, cabling, containment and earthing by area, from one price library."
+    seo-title="Electrical estimating & BOQ software, Singapore"
+    seo-description="Electrical estimating for Singapore contractors: price power distribution, lighting, small power, cabling, containment and earthing by area."
     h1="Price electrical tenders from one price library"
     lead="DeepCost prices power distribution, lighting, small power, cabling, containment and earthing from an electrical price library set up for your company during onboarding, or imported from your own Excel price list, then takes off by building, floor and room."
     :item-groups="['Switchboards & distribution boards', 'Lighting & emergency lighting', 'Small power & outlets', 'Cables & wiring', 'Containment: trunking, tray, conduit', 'Earthing & lightning protection']"

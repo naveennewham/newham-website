@@ -2,8 +2,8 @@
   <TradeLanding
     slug="plumbing-sanitary"
     trade="Plumbing & sanitary"
-    seo-title="Plumbing & sanitary estimating software for contractors"
-    seo-description="Plumbing and sanitary estimating software for Singapore contractors: price water supply, sanitary and drainage pipework, fittings and fixtures by area, from one price library."
+    seo-title="Plumbing & sanitary estimating software, Singapore"
+    seo-description="Plumbing and sanitary estimating software: price water supply, sanitary and drainage pipework, fittings and fixtures by area, from one price library."
     h1="Price plumbing and sanitary tenders from one price library"
     lead="DeepCost prices water supply, sanitary and drainage pipework, fittings and fixtures from a plumbing price library set up for your company during onboarding, or imported from your own Excel price list, then takes off by building, floor and room."
     :item-groups="['Cold & hot water pipework', 'Sanitary & soil pipework', 'Drainage', 'Valves & fittings', 'Sanitary fixtures', 'Tanks & pumps']"

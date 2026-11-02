@@ -1,7 +1,7 @@
 ---
 title: "Retention Sum in Singapore: Calculation, Release and GST"
-seo_title: "Retention Sum Singapore: How It Is Calculated and Released"
-description: "Retention sum in Singapore construction: a worked example of how retention is calculated and capped, when each half is released, GST on retention and how to track it."
+seo_title: "Retention Sum Singapore: Calculation and Release"
+description: "Retention sum in Singapore construction: a worked example of how retention is calculated and capped, when each half is released, and GST on retention."
 slug: retention-sum-singapore
 date: 2026-10-18
 updated: 2026-10-29

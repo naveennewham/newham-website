@@ -12,9 +12,9 @@
 const config = useRuntimeConfig()
 useSeoMeta({
   title: 'PDF Editor — mark up and sign construction PDFs',
-  description: 'The CCorex PDF Editor lets office and project staff mark up, sign, split and merge PDFs, then export the finished document — with the same sign-in and roles.',
-  ogTitle: 'PDF Editor — mark up and sign PDFs in CCorex',
-  ogDescription: 'Text, signatures, images and overlays on any PDF; split, merge and export — part of the CCorex suite.'
+  description: 'The CCorex PDF Editor lets office and project staff mark up, sign, split and merge PDFs, then export the finished file, with the same sign-in and roles.',
+  ogTitle: 'PDF Editor — mark up and sign construction PDFs | CCorex',
+  ogDescription: 'The CCorex PDF Editor lets office and project staff mark up, sign, split and merge PDFs, then export the finished file, with the same sign-in and roles.'
 })
 useHead({ link: [{ rel: 'canonical', href: `${config.public.siteUrl}/products/pdf-editor` }] })
 

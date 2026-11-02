@@ -126,9 +126,9 @@
 const config = useRuntimeConfig()
 useSeoMeta({
   title: 'Industries: MEP, main contractors & EPC',
-  description: 'CCorex for MEP and fire-protection contractors in Singapore and India (Fire Protection, ACMV, A&A, ELV), main contractors, EPC firms and tender-based specialists.',
-  ogTitle: 'CCorex for MEP contractors, main contractors and EPC companies',
-  ogDescription: 'Tender estimating, project cost control and Singapore HR & payroll for MEP, fire-protection, main contractor and EPC businesses.'
+  description: 'CCorex for MEP and fire-protection contractors in Singapore and India (Fire Protection, ACMV, A&A, ELV), main contractors, EPC firms and specialists.',
+  ogTitle: 'Industries: MEP, main contractors & EPC | CCorex',
+  ogDescription: 'CCorex for MEP and fire-protection contractors in Singapore and India (Fire Protection, ACMV, A&A, ELV), main contractors, EPC firms and specialists.'
 })
 useHead({ link: [{ rel: 'canonical', href: config.public.siteUrl + '/industries' }] })
 

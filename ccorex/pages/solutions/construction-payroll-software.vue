@@ -4,7 +4,7 @@
     app="deephr"
     app-name="DeepHR"
     eyebrow="Construction payroll · Singapore"
-    seo-title="Construction Payroll Software Singapore: CPF, Overtime, Payslips"
+    seo-title="Construction Payroll Software Singapore with CPF"
     sub-category="Construction payroll software"
     seo-description="Payroll software for construction companies in Singapore: face and GPS site attendance into payroll, MOM overtime, CPF, SDL and SHG, and itemised payslips."
     h1="Payroll software for construction companies in Singapore"

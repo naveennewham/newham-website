@@ -1,6 +1,7 @@
 ---
 title: "Childcare Leave in Singapore: Days, Eligibility and Who Pays"
-description: "Childcare leave in Singapore for employers: 6 days of Government-Paid Childcare Leave, 2 days under the Employment Act, extended childcare leave, pro-rating and reimbursement."
+seo_title: "Childcare Leave in Singapore: Days and Who Pays"
+description: "Childcare leave in Singapore for employers: 6 days of Government-Paid Childcare Leave, 2 days under the Employment Act, extended leave and reimbursement."
 slug: childcare-leave-singapore
 date: 2026-10-27
 author: "CCorex team"

@@ -1,6 +1,7 @@
 ---
 title: "Subcontractor Progress Claims: How Main Contractors Assess and Pay Them (Singapore)"
-description: "How a main contractor assesses a subcontractor's progress claim in Singapore: checking work done, retention, back-charges, the SOP Act payment response, GST and records."
+seo_title: "Subcontractor Progress Claims in Singapore"
+description: "How a main contractor assesses a subcontractor's progress claim in Singapore: work done, retention, back-charges, the SOP Act payment response and GST."
 slug: subcontractor-progress-claims-singapore
 date: 2026-10-27
 author: "CCorex team"

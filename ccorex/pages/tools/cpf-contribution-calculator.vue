@@ -1,8 +1,8 @@
 <template>
   <ToolsShell
     slug="cpf-contribution-calculator"
-    seo-title="CPF contribution calculator 2026 (employer & employee)"
-    seo-description="Free CPF contribution calculator for Singapore employers: employer and employee shares for a month, with 2026 rates, the $8,000 ceiling and PR graduated rates."
+    seo-title="CPF contribution calculator 2026, Singapore"
+    seo-description="Free CPF calculator for Singapore employers: employer and employee shares for a month, with 2026 rates, the $8,000 ceiling and PR graduated rates."
     eyebrow="Free calculator · Singapore payroll"
     h1="CPF contribution calculator for 2026"
     lead="Work out the employer’s and employee’s CPF for one month, using the CPF Board’s rates from 1 January 2026, the Ordinary Wage ceiling and the rates for first- and second-year PRs."

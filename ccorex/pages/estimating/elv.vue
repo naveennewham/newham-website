@@ -3,7 +3,7 @@
     slug="elv"
     trade="ELV"
     seo-title="ELV estimating & BOQ software for contractors"
-    seo-description="Price ELV tenders — CCTV, access control, data and other extra-low-voltage systems — from one library, with area take-off, approvals and FOT AI on the client's BOQ."
+    seo-description="Price ELV tenders, including CCTV, access control and data systems, from one library, with area take-off, approvals and FOT AI on the client's BOQ."
     h1="Price ELV tenders without re-keying the BOQ"
     lead="DeepCost prices CCTV, access control, data and other ELV systems from one library, organised by area, and fills your figures on the client's BOQ PDF."
     :item-groups="['CCTV cameras & recorders', 'Access control & door hardware', 'Structured cabling & data', 'Containment & cabling', 'Head-end equipment']"

@@ -3,7 +3,7 @@
     slug="a-and-a"
     trade="A&A"
     seo-title="A&A Works Estimating Software Singapore"
-    seo-description="Estimating software for A&A (addition and alteration) works in Singapore: strip-out, partitions, ceilings, finishes and M&E reinstatement priced by area from one A&A library."
+    seo-description="Estimating software for A&A works in Singapore: strip-out, partitions, ceilings, finishes and M&E reinstatement priced by area from one A&A library."
     h1="A&A works estimating software, priced room by room"
     lead="DeepCost takes an addition and alteration tender from documents to a priced Form of Tender: take-off by building, floor and room, a seeded A&A price library with material and installation prices, and FOT AI on the client’s BOQ."
     :item-groups="['Strip-out & demolition', 'Partitions & drywall', 'Ceilings', 'Flooring & wall finishes', 'Doors & ironmongery', 'M&E diversion & reinstatement', 'Hoarding, protection & making good']"

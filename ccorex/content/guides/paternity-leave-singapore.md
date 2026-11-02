@@ -1,6 +1,7 @@
 ---
 title: "Paternity and Shared Parental Leave in Singapore: Weeks, Eligibility and Pay"
-description: "Paternity leave in Singapore for employers: 4 weeks of Government-Paid Paternity Leave, shared parental leave of 6 or 10 weeks, eligibility, notice, timing and reimbursement."
+seo_title: "Paternity & Shared Parental Leave in Singapore"
+description: "Paternity leave in Singapore: 4 weeks of Government-Paid Paternity Leave, shared parental leave of 6 or 10 weeks, eligibility, notice and reimbursement."
 slug: paternity-leave-singapore
 date: 2026-10-27
 author: "CCorex team"
