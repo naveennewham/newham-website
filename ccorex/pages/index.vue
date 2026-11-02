@@ -128,6 +128,20 @@
       </div>
     </section>
 
+    <!-- Client quote -->
+    <section class="section-tight cv-auto" aria-labelledby="client-quote-title">
+      <div class="container-site">
+        <div class="text-center"><h2 id="client-quote-title" class="eyebrow">What clients say</h2></div>
+        <div class="mt-6">
+          <UiClientQuote
+            quote="We run Decarb's tenders, projects, claims and payroll on CCorex. With estimating, project costs and HR on one sign-in, our team works from the same numbers instead of separate spreadsheets."
+            name="Saravana Kumar" role="Director" company="Decarb"
+            logo="/images/clients/decarb.png" href="https://thedecarb.com"
+          />
+        </div>
+      </div>
+    </section>
+
     <UiTrustStrip class="cv-auto" />
 
     <!-- Plans -->

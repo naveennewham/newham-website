@@ -139,6 +139,20 @@
       </div>
     </section>
 
+    <!-- Client quote -->
+    <section class="section-tight border-t border-ink-100" aria-labelledby="client-quote-title">
+      <div class="container-site">
+        <div class="text-center"><h2 id="client-quote-title" class="eyebrow">What clients say</h2></div>
+        <div class="mt-6">
+          <UiClientQuote
+            quote="DeepTrack keeps our budgets, purchasing and progress claims in one place, so we can see where each project stands before month-end, not after."
+            name="Saravana Kumar" role="Director" company="Decarb"
+            logo="/images/clients/decarb.png" href="https://thedecarb.com"
+          />
+        </div>
+      </div>
+    </section>
+
     <!-- Modules -->
     <section class="section bg-ink-50">
       <div class="container-site">
