@@ -30,12 +30,60 @@
       </div>
     </section>
 
+    <section class="section bg-ink-50">
+      <div class="container-site">
+        <UiSectionHeader eyebrow="What each one works out" title="What you enter, and what you get back" lead="Each calculator asks for the figures you already have on the payslip or the worker list, and shows the method it used underneath the result." />
+        <ul class="mt-12 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+          <li v-for="d in details" :key="d.name" class="card">
+            <span class="icon-tile h-9 w-9 text-sm"><i :class="d.icon" aria-hidden="true"></i></span>
+            <h3 class="mt-4 font-semibold text-ink-900">{{ d.name }}</h3>
+            <p class="mt-2 text-sm text-ink-600"><strong class="text-ink-900">You enter:</strong> {{ d.enter }}</p>
+            <p class="mt-1.5 text-sm text-ink-600"><strong class="text-ink-900">You get:</strong> {{ d.get }}</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container-site">
+        <UiSectionHeader center eyebrow="How to use them" title="Four steps to a figure you can check" />
+        <div class="mt-12"><UiStepFlow :steps="steps" /></div>
+      </div>
+    </section>
+
+    <section class="section-tight bg-ink-50">
+      <div class="container-site grid gap-10 lg:grid-cols-[1fr_1.6fr]">
+        <UiSectionHeader eyebrow="FAQ" title="Questions about the calculators" lead="Each calculator page has its own questions on the rules behind the figure." />
+        <UiFaqList :items="faqs" />
+      </div>
+    </section>
+
     <UiCtaBand title="Run CPF and overtime on every pay run" lead="DeepHR works out CPF, SDL, self-help group funds and MOM overtime from approved attendance and leave. Book a 30-minute demo." />
   </div>
 </template>
 
 <script setup lang="ts">
 import { tools, toolPath } from '~/data/tools'
+
+const details = [
+  { name: 'CPF contribution calculator', icon: 'fa-solid fa-calculator', enter: 'ordinary wages, additional wages this month and already paid this year, age and residency.', get: 'the employer’s and employee’s CPF for the month, with the 2026 rates, the $8,000 Ordinary Wage ceiling and PR graduated rates.' },
+  { name: 'Overtime pay calculator', icon: 'fa-solid fa-user-clock', enter: 'monthly basic salary, type of employee and overtime hours this month.', get: 'the hourly basic rate, the overtime rate and the overtime pay under Part 4 of the Employment Act, with the $13.60 non-workman cap and a warning above 72 hours.' },
+  { name: 'Construction foreign worker levy calculator', icon: 'fa-solid fa-helmet-safety', enter: 'Work Permit holders by source and skill tier, days worked for part months and, optionally, local employees earning the Local Qualifying Salary.', get: 'the monthly and annual levy, with quick checks on the 1:5 quota and the 10% R1 rule.' },
+  { name: 'SDL calculator', icon: 'fa-solid fa-coins', enter: 'each employee’s total wages for the month.', get: 'the Skills Development Levy for each person and the month’s total, with the $2 minimum, $11.25 maximum and the total rounded down.' },
+  { name: 'Pro-rated annual leave calculator', icon: 'fa-solid fa-umbrella-beach', enter: 'the year of service, the full-year leave and either the dates or the completed months worked.', get: 'the pro-rated annual leave for a joiner or leaver, using MOM’s formula and rounding rule.' }
+]
+const steps = [
+  { title: 'Pick a calculator', text: 'CPF, SDL, overtime, pro-rated leave or the construction levy.' },
+  { title: 'Enter your figures', text: 'Wages, hours, dates or headcount, as each calculator asks.' },
+  { title: 'Read the result', text: 'The figure, with the method and published rates it used set out below it. Nothing you enter is saved.' },
+  { title: 'Check before you pay', text: 'Confirm with the CPF Board, MOM or WP Online, which hold the final figures.' }
+]
+const faqs = [
+  { q: 'Are these calculators free?', a: 'Yes. All five calculators are free to use, with no sign-up.' },
+  { q: 'Which rates do the calculators use?', a: 'The CPF and SDL calculators use the CPF Board’s published rates, including the CPF rates from 1 January 2026. The overtime, pro-rated leave and levy calculators use MOM’s published formulas and rates. Each calculator page sets out the method and links to its source.' },
+  { q: 'Can I rely on the result for payroll?', a: 'Treat it as an estimate. Confirm CPF with the CPF Board’s own contribution calculator before you pay; your levy bill and quota on WP Online are the final levy figures; and check MOM’s pages for daily-rated, piece-rated, part-time and shift workers.' },
+  { q: 'Can DeepHR work these out on every pay run?', a: 'Yes for CPF, SDL, self-help group funds and overtime: DeepHR works them out on every pay run from approved attendance and leave, with an itemised PDF payslip for each employee. A foreign worker levy report, with the levy costed to each project, is in early access.' }
+]
 
 const config = useRuntimeConfig()
 const pageUrl = `${config.public.siteUrl}/tools`
