@@ -42,17 +42,17 @@ const flow = [
 ]
 const features = [
   { icon: 'fa-solid fa-sack-dollar', title: 'Approved budgets', text: 'Budgets built from template categories against a project or client PO, with a version history for every budget.' },
-  { icon: 'fa-solid fa-scale-balanced', title: 'Budget against actual', text: 'Utilisation and over-budget alerts on each budget; matched invoices post net cost to the project cost ledger.' },
+  { icon: 'fa-solid fa-scale-balanced', title: 'Budget against actual', text: 'Utilisation shown on each budget; matched invoices post net cost to the project cost ledger.' },
   { icon: 'fa-solid fa-sitemap', title: 'Cost codes', text: 'Cost tracked by workhead, WBS activity, cost centre and business unit, with dropdown lists set for your organisation.' },
   { icon: 'fa-solid fa-cart-shopping', title: 'Purchases within budget', text: 'Purchase requests are raised against an approved budget and routed through your approval thresholds.' },
   { icon: 'fa-solid fa-user-clock', title: 'Labour from timesheets', text: 'Individual or bulk timesheets coded to project and WBS activity; each hour productive, idle, training or tender. PMs approve.' },
   { icon: 'fa-solid fa-calendar-check', title: 'Month-end allocation', text: 'Direct labour at actual hourly rates, worker pool, HQ, business-unit and project overhead, then the period is locked.' },
   { icon: 'fa-solid fa-file-invoice-dollar', title: 'Client billing beside cost', text: 'Client claims with retention and 9% GST sit on the same project, so billed value is always visible against spend.' },
-  { icon: 'fa-solid fa-chart-column', title: 'Project reports', text: 'Project, budget, procurement, claims and finance reports, a custom report builder and scheduled reports.' },
+  { icon: 'fa-solid fa-chart-column', title: 'Project reports', text: 'Project, budget, procurement, claims and finance reports, exported to CSV and PDF.' },
   { icon: 'fa-solid fa-link', title: 'Accounting link', text: 'Zoho Books for vendors and purchase orders, a month-end journal CSV for your ledger, and general-ledger costs imported from CSV.' }
 ]
 const checklist = [
-  { need: 'Budget against actual while the project runs', how: 'Approved budgets with utilisation and over-budget alerts; matched invoices and month-end allocations land against them.' },
+  { need: 'Budget against actual while the project runs', how: 'Approved budgets with utilisation shown on each; matched invoices and month-end allocations land against them.' },
   { need: 'Commitments checked before spending', how: 'Every purchase request is raised against an approved budget and approved by PM, then GM, then MD above your threshold.' },
   { need: 'Labour cost per project', how: 'Timesheets coded to project and WBS activity, costed at each person’s actual hourly rate at month end.' },
   { need: 'Overhead in project cost', how: 'HQ overhead by fixed percentages, business-unit overhead by approved project value, and project overhead spread to workheads.' },

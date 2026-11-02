@@ -31,7 +31,7 @@ const problems = [
 ]
 const flow = [
   { title: 'Contract set up', text: 'Contract value and customer PO with retention % and GST.', icon: 'fa-solid fa-file-contract' },
-  { title: 'Claim prepared', text: 'Work done and variations to date.', icon: 'fa-solid fa-list-check' },
+  { title: 'Claim prepared', text: 'Work done to date, from a breakdown of works.', icon: 'fa-solid fa-list-check' },
   { title: 'Retention & GST', text: 'Retention to date and 9% GST worked out.', icon: 'fa-solid fa-file-invoice-dollar' },
   { title: 'Certificate', text: 'PDF Progress Claim Certificate, ready to send.', icon: 'fa-solid fa-file-pdf' },
   { title: 'Status', text: 'Submitted, then completed or rejected.', icon: 'fa-solid fa-circle-check' }
