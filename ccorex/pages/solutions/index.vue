@@ -177,7 +177,7 @@ const roles = [
     title: 'Run projects on an approved budget',
     lead: 'Own the project, its budget, purchase requests, timesheets and client claims in one place.',
     pains: ['Budgets in one file, POs in another, claims on paper', 'Labour cost never reaches the project', 'Payment approvals chased by email'],
-    outcomes: ['Projects carry contract value, retention, payment terms and GST', 'Budget against actual, utilisation and over-budget alerts', 'Progress claims with retention, GST and a PDF certificate', 'Approve your team’s timesheets and first-approve payments'],
+    outcomes: ['Projects carry contract value, retention, payment terms and GST', 'Budget against actual, with utilisation on each budget', 'Progress claims with retention, GST and a PDF certificate', 'Approve your team’s timesheets and first-approve payments'],
     apps: [DT, DD, PE, AR],
   },
   {

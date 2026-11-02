@@ -200,7 +200,7 @@ const appTiers = [
     name: 'DeepTrack', slug: 'deeptrack', tagline: 'Project delivery & cost control', icon: 'fa-solid fa-diagram-project', color: 'bg-amber-50 text-amber-700',
     tiers: [
       { name: 'Starter', for: 'Single projects', features: ['Projects, customer POs & contract value', 'Budgets, variance & standard approvals'] },
-      { name: 'Growth', for: 'Growing contractors', popular: true, features: ['Procurement (PR → PO → invoice), client claims', 'Manpower, timesheets & scheduled reports'] },
+      { name: 'Growth', for: 'Growing contractors', popular: true, features: ['Procurement (PR → PO → invoice), client claims', 'Manpower & timesheets'] },
       { name: 'Enterprise', for: 'Multi-entity contractors', features: ['Month-end cost allocation & Zoho Books link', 'Screen-by-role matrix, budget templates & audit log'] }
     ]
   },

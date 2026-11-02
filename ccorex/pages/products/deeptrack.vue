@@ -348,7 +348,7 @@ const steps = [
   { title: 'Month-end', text: 'Labour and overhead allocated; the period is locked.' }
 ]
 const stepNotes = [
-  { icon: 'fa-solid fa-scale-balanced', title: 'Budget against actual', text: 'Utilisation and over-budget alerts, with a version history for every budget.' },
+  { icon: 'fa-solid fa-scale-balanced', title: 'Budget against actual', text: 'Utilisation against committed and actual cost, with a version history for every budget.' },
   { icon: 'fa-solid fa-stamp', title: 'Configured approvals', text: 'Every purchase request is routed through the approvals and thresholds your tenant sets.' },
   { icon: 'fa-solid fa-clipboard-list', title: 'Finance audit log', text: 'Finance actions and period unlocks are written to an audit log.' }
 ]
@@ -371,7 +371,7 @@ const p2pRules = [
   { icon: 'fa-solid fa-file-circle-exclamation', title: 'Non-PO invoices', text: 'Above your tenant limit they are blocked or warned, as you configure. A PO without a request needs a justification.' }
 ]
 const budgetPoints = [
-  'Utilisation and over-budget alerts on each budget',
+  'Utilisation shown on each budget',
   'A version history for every budget',
   'Purchase requests raised only against an approved budget',
   'Matched invoices post net cost to the project cost ledger'
@@ -412,7 +412,7 @@ const differentiators = [
     icon: 'fa-solid fa-scale-balanced', title: 'Cost control on every project',
     bullets: [
       { title: 'Projects with the commercial terms', text: 'Contract type and value, retention %, payment terms, defects liability period, GST and business unit. Client POs tracked as Active, Expired or Fully Claimed.' },
-      { title: 'Budget against actual', text: 'Budgets built from template categories, with utilisation, over-budget alerts and a version history. Approved by the GM, plus the MD above your threshold.' },
+      { title: 'Budget against actual', text: 'Budgets built from template categories, with utilisation and a version history. Approved by the GM, plus the MD above your threshold.' },
       { title: 'Spend against approved budgets', text: 'Purchase requests are raised against an approved budget, and payable invoices post their net cost to the project cost ledger.' }
     ],
     outcome: 'Spot margin pressure during the project, not only at close.'
@@ -449,7 +449,7 @@ const differentiators = [
     bullets: [
       { title: 'Per-tenant settings', text: 'Dropdown lists, approval thresholds, budget templates, client list, non-PO invoice limit and Zoho Books link.' },
       { title: 'Screen-by-role matrix', text: 'Choose which roles see which screens. Individual cost rates are visible only to Finance Controller, MD and Admin.' },
-      { title: 'Reports & schedules', text: 'Custom report builder and scheduled reports, plus email at each approval step.' }
+      { title: 'Reports', text: 'Project, budget, procurement, claims and finance reports, exported to CSV and PDF, plus email at each approval step.' }
     ],
     outcome: 'Your thresholds, your approvers, your chart of workheads.'
   }
@@ -484,7 +484,7 @@ const suiteNext = ['Won DeepCost tender → DeepTrack project without re-entry',
 
 const plans = [
   { name: 'Starter', for: 'Small teams & single projects', features: ['Projects & client POs', 'Budgets & budget against actual', 'Client claims', 'Configured approvals', 'Core project reports'] },
-  { name: 'Growth', for: 'Growing contractors', popular: true, features: ['Everything in Starter', 'Procurement (PR → PO → delivery)', 'Invoice matching & payments', 'Manpower & timesheets', 'Scheduled reports'] },
+  { name: 'Growth', for: 'Growing contractors', popular: true, features: ['Everything in Starter', 'Procurement (PR → PO → delivery)', 'Invoice matching & payments', 'Manpower & timesheets'] },
   { name: 'Enterprise', for: 'Multi-entity contractors', features: ['Everything in Growth', 'Month-end cost allocation', 'Zoho Books link', 'Screen-by-role matrix & budget templates', 'Audit log & priority support'] }
 ]
 
@@ -498,7 +498,7 @@ const solutionLinks = [
 ]
 const faqs = [
   { q: 'Can we buy DeepTrack on its own?', a: 'Yes. DeepTrack is sold on its own in Starter, Growth and Enterprise tiers, priced per user. You do not need any other CCorex app; DeepCost or DeepHR can be added later on the same sign-in.' },
-  { q: 'What does DeepTrack cover?', a: 'A contractor’s projects from contract to profit: projects and client POs, budgets, client claims, manpower and timesheets, procurement, accounts payable with invoice matching, and month-end cost allocation — with reports and scheduled exports.' },
+  { q: 'What does DeepTrack cover?', a: 'A contractor’s projects from contract to profit: projects and client POs, budgets, client claims, manpower and timesheets, procurement, accounts payable with invoice matching, and month-end cost allocation — with project, budget, procurement, claims and finance reports.' },
   { q: 'How do purchase requests get approved?', a: 'Every purchase request is raised against an approved budget and routed through the configured approvals: project manager, then general manager, and the managing director above your tenant’s threshold. A request code is assigned at final approval.' },
   { q: 'How does invoice matching work?', a: 'Accounts payable captures the vendor invoice and DeepTrack matches it against the PO, the delivery endorsement and the purchase request. Duplicate invoice numbers are blocked, and a rate mismatch or quantity above what was endorsed marks the invoice as a discrepancy.' },
   { q: 'Does DeepTrack track labour and overhead cost?', a: 'Yes. Timesheets are coded to project, workhead, WBS activity and business unit. The month-end run allocates direct labour at actual hourly rates, the worker pool, HQ and business-unit overhead, and project overhead, then locks the period.' },
