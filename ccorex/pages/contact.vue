@@ -2,7 +2,7 @@
   <div>
     <!-- Netlify Forms: declares the "enquiry" form so Netlify detects it at deploy. The server
          (server/api/lead.post.ts) submits a copy of each enquiry to it, which Netlify emails. -->
-    <form name="enquiry" data-netlify="true" netlify-honeypot="website_url" hidden aria-hidden="true"><input name="form-name" /><input name="form" /><input name="site" /><input name="subject" /><input name="name" /><input name="email" /><input name="company" /><input name="role" /><input name="phone" /><input name="size" /><input name="apps" /><input name="when" /><textarea name="message"></textarea><input name="website_url" /></form>
+    <form name="enquiry" data-netlify="true" netlify-honeypot="website_url" hidden aria-hidden="true"><input name="form-name" /><input name="form" /><input name="site" /><input name="subject" /><input name="name" /><input name="email" /><input name="company" /><input name="role" /><input name="phone" /><input name="size" /><input name="apps" /><input name="when" /><input name="heardAbout" /><textarea name="message"></textarea><input name="website_url" /></form>
     <!-- Hero -->
     <section class="relative overflow-hidden bg-hero text-white">
       <div class="bg-grid pointer-events-none absolute inset-0 opacity-50" aria-hidden="true"></div>
@@ -65,6 +65,13 @@
               <select id="size" v-model="form.size" class="input">
                 <option value="">Select company size</option>
                 <option v-for="s in sizes" :key="s" :value="s">{{ s }}</option>
+              </select>
+            </div>
+            <div>
+              <label for="heardAbout" class="label">How did you hear about us?</label>
+              <select id="heardAbout" v-model="form.heardAbout" class="input">
+                <option value="">Select an option</option>
+                <option v-for="h in heardAboutOptions" :key="h" :value="h">{{ h }}</option>
               </select>
             </div>
             <p class="sm:col-span-2 mt-2 flex items-center gap-2 border-t border-ink-100 pt-6 text-xs font-semibold uppercase tracking-wider text-ink-500"><span class="flex h-5 w-5 items-center justify-center rounded-full bg-brand-700 text-[10px] text-white">2</span>What you’d like to see</p>
@@ -151,6 +158,7 @@ useSeoMeta({
 useHead({ link: [{ rel: 'canonical', href: config.public.siteUrl + '/contact' }] })
 
 const roles = ['Owner / Managing Director', 'General Manager', 'Estimation / QS', 'Project Manager', 'Procurement / Finance', 'HR / Admin', 'Site Engineer / Supervisor', 'IT', 'Other']
+const heardAboutOptions = ['Google search', 'ChatGPT / AI assistant', 'LinkedIn', 'YouTube', 'Referral / word of mouth', 'Event', 'Other']
 const sizes = ['1–20 employees', '21–50 employees', '51–200 employees', '201–500 employees', '500+ employees']
 const appIcons: Record<string, string> = { 'DeepCost': 'deepcost', 'DeepTrack': 'deeptrack', 'DeepHR': 'deephr', 'DeepPlan AI': 'deepplan-ai', 'ARIVU AI': 'arivu-ai', 'Deep Drive & PDF Editor': 'deep-drive' }
 const appIcon = (option: string) => appIcons[option.split(' — ')[0]!]
@@ -162,7 +170,7 @@ const nextSteps = [
 ]
 const demoPoints = ['Your estimating, project or payroll workflow', 'ARIVU AI answering from your data across apps', 'One sign-in, shared users, roles per app', 'Plans and onboarding for your team']
 
-const blank = () => ({ name: '', email: '', company: '', role: '', phone: '', size: '', apps: [] as string[], message: '', consent: false, website_url: '' })
+const blank = () => ({ name: '', email: '', company: '', role: '', phone: '', size: '', heardAbout: '', apps: [] as string[], message: '', consent: false, website_url: '' })
 const form = ref(blank())
 // ?interest=<slug> from an "Request early access" button: tag the lead with that feature.
 const route = useRoute()
@@ -201,7 +209,7 @@ async function handleSubmit() {
   sending.value = true
   try {
     const kind = interest.value ? 'early_access' : 'demo_request'
-    await $fetch('/api/lead', { method: 'POST', body: { ...form.value, form: kind, subject: interest.value ? `Early access: ${interest.value.title}` : undefined, pagesViewed: $track.pagesViewed() } })
+    await $fetch('/api/lead', { method: 'POST', body: { ...form.value, form: kind, subject: interest.value ? `Early access: ${interest.value.title}` : undefined, ...$track.attribution() } })
     $track.lead(kind)
     viaEmail.value = false
     submitted.value = true
@@ -214,7 +222,7 @@ async function handleSubmit() {
   const f = form.value
   const body = [
     `Name: ${f.name}`, `Work email: ${f.email}`, `Company: ${f.company}`, `Role: ${f.role || '-'}`,
-    `Phone: ${f.phone || '-'}`, `Company size: ${f.size || '-'}`, `Apps of interest: ${f.apps.join(', ') || '-'}`,
+    `Phone: ${f.phone || '-'}`, `Company size: ${f.size || '-'}`, `Apps of interest: ${f.apps.join(', ') || '-'}`, `How you heard about us: ${f.heardAbout || '-'}`,
     ...(interest.value ? [`Early access: ${interest.value.title}`] : []),
     '', 'Message:', f.message || '-', '', 'PDPA consent given: yes'
   ].join('\n')

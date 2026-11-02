@@ -14,9 +14,9 @@
 
         <h2>What we collect</h2>
         <ul>
-          <li><strong>What you send us</strong> in a form: your name, work email, company, role, phone number, company size, the apps you're interested in and your message.</li>
+          <li><strong>What you send us</strong> in a form: your name, work email, company, role, phone number, company size, the apps you're interested in, how you heard about us and your message.</li>
           <li><strong>How you found us</strong>, only if you accept marketing cookies: the campaign or ad that brought you (for example utm parameters or a Google Ads click id), the page you landed on and the site that referred you. We keep this for up to 90 days in a cookie on your device and attach it to an enquiry you send.</li>
-          <li><strong>How the site is used</strong>, only if you accept analytics cookies: pages visited, how you arrived and device type, through Google Analytics.</li>
+          <li><strong>How the site is used</strong>, only if you accept analytics cookies: pages visited, how you arrived, device type and clicks on our email and phone links (not the address or number), through Google Analytics. If you send an enquiry, we attach the pages you viewed in that visit and your Google Analytics browser identifier, so we can see which channels lead to enquiries.</li>
         </ul>
 
         <h2>Why we use it</h2>
