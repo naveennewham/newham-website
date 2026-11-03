@@ -2,9 +2,9 @@
   <TradeLanding
     slug="acmv"
     trade="ACMV"
-    seo-title="ACMV estimating software for M&E contractors"
+    seo-title="ACMV & HVAC Estimating Software for Contractors"
     seo-description="Price ACMV tenders by building, floor and room: equipment, ductwork and piping from one priced library, with approvals and FOT AI on the client's BOQ."
-    h1="Price ACMV tenders room by room, from one library"
+    h1="ACMV and HVAC estimating software that prices tenders room by room"
     lead="DeepCost structures an ACMV tender by area, prices equipment, ductwork and piping from one library with separate material and installation rates, and fills your figures on the client's BOQ."
     :item-groups="['Air-conditioning equipment', 'Ductwork & fittings', 'Refrigerant & condensate piping', 'Ventilation fans', 'Insulation & accessories']"
     problem-title="Big BOQs, many line items, little time"
@@ -31,6 +31,7 @@ const features = [
   { icon: 'fa-solid fa-code-branch', title: 'Revisions with a reason', text: 'Each order revision is a chained copy with the reason recorded.' }
 ]
 const faqs = [
+  { q: 'Is DeepCost HVAC estimating software?', a: 'Yes. In Singapore, HVAC work is usually called ACMV (air-conditioning and mechanical ventilation). DeepCost prices air-conditioning equipment, ductwork and fittings, refrigerant and condensate piping, ventilation fans, and insulation and accessories by area, from one price library.' },
   { q: 'Is ACMV supported out of the box?', a: 'Yes. ACMV is one of DeepCost’s seeded trades, priced in SGD. You extend it with your own components, assemblies and item-group templates.' },
   { q: 'Can I import our existing price list?', a: 'Yes. Library data can be bulk-imported from Excel templates, then kept current with dated price changes.' },
   { q: 'Can I take quantities off drawings?', a: 'DeepPlan AI measures rooms and counts symbols on drawings into a priced BOQ. Its AI take-off is in early access.' },

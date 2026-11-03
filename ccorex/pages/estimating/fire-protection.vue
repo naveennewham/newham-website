@@ -61,6 +61,7 @@ const sampleBoq = [
   { item: 'B6', description: 'Addressable fire alarm panel, 4 loops, with repeater panel', unit: 'set', qty: '1' }
 ]
 const faqs = [
+  { q: 'Is DeepCost fire sprinkler estimating software?', a: 'Yes. Sprinkler heads and pipework, valves and alarm check stations, hose reels and risers, and fire pumps and tanks are item groups in the seeded Fire Protection trade. The hazard class recorded for each area decides which sprinkler type is allowed, so a mismatch is flagged before it is priced.' },
   { q: 'Which fire protection systems can I price?', a: 'Any system you set up as item groups in your library. DeepCost comes with Fire Protection as a seeded trade, and you add components, assemblies and templates for sprinklers, fire alarm, hose reels, risers and pumps.' },
   { q: 'How do validation rules work?', a: 'You define rules per trade and item group. For example, the hazard class recorded for an area decides which sprinkler type is allowed, so a mismatched item is flagged before it is priced.' },
   { q: 'Can I estimate gas suppression, firestopping and fireproofing?', a: 'Yes. Set each up as item groups in your library: gas suppression priced by agent quantity, cylinders, nozzles and pipework; firestopping by penetration and linear metre; fireproofing by steel area, fire rating and thickness. They are then taken off by area like any other system.' },

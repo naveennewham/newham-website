@@ -2,9 +2,9 @@
   <TradeLanding
     slug="electrical"
     trade="Electrical"
-    seo-title="Electrical estimating & BOQ software, Singapore"
+    seo-title="Electrical Estimating Software, Singapore"
     seo-description="Electrical estimating for Singapore contractors: price power distribution, lighting, small power, cabling, containment and earthing by area."
-    h1="Price electrical tenders from one price library"
+    h1="Electrical estimating software that prices every tender from one library"
     lead="DeepCost prices power distribution, lighting, small power, cabling, containment and earthing from an electrical price library set up for your company during onboarding, or imported from your own Excel price list, then takes off by building, floor and room."
     :item-groups="['Switchboards & distribution boards', 'Lighting & emergency lighting', 'Small power & outlets', 'Cables & wiring', 'Containment: trunking, tray, conduit', 'Earthing & lightning protection']"
     problem-title="Thousands of metres of cable, priced by hand"
@@ -42,6 +42,7 @@ const systems = [
   { name: 'Earthing and lightning protection', measure: 'Earth electrodes and pits, earth bars, bonding conductors (m), air terminals and down conductors.', watch: 'Testing and certification, and items that depend on the building structure.' }
 ]
 const faqs = [
+  { q: 'What electrical work can I estimate?', a: 'Switchboards and distribution boards, lighting and emergency lighting, small power and outlets, cables and wiring, containment (trunking, tray and conduit), and earthing and lightning protection, each set up as item groups in your library and taken off by area.' },
   { q: 'Can DeepCost estimate electrical work?', a: 'DeepCost has price libraries for every trade: Fire Protection, ACMV, A&A and ELV come seeded, and electrical, plumbing & sanitary and other trade libraries are set up for your company during onboarding, or imported from your own Excel price list.' },
   { q: 'Where does the electrical price library come from?', a: 'It is set up for your company during onboarding, or imported from your own Excel price list, so the rates are yours. You then add item groups, assemblies and templates for the way you price.' },
   { q: 'How do I price cable runs?', a: 'Measure each cable type and size in metres per area, and price it from your library with material and installation rates. Use assemblies when the tender prices per point instead.' },
