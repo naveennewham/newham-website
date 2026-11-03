@@ -18,7 +18,7 @@
       <div>
         <h2 class="text-sm font-semibold text-white">Services</h2>
         <ul class="mt-4 space-y-2.5 text-sm">
-          <li><NuxtLink to="/talent-outsourcing" class="hover:text-white">Engineering talent outsourcing</NuxtLink></li>
+          <li><NuxtLink to="/talent-outsourcing" class="hover:text-white">Engineering outsourcing services</NuxtLink></li>
           <li><NuxtLink to="/engineering-services" class="hover:text-white">Construction engineering services</NuxtLink></li>
           <li><NuxtLink to="/boq-estimation-services" class="hover:text-white">BOQ &amp; estimation services</NuxtLink></li>
           <li><NuxtLink to="/fire-protection-design" class="hover:text-white">Fire protection design</NuxtLink></li>

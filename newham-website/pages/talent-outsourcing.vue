@@ -5,9 +5,9 @@
       <div class="bg-grid pointer-events-none absolute inset-0 opacity-50" aria-hidden="true"></div>
       <div class="container-site relative grid gap-12 pb-20 pt-16 lg:grid-cols-[1.05fr_1fr] lg:items-center lg:pt-20">
         <div>
-          <p class="eyebrow-dark">Pillar 2 · Engineering talent outsourcing</p>
-          <h1 class="h-display mt-4 text-white">M&amp;E engineers who already speak your language</h1>
-          <p class="lead-dark mt-6 max-w-xl">Dedicated, domain-trained engineering professionals for Singapore M&amp;E contractors — not generic offshore staff. They learn your templates and work on your projects only.</p>
+          <p class="eyebrow-dark">Pillar 2 · Engineering outsourcing services</p>
+          <h1 class="h-display mt-4 text-white">Engineering outsourcing services for Singapore M&amp;E contractors</h1>
+          <p class="lead-dark mt-6 max-w-xl">M&amp;E engineers who already speak your language: dedicated, domain-trained engineering professionals for Singapore M&amp;E contractors — not generic offshore staff. They learn your templates and work on your projects only.</p>
           <div class="mt-8 flex flex-wrap gap-3">
             <NuxtLink to="/appointment" class="btn-accent">Book a discovery call <i class="fa-solid fa-arrow-right text-xs" aria-hidden="true"></i></NuxtLink>
             <a href="#roles" class="btn-ghost-dark">See the roles</a>
@@ -137,9 +137,9 @@
 <script setup lang="ts">
 const siteUrl = useRuntimeConfig().public.siteUrl as string
 useSeoMeta({
-  title: 'M&E engineering outsourcing services, Singapore',
-  description: 'Dedicated M&E professionals for Singapore contractors: BIM modellers and drafters, estimators and QS, tender coordinators and fire protection engineers.',
-  ogTitle: 'M&E engineering outsourcing services, Singapore — Newham',
+  title: 'Engineering Outsourcing Services Singapore (M&E)',
+  description: 'Engineering outsourcing services for Singapore M&E contractors: dedicated BIM modellers, drafters, estimators, QS and fire protection engineers.',
+  ogTitle: 'Engineering outsourcing services for Singapore M&E contractors — Newham',
   ogDescription: 'Dedicated, Singapore-code-trained M&E engineers who work on your projects, to your standards.',
   ogUrl: siteUrl + '/talent-outsourcing'
 })
@@ -150,8 +150,8 @@ useHead({
     innerHTML: JSON.stringify({
       '@context': 'https://schema.org',
       '@type': 'Service',
-      name: 'M&E engineering talent outsourcing',
-      serviceType: 'Engineering staff outsourcing',
+      name: 'M&E engineering outsourcing services',
+      serviceType: 'Engineering outsourcing services',
       description: 'Dedicated M&E professionals for Singapore contractors: BIM modellers and drafters, estimators and QS, tender coordinators and fire protection engineers.',
       url: siteUrl + '/talent-outsourcing',
       areaServed: { '@type': 'Country', name: 'Singapore' },
@@ -201,6 +201,10 @@ const engagements = [
 ]
 
 const faqs = [
+  { q: 'What do your engineering outsourcing services cover?', a: 'Dedicated M&E professionals for Singapore contractors: BIM modellers and drafters, estimators and quantity surveyors, tender and commercial coordinators, and fire protection engineers, across fire protection, ACMV, ELV, plumbing and sanitary, and electrical work. You can engage one specialist or a blended team, monthly.' },
+  { q: 'How is this different from a staffing agency?', a: 'Newham is a specialist engineering partner, not a staffing agency. Our people are trained in Singapore M&E requirements before they start, work only on your projects in your templates, and Newham manages hiring, training and quality while you direct the work.' },
+  { q: 'Is this the same as hiring an offshore estimator or quantity surveyor?', a: 'It meets the same need with less risk. Your dedicated estimator, quantity surveyor or drafter is trained in Singapore M&E requirements before starting, works only on your projects in your templates and your hours, and Newham handles hiring, training, HR and quality. You direct the work.' },
+  { q: 'Do you provide engineering staffing for M&E drafting and BIM?', a: 'Yes. BIM modellers and drafters produce shop drawings, coordination models and as-built documentation in Revit MEP, AutoCAD and Navisworks, as one dedicated specialist or part of a blended team.' },
   { q: 'Do the engineers work only on our projects?', a: 'Yes. A dedicated Newham professional works only on your projects, learns your standards and works your hours.' },
   { q: 'Who manages the engineers day to day?', a: 'You direct the work. Newham handles hiring, training, HR and quality management, and you get full visibility of output and timelines.' },
   { q: 'Can we scale the team up or down?', a: 'Yes. Engagements are monthly, so you can add capacity for tender season and release it when projects close out.' },
