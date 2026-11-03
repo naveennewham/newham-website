@@ -263,12 +263,12 @@
 const tourOpen = ref(false)
 const config = useRuntimeConfig()
 const pageUrl = config.public.siteUrl + '/products/deepcost'
-const description = 'DeepCost is MEP tender estimating software: AI tender summary, area schedules, material take-off, a priced library and FOT AI for the client\'s BOQ.'
+const description = 'MEP estimating software for fire protection, ACMV, electrical, plumbing and ELV contractors in Singapore: AI tender summary, take-off by area, one price library and FOT AI.'
 
 useSeoMeta({
-  title: 'DeepCost — M&E estimating & BOQ software, Singapore',
+  title: 'MEP Estimating Software for Singapore — DeepCost',
   description,
-  ogTitle: 'DeepCost — MEP estimating & material take-off software',
+  ogTitle: 'DeepCost — MEP estimating software for Singapore contractors',
   ogDescription: description
 })
 useHead({
@@ -280,7 +280,7 @@ useHead({
       '@type': 'SoftwareApplication',
       name: 'DeepCost',
       applicationCategory: 'BusinessApplication',
-      applicationSubCategory: 'MEP cost estimation',
+      applicationSubCategory: 'MEP estimating software',
       operatingSystem: 'Web',
       url: pageUrl,
       description,
@@ -394,6 +394,9 @@ const plans = [
 ]
 
 const faqs = [
+  { q: 'What is MEP estimating software?', a: 'MEP estimating software prices mechanical, electrical and plumbing work — including fire protection, ACMV and ELV — for tenders. Unlike general construction estimating tools built around civil and structural quantities, it works with trade component libraries, assemblies of fittings and accessories, and checks for each trade. DeepCost does this from tender received to the priced Form of Tender.' },
+  { q: 'What should the best MEP estimating software do?', a: 'Take off quantities by area, price them from one shared library with dated material and installation prices, catch the wrong component for each trade before it is priced, route each stage for approval and export the result in the format the client asked for. Our MEP estimating software buyer\'s checklist, in Resources, sets out what to test in a demo.' },
+  { q: 'Does DeepCost handle assemblies, revisions and labour pricing?', a: 'Yes. Assemblies sum their child components, so a typical room or system is priced once and reused. Every line carries a material price and an installation (labour) price from a dated price history, with separate markups for each. Area schedules and material take-offs can be sent back for revision with a reason, kept as history, before the Form of Tender is approved.' },
   { q: 'What does DeepCost cover?', a: 'Tender estimating from tender received to priced tender submission: customer and opportunity, tender documents and an AI tender summary, area schedule, an order per trade, material take-off (MTO) per area and the priced Form of Tender (FOT). Area, component and FOT reports export as the submission.' },
   { q: 'What is the FOT?', a: 'The Form of Tender — the priced schedule submitted with a tender. In DeepCost it unlocks once the MTO is submitted. You can price it line by line, or use FOT AI: upload the client\'s BOQ PDF and DeepCost finds the quantity and amount columns and overlays editable figures on the rows that need pricing.' },
   { q: 'How does the approval workflow work?', a: 'Area schedule, MTO and FOT each move through Not Started, In Progress, Submitted, Approved and Completed (area schedule and MTO also have Revision). Approval needs checklist ticks — measurements or quantities, plus material and installation prices verified. Revoking needs a reason, kept as history, and emails go to the next stage\'s users.' },
