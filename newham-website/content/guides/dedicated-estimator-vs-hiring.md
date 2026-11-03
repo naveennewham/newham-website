@@ -120,4 +120,4 @@ The first weeks are about learning your way of working. Expect the estimator to 
 
 ## How Newham can help
 
-Newham provides dedicated estimators and quantity surveyors for Singapore M&E contractors, trained in local tender formats, who prepare take-offs, BOQs, rate build-ups and variation pricing on your projects only. You direct the work, while Newham handles hiring, training, HR and quality. Engagements are monthly, billed in SGD, with no recruitment or setup fees and the scope confirmed in writing first. See [talent outsourcing](/talent-outsourcing), or [book a discovery call](/appointment) to plan your team.
+Newham provides dedicated estimators and quantity surveyors for Singapore M&E contractors, trained in local tender formats, who prepare take-offs, BOQs, rate build-ups and variation pricing on your projects only. You direct the work, while Newham handles hiring, training, HR and quality. Engagements are monthly, billed in SGD, with no recruitment or setup fees and the scope confirmed in writing first. See our [engineering outsourcing services](/talent-outsourcing), or [book a discovery call](/appointment) to plan your team.
