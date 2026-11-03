@@ -2,9 +2,9 @@
   <TradeLanding
     slug="plumbing-sanitary"
     trade="Plumbing & sanitary"
-    seo-title="Plumbing & sanitary estimating software, Singapore"
+    seo-title="Plumbing Estimating Software, Singapore"
     seo-description="Plumbing and sanitary estimating software: price water supply, sanitary and drainage pipework, fittings and fixtures by area, from one price library."
-    h1="Price plumbing and sanitary tenders from one price library"
+    h1="Plumbing and sanitary estimating software, priced from one library"
     lead="DeepCost prices water supply, sanitary and drainage pipework, fittings and fixtures from a plumbing price library set up for your company during onboarding, or imported from your own Excel price list, then takes off by building, floor and room."
     :item-groups="['Cold & hot water pipework', 'Sanitary & soil pipework', 'Drainage', 'Valves & fittings', 'Sanitary fixtures', 'Tanks & pumps']"
     problem-title="Pipe lengths, fittings and fixtures counted by hand"
@@ -41,6 +41,7 @@ const systems = [
   { name: 'Tanks and pumps', measure: 'Water tanks, transfer and booster pumps with controls, and pump-room pipework and valves.', watch: 'The electrical supply to the pumps, which may sit in another trade’s scope.' }
 ]
 const faqs = [
+  { q: 'Does it cover drainage, tanks and sanitary fixtures?', a: 'Yes. Cold and hot water pipework, sanitary and soil pipework, drainage, valves and fittings, sanitary fixtures, and tanks and pumps are set up as item groups in your library and taken off by area.' },
   { q: 'Can DeepCost estimate plumbing and sanitary work?', a: 'DeepCost has price libraries for every trade: Fire Protection, ACMV, A&A and ELV come seeded, and electrical, plumbing & sanitary and other trade libraries are set up for your company during onboarding, or imported from your own Excel price list.' },
   { q: 'Where does the plumbing price library come from?', a: 'It is set up for your company during onboarding, or imported from your own Excel price list, so the rates are yours. You then add item groups, assemblies and templates for the way you price.' },
   { q: 'How do I price a typical toilet or pantry once?', a: 'Build it as an assembly of its fixtures, fittings and pipework. The assembly sums its child components, so each repeat is one line in the take-off.' },

@@ -64,6 +64,7 @@ const guides = [
   { to: '/products/deepcost', title: 'DeepCost: MEP estimating software' }
 ]
 const faqs = [
+  { q: 'Is this MEP bidding software?', a: 'Yes. DeepCost is the bidding and tender pricing software in CCorex for MEP and fire-protection contractors: it takes each bid from the tender documents through take-off and pricing to the priced Form of Tender, with an approval at every stage.' },
   { q: 'What is tender estimating software?', a: 'It is software that takes a contractor from the tender documents to a priced bid: reading the tender, measuring quantities, pricing them from a rate library and producing the priced schedule you submit. DeepCost does this for M&E trades, ending in a priced Form of Tender.' },
   { q: 'Which trades does DeepCost cover?', a: 'Every trade. DeepCost has price libraries for every trade: Fire Protection, ACMV, A&A and ELV come seeded, priced in SGD, and electrical, plumbing & sanitary and other trade libraries are set up for your company during onboarding, or imported from your own Excel price list. See the trade pages for fire protection, ACMV, ELV, electrical and plumbing & sanitary.' },
   { q: 'Can it price the client’s own BOQ?', a: 'Yes. FOT AI finds the quantity and amount columns on the client’s BOQ PDF, overlays editable figures on the rows to price and saves a revision of the annotated PDF. Your estimator reviews every figure.' },

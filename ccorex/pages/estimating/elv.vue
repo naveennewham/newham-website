@@ -2,9 +2,9 @@
   <TradeLanding
     slug="elv"
     trade="ELV"
-    seo-title="ELV estimating & BOQ software for contractors"
+    seo-title="ELV & Security Systems Estimating Software"
     seo-description="Price ELV tenders, including CCTV, access control and data systems, from one library, with area take-off, approvals and FOT AI on the client's BOQ."
-    h1="Price ELV tenders without re-keying the BOQ"
+    h1="ELV and security systems estimating software, without re-keying the BOQ"
     lead="DeepCost prices CCTV, access control, data and other ELV systems from one library, organised by area, and fills your figures on the client's BOQ PDF."
     :item-groups="['CCTV cameras & recorders', 'Access control & door hardware', 'Structured cabling & data', 'Containment & cabling', 'Head-end equipment']"
     problem-title="Many small items, many systems, one deadline"
@@ -31,10 +31,11 @@ const features = [
   { icon: 'fa-solid fa-file-export', title: 'Submission-ready exports', text: 'Area, component and FOT reports to Excel or PDF.' }
 ]
 const faqs = [
+  { q: 'Can I estimate CCTV, access control and structured cabling?', a: 'Yes. CCTV cameras and recorders, access control and door hardware, structured cabling and data, containment and head-end equipment are set up as item groups in your ELV library, then taken off by area and priced like any other system.' },
   { q: 'Is ELV supported out of the box?', a: 'Yes. ELV is one of DeepCost’s seeded trades, priced in SGD. You add the components and assemblies your business uses.' },
   { q: 'Can I price several ELV systems in one tender?', a: 'Yes. Use item groups for each system — for example CCTV, access control and data — within one order for the trade.' },
   { q: 'Can I count devices from drawings?', a: 'DeepPlan AI counts symbols and measures rooms on drawings into a priced BOQ. Its AI symbol detection is in early access.' },
-  { q: 'Does DeepCost connect to accounting?', a: 'Won tenders run as projects in DeepTrack, which links to Zoho Books for vendors and purchase orders.' },
+  { q: 'Does DeepCost connect to accounting?', a: 'Won tenders can be set up as projects in DeepTrack, on the same sign-in, which links to Zoho Books for vendors and purchase orders.' },
   { q: 'How is DeepCost priced?', a: 'Pricing is shared on request. Book a demo or email admin@newhamtech.com.' }
 ]
 </script>
