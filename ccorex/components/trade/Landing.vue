@@ -10,7 +10,7 @@
           <p class="lead-dark mt-6 max-w-xl">{{ lead }}</p>
           <div class="mt-8 flex flex-wrap gap-3">
             <NuxtLink to="/contact" class="btn-accent">Book a live demo <i class="fa-solid fa-arrow-right text-xs" aria-hidden="true"></i></NuxtLink>
-            <NuxtLink to="/products/deepcost" class="btn-ghost-dark">See DeepCost</NuxtLink>
+            <NuxtLink to="/products/deepcost" class="btn-ghost-dark">See DeepCost MEP estimating software</NuxtLink>
           </div>
         </div>
         <!-- What a line costs: the pricing rule, shown with this trade's item groups -->
@@ -108,6 +108,7 @@
       <div class="container-site grid gap-8 lg:grid-cols-2">
         <div>
           <p class="eyebrow">Other trades</p>
+          <p class="mt-2 text-sm text-ink-600">Every trade runs in <NuxtLink to="/products/deepcost" class="font-semibold text-brand-700 hover:underline">DeepCost, our MEP estimating software</NuxtLink>, with one price library and one approval flow.</p>
           <ul class="mt-4 grid gap-3 sm:grid-cols-2">
             <li v-for="t in otherTrades" :key="t.to">
               <NuxtLink :to="t.to" class="card flex items-center gap-3 hover:border-brand-200"><i :class="t.icon" class="text-brand-600" aria-hidden="true"></i><span class="font-semibold">{{ t.name }} estimating</span></NuxtLink>
