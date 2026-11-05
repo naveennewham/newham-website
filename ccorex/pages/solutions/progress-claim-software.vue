@@ -4,8 +4,8 @@
     app="deeptrack"
     app-name="DeepTrack"
     eyebrow="Progress claims · Singapore"
-    seo-title="Progress claim software for Singapore contractors"
-    seo-description="Progress claim software for Singapore contractors: claims numbered per project with retention and 9% GST, a PDF claim certificate, and claims beside cost."
+    seo-title="Progress Claim Software Singapore — DeepTrack"
+    seo-description="Progress claim software for Singapore contractors: build each claim from a breakdown of works, with retention, 9% GST and a PDF claim certificate."
     h1="Progress claim software for Singapore contractors"
     lead="DeepTrack prepares each progress claim against the customer PO, with retention and 9% GST worked out, produces the claim certificate as a PDF, and keeps claims on the same project as budgets and costs."
     :hero-points="['Claims numbered per project', 'Retention & 9% GST calculated', 'PDF claim certificate', 'Claims beside budget and cost']"
@@ -51,6 +51,10 @@ const guides = [
   { to: '/resources/subcontractor-progress-claims-singapore', title: 'Assessing subcontractor progress claims' }
 ]
 const faqs = [
+  { q: 'What is progress claim software?', a: 'Software that prepares a contractor’s monthly progress claims from the contract and the work done to date, instead of a new spreadsheet each month. It carries forward previous claims, works out retention and GST, and produces the claim document to send to the main contractor or client.' },
+  { q: 'How is a claim prepared in DeepTrack?', a: 'Each claim is built from a breakdown of works, with the cumulative percentage complete for each item. DeepTrack works out the value to date, deducts previous claims and retention, adds 9% GST and shows the amount due.' },
+  { q: 'Can we see how much of the contract has been claimed?', a: 'Yes. Claims are raised against the customer PO, and each PO is tracked as Active, Expired or Fully Claimed, so you can see what is left to claim on each contract.' },
+  { q: 'Does DeepTrack track SOP Act payment claims and responses?', a: 'Not yet. Recording the served date, the payment-response due date and the response is in early access. Today DeepTrack prepares the claim and certificate, and keeps the claim history per project.' },
   { q: 'How are retention and GST handled?', a: 'Retention is calculated from the percentage on the claim and 9% GST is applied. The certificate shows retention to date and the previous retention.' },
   { q: 'Can we send the claim in our own format?', a: 'Each claim produces a PDF Progress Claim Certificate. If the main contractor requires its own format, you can use DeepTrack’s figures to fill it.' },
   { q: 'Do claims connect to project costs?', a: 'Yes. Claims sit on the same project as budgets, purchase requests, invoices and timesheets, so you see claimed value against cost.' },

@@ -1,8 +1,9 @@
 ---
-title: "As-built drawings checklist for MEP handover"
-description: "What MEP as-built drawings must show, a practical checklist for handover, and how to keep record drawings current with dedicated as-built drawing services."
+title: "MEP as-built documentation: handover checklist"
+description: "What MEP as-built documentation must show at handover, a practical drawings checklist, and how to keep record drawings current with as-built drawing services."
 slug: as-built-drawings-handover
 date: 2026-10-16
+updated: 2026-11-05
 author: "Newham engineering team"
 author_role: "BIM modellers and M&E drafters"
 keywords: [as-built drawing services, as-built drawings checklist, MEP as-built handover, record drawings, Revit MEP as-built, MEP drafting outsourcing]

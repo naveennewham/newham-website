@@ -6,6 +6,10 @@
     <div v-if="done" class="mt-4" role="status">
       <p class="text-sm text-ink-700">Thanks, {{ form.name.split(' ')[0] }}. Your download is ready.</p>
       <a :href="file" download class="btn-primary mt-3 w-full"><i class="fa-solid fa-download text-xs" aria-hidden="true"></i> Download</a>
+      <div v-if="app" class="mt-4 border-t border-ink-100 pt-4">
+        <p class="text-sm text-ink-700">Doing this every month? See how {{ app.name }} handles it on one of your own projects.</p>
+        <NuxtLink :to="`/contact?app=${app.slug}`" class="mt-2 inline-flex text-sm font-semibold text-brand-700 hover:text-brand-900">Book a 30-minute demo <i class="fa-solid fa-arrow-right ml-1 mt-1 text-xs" aria-hidden="true"></i></NuxtLink>
+      </div>
     </div>
 
     <form v-else class="mt-4 space-y-3" novalidate @submit.prevent="submit">
@@ -39,7 +43,7 @@
 // Forms email) as form "template_download"; the file link appears once it is accepted.
 // Not sent to GA as generate_lead: downloads are not enquiries and must not count as conversions
 // (GA's enhanced measurement already records the file_download).
-const props = defineProps<{ file: string; title: string; guide: string }>()
+const props = defineProps<{ file: string; title: string; guide: string; app?: { name: string; slug: string } | null }>()
 const form = reactive({ name: '', email: '', company: '', consent: false, website_url: '' })
 const sending = ref(false)
 const done = ref(false)
