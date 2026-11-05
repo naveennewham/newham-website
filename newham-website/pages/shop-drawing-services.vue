@@ -1,8 +1,8 @@
 <template>
   <ServiceLanding
     path="/shop-drawing-services"
-    seo-title="MEP shop drawing & as-built drafting services, Singapore"
-    seo-description="Dedicated BIM modellers and drafters for M&E contractors: shop drawings, coordination models and as-built documentation in Revit MEP, AutoCAD and Navisworks."
+    seo-title="M&E Drafting, Shop Drawings & As-Builts, Singapore"
+    seo-description="M&E drafting for Singapore contractors: dedicated drafters and BIM modellers for shop drawings, coordination models and as-built documentation in Revit MEP."
     eyebrow="Shop drawings · coordination · as-builts"
     title="MEP shop drawings, coordination models and as-built drafting"
     lead="BIM modellers and drafters trained to Singapore submission standards, working on your projects in Revit MEP, AutoCAD and Navisworks — and in your own templates."
@@ -56,6 +56,8 @@ const related = [
 ]
 
 const faqs = [
+  { q: 'What does M&E drafting cover?', a: 'Preparing the drawings and models for building services: shop drawings for installation, coordination models that resolve clashes between trades, and as-built drawings that record what was installed. Our drafters do this for fire protection, ACMV, ELV and plumbing and sanitary works.' },
+  { q: 'What MEP as-built documentation do you deliver?', a: 'As-built drawings and, where the project uses BIM, an updated Revit MEP model, showing what was actually installed, including site changes. We keep them current during the job rather than leaving them to handover.' },
   { q: 'Which software do your drafters use?', a: 'Revit MEP, AutoCAD and Navisworks, working in your own templates and standards.' },
   { q: 'Do you provide one drafter or a team?', a: 'Either. Engage a single dedicated modeller or drafter, or a small project team for a peak.' },
   { q: 'Can your drafters work on our existing models?', a: 'Yes. They work in your files and templates, following your naming conventions and review process.' },

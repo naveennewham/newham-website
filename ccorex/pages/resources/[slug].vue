@@ -22,7 +22,7 @@
           <div v-if="parts[1]" class="guide-body" v-html="parts[1]"></div>
         </article>
         <aside class="space-y-5 lg:sticky lg:top-24 lg:self-start">
-          <GuideDownloadGate v-if="g.download" :file="g.download.file" :title="g.download.title" :guide="g.slug" />
+          <GuideDownloadGate v-if="g.download" :file="g.download.file" :title="g.download.title" :guide="g.slug" :app="related" />
           <div v-if="related" class="card">
             <p class="eyebrow">Related product</p>
             <p class="mt-2 font-semibold text-ink-900">{{ related.name }}</p>

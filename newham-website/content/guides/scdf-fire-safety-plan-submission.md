@@ -1,8 +1,9 @@
 ---
-title: "SCDF fire safety plan (FSSD) submission: a guide for M&E teams"
-description: "Who submits SCDF fire safety plans, what the M&E or fire protection contractor prepares, and how approval, TFP and FSC work, including CORENET X."
+title: "FSSD submission guide: SCDF fire safety plans"
+description: "How an FSSD submission works in Singapore: who submits SCDF fire safety plans, what the M&E contractor prepares, and approval, TFP, FSC and CORENET X."
 slug: scdf-fire-safety-plan-submission
 date: 2026-10-18
+updated: 2026-11-05
 author: "Newham engineering team"
 author_role: "M&E estimators and fire protection engineers"
 keywords: [SCDF fire safety plan submission, fire safety plan approval Singapore, FSSD submission, QP fire safety, fire protection plan, Temporary Fire Permit, Fire Safety Certificate, CORENET X SCDF]
@@ -109,4 +110,4 @@ For the design content behind the plans, see [fire alarm design in Singapore](/g
 
 ## How Newham can help
 
-Newham's fire protection engineers prepare the technical content behind an SCDF submission: sprinkler, riser and hose reel layouts, hydraulic calculations, fire alarm layouts and schematics, in Singapore submission format. Newham is not a QP or PE firm. Where a submission needs Professional Engineer endorsement, we coordinate review by a Singapore-registered PE and quote those fees separately; the QP remains responsible for submitting to SCDF. Work is priced per deliverable or on a monthly retainer, billed in SGD, with the scope confirmed in writing first. See [fire protection design](/fire-protection-design), or [book a discovery call](/appointment) to scope your next package.
+Newham's fire protection engineers prepare the technical content behind an SCDF submission: sprinkler, riser and hose reel layouts, hydraulic calculations, fire alarm layouts and schematics, in Singapore submission format. Newham is not a QP or PE firm. Where a submission needs Professional Engineer endorsement, we coordinate review by a Singapore-registered PE and quote those fees separately; the QP remains responsible for submitting to SCDF. Work is priced per deliverable or on a monthly retainer, billed in SGD, with the scope confirmed in writing first. See [fire protection design](/fire-protection-design) and our other [M&E engineering services](/engineering-services), or [book a discovery call](/appointment) to scope your next package.

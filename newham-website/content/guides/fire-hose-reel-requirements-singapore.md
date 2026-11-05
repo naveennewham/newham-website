@@ -1,8 +1,9 @@
 ---
-title: "Fire hose reel requirements in Singapore: coverage, siting and supply"
-description: "SCDF Fire Code 2023 hose reel rules: which storeys need them, 36 m coverage, siting near exits, hose size, flow and pressure, pumps, tanks and testing."
+title: "Fire hose reel requirements Singapore (SCDF)"
+description: "Fire hose reel requirements in Singapore under SCDF Fire Code 2023: which storeys, 36 m coverage, siting, hose size, flow, pressure, pumps and testing."
 slug: fire-hose-reel-requirements-singapore
 date: 2026-10-27
+updated: 2026-11-05
 author: "Newham engineering team"
 author_role: "M&E estimators and fire protection engineers"
 keywords: [hose reel requirements Singapore, fire hose reel SCDF, hose reel coverage 36m, hose reel system design, SS 575 hose reel, SCDF Fire Code 2023 hose reel]
@@ -95,4 +96,4 @@ Each hose reel must be tested **at least once a year** and produce a jet of at l
 
 ## How Newham can help
 
-Newham's [fire protection design](/fire-protection-design) service includes hose reel system design (coverage planning, pipe sizing and flow and pressure analysis), alongside sprinkler, riser, fire pump and fire alarm design for SCDF submission. Newham prepares the design and drawings. It is not a QP: where the submission needs Professional Engineer endorsement, Newham coordinates review by a Singapore-registered PE, quoted separately. [Book a call](/appointment) to scope a package.
+Newham's [fire protection design](/fire-protection-design) service includes hose reel system design (coverage planning, pipe sizing and flow and pressure analysis), alongside sprinkler, riser, fire pump and fire alarm design for SCDF submission. Newham prepares the design and drawings. It is not a QP: where the submission needs Professional Engineer endorsement, Newham coordinates review by a Singapore-registered PE, quoted separately. For sprinkler pipework sizing, see our [sprinkler hydraulic calculation services](/sprinkler-hydraulic-calculation-services), and for every trade, our [M&E engineering services](/engineering-services). [Book a call](/appointment) to scope a package.
