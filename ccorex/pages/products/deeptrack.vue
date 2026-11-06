@@ -27,8 +27,9 @@
     <!-- How it works -->
     <section class="section bg-ink-50">
       <div class="container-site">
-        <UiSectionHeader center eyebrow="How it works" title="From contract to profit — one thread" lead="Projects carry the contract terms, approved budgets back every purchase request, vendor invoices are matched before payment, client claims bill the work, and month-end allocates labour and overhead to each project." />
-        <div class="mt-12"><UiStepFlow :steps="steps" /></div>
+        <UiSectionHeader center eyebrow="How it works" title="One record. Every job. Contract to margin." lead="Projects carry the contract terms, approved budgets back every purchase request, vendor invoices are matched before payment, client claims bill the work, and month-end allocates labour and overhead to each project." />
+        <UiReveal class="mt-12 hidden md:block"><ProductTrackGlance /></UiReveal>
+        <div class="mt-12 md:hidden"><UiStepFlow :steps="steps" /></div>
         <ul class="mt-10 grid gap-4 sm:grid-cols-3">
           <li v-for="s in stepNotes" :key="s.title" class="flex gap-3">
             <span class="icon-tile h-9 w-9 shrink-0 text-sm"><i :class="s.icon" aria-hidden="true"></i></span>
