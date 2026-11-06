@@ -2,7 +2,7 @@
   <figure ref="root" class="relative mx-auto w-full max-w-[1100px]">
     <svg viewBox="0 0 1600 900" class="tg-glance h-auto w-full" role="img" aria-labelledby="tg-title tg-desc">
       <title id="tg-title">DeepTrack at a glance: one project record from contract to margin</title>
-      <desc id="tg-desc">An example project moves through eight steps. Each person adds their part and the project's budget, committed cost, cost to date and margin update for everyone.</desc>
+      <desc id="tg-desc">An example project moves through nine steps. Each person adds their part and the project's budget, committed cost, cost to date and margin update for everyone.</desc>
 
       <!-- Current step -->
       <g>
@@ -31,7 +31,7 @@
       <g :transform="`translate(${CX},${CY})`">
         <rect class="tg-card" x="-180" y="-128" width="360" height="256" rx="22" />
         <text class="tg-k" x="0" y="-98" text-anchor="middle">EXAMPLE PROJECT</text>
-        <text class="tg-contract" x="0" y="-74" text-anchor="middle">Contract S$1,850,000</text>
+        <text class="tg-contract" x="0" y="-74" text-anchor="middle">Contract S$2,480,000</text>
         <rect class="tg-track" x="-150" y="-60" width="300" height="8" rx="4" />
         <rect class="tg-bar" x="-150" y="-60" :width="300 * claimed / 100" height="8" rx="4" />
         <text class="tg-ns" x="150" y="-38" text-anchor="end" style="font-size: 14px">{{ claimed }}% claimed</text>
@@ -81,24 +81,26 @@ const IC: Record<string, string> = {
   match: 'M-14 2 L-5 11 L14 -10',
   hours: 'M0 -14a14 14 0 1 0 0.01 0 M0 -7v8l6 4',
   claim: 'M-10 -14h20v28h-20z M-5 -5h10 M-5 2h10 M-5 9h6',
-  margin: 'M-14 12 L-14 -12 M-14 12 L14 12 M-8 4 L-2 -4 L4 2 L12 -8'
+  margin: 'M-14 12 L-14 -12 M-14 12 L14 12 M-8 4 L-2 -4 L4 2 L12 -8',
+  alloc: 'M0 -14v9 M0 -5l-12 7v10 M0 -5l12 7v10 M0 -5v17'
 }
 interface Step { t: string; s: string; cap: string; icon: string; chips?: string[]; tile?: [number, number]; pct?: number }
 const STEPS: Step[] = [
-  { t: 'Contract', s: 'QS', cap: 'Contract S$1.85m · client PO · 5% retention', icon: 'contract' },
-  { t: 'Budget', s: 'PM', cap: 'Budget S$1,530,000 approved: the spending limit', icon: 'budget', chips: ['GM', 'MD'], tile: [0, 1530000] },
-  { t: 'Request', s: 'Site', cap: 'Purchase request checked against the budget line', icon: 'pr', chips: ['PM', 'GM', 'MD'] },
-  { t: 'Order', s: 'Buyer', cap: 'PO issued: counted as committed cost at once', icon: 'po', tile: [1, 412600] },
-  { t: 'Match', s: 'Accounts', cap: 'Invoice matched to PO and delivery: cost to date', icon: 'match', chips: ['PM', 'PD', 'Director'], tile: [2, 618300] },
-  { t: 'Hours', s: 'Site team', cap: '520 crew hours approved: labour cost on the job', icon: 'hours', chips: ['PM'] },
-  { t: 'Claim', s: 'QS', cap: 'Claim 4: retention and 9% GST, certificate PDF', icon: 'claim', pct: 41.5 },
-  { t: 'Margin', s: 'Finance', cap: 'Month locked · journal CSV out · margin known', icon: 'margin', tile: [3, 149450] }
+  { t: 'Customer PO', s: 'QS (PM role)', cap: 'Customer PO S$2.48m · 5% retention · DLP', icon: 'contract' },
+  { t: 'Budget allocations', s: 'PM submits', cap: 'Budget S$2,050,000 by cost code: the spending limit', icon: 'budget', chips: ['GM', 'MD'], tile: [0, 2050000] },
+  { t: 'Purchase request', s: 'Site', cap: 'Request checked against what is left in the budget line', icon: 'pr', chips: ['PM', 'GM'] },
+  { t: 'Purchase order', s: 'Buyer', cap: 'PO issued: counted as committed cost at once', icon: 'po', tile: [1, 318420] },
+  { t: 'Match and pay', s: 'Accounts', cap: 'Invoice matched to PO, paid: cost to date', icon: 'match', chips: ['PM', 'PD', 'Director'], tile: [2, 705160] },
+  { t: 'Manpower hours', s: 'Site / PM', cap: '568 crew hours entered, PM approves: labour cost', icon: 'hours', chips: ['PM'] },
+  { t: 'Customer claim', s: 'QS (PM role)', cap: 'Claim 4: variations, retention, 9% GST, certificate PDF', icon: 'claim', chips: ['Client'], pct: 42.8 },
+  { t: 'Overhead allocation', s: 'Finance', cap: 'HQ and BU overhead shared to the job by contract value', icon: 'alloc' },
+  { t: 'Margin and reports', s: 'Finance', cap: 'Month locked · journal to your ERP · margin by workhead', icon: 'margin', tile: [3, 392940] }
 ]
 const TILES = [{ label: 'BUDGET' }, { label: 'COMMITTED' }, { label: 'COST TO DATE' }, { label: 'MARGIN' }]
 const FOOT: [string, string, string][] = [
   ['One login', 'roles decide screens', 'M-12 -2a12 12 0 1 1 24 0v12h-24z M0 4v5'],
-  ['Rates protected', 'PMs see totals, not rates', 'M-9 -2v-5a9 9 0 0 1 18 0v5 M-12 -2h24v16h-24z'],
-  ['Your accounts stay', 'GL costs in · journal out', 'M-14 0h10 M4 0h10 M-6 -7h12v14h-12z'],
+  ['Encrypted', 'figures and rates at rest', 'M-9 -2v-5a9 9 0 0 1 18 0v5 M-12 -2h24v16h-24z'],
+  ['Your ERP stays', 'costs in · journal out', 'M-14 0h10 M4 0h10 M-6 -7h12v14h-12z'],
   ['Email alerts', 'at each approval step', 'M-14 -9h28v18h-28z M-14 -9l14 11 14 -11']
 ]
 const N = STEPS.length
@@ -123,7 +125,7 @@ const k = ref(N - 1)
 const ease = ref(0)
 const bump = ref(-1)
 const values = ref(STEPS.filter((s) => s.tile).map((s) => fmt(s.tile![1])))
-const claimed = ref(41.5)
+const claimed = ref(42.8)
 const chipOn = ref(99)
 
 const dwelling = computed(() => ease.value === 0)
