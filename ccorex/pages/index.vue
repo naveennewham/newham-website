@@ -182,10 +182,10 @@
 <script setup lang="ts">
 const config = useRuntimeConfig()
 useSeoMeta({
-  title: 'Construction BOQ software for Singapore contractors',
-  description: 'CCorex unifies MEP tender estimation (DeepCost), project cost control (DeepTrack) and HR & payroll (DeepHR) on one sign-in, with ARIVU AI in every app.',
-  ogTitle: 'Construction BOQ software for Singapore contractors | CCorex',
-  ogDescription: 'CCorex unifies MEP tender estimation (DeepCost), project cost control (DeepTrack) and HR & payroll (DeepHR) on one sign-in, with ARIVU AI in every app.'
+  title: 'Construction management software for Singapore contractors',
+  description: 'Estimating, project cost control and HR & payroll for Singapore contractors: DeepCost, DeepTrack and DeepHR on one sign-in, with ARIVU AI in every app.',
+  ogTitle: 'Construction management software for Singapore contractors | CCorex',
+  ogDescription: 'Estimating, project cost control and HR & payroll for Singapore contractors: DeepCost, DeepTrack and DeepHR on one sign-in, with ARIVU AI in every app.'
 })
 useHead({
   link: [{ rel: 'canonical', href: config.public.siteUrl + '/' }],
