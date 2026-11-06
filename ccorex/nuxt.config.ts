@@ -112,8 +112,12 @@ export default defineNuxtConfig({
       config.build ??= {}
       config.build.cssCodeSplit = false
       // Rollup merges chunks under this size into their importers, keeping execution order safe.
-      const output = ((config.build.rollupOptions ??= {}).output ??= {}) as { experimentalMinChunkSize?: number }
+      type AssetNames = string | ((a: { names?: string[]; name?: string }) => string)
+      const output = ((config.build.rollupOptions ??= {}).output ??= {}) as { experimentalMinChunkSize?: number; assetFileNames?: AssetNames }
       output.experimentalMinChunkSize = 60_000
+      // The one stylesheet gets a fixed name so plugins/site-css.client.ts can load it.
+      const named = output.assetFileNames
+      output.assetFileNames = (a) => (a.names?.[0] ?? a.name ?? '').endsWith('.css') ? '_nuxt/site.css' : typeof named === 'function' ? named(a) : named ?? '_nuxt/[name].[hash].[ext]'
     }
   },
   routeRules: {
