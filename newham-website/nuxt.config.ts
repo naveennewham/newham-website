@@ -108,7 +108,7 @@ export default defineNuxtConfig({
         { property: 'og:site_name', content: 'Newham Solutions Pte. Ltd.' },
         { property: 'og:type', content: 'website' },
         { property: 'og:locale', content: 'en_SG' },
-        { property: 'og:image', content: 'https://newhamtech.com/images/og-newham.jpg' },
+        { property: 'og:image', content: 'https://newhamtech.com/images/og-newham-v2.jpg' },
         { name: 'twitter:card', content: 'summary_large_image' }
       ],
       link: [
