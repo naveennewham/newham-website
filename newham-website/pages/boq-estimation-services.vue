@@ -110,7 +110,7 @@
           <p class="eyebrow">Need someone every month?</p>
           <h2 class="mt-2 text-xl font-bold">A dedicated estimator on your team</h2>
           <p class="mt-2 text-sm text-ink-600">If your tender volume is steady, a dedicated M&amp;E estimator working your hours may suit you better than project-based BOQs.</p>
-          <span class="mt-4 inline-flex text-sm font-semibold text-brand-700 group-hover:text-brand-900">Talent outsourcing <i class="fa-solid fa-arrow-right ml-2 mt-1 text-xs" aria-hidden="true"></i></span>
+          <span class="mt-4 inline-flex text-sm font-semibold text-brand-700 group-hover:text-brand-900">Engineering outsourcing <i class="fa-solid fa-arrow-right ml-2 mt-1 text-xs" aria-hidden="true"></i></span>
         </NuxtLink>
       </div>
     </section>

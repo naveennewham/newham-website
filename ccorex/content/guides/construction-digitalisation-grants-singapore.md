@@ -137,4 +137,4 @@ Beyond the BE PSG, Singapore has other enterprise support schemes. Enterprise Si
 
 ## How CCorex helps
 
-CCorex is not currently listed as a PSG pre-approved solution, so we will not tell you otherwise. What we can do is show you how [DeepCost](/products/deepcost), [DeepTrack](/products/deeptrack) and [DeepHR](/products/deephr) would fit your tendering, cost control and attendance workflows, so you can compare them fairly against funded options on full cost and fit. Pricing is on request; see our [pricing page](/pricing) or [contact us](/contact) for a quote.
+CCorex is not currently listed as a PSG pre-approved solution, so we will not tell you otherwise. What we can do is show you how [DeepCost](/products/deepcost), [DeepTrack](/products/deeptrack) and [DeepHR](/products/deephr) would fit your tendering, cost control and attendance workflows (see [construction software for Singapore contractors](/solutions/construction-software-singapore) for how the three work together), so you can compare them fairly against funded options on full cost and fit. Pricing is on request; see our [pricing page](/pricing) or [contact us](/contact) for a quote.

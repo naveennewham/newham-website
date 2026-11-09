@@ -49,7 +49,7 @@ const steps = [
 ]
 
 const related = [
-  { to: '/talent-outsourcing', eyebrow: 'How engagement works', title: 'Engineering talent outsourcing', text: 'Single specialists, project teams or managed capacity, billed monthly.', cta: 'Talent outsourcing' },
+  { to: '/talent-outsourcing', eyebrow: 'How engagement works', title: 'Engineering talent outsourcing', text: 'Single specialists, project teams or managed capacity, billed monthly.', cta: 'Engineering outsourcing' },
   { to: '/fire-protection-design', eyebrow: 'Also from Newham', title: 'Fire protection design', text: 'Sprinkler design, hydraulic calculations and SCDF submission packages.', cta: 'Fire protection design' },
   { to: '/guides/mep-shop-drawings-singapore', eyebrow: 'Guide', title: 'MEP shop drawings in Singapore', text: 'What goes into MEP shop drawings, how they are coordinated and how the review cycle works.', cta: 'Read the guide' },
   { to: '/boq-estimation-services', eyebrow: 'Also from Newham', title: 'BOQ & estimation services', text: 'Take-offs, priced BOQs and tender support for M&E trades.', cta: 'BOQ services' }

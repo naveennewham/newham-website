@@ -45,7 +45,7 @@
           <p class="lead mt-3">Newham’s estimators, QS and BIM engineers can work in CCorex for you, or alongside your own team.</p>
         </div>
         <div class="flex flex-wrap gap-3 lg:justify-end">
-          <NuxtLink to="/talent-outsourcing" class="btn-primary">Talent outsourcing</NuxtLink>
+          <NuxtLink to="/talent-outsourcing" class="btn-primary">Engineering outsourcing</NuxtLink>
           <NuxtLink to="/engineering-services" class="btn-secondary">Engineering services</NuxtLink>
         </div>
       </div>

@@ -96,4 +96,4 @@ For foreign employees who are leaving, MOM says the employer must withhold money
 
 ## How DeepHR helps
 
-[DeepHR](/products/deephr) is HR and payroll software for Singapore SMEs. An employee's exit is paid through the normal payroll, with CPF (full, graduated for new PRs, or exempt), SDL and self-help group funds worked out on the pay run, and approved leave and attendance for the period included. HR letters follow the same approval engine as leave and claims. See [payroll software for Singapore](/solutions/payroll-software-singapore), or [book a demo](/contact).
+[DeepHR](/products/deephr) is HR and payroll software for Singapore SMEs. An employee's exit is paid through the normal payroll, with CPF (full, graduated for new PRs, or exempt), SDL and self-help group funds worked out on the pay run, and approved leave and attendance for the period included. HR letters follow the same approval engine as leave and claims. See [HR software for Singapore SMEs](/solutions/hr-software-singapore) and [payroll software for Singapore](/solutions/payroll-software-singapore), or [book a demo](/contact).
