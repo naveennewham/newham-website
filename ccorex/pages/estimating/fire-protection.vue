@@ -2,7 +2,7 @@
   <TradeLanding
     slug="fire-protection"
     trade="Fire protection"
-    seo-title="Fire Protection Estimating Software Singapore"
+    seo-title="Fire Protection Estimating Software: Sprinkler and Alarm"
     seo-description="Estimating software for fire sprinkler, fire alarm, gas suppression and firestopping tenders in Singapore: take-off by area, one price library, FOT AI."
     h1="Fire protection estimating software for sprinkler, fire alarm and suppression tenders"
     lead="DeepCost takes a fire protection tender from documents to a priced Form of Tender: take-off by building, floor and room with hazard class, one priced library, and rules that catch the wrong sprinkler type before it is priced."

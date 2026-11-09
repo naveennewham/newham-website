@@ -63,7 +63,7 @@ const models = [
     icon: 'fa-solid fa-user-group', title: 'Talent outsourcing',
     text: 'A monthly fee per dedicated professional, based on role, seniority and hours.',
     bullets: ['Single specialist, project team or managed capacity', 'No recruitment fees', 'Scale up or down month to month'],
-    to: '/talent-outsourcing', cta: 'Talent outsourcing'
+    to: '/talent-outsourcing', cta: 'Engineering outsourcing'
   },
   {
     icon: 'fa-solid fa-fire-flame-curved', title: 'Engineering services',

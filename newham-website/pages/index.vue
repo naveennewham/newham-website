@@ -63,7 +63,7 @@
                 <p class="text-sm text-ink-700"><span class="font-semibold text-ink-900">{{ e.title }}.</span> {{ e.text }}</p>
               </li>
             </ul>
-            <NuxtLink to="/talent-outsourcing" class="btn-primary mt-8">Talent outsourcing <i class="fa-solid fa-arrow-right text-xs" aria-hidden="true"></i></NuxtLink>
+            <NuxtLink to="/talent-outsourcing" class="btn-primary mt-8">Engineering outsourcing <i class="fa-solid fa-arrow-right text-xs" aria-hidden="true"></i></NuxtLink>
           </div>
           <div class="grid gap-4 sm:grid-cols-2">
             <UiFeatureCard v-for="r in roles" :key="r.title" :icon="r.icon" :title="r.title" :text="r.text" />
