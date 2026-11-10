@@ -88,7 +88,7 @@
               <p class="eyebrow-dark">Works with CCorex</p>
               <p class="mt-3 text-sm leading-relaxed text-ink-200">If you run DeepCost or DeepTrack, our estimators and QS can work directly in your CCorex data.</p>
             </div>
-            <NuxtLink to="/ccorex" class="mt-4 text-sm font-semibold text-cyan-400 hover:text-white">About CCorex <i class="fa-solid fa-arrow-right text-xs" aria-hidden="true"></i></NuxtLink>
+            <NuxtLink to="https://ccorex.com/" class="mt-4 text-sm font-semibold text-cyan-400 hover:text-white">About CCorex <i class="fa-solid fa-arrow-right text-xs" aria-hidden="true"></i></NuxtLink>
           </div>
         </div>
       </div>
@@ -147,7 +147,7 @@
 const siteUrl = useRuntimeConfig().public.siteUrl as string
 useSeoMeta({
   title: 'M&E engineering services in Singapore: design, drafting & QS',
-  description: 'M&E engineering services for Singapore contractors: fire protection, ACMV, electrical, plumbing and ELV design, MEP shop drawings, estimation and BOQ, tender support and QS.',
+  description: 'M&E engineering services for Singapore contractors: fire protection, ACMV, electrical, plumbing and ELV design, MEP shop drawings, BOQ estimation, tender support and QS.',
   ogTitle: 'M&E engineering services in Singapore — Newham',
   ogDescription: 'MEP design, drafting, estimation and commercial support for Singapore M&E contractors and consultants.',
   ogUrl: siteUrl + '/engineering-services'

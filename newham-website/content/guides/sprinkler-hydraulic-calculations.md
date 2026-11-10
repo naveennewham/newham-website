@@ -1,6 +1,7 @@
 ---
 title: "How to calculate a fire sprinkler system: hydraulic calculation step by step"
-description: "How to calculate a fire sprinkler system in Singapore: the SS CP 52 method step by step, a worked three-head example with K-factor and Hazen-Williams, and what an SCDF-ready report contains."
+seo_title: "How to do sprinkler hydraulic calculations, step by step"
+description: "How to calculate a fire sprinkler system in Singapore: the SS CP 52 method step by step, a worked three-head example and what an SCDF-ready report contains."
 slug: sprinkler-hydraulic-calculations
 date: 2026-10-15
 updated: 2026-10-30

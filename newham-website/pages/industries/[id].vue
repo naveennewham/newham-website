@@ -18,7 +18,7 @@
       <div class="container-site">
         <UiSectionHeader :title="`How Newham helps on ${ind.name.toLowerCase()} projects`" eyebrow="Three pillars" />
         <div class="mt-12 grid gap-4 md:grid-cols-3">
-          <UiFeatureCard icon="fa-solid fa-laptop-code" title="CCorex software" :text="ind.software" to="/ccorex" link-label="CCorex" />
+          <UiFeatureCard icon="fa-solid fa-laptop-code" title="CCorex software" :text="ind.software" to="https://ccorex.com/" link-label="CCorex" />
           <UiFeatureCard icon="fa-solid fa-user-group" title="Talent outsourcing" :text="ind.talent" to="/talent-outsourcing" link-label="Engineering outsourcing" />
           <UiFeatureCard icon="fa-solid fa-fire-flame-curved" title="Engineering services" :text="ind.engineering" to="/engineering-services" link-label="Engineering services" />
         </div>

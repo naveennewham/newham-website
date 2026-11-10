@@ -2,7 +2,7 @@
   <ServiceLanding
     path="/sprinkler-hydraulic-calculation-services"
     seo-title="Fire sprinkler hydraulic calculation services, Singapore"
-    seo-description="Sprinkler hydraulic calculation services for Singapore contractors: remote-area, node-by-node calculations to SS CP 52, demand against supply, fire pump duty and a report ready for SCDF submission."
+    seo-description="Sprinkler hydraulic calculation services in Singapore: node-by-node calculations to SS CP 52, demand against supply, fire pump duty and an SCDF-ready report."
     eyebrow="Sprinkler hydraulic calculations · Singapore"
     title="Fire sprinkler hydraulic calculation services in Singapore"
     lead="Send us the sprinkler layout and the water supply data. We calculate the hydraulically most remote area node by node, check demand against supply, set the fire pump duty and hand back a report a reviewer can trace, prepared to SS CP 52 and formatted for SCDF submission."

@@ -2,7 +2,7 @@
   <ServiceLanding
     path="/plumbing-sanitary-design-services"
     seo-title="Plumbing & sanitary design services, Singapore"
-    seo-description="Plumbing and sanitary design services in Singapore: cold and hot water supply, sanitary plumbing and drainage layouts and riser diagrams, to SS 636 and PUB codes of practice."
+    seo-description="Plumbing and sanitary design services in Singapore: cold and hot water, sanitary plumbing and drainage layouts and riser diagrams to SS 636 and PUB codes."
     eyebrow="Plumbing & sanitary design · Singapore"
     title="Plumbing and sanitary design services in Singapore"
     lead="Water supply, sanitary plumbing and drainage design for M&E contractors and consultants. Prepared to SS 636 and the PUB codes of practice and scoped in writing, with PE review coordinated when the submission needs it."

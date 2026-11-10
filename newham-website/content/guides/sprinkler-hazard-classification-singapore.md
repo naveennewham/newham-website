@@ -1,5 +1,6 @@
 ---
 title: "Sprinkler hazard classification in Singapore: SS CP 52 explained"
+seo_title: "Sprinkler hazard classification in Singapore: CP 52 explained"
 description: "How sprinkler hazard classes work under SS CP 52 in Singapore, which buildings need sprinklers under the SCDF Fire Code 2023, and how the class drives the design."
 slug: sprinkler-hazard-classification-singapore
 date: 2026-10-27

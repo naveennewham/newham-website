@@ -108,7 +108,7 @@
 <script setup lang="ts">
 const pillars = [
   {
-    title: 'CCorex software', kicker: 'Software', icon: 'fa-solid fa-laptop-code', href: '/ccorex', cta: 'Explore CCorex',
+    title: 'CCorex software', kicker: 'Software', icon: 'fa-solid fa-laptop-code', href: 'https://ccorex.com/', cta: 'Explore CCorex',
     text: 'Estimating, project delivery and HR & payroll on one sign-in — with AI tender summaries, FOT AI and the ARIVU assistant in every app.',
     tags: ['DeepCost', 'DeepTrack', 'DeepHR', 'ARIVU AI'],
     video: '/videos/ccorex-platform.mp4', poster: '/videos/ccorex-platform-poster.webp'
