@@ -1,7 +1,7 @@
 ---
 title: "Construction Foreign Worker Levy in Singapore: R1 Rates, Levy Bond and Quota"
-seo_title: "Construction Levy Singapore: R1 Rates & Quota"
-description: "Construction worker levy from S$300 a month for R1 workers, the S$600 levy bond, the 1:5 Work Permit quota and R1 upgrade routes, plus a levy calculator."
+seo_title: "Construction Levy Singapore: R1 S$300–S$500, Levy Bond, Quota"
+description: "MOM construction levy rates from 1 Jan 2024: R1 S$300–S$500 and R2 S$700–S$900 a month, the S$600 levy bond, the 1:5 quota and R1 upgrade routes, with a calculator."
 slug: foreign-worker-levy-construction-singapore
 date: 2026-10-18
 updated: 2026-10-29

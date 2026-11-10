@@ -1,7 +1,7 @@
 ---
 title: "How to Calculate Overtime Pay in Singapore (MOM Rules and Examples)"
-seo_title: "How to Calculate Overtime Pay in Singapore"
-description: "How Singapore employers calculate overtime under MOM rules: who is covered, the hourly basic rate formula, the 1.5x rate, caps, rest day and holiday pay."
+seo_title: "Overtime Calculation Singapore: MOM Formula & Examples"
+description: "How to calculate overtime pay in Singapore under MOM rules: the hourly basic rate formula, 1.5x rate, S$13.60 non-workman cap, 72-hour limit and worked examples."
 slug: overtime-calculation-singapore
 date: 2026-10-26
 author: "CCorex team"
