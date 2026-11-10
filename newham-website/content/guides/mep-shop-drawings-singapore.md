@@ -1,5 +1,6 @@
 ---
 title: "MEP shop drawings in Singapore: what goes in them and how they get approved"
+seo_title: "MEP shop drawings in Singapore: contents and approval"
 description: "What MEP shop drawings contain, how they are coordinated with structure, architecture and other trades, Revit vs AutoCAD, and how the review cycle works."
 slug: mep-shop-drawings-singapore
 date: 2026-10-27

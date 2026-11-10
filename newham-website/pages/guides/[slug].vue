@@ -71,7 +71,8 @@ const fmt = (d: string) => new Date(`${d}T00:00:00Z`).toLocaleDateString('en-SG'
 
 const site = useRuntimeConfig().public.siteUrl as string
 const url = `${site}/guides/${g!.slug}`
-useSeoMeta({ title: g!.title, description: g!.description, ogTitle: g!.title, ogDescription: g!.description, ogType: 'article' })
+// seo_title (when set) is a shorter <title>; the page heading keeps the full title.
+useSeoMeta({ title: g!.seoTitle ?? g!.title, description: g!.description, ogTitle: g!.seoTitle ?? g!.title, ogDescription: g!.description, ogType: 'article' })
 useHead({
   link: [{ rel: 'canonical', href: url }],
   script: [{

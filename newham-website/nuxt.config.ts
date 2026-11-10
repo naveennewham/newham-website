@@ -7,6 +7,8 @@ const ccorexMoved: Record<string, string> = {
   '/ccorex/deepcost': 'deepcost', '/ccorex/deeptrack': 'deeptrack', '/ccorex/deephr': 'deephr', '/ccorex/deepplan-ai': 'deepplan-ai',
   '/product': 'deepcost', '/deeptrack': 'deeptrack'
 }
+// /ccorex was a summary of ccorex.com with its canonical there; it now 301s to the home page.
+const ccorexHome = '/ccorex'
 const oldCaseStudies = ['acmv1', 'fire1', 'cs1', 'elv1', 'ana1', 'cs2', 'cs3', 'cs4', 'cs5', 'cs6', 'ai1', 'cloud1', 'uiux1']
 // https://nuxt.com/docs/api/configuration/nuxt-config
 
@@ -67,7 +69,7 @@ export default defineNuxtConfig({
     // Pages are found by following links from the home page, sitemap and robots.txt.
     // Redirect URLs are skipped: they must stay 301s, and Netlify serves a static file in place of a redirect.
     // about.html rather than about/index.html: Netlify would 301 /about to /about/.
-    prerender: { crawlLinks: true, autoSubfolderIndex: false, routes: ['/', '/sitemap.xml', '/robots.txt'], ignore: [...oldCaseStudies.map((id) => `/case-studies/${id}`), ...Object.keys(ccorexMoved)] }
+    prerender: { crawlLinks: true, autoSubfolderIndex: false, routes: ['/', '/sitemap.xml', '/robots.txt'], ignore: [...oldCaseStudies.map((id) => `/case-studies/${id}`), ...Object.keys(ccorexMoved), ccorexHome] }
   },
   // Search engines render pages with a cap on how many files they will fetch; a page that needs
   // ~30 files can lose one and fall back to the error page. So the browser build ships few files:
@@ -90,7 +92,8 @@ export default defineNuxtConfig({
   routeRules: {
     // Old case-study URLs (fabricated examples, removed) -> project experience.
     ...Object.fromEntries(oldCaseStudies.map((id) => [`/case-studies/${id}`, { redirect: { to: '/case-studies', statusCode: 301 } }])),
-    ...Object.fromEntries(Object.entries(ccorexMoved).map(([from, app]) => [from, { redirect: { to: `https://ccorex.com/products/${app}`, statusCode: 301 } }]))
+    ...Object.fromEntries(Object.entries(ccorexMoved).map(([from, app]) => [from, { redirect: { to: `https://ccorex.com/products/${app}`, statusCode: 301 } }])),
+    [ccorexHome]: { redirect: { to: 'https://ccorex.com/', statusCode: 301 } }
   },
   app: {
     head: {

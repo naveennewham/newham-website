@@ -1,5 +1,6 @@
 ---
 title: "Fire protection tender estimation in Singapore: how to price an FP tender"
+seo_title: "Fire protection tender estimation, Singapore: pricing guide"
 description: "How Singapore fire protection contractors price a tender: system-by-system BOQ sections, take-off, pricing, testing and SCDF costs, and the items most often missed."
 slug: fire-protection-tender-estimation-singapore
 date: 2026-10-27

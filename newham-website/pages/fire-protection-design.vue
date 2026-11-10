@@ -2,7 +2,7 @@
   <ServiceLanding
     path="/fire-protection-design"
     seo-title="Fire protection & sprinkler design services, Singapore"
-    seo-description="Fire protection design services in Singapore: sprinkler layouts and hydraulic calculations to SS CP 52, plus fire alarm, pump, riser and gas suppression design for SCDF submission."
+    seo-description="Fire protection design services in Singapore: sprinkler layouts and hydraulic calculations to SS CP 52, plus fire alarm, pump, riser and gas suppression design."
     eyebrow="Fire protection design · Singapore"
     title="Fire protection and sprinkler design services in Singapore"
     lead="Sprinkler layouts, hydraulic calculations and submission drawings for M&E contractors and consultants — prepared to Singapore codes, scoped in writing, with PE review coordinated when the submission needs it."

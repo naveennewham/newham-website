@@ -1,7 +1,7 @@
 <template>
   <ServiceLanding
     path="/elv-design-services"
-    seo-title="ELV design services, Singapore: CCTV, access control & cabling"
+    seo-title="ELV design services in Singapore: CCTV, access & cabling"
     seo-description="ELV design services in Singapore: CCTV, access control, structured cabling, PA, MATV and car park systems, with telecom space and facilities to IMDA's COPIF."
     eyebrow="ELV design · Singapore"
     title="ELV design services in Singapore"

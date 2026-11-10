@@ -2,7 +2,7 @@
   <ServiceLanding
     path="/acmv-design-services"
     seo-title="ACMV & HVAC design services, Singapore"
-    seo-description="ACMV and HVAC design services in Singapore: heat load calculations, equipment selection, ductwork and chilled water piping layouts and mechanical ventilation to SS 553 and SS 554."
+    seo-description="ACMV and HVAC design services in Singapore: heat load calculations, equipment selection, ductwork and chilled water layouts, and ventilation to SS 553 and SS 554."
     eyebrow="ACMV design · Singapore"
     title="ACMV and HVAC design services in Singapore"
     lead="Heat load calculations, equipment selection, ductwork and piping layouts and mechanical ventilation design for M&E contractors and consultants. Prepared to Singapore codes and scoped in writing, with PE review coordinated when the submission needs it."

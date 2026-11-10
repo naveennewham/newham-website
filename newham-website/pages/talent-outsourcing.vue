@@ -116,7 +116,7 @@
           <p class="eyebrow">Software + specialists</p>
           <h2 class="mt-2 text-2xl font-bold sm:text-3xl">Your team, your tools — or CCorex</h2>
           <p class="lead mt-3">Our engineers work in Revit MEP, AutoCAD, Navisworks and your own templates. If you use CCorex, they can work in DeepCost and DeepTrack alongside your estimators and project managers.</p>
-          <NuxtLink to="/ccorex" class="mt-6 inline-flex font-semibold text-brand-700 hover:text-brand-900">About CCorex <i class="fa-solid fa-arrow-right ml-2 mt-1 text-xs" aria-hidden="true"></i></NuxtLink>
+          <NuxtLink to="https://ccorex.com/" class="mt-6 inline-flex font-semibold text-brand-700 hover:text-brand-900">About CCorex <i class="fa-solid fa-arrow-right ml-2 mt-1 text-xs" aria-hidden="true"></i></NuxtLink>
         </div>
         <UiBrowserFrame src="/images/product/deepcost-area-schedule.webp" alt="DeepCost area schedule listing buildings, floors and rooms" url="deepcost.app / area schedule" :width="1800" :height="1093" />
       </div>

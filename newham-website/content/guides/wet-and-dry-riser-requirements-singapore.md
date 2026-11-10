@@ -1,5 +1,6 @@
 ---
 title: "Wet and dry riser requirements in Singapore: SCDF Fire Code guide"
+seo_title: "Wet and dry riser requirements in Singapore (SCDF Fire Code)"
 description: "When Singapore buildings need a dry or wet rising main under the SCDF Fire Code 2023: height limits, landing valve coverage, breeching inlets, flow and pressure."
 slug: wet-and-dry-riser-requirements-singapore
 date: 2026-10-27
