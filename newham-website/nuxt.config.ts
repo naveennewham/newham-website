@@ -73,17 +73,18 @@ export default defineNuxtConfig({
   },
   // Search engines render pages with a cap on how many files they will fetch; a page that needs
   // ~30 files can lose one and fall back to the error page. So the browser build ships few files:
-  // page data inline in the HTML, styles inlined, and small code chunks merged.
+  // page data inline in the HTML, styles inlined, and all code in one script. A lazily imported
+  // chunk that failed to load (Google, Nov 2026) still swapped the whole page for the error page.
   experimental: { payloadExtraction: false },
   hooks: {
     'vite:extendConfig'(config, { isClient }) {
       if (!isClient) return
       config.build ??= {}
       config.build.cssCodeSplit = false
-      // Rollup merges chunks under this size into their importers, keeping execution order safe.
+      // Lazy imports (page components) are bundled into the entry script: no chunk to fail later.
       type AssetNames = string | ((a: { names?: string[]; name?: string }) => string)
-      const output = ((config.build.rollupOptions ??= {}).output ??= {}) as { experimentalMinChunkSize?: number; assetFileNames?: AssetNames }
-      output.experimentalMinChunkSize = 60_000
+      const output = ((config.build.rollupOptions ??= {}).output ??= {}) as { inlineDynamicImports?: boolean; assetFileNames?: AssetNames }
+      output.inlineDynamicImports = true
       // The one stylesheet gets a fixed name so plugins/site-css.client.ts can load it.
       const named = output.assetFileNames
       output.assetFileNames = (a) => (a.names?.[0] ?? a.name ?? '').endsWith('.css') ? '_nuxt/site.css' : typeof named === 'function' ? named(a) : named ?? '_nuxt/[name].[hash].[ext]'
