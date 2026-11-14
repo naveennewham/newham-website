@@ -1,6 +1,6 @@
 ---
-title: "Fire hose reel requirements Singapore (SCDF)"
-description: "Fire hose reel requirements in Singapore under SCDF Fire Code 2023: which storeys, 36 m coverage, siting, hose size, flow, pressure, pumps and testing."
+title: "Fire hose reel requirements in Singapore: coverage, siting and supply"
+description: "SCDF Fire Code 2023 hose reel rules: which storeys need them, 36 m coverage, siting near exits, hose size, flow and pressure, pumps, tanks and testing."
 slug: fire-hose-reel-requirements-singapore
 date: 2026-10-27
 updated: 2026-11-05

@@ -1,7 +1,7 @@
 ---
 title: "Sick Leave Entitlement in Singapore: MC, Outpatient and Hospitalisation Leave"
-seo_title: "Sick Leave Singapore: 14 Days MC, 60 Days Hospital"
-description: "Singapore sick leave at a glance: 14 days outpatient MC and up to 60 days hospitalisation leave from 6 months of service, fewer days from 3 months, and MC rules."
+seo_title: "Sick Leave Entitlement in Singapore: MC Rules"
+description: "Paid sick leave in Singapore under the Employment Act: outpatient and hospitalisation days by months of service, MC rules, the 48-hour notice and pay."
 slug: sick-leave-entitlement-singapore
 date: 2026-10-27
 updated: 2026-11-05
